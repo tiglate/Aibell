@@ -1,0 +1,57 @@
+# .NET build and package output
+[Bb]in/
+[Oo]bj/
+artifacts/
+publish/
+packages/
+*.nupkg
+*.snupkg
+dist/
+
+# Test and coverage output
+TestResults/
+coverage/
+coverage-*/
+*.trx
+*.coverage
+*.coveragexml
+
+# IDE and editor state
+.vs/
+# WiX extension cache created by `wix extension add` (./make.ps1 msi)
+.wix/
+.vscode/
+.idea/
+_ReSharper*/
+*.sln.iml
+*.user
+*.suo
+*.userprefs
+*.swp
+*.swo
+*~
+
+# OS metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs, temporary files, and runtime database sidecars
+*.log
+*.tmp
+*.temp
+*.db-journal
+*.db-shm
+*.db-wal
+last-run-log
+aibell.trace
+
+# Git metadata used only when the workspace mounts .git read-only
+.git-local/
+
+# Python packaging/smoke helpers
+__pycache__/
+*.pyc
+
+# Local agent session transcripts
+codex-session-*.md

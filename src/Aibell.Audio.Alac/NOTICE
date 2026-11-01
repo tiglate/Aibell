@@ -1,0 +1,8 @@
+Aibell.Audio.Alac
+Copyright (c) 2026 Tiglate Pileser III.
+
+This product includes software derived from the Apple Lossless Audio Codec
+(ALAC) sources published by Apple Inc. at https://github.com/macosforge/alac,
+Copyright (c) 2011 Apple Inc. All rights reserved., licensed under the Apache
+License, Version 2.0 (see LICENSE.Alac). The derived files are a port of that
+C/C++ code to C# and carry a notice saying so.

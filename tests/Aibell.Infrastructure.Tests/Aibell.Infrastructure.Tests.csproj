@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/Aibell.Infrastructure/Aibell.Infrastructure.csproj" />
+    <!-- Built, not referenced: the loader tests load the real MusicBrainz plugin from plugins/ exactly as the application does. -->
+    <ProjectReference Include="../../src/Aibell.Metadata.MusicBrainz/Aibell.Metadata.MusicBrainz.csproj" ReferenceOutputAssembly="false" OutputItemType="PluginAssembly" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit.Analyzers">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NUnit3TestAdapter">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../fixtures/**" Link="fixtures/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <Target Name="IncludePluginAssemblies" BeforeTargets="AssignTargetPaths">
+    <ItemGroup>
+      <None Include="@(PluginAssembly)" Link="plugins/%(Filename)/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+      <!-- Debug symbols let the coverage tool measure the plugin whichever copy it meets first. -->
+      <PluginSymbol Include="@(PluginAssembly->'%(RootDir)%(Directory)%(Filename).pdb')" Condition="'$(Configuration)' == 'Debug'" />
+      <None Include="@(PluginSymbol)" Link="plugins/%(Filename)/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" Condition="Exists('%(FullPath)')" />
+    </ItemGroup>
+  </Target>
+  <ItemGroup>
+    <Compile Include="../Aibell.Audio.Spc.Tests/SpcBuilder.cs" Link="SpcBuilder.cs" />
+    <None Include="../fixtures/rar/songs*.rsn" Link="fixtures/rar/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+
+  </ItemGroup>
+</Project>

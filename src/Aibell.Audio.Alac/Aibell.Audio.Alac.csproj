@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- Derived from Apple's Apache-2.0 ALAC sources (see NOTICE and LICENSE.Alac); the rest of the product is MIT. -->
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Aibell.Audio.Alac.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LICENSE.Alac" />
+    <None Include="NOTICE" />
+    <ProjectReference Include="../Aibell.Audio.Core/Aibell.Audio.Core.csproj" />
+  </ItemGroup>
+</Project>

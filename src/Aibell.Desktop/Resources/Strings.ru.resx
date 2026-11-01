@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Artwork.Close" xml:space="preserve"><value>Закрыть</value></data>
+  <data name="Artwork.ConsentAccept" xml:space="preserve"><value>Включить</value></data>
+  <data name="Artwork.ConsentBody" xml:space="preserve"><value>При поиске обложки название альбома и имя исполнителя отправляются в MusicBrainz и Cover Art Archive через плагин MusicBrainz.
+
+Включить онлайн-поиск и продолжить? Его можно снова отключить в разделе «Настройки» &gt; «Онлайн».</value></data>
+  <data name="Artwork.ConsentTitle" xml:space="preserve"><value>Включить онлайн-поиск?</value></data>
+  <data name="Artwork.Downloading" xml:space="preserve"><value>Загрузка обложки…</value></data>
+  <data name="Artwork.Failed" xml:space="preserve"><value>Поиск не удался: {0}</value></data>
+  <data name="Artwork.FoundMany" xml:space="preserve"><value>Найдено обложек: {0}. Выберите одну и нажмите «Сохранить».</value></data>
+  <data name="Artwork.FoundOne" xml:space="preserve"><value>Найдена одна обложка. Проверьте её и нажмите «Сохранить».</value></data>
+  <data name="Artwork.Matching" xml:space="preserve"><value>Подходящие обложки</value></data>
+  <data name="Artwork.Menu" xml:space="preserve"><value>Получить обложку…</value></data>
+  <data name="Artwork.MenuTip" xml:space="preserve"><value>Находит обложку этого альбома в MusicBrainz и сохраняет её как cover.jpg в папке альбома</value></data>
+  <data name="Artwork.NoCoverArt" xml:space="preserve"><value>MusicBrainz знает этот альбом, но обложки для него нет.</value></data>
+  <data name="Artwork.NotFound" xml:space="preserve"><value>Подходящий альбом не найден.</value></data>
+  <data name="Artwork.Save" xml:space="preserve"><value>Сохранить обложку</value></data>
+  <data name="Artwork.SaveTip" xml:space="preserve"><value>Сохраняет выбранную обложку как cover.jpg в папке альбома. Существующий файл обложки никогда не заменяется.</value></data>
+  <data name="Artwork.Saved" xml:space="preserve"><value>{0} сохранён в {1}. Треки с изображением внутри файла продолжают показывать это изображение.</value></data>
+  <data name="Artwork.Searching" xml:space="preserve"><value>Поиск обложек…</value></data>
+  <data name="Artwork.StatusFailed" xml:space="preserve"><value>Не удалось получить обложку: {0}</value></data>
+  <data name="Artwork.StatusSaved" xml:space="preserve"><value>Обложка сохранена: {0}</value></data>
+  <data name="Artwork.Title" xml:space="preserve"><value>Получить обложку</value></data>
+  <data name="Artwork.Tracks" xml:space="preserve"><value>Треков: {0}</value></data>
+  <data name="Artwork.Unavailable.NoAlbum" xml:space="preserve"><value>У этого трека нет названия альбома для поиска.</value></data>
+  <data name="Artwork.Unavailable.NoFactory" xml:space="preserve"><value>Поиск обложек недоступен в этой сборке.</value></data>
+  <data name="Artwork.Unavailable.NoTrack" xml:space="preserve"><value>Сначала выберите трек.</value></data>
+  <data name="Artwork.Unavailable.NotFile" xml:space="preserve"><value>Обложки можно сохранять только для файлов вашей медиатеки.</value></data>
+  <data name="Artwork.UnknownError" xml:space="preserve"><value>неизвестная ошибка</value></data>
+  <data name="Backups.Delete" xml:space="preserve"><value>Удалить копию…</value></data>
+  <data name="Backups.DeletePrompt" xml:space="preserve"><value>Удалить эту резервную копию без возможности восстановления? Текущий аудиофайл и метаданные медиатеки будут сохранены.
+{0}</value></data>
+  <data name="Backups.DeleteTitle" xml:space="preserve"><value>Удалить резервную копию файла</value></data>
+  <data name="Backups.ListAutomation" xml:space="preserve"><value>Проверенные резервные копии файла</value></data>
+  <data name="Backups.Restore" xml:space="preserve"><value>Восстановить…</value></data>
+  <data name="Backups.RestoreAccept" xml:space="preserve"><value>Восстановить</value></data>
+  <data name="Backups.RestorePrompt" xml:space="preserve"><value>Восстановить эту резервную копию? Текущий аудиофайл будет сохранён как ещё одна резервная копия. Несохранённые изменения в редакторе трека будут отброшены.</value></data>
+  <data name="Backups.RestoreTitle" xml:space="preserve"><value>Восстановить резервную копию файла</value></data>
+  <data name="Backups.Rules" xml:space="preserve"><value>Восстанавливать можно только копии, соответствующие текущему файлу. Более ранние версии можно удалить явно.</value></data>
+  <data name="Backups.Summary" xml:space="preserve"><value>Проверенных резервных копий: {0}, {1} МиБ. </value></data>
+  <data name="Backups.Title" xml:space="preserve"><value>Резервные копии файлов</value></data>
+  <data name="Backups.Unverified" xml:space="preserve"><value>Непроверенных журналов, оставленных для проверки: {0}. </value></data>
+  <data name="Book.Add" xml:space="preserve"><value>Добавить аудиофайл…</value></data>
+  <data name="Book.AddFailed" xml:space="preserve"><value>Не удалось добавить аудиофайл</value></data>
+  <data name="Book.AddTip" xml:space="preserve"><value>Выберите локальный аудиофайл. Он только читается, но не копируется и не изменяется</value></data>
+  <data name="Book.AddTitle" xml:space="preserve"><value>Добавить аудиокнигу</value></data>
+  <data name="Book.Added" xml:space="preserve"><value>«{0}» добавлена. Аудиофайл не копировался и не изменялся.</value></data>
+  <data name="Book.AlreadyOnShelf" xml:space="preserve"><value>«{0}» уже на полке; сохранённая позиция сохранена.</value></data>
+  <data name="Book.AlreadyRemoved" xml:space="preserve"><value>Эта книга уже удалена.</value></data>
+  <data name="Book.AudioFiles" xml:space="preserve"><value>Аудиофайлы</value></data>
+  <data name="Book.ChapterCount.Few" xml:space="preserve"><value>{0} главы в «{1}». Выберите главу и нажмите «Воспроизвести главу».</value></data>
+  <data name="Book.ChapterCount.Many" xml:space="preserve"><value>{0} глав в «{1}». Выберите главу и нажмите «Воспроизвести главу».</value></data>
+  <data name="Book.ChapterCount.One" xml:space="preserve"><value>{0} глава в «{1}». Выберите главу и нажмите «Воспроизвести главу».</value></data>
+  <data name="Book.ChapterCount.Other" xml:space="preserve"><value>{0} главы в «{1}». Выберите главу и нажмите «Воспроизвести главу».</value></data>
+  <data name="Book.ChapterFailed" xml:space="preserve"><value>Не удалось воспроизвести главу</value></data>
+  <data name="Book.Chapters" xml:space="preserve"><value>Главы</value></data>
+  <data name="Book.ChaptersFailed" xml:space="preserve"><value>Не удалось прочитать главы</value></data>
+  <data name="Book.ChaptersTip" xml:space="preserve"><value>Показывает главы, сохранённые в этом файле. Ничего не воспроизводится</value></data>
+  <data name="Book.Empty" xml:space="preserve"><value>Ваша полка пуста. Выберите «Добавить аудиофайл…», чтобы начать.</value></data>
+  <data name="Book.FileSelectionUnavailable" xml:space="preserve"><value>Выбор файлов недоступен.</value></data>
+  <data name="Book.Finished" xml:space="preserve"><value>Прослушано · сохранено в конце</value></data>
+  <data name="Book.FinishedRestart" xml:space="preserve"><value>«{0}» было дослушано; воспроизведение с начала.</value></data>
+  <data name="Book.Intro" xml:space="preserve"><value>Локальные аудиокниги. Позиции сохраняются только при выборе «Сохранить позицию».</value></data>
+  <data name="Book.Length" xml:space="preserve"><value>Длительность {0}</value></data>
+  <data name="Book.LengthUnknown" xml:space="preserve"><value>Длительность неизвестна</value></data>
+  <data name="Book.Missing" xml:space="preserve"><value>Файл отсутствует — удалите его и добавьте снова из нового расположения</value></data>
+  <data name="Book.NoChapters" xml:space="preserve"><value>В «{0}» нет глав.</value></data>
+  <data name="Book.NoChaptersHelp" xml:space="preserve"><value>В этом файле нет глав. Используйте «Воспроизвести сначала» или «Продолжить», чтобы воспроизвести всю книгу.</value></data>
+  <data name="Book.NoFile" xml:space="preserve"><value>Файл не выбран.</value></data>
+  <data name="Book.NoPlayback" xml:space="preserve"><value>Воспроизведение недоступно из этого окна.</value></data>
+  <data name="Book.NoSaved" xml:space="preserve"><value>Нет сохранённой позиции</value></data>
+  <data name="Book.NotOnShelf" xml:space="preserve"><value>Плеер воспроизводит не книгу с этой полки. Сначала запустите книгу кнопкой «Воспроизвести» или «Продолжить».</value></data>
+  <data name="Book.NothingPlaying" xml:space="preserve"><value>Ничего не воспроизводится. Запустите книгу кнопкой «Воспроизвести» или «Продолжить», затем сохраните её позицию.</value></data>
+  <data name="Book.OnShelf.Few" xml:space="preserve"><value>{0} аудиокниги на полке.</value></data>
+  <data name="Book.OnShelf.Many" xml:space="preserve"><value>{0} аудиокниг на полке.</value></data>
+  <data name="Book.OnShelf.One" xml:space="preserve"><value>{0} аудиокнига на полке.</value></data>
+  <data name="Book.OnShelf.Other" xml:space="preserve"><value>{0} аудиокниги на полке.</value></data>
+  <data name="Book.PlayChapter" xml:space="preserve"><value>Воспроизвести главу</value></data>
+  <data name="Book.PlayChapterTip" xml:space="preserve"><value>Воспроизводит в главном плеере с выбранной главы. Выбор строки не запускает воспроизведение</value></data>
+  <data name="Book.PlayFailed" xml:space="preserve"><value>Не удалось воспроизвести аудиокнигу</value></data>
+  <data name="Book.PlayFromStart" xml:space="preserve"><value>Воспроизвести сначала</value></data>
+  <data name="Book.PlayingChapter" xml:space="preserve"><value>Воспроизводится «{0}», {1}, с {2}.</value></data>
+  <data name="Book.PlayingFrom" xml:space="preserve"><value>Воспроизводится «{0}» с {1}.</value></data>
+  <data name="Book.PlayingStart" xml:space="preserve"><value>Воспроизводится «{0}» с начала.</value></data>
+  <data name="Book.ReadFailed" xml:space="preserve"><value>Не удалось прочитать полку аудиокниг</value></data>
+  <data name="Book.RemoveFailed" xml:space="preserve"><value>Не удалось удалить аудиокнигу</value></data>
+  <data name="Book.RemovePrompt" xml:space="preserve"><value>Забыть эту запись на полке и её сохранённую позицию?
+Аудиофайл остаётся на диске.
+{0}</value></data>
+  <data name="Book.RemoveTip" xml:space="preserve"><value>Забывает эту запись на полке. Аудиофайл остаётся на диске</value></data>
+  <data name="Book.RemoveTitle" xml:space="preserve"><value>Удалить аудиокнигу</value></data>
+  <data name="Book.RemovedFromShelf" xml:space="preserve"><value>«{0}» удалена с полки. Аудиофайл не затронут.</value></data>
+  <data name="Book.ResumeTip" xml:space="preserve"><value>Продолжает с последней сохранённой позиции</value></data>
+  <data name="Book.SaveFailed" xml:space="preserve"><value>Не удалось сохранить позицию</value></data>
+  <data name="Book.SavePositionTip" xml:space="preserve"><value>Сохраняет место, до которого главный плеер дошёл в воспроизводимой или приостановленной аудиокниге</value></data>
+  <data name="Book.SavedOf" xml:space="preserve"><value>Сохранено {0} из {1}</value></data>
+  <data name="Book.SavedPos" xml:space="preserve"><value>Позиция {0} сохранена для «{1}».</value></data>
+  <data name="Book.SelectionChanged" xml:space="preserve"><value>Выбор изменился, поэтому главы не были показаны.</value></data>
+  <data name="Book.ShowingFirst" xml:space="preserve"><value>Показаны первые главы: {0}.</value></data>
+  <data name="Book.StatusIntro" xml:space="preserve"><value>Добавьте локальный аудиофайл на полку. Ничего не воспроизводится и не сохраняется, пока вы не попросите.</value></data>
+  <data name="Book.UnknownAuthor" xml:space="preserve"><value>Неизвестный автор</value></data>
+  <data name="Column.Album" xml:space="preserve"><value>Альбом</value></data>
+  <data name="Column.AlbumArtist" xml:space="preserve"><value>Исполнитель альбома</value></data>
+  <data name="Column.Artist" xml:space="preserve"><value>Исполнитель</value></data>
+  <data name="Column.BitRate" xml:space="preserve"><value>Битрейт</value></data>
+  <data name="Column.Bpm" xml:space="preserve"><value>BPM</value></data>
+  <data name="Column.Channels" xml:space="preserve"><value>Каналы</value></data>
+  <data name="Column.Comment" xml:space="preserve"><value>Комментарий</value></data>
+  <data name="Column.Composer" xml:space="preserve"><value>Композитор</value></data>
+  <data name="Column.DateAdded" xml:space="preserve"><value>Дата добавления</value></data>
+  <data name="Column.DateModified" xml:space="preserve"><value>Дата изменения</value></data>
+  <data name="Column.Description" xml:space="preserve"><value>Описание</value></data>
+  <data name="Column.DiscNumber" xml:space="preserve"><value>Номер диска</value></data>
+  <data name="Column.EpisodeNumber" xml:space="preserve"><value>Номер выпуска</value></data>
+  <data name="Column.Genre" xml:space="preserve"><value>Жанр</value></data>
+  <data name="Column.Keywords" xml:space="preserve"><value>Ключевые слова</value></data>
+  <data name="Column.LastPlayed" xml:space="preserve"><value>Последнее воспроизведение</value></data>
+  <data name="Column.LastSkipped" xml:space="preserve"><value>Последний пропуск</value></data>
+  <data name="Column.Location" xml:space="preserve"><value>Расположение файла</value></data>
+  <data name="Column.PlayCount" xml:space="preserve"><value>Воспроизведений</value></data>
+  <data name="Column.Rating" xml:space="preserve"><value>Оценка</value></data>
+  <data name="Column.SampleRate" xml:space="preserve"><value>Частота дискретизации</value></data>
+  <data name="Column.SeasonNumber" xml:space="preserve"><value>Номер сезона</value></data>
+  <data name="Column.ShowName" xml:space="preserve"><value>Название передачи</value></data>
+  <data name="Column.Size" xml:space="preserve"><value>Размер</value></data>
+  <data name="Column.SkipCount" xml:space="preserve"><value>Пропусков</value></data>
+  <data name="Column.Source" xml:space="preserve"><value>Источник</value></data>
+  <data name="Column.Time" xml:space="preserve"><value>Время</value></data>
+  <data name="Column.Title" xml:space="preserve"><value>Название</value></data>
+  <data name="Column.TrackNumber" xml:space="preserve"><value>Номер трека</value></data>
+  <data name="Column.Year" xml:space="preserve"><value>Год</value></data>
+  <data name="Common.AllCount" xml:space="preserve"><value>Все ({0})</value></data>
+  <data name="Common.Cancel" xml:space="preserve"><value>Отмена</value></data>
+  <data name="Common.Cancelled" xml:space="preserve"><value>Отменено.</value></data>
+  <data name="Common.Cancelling" xml:space="preserve"><value>Отмена…</value></data>
+  <data name="Common.Close" xml:space="preserve"><value>Закрыть</value></data>
+  <data name="Common.NameCount" xml:space="preserve"><value>{0} ({1})</value></data>
+  <data name="Common.NoLookupPlugin" xml:space="preserve"><value>Плагин поиска не установлен или не включён. См. «Настройки» &gt; «Плагины».</value></data>
+  <data name="Common.OnlineLookupOff" xml:space="preserve"><value>Онлайн-поиск отключён. Включите его в разделе «Настройки» &gt; «Онлайн».</value></data>
+  <data name="Common.OperationCancelled" xml:space="preserve"><value>Операция отменена.</value></data>
+  <data name="Common.OperationFailed" xml:space="preserve"><value>Операция не удалась: {0}</value></data>
+  <data name="Common.Unknown" xml:space="preserve"><value>Неизвестно</value></data>
+  <data name="Dialog.Cancel" xml:space="preserve"><value>Отмена</value></data>
+  <data name="Dialog.CloseAutomation" xml:space="preserve"><value>Закрыть {0}</value></data>
+  <data name="Dialog.Create" xml:space="preserve"><value>Создать</value></data>
+  <data name="Dialog.CreatePlaylist" xml:space="preserve"><value>Создать плейлист</value></data>
+  <data name="Dialog.Delete" xml:space="preserve"><value>Удалить</value></data>
+  <data name="Dialog.DeletePlaylist" xml:space="preserve"><value>Удалить плейлист</value></data>
+  <data name="Dialog.DeletePlaylistPrompt" xml:space="preserve"><value>Удалить «{0}»? Ваши музыкальные файлы останутся нетронутыми.</value></data>
+  <data name="Dialog.PlaylistName" xml:space="preserve"><value>Название плейлиста</value></data>
+  <data name="Dialog.Remove" xml:space="preserve"><value>Убрать</value></data>
+  <data name="Dialog.RemoveFolder" xml:space="preserve"><value>Убрать папку с музыкой</value></data>
+  <data name="Dialog.RemoveFolderPrompt" xml:space="preserve"><value>Прекратить отслеживание «{0}» и убрать её треки из медиатеки? Музыкальные файлы останутся нетронутыми.</value></data>
+  <data name="Dialog.Rename" xml:space="preserve"><value>Переименовать</value></data>
+  <data name="Dialog.RenamePlaylist" xml:space="preserve"><value>Переименовать плейлист</value></data>
+  <data name="Dialog.Save" xml:space="preserve"><value>Сохранить</value></data>
+  <data name="Disc.ActivePresent" xml:space="preserve"><value>настоящее время</value></data>
+  <data name="Disc.ActiveRange" xml:space="preserve"><value>Активен {0}–{1}</value></data>
+  <data name="Disc.Artist" xml:space="preserve"><value>Об исполнителе</value></data>
+  <data name="Disc.ArtistFailed" xml:space="preserve"><value>Поиск исполнителя не удался: {0}</value></data>
+  <data name="Disc.ArtistFrom" xml:space="preserve"><value>Сведения об исполнителе из MusicBrainz.</value></data>
+  <data name="Disc.ArtistLooking" xml:space="preserve"><value>Поиск: {0}…</value></data>
+  <data name="Disc.ArtistNoMatch" xml:space="preserve"><value>Близких совпадений для «{0}» нет.</value></data>
+  <data name="Disc.ArtistTip" xml:space="preserve"><value>Находит основные сведения об исполнителе: тип, регион, годы активности, жанры и ссылки</value></data>
+  <data name="Disc.CoverAutomation" xml:space="preserve"><value>Обложка альбома</value></data>
+  <data name="Disc.DriveAutomation" xml:space="preserve"><value>Привод CD или DVD</value></data>
+  <data name="Disc.Empty" xml:space="preserve"><value>Вставьте аудио-CD и выберите «Прочитать диск».</value></data>
+  <data name="Disc.FoundMany" xml:space="preserve"><value>Найдено возможных альбомов: {0}; показано наилучшее совпадение.</value></data>
+  <data name="Disc.FoundOne" xml:space="preserve"><value>Найден этот альбом.</value></data>
+  <data name="Disc.Genres" xml:space="preserve"><value>Жанры: {0}</value></data>
+  <data name="Disc.LookUp" xml:space="preserve"><value>Найти</value></data>
+  <data name="Disc.LookingUp" xml:space="preserve"><value>Поиск этого диска…</value></data>
+  <data name="Disc.LookupFailed" xml:space="preserve"><value>Поиск не удался: {0} Треки сохраняют свои номера.</value></data>
+  <data name="Disc.LookupHintOff" xml:space="preserve"><value>Онлайн-поиск отключён или плагин не установлен. Включите его в разделе «Настройки» &gt; «Онлайн».</value></data>
+  <data name="Disc.LookupHintOn" xml:space="preserve"><value>«Найти» отправляет оглавление диска в MusicBrainz.</value></data>
+  <data name="Disc.NoDisc" xml:space="preserve"><value>В {0} нет аудиодиска.</value></data>
+  <data name="Disc.NoDrive" xml:space="preserve"><value>Привод CD или DVD не найден.</value></data>
+  <data name="Disc.NotKnown" xml:space="preserve"><value>Этот диск неизвестен MusicBrainz.</value></data>
+  <data name="Disc.OtherAlbums" xml:space="preserve"><value>Другие возможные альбомы</value></data>
+  <data name="Disc.PlayingDisc" xml:space="preserve"><value>Воспроизведение диска с первого трека.</value></data>
+  <data name="Disc.PlayingTrack" xml:space="preserve"><value>Воспроизводится трек {0}. Остальная часть диска поставлена в очередь.</value></data>
+  <data name="Disc.PossibleAlbums" xml:space="preserve"><value>Возможные альбомы</value></data>
+  <data name="Disc.Read" xml:space="preserve"><value>Прочитать диск</value></data>
+  <data name="Disc.ReadTip" xml:space="preserve"><value>Заново читает оглавление, например после смены диска</value></data>
+  <data name="Disc.Reading" xml:space="preserve"><value>Чтение диска…</value></data>
+  <data name="Disc.Title" xml:space="preserve"><value>Аудио-CD</value></data>
+  <data name="Disc.TrackN" xml:space="preserve"><value>Трек {0}</value></data>
+  <data name="Disc.TracksAndLength" xml:space="preserve"><value>Треков: {0} · {1}</value></data>
+  <data name="Disc.TracksAutomation" xml:space="preserve"><value>Треки диска</value></data>
+  <data name="Disc.TracksChooseLookup" xml:space="preserve"><value>Треков: {0}. Выберите «Найти», чтобы получить сведения об альбоме.</value></data>
+  <data name="Disc.TracksOnly" xml:space="preserve"><value>Треков: {0}.</value></data>
+  <data name="Equalizer.Title" xml:space="preserve"><value>Эквалайзер</value></data>
+  <data name="Equalizer.ButtonAutomation" xml:space="preserve"><value>Эквалайзер</value></data>
+  <data name="Equalizer.ButtonTip" xml:space="preserve"><value>Открыть эквалайзер</value></data>
+  <data name="Equalizer.On" xml:space="preserve"><value>Вкл.</value></data>
+  <data name="Equalizer.OnAutomation" xml:space="preserve"><value>Включить или выключить эквалайзер</value></data>
+  <data name="Equalizer.OnTip" xml:space="preserve"><value>Эквалайзер включён; кривая применяется ко всему, что вы воспроизводите</value></data>
+  <data name="Equalizer.PresetAutomation" xml:space="preserve"><value>Пресет эквалайзера</value></data>
+  <data name="Equalizer.Reset" xml:space="preserve"><value>Сбросить</value></data>
+  <data name="Equalizer.ResetTip" xml:space="preserve"><value>Возвращает все полосы и предусилитель к 0 дБ</value></data>
+  <data name="Equalizer.Preamp" xml:space="preserve"><value>Предусил.</value></data>
+  <data name="Equalizer.Preset.Custom" xml:space="preserve"><value>Пользовательский</value></data>
+  <data name="Equalizer.Preset.Flat" xml:space="preserve"><value>Плоский</value></data>
+  <data name="Equalizer.Preset.BassBoost" xml:space="preserve"><value>Усиление басов</value></data>
+  <data name="Equalizer.Preset.TrebleBoost" xml:space="preserve"><value>Усиление высоких</value></data>
+  <data name="Equalizer.Preset.Rock" xml:space="preserve"><value>Рок</value></data>
+  <data name="Equalizer.Preset.Pop" xml:space="preserve"><value>Поп</value></data>
+  <data name="Equalizer.Preset.Jazz" xml:space="preserve"><value>Джаз</value></data>
+  <data name="Equalizer.Preset.Classical" xml:space="preserve"><value>Классика</value></data>
+  <data name="Equalizer.Preset.Vocal" xml:space="preserve"><value>Вокал</value></data>
+  <data name="Error.Reported" xml:space="preserve"><value>Что-то пошло не так ({0}). Подробности сохранены в {1}.</value></data>
+  <data name="Crash.EngineBuiltIn" xml:space="preserve"><value>встроенный</value></data>
+  <data name="Crash.EngineVlc" xml:space="preserve"><value>VLC</value></data>
+  <data name="Crash.Message" xml:space="preserve"><value>Предыдущий сеанс завершился ненормально.</value></data>
+  <data name="Crash.Title" xml:space="preserve"><value>Aibell неожиданно закрылся</value></data>
+  <data name="Crash.WhilePlaying" xml:space="preserve"><value>Он остановился при воспроизведении «{0}» проигрывателем: {1}.</value></data>
+  <data name="ErrorDialog.Close" xml:space="preserve"><value>Закрыть</value></data>
+  <data name="ErrorDialog.Copied" xml:space="preserve"><value>Скопировано</value></data>
+  <data name="ErrorDialog.Copy" xml:space="preserve"><value>Копировать подробности</value></data>
+  <data name="ErrorDialog.Details" xml:space="preserve"><value>Подробности</value></data>
+  <data name="ErrorDialog.DetailsAutomation" xml:space="preserve"><value>Технические подробности</value></data>
+  <data name="ErrorDialog.HideDetails" xml:space="preserve"><value>Скрыть подробности</value></data>
+  <data name="ErrorDialog.LogLocation" xml:space="preserve"><value>Файл журнала: {0}</value></data>
+  <data name="ErrorDialog.More" xml:space="preserve"><value>Произошло ещё проблем: {0}; см. подробности.</value></data>
+  <data name="ErrorDialog.Title" xml:space="preserve"><value>Что-то пошло не так</value></data>
+  <data name="Playback.FailedTitle" xml:space="preserve"><value>Не удалось воспроизвести этот трек</value></data>
+  <data name="Playback.TryVlc" xml:space="preserve"><value>Если это повторяется, выберите VLC в Настройки &gt; Воспроизведение.</value></data>
+  <data name="Import.DuplicateCount.Few" xml:space="preserve"><value>{0} дубликата</value></data>
+  <data name="Import.DuplicateCount.Many" xml:space="preserve"><value>{0} дубликатов</value></data>
+  <data name="Import.DuplicateCount.One" xml:space="preserve"><value>{0} дубликат</value></data>
+  <data name="Import.DuplicateCount.Other" xml:space="preserve"><value>{0} дубликата</value></data>
+  <data name="Import.Entry" xml:space="preserve"><value>Запись {0}: {1}</value></data>
+  <data name="Import.NoStations" xml:space="preserve"><value>Новые станции с прямым потоком не найдены.</value></data>
+  <data name="Import.NoTracks" xml:space="preserve"><value>Читаемые локальные треки не найдены.</value></data>
+  <data name="Import.PlaylistCancelled" xml:space="preserve"><value>Проверка плейлиста отменена. Медиатека не изменена.</value></data>
+  <data name="Import.PlaylistFailed" xml:space="preserve"><value>Не удалось подготовить плейлист.</value></data>
+  <data name="Import.PlaylistSummary" xml:space="preserve"><value>Готово: {0}; пропущено: {1}; опущено: {2}.</value></data>
+  <data name="Import.ReadingFiles" xml:space="preserve"><value>Чтение указанных аудиофайлов…</value></data>
+  <data name="Import.ReadingStations" xml:space="preserve"><value>Чтение сохранённых адресов станций…</value></data>
+  <data name="Import.ReviewPlaylist" xml:space="preserve"><value>Проверьте плейлист перед добавлением в медиатеку. Аудиофайлы остаются без изменений.</value></data>
+  <data name="Import.ReviewStations" xml:space="preserve"><value>Проверьте эти станции перед сохранением. Выберите станцию и нажмите «Воспроизвести», чтобы подключиться после импорта.</value></data>
+  <data name="Import.SkippedCount" xml:space="preserve"><value>Пропущенные записи ({0})</value></data>
+  <data name="Import.SkippedPlaylist" xml:space="preserve"><value>Пропущенные записи плейлиста</value></data>
+  <data name="Import.SkippedStations" xml:space="preserve"><value>Пропущенные записи станций</value></data>
+  <data name="Import.SkippedTab" xml:space="preserve"><value>Пропущенные записи</value></data>
+  <data name="Import.StationCount.Few" xml:space="preserve"><value>{0} станции</value></data>
+  <data name="Import.StationCount.Many" xml:space="preserve"><value>{0} станций</value></data>
+  <data name="Import.StationCount.One" xml:space="preserve"><value>{0} станция</value></data>
+  <data name="Import.StationCount.Other" xml:space="preserve"><value>{0} станции</value></data>
+  <data name="Import.StationsCancelled" xml:space="preserve"><value>Проверка станций отменена.</value></data>
+  <data name="Import.StationsFailed" xml:space="preserve"><value>Не удалось подготовить плейлист станций.</value></data>
+  <data name="Import.StationsReady" xml:space="preserve"><value>Станции, готовые к импорту</value></data>
+  <data name="Import.StationsTab" xml:space="preserve"><value>Станции</value></data>
+  <data name="Import.TrackCount.Few" xml:space="preserve"><value>{0} трека</value></data>
+  <data name="Import.TrackCount.Many" xml:space="preserve"><value>{0} треков</value></data>
+  <data name="Import.TrackCount.One" xml:space="preserve"><value>{0} трек</value></data>
+  <data name="Import.TrackCount.Other" xml:space="preserve"><value>{0} трека</value></data>
+  <data name="Import.TracksReady" xml:space="preserve"><value>Треки, готовые к импорту</value></data>
+  <data name="Import.TracksTab" xml:space="preserve"><value>Треки</value></data>
+  <data name="Library.AllMusic" xml:space="preserve"><value>Вся музыка</value></data>
+  <data name="Library.Importing" xml:space="preserve"><value>Импорт {0}…</value></data>
+  <data name="Library.Rescanned" xml:space="preserve"><value>Повторное сканирование {0}: проиндексировано — {1}, удалено — {2}, нечитаемых — {3}.</value></data>
+  <data name="Library.StoppedWatching.Few" xml:space="preserve"><value>Отслеживание {1} прекращено, удалено проиндексированных треков: {0}. Файлы не затронуты.</value></data>
+  <data name="Library.StoppedWatching.Many" xml:space="preserve"><value>Отслеживание {1} прекращено, удалено проиндексированных треков: {0}. Файлы не затронуты.</value></data>
+  <data name="Library.StoppedWatching.One" xml:space="preserve"><value>Отслеживание {1} прекращено, удалён 1 проиндексированный трек. Файлы не затронуты.</value></data>
+  <data name="Library.StoppedWatching.Other" xml:space="preserve"><value>Отслеживание {1} прекращено, удалено проиндексированных треков: {0}. Файлы не затронуты.</value></data>
+  <data name="Library.Synced" xml:space="preserve"><value>Синхронизировано файлов: {0}, удалено: {1}. {2}</value></data>
+  <data name="Library.SyncedIssues" xml:space="preserve"><value>Синхронизировано файлов: {0}; удалено: {1}; не удалось прочитать: {2}.</value></data>
+  <data name="Library.Updated.Removed" xml:space="preserve"><value>Медиатека обновлена: удалено отсутствующих треков — {0}.</value></data>
+  <data name="Library.Updated.Unreadable" xml:space="preserve"><value>Медиатека обновлена; нечитаемых файлов — {0}.</value></data>
+  <data name="Main.AddEllipsis" xml:space="preserve"><value>Добавить…</value></data>
+  <data name="Main.AddFolder" xml:space="preserve"><value>Добавить папку с музыкой</value></data>
+  <data name="Main.OpenFiles" xml:space="preserve"><value>Открыть файлы…</value></data>
+  <data name="Main.AddToLibrary" xml:space="preserve"><value>Добавить в медиатеку</value></data>
+  <data name="Main.AddToPlaylist" xml:space="preserve"><value>Добавить в плейлист</value></data>
+  <data name="Main.Album" xml:space="preserve"><value>АЛЬБОМ</value></data>
+  <data name="Main.Albums" xml:space="preserve"><value>Альбомы</value></data>
+  <data name="Main.Artist" xml:space="preserve"><value>ИСПОЛНИТЕЛЬ</value></data>
+  <data name="Main.Artists" xml:space="preserve"><value>Исполнители</value></data>
+  <data name="Main.AudiobookShelf" xml:space="preserve"><value>Полка аудиокниг</value></data>
+  <data name="Main.Audiobooks" xml:space="preserve"><value>Аудиокниги</value></data>
+  <data name="Main.Clear" xml:space="preserve"><value>Очистить</value></data>
+  <data name="Main.ClearQueueTip" xml:space="preserve"><value>Очищает очередь, не останавливая воспроизведение</value></data>
+  <data name="Main.Closing" xml:space="preserve"><value>Завершение незаконченных задач перед закрытием…</value></data>
+  <data name="Main.CreatePlaylist" xml:space="preserve"><value>Создать плейлист</value></data>
+  <data name="Main.CreateSmartPlaylist" xml:space="preserve"><value>Создать умный плейлист</value></data>
+  <data name="Main.Delete" xml:space="preserve"><value>Удалить…</value></data>
+  <data name="Main.DeletePlaylistTip" xml:space="preserve"><value>Удалить выбранный плейлист</value></data>
+  <data name="Main.DropTracks" xml:space="preserve"><value>Перетащите треки сюда</value></data>
+  <data name="Main.EditEllipsis" xml:space="preserve"><value>Изменить…</value></data>
+  <data name="Main.EditRules" xml:space="preserve"><value>Изменить правила…</value></data>
+  <data name="Main.EditStation" xml:space="preserve"><value>Изменить станцию…</value></data>
+  <data name="Main.ExportPlaylist" xml:space="preserve"><value>Экспортировать плейлист…</value></data>
+  <data name="Main.FoldSidebar" xml:space="preserve"><value>Свернуть боковую панель</value></data>
+  <data name="Main.ShowSidebar" xml:space="preserve"><value>Показать боковую панель</value></data>
+  <data name="Main.FoldQueue" xml:space="preserve"><value>Свернуть очередь воспроизведения</value></data>
+  <data name="Main.Folders" xml:space="preserve"><value>ПАПКИ</value></data>
+  <data name="Main.Genre" xml:space="preserve"><value>ЖАНР</value></data>
+  <data name="Main.Genres" xml:space="preserve"><value>Жанры</value></data>
+  <data name="Main.ImportEllipsis" xml:space="preserve"><value>Импорт…</value></data>
+  <data name="Main.ImportPlaylistFile" xml:space="preserve"><value>Импортировать файл плейлиста</value></data>
+  <data name="Main.ImportStations" xml:space="preserve"><value>Импортировать радиостанции</value></data>
+  <data name="Main.ImportStationsTip" xml:space="preserve"><value>Импортирует станции из локального плейлиста M3U или PLS</value></data>
+  <data name="Main.Library" xml:space="preserve"><value>МЕДИАТЕКА</value></data>
+  <data name="Main.LibraryTracks" xml:space="preserve"><value>Треки медиатеки</value></data>
+  <data name="Main.MoveDown" xml:space="preserve"><value>Переместить вниз в плейлисте</value></data>
+  <data name="Main.MoveUp" xml:space="preserve"><value>Переместить вверх в плейлисте</value></data>
+  <data name="Main.MusicFolders" xml:space="preserve"><value>Папки с музыкой</value></data>
+  <data name="Main.Next" xml:space="preserve"><value>Следующий трек</value></data>
+  <data name="Main.NextHint" xml:space="preserve"><value>Alt+Вправо из медиатеки</value></data>
+  <data name="Main.NextTip" xml:space="preserve"><value>Следующий трек (Alt+Вправо из медиатеки)</value></data>
+  <data name="Main.NoStations" xml:space="preserve"><value>Подходящих станций нет. Добавьте прямой аудиопоток HTTP/HTTPS, чтобы начать.</value></data>
+  <data name="Main.NoTracks" xml:space="preserve"><value>В этом представлении нет треков.</value></data>
+  <data name="Main.NowPlaying" xml:space="preserve"><value>СЕЙЧАС ИГРАЕТ</value></data>
+  <data name="Main.NowPlayingArt" xml:space="preserve"><value>Обложка текущего трека</value></data>
+  <data name="Main.Play" xml:space="preserve"><value>Воспроизвести</value></data>
+  <data name="Main.PlayHint" xml:space="preserve"><value>Пробел из списка треков или очереди</value></data>
+  <data name="Main.PlayQueue" xml:space="preserve"><value>Очередь воспроизведения</value></data>
+  <data name="Main.Playlists" xml:space="preserve"><value>ПЛЕЙЛИСТЫ</value></data>
+  <data name="Main.PlaylistsAutomation" xml:space="preserve"><value>Плейлисты</value></data>
+  <data name="Main.Preferences" xml:space="preserve"><value>Настройки</value></data>
+  <data name="Main.PreferencesTip" xml:space="preserve"><value>Настройки (Ctrl+,)</value></data>
+  <data name="Main.Previous" xml:space="preserve"><value>Предыдущий трек</value></data>
+  <data name="Main.PreviousHint" xml:space="preserve"><value>Alt+Влево из медиатеки</value></data>
+  <data name="Main.PreviousTip" xml:space="preserve"><value>Предыдущий трек (Alt+Влево из медиатеки)</value></data>
+  <data name="Main.QueueLast" xml:space="preserve"><value>В конец очереди</value></data>
+  <data name="Main.QueueNext" xml:space="preserve"><value>Следующим в очереди</value></data>
+  <data name="Main.RadioHeader" xml:space="preserve"><value>РАДИО</value></data>
+  <data name="Main.Rating" xml:space="preserve"><value>Оценка</value></data>
+  <data name="Main.RatingClear" xml:space="preserve"><value>☆☆☆☆☆  Сбросить</value></data>
+  <data name="Main.Remove" xml:space="preserve"><value>Убрать…</value></data>
+  <data name="Main.RemoveFolderTip" xml:space="preserve"><value>Убрать выбранную папку</value></data>
+  <data name="Main.RemoveFromPlaylist" xml:space="preserve"><value>Убрать из плейлиста</value></data>
+  <data name="Main.RemoveShort" xml:space="preserve"><value>Убрать</value></data>
+  <data name="Main.RemoveStation" xml:space="preserve"><value>Убрать станцию…</value></data>
+  <data name="Main.Rename" xml:space="preserve"><value>Переименовать…</value></data>
+  <data name="Main.Rescan" xml:space="preserve"><value>Сканировать заново</value></data>
+  <data name="Main.SavedStations" xml:space="preserve"><value>Сохранённые радиостанции</value></data>
+  <data name="Main.SearchTip" xml:space="preserve"><value>Поиск (Ctrl+F); Escape очищает запрос</value></data>
+  <data name="Main.SeekTip" xml:space="preserve"><value>Позиция воспроизведения (стрелки ±5 с, Page Up/Down ±15 с, Home/End)</value></data>
+  <data name="Main.SeekUnavailable" xml:space="preserve"><value>Позиция воспроизведения, недоступна</value></data>
+  <data name="Main.ShowFile" xml:space="preserve"><value>Показать файл</value></data>
+  <data name="Main.ShowQueue" xml:space="preserve"><value>Показать очередь воспроизведения</value></data>
+  <data name="Main.StatusOperationFailed" xml:space="preserve"><value>Операция не удалась: {0}</value></data>
+  <data name="Main.StatusPrefs" xml:space="preserve"><value>Не удалось открыть настройки: {0}</value></data>
+  <data name="Main.StatusTrackProps" xml:space="preserve"><value>Не удалось открыть свойства трека: {0}</value></data>
+  <data name="Main.Stop" xml:space="preserve"><value>Стоп</value></data>
+  <data name="Main.TitleColumn" xml:space="preserve"><value>Название</value></data>
+  <data name="Main.ViewMetadata" xml:space="preserve"><value>Показать метаданные…</value></data>
+  <data name="Main.Volume" xml:space="preserve"><value>Громкость</value></data>
+  <data name="Main.VolumeTip" xml:space="preserve"><value>Громкость (стрелки ±5%, Page Up/Down ±10%, Home/End)</value></data>
+  <data name="Menu.NewPlaylist" xml:space="preserve"><value>Новый плейлист…</value></data>
+  <data name="Menu.NoPlaylists" xml:space="preserve"><value>Нет существующих плейлистов</value></data>
+  <data name="Menu.RestoreDefaults" xml:space="preserve"><value>Восстановить значения по умолчанию</value></data>
+  <data name="Meta.AddCover" xml:space="preserve"><value>Добавить обложку…</value></data>
+  <data name="Meta.AddCoverTip" xml:space="preserve"><value>Добавляет или заменяет показанную встроенную обложку изображением PNG или JPEG.</value></data>
+  <data name="Meta.AdditionalTags" xml:space="preserve"><value>Дополнительные теги файла ({0})</value></data>
+  <data name="Meta.AlbumArtist" xml:space="preserve"><value>Исполнитель альбома</value></data>
+  <data name="Meta.AlbumTitle" xml:space="preserve"><value>Название альбома</value></data>
+  <data name="Meta.BackupsFailed" xml:space="preserve"><value>Не удалось управлять резервными копиями: {0}</value></data>
+  <data name="Meta.BadNumbers" xml:space="preserve"><value>Введите допустимые числа в числовые поля.</value></data>
+  <data name="Meta.BitRate" xml:space="preserve"><value>Битрейт</value></data>
+  <data name="Meta.BitsPerSample" xml:space="preserve"><value>Бит на отсчёт</value></data>
+  <data name="Meta.Bpm" xml:space="preserve"><value>Ударов в минуту</value></data>
+  <data name="Meta.Channels" xml:space="preserve"><value>Каналы</value></data>
+  <data name="Meta.CloseAutomation" xml:space="preserve"><value>Закрыть свойства трека</value></data>
+  <data name="Meta.Codec" xml:space="preserve"><value>Аудиокодек</value></data>
+  <data name="Meta.Comment" xml:space="preserve"><value>Комментарий</value></data>
+  <data name="Meta.Composer" xml:space="preserve"><value>Композитор</value></data>
+  <data name="Meta.Conductor" xml:space="preserve"><value>Дирижёр</value></data>
+  <data name="Meta.Copyright" xml:space="preserve"><value>Авторские права</value></data>
+  <data name="Meta.CoverAutomation" xml:space="preserve"><value>Обложка трека</value></data>
+  <data name="Meta.CoverLoadFailed" xml:space="preserve"><value>Не удалось загрузить обложку: {0}</value></data>
+  <data name="Meta.CoverTip" xml:space="preserve"><value>Обложка из аудиофайла или его папки</value></data>
+  <data name="Meta.Description" xml:space="preserve"><value>Описание</value></data>
+  <data name="Meta.DestinationAutomation" xml:space="preserve"><value>Место сохранения</value></data>
+  <data name="Meta.DestinationTip" xml:space="preserve"><value>Выберите, куда сохранять. Запись в файлы требует остановленного воспроизведения.</value></data>
+  <data name="Meta.DestinationUnavailable" xml:space="preserve"><value>Запись в файлы доступна для проверенных файлов FLAC, M4A, MP3, Ogg, Opus и классических PCM WAV.</value></data>
+  <data name="Meta.Directory" xml:space="preserve"><value>Каталог</value></data>
+  <data name="Meta.DiscNumber" xml:space="preserve"><value>Номер диска</value></data>
+  <data name="Meta.Duration" xml:space="preserve"><value>Длительность</value></data>
+  <data name="Meta.EmbeddedPictures" xml:space="preserve"><value>Встроенные изображения</value></data>
+  <data name="Meta.EpisodeNumber" xml:space="preserve"><value>Номер выпуска</value></data>
+  <data name="Meta.FileAndLibrary" xml:space="preserve"><value>Файл и медиатека</value></data>
+  <data name="Meta.FileModified" xml:space="preserve"><value>Файл изменён</value></data>
+  <data name="Meta.FileName" xml:space="preserve"><value>Имя файла</value></data>
+  <data name="Meta.FileSize" xml:space="preserve"><value>Размер файла</value></data>
+  <data name="Meta.Genre" xml:space="preserve"><value>Жанр</value></data>
+  <data name="Meta.Grouping" xml:space="preserve"><value>Группировка</value></data>
+  <data name="Meta.HintFile" xml:space="preserve"><value>Записывает изменённые теги и обновляет медиатеку. Резервная копия исходного файла сохраняется. Оценки остаются в медиатеке.</value></data>
+  <data name="Meta.HintLibrary" xml:space="preserve"><value>Изменения сохраняются в вашей медиатеке. Теги аудиофайла остаются без изменений.</value></data>
+  <data name="Meta.HintWav" xml:space="preserve"><value>WAV: только название, исполнитель, альбом, жанр, год, номер трека и комментарий. Резервная копия исходного файла сохраняется.</value></data>
+  <data name="Meta.Imported" xml:space="preserve"><value>Импортировано</value></data>
+  <data name="Meta.Keywords" xml:space="preserve"><value>Ключевые слова</value></data>
+  <data name="Meta.LastPlayed" xml:space="preserve"><value>Последнее воспроизведение</value></data>
+  <data name="Meta.LastSkipped" xml:space="preserve"><value>Последний пропуск</value></data>
+  <data name="Meta.LibraryOnly" xml:space="preserve"><value>Только медиатека</value></data>
+  <data name="Meta.LibrarySource" xml:space="preserve"><value>Источник медиатеки</value></data>
+  <data name="Meta.LicenseUri" xml:space="preserve"><value>URI лицензии</value></data>
+  <data name="Meta.Location" xml:space="preserve"><value>Расположение</value></data>
+  <data name="Meta.ManageBackups" xml:space="preserve"><value>Управление резервными копиями файла…</value></data>
+  <data name="Meta.OfTotal" xml:space="preserve"><value>из</value></data>
+  <data name="Meta.PickCover" xml:space="preserve"><value>Выбрать обложку трека</value></data>
+  <data name="Meta.PlayCount" xml:space="preserve"><value>Воспроизведений</value></data>
+  <data name="Meta.PngJpeg" xml:space="preserve"><value>Изображения PNG или JPEG</value></data>
+  <data name="Meta.Rating" xml:space="preserve"><value>Оценка</value></data>
+  <data name="Meta.RemoveCover" xml:space="preserve"><value>Удалить обложку</value></data>
+  <data name="Meta.RemoveCoverTip" xml:space="preserve"><value>Удаляет показанное встроенное изображение. Обложка из папки сохраняется.</value></data>
+  <data name="Meta.RestoreBackup" xml:space="preserve"><value>Восстановить копию…</value></data>
+  <data name="Meta.RestoreFailed" xml:space="preserve"><value>Не удалось восстановить: {0}</value></data>
+  <data name="Meta.RestorePrompt" xml:space="preserve"><value>Восстановить исходный файл из этой копии? Текущий файл будет сохранён как новая резервная копия. Несохранённые правки формы будут отброшены.</value></data>
+  <data name="Meta.RestoreTip" xml:space="preserve"><value>Восстанавливает теги по последнему сохранению файла. Текущие правки файла сначала копируются.</value></data>
+  <data name="Meta.SampleRate" xml:space="preserve"><value>Частота дискретизации</value></data>
+  <data name="Meta.SaveFailed" xml:space="preserve"><value>Не удалось сохранить: {0}</value></data>
+  <data name="Meta.SaveTip" xml:space="preserve"><value>Сохранить изменения (Ctrl+Enter)</value></data>
+  <data name="Meta.SavingFile" xml:space="preserve"><value>Сохранение тегов файла и медиатеки…</value></data>
+  <data name="Meta.SavingLibrary" xml:space="preserve"><value>Сохранение изменений медиатеки…</value></data>
+  <data name="Meta.SeasonNumber" xml:space="preserve"><value>Номер сезона</value></data>
+  <data name="Meta.ShowDetails" xml:space="preserve"><value>Сведения о передаче и выпуске</value></data>
+  <data name="Meta.ShowName" xml:space="preserve"><value>Название передачи</value></data>
+  <data name="Meta.SkipCount" xml:space="preserve"><value>Пропусков</value></data>
+  <data name="Meta.SortAlbum" xml:space="preserve"><value>Название альбома для сортировки</value></data>
+  <data name="Meta.SortAlbumArtist" xml:space="preserve"><value>Исполнитель альбома для сортировки</value></data>
+  <data name="Meta.SortArtist" xml:space="preserve"><value>Исполнитель трека для сортировки</value></data>
+  <data name="Meta.SortNote" xml:space="preserve"><value>Использует альтернативные имена при сортировке, не меняя отображаемые теги.</value></data>
+  <data name="Meta.SortTitle" xml:space="preserve"><value>Название трека для сортировки</value></data>
+  <data name="Meta.TabBasic" xml:space="preserve"><value>Основное</value></data>
+  <data name="Meta.TabExtra" xml:space="preserve"><value>Дополнительно</value></data>
+  <data name="Meta.TabProperties" xml:space="preserve"><value>Свойства</value></data>
+  <data name="Meta.TabSorting" xml:space="preserve"><value>Сортировка</value></data>
+  <data name="Meta.TagFormats" xml:space="preserve"><value>Форматы тегов</value></data>
+  <data name="Meta.Title" xml:space="preserve"><value>Свойства трека</value></data>
+  <data name="Meta.TotalAutomation" xml:space="preserve"><value>Всего {0}</value></data>
+  <data name="Meta.TrackArtist" xml:space="preserve"><value>Исполнитель трека</value></data>
+  <data name="Meta.TrackNumber" xml:space="preserve"><value>Номер трека</value></data>
+  <data name="Meta.TrackTitle" xml:space="preserve"><value>Название трека</value></data>
+  <data name="Meta.Unrated" xml:space="preserve"><value>Без оценки</value></data>
+  <data name="Meta.Year" xml:space="preserve"><value>Год</value></data>
+  <data name="Picker.AddMusicFolder" xml:space="preserve"><value>Добавить папку с музыкой</value></data>
+  <data name="Picker.ExportPlaylist" xml:space="preserve"><value>Экспорт плейлиста</value></data>
+  <data name="Picker.ImportFolder" xml:space="preserve"><value>Импорт папки с музыкой</value></data>
+  <data name="Picker.OpenFiles" xml:space="preserve"><value>Открыть музыкальные файлы</value></data>
+  <data name="Picker.MusicFiles" xml:space="preserve"><value>Музыкальные файлы</value></data>
+  <data name="Picker.ImportPlaylist" xml:space="preserve"><value>Импорт плейлиста</value></data>
+  <data name="Picker.ImportStations" xml:space="preserve"><value>Импорт радиостанций</value></data>
+  <data name="Picker.LocalPlaylists" xml:space="preserve"><value>Локальные плейлисты</value></data>
+  <data name="Picker.M3u8Playlist" xml:space="preserve"><value>Плейлист M3U в UTF-8</value></data>
+  <data name="Picker.PluginArchive" xml:space="preserve"><value>Архив плагина</value></data>
+  <data name="Picker.PluginFolder" xml:space="preserve"><value>Выберите папку плагина</value></data>
+  <data name="Picker.PluginZip" xml:space="preserve"><value>Выберите .zip плагина</value></data>
+  <data name="Picker.PodcastFolder" xml:space="preserve"><value>Выберите папку для загрузки подкастов</value></data>
+  <data name="Picker.StationPlaylists" xml:space="preserve"><value>Плейлисты станций</value></data>
+  <data name="Playback.EndOfQueue" xml:space="preserve"><value>Конец очереди.</value></data>
+  <data name="Playback.Mute" xml:space="preserve"><value>Выключить звук</value></data>
+  <data name="Playback.Nothing" xml:space="preserve"><value>Ничего не воспроизводится</value></data>
+  <data name="Playback.OperationFailed" xml:space="preserve"><value>Операция воспроизведения не удалась: {0}</value></data>
+  <data name="Playback.Pause" xml:space="preserve"><value>Пауза</value></data>
+  <data name="Playback.Paused" xml:space="preserve"><value>Пауза</value></data>
+  <data name="Playback.Play" xml:space="preserve"><value>Воспроизвести</value></data>
+  <data name="Playback.Playing" xml:space="preserve"><value>Воспроизведение</value></data>
+  <data name="Playback.RadioEnded" xml:space="preserve"><value>Радиопоток завершился. Нажмите «Воспроизвести», чтобы подключиться снова.</value></data>
+  <data name="Playback.RadioStopped" xml:space="preserve"><value>Радио остановлено.</value></data>
+  <data name="Playback.RepeatAll" xml:space="preserve"><value>Повторять всё</value></data>
+  <data name="Playback.RepeatOff" xml:space="preserve"><value>Повтор выключен</value></data>
+  <data name="Playback.RepeatOne" xml:space="preserve"><value>Повторять один</value></data>
+  <data name="Playback.SaveFailed" xml:space="preserve"><value>Не удалось сохранить параметры воспроизведения: {0}</value></data>
+  <data name="Playback.ShuffleOff" xml:space="preserve"><value>Перемешивание выключено</value></data>
+  <data name="Playback.ShuffleOn" xml:space="preserve"><value>Перемешивание включено</value></data>
+  <data name="Playback.StopRadio" xml:space="preserve"><value>Остановить радио</value></data>
+  <data name="Playback.Unmute" xml:space="preserve"><value>Включить звук</value></data>
+  <data name="Playlist.Added" xml:space="preserve"><value>{0} добавлено в {1}.</value></data>
+  <data name="Playlist.Created" xml:space="preserve"><value>Плейлист {0} создан.</value></data>
+  <data name="Playlist.CreatedWith" xml:space="preserve"><value>Плейлист {0} создан, добавлено: {1}.</value></data>
+  <data name="Playlist.Deleted" xml:space="preserve"><value>Плейлист {0} удалён. Ваши музыкальные файлы не удалены.</value></data>
+  <data name="Playlist.Moved" xml:space="preserve"><value>{0} перемещено.</value></data>
+  <data name="Playlist.MovedDown" xml:space="preserve"><value>{0} перемещено вниз.</value></data>
+  <data name="Playlist.MovedUp" xml:space="preserve"><value>{0} перемещено вверх.</value></data>
+  <data name="Playlist.OrderUpdated" xml:space="preserve"><value>Порядок плейлиста обновлён.</value></data>
+  <data name="Playlist.RemovedFrom" xml:space="preserve"><value>{0} убрано из {1}.</value></data>
+  <data name="Playlist.Renamed" xml:space="preserve"><value>Плейлист переименован в {0}.</value></data>
+  <data name="PlaylistFile.Exported" xml:space="preserve"><value>Экспортировано треков: {0} в {1}.</value></data>
+  <data name="PlaylistFile.Imported" xml:space="preserve"><value>Импортирован «{0}»: треков — {1}; пропущено записей — {2}; дубликатов — {3}.</value></data>
+  <data name="PlaylistFile.ImportedNoRefresh" xml:space="preserve"><value>Плейлист «{0}» импортирован, но представление не удалось обновить. Откройте медиатеку заново. {1}</value></data>
+  <data name="Plugins.EnableAutomation" xml:space="preserve"><value>Включить {0}</value></data>
+  <data name="Plugins.Enabled" xml:space="preserve"><value>Включён</value></data>
+  <data name="Plugins.InstallAccept" xml:space="preserve"><value>Установить</value></data>
+  <data name="Plugins.InstallFailed" xml:space="preserve"><value>Плагин не установлен: {0}</value></data>
+  <data name="Plugins.InstallFolder" xml:space="preserve"><value>Установить из папки…</value></data>
+  <data name="Plugins.InstallTitle" xml:space="preserve"><value>Установить плагин</value></data>
+  <data name="Plugins.InstallWarning" xml:space="preserve"><value>Плагин — это программа, которая работает внутри Aibell с вашими правами. Она может читать ваши файлы и пользоваться вашей сетью.
+
+Устанавливайте плагины только из надёжных источников.
+
+{0}</value></data>
+  <data name="Plugins.InstallZip" xml:space="preserve"><value>Установить из .zip…</value></data>
+  <data name="Plugins.Installed" xml:space="preserve"><value>{0} установлен. Он запустится при перезапуске Aibell.</value></data>
+  <data name="Plugins.Intro" xml:space="preserve"><value>Плагины добавляют дополнительные возможности. Они работают с тем же доступом к вашим файлам и сети, что и сам Aibell, поэтому устанавливайте только доверенные плагины. Изменения вступают в силу после перезапуска Aibell.</value></data>
+  <data name="Plugins.None" xml:space="preserve"><value>Плагины не установлены.</value></data>
+  <data name="Plugins.OriginBundled" xml:space="preserve"><value>Входит в состав Aibell. </value></data>
+  <data name="Plugins.OriginUser" xml:space="preserve"><value>Установлен вами. </value></data>
+  <data name="Plugins.Saved" xml:space="preserve"><value>Сохранено. Изменение вступит в силу при перезапуске Aibell.</value></data>
+  <data name="Plugins.Status.Active" xml:space="preserve"><value>Активен.</value></data>
+  <data name="Plugins.Status.Failed" xml:space="preserve"><value>Не удалось загрузить: {0}</value></data>
+  <data name="Plugins.Status.Off" xml:space="preserve"><value>Выключен.</value></data>
+  <data name="Plugins.Status.Removal" xml:space="preserve"><value>Будет удалён при перезапуске Aibell.</value></data>
+  <data name="Plugins.Status.WillStart" xml:space="preserve"><value>Запустится при перезапуске Aibell.</value></data>
+  <data name="Plugins.Status.WillStop" xml:space="preserve"><value>Будет выключен при перезапуске Aibell.</value></data>
+  <data name="Plugins.Uninstall" xml:space="preserve"><value>Удалить…</value></data>
+  <data name="Plugins.UninstallAccept" xml:space="preserve"><value>Удалить</value></data>
+  <data name="Plugins.UninstallAutomation" xml:space="preserve"><value>Удалить {0}</value></data>
+  <data name="Plugins.UninstallPrompt" xml:space="preserve"><value>Удалить «{0}»? Он перестанет работать, а его файлы будут удалены при следующем запуске Aibell.</value></data>
+  <data name="Plugins.UninstallScheduled" xml:space="preserve"><value>{0} будет удалён при перезапуске Aibell.</value></data>
+  <data name="Plugins.UninstallTitle" xml:space="preserve"><value>Удалить плагин</value></data>
+  <data name="Pod.AlreadySubscribed" xml:space="preserve"><value>Вы уже подписаны на {0}.</value></data>
+  <data name="Pod.BadUrl" xml:space="preserve"><value>Используйте полный URL ленты HTTP или HTTPS без встроенных учётных данных и фрагмента.</value></data>
+  <data name="Pod.CachedFailed" xml:space="preserve"><value>Не удалось прочитать кэшированные выпуски: {0}</value></data>
+  <data name="Pod.CatalogFailed" xml:space="preserve"><value>Не удалось прочитать каталог подкастов: {0}</value></data>
+  <data name="Pod.Checked" xml:space="preserve"><value>Проверено подкастов: {0} из {1}. {2}{3}</value></data>
+  <data name="Pod.ClearSearch" xml:space="preserve"><value>Очистить поиск по выпускам</value></data>
+  <data name="Pod.ClearSearchTip" xml:space="preserve"><value>Очистить поиск (Escape)</value></data>
+  <data name="Pod.CoverAutomation" xml:space="preserve"><value>Обложка выпуска</value></data>
+  <data name="Pod.DeleteAccept" xml:space="preserve"><value>Удалить файл</value></data>
+  <data name="Pod.DeleteCancelled" xml:space="preserve"><value>Удаление отменено для {0}.</value></data>
+  <data name="Pod.DeleteFailed" xml:space="preserve"><value>Не удалось удалить загрузку: {0}</value></data>
+  <data name="Pod.DeleteFile" xml:space="preserve"><value>Удалить файл…</value></data>
+  <data name="Pod.DeleteFileAutomation" xml:space="preserve"><value>Удалить загруженный файл</value></data>
+  <data name="Pod.DeleteFileTip" xml:space="preserve"><value>Удаляет только загруженный файл. Выпуск, его звёзды и подписка сохраняются</value></data>
+  <data name="Pod.DeletePrompt" xml:space="preserve"><value>Удалить загруженный файл выпуска «{0}»?
+
+Выпуск, его звёзды и ваша подписка остаются. Сохранённая позиция прослушивания сбрасывается, а выпуск можно загрузить снова в любое время.</value></data>
+  <data name="Pod.DeleteTitle" xml:space="preserve"><value>Удалить загруженный файл</value></data>
+  <data name="Pod.DeleteUnavailable" xml:space="preserve"><value>Удаление загрузок недоступно.</value></data>
+  <data name="Pod.Deleted" xml:space="preserve"><value>Загрузка выпуска {0} удалена. Выпуск и его оценка сохранены; выберите «Загрузить», чтобы получить его снова.</value></data>
+  <data name="Pod.Deleting" xml:space="preserve"><value>Удаление загрузки выпуска {0}…</value></data>
+  <data name="Pod.Download" xml:space="preserve"><value>Загрузить</value></data>
+  <data name="Pod.DownloadCancelled" xml:space="preserve"><value>Загрузка отменена: {0}. Частичный файл не сохранён.</value></data>
+  <data name="Pod.DownloadFailed" xml:space="preserve"><value>Загрузка не удалась: {0}. {1}</value></data>
+  <data name="Pod.DownloadNew" xml:space="preserve"><value>Загрузить новые</value></data>
+  <data name="Pod.DownloadNewTip" xml:space="preserve"><value>Ставит в очередь самые новые выпуски, найденные при обновлении (до десяти за раз)</value></data>
+  <data name="Pod.DownloadProgress" xml:space="preserve"><value>Ход загрузки</value></data>
+  <data name="Pod.DownloadedDone" xml:space="preserve"><value>{0} загружен. Выберите «Воспроизвести», чтобы послушать.</value></data>
+  <data name="Pod.DownloadedOnly" xml:space="preserve"><value>Только загруженные</value></data>
+  <data name="Pod.DownloadedOnlyAutomation" xml:space="preserve"><value>Показывать только загруженные выпуски</value></data>
+  <data name="Pod.DownloadedOnlyTip" xml:space="preserve"><value>Скрывает выпуски, которые не загружены</value></data>
+  <data name="Pod.Downloading" xml:space="preserve"><value>Загрузка {0}…</value></data>
+  <data name="Pod.EnterFeed" xml:space="preserve"><value>Введите URL ленты подкаста, чтобы подписаться. Ленты проверяются только при обновлении или при включённой ежечасной проверке («Настройки»).</value></data>
+  <data name="Pod.EpisodeCount.Few" xml:space="preserve"><value>{0} выпуска</value></data>
+  <data name="Pod.EpisodeCount.Many" xml:space="preserve"><value>{0} выпусков</value></data>
+  <data name="Pod.EpisodeCount.One" xml:space="preserve"><value>{0} выпуск</value></data>
+  <data name="Pod.EpisodeCount.Other" xml:space="preserve"><value>{0} выпуска</value></data>
+  <data name="Pod.EpisodeCountFiltered" xml:space="preserve"><value>Выпусков: {0} из {1}</value></data>
+  <data name="Pod.Episodes" xml:space="preserve"><value>Выпуски</value></data>
+  <data name="Pod.FailedSuffix" xml:space="preserve"><value> Не удалось ({0}): {1}.</value></data>
+  <data name="Pod.FeedAutomation" xml:space="preserve"><value>URL ленты подкаста</value></data>
+  <data name="Pod.FeedPlaceholder" xml:space="preserve"><value>URL ленты подкаста (https://…/feed.xml)</value></data>
+  <data name="Pod.Fetching" xml:space="preserve"><value>Получение ленты…</value></data>
+  <data name="Pod.FileMissing" xml:space="preserve"><value>Загруженный файл отсутствует. Выберите «Повторить», чтобы загрузить его снова.</value></data>
+  <data name="Pod.HideNotes" xml:space="preserve"><value>Скрыть заметки</value></data>
+  <data name="Pod.InPlayer" xml:space="preserve"><value>Этот выпуск загружен в главный плеер. Остановите его там, затем удалите загрузку.</value></data>
+  <data name="Pod.Issues.Few" xml:space="preserve"><value> Пропущено записей ленты: {0}.</value></data>
+  <data name="Pod.Issues.Many" xml:space="preserve"><value> Пропущено записей ленты: {0}.</value></data>
+  <data name="Pod.Issues.One" xml:space="preserve"><value> Пропущена 1 запись ленты.</value></data>
+  <data name="Pod.Issues.Other" xml:space="preserve"><value> Пропущено записей ленты: {0}.</value></data>
+  <data name="Pod.KeptFiles" xml:space="preserve"><value> Загруженных файлов, оставленных на диске: {0}.</value></data>
+  <data name="Pod.MarkAllSeen" xml:space="preserve"><value>Отметить всё просмотренным</value></data>
+  <data name="Pod.MarkAllSeenTip" xml:space="preserve"><value>Снимает отметку «Новый» со всех выпусков этого подкаста</value></data>
+  <data name="Pod.MarkedSeen" xml:space="preserve"><value>Все выпуски {0} отмечены просмотренными.</value></data>
+  <data name="Pod.NeverRefreshed" xml:space="preserve"><value>Ни разу не обновлялся</value></data>
+  <data name="Pod.New" xml:space="preserve"><value>НОВЫЙ</value></data>
+  <data name="Pod.NewAutomation" xml:space="preserve"><value>Новый выпуск</value></data>
+  <data name="Pod.NewEpisodes.Few" xml:space="preserve"><value>{0} новых выпуска.</value></data>
+  <data name="Pod.NewEpisodes.Many" xml:space="preserve"><value>{0} новых выпусков.</value></data>
+  <data name="Pod.NewEpisodes.One" xml:space="preserve"><value>{0} новый выпуск.</value></data>
+  <data name="Pod.NewEpisodes.Other" xml:space="preserve"><value>{0} нового выпуска.</value></data>
+  <data name="Pod.NewSuffix" xml:space="preserve"><value> · новых: {0}</value></data>
+  <data name="Pod.NewUpdateFailed" xml:space="preserve"><value>Не удалось обновить новые выпуски: {0}</value></data>
+  <data name="Pod.NoChanges" xml:space="preserve"><value>В {0} нет изменений.</value></data>
+  <data name="Pod.NoCoverAutomation" xml:space="preserve"><value>Обложка недоступна</value></data>
+  <data name="Pod.NoDownloadedMatch" xml:space="preserve"><value>Ни один загруженный выпуск этой передачи не соответствует «{0}».</value></data>
+  <data name="Pod.NoEpisodes" xml:space="preserve"><value>Кэшированных выпусков нет. Подпишитесь на подкаст или выберите «Обновить».</value></data>
+  <data name="Pod.NoFileToDelete" xml:space="preserve"><value>У этого выпуска нет загруженного файла для удаления.</value></data>
+  <data name="Pod.NoMatch" xml:space="preserve"><value>Ни один выпуск этой передачи не соответствует «{0}». Очистите поиск, чтобы увидеть все ({1}).</value></data>
+  <data name="Pod.NoNewEpisodes" xml:space="preserve"><value>Новых выпусков нет.</value></data>
+  <data name="Pod.NoNewToDownload" xml:space="preserve"><value>Нет новых выпусков для загрузки.</value></data>
+  <data name="Pod.NoPlayback" xml:space="preserve"><value>Воспроизведение не подключено к главному окну.</value></data>
+  <data name="Pod.NoProgress" xml:space="preserve"><value>Нет прогресса</value></data>
+  <data name="Pod.NoSavedPosition" xml:space="preserve"><value>Нет сохранённой позиции</value></data>
+  <data name="Pod.NoSubscriptions" xml:space="preserve"><value>Подписок пока нет</value></data>
+  <data name="Pod.NoneDownloaded" xml:space="preserve"><value>Ни один выпуск этой передачи ещё не загружен.</value></data>
+  <data name="Pod.NoneSelected" xml:space="preserve"><value>Подкаст не выбран</value></data>
+  <data name="Pod.NotesAutomation" xml:space="preserve"><value>Заметки о передаче для этого выпуска</value></data>
+  <data name="Pod.NotesText" xml:space="preserve"><value>Заметки к выпуску</value></data>
+  <data name="Pod.NotesTip" xml:space="preserve"><value>Показывает или скрывает описание этого выпуска</value></data>
+  <data name="Pod.Op.Refresh" xml:space="preserve"><value>Обновление</value></data>
+  <data name="Pod.Op.RefreshAll" xml:space="preserve"><value>Обновление всех</value></data>
+  <data name="Pod.Op.Remove" xml:space="preserve"><value>Удаление</value></data>
+  <data name="Pod.Op.Subscribe" xml:space="preserve"><value>Подписка</value></data>
+  <data name="Pod.OpCancelled" xml:space="preserve"><value>Отменено: {0}.</value></data>
+  <data name="Pod.OpFailed" xml:space="preserve"><value>Не удалось ({0}): {1}</value></data>
+  <data name="Pod.Opening" xml:space="preserve"><value>Открытие {0}…</value></data>
+  <data name="Pod.PauseAutomation" xml:space="preserve"><value>Приостановить выпуск</value></data>
+  <data name="Pod.PauseFailed" xml:space="preserve"><value>Не удалось приостановить: {0}</value></data>
+  <data name="Pod.PauseTip" xml:space="preserve"><value>Приостанавливает плеер; прогресс сохраняется</value></data>
+  <data name="Pod.PlayFailed" xml:space="preserve"><value>Не удалось воспроизвести выпуск: {0}</value></data>
+  <data name="Pod.PlaybackCancelled" xml:space="preserve"><value>Воспроизведение отменено или остановлено.</value></data>
+  <data name="Pod.PositionCancelled" xml:space="preserve"><value>Сохранение позиции отменено.</value></data>
+  <data name="Pod.PositionFailed" xml:space="preserve"><value>Не удалось сохранить позицию: {0}</value></data>
+  <data name="Pod.ProgressPercent" xml:space="preserve"><value>Прогресс: {0} процентов</value></data>
+  <data name="Pod.QueuedNew.Few" xml:space="preserve"><value>В очередь поставлено {0} новых выпуска.</value></data>
+  <data name="Pod.QueuedNew.Many" xml:space="preserve"><value>В очередь поставлено {0} новых выпусков.</value></data>
+  <data name="Pod.QueuedNew.One" xml:space="preserve"><value>В очередь поставлен {0} новый выпуск.</value></data>
+  <data name="Pod.QueuedNew.Other" xml:space="preserve"><value>В очередь поставлено {0} нового выпуска.</value></data>
+  <data name="Pod.QueuedPartial" xml:space="preserve"><value>В очередь поставлено {0} из {1} новых выпусков. Выберите «Загрузить новые» ещё раз, чтобы добавить остальные.</value></data>
+  <data name="Pod.QueuedWaiting" xml:space="preserve"><value>В очереди {0}: ожидает {1}.</value></data>
+  <data name="Pod.RateTip" xml:space="preserve"><value>Оценить этот выпуск (клавиши 0–5 при выбранной строке; 0 сбрасывает)</value></data>
+  <data name="Pod.RatingCleared" xml:space="preserve"><value>Оценка выпуска {0} сброшена.</value></data>
+  <data name="Pod.RatingFailed" xml:space="preserve"><value>Не удалось сохранить оценку: {0}</value></data>
+  <data name="Pod.RatingSet.Few" xml:space="preserve"><value>{1}: оценка — {0} звезды.</value></data>
+  <data name="Pod.RatingSet.Many" xml:space="preserve"><value>{1}: оценка — {0} звёзд.</value></data>
+  <data name="Pod.RatingSet.One" xml:space="preserve"><value>{1}: оценка — {0} звезда.</value></data>
+  <data name="Pod.RatingSet.Other" xml:space="preserve"><value>{1}: оценка — {0} звезды.</value></data>
+  <data name="Pod.RatingStars" xml:space="preserve"><value>Оценка: {0} из 5 звёзд</value></data>
+  <data name="Pod.RatingUnrated" xml:space="preserve"><value>Оценка: нет</value></data>
+  <data name="Pod.RatingsUnavailable" xml:space="preserve"><value>Оценки выпусков недоступны.</value></data>
+  <data name="Pod.Refresh" xml:space="preserve"><value>Обновить</value></data>
+  <data name="Pod.RefreshAll" xml:space="preserve"><value>Обновить все</value></data>
+  <data name="Pod.RefreshAllTip" xml:space="preserve"><value>Проверяет все подписки на новые выпуски</value></data>
+  <data name="Pod.RefreshTip" xml:space="preserve"><value>Запрашивает у сервера новые выпуски (используются кэшированные валидаторы)</value></data>
+  <data name="Pod.Refreshed" xml:space="preserve"><value>{0} обновлён: новых — {1}, кэшированных выпусков — {2}.{3}</value></data>
+  <data name="Pod.Refreshing" xml:space="preserve"><value>Обновление {0}…</value></data>
+  <data name="Pod.RefreshingOf" xml:space="preserve"><value>Обновление {0} из {1}: {2}…</value></data>
+  <data name="Pod.RemovePrompt" xml:space="preserve"><value>Забыть эту подписку и её кэшированный список выпусков?
+Загруженные файлы выпусков остаются на диске.
+{0}</value></data>
+  <data name="Pod.RemoveTip" xml:space="preserve"><value>Забывает эту подписку. Загруженные файлы остаются на диске</value></data>
+  <data name="Pod.RemoveTitle" xml:space="preserve"><value>Удалить подкаст</value></data>
+  <data name="Pod.Removed" xml:space="preserve"><value>{0} удалён.{1}</value></data>
+  <data name="Pod.RemovedFromQueue" xml:space="preserve"><value>{0} убран из очереди загрузки.</value></data>
+  <data name="Pod.Resume" xml:space="preserve"><value>Продолжить</value></data>
+  <data name="Pod.ResumeSelected" xml:space="preserve"><value>Продолжить выбранный</value></data>
+  <data name="Pod.ResumeSelectedTip" xml:space="preserve"><value>Продолжает выбранный загруженный выпуск с сохранённой позиции</value></data>
+  <data name="Pod.ResumedFromSaved" xml:space="preserve"><value>Продолжение {0} с сохранённой позиции.</value></data>
+  <data name="Pod.Resuming" xml:space="preserve"><value>Продолжение {0}…</value></data>
+  <data name="Pod.Retry" xml:space="preserve"><value>Повторить</value></data>
+  <data name="Pod.SavePosition" xml:space="preserve"><value>Сохранить позицию</value></data>
+  <data name="Pod.SavePositionTip" xml:space="preserve"><value>Сохраняет сейчас, пока главный плеер воспроизводит или приостановил этот выбранный выпуск</value></data>
+  <data name="Pod.SavedPosition" xml:space="preserve"><value>Сохранено {0} из {1}</value></data>
+  <data name="Pod.SavedPositionDone" xml:space="preserve"><value>Позиция сохранена для {0}.</value></data>
+  <data name="Pod.SavingPosition" xml:space="preserve"><value>Сохранение позиции для {0}…</value></data>
+  <data name="Pod.SearchAutomation" xml:space="preserve"><value>Поиск по названиям выпусков</value></data>
+  <data name="Pod.SearchPlaceholder" xml:space="preserve"><value>Поиск по названиям выпусков этой передачи</value></data>
+  <data name="Pod.SentFromStart" xml:space="preserve"><value>{0} отправлен в плеер с начала.</value></data>
+  <data name="Pod.ShowAll" xml:space="preserve"><value>Показать все выпуски</value></data>
+  <data name="Pod.ShowNotes" xml:space="preserve"><value>Показать заметки</value></data>
+  <data name="Pod.SizeOf" xml:space="preserve"><value>{0} из {1} · {2}%</value></data>
+  <data name="Pod.Speed" xml:space="preserve"><value>Скорость</value></data>
+  <data name="Pod.SpeedAutomation" xml:space="preserve"><value>Скорость воспроизведения подкаста</value></data>
+  <data name="Pod.SpeedFailed" xml:space="preserve"><value>Не удалось изменить скорость: {0}</value></data>
+  <data name="Pod.SpeedSet" xml:space="preserve"><value>Скорость подкаста: {0}.</value></data>
+  <data name="Pod.SpeedTip" xml:space="preserve"><value>Скорость воспроизведения выпусков подкастов. Музыка, радио и аудиокниги всегда воспроизводятся на скорости 1x</value></data>
+  <data name="Pod.StartOver" xml:space="preserve"><value>Начать сначала</value></data>
+  <data name="Pod.StartOverTip" xml:space="preserve"><value>Воспроизводит с начала, а не с сохранённой позиции</value></data>
+  <data name="Pod.Starting" xml:space="preserve"><value>Запуск…</value></data>
+  <data name="Pod.State.Cancelled" xml:space="preserve"><value>Загрузка отменена</value></data>
+  <data name="Pod.State.Deleting" xml:space="preserve"><value>Удаление загруженного файла…</value></data>
+  <data name="Pod.State.Downloaded" xml:space="preserve"><value>Загружен</value></data>
+  <data name="Pod.State.Downloading" xml:space="preserve"><value>Загрузка… {0}</value></data>
+  <data name="Pod.State.Failed" xml:space="preserve"><value>Загрузка не удалась: {0}</value></data>
+  <data name="Pod.State.Missing" xml:space="preserve"><value>Загруженный файл отсутствует</value></data>
+  <data name="Pod.State.NotDownloaded" xml:space="preserve"><value>Не загружен</value></data>
+  <data name="Pod.State.Queued" xml:space="preserve"><value>Ожидание в очереди загрузки…</value></data>
+  <data name="Pod.Subscribe" xml:space="preserve"><value>Подписаться</value></data>
+  <data name="Pod.SubscribeTip" xml:space="preserve"><value>Однократно получает эту ленту и сохраняет её в вашей медиатеке</value></data>
+  <data name="Pod.Subscribed" xml:space="preserve"><value>Подписка на {0}: выпусков — {1}.{2}</value></data>
+  <data name="Pod.SubscribedList" xml:space="preserve"><value>Подписки на подкасты</value></data>
+  <data name="Pod.Updated" xml:space="preserve"><value>{0} обновлён</value></data>
+  <data name="Pod.WaitPosition" xml:space="preserve"><value>Дождитесь завершения текущего действия воспроизведения или позиции.</value></data>
+  <data name="Podcasts.ProgressSaveFailed" xml:space="preserve"><value>Не удалось сохранить прогресс подкаста: {0}</value></data>
+  <data name="Prefs.AddFolder" xml:space="preserve"><value>Добавить папку…</value></data>
+  <data name="Prefs.Appearance" xml:space="preserve"><value>Оформление</value></data>
+  <data name="Prefs.AutoRefresh" xml:space="preserve"><value>Проверять новые выпуски каждый час, пока открыт Aibell</value></data>
+  <data name="Prefs.AutoRefreshAutomation" xml:space="preserve"><value>Автоматически проверять новые выпуски подкастов</value></data>
+  <data name="Prefs.AutoRefreshNote" xml:space="preserve"><value>Проверки используют кэшированные валидаторы ленты, поэтому неизменившиеся передачи стоят крошечного запроса. Ничего не загружается автоматически.</value></data>
+  <data name="Prefs.Browse" xml:space="preserve"><value>Обзор…</value></data>
+  <data name="Prefs.BrowseAutomation" xml:space="preserve"><value>Выбрать папку загрузки подкастов</value></data>
+  <data name="Prefs.DownloadFolder" xml:space="preserve"><value>Папка загрузки</value></data>
+  <data name="Prefs.FolderChangesNow" xml:space="preserve"><value>Изменения папок вступают в силу немедленно.</value></data>
+  <data name="Prefs.FolderChecked" xml:space="preserve"><value>Папка проверяется при нажатии «Сохранить». Если её нельзя использовать, остаётся текущая папка.</value></data>
+  <data name="Prefs.FoldersNote" xml:space="preserve"><value>Папки с музыкой отслеживаются на предмет изменений. Удаление папки убирает её треки из медиатеки и сохраняет аудиофайлы.</value></data>
+  <data name="Prefs.GeneralNote" xml:space="preserve"><value>Столбцы треков и их ширина сохраняются при изменении в медиатеке. Запись тегов в файлы всегда требует выбора «Файл и медиатека» в редакторе трека.</value></data>
+  <data name="Prefs.Mute" xml:space="preserve"><value>Выключить звук</value></data>
+  <data name="Prefs.Notify" xml:space="preserve"><value>Уведомлять при смене воспроизводимого трека</value></data>
+  <data name="Prefs.NotifyTip" xml:space="preserve"><value>Необязательные уведомления рабочего стола. Служба рабочего стола может их подавлять.</value></data>
+  <data name="Prefs.NotifyUnavailable" xml:space="preserve"><value>Уведомления рабочего стола недоступны на этой платформе.</value></data>
+  <data name="Prefs.OnlineExplain" xml:space="preserve"><value>По умолчанию выключено. Если включено, нажатие «Найти» для аудио-CD, «Об исполнителе» или «Получить обложку» отправляет оглавление диска либо название альбома и имя исполнителя в службу плагина (MusicBrainz). Ничего не отправляется автоматически.</value></data>
+  <data name="Prefs.OnlineLookup" xml:space="preserve"><value>Разрешить онлайн-поиск сведений об альбомах и исполнителях</value></data>
+  <data name="Prefs.OnlineLookupAutomation" xml:space="preserve"><value>Разрешить онлайн-поиск альбомов и исполнителей</value></data>
+  <data name="Prefs.PodcastFolderAutomation" xml:space="preserve"><value>Папка загрузки подкастов</value></data>
+  <data name="Prefs.PodcastFolderNote" xml:space="preserve"><value>Новые загрузки подкастов сохраняются в этой папке. Уже загруженные выпуски остаются на месте и по-прежнему доступны для воспроизведения и удаления; ничего не перемещается и не удаляется.</value></data>
+  <data name="Prefs.RemoveFolderPrompt" xml:space="preserve"><value>Убрать эту папку и её треки из медиатеки? Аудиофайлы будут сохранены.
+{0}</value></data>
+  <data name="Prefs.Repeat" xml:space="preserve"><value>Повтор</value></data>
+  <data name="Prefs.RepeatAll" xml:space="preserve"><value>Все треки</value></data>
+  <data name="Prefs.RepeatOff" xml:space="preserve"><value>Выкл.</value></data>
+  <data name="Prefs.RepeatOne" xml:space="preserve"><value>Один трек</value></data>
+  <data name="Prefs.ReviewEdits" xml:space="preserve"><value>Проверить прерванные правки…</value></data>
+  <data name="Prefs.Saved" xml:space="preserve"><value>Настройки сохранены.</value></data>
+  <data name="Prefs.SavedFolder" xml:space="preserve"><value>Настройки сохранены. Новые загрузки подкастов будут сохраняться в {0}; существующие загрузки остаются на месте.</value></data>
+  <data name="Prefs.ShowQueue" xml:space="preserve"><value>Показать очередь воспроизведения</value></data>
+  <data name="Prefs.Shuffle" xml:space="preserve"><value>Перемешивать треки</value></data>
+  <data name="Prefs.Tab.Folders" xml:space="preserve"><value>Папки медиатеки</value></data>
+  <data name="Prefs.Tab.General" xml:space="preserve"><value>Общие</value></data>
+  <data name="Prefs.Tab.Online" xml:space="preserve"><value>Онлайн</value></data>
+  <data name="Prefs.Tab.Playback" xml:space="preserve"><value>Воспроизведение</value></data>
+  <data name="Prefs.Tab.Plugins" xml:space="preserve"><value>Плагины</value></data>
+  <data name="Prefs.Tab.Podcasts" xml:space="preserve"><value>Подкасты</value></data>
+  <data name="Prefs.ThemeDark" xml:space="preserve"><value>Тёмная</value></data>
+  <data name="Prefs.ThemeLight" xml:space="preserve"><value>Светлая</value></data>
+  <data name="Prefs.ThemeSystem" xml:space="preserve"><value>Системная</value></data>
+  <data name="Prefs.Title" xml:space="preserve"><value>Настройки</value></data>
+  <data name="Prefs.UseDefault" xml:space="preserve"><value>По умолчанию</value></data>
+  <data name="Prefs.Volume" xml:space="preserve"><value>Громкость</value></data>
+  <data name="Prefs.VolumeAutomation" xml:space="preserve"><value>Громкость воспроизведения в процентах</value></data>
+  <data name="Queue.Cleared" xml:space="preserve"><value>Очередь воспроизведения очищена.</value></data>
+  <data name="Queue.DropHint" xml:space="preserve"><value>Перетащите музыкальные файлы, чтобы добавить их в очередь воспроизведения.</value></data>
+  <data name="Queue.Gone" xml:space="preserve"><value>Файл из очереди больше недоступен.</value></data>
+  <data name="Queue.Header" xml:space="preserve"><value>Очередь воспроизведения ({0})</value></data>
+  <data name="Queue.NoFolder" xml:space="preserve"><value>Не удалось открыть папку файла.</value></data>
+  <data name="Queue.QueuedFailures" xml:space="preserve"><value>В очередь поставлено треков: {0}; не удалось прочитать файлов: {1}.</value></data>
+  <data name="Queue.QueuedLast.Few" xml:space="preserve"><value>В конец очереди поставлено {0} трека.</value></data>
+  <data name="Queue.QueuedLast.Many" xml:space="preserve"><value>В конец очереди поставлено {0} треков.</value></data>
+  <data name="Queue.QueuedLast.One" xml:space="preserve"><value>В конец очереди поставлен {0} трек.</value></data>
+  <data name="Queue.QueuedLast.Other" xml:space="preserve"><value>В конец очереди поставлено {0} трека.</value></data>
+  <data name="Queue.QueuedNext.Few" xml:space="preserve"><value>Следующими в очередь поставлено {0} трека.</value></data>
+  <data name="Queue.QueuedNext.Many" xml:space="preserve"><value>Следующими в очередь поставлено {0} треков.</value></data>
+  <data name="Queue.QueuedNext.One" xml:space="preserve"><value>Следующим в очередь поставлен {0} трек.</value></data>
+  <data name="Queue.QueuedNext.Other" xml:space="preserve"><value>Следующими в очередь поставлено {0} трека.</value></data>
+  <data name="Queue.ShowFileFailed" xml:space="preserve"><value>Не удалось показать файл: {0}</value></data>
+  <data name="Radio.Connecting" xml:space="preserve"><value>Подключение к {0}…</value></data>
+  <data name="Radio.Failed" xml:space="preserve"><value>Воспроизведение радио не удалось: {0}</value></data>
+  <data name="Radio.Playing" xml:space="preserve"><value>Воспроизводится радио: {0}.</value></data>
+  <data name="Radio.RemovePrompt" xml:space="preserve"><value>Убрать эту сохранённую станцию? Если она воспроизводится, она остановится.
+{0}</value></data>
+  <data name="Radio.RemoveTitle" xml:space="preserve"><value>Убрать радиостанцию</value></data>
+  <data name="Radio.Removed" xml:space="preserve"><value>Станция убрана. Музыкальные файлы и ожидающие запросы очереди сохранены.</value></data>
+  <data name="Radio.AllStations" xml:space="preserve"><value>Все станции</value></data>
+  <data name="Radio.Genres" xml:space="preserve"><value>Жанры</value></data>
+  <data name="Radio.SortBy" xml:space="preserve"><value>Сортировка станций</value></data>
+  <data name="Radio.SortName" xml:space="preserve"><value>Название</value></data>
+  <data name="Radio.SortMostPlayed" xml:space="preserve"><value>Чаще всего воспроизводились</value></data>
+  <data name="Radio.SortRecent" xml:space="preserve"><value>Недавно воспроизводились</value></data>
+  <data name="Radio.SortRating" xml:space="preserve"><value>С высшей оценкой</value></data>
+  <data name="Radio.Saved" xml:space="preserve"><value>Станция сохранена. Изменения вступят в силу при следующем воспроизведении.</value></data>
+  <data name="RadioFile.Imported" xml:space="preserve"><value>Импортировано радиостанций: {0}; пропущено записей: {1}; опущено дубликатов: {2}.</value></data>
+  <data name="RadioFile.ImportedNoRefresh" xml:space="preserve"><value>Импортировано радиостанций: {0}, но представление не удалось обновить. Откройте «Радио» заново. {1}</value></data>
+  <data name="Rating.Cleared" xml:space="preserve"><value>Оценка {0} сброшена.</value></data>
+  <data name="Rating.Set.Few" xml:space="preserve"><value>{1}: оценка — {0} звезды.</value></data>
+  <data name="Rating.Set.Many" xml:space="preserve"><value>{1}: оценка — {0} звёзд.</value></data>
+  <data name="Rating.Set.One" xml:space="preserve"><value>{1}: оценка — {0} звезда.</value></data>
+  <data name="Rating.Set.Other" xml:space="preserve"><value>{1}: оценка — {0} звезды.</value></data>
+  <data name="Recovery.CancelAndClose" xml:space="preserve"><value>Отменить и закрыть</value></data>
+  <data name="Recovery.ChooseFolder" xml:space="preserve"><value>Выбрать папку…</value></data>
+  <data name="Recovery.ChooseHint" xml:space="preserve"><value>Выберите папку для проверки. Вложенные папки включаются; папки-ссылки исключаются.</value></data>
+  <data name="Recovery.Details" xml:space="preserve"><value>Аудиофайл: {0}
+Временная правка: {1}</value></data>
+  <data name="Recovery.Discard" xml:space="preserve"><value>Отбросить</value></data>
+  <data name="Recovery.DiscardButton" xml:space="preserve"><value>Отбросить временную правку…</value></data>
+  <data name="Recovery.DiscardPrompt" xml:space="preserve"><value>Удалить эту временную правку метаданных и её запись? Аудиофайл и сохранённые резервные копии будут сохранены.
+</value></data>
+  <data name="Recovery.DiscardTitle" xml:space="preserve"><value>Отбросить прерванную правку</value></data>
+  <data name="Recovery.Discarded" xml:space="preserve"><value>Временная правка метаданных отброшена. Аудиофайл и сохранённые копии сохранены.</value></data>
+  <data name="Recovery.Found" xml:space="preserve"><value>Найдено прерванных правок метаданных: {0}; элементов для проверки: {1}.</value></data>
+  <data name="Recovery.Incomplete" xml:space="preserve"><value>Неполный предварительный просмотр</value></data>
+  <data name="Recovery.Intro" xml:space="preserve"><value>Проверьте временные файлы, оставшиеся от прерванных сохранений метаданных. Аудиофайлы и сохранённые резервные копии остаются без изменений.</value></data>
+  <data name="Recovery.NeedsReview" xml:space="preserve"><value>Требуют проверки ({0})</value></data>
+  <data name="Recovery.NeedsReviewTab" xml:space="preserve"><value>Требуют проверки</value></data>
+  <data name="Recovery.PickTitle" xml:space="preserve"><value>Проверить прерванные правки метаданных</value></data>
+  <data name="Recovery.Scan" xml:space="preserve"><value>Сканировать папки</value></data>
+  <data name="Recovery.ScanCancelled" xml:space="preserve"><value>Сканирование отменено. Ни один аудиофайл не изменён.</value></data>
+  <data name="Recovery.Scanning" xml:space="preserve"><value>Сканирование папок и вложенных папок…</value></data>
+  <data name="Recovery.SubfoldersIncluded" xml:space="preserve"><value>Вложенные папки включаются; папки-ссылки исключаются.</value></data>
+  <data name="Recovery.Summary" xml:space="preserve"><value>Прерванных правок: {0}; элементов для проверки: {1}. Активные правки пропускаются.</value></data>
+  <data name="Recovery.Title" xml:space="preserve"><value>Прерванные правки метаданных</value></data>
+  <data name="Recovery.Validated" xml:space="preserve"><value>Проверенный предварительный просмотр</value></data>
+  <data name="Result.ByArtist.Few" xml:space="preserve"><value>{0} трека исполнителя {1}.</value></data>
+  <data name="Result.ByArtist.Many" xml:space="preserve"><value>{0} треков исполнителя {1}.</value></data>
+  <data name="Result.ByArtist.One" xml:space="preserve"><value>1 трек исполнителя {1}.</value></data>
+  <data name="Result.ByArtist.Other" xml:space="preserve"><value>{0} трека исполнителя {1}.</value></data>
+  <data name="Result.InGenre.Few" xml:space="preserve"><value>{0} трека в жанре {1}.</value></data>
+  <data name="Result.InGenre.Many" xml:space="preserve"><value>{0} треков в жанре {1}.</value></data>
+  <data name="Result.InGenre.One" xml:space="preserve"><value>1 трек в жанре {1}.</value></data>
+  <data name="Result.InGenre.Other" xml:space="preserve"><value>{0} трека в жанре {1}.</value></data>
+  <data name="Result.InLibrary.Few" xml:space="preserve"><value>{0} трека в медиатеке.</value></data>
+  <data name="Result.InLibrary.Many" xml:space="preserve"><value>{0} треков в медиатеке.</value></data>
+  <data name="Result.InLibrary.One" xml:space="preserve"><value>1 трек в медиатеке.</value></data>
+  <data name="Result.InLibrary.Other" xml:space="preserve"><value>{0} трека в медиатеке.</value></data>
+  <data name="Result.InPlaylist.Few" xml:space="preserve"><value>{0} трека в плейлисте {1}.</value></data>
+  <data name="Result.InPlaylist.Many" xml:space="preserve"><value>{0} треков в плейлисте {1}.</value></data>
+  <data name="Result.InPlaylist.One" xml:space="preserve"><value>1 трек в плейлисте {1}.</value></data>
+  <data name="Result.InPlaylist.Other" xml:space="preserve"><value>{0} трека в плейлисте {1}.</value></data>
+  <data name="Result.Matching.Few" xml:space="preserve"><value>{0} подходящих трека.</value></data>
+  <data name="Result.Matching.Many" xml:space="preserve"><value>{0} подходящих треков.</value></data>
+  <data name="Result.Matching.One" xml:space="preserve"><value>1 подходящий трек.</value></data>
+  <data name="Result.Matching.Other" xml:space="preserve"><value>{0} подходящего трека.</value></data>
+  <data name="Result.OnAlbum.Few" xml:space="preserve"><value>{0} трека в альбоме {1}.</value></data>
+  <data name="Result.OnAlbum.Many" xml:space="preserve"><value>{0} треков в альбоме {1}.</value></data>
+  <data name="Result.OnAlbum.One" xml:space="preserve"><value>1 трек в альбоме {1}.</value></data>
+  <data name="Result.OnAlbum.Other" xml:space="preserve"><value>{0} трека в альбоме {1}.</value></data>
+  <data name="Search.InPodcasts" xml:space="preserve"><value>Поиск находится в представлении «Подкасты»</value></data>
+  <data name="Search.Library" xml:space="preserve"><value>Поиск в медиатеке</value></data>
+  <data name="Search.Stations" xml:space="preserve"><value>Поиск станций</value></data>
+  <data name="Sidebar.AudioCd" xml:space="preserve"><value>Аудио-CD</value></data>
+  <data name="Sidebar.AudioCdAutomation" xml:space="preserve"><value>Аудио-CD</value></data>
+  <data name="Sidebar.AudioCdTip" xml:space="preserve"><value>Воспроизводит аудио-CD и находит сведения о его альбоме</value></data>
+  <data name="Sidebar.Devices" xml:space="preserve"><value>Устройства</value></data>
+  <data name="Sidebar.DevicesAutomation" xml:space="preserve"><value>Синхронизация с устройством</value></data>
+  <data name="Sidebar.DevicesTip" xml:space="preserve"><value>Копирует музыку на USB-накопитель, карту памяти или плеер с массовым накопителем</value></data>
+  <data name="Sidebar.Music" xml:space="preserve"><value>Музыка</value></data>
+  <data name="Sidebar.MusicAutomation" xml:space="preserve"><value>Музыкальная медиатека</value></data>
+  <data name="Sidebar.Podcasts" xml:space="preserve"><value>Подкасты</value></data>
+  <data name="Sidebar.Audiobooks" xml:space="preserve"><value>Аудиокниги</value></data>
+  <data name="Sidebar.PodcastsAutomation" xml:space="preserve"><value>Подкасты</value></data>
+  <data name="Sidebar.PodcastsTip" xml:space="preserve"><value>Подписки на подкасты и загруженные выпуски</value></data>
+  <data name="Sidebar.Radio" xml:space="preserve"><value>Радио</value></data>
+  <data name="Sidebar.RadioAutomation" xml:space="preserve"><value>Радиостанции</value></data>
+  <data name="Smart.AddRuleAutomation" xml:space="preserve"><value>Добавить правило после этого условия</value></data>
+  <data name="Smart.AddTip" xml:space="preserve"><value>Добавляет условие ниже этого</value></data>
+  <data name="Smart.All" xml:space="preserve"><value>всем</value></data>
+  <data name="Smart.Any" xml:space="preserve"><value>любому</value></data>
+  <data name="Smart.AtLeast" xml:space="preserve"><value>не менее</value></data>
+  <data name="Smart.AtMost" xml:space="preserve"><value>не более</value></data>
+  <data name="Smart.CloseAutomation" xml:space="preserve"><value>Закрыть редактор умных плейлистов</value></data>
+  <data name="Smart.Conditions" xml:space="preserve"><value>из следующих условий:</value></data>
+  <data name="Smart.Contains" xml:space="preserve"><value>содержит</value></data>
+  <data name="Smart.CreateTitle" xml:space="preserve"><value>Создать умный плейлист</value></data>
+  <data name="Smart.Created" xml:space="preserve"><value>Умный плейлист {0} создан. {1}</value></data>
+  <data name="Smart.EditTitle" xml:space="preserve"><value>Изменить правила умного плейлиста</value></data>
+  <data name="Smart.Equals" xml:space="preserve"><value>равно</value></data>
+  <data name="Smart.Hint" xml:space="preserve"><value>Обновляется автоматически вместе с вашей медиатекой. Пустое значение соответствует отсутствующим тегам.</value></data>
+  <data name="Smart.Match" xml:space="preserve"><value>Соответствует</value></data>
+  <data name="Smart.MatchAutomation" xml:space="preserve"><value>Соответствие всем или любому правилу</value></data>
+  <data name="Smart.NameLabel" xml:space="preserve"><value>НАЗВАНИЕ ПЛЕЙЛИСТА</value></data>
+  <data name="Smart.NotEquals" xml:space="preserve"><value>не равно</value></data>
+  <data name="Smart.RemoveRule" xml:space="preserve"><value>Убрать правило</value></data>
+  <data name="Smart.RemoveTip" xml:space="preserve"><value>Убирает это условие</value></data>
+  <data name="Smart.RuleComparison" xml:space="preserve"><value>Сравнение правила</value></data>
+  <data name="Smart.RuleField" xml:space="preserve"><value>Поле правила</value></data>
+  <data name="Smart.RuleValue" xml:space="preserve"><value>Значение правила</value></data>
+  <data name="Smart.SkipCount" xml:space="preserve"><value>Пропусков</value></data>
+  <data name="Smart.Updated" xml:space="preserve"><value>Умный плейлист обновлён. {0}</value></data>
+  <data name="Sort.Ascending" xml:space="preserve"><value>Отсортировано по {0} по возрастанию.</value></data>
+  <data name="Sort.Descending" xml:space="preserve"><value>Отсортировано по {0} по убыванию.</value></data>
+  <data name="Station.AddTitle" xml:space="preserve"><value>Добавить радиостанцию</value></data>
+  <data name="Station.Creator" xml:space="preserve"><value>Автор (необязательно)</value></data>
+  <data name="Station.Description" xml:space="preserve"><value>Описание (необязательно)</value></data>
+  <data name="Station.EditTitle" xml:space="preserve"><value>Изменить радиостанцию</value></data>
+  <data name="Station.Genre" xml:space="preserve"><value>Жанр (необязательно)</value></data>
+  <data name="Station.Name" xml:space="preserve"><value>Название станции</value></data>
+  <data name="Station.Never" xml:space="preserve"><value>Никогда</value></data>
+  <data name="Station.NoRating" xml:space="preserve"><value>Без оценки</value></data>
+  <data name="Station.Note" xml:space="preserve"><value>Только аудиопотоки HTTP/HTTPS. Сохранение не подключается; воспроизведение начинается при выборе «Воспроизвести». Изменения вступят в силу при следующем подключении.</value></data>
+  <data name="Station.PlayInfo" xml:space="preserve"><value>Воспроизведений: {0} · Последнее воспроизведение: {1}</value></data>
+  <data name="Station.RatingAutomation" xml:space="preserve"><value>Оценка станции</value></data>
+  <data name="Status.Loading" xml:space="preserve"><value>Загрузка медиатеки…</value></data>
+  <data name="Sync.Cancel" xml:space="preserve"><value>Отмена</value></data>
+  <data name="Sync.Cancelled" xml:space="preserve"><value>Отменено. Уже скопированные файлы остаются на устройстве.</value></data>
+  <data name="Sync.ChooseSource" xml:space="preserve"><value>Выберите устройство и что копировать, затем нажмите «Просмотр».</value></data>
+  <data name="Sync.Copying" xml:space="preserve"><value>Копирование…</value></data>
+  <data name="Sync.Done" xml:space="preserve"><value>Готово. Вы можете безопасно отключить устройство в файловом менеджере.</value></data>
+  <data name="Sync.DoneWithFailures" xml:space="preserve"><value>Готово, но не удалось скопировать файлов: {0}.</value></data>
+  <data name="Sync.Finishing" xml:space="preserve"><value>Завершение…</value></data>
+  <data name="Sync.NoTracks" xml:space="preserve"><value>Нет треков для копирования. Выберите несколько или выберите другой источник.</value></data>
+  <data name="Sync.NoVolumes" xml:space="preserve"><value>Съёмный диск не найден. Подключите его и дождитесь, пока рабочий стол его смонтирует, затем выберите «Обновить устройства».</value></data>
+  <data name="Sync.Note" xml:space="preserve"><value>Музыка копируется в Music/Исполнитель/Альбом на устройстве. С устройства никогда ничего не удаляется, а ваша медиатека не изменяется.</value></data>
+  <data name="Sync.Planning" xml:space="preserve"><value>Проверка файлов…</value></data>
+  <data name="Sync.Preview" xml:space="preserve"><value>Просмотр</value></data>
+  <data name="Sync.PreviewReady" xml:space="preserve"><value>Вот что произойдёт. Нажмите «Копировать на устройство», чтобы начать.</value></data>
+  <data name="Sync.Progress" xml:space="preserve"><value>Копирование {0} из {1}: {2}</value></data>
+  <data name="Sync.Refresh" xml:space="preserve"><value>Обновить устройства</value></data>
+  <data name="Sync.RefreshTip" xml:space="preserve"><value>Ищет диски, подключённые или смонтированные после открытия этого окна</value></data>
+  <data name="Sync.ReplaceDifferent" xml:space="preserve"><value>Заменять отличающиеся файлы, которые уже есть на устройстве</value></data>
+  <data name="Sync.Result.Conflicts" xml:space="preserve"><value>Сохранено отличающихся файлов с тем же именем: {0}.</value></data>
+  <data name="Sync.Result.Copied" xml:space="preserve"><value>Скопировано файлов: {0}; уже актуальны: {1}.</value></data>
+  <data name="Sync.Result.Failure" xml:space="preserve"><value>Проблема: {0}</value></data>
+  <data name="Sync.Result.MoreFailures" xml:space="preserve"><value>…и ещё проблем: {0}.</value></data>
+  <data name="Sync.Result.Playlist" xml:space="preserve"><value>Плейлист: {0}</value></data>
+  <data name="Sync.Source.Library" xml:space="preserve"><value>Вся медиатека</value></data>
+  <data name="Sync.Source.Selected" xml:space="preserve"><value>Выбранные треки</value></data>
+  <data name="Sync.Source.Visible" xml:space="preserve"><value>Треки в текущем представлении</value></data>
+  <data name="Sync.SourceLabel" xml:space="preserve"><value>Что копировать</value></data>
+  <data name="Sync.Start" xml:space="preserve"><value>Копировать на устройство</value></data>
+  <data name="Sync.Summary.Conflicts" xml:space="preserve"><value>Отличающихся файлов с тем же именем на устройстве, которые будут сохранены: {0}.</value></data>
+  <data name="Sync.Summary.ExcludedMissing" xml:space="preserve"><value>Пропущено треков: {0} — файл отсутствует.</value></data>
+  <data name="Sync.Summary.ExcludedNotAFile" xml:space="preserve"><value>Пропущено треков: {0} — это не файлы вашей медиатеки (например, треки с CD).</value></data>
+  <data name="Sync.Summary.ExcludedOther" xml:space="preserve"><value>Пропущено треков: {0}.</value></data>
+  <data name="Sync.Summary.ExcludedUnsupported" xml:space="preserve"><value>Пропущено треков: {0} — формат не поддерживается на устройствах.</value></data>
+  <data name="Sync.Summary.NoRoom" xml:space="preserve"><value>Требуется больше места: {0}.</value></data>
+  <data name="Sync.Summary.Replace" xml:space="preserve"><value>Отличающихся файлов с тем же именем на устройстве, которые будут заменены: {0}.</value></data>
+  <data name="Sync.Summary.ToCopy" xml:space="preserve"><value>Файлов для копирования: {0} ({1}); свободно на устройстве: {2}.</value></data>
+  <data name="Sync.Summary.UpToDate" xml:space="preserve"><value>Уже на устройстве: {0}.</value></data>
+  <data name="Sync.TooBig" xml:space="preserve"><value>На устройстве недостаточно свободного места для этих треков.</value></data>
+  <data name="Sync.VolumeAutomation" xml:space="preserve"><value>Устройство</value></data>
+  <data name="Sync.VolumesFound.Few" xml:space="preserve"><value>Найдено дисков: {0}.</value></data>
+  <data name="Sync.VolumesFound.Many" xml:space="preserve"><value>Найдено дисков: {0}.</value></data>
+  <data name="Sync.VolumesFound.One" xml:space="preserve"><value>Найден {0} диск.</value></data>
+  <data name="Sync.VolumesFound.Other" xml:space="preserve"><value>Найдено дисков: {0}.</value></data>
+  <data name="Sync.WritePlaylist" xml:space="preserve"><value>Записать плейлист Aibell.m3u8</value></data>
+  <data name="TrackProps.BackupDeleted" xml:space="preserve"><value>Резервная копия файла удалена. Аудиофайл и метаданные медиатеки сохранены.</value></data>
+  <data name="TrackProps.BackupsUnavailable" xml:space="preserve"><value>Резервные копии файла недоступны: {0}</value></data>
+  <data name="TrackProps.DetailsUnavailable" xml:space="preserve"><value>Сведения о файле недоступны: {0}</value></data>
+  <data name="TrackProps.OperationError" xml:space="preserve"><value>Операция с метаданными завершилась ошибкой: {0}</value></data>
+  <data name="TrackProps.Restored" xml:space="preserve"><value>Резервная копия файла восстановлена, медиатека обновлена. Заменённый файл сохранён как новая резервная копия.</value></data>
+  <data name="TrackProps.RestoredNoRefresh" xml:space="preserve"><value>Резервная копия файла восстановлена, но медиатеку не удалось обновить. Откройте свойства трека заново. {0}</value></data>
+  <data name="TrackProps.SavedFile" xml:space="preserve"><value>Теги файла и медиатека сохранены. Исходная резервная копия: {0}</value></data>
+  <data name="TrackProps.SavedLibrary" xml:space="preserve"><value>Свойства трека сохранены в медиатеке.</value></data>
+  <data name="TrackProps.SavedNoRefresh" xml:space="preserve"><value>Теги файла сохранены, но медиатеку не удалось обновить. Откройте свойства трека заново перед повторной попыткой. Резервная копия: {0}</value></data>
+  <data name="TrackProps.SavedNoTags" xml:space="preserve"><value>Значения медиатеки сохранены; теги файла не изменены.</value></data>
+  <data name="Transport.KeysSeek" xml:space="preserve"><value>Влево/Вниз и Вправо/Вверх меняют на 5 секунд; Page Down/Up — на 15 секунд; Home/End переходят в начало или конец</value></data>
+  <data name="Transport.KeysVolume" xml:space="preserve"><value>Влево/Вниз и Вправо/Вверх меняют на 5%; Page Down/Up — на 10%; Home/End устанавливают 0% или 100%</value></data>
+  <data name="Transport.PositionAutomation" xml:space="preserve"><value>Позиция воспроизведения</value></data>
+  <data name="Transport.SeekAt" xml:space="preserve"><value>Позиция воспроизведения, {0} из {1}</value></data>
+  <data name="Transport.SeekLive" xml:space="preserve"><value>Позиция воспроизведения, ПРЯМОЙ ЭФИР</value></data>
+  <data name="Transport.VolumeAt" xml:space="preserve"><value>Громкость, {0}%</value></data>
+  <data name="Transport.VolumeAutomation" xml:space="preserve"><value>Громкость воспроизведения</value></data>
+  <data name="Transport.VolumeMuted" xml:space="preserve"><value>Громкость, {0}% (звук выключен)</value></data>
+  <data name="Transport.VolumeUnavailable" xml:space="preserve"><value>Громкость недоступна</value></data>
+  <data name="Main.BusyAutomation" xml:space="preserve"><value>Выполняется</value></data>
+  <data name="Sync.ProgressAutomation" xml:space="preserve"><value>Ход синхронизации</value></data>
+  <data name="Prefs.Engine" xml:space="preserve"><value>Движок воспроизведения</value></data>
+  <data name="Prefs.EngineMiniaudio" xml:space="preserve"><value>miniaudio</value></data>
+  <data name="Prefs.EngineMiniaudioNative" xml:space="preserve"><value>miniaudio (Native)</value></data>
+  <data name="Prefs.EngineVlc" xml:space="preserve"><value>VLC</value></data>
+  <data name="Prefs.EngineManaged" xml:space="preserve"><value>miniaudio (Managed)</value></data>
+  <data name="Prefs.EnginePipeWire" xml:space="preserve"><value>PipeWire (Managed)</value></data>
+  <data name="Prefs.EngineAlsa" xml:space="preserve"><value>ALSA (Managed)</value></data>
+  <data name="Prefs.EngineNote" xml:space="preserve"><value>Встроенному плееру ничего дополнительно устанавливать не нужно: он воспроизводит MP3, FLAC, Ogg Vorbis и WAV, а в Windows ещё AAC и M4A. Выберите VLC для AAC и M4A в Linux и для аудио-CD. Изменение вступит в силу при следующем запуске Aibell.</value></data>
+  <data name="Prefs.EngineRestart" xml:space="preserve"><value>Движок воспроизведения изменится при следующем запуске Aibell.</value></data>
+  <data name="Prefs.Language" xml:space="preserve"><value>Язык</value></data>
+  <data name="Prefs.LanguageSystem" xml:space="preserve"><value>Как в системе</value></data>
+  <data name="Prefs.LanguageRestart" xml:space="preserve"><value>Язык изменится при следующем запуске Aibell.</value></data>
+  <data name="Radio.ModeMine" xml:space="preserve"><value>Мои станции</value></data>
+  <data name="Radio.ModeCatalog" xml:space="preserve"><value>Каталог станций</value></data>
+  <data name="Radio.SearchStations" xml:space="preserve"><value>Поиск станций…</value></data>
+  <data name="Radio.SearchGenres" xml:space="preserve"><value>Поиск жанров…</value></data>
+  <data name="Radio.AllGenres" xml:space="preserve"><value>Все жанры</value></data>
+  <data name="Radio.AllCountries" xml:space="preserve"><value>Все страны</value></data>
+  <data name="Radio.GenreFilter" xml:space="preserve"><value>Фильтр по жанру</value></data>
+  <data name="Radio.CountryFilter" xml:space="preserve"><value>Фильтр по стране</value></data>
+  <data name="Radio.SortPopular" xml:space="preserve"><value>Самые популярные</value></data>
+  <data name="Radio.NoMatches" xml:space="preserve"><value>Нет станций, подходящих под поиск или фильтры.</value></data>
+  <data name="Radio.OptInTitle" xml:space="preserve"><value>Просмотр каталога станций</value></data>
+  <data name="Radio.OptInBody" xml:space="preserve"><value>Тщательно подобранный список радиостанций со всего мира, встроенный в Aibell. Просмотр каталога никогда не подключается к станциям. Сохраняйте понравившиеся в «Мои станции» или дважды щёлкните станцию, чтобы послушать.</value></data>
+  <data name="Radio.OptInPrivacy" xml:space="preserve"><value>Логотипы загружаются с собственного сайта каждой станции, поэтому эти сайты видят ваш IP-адрес. Пока вы не включите каталог, ничего не загружается.</value></data>
+  <data name="Radio.OptInEnable" xml:space="preserve"><value>Включить каталог</value></data>
+  <data name="Radio.OptInOff" xml:space="preserve"><value>Это можно отключить в любое время в настройках.</value></data>
+  <data name="Radio.FormatChip" xml:space="preserve"><value>{0} · нужен VLC</value></data>
+  <data name="Radio.FormatTipVlc" xml:space="preserve"><value>Встроенный проигрыватель не воспроизводит {0}. Выберите VLC в Настройки &gt; Воспроизведение, чтобы слушать эту станцию.</value></data>
+  <data name="Radio.FormatTipVlcOrWindows" xml:space="preserve"><value>Встроенный проигрыватель здесь не воспроизводит {0}. Выберите VLC в Настройки &gt; Воспроизведение или запустите Aibell в Windows, чтобы слушать эту станцию.</value></data>
+  <data name="Radio.SaveToMine" xml:space="preserve"><value>Сохранить в «Мои станции»</value></data>
+  <data name="Radio.RemoveFromMine" xml:space="preserve"><value>Удалить из «Моих станций»</value></data>
+  <data name="Radio.CatalogSaved" xml:space="preserve"><value>Станция «{0}» сохранена в «Мои станции».</value></data>
+  <data name="Prefs.RadioCatalog" xml:space="preserve"><value>Показывать каталог станций и загружать логотипы</value></data>
+  <data name="Prefs.RadioCatalogAutomation" xml:space="preserve"><value>Включить каталог радиостанций</value></data>
+  <data name="Prefs.RadioCatalogNote" xml:space="preserve"><value>По умолчанию отключено. Если включить, в разделе «Радио» появится встроенный каталог станций, а логотип каждой станции будет загружаться с её собственного сайта, который видит ваш IP-адрес. Просмотр каталога никогда не подключается к станциям.</value></data>
+  <data name="Radio.StationCount.Few" xml:space="preserve"><value>{0} радиостанции.</value></data>
+  <data name="Radio.StationCount.Many" xml:space="preserve"><value>{0} радиостанций.</value></data>
+  <data name="Radio.StationCount.One" xml:space="preserve"><value>{0} радиостанция.</value></data>
+  <data name="Radio.StationCount.Other" xml:space="preserve"><value>{0} радиостанции.</value></data>
+  <data name="Menu.MainAutomation" xml:space="preserve"><value>Главное меню</value></data>
+  <data name="Menu.File" xml:space="preserve"><value>Файл</value></data>
+  <data name="Menu.Edit" xml:space="preserve"><value>Правка</value></data>
+  <data name="Menu.View" xml:space="preserve"><value>Вид</value></data>
+  <data name="Menu.Controls" xml:space="preserve"><value>Управление</value></data>
+  <data name="Menu.Library" xml:space="preserve"><value>Библиотека</value></data>
+  <data name="Menu.Help" xml:space="preserve"><value>Справка</value></data>
+  <data name="Menu.Quit" xml:space="preserve"><value>Выход</value></data>
+  <data name="Menu.Find" xml:space="preserve"><value>Найти…</value></data>
+  <data name="Menu.SelectAll" xml:space="preserve"><value>Выбрать все треки</value></data>
+  <data name="Menu.SortBy" xml:space="preserve"><value>Сортировать по</value></data>
+  <data name="Menu.Columns" xml:space="preserve"><value>Столбцы</value></data>
+  <data name="Menu.Sidebar" xml:space="preserve"><value>Боковая панель</value></data>
+  <data name="Menu.SeekBackward" xml:space="preserve"><value>Перемотать назад</value></data>
+  <data name="Menu.SeekForward" xml:space="preserve"><value>Перемотать вперёд</value></data>
+  <data name="Menu.VolumeUp" xml:space="preserve"><value>Громче</value></data>
+  <data name="Menu.VolumeDown" xml:space="preserve"><value>Тише</value></data>
+  <data name="Menu.ClearQueue" xml:space="preserve"><value>Очистить очередь воспроизведения</value></data>
+  <data name="Menu.AddStation" xml:space="preserve"><value>Добавить станцию…</value></data>
+  <data name="Menu.CancelDownload" xml:space="preserve"><value>Отменить загрузку</value></data>
+  <data name="Menu.Website" xml:space="preserve"><value>Сайт проекта</value></data>
+  <data name="Menu.About" xml:space="preserve"><value>О программе Aibell</value></data>
+  <data name="About.Tagline" xml:space="preserve"><value>Музыкальная библиотека и плеер для Linux и Windows.</value></data>
+  <data name="About.Tab.About" xml:space="preserve"><value>О программе</value></data>
+  <data name="About.Tab.Features" xml:space="preserve"><value>Возможности</value></data>
+  <data name="About.Tab.Credits" xml:space="preserve"><value>Благодарности</value></data>
+  <data name="About.Version" xml:space="preserve"><value>Версия {0}</value></data>
+  <data name="About.Author" xml:space="preserve"><value>Автор</value></data>
+  <data name="About.License" xml:space="preserve"><value>Лицензия</value></data>
+  <data name="About.Website" xml:space="preserve"><value>Сайт</value></data>
+  <data name="About.Independent" xml:space="preserve"><value>Aibell — независимый проект, написанный с нуля на .NET и Avalonia.</value></data>
+  <data name="About.Section.Playback" xml:space="preserve"><value>Воспроизведение</value></data>
+  <data name="About.Section.Desktop" xml:space="preserve"><value>Рабочий стол</value></data>
+  <data name="About.Section.Content" xml:space="preserve"><value>Содержимое и службы</value></data>
+  <data name="About.Section.System" xml:space="preserve"><value>Система</value></data>
+  <data name="About.Engine" xml:space="preserve"><value>Используемый плеер</value></data>
+  <data name="About.Engine.Miniaudio" xml:space="preserve"><value>miniaudio</value></data>
+  <data name="About.Engine.Vlc" xml:space="preserve"><value>VLC (LibVLC)</value></data>
+  <data name="About.Engine.Managed" xml:space="preserve"><value>miniaudio (Managed)</value></data>
+  <data name="About.Engine.Alsa" xml:space="preserve"><value>ALSA (Managed)</value></data>
+  <data name="About.Engine.PipeWire" xml:space="preserve"><value>PipeWire (Managed)</value></data>
+  <data name="About.Status.InUse" xml:space="preserve"><value>Используется</value></data>
+  <data name="About.Status.Available" xml:space="preserve"><value>Доступно</value></data>
+  <data name="About.Status.Unavailable" xml:space="preserve"><value>Недоступно</value></data>
+  <data name="About.Status.VlcFound" xml:space="preserve"><value>Найден — выберите в Настройки &gt; Воспроизведение</value></data>
+  <data name="About.Status.VlcMissing" xml:space="preserve"><value>Не найден</value></data>
+  <data name="About.Status.On" xml:space="preserve"><value>Включено</value></data>
+  <data name="About.Status.Off" xml:space="preserve"><value>Выключено</value></data>
+  <data name="About.Status.None" xml:space="preserve"><value>Нет запущенных</value></data>
+  <data name="About.Feature.MediaControls" xml:space="preserve"><value>Системное управление медиа</value></data>
+  <data name="About.Feature.Notifications" xml:space="preserve"><value>Уведомления о смене трека</value></data>
+  <data name="About.Feature.Catalog" xml:space="preserve"><value>Каталог радиостанций</value></data>
+  <data name="About.Feature.OnlineLookup" xml:space="preserve"><value>Онлайн-поиск (MusicBrainz)</value></data>
+  <data name="About.Feature.Plugins" xml:space="preserve"><value>Плагины</value></data>
+  <data name="About.System.Os" xml:space="preserve"><value>Операционная система</value></data>
+  <data name="About.System.Language" xml:space="preserve"><value>Язык интерфейса</value></data>
+  <data name="About.Credits.Intro" xml:space="preserve"><value>Aibell — независимый проект, написанный с нуля. Он многим обязан двум более ранним плеерам.</value></data>
+  <data name="About.Credits.Songbird" xml:space="preserve"><value>Медиаплеер с открытым исходным кодом. Значительная часть интерфейса Aibell (панели просмотра, список источников, плотная таблица треков) следует дизайну Songbird, который, в свою очередь, опирался на iTunes. Aibell не копирует код и графику Songbird; сходство — намеренная дань уважения.</value></data>
+  <data name="About.Credits.Banshee" xml:space="preserve"><value>Медиаплеер на Mono/GTK, чей практичный вид библиотеки и подход «локальное прежде всего» вдохновили Aibell. Aibell не содержит исходного кода Banshee.</value></data>
+  <data name="About.Credits.Thanks" xml:space="preserve"><value>Спасибо всем, кто стоит за обоими проектами. Aibell не связан с ними и не одобрен ими. Songbird и iTunes — товарные знаки их владельцев.</value></data>
+  <data name="About.Credits.Libraries" xml:space="preserve"><value>Сторонние библиотеки сохраняют свои лицензии, в том числе LibVLC и LibVLCSharp (LGPL), miniaudio и stb_vorbis (общественное достояние / MIT-0), Avalonia (MIT), библиотеки Microsoft .NET (MIT) и ATL .NET (MIT).</value></data>
+  <data name="Menu.Shortcuts" xml:space="preserve"><value>Горячие клавиши</value></data>
+  <data name="Shortcuts.Title" xml:space="preserve"><value>Сочетания клавиш</value></data>
+  <data name="Shortcuts.Section.General" xml:space="preserve"><value>Общие</value></data>
+  <data name="Shortcuts.Section.Library" xml:space="preserve"><value>Библиотека и треки</value></data>
+  <data name="Shortcuts.Section.Playback" xml:space="preserve"><value>Воспроизведение</value></data>
+  <data name="Shortcuts.Section.Seek" xml:space="preserve"><value>Полоса перемотки (в фокусе)</value></data>
+  <data name="Shortcuts.Section.Volume" xml:space="preserve"><value>Регулятор громкости (в фокусе)</value></data>
+  <data name="Shortcuts.Section.Podcasts" xml:space="preserve"><value>Подкасты</value></data>
+  <data name="Shortcuts.Search" xml:space="preserve"><value>Поиск по библиотеке или станциям</value></data>
+  <data name="Shortcuts.ClearSearch" xml:space="preserve"><value>Очистить поле поиска</value></data>
+  <data name="Shortcuts.PlayPause" xml:space="preserve"><value>Воспроизведение или пауза (в списках треков, очереди и станций)</value></data>
+  <data name="Shortcuts.PlaySelected" xml:space="preserve"><value>Воспроизвести выбранную станцию или трек диска</value></data>
+  <data name="Shortcuts.Seek5" xml:space="preserve"><value>Перемотка на 5 секунд назад или вперёд</value></data>
+  <data name="Shortcuts.Seek15" xml:space="preserve"><value>Перемотка на 15 секунд назад или вперёд</value></data>
+  <data name="Shortcuts.SeekEnds" xml:space="preserve"><value>Перейти к началу или к концу</value></data>
+  <data name="Shortcuts.Volume5" xml:space="preserve"><value>Изменить громкость на 5 %</value></data>
+  <data name="Shortcuts.Volume10" xml:space="preserve"><value>Изменить громкость на 10 %</value></data>
+  <data name="Shortcuts.VolumeEnds" xml:space="preserve"><value>Установить громкость 0 % или 100 %</value></data>
+  <data name="Shortcuts.Rate" xml:space="preserve"><value>Оценить выбранный выпуск (0 сбрасывает оценку)</value></data>
+  <data name="Shortcuts.DeleteDownload" xml:space="preserve"><value>Удалить загруженный файл выбранного выпуска</value></data>
+  <data name="Prefs.SoundFont" xml:space="preserve"><value>SoundFont для MIDI (необязательно)</value></data>
+  <data name="Prefs.SoundFontNote" xml:space="preserve"><value>Без SoundFont файлы MIDI играют на встроенных инструментах Aibell. Выберите файл SoundFont 2 (.sf2) для более реалистичного звучания; его лицензия — ваша забота. Изменение вступит в силу при следующем запуске Aibell.</value></data>
+  <data name="Prefs.SoundFontNone" xml:space="preserve"><value>Встроенные инструменты</value></data>
+  <data name="Prefs.SoundFontClear" xml:space="preserve"><value>Встроенные</value></data>
+  <data name="Prefs.SoundFontRestart" xml:space="preserve"><value>SoundFont изменится при следующем запуске Aibell.</value></data>
+  <data name="Picker.SoundFont" xml:space="preserve"><value>Выберите SoundFont</value></data>
+  <data name="Picker.SoundFontFiles" xml:space="preserve"><value>Банки SoundFont 2</value></data>
+  <data name="Main.ResizeSidebar" xml:space="preserve"><value>Изменить размер боковой панели</value></data>
+  <data name="Main.ResizeSidebarSection" xml:space="preserve"><value>Изменить размер раздела боковой панели</value></data>
+  <data name="Main.ResizeQueue" xml:space="preserve"><value>Изменить размер очереди воспроизведения</value></data>
+</root>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Aibell Fixture Podcast</title>
+    <link>https://example.invalid/aibell-fixture</link>
+    <description>Synthetic feed used only by automated tests.</description>
+    <item>
+      <guid>urn:aibell:fixture:episode-1</guid>
+      <title>Fixture Episode</title>
+      <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://example.invalid/fixture.mp3" length="4096" type="audio/mpeg" />
+    </item>
+  </channel>
+</rss>

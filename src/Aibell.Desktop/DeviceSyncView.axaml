@@ -1,0 +1,58 @@
+<UserControl
+    x:Class="Aibell.Desktop.DeviceSyncView"
+    x:DataType="viewModels:DeviceSyncViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewModels="using:Aibell.Desktop.ViewModels"
+    xmlns:devices="using:Aibell.Application.Devices"
+    xmlns:loc="using:Aibell.Desktop.Localization"
+    Name="DeviceSyncViewRoot">
+  <Grid RowDefinitions="Auto,*,Auto,28" Margin="0">
+    <StackPanel Margin="16" Spacing="12">
+      <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+        <ComboBox Name="VolumeChoice" HorizontalAlignment="Stretch" ItemsSource="{Binding Volumes}" SelectedItem="{Binding SelectedVolume}"
+                  IsEnabled="{Binding HasVolumes}" AutomationProperties.Name="{loc:T Sync.VolumeAutomation}">
+          <ComboBox.ItemTemplate>
+            <DataTemplate x:DataType="devices:RemovableVolume">
+              <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" />
+            </DataTemplate>
+          </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Grid.Column="1" Name="RefreshVolumes" Content="{loc:T Sync.Refresh}" IsEnabled="{Binding CanChange}" Click="RefreshVolumesClick"
+                ToolTip.Tip="{loc:T Sync.RefreshTip}" />
+      </Grid>
+      <StackPanel Spacing="4">
+        <TextBlock Text="{loc:T Sync.SourceLabel}" Classes="secondary" FontSize="11" />
+        <ComboBox Name="SourceChoice" HorizontalAlignment="Stretch" ItemsSource="{Binding Sources}" SelectedItem="{Binding SelectedSource}"
+                  IsEnabled="{Binding CanChange}" AutomationProperties.Name="{loc:T Sync.SourceLabel}">
+          <ComboBox.ItemTemplate>
+            <DataTemplate x:DataType="viewModels:DeviceSyncSourceChoice">
+              <TextBlock Text="{Binding Name}" />
+            </DataTemplate>
+          </ComboBox.ItemTemplate>
+        </ComboBox>
+      </StackPanel>
+      <CheckBox Name="ReplaceDifferentOption" Content="{loc:T Sync.ReplaceDifferent}" IsChecked="{Binding ReplaceDifferent}" IsEnabled="{Binding CanChange}" />
+      <CheckBox Name="WritePlaylistOption" Content="{loc:T Sync.WritePlaylist}" IsChecked="{Binding WritePlaylist}" IsEnabled="{Binding CanChange}" />
+      <TextBlock Text="{loc:T Sync.Note}" TextWrapping="Wrap" Classes="secondary" FontSize="11" />
+    </StackPanel>
+    <Border Grid.Row="1" Margin="16,0" Padding="10" CornerRadius="4" Background="{DynamicResource ContentBrush}"
+            BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="1">
+      <ScrollViewer>
+        <TextBlock Name="SyncSummary" Text="{Binding Summary}" TextWrapping="Wrap" AutomationProperties.LiveSetting="Polite" />
+      </ScrollViewer>
+    </Border>
+    <StackPanel Grid.Row="2" Margin="16,12" Spacing="8">
+      <ProgressBar Name="SyncProgress" Minimum="0" Maximum="100" Value="{Binding ProgressPercent}" IsVisible="{Binding ShowProgress}" Height="6"
+                   AutomationProperties.Name="{loc:T Sync.ProgressAutomation}" />
+      <WrapPanel Orientation="Horizontal" ItemSpacing="8" LineSpacing="6" HorizontalAlignment="Right">
+        <Button Name="CancelSync" Content="{loc:T Sync.Cancel}" IsVisible="{Binding CanCancel}" Click="CancelClick" />
+        <Button Name="PreviewSync" Content="{loc:T Sync.Preview}" IsEnabled="{Binding CanPreview}" Click="PreviewClick" />
+        <Button Name="StartSync" Content="{loc:T Sync.Start}" Classes="dialogAccept" IsEnabled="{Binding CanSync}" Click="StartClick" />
+      </WrapPanel>
+    </StackPanel>
+    <Border Grid.Row="3" Background="{DynamicResource StatusBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,1,0,0" Padding="10,0">
+      <TextBlock Name="SyncStatus" Text="{Binding StatusMessage}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" AutomationProperties.LiveSetting="Polite" />
+    </Border>
+  </Grid>
+</UserControl>

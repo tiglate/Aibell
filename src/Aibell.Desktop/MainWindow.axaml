@@ -1,0 +1,836 @@
+<Window
+    x:Class="Aibell.Desktop.MainWindow"
+    x:DataType="viewModels:MainWindowViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:Aibell.Desktop.Controls"
+    xmlns:viewModels="using:Aibell.Desktop.ViewModels"
+    xmlns:desktop="using:Aibell.Desktop"
+    xmlns:loc="using:Aibell.Desktop.Localization"
+    xmlns:radio="clr-namespace:Aibell.Domain.Radio;assembly=Aibell.Domain"
+    Title="Aibell"
+    Icon="avares://Aibell.Desktop/Assets/aibell.ico"
+    Width="1240"
+    Height="760"
+    MinWidth="860"
+    MinHeight="560"
+    WindowState="Maximized"
+    Background="{DynamicResource WindowBrush}"
+    DragDrop.AllowDrop="True" DragDrop.DragOver="WindowDragOver" DragDrop.Drop="WindowDrop">
+  <DockPanel>
+  <Menu x:Name="MainMenu" DockPanel.Dock="Top" AutomationProperties.Name="{loc:T Menu.MainAutomation}" KeyboardNavigation.IsTabStop="False">
+    <MenuItem x:Name="FileMenu" Header="{loc:T Menu.File}" SubmenuOpened="MenuOpened">
+      <MenuItem x:Name="MenuOpenFiles" Header="{loc:T Main.OpenFiles}" HotKey="Ctrl+Shift+O" InputGesture="Ctrl+Shift+O" Click="OpenFiles" />
+      <MenuItem x:Name="MenuAddFolder" Header="{loc:T Main.AddFolder}" HotKey="Ctrl+O" InputGesture="Ctrl+O" Click="ImportFolder" />
+      <MenuItem x:Name="MenuRescanFolder" Header="{loc:T Main.Rescan}" Click="RescanLibrarySource" />
+      <MenuItem x:Name="MenuRemoveFolder" Header="{loc:T Dialog.RemoveFolder}" Click="RemoveLibrarySource" />
+      <Separator />
+      <MenuItem x:Name="MenuNewPlaylist" Header="{loc:T Main.CreatePlaylist}" HotKey="Ctrl+N" InputGesture="Ctrl+N" Click="CreatePlaylist" />
+      <MenuItem x:Name="MenuNewSmartPlaylist" Header="{loc:T Main.CreateSmartPlaylist}" HotKey="Ctrl+Shift+N" InputGesture="Ctrl+Shift+N" Click="CreateSmartPlaylist" />
+      <MenuItem x:Name="MenuRenamePlaylist" Header="{loc:T Main.Rename}" Click="RenamePlaylist" />
+      <MenuItem x:Name="MenuEditRules" Header="{loc:T Main.EditRules}" Click="EditSmartPlaylist" />
+      <MenuItem x:Name="MenuDeletePlaylist" Header="{loc:T Main.Delete}" Click="DeletePlaylist" />
+      <Separator />
+      <MenuItem x:Name="MenuImportPlaylist" Header="{loc:T Main.ImportPlaylistFile}" Click="ImportPlaylistFile" />
+      <MenuItem x:Name="MenuExportPlaylist" Header="{loc:T Main.ExportPlaylist}" Click="ExportPlaylistFile" />
+      <Separator />
+      <MenuItem x:Name="MenuQuit" Header="{loc:T Menu.Quit}" InputGesture="Ctrl+Q" Click="QuitApplication" />
+    </MenuItem>
+    <MenuItem x:Name="EditMenu" Header="{loc:T Menu.Edit}" SubmenuOpened="MenuOpened">
+      <MenuItem x:Name="MenuSelectAll" Header="{loc:T Menu.SelectAll}" Click="SelectAllTracks" />
+      <Separator />
+      <MenuItem x:Name="MenuViewMetadata" Header="{loc:T Main.ViewMetadata}" InputGesture="Alt+Enter" Click="ViewTrackProperties" />
+      <MenuItem x:Name="MenuGetArtwork" Header="{loc:T Artwork.Menu}" Click="GetArtwork" />
+      <Separator />
+      <MenuItem x:Name="MenuAddToPlaylist" Header="{loc:T Main.AddToPlaylist}" />
+      <MenuItem x:Name="MenuQueueNext" Header="{loc:T Main.QueueNext}" Click="QueueSelectedNext" />
+      <MenuItem x:Name="MenuQueueLast" Header="{loc:T Main.QueueLast}" Click="QueueSelectedLast" />
+      <MenuItem x:Name="MenuRating" Header="{loc:T Main.Rating}">
+        <MenuItem Header="{loc:T Main.RatingClear}" Tag="0" Click="SetTrackRating" />
+        <MenuItem Header="★☆☆☆☆" Tag="1" Click="SetTrackRating" />
+        <MenuItem Header="★★☆☆☆" Tag="2" Click="SetTrackRating" />
+        <MenuItem Header="★★★☆☆" Tag="3" Click="SetTrackRating" />
+        <MenuItem Header="★★★★☆" Tag="4" Click="SetTrackRating" />
+        <MenuItem Header="★★★★★" Tag="5" Click="SetTrackRating" />
+      </MenuItem>
+      <MenuItem x:Name="MenuRemoveFromPlaylist" Header="{loc:T Main.RemoveFromPlaylist}" Click="RemoveTrackFromPlaylist" />
+      <MenuItem x:Name="MenuMoveUp" Header="{loc:T Main.MoveUp}" Click="MoveTrackUp" />
+      <MenuItem x:Name="MenuMoveDown" Header="{loc:T Main.MoveDown}" Click="MoveTrackDown" />
+      <Separator />
+      <MenuItem x:Name="MenuFind" Header="{loc:T Menu.Find}" InputGesture="Ctrl+F" Click="FindInLibrary" />
+      <Separator />
+      <MenuItem x:Name="MenuPreferences" Header="{loc:T Main.Preferences}" InputGesture="Ctrl+," Click="OpenPreferences" />
+    </MenuItem>
+    <MenuItem x:Name="ViewMenu" Header="{loc:T Menu.View}" SubmenuOpened="MenuOpened">
+      <MenuItem x:Name="MenuViewMusic" Header="{loc:T Sidebar.Music}" ToggleType="Radio" GroupName="LibraryView" Click="SelectAllMusic" />
+      <MenuItem x:Name="MenuViewRadio" Header="{loc:T Sidebar.Radio}" ToggleType="Radio" GroupName="LibraryView" Click="SelectRadio" />
+      <MenuItem x:Name="MenuViewDisc" Header="{loc:T Sidebar.AudioCd}" ToggleType="Radio" GroupName="LibraryView" Click="OpenDisc" />
+      <MenuItem x:Name="MenuViewDevices" Header="{loc:T Sidebar.Devices}" ToggleType="Radio" GroupName="LibraryView" Click="OpenDeviceSync" />
+      <MenuItem x:Name="MenuViewPodcasts" Header="{loc:T Sidebar.Podcasts}" ToggleType="Radio" GroupName="LibraryView" Click="OpenPodcasts" />
+      <MenuItem x:Name="MenuViewAudiobooks" Header="{loc:T Sidebar.Audiobooks}" ToggleType="Radio" GroupName="LibraryView" Click="OpenAudiobooks" />
+      <Separator />
+      <MenuItem x:Name="MenuSortBy" Header="{loc:T Menu.SortBy}">
+        <MenuItem Header="{loc:T Column.Title}" Click="SortByTitle" />
+        <MenuItem Header="{loc:T Column.Artist}" Click="SortByArtist" />
+        <MenuItem Header="{loc:T Column.Album}" Click="SortByAlbum" />
+        <MenuItem Header="{loc:T Column.Genre}" Click="SortByGenre" />
+        <MenuItem Header="{loc:T Column.Time}" Click="SortByDuration" />
+      </MenuItem>
+      <MenuItem x:Name="MenuColumns" Header="{loc:T Menu.Columns}" />
+      <Separator />
+      <MenuItem x:Name="MenuShowSidebar" Header="{loc:T Menu.Sidebar}" ToggleType="CheckBox" Click="ToggleSidebar" />
+      <MenuItem x:Name="MenuShowQueue" Header="{loc:T Main.PlayQueue}" ToggleType="CheckBox" Click="TogglePlayQueue" />
+    </MenuItem>
+    <MenuItem x:Name="ControlsMenu" Header="{loc:T Menu.Controls}" SubmenuOpened="MenuOpened">
+      <MenuItem x:Name="MenuPlayPause" Header="{loc:T Main.Play}" InputGesture="Space" Click="TogglePlayback" />
+      <MenuItem x:Name="MenuStop" Header="{loc:T Main.Stop}" Click="StopPlayback" />
+      <MenuItem x:Name="MenuPrevious" Header="{loc:T Main.Previous}" InputGesture="Alt+Left" Click="PreviousTrack" />
+      <MenuItem x:Name="MenuNext" Header="{loc:T Main.Next}" InputGesture="Alt+Right" Click="NextTrack" />
+      <Separator />
+      <MenuItem x:Name="MenuSeekBackward" Header="{loc:T Menu.SeekBackward}" Click="SeekBackward" />
+      <MenuItem x:Name="MenuSeekForward" Header="{loc:T Menu.SeekForward}" Click="SeekForward" />
+      <Separator />
+      <MenuItem x:Name="MenuShuffle" Header="{loc:T Playback.ShuffleOff}" ToggleType="CheckBox" Click="ToggleShuffle" />
+      <MenuItem x:Name="MenuRepeat" Header="{loc:T Playback.RepeatOff}" ToggleType="CheckBox" Click="CycleRepeat" />
+      <Separator />
+      <MenuItem x:Name="MenuMute" Header="{loc:T Playback.Mute}" ToggleType="CheckBox" Click="ToggleMute" />
+      <MenuItem x:Name="MenuVolumeUp" Header="{loc:T Menu.VolumeUp}" Click="VolumeUp" />
+      <MenuItem x:Name="MenuVolumeDown" Header="{loc:T Menu.VolumeDown}" Click="VolumeDown" />
+      <Separator />
+      <MenuItem x:Name="MenuEqualizer" Header="{loc:T Equalizer.Title}" Click="OpenEqualizer" />
+      <Separator />
+      <MenuItem x:Name="MenuQueue" Header="{loc:T Main.PlayQueue}">
+        <MenuItem x:Name="MenuQueuePlay" Header="{loc:T Main.Play}" Click="PlayQueueMenuTrack" />
+        <MenuItem x:Name="MenuQueueShowFile" Header="{loc:T Main.ShowFile}" Click="ShowQueuedFile" />
+        <Separator />
+        <MenuItem x:Name="MenuQueueAddToPlaylist" Header="{loc:T Main.AddToPlaylist}" />
+        <MenuItem x:Name="MenuQueueAddToLibrary" Header="{loc:T Main.AddToLibrary}" Click="AddQueuedTrackToLibrary" />
+        <Separator />
+        <MenuItem x:Name="MenuQueueRemove" Header="{loc:T Main.RemoveShort}" Click="RemoveQueuedTrack" />
+        <MenuItem x:Name="MenuQueueClear" Header="{loc:T Menu.ClearQueue}" Click="ClearPlayQueue" />
+      </MenuItem>
+    </MenuItem>
+    <MenuItem x:Name="LibraryMenu" Header="{loc:T Menu.Library}" SubmenuOpened="MenuOpened">
+      <MenuItem x:Name="MenuRadio" Header="{loc:T Sidebar.Radio}">
+        <MenuItem x:Name="MenuRadioCatalog" Header="{loc:T Radio.ModeCatalog}" Click="ShowRadioCatalog" />
+        <MenuItem x:Name="MenuRadioMine" Header="{loc:T Radio.ModeMine}" Click="ShowMyRadioStations" />
+        <MenuItem x:Name="MenuRadioEnableCatalog" Header="{loc:T Radio.OptInEnable}" Click="EnableRadioCatalog" />
+        <Separator />
+        <MenuItem x:Name="MenuRadioPlay" Header="{loc:T Main.Play}" Click="PlayRadioStation" />
+        <MenuItem x:Name="MenuRadioSave" Header="{loc:T Radio.SaveToMine}" Click="ToggleRadioSaved" />
+        <MenuItem x:Name="MenuRadioUnsave" Header="{loc:T Radio.RemoveFromMine}" Click="ToggleRadioSaved" />
+        <Separator />
+        <MenuItem x:Name="MenuRadioAdd" Header="{loc:T Menu.AddStation}" Click="AddRadioStation" />
+        <MenuItem x:Name="MenuRadioEdit" Header="{loc:T Main.EditStation}" Click="EditRadioStation" />
+        <MenuItem x:Name="MenuRadioRemove" Header="{loc:T Main.RemoveStation}" Click="RemoveRadioStation" />
+        <MenuItem x:Name="MenuRadioImport" Header="{loc:T Main.ImportStations}" Click="ImportRadioPlaylist" />
+      </MenuItem>
+      <MenuItem x:Name="MenuPodcasts" Header="{loc:T Sidebar.Podcasts}">
+        <MenuItem x:Name="MenuPodcastSubscribe" Header="{loc:T Pod.Subscribe}" Click="PodcastSubscribe" />
+        <MenuItem x:Name="MenuPodcastRefresh" Header="{loc:T Pod.Refresh}" Click="PodcastRefresh" />
+        <MenuItem x:Name="MenuPodcastRefreshAll" Header="{loc:T Pod.RefreshAll}" Click="PodcastRefreshAll" />
+        <MenuItem x:Name="MenuPodcastRemove" Header="{loc:T Pod.RemoveTitle}" Click="PodcastRemove" />
+        <Separator />
+        <MenuItem x:Name="MenuPodcastPlay" Header="{loc:T Main.Play}" Click="PodcastPlay" />
+        <MenuItem x:Name="MenuPodcastPause" Header="{loc:T Playback.Pause}" Click="PodcastPause" />
+        <MenuItem x:Name="MenuPodcastResume" Header="{loc:T Pod.ResumeSelected}" Click="PodcastResume" />
+        <MenuItem x:Name="MenuPodcastStartOver" Header="{loc:T Pod.StartOver}" Click="PodcastStartOver" />
+        <MenuItem x:Name="MenuPodcastSavePosition" Header="{loc:T Pod.SavePosition}" Click="PodcastSavePosition" />
+        <MenuItem x:Name="MenuPodcastRating" Header="{loc:T Main.Rating}">
+          <MenuItem Header="{loc:T Main.RatingClear}" Tag="0" Click="PodcastRate" />
+          <MenuItem Header="★☆☆☆☆" Tag="1" Click="PodcastRate" />
+          <MenuItem Header="★★☆☆☆" Tag="2" Click="PodcastRate" />
+          <MenuItem Header="★★★☆☆" Tag="3" Click="PodcastRate" />
+          <MenuItem Header="★★★★☆" Tag="4" Click="PodcastRate" />
+          <MenuItem Header="★★★★★" Tag="5" Click="PodcastRate" />
+        </MenuItem>
+        <Separator />
+        <MenuItem x:Name="MenuPodcastDownload" Header="{loc:T Pod.Download}" Click="PodcastDownload" />
+        <MenuItem x:Name="MenuPodcastCancelDownload" Header="{loc:T Menu.CancelDownload}" Click="PodcastCancelDownload" />
+        <MenuItem x:Name="MenuPodcastDeleteFile" Header="{loc:T Pod.DeleteFile}" Click="PodcastDeleteFile" />
+        <MenuItem x:Name="MenuPodcastDownloadNew" Header="{loc:T Pod.DownloadNew}" Click="PodcastDownloadNew" />
+        <MenuItem x:Name="MenuPodcastMarkSeen" Header="{loc:T Pod.MarkAllSeen}" Click="PodcastMarkAllSeen" />
+        <Separator />
+        <MenuItem x:Name="MenuPodcastCancel" Header="{loc:T Common.Cancel}" Click="PodcastCancelOperation" />
+      </MenuItem>
+      <MenuItem x:Name="MenuDisc" Header="{loc:T Sidebar.AudioCd}">
+        <MenuItem x:Name="MenuDiscRead" Header="{loc:T Disc.Read}" Click="DiscRead" />
+        <MenuItem x:Name="MenuDiscLookUp" Header="{loc:T Disc.LookUp}" Click="DiscLookUp" />
+        <MenuItem x:Name="MenuDiscArtist" Header="{loc:T Disc.Artist}" Click="DiscArtist" />
+        <Separator />
+        <MenuItem x:Name="MenuDiscPlay" Header="{loc:T Main.Play}" Click="DiscPlay" />
+        <MenuItem x:Name="MenuDiscCancel" Header="{loc:T Common.Cancel}" Click="DiscCancel" />
+      </MenuItem>
+      <MenuItem x:Name="MenuDevices" Header="{loc:T Sidebar.Devices}">
+        <MenuItem x:Name="MenuDevicesRefresh" Header="{loc:T Sync.Refresh}" Click="DevicesRefresh" />
+        <MenuItem x:Name="MenuDevicesPreview" Header="{loc:T Sync.Preview}" Click="DevicesPreview" />
+        <MenuItem x:Name="MenuDevicesStart" Header="{loc:T Sync.Start}" Click="DevicesStart" />
+        <MenuItem x:Name="MenuDevicesCancel" Header="{loc:T Sync.Cancel}" Click="DevicesCancel" />
+      </MenuItem>
+      <MenuItem x:Name="MenuAudiobooks" Header="{loc:T Sidebar.Audiobooks}">
+        <MenuItem x:Name="MenuBookAdd" Header="{loc:T Book.Add}" Click="AudiobookAdd" />
+        <MenuItem x:Name="MenuBookPlay" Header="{loc:T Book.PlayFromStart}" Click="AudiobookPlay" />
+        <MenuItem x:Name="MenuBookResume" Header="{loc:T Pod.Resume}" Click="AudiobookResume" />
+        <MenuItem x:Name="MenuBookChapters" Header="{loc:T Book.Chapters}" Click="AudiobookChapters" />
+        <MenuItem x:Name="MenuBookPlayChapter" Header="{loc:T Book.PlayChapter}" Click="AudiobookPlayChapter" />
+        <MenuItem x:Name="MenuBookSavePosition" Header="{loc:T Pod.SavePosition}" Click="AudiobookSavePosition" />
+        <MenuItem x:Name="MenuBookRemove" Header="{loc:T Book.RemoveTitle}" Click="AudiobookRemove" />
+        <Separator />
+        <MenuItem x:Name="MenuBookCancel" Header="{loc:T Common.Cancel}" Click="AudiobookCancel" />
+      </MenuItem>
+    </MenuItem>
+    <MenuItem x:Name="HelpMenu" Header="{loc:T Menu.Help}">
+      <MenuItem x:Name="MenuShortcuts" Header="{loc:T Menu.Shortcuts}" Click="ShowShortcuts" />
+      <MenuItem x:Name="MenuWebsite" Header="{loc:T Menu.Website}" Click="OpenProjectWebsite" />
+      <Separator />
+      <MenuItem x:Name="MenuAbout" Header="{loc:T Menu.About}" Click="ShowAbout" />
+    </MenuItem>
+  </Menu>
+  <Grid RowDefinitions="58,*,28">
+    <!-- Playback chrome stays dark; its native controls must use the same variant. -->
+    <ThemeVariantScope RequestedThemeVariant="Dark">
+      <Border Background="{DynamicResource ToolbarBrush}" BorderBrush="#17191B" BorderThickness="0,0,0,1">
+        <Grid Margin="10,6" ColumnDefinitions="Auto,*,340">
+          <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Spacing="16">
+          <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Spacing="2">
+            <Button Classes="transport" IsEnabled="{Binding CanGoPrevious}" Click="PreviousTrack" AutomationProperties.Name="{loc:T Main.Previous}" AutomationProperties.HelpText="{loc:T Main.PreviousHint}" ToolTip.Tip="{loc:T Main.PreviousTip}">
+              <PathIcon Width="18" Height="18" Foreground="#202428"
+                        Data="M4,3 L6,3 L6,21 L4,21 Z M20,3 L7,12 L20,21 Z" />
+            </Button>
+            <Button Classes="transport play" IsEnabled="{Binding CanPlay}" Click="TogglePlayback" AutomationProperties.Name="{Binding PlaybackButtonText}" AutomationProperties.HelpText="{loc:T Main.PlayHint}" ToolTip.Tip="{Binding PlaybackButtonText, StringFormat='{}{0} (Space in lists)'}">
+              <Grid>
+                <PathIcon Width="21" Height="21" Foreground="#202428" IsVisible="{Binding ShowPlaybackPlay}"
+                          Data="M5,3 L21,12 L5,21 Z" />
+                <PathIcon Width="17" Height="17" Foreground="#202428" IsVisible="{Binding ShowRadioStop}" Data="M5,5 L19,5 L19,19 L5,19 Z" />
+                <PathIcon Width="21" Height="21" Foreground="#202428" IsVisible="{Binding ShowPlaybackPause}"
+                          Data="M5,4 L10,4 L10,20 L5,20 Z M14,4 L19,4 L19,20 L14,20 Z" />
+              </Grid>
+            </Button>
+            <Button Classes="transport" IsEnabled="{Binding CanGoNext}" Click="NextTrack" AutomationProperties.Name="{loc:T Main.Next}" AutomationProperties.HelpText="{loc:T Main.NextHint}" ToolTip.Tip="{loc:T Main.NextTip}">
+              <PathIcon Width="18" Height="18" Foreground="#202428"
+                        Data="M18,3 L20,3 L20,21 L18,21 Z M4,3 L17,12 L4,21 Z" />
+            </Button>
+            <Button Classes="transport" IsEnabled="{Binding CanStop}" Click="StopPlayback" AutomationProperties.Name="{loc:T Main.Stop}" ToolTip.Tip="{loc:T Main.Stop}">
+              <PathIcon Width="17" Height="17" Foreground="#202428"
+                        Data="M5,5 L19,5 L19,19 L5,19 Z" />
+            </Button>
+          </StackPanel>
+          <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Spacing="4">
+            <Button Name="MuteButton" Classes="icon" IsEnabled="{Binding CanMute}" Click="ToggleMute" Classes.active="{Binding IsMutedState}"
+                    AutomationProperties.Name="{Binding MuteButtonText}" ToolTip.Tip="{Binding MuteButtonText}">
+              <Panel>
+                <Path IsVisible="{Binding IsNotMutedState}" Data="M3,9 L7,9 L12,5 L12,19 L7,15 L3,15 Z M15.5,9 C17,10.5 17,13.5 15.5,15 M18.5,6.5 C21.5,9.5 21.5,14.5 18.5,17.5" />
+                <Path IsVisible="{Binding IsMutedState}" Data="M3,9 L7,9 L12,5 L12,19 L7,15 L3,15 Z M16,9.5 L21,14.5 M21,9.5 L16,14.5" />
+              </Panel>
+            </Button>
+            <controls:TransportRangeSurface x:Name="VolumeSurface" Focusable="True" AutomationProperties.Name="{loc:T Main.Volume}"
+                  ToolTip.Tip="{loc:T Main.VolumeTip}" Width="96" Height="18" VerticalAlignment="Center"
+                  Background="Transparent" ClipToBounds="True" Cursor="Hand">
+              <ProgressBar x:Name="VolumeProgress" MinWidth="0" Height="4" VerticalAlignment="Center"
+                           IsHitTestVisible="False" Minimum="0" Maximum="1"
+                           Value="{Binding Volume, Mode=OneWay}"
+                           Background="#17191B" Foreground="#D9DCDE" />
+            </controls:TransportRangeSurface>
+            <TextBlock Width="32" VerticalAlignment="Center" TextAlignment="Right"
+                       Foreground="#B9BEC2" FontSize="10" Text="{Binding VolumePercentText}" />
+          </StackPanel>
+          </StackPanel>
+
+          <Border Grid.Column="1" Margin="12,0" Padding="12,6" MaxWidth="820"
+                  HorizontalAlignment="Stretch" Background="{DynamicResource DisplayBrush}"
+                  BorderBrush="#484C50" BorderThickness="1" CornerRadius="4">
+            <Grid RowDefinitions="Auto,Auto">
+              <TextBlock HorizontalAlignment="Center" Foreground="#F4F5F6"
+                         FontWeight="SemiBold" Text="{Binding NowPlaying}" TextTrimming="CharacterEllipsis" />
+              <Grid Grid.Row="1" Margin="0,4,0,0" ColumnDefinitions="42,*,42">
+                <TextBlock VerticalAlignment="Center" Foreground="#B9BEC2" FontSize="10"
+                           Text="{Binding PositionText}" />
+                <controls:TransportRangeSurface x:Name="PositionSeekSurface" Focusable="True" MinHeight="14" AutomationProperties.Name="{loc:T Main.SeekUnavailable}"
+                      ToolTip.Tip="{loc:T Main.SeekTip}" IsVisible="{Binding ShowSeekBar}" IsEnabled="{Binding CanSeekPlayback}" Grid.Column="1" Margin="6,0"
+                      Background="Transparent" Cursor="Hand">
+                  <ProgressBar x:Name="PositionProgress" MinWidth="0" Height="4" VerticalAlignment="Center"
+                               IsHitTestVisible="False" Minimum="0" Maximum="{Binding DurationSeconds}"
+                               Value="{Binding PositionSeconds, Mode=OneWay}"
+                               Background="#555B60" Foreground="#D52268" />
+                </controls:TransportRangeSurface>
+                <TextBlock Grid.Column="2" VerticalAlignment="Center" TextAlignment="Right"
+                           Foreground="#B9BEC2" FontSize="10" Text="{Binding DurationText}" />
+              </Grid>
+            </Grid>
+          </Border>
+
+          <Grid Grid.Column="2" Width="340" ColumnDefinitions="*,Auto" ColumnSpacing="8" VerticalAlignment="Center">
+            <TextBox x:Name="SearchBox" Height="28" Padding="8,0" VerticalContentAlignment="Center" IsEnabled="{Binding CanSearchLibrary}"
+                     AutomationProperties.Name="{Binding SearchPlaceholder}" ToolTip.Tip="{loc:T Main.SearchTip}" PlaceholderText="{Binding SearchPlaceholder}" PlaceholderForeground="#D0D4D8" TextChanged="SearchChanged" />
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Spacing="2">
+              <Button Name="ToggleShuffleButton" Classes="icon" Classes.active="{Binding IsShuffleOn}" Click="ToggleShuffle"
+                      AutomationProperties.Name="{Binding ShuffleButtonText}" ToolTip.Tip="{Binding ShuffleButtonText}">
+                <Path Data="M3,6 L6,6 C10,6 11,9 13,12 C15,15 16,18 20,18 M3,18 L6,18 C8,18 9.4,17 10.4,15.4 M13.6,8.6 C14.6,7 16,6 18,6 L20,6 M17.5,3.5 L20.5,6 L17.5,8.5 M17.5,15.5 L20.5,18 L17.5,20.5" />
+              </Button>
+              <Button Name="CycleRepeatButton" Classes="icon" Classes.active="{Binding IsRepeatActive}" Click="CycleRepeat"
+                      AutomationProperties.Name="{Binding RepeatButtonText}" ToolTip.Tip="{Binding RepeatButtonText}">
+                <Panel>
+                  <Path Data="M17,2.5 L20.5,6 L17,9.5 M3.5,12 L3.5,10 C3.5,7.8 5.3,6 7.5,6 L20.5,6 M7,21.5 L3.5,18 L7,14.5 M20.5,12 L20.5,14 C20.5,16.2 18.7,18 16.5,18 L3.5,18" />
+                  <TextBlock IsVisible="{Binding IsRepeatOne}" Text="1" FontSize="8" FontWeight="Bold" Foreground="{Binding $parent[Button].Foreground}"
+                             HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Panel>
+              </Button>
+              <Button Name="OpenEqualizerButton" Classes="icon" Classes.active="{Binding IsEqualizerOn}" IsEnabled="{Binding CanUseEqualizer}" Click="OpenEqualizer"
+                      AutomationProperties.Name="{loc:T Equalizer.ButtonAutomation}" ToolTip.Tip="{loc:T Equalizer.ButtonTip}">
+                <Path Data="M6,3 L6,21 M12,3 L12,21 M18,3 L18,21 M3.5,15 L8.5,15 M9.5,8 L14.5,8 M15.5,17 L20.5,17" />
+              </Button>
+            </StackPanel>
+          </Grid>
+        </Grid>
+      </Border>
+
+    </ThemeVariantScope>
+
+    <Grid x:Name="LibraryLayout" Grid.Row="1">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="240" MinWidth="160" MaxWidth="480" />
+        <ColumnDefinition Width="5" />
+        <ColumnDefinition Width="*" MinWidth="280" />
+        <ColumnDefinition Width="5" />
+        <ColumnDefinition Width="260" MinWidth="200" MaxWidth="480" />
+      </Grid.ColumnDefinitions>
+      <Border Background="{DynamicResource SidebarBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,1,0">
+        <Grid>
+        <Grid IsVisible="{Binding IsSidebarVisible}" RowDefinitions="*,5,250">
+        <Grid x:Name="SidebarSections" RowDefinitions="*,5,*,5,*">
+          <Grid RowDefinitions="25,*">
+          <Border Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1">
+            <Grid ColumnDefinitions="*,25,25">
+              <TextBlock Margin="7,0" VerticalAlignment="Center" FontSize="11" FontWeight="SemiBold" Text="{loc:T Main.Library}" />
+              <Button Grid.Column="1" Name="OpenPreferencesButton" Classes="sidebarHeader" Click="OpenPreferences" Content="⚙"
+                      AutomationProperties.Name="{loc:T Main.Preferences}" ToolTip.Tip="{loc:T Main.PreferencesTip}" />
+              <Button Grid.Column="2" Classes="sidebarHeader" Content="‹" Click="ToggleSidebar"
+                      AutomationProperties.Name="{loc:T Main.FoldSidebar}" ToolTip.Tip="{loc:T Main.FoldSidebar}" />
+            </Grid>
+          </Border>
+          <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+          <StackPanel>
+            <Button Name="SelectMusicButton" Classes="sidebarItem" Tag="{StaticResource IconMusic}" Classes.selected="{Binding IsMusicView}" Click="SelectAllMusic" Content="{loc:T Sidebar.Music}" AutomationProperties.Name="{loc:T Sidebar.MusicAutomation}" />
+            <Button Name="SelectRadioButton" Classes="sidebarItem" Tag="{StaticResource IconRadio}" Classes.selected="{Binding IsRadioView}" Click="SelectRadio" Content="{loc:T Sidebar.Radio}" IsEnabled="{Binding CanUseRadio}" AutomationProperties.Name="{loc:T Sidebar.RadioAutomation}" />
+            <Button Name="OpenDiscButton" Classes="sidebarItem" Tag="{StaticResource IconDisc}" Classes.selected="{Binding IsDiscView}" Click="OpenDisc" Content="{loc:T Sidebar.AudioCd}" IsEnabled="{Binding CanUseDisc}" AutomationProperties.Name="{loc:T Sidebar.AudioCdAutomation}" ToolTip.Tip="{loc:T Sidebar.AudioCdTip}" />
+            <Button Name="OpenDevicesButton" Classes="sidebarItem" Tag="{StaticResource IconDevice}" Classes.selected="{Binding IsDevicesView}" Click="OpenDeviceSync" Content="{loc:T Sidebar.Devices}" IsEnabled="{Binding CanUseDevices}" AutomationProperties.Name="{loc:T Sidebar.DevicesAutomation}" ToolTip.Tip="{loc:T Sidebar.DevicesTip}" />
+            <Button Name="OpenPodcastsButton" Classes="sidebarItem" Tag="{StaticResource IconPodcast}" Classes.selected="{Binding IsPodcastsView}" Click="OpenPodcasts" Content="{loc:T Sidebar.Podcasts}" AutomationProperties.Name="{loc:T Sidebar.PodcastsAutomation}" ToolTip.Tip="{loc:T Sidebar.PodcastsTip}" />
+            <Button Name="OpenAudiobooksButton" Classes="sidebarItem" Tag="{StaticResource IconBook}" Classes.selected="{Binding IsAudiobooksView}" Click="OpenAudiobooks" Content="{loc:T Sidebar.Audiobooks}" AutomationProperties.Name="{loc:T Main.Audiobooks}" ToolTip.Tip="{loc:T Main.AudiobookShelf}" />
+          </StackPanel>
+          </ScrollViewer>
+          </Grid>
+
+          <GridSplitter x:Name="LibraryPlaylistsSplitter" Grid.Row="1" ResizeDirection="Rows" AutomationProperties.Name="{loc:T Main.ResizeSidebarSection}"
+                        ResizeBehavior="PreviousAndNext" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                        Background="{DynamicResource PanelBorderBrush}" Cursor="SizeNorthSouth"
+                        DragCompleted="SidebarResizeCompleted" />
+
+          <Grid Grid.Row="2" RowDefinitions="25,*">
+          <Border Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,1,0,1">
+            <Grid ColumnDefinitions="*,25,25,25,25">
+              <TextBlock Margin="7,0" VerticalAlignment="Center" FontSize="11" FontWeight="SemiBold" Text="{loc:T Main.Playlists}" />
+              <Button Grid.Column="1" Classes="sidebarHeader" Click="CreatePlaylist" Content="+" ToolTip.Tip="{loc:T Main.CreatePlaylist}" />
+              <Button Grid.Column="2" Classes="sidebarHeader" Click="CreateSmartPlaylist" Content="◇"
+                      AutomationProperties.Name="{loc:T Main.CreateSmartPlaylist}" ToolTip.Tip="{loc:T Main.CreateSmartPlaylist}" />
+              <Button Grid.Column="3" Classes="sidebarHeader" IsEnabled="{Binding CanEditPlaylist}"
+                      Click="DeletePlaylist" Content="−" ToolTip.Tip="{loc:T Main.DeletePlaylistTip}" />
+              <Button Grid.Column="4" Classes="sidebarHeader" IsEnabled="{Binding CanImportPlaylistFile}"
+                      Click="ImportPlaylistFile" Content="↓" ToolTip.Tip="{loc:T Main.ImportPlaylistFile}"
+                      AutomationProperties.Name="{loc:T Main.ImportPlaylistFile}" />
+            </Grid>
+          </Border>
+          <ListBox x:Name="PlaylistList" AutomationProperties.Name="{loc:T Main.PlaylistsAutomation}" Grid.Row="1" BorderThickness="0" Background="Transparent"
+                   ItemsSource="{Binding EditablePlaylists}" SelectedItem="{Binding SelectedPlaylist, Mode=OneWay}"
+                   SelectionChanged="PlaylistChanged">
+            <ListBox.Styles><Style Selector="ListBoxItem"><Setter Property="HorizontalContentAlignment" Value="Stretch" /></Style></ListBox.Styles>
+            <ListBox.ItemTemplate>
+              <DataTemplate x:DataType="viewModels:PlaylistFilterViewModel">
+                <Border Background="Transparent" PointerPressed="PlaylistItemPointerPressed">
+                  <Border.ContextMenu><ContextMenu>
+                    <MenuItem Header="{loc:T Main.Rename}" Click="RenamePlaylist" />
+                    <MenuItem Header="{loc:T Main.EditRules}" IsVisible="{Binding IsSmart}" Click="EditSmartPlaylist" />
+                    <MenuItem Header="{loc:T Main.ExportPlaylist}" Click="ExportPlaylistFile" />
+                    <MenuItem Header="{loc:T Main.Delete}" Click="DeletePlaylist" />
+                  </ContextMenu></Border.ContextMenu>
+                  <TextBlock Margin="9,5" Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis" />
+                </Border>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+          </Grid>
+
+          <GridSplitter x:Name="PlaylistsFoldersSplitter" Grid.Row="3" ResizeDirection="Rows" AutomationProperties.Name="{loc:T Main.ResizeSidebarSection}"
+                        ResizeBehavior="PreviousAndNext" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                        Background="{DynamicResource PanelBorderBrush}" Cursor="SizeNorthSouth"
+                        DragCompleted="SidebarResizeCompleted" />
+
+          <Grid Grid.Row="4" RowDefinitions="25,*">
+          <Border Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,1,0,1">
+            <Grid ColumnDefinitions="*,25,25">
+              <TextBlock Margin="7,0" VerticalAlignment="Center" FontSize="11" FontWeight="SemiBold" Text="{loc:T Main.Folders}" />
+              <Button Grid.Column="1" Classes="sidebarHeader" Click="ImportFolder" Content="+" ToolTip.Tip="{loc:T Main.AddFolder}" />
+              <Button Grid.Column="2" Classes="sidebarHeader" IsEnabled="{Binding CanManageLibrarySource}"
+                      Click="RemoveLibrarySource" Content="−" ToolTip.Tip="{loc:T Main.RemoveFolderTip}" />
+            </Grid>
+          </Border>
+          <ListBox x:Name="FolderList" AutomationProperties.Name="{loc:T Main.MusicFolders}" Grid.Row="1" BorderThickness="0" Background="Transparent"
+                   ItemsSource="{Binding LibrarySources}" SelectedItem="{Binding SelectedLibrarySource, Mode=TwoWay}">
+            <ListBox.Styles><Style Selector="ListBoxItem"><Setter Property="HorizontalContentAlignment" Value="Stretch" /></Style></ListBox.Styles>
+            <ListBox.ItemTemplate>
+              <DataTemplate x:DataType="viewModels:LibrarySourceViewModel">
+                <Border Background="Transparent" PointerPressed="FolderItemPointerPressed">
+                  <Border.ContextMenu><ContextMenu>
+                    <MenuItem Header="{loc:T Main.Rescan}" Click="RescanLibrarySource" />
+                    <MenuItem Header="{loc:T Main.Remove}" Click="RemoveLibrarySource" />
+                  </ContextMenu></Border.ContextMenu>
+                  <StackPanel Margin="9,4" Spacing="1">
+                    <TextBlock FontWeight="SemiBold" Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis" />
+                    <TextBlock Classes="secondary" FontSize="10" Text="{Binding Path}" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Path}" />
+                  </StackPanel>
+                </Border>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+          </Grid>
+        </Grid>
+        <GridSplitter x:Name="NowPlayingSplitter" Grid.Row="1" ResizeDirection="Rows" AutomationProperties.Name="{loc:T Main.ResizeSidebarSection}"
+                      ResizeBehavior="PreviousAndNext" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                      Background="{DynamicResource PanelBorderBrush}" Cursor="SizeNorthSouth"
+                      DragCompleted="SidebarResizeCompleted" />
+        <Border Grid.Row="2" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,1,0,0" Background="#17191B">
+          <Grid RowDefinitions="25,*">
+            <Border Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1">
+              <TextBlock Margin="8,0" VerticalAlignment="Center"
+                         FontSize="11" FontWeight="SemiBold" Text="{loc:T Main.NowPlaying}" />
+            </Border>
+            <Border Grid.Row="1" Margin="7" BorderBrush="#5C6165" BorderThickness="1" Background="#0D0F10">
+              <Image x:Name="NowPlayingCover" Source="avares://Aibell.Desktop/Assets/default-cover.png"
+                     Stretch="Uniform"
+                     RenderOptions.BitmapInterpolationMode="HighQuality"
+                     AutomationProperties.Name="{loc:T Main.NowPlayingArt}"
+                     ToolTip.Tip="{loc:T Main.NowPlayingArt}" />
+            </Border>
+          </Grid>
+        </Border>
+        </Grid>
+        <StackPanel IsVisible="{Binding IsSidebarCollapsed}" Spacing="8">
+          <Button Classes="sidebarHeader" Content="›" Click="ToggleSidebar"
+                  AutomationProperties.Name="{loc:T Main.ShowSidebar}" ToolTip.Tip="{loc:T Main.ShowSidebar}" />
+          <TextBlock HorizontalAlignment="Center" Text="♫" />
+        </StackPanel>
+        </Grid>
+      </Border>
+
+      <GridSplitter x:Name="SidebarSplitter" Grid.Column="1" ResizeDirection="Columns" AutomationProperties.Name="{loc:T Main.ResizeSidebar}"
+                    ResizeBehavior="PreviousAndNext" HorizontalAlignment="Stretch"
+                    Background="{DynamicResource PanelBorderBrush}" IsVisible="{Binding IsSidebarVisible}"
+                    DragCompleted="SidebarResizeCompleted" />
+
+      <Grid Grid.Column="2" RowDefinitions="Auto,*" Background="{DynamicResource ContentBrush}">
+        <Border Height="242" Margin="0,0,0,1" Padding="5" IsVisible="{Binding IsColumnBrowserVisible}" Background="{DynamicResource WindowBrush}"
+                BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,1,0,1">
+          <Grid ColumnDefinitions="*,*,*" ColumnSpacing="5">
+            <Border Grid.Column="0" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="1" Background="{DynamicResource ContentBrush}">
+            <Grid RowDefinitions="25,*">
+              <Border Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1"><TextBlock Margin="8,4" FontWeight="SemiBold" Text="{loc:T Main.Genre}" /></Border>
+              <ListBox x:Name="GenreList" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Disabled" AutomationProperties.Name="{loc:T Main.Genres}" Grid.Row="1" BorderThickness="0" ItemsSource="{Binding Genres}"
+                       SelectedItem="{Binding SelectedGenre, Mode=OneWay}" SelectionChanged="GenreChanged">
+                <ListBox.Styles><Style Selector="ListBoxItem:nth-child(even):not(:selected):not(:pointerover):not(:pressed)"><Setter Property="Background" Value="{DynamicResource AlternateRowBrush}" /></Style></ListBox.Styles>
+                <ListBox.ItemTemplate><DataTemplate x:DataType="viewModels:GenreFilterViewModel">
+                  <TextBlock Margin="7,3" Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis" />
+                </DataTemplate></ListBox.ItemTemplate>
+              </ListBox>
+            </Grid>
+            </Border>
+            <Border Grid.Column="1" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="1" Background="{DynamicResource ContentBrush}">
+            <Grid RowDefinitions="25,*">
+              <Border Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1"><TextBlock Margin="8,4" FontWeight="SemiBold" Text="{loc:T Main.Artist}" /></Border>
+              <ListBox x:Name="ArtistList" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Disabled" AutomationProperties.Name="{loc:T Main.Artists}" Grid.Row="1" BorderThickness="0" ItemsSource="{Binding Artists}"
+                       SelectedItem="{Binding SelectedArtist, Mode=OneWay}" SelectionChanged="ArtistChanged">
+                <ListBox.Styles><Style Selector="ListBoxItem:nth-child(even):not(:selected):not(:pointerover):not(:pressed)"><Setter Property="Background" Value="{DynamicResource AlternateRowBrush}" /></Style></ListBox.Styles>
+                <ListBox.ItemTemplate><DataTemplate x:DataType="viewModels:ArtistFilterViewModel">
+                  <TextBlock Margin="7,3" Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis" />
+                </DataTemplate></ListBox.ItemTemplate>
+              </ListBox>
+            </Grid>
+            </Border>
+            <Border Grid.Column="2" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="1" Background="{DynamicResource ContentBrush}">
+            <Grid RowDefinitions="25,*">
+              <Border Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1"><TextBlock Margin="8,4" FontWeight="SemiBold" Text="{loc:T Main.Album}" /></Border>
+              <ListBox x:Name="AlbumList" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Disabled" AutomationProperties.Name="{loc:T Main.Albums}" Grid.Row="1" BorderThickness="0" ItemsSource="{Binding Albums}"
+                       SelectedItem="{Binding SelectedAlbum, Mode=OneWay}" SelectionChanged="AlbumChanged">
+                <ListBox.Styles><Style Selector="ListBoxItem:nth-child(even):not(:selected):not(:pointerover):not(:pressed)"><Setter Property="Background" Value="{DynamicResource AlternateRowBrush}" /></Style></ListBox.Styles>
+                <ListBox.ItemTemplate><DataTemplate x:DataType="viewModels:AlbumFilterViewModel">
+                  <TextBlock Margin="7,3" Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Artist}" />
+                </DataTemplate></ListBox.ItemTemplate>
+              </ListBox>
+            </Grid>
+            </Border>
+          </Grid>
+        </Border>
+
+        <ScrollViewer Grid.Row="1" IsVisible="{Binding IsMusicView}" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+        <Grid RowDefinitions="27,*">
+          <Border Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1">
+            <Border.ContextMenu>
+              <ContextMenu Opening="PopulateColumnMenu" />
+            </Border.ContextMenu>
+            <Grid ColumnDefinitions="38,*" Margin="7,0">
+              <ItemsControl x:Name="TrackColumnHeaders" Grid.Column="1" ItemsSource="{Binding VisibleTrackColumns}">
+                <ItemsControl.ItemsPanel><ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate></ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate x:DataType="viewModels:TrackColumnViewModel">
+                    <Border Width="{Binding Width}" Background="Transparent"
+                            Opacity="{Binding DragOpacity}"
+                            BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,1,0"
+                            PointerPressed="TrackColumnHeaderPressed">
+                      <Border.Transitions>
+                        <Transitions>
+                          <DoubleTransition Property="Opacity" Duration="0:0:0.12" />
+                        </Transitions>
+                      </Border.Transitions>
+                      <Grid ColumnDefinitions="14,*,6">
+                        <TextBlock VerticalAlignment="Center" Text="⋮"
+                                   Foreground="{DynamicResource SecondaryTextBrush}" />
+                        <Grid Grid.Column="1" Background="#01FFFFFF" ColumnDefinitions="*,Auto">
+                          <TextBlock Margin="7,0,3,0" VerticalAlignment="Center" FontWeight="SemiBold"
+                                     Text="{Binding Header}" TextTrimming="CharacterEllipsis" />
+                          <TextBlock Grid.Column="1" Margin="2,0,4,0" VerticalAlignment="Center"
+                                     FontSize="9" Foreground="{DynamicResource SecondaryTextBrush}" Text="{Binding SortIndicator}" />
+                        </Grid>
+                        <Border Grid.Column="2" Background="#01000000" Cursor="SizeWestEast"
+                                PointerPressed="TrackColumnResizePressed"
+                                PointerMoved="TrackColumnResizeMoved"
+                                PointerReleased="TrackColumnResizeReleased" />
+                        <Border Grid.ColumnSpan="3" IsHitTestVisible="False"
+                                BorderBrush="#D52268" BorderThickness="2,0,0,0"
+                                Opacity="{Binding DropIndicatorOpacity}">
+                          <Border.Transitions>
+                            <Transitions>
+                              <DoubleTransition Property="Opacity" Duration="0:0:0.12" />
+                            </Transitions>
+                          </Border.Transitions>
+                        </Border>
+                      </Grid>
+                    </Border>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </Grid>
+          </Border>
+          <ListBox x:Name="TrackList" AutomationProperties.Name="{loc:T Main.LibraryTracks}" Grid.Row="1" ItemsSource="{Binding Tracks}" SelectedItem="{Binding SelectedTrack}"
+                   DoubleTapped="PlaySelected" SelectionMode="Multiple" BorderThickness="0">
+            <ListBox.Styles>
+              <Style Selector="ListBoxItem"><Setter Property="HorizontalContentAlignment" Value="Stretch" /><Setter Property="MinHeight" Value="24" /></Style>
+              <Style Selector="ListBoxItem:nth-child(even):not(:selected):not(:pointerover):not(:pressed)"><Setter Property="Background" Value="{DynamicResource AlternateRowBrush}" /></Style>
+            </ListBox.Styles>
+            <ListBox.ItemTemplate>
+              <DataTemplate x:DataType="viewModels:TrackRowViewModel">
+                <Border Background="Transparent" PointerPressed="TrackItemPointerPressed" DragDrop.AllowDrop="True"
+                        DragDrop.DragLeave="TrackDragLeave" DragDrop.DragOver="TrackDragOver" DragDrop.Drop="TrackDrop">
+                  <Border.ContextMenu><ContextMenu Opening="PopulateTrackContextMenu">
+                    <MenuItem Classes="viewMetadata" Header="{loc:T Main.ViewMetadata}" Click="ViewTrackProperties" InputGesture="Alt+Enter" />
+                    <MenuItem Classes="getArtwork" Header="{loc:T Artwork.Menu}" Click="GetArtwork" />
+                    <Separator />
+                    <MenuItem Classes="addToPlaylist" Header="{loc:T Main.AddToPlaylist}" />
+                    <Separator />
+                    <MenuItem Header="{loc:T Main.QueueNext}" Click="QueueSelectedNext" />
+                    <MenuItem Header="{loc:T Main.QueueLast}" Click="QueueSelectedLast" />
+                    <MenuItem Header="{loc:T Main.Rating}">
+                      <MenuItem Header="{loc:T Main.RatingClear}" Tag="0" Click="SetTrackRating" />
+                      <MenuItem Header="★☆☆☆☆" Tag="1" Click="SetTrackRating" />
+                      <MenuItem Header="★★☆☆☆" Tag="2" Click="SetTrackRating" />
+                      <MenuItem Header="★★★☆☆" Tag="3" Click="SetTrackRating" />
+                      <MenuItem Header="★★★★☆" Tag="4" Click="SetTrackRating" />
+                      <MenuItem Header="★★★★★" Tag="5" Click="SetTrackRating" />
+                    </MenuItem>
+                    <MenuItem Header="{loc:T Main.RemoveFromPlaylist}" IsVisible="{Binding IsPlaylistTrack}" Click="RemoveTrackFromPlaylist" />
+                    <Separator IsVisible="{Binding CanReorder}" />
+                    <MenuItem Header="{loc:T Main.MoveUp}" IsVisible="{Binding CanReorder}" Click="MoveTrackUp" />
+                    <MenuItem Header="{loc:T Main.MoveDown}" IsVisible="{Binding CanReorder}" Click="MoveTrackDown" />
+                  </ContextMenu></Border.ContextMenu>
+                  <Grid ColumnDefinitions="18,20,*" Margin="7,3">
+                    <TextBlock Classes="dragHandle" IsVisible="{Binding CanReorder}" Cursor="SizeAll" Text="⠿" Foreground="{DynamicResource SecondaryTextBrush}" PointerPressed="TrackDragHandlePressed" />
+                    <Grid Grid.Column="1" IsVisible="{Binding HasPlaybackIndicator}"
+                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                          ToolTip.Tip="{Binding PlaybackIndicatorText}"
+                          AutomationProperties.Name="{Binding PlaybackIndicatorText}">
+                      <PathIcon Width="12" Height="12" IsVisible="{Binding IsPlaying}"
+                                Data="M3,9 L3,15 L7,15 L12,20 L12,4 L7,9 Z M16.5,12 C16.5,10.23 15.48,8.71 14,7.97 L14,16.02 C15.48,15.29 16.5,13.77 16.5,12 Z M14,3.23 L14,5.29 C16.89,6.15 19,8.83 19,12 C19,15.17 16.89,17.85 14,18.71 L14,20.77 C18.01,19.86 21,16.28 21,12 C21,7.72 18.01,4.14 14,3.23 Z" />
+                      <PathIcon Width="12" Height="12" IsVisible="{Binding IsPaused}"
+                                Data="M6,4 L10,4 L10,20 L6,20 Z M14,4 L18,4 L18,20 L14,20 Z" />
+                    </Grid>
+                    <ItemsControl Grid.Column="2" ItemsSource="{Binding Cells}">
+                      <ItemsControl.ItemsPanel><ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate></ItemsControl.ItemsPanel>
+                      <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="viewModels:TrackCellViewModel">
+                          <TextBlock Width="{Binding Column.Width}" Padding="7,0" Text="{Binding Text}"
+                                     TextTrimming="CharacterEllipsis" />
+                        </DataTemplate>
+                      </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                  </Grid>
+                </Border>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+          <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" IsVisible="{Binding IsEmpty}"
+                     Classes="secondary" Text="{loc:T Main.NoTracks}" />
+        </Grid>
+        </ScrollViewer>
+        <Grid Grid.Row="1" IsVisible="{Binding IsRadioView}" RowDefinitions="42,*">
+          <Border Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1" Padding="10,5">
+            <Grid ColumnDefinitions="Auto,Auto,*,Auto" ColumnSpacing="14">
+              <TextBlock Text="{loc:T Main.RadioHeader}" VerticalAlignment="Center" FontWeight="SemiBold" />
+              <Border Grid.Column="1" Classes="segmentTrack" IsVisible="{Binding CanUseRadioCatalog}">
+                <StackPanel Orientation="Horizontal" Spacing="2">
+                  <Button Name="RadioCatalogButton" Classes="segment" Classes.active="{Binding IsRadioCatalogMode}" Content="{loc:T Radio.ModeCatalog}" Click="ShowRadioCatalog" />
+                  <Button Name="RadioMyStationsButton" Classes="segment" Classes.active="{Binding IsRadioMyMode}" Content="{loc:T Radio.ModeMine}" Click="ShowMyRadioStations" />
+                </StackPanel>
+              </Border>
+              <StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="6" IsVisible="{Binding IsRadioMyMode}">
+                <Button Name="ImportRadioPlaylistButton" Content="{loc:T Main.ImportEllipsis}" Click="ImportRadioPlaylist" IsEnabled="{Binding CanImportRadioPlaylist}" ToolTip.Tip="{loc:T Main.ImportStationsTip}" AutomationProperties.Name="{loc:T Main.ImportStations}" />
+                <Button Name="AddRadioStationButton" Content="{loc:T Main.AddEllipsis}" Click="AddRadioStation" IsEnabled="{Binding CanManageRadio}" />
+                <Button Name="EditRadioStationButton" Content="{loc:T Main.EditEllipsis}" Click="EditRadioStation" IsEnabled="{Binding CanEditRadioStation}" />
+                <Button Name="RemoveRadioStationButton" Content="{loc:T Main.Remove}" Click="RemoveRadioStation" IsEnabled="{Binding CanEditRadioStation}" />
+              </StackPanel>
+            </Grid>
+          </Border>
+          <Border Grid.Row="1" Background="{DynamicResource CanvasBrush}" IsVisible="{Binding ShowRadioCatalogOptIn}">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+              <Border Classes="radioCard" Margin="24" Padding="26" MaxWidth="480" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Spacing="12">
+                  <Path Width="34" Height="34" Stretch="Uniform" Stroke="{DynamicResource AccentBrush}" StrokeThickness="1.6" StrokeJoin="Round" HorizontalAlignment="Left"
+                        Data="{StaticResource IconRadio}" />
+                  <TextBlock Text="{loc:T Radio.OptInTitle}" FontSize="18" FontWeight="SemiBold" TextWrapping="Wrap" />
+                  <TextBlock Text="{loc:T Radio.OptInBody}" TextWrapping="Wrap" />
+                  <TextBlock Text="{loc:T Radio.OptInPrivacy}" TextWrapping="Wrap" Classes="secondary" />
+                  <Button Name="EnableRadioCatalogButton" Classes="dialogAccept" HorizontalAlignment="Left" Padding="16,6" Content="{loc:T Radio.OptInEnable}" Click="EnableRadioCatalog" />
+                  <TextBlock Text="{loc:T Radio.OptInOff}" TextWrapping="Wrap" Classes="secondary" FontSize="11" />
+                </StackPanel>
+              </Border>
+            </ScrollViewer>
+          </Border>
+          <Grid Name="RadioBrowserGrid" Grid.Row="1" ColumnDefinitions="Auto,*" IsVisible="{Binding ShowRadioBrowser}" SizeChanged="RadioBrowserSizeChanged">
+            <Border Name="RadioGenrePane" Width="215" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,1,0" Background="{DynamicResource ContentBrush}">
+              <Grid RowDefinitions="Auto,Auto,*">
+                <TextBlock Margin="16,14,16,8" FontSize="16" FontWeight="Bold" Text="{loc:T Radio.Genres}" />
+                <TextBox Name="RadioGenreSearchBox" Grid.Row="1" Classes="radioField" Margin="12,0,12,8" Text="{Binding RadioGenreSearch}" PlaceholderText="{loc:T Radio.SearchGenres}"
+                         AutomationProperties.Name="{loc:T Radio.SearchGenres}" />
+                <ListBox Name="RadioGenreList" Grid.Row="2" ItemsSource="{Binding RadioGenres}" SelectedItem="{Binding SelectedRadioGenre}"
+                         BorderThickness="0" Background="Transparent" Margin="8,0,8,8" AutomationProperties.Name="{loc:T Radio.Genres}">
+                  <ListBox.Styles>
+                    <Style Selector="ListBoxItem"><Setter Property="HorizontalContentAlignment" Value="Stretch" /><Setter Property="CornerRadius" Value="8" /><Setter Property="Margin" Value="0,1" /><Setter Property="MinHeight" Value="32" /></Style>
+                    <Style Selector="ListBoxItem:pointerover /template/ ContentPresenter"><Setter Property="Background" Value="{DynamicResource PillBrush}" /></Style>
+                    <Style Selector="ListBoxItem:selected /template/ ContentPresenter"><Setter Property="Background" Value="{DynamicResource SelectedRowBrush}" /></Style>
+                    <Style Selector="ListBoxItem:selected:pointerover /template/ ContentPresenter"><Setter Property="Background" Value="{DynamicResource SelectedRowBrush}" /></Style>
+                    <Style Selector="ListBoxItem:selected TextBlock.genreName"><Setter Property="FontWeight" Value="SemiBold" /></Style>
+                  </ListBox.Styles>
+                  <ListBox.ItemTemplate>
+                    <DataTemplate x:DataType="viewModels:RadioGenreRow">
+                      <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="9" Margin="8,3,16,3">
+                        <Path Width="15" Height="15" Stretch="Uniform" StrokeThickness="1.5" StrokeJoin="Round" StrokeLineCap="Round" Stroke="{DynamicResource SecondaryTextBrush}" VerticalAlignment="Center"
+                              Data="{Binding Genre, Converter={x:Static controls:RadioConverters.GenreIcon}}" />
+                        <TextBlock Grid.Column="1" Classes="genreName" Text="{Binding Name}" TextTrimming="CharacterEllipsis" VerticalAlignment="Center" />
+                        <Border Grid.Column="2" CornerRadius="10" Padding="7,1" Background="{DynamicResource PillBrush}" VerticalAlignment="Center">
+                          <TextBlock Text="{Binding Count}" FontSize="11" Foreground="{DynamicResource PillTextBrush}" />
+                        </Border>
+                      </Grid>
+                    </DataTemplate>
+                  </ListBox.ItemTemplate>
+                </ListBox>
+              </Grid>
+            </Border>
+            <Grid Grid.Column="1" RowDefinitions="Auto,*" Background="{DynamicResource CanvasBrush}">
+              <Grid Name="RadioFilterBar" Margin="16,14,16,6" ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto" ColumnSpacing="8" RowSpacing="8" SizeChanged="RadioFilterBarSizeChanged">
+                <TextBox Name="RadioSearchBox" Classes="radioField" MinWidth="150" TextChanged="RadioSearchChanged" PlaceholderText="{loc:T Radio.SearchStations}" AutomationProperties.Name="{loc:T Radio.SearchStations}">
+                  <TextBox.InnerLeftContent>
+                    <Path Width="14" Height="14" Margin="10,0,6,0" Stretch="Uniform" Stroke="{DynamicResource SecondaryTextBrush}" StrokeThickness="1.8" StrokeLineCap="Round"
+                          Data="M10.5,4 A6.5,6.5 0 1 1 10.49,4 Z M15.5,15.5 L20.5,20.5" />
+                  </TextBox.InnerLeftContent>
+                </TextBox>
+                <WrapPanel Name="RadioFilterChoices" Grid.Column="1" Orientation="Horizontal" ItemSpacing="8" LineSpacing="8">
+                  <ComboBox Name="RadioGenreChoice" Classes="radioField" Width="160" ItemsSource="{Binding RadioGenreChoices}" SelectedItem="{Binding SelectedRadioGenreChoice}" AutomationProperties.Name="{loc:T Radio.GenreFilter}">
+                    <ComboBox.ItemTemplate><DataTemplate x:DataType="viewModels:RadioGenreRow"><TextBlock Text="{Binding ChoiceName}" TextTrimming="CharacterEllipsis" /></DataTemplate></ComboBox.ItemTemplate>
+                  </ComboBox>
+                  <ComboBox Name="RadioCountryChoice" Classes="radioField" Width="160" ItemsSource="{Binding RadioCountries}" SelectedItem="{Binding SelectedRadioCountry}" AutomationProperties.Name="{loc:T Radio.CountryFilter}">
+                    <ComboBox.ItemTemplate><DataTemplate x:DataType="viewModels:RadioCountryChoice"><TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis" /></DataTemplate></ComboBox.ItemTemplate>
+                  </ComboBox>
+                  <ComboBox Name="RadioSortChoice" Classes="radioField" Width="150" SelectedIndex="{Binding RadioSortIndex}" AutomationProperties.Name="{loc:T Radio.SortBy}">
+                    <ComboBoxItem Content="{loc:T Radio.SortPopular}" />
+                    <ComboBoxItem Content="{loc:T Radio.SortName}" />
+                    <ComboBoxItem Content="{loc:T Radio.SortRecent}" />
+                    <ComboBoxItem Content="{loc:T Radio.SortMostPlayed}" />
+                    <ComboBoxItem Content="{loc:T Radio.SortRating}" />
+                  </ComboBox>
+                </WrapPanel>
+              </Grid>
+              <ListBox Name="RadioStationList" Grid.Row="1" ItemsSource="{Binding RadioCards}" SelectedItem="{Binding SelectedRadioCard}"
+                       BorderThickness="0" Background="Transparent" Padding="16,6,16,16" DoubleTapped="PlayRadioStation" AutomationProperties.Name="{loc:T Main.SavedStations}"
+                       ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListBox.ItemsPanel><ItemsPanelTemplate><controls:ResponsiveCardPanel MinCardWidth="208" Spacing="12" /></ItemsPanelTemplate></ListBox.ItemsPanel>
+                <ListBox.Styles>
+                  <Style Selector="ListBoxItem"><Setter Property="Padding" Value="0" /><Setter Property="Margin" Value="0" /><Setter Property="CornerRadius" Value="10" /><Setter Property="Background" Value="Transparent" /></Style>
+                  <Style Selector="ListBoxItem /template/ ContentPresenter"><Setter Property="Background" Value="Transparent" /></Style>
+                  <Style Selector="ListBoxItem:pointerover /template/ ContentPresenter"><Setter Property="Background" Value="Transparent" /></Style>
+                  <Style Selector="ListBoxItem:selected /template/ ContentPresenter"><Setter Property="Background" Value="Transparent" /></Style>
+                  <Style Selector="ListBoxItem:selected Border.radioCard"><Setter Property="BorderBrush" Value="{DynamicResource CardSelectedBorderBrush}" /></Style>
+                </ListBox.Styles>
+                <ListBox.ItemTemplate>
+                  <DataTemplate x:DataType="viewModels:RadioCardViewModel">
+                    <Border Classes="radioCard" PointerPressed="RadioStationPointerPressed" EffectiveViewportChanged="RadioCardViewportChanged">
+                      <Border.ContextMenu><ContextMenu>
+                        <MenuItem Header="{loc:T Main.Play}" Click="PlayRadioStation" />
+                        <MenuItem Header="{loc:T Radio.SaveToMine}" Click="ToggleRadioSaved" IsVisible="{Binding CanSave}" />
+                        <MenuItem Header="{loc:T Radio.RemoveFromMine}" Click="ToggleRadioSaved" IsVisible="{Binding CanUnsave}" />
+                        <MenuItem Header="{loc:T Main.EditStation}" Click="EditRadioStation" IsVisible="{Binding !IsCatalogCard}" />
+                        <MenuItem Header="{loc:T Main.RemoveStation}" Click="RemoveRadioStation" IsVisible="{Binding !IsCatalogCard}" />
+                      </ContextMenu></Border.ContextMenu>
+                      <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="64,12,*,Auto" RowSpacing="10">
+                        <Border Width="64" Height="64" CornerRadius="12" ClipToBounds="True" VerticalAlignment="Top" Background="{Binding TileBrush}">
+                          <Grid>
+                            <TextBlock Text="{Binding Initials}" Foreground="White" FontSize="22" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Center" IsVisible="{Binding ShowInitials}" />
+                            <Border Background="{DynamicResource LogoBackplateBrush}" IsVisible="{Binding HasLogo}" Padding="4">
+                              <Image Source="{Binding Logo}" Stretch="Uniform" />
+                            </Border>
+                          </Grid>
+                        </Border>
+                        <StackPanel Grid.Column="2" Spacing="2" VerticalAlignment="Center">
+                          <TextBlock Text="{Binding Name}" FontSize="14" FontWeight="SemiBold" TextWrapping="Wrap" MaxLines="2" TextTrimming="CharacterEllipsis" />
+                          <TextBlock Text="{Binding Subtitle}" Classes="secondary" TextTrimming="CharacterEllipsis" IsVisible="{Binding HasSubtitle}" />
+                        </StackPanel>
+                        <Button Grid.Column="3" Classes="star" VerticalAlignment="Top" Click="ToggleRadioSaved" ToolTip.Tip="{Binding StarTip}" AutomationProperties.Name="{Binding StarTip}">
+                          <Grid>
+                            <Path Width="18" Height="18" Stretch="Uniform" Stroke="{DynamicResource SecondaryTextBrush}" StrokeThickness="1.5" StrokeJoin="Round" IsVisible="{Binding IsNotSaved}"
+                                  Data="M12,2.5 L14.9,8.9 L21.8,9.6 L16.6,14.2 L18.2,21 L12,17.5 L5.8,21 L7.4,14.2 L2.2,9.6 L9.1,8.9 Z" />
+                            <Path Width="18" Height="18" Stretch="Uniform" Fill="{DynamicResource AccentBrush}" Stroke="{DynamicResource AccentBrush}" StrokeThickness="1.5" StrokeJoin="Round" IsVisible="{Binding IsSaved}"
+                                  Data="M12,2.5 L14.9,8.9 L21.8,9.6 L16.6,14.2 L18.2,21 L12,17.5 L5.8,21 L7.4,14.2 L2.2,9.6 L9.1,8.9 Z" />
+                          </Grid>
+                        </Button>
+                        <TextBlock Grid.Row="1" Grid.ColumnSpan="4" Text="{Binding Description}" Classes="secondary" FontSize="12" TextWrapping="Wrap" MaxLines="2" TextTrimming="CharacterEllipsis" MinHeight="32" />
+                        <WrapPanel Grid.Row="2" Grid.ColumnSpan="4" Orientation="Horizontal">
+                          <Border Classes="chip" Background="{DynamicResource AccentTintBrush}" Margin="0,0,6,0" IsVisible="{Binding HasGenre}">
+                            <TextBlock Text="{Binding Genre}" FontSize="11" Foreground="{DynamicResource AccentTextBrush}" TextTrimming="CharacterEllipsis" MaxWidth="150" />
+                          </Border>
+                          <Border Classes="chip" Background="{DynamicResource PillBrush}" IsVisible="{Binding HasCountry}">
+                            <StackPanel Orientation="Horizontal" Spacing="5">
+                              <Border CornerRadius="4" Padding="4,0" Background="{DynamicResource CodeBadgeBrush}" VerticalAlignment="Center" IsVisible="{Binding CountryCode, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+                                <TextBlock Text="{Binding CountryCode}" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource PillTextBrush}" />
+                              </Border>
+                              <TextBlock Text="{Binding Country}" FontSize="11" Foreground="{DynamicResource PillTextBrush}" TextTrimming="CharacterEllipsis" MaxWidth="120" />
+                            </StackPanel>
+                          </Border>
+                          <Border Classes="chip" Background="{DynamicResource NoticeBrush}" Margin="6,0,0,0" IsVisible="{Binding HasNotice}" ToolTip.Tip="{Binding NoticeTip}"
+                                  AutomationProperties.Name="{Binding NoticeTip}">
+                            <TextBlock Text="{Binding NoticeText}" FontSize="11" FontWeight="SemiBold" Foreground="{DynamicResource NoticeTextBrush}" TextTrimming="CharacterEllipsis" MaxWidth="200" />
+                          </Border>
+                        </WrapPanel>
+                      </Grid>
+                    </Border>
+                  </DataTemplate>
+                </ListBox.ItemTemplate>
+              </ListBox>
+              <TextBlock Grid.Row="1" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" IsVisible="{Binding IsRadioEmpty}"
+                         Text="{Binding RadioEmptyText}" TextWrapping="Wrap" Classes="secondary" />
+            </Grid>
+          </Grid>
+        </Grid>
+        <Border Grid.Row="1" IsVisible="{Binding IsPodcastsView}">
+          <desktop:PodcastsView x:Name="PodcastsPane" DataContext="{x:Null}" />
+        </Border>
+        <Border Grid.Row="1" IsVisible="{Binding IsDiscView}">
+          <desktop:DiscView x:Name="DiscPane" DataContext="{x:Null}" />
+        </Border>
+        <Border Grid.Row="1" IsVisible="{Binding IsDevicesView}">
+          <desktop:DeviceSyncView x:Name="DeviceSyncPane" DataContext="{x:Null}" />
+        </Border>
+        <Border Grid.Row="1" IsVisible="{Binding IsAudiobooksView}">
+          <desktop:AudiobooksView x:Name="AudiobooksPane" DataContext="{x:Null}" />
+        </Border>
+      </Grid>
+      <GridSplitter x:Name="QueueSplitter" Grid.Column="3" ResizeDirection="Columns" AutomationProperties.Name="{loc:T Main.ResizeQueue}"
+                    ResizeBehavior="PreviousAndNext" HorizontalAlignment="Stretch"
+                    Background="{DynamicResource PanelBorderBrush}" IsVisible="{Binding IsPlayQueueVisible}"
+                    DragCompleted="QueueResizeCompleted" />
+      <Border Grid.Column="4" Background="{DynamicResource ContentBrush}"
+              BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="1,0,0,0"
+              DragDrop.AllowDrop="True" DragDrop.DragOver="PlayQueueDragOver"
+              DragDrop.DragLeave="PlayQueueDragLeave" DragDrop.Drop="PlayQueueDrop">
+        <Grid>
+          <Grid IsVisible="{Binding IsPlayQueueVisible}" RowDefinitions="25,25,*,32">
+            <Border Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1">
+              <Grid ColumnDefinitions="*,28">
+                <TextBlock Margin="8,0" VerticalAlignment="Center" FontWeight="SemiBold" Text="{Binding PlayQueueHeader}" />
+                <Button Grid.Column="1" Classes="sidebarHeader" Content="›" Click="TogglePlayQueue"
+                        AutomationProperties.Name="{loc:T Main.FoldQueue}" ToolTip.Tip="{loc:T Main.FoldQueue}" />
+              </Grid>
+            </Border>
+            <Border Grid.Row="1" Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1">
+              <Grid ColumnDefinitions="24,30,*">
+                <TextBlock Grid.Column="1" Margin="4,0" VerticalAlignment="Center" Text="#" />
+                <TextBlock Grid.Column="2" Margin="4,0" VerticalAlignment="Center" Text="{loc:T Main.TitleColumn}" />
+              </Grid>
+            </Border>
+            <Grid Grid.Row="2">
+              <ListBox x:Name="PlayQueueList" AutomationProperties.Name="{loc:T Main.PlayQueue}" ItemsSource="{Binding QueueItems}"
+                       SelectedItem="{Binding SelectedQueueEntry}" BorderThickness="0" DoubleTapped="PlayQueuedTrack">
+                <ListBox.Styles>
+                  <Style Selector="ListBoxItem"><Setter Property="HorizontalContentAlignment" Value="Stretch" /><Setter Property="MinHeight" Value="26" /></Style>
+                  <Style Selector="ListBoxItem:nth-child(even):not(:selected):not(:pointerover):not(:pressed)"><Setter Property="Background" Value="{DynamicResource AlternateRowBrush}" /></Style>
+                </ListBox.Styles>
+                <ListBox.ItemTemplate>
+                  <DataTemplate x:DataType="viewModels:PlayQueueEntryViewModel">
+                    <Border Background="Transparent" PointerPressed="QueueItemPointerPressed" DragDrop.AllowDrop="True">
+                      <Border.ContextMenu>
+                        <ContextMenu Opening="PopulateQueueContextMenu">
+                          <MenuItem Header="{loc:T Main.Play}" Click="PlayQueueMenuTrack" />
+                          <MenuItem Header="{loc:T Main.ShowFile}" Click="ShowQueuedFile" />
+                          <Separator />
+                          <MenuItem Classes="addToPlaylist" Header="{loc:T Main.AddToPlaylist}" />
+                          <MenuItem Header="{loc:T Main.AddToLibrary}" Click="AddQueuedTrackToLibrary" />
+                          <Separator />
+                          <MenuItem Header="{loc:T Main.RemoveShort}" Click="RemoveQueuedTrack" />
+                        </ContextMenu>
+                      </Border.ContextMenu>
+                      <Grid ColumnDefinitions="24,30,*" Margin="0,4">
+                        <Grid Width="12" Height="12" VerticalAlignment="Center" ToolTip.Tip="{Binding Row.PlaybackIndicatorText}">
+                          <PathIcon Width="12" Height="12" IsVisible="{Binding Row.IsPlaying}" Data="M3,9 L3,15 L7,15 L12,20 L12,4 L7,9 Z M16.5,12 C16.5,10.23 15.48,8.71 14,7.97 L14,16.02 C15.48,15.29 16.5,13.77 16.5,12 Z M14,3.23 L14,5.29 C16.89,6.15 19,8.83 19,12 C19,15.17 16.89,17.85 14,18.71 L14,20.77 C18.01,19.86 21,16.28 21,12 C21,7.72 18.01,4.14 14,3.23 Z" />
+                          <PathIcon Width="12" Height="12" IsVisible="{Binding Row.IsPaused}" Data="M6,4 L10,4 L10,20 L6,20 Z M14,4 L18,4 L18,20 L14,20 Z" />
+                        </Grid>
+                        <TextBlock Grid.Column="1" Margin="4,0" Text="{Binding Position}" />
+                        <TextBlock Grid.Column="2" Margin="4,0,8,0" Text="{Binding Row.Title}" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Details}" />
+                      </Grid>
+                    </Border>
+                  </DataTemplate>
+                </ListBox.ItemTemplate>
+              </ListBox>
+              <TextBlock IsVisible="{Binding IsQueueEmpty}" Classes="secondary" Text="{loc:T Main.DropTracks}" IsHitTestVisible="False"
+                         HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Grid>
+            <Border Grid.Row="3" Background="{DynamicResource StatusBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,1,0,0">
+              <Grid ColumnDefinitions="*,Auto" Margin="6,3">
+                <TextBlock Margin="3,0" VerticalAlignment="Center" Text="{Binding QueueSummary}" />
+                <Button Grid.Column="1" Content="{loc:T Main.Clear}" IsEnabled="{Binding CanImport}" Click="ClearPlayQueue" ToolTip.Tip="{loc:T Main.ClearQueueTip}" />
+              </Grid>
+            </Border>
+          </Grid>
+          <StackPanel IsVisible="{Binding IsPlayQueueCollapsed}" Spacing="8">
+            <Button Classes="sidebarHeader" Content="‹" Click="TogglePlayQueue"
+                    AutomationProperties.Name="{loc:T Main.ShowQueue}" ToolTip.Tip="{loc:T Main.ShowQueue}" />
+            <TextBlock HorizontalAlignment="Center" Text="♫" ToolTip.Tip="{Binding PlayQueueHeader}" />
+          </StackPanel>
+          <Border x:Name="QueueDropHighlight" IsVisible="False" BorderBrush="#D52268" BorderThickness="2" IsHitTestVisible="False" />
+        </Grid>
+      </Border>
+    </Grid>
+
+    <Border Grid.Row="2" Padding="8,0" Background="{DynamicResource StatusBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,1,0,0">
+      <Grid ColumnDefinitions="*,Auto">
+        <TextBlock VerticalAlignment="Center" FontSize="11" Text="{Binding StatusMessage}" />
+        <ProgressBar Grid.Column="1" Width="90" Height="10" VerticalAlignment="Center"
+                     IsIndeterminate="True" IsVisible="{Binding IsBusy}" AutomationProperties.Name="{loc:T Main.BusyAutomation}" />
+      </Grid>
+    </Border>
+  </Grid>
+  </DockPanel>
+</Window>

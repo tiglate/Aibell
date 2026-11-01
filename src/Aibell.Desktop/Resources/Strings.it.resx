@@ -1,0 +1,1021 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Artwork.Close" xml:space="preserve"><value>Chiudi</value></data>
+  <data name="Artwork.ConsentAccept" xml:space="preserve"><value>Attiva</value></data>
+  <data name="Artwork.ConsentBody" xml:space="preserve"><value>La ricerca di una copertina invia il nome dell'album e dell'artista a MusicBrainz e al Cover Art Archive, tramite il plugin MusicBrainz.
+
+Attivare la ricerca online e continuare? Puoi disattivarla di nuovo in Preferenze &gt; Online.</value></data>
+  <data name="Artwork.ConsentTitle" xml:space="preserve"><value>Attivare la ricerca online?</value></data>
+  <data name="Artwork.Downloading" xml:space="preserve"><value>Download della copertina in corso…</value></data>
+  <data name="Artwork.Failed" xml:space="preserve"><value>La ricerca non è riuscita: {0}</value></data>
+  <data name="Artwork.FoundMany" xml:space="preserve"><value>Trovate {0} copertine. Scegline una e premi Salva.</value></data>
+  <data name="Artwork.FoundOne" xml:space="preserve"><value>Trovata una copertina. Controllala e premi Salva.</value></data>
+  <data name="Artwork.Matching" xml:space="preserve"><value>Copertine corrispondenti</value></data>
+  <data name="Artwork.Menu" xml:space="preserve"><value>Ottieni copertina…</value></data>
+  <data name="Artwork.MenuTip" xml:space="preserve"><value>Cerca la copertina di questo album su MusicBrainz e la salva come cover.jpg nella cartella dell'album</value></data>
+  <data name="Artwork.NoCoverArt" xml:space="preserve"><value>MusicBrainz conosce questo album ma non ha una copertina per esso.</value></data>
+  <data name="Artwork.NotFound" xml:space="preserve"><value>Nessun album corrispondente trovato.</value></data>
+  <data name="Artwork.Save" xml:space="preserve"><value>Salva copertina</value></data>
+  <data name="Artwork.SaveTip" xml:space="preserve"><value>Salva la copertina scelta come cover.jpg nella cartella dell'album. Un file di copertina esistente non viene mai sostituito.</value></data>
+  <data name="Artwork.Saved" xml:space="preserve"><value>Salvato {0} in {1}. I brani con un'immagine incorporata nel file continuano a mostrare quell'immagine.</value></data>
+  <data name="Artwork.Searching" xml:space="preserve"><value>Ricerca delle copertine…</value></data>
+  <data name="Artwork.StatusFailed" xml:space="preserve"><value>Impossibile ottenere la copertina: {0}</value></data>
+  <data name="Artwork.StatusSaved" xml:space="preserve"><value>Copertina salvata: {0}</value></data>
+  <data name="Artwork.Title" xml:space="preserve"><value>Ottieni copertina</value></data>
+  <data name="Artwork.Tracks" xml:space="preserve"><value>{0} brani</value></data>
+  <data name="Artwork.Unavailable.NoAlbum" xml:space="preserve"><value>Questo brano non ha un nome di album da cercare.</value></data>
+  <data name="Artwork.Unavailable.NoFactory" xml:space="preserve"><value>La ricerca delle copertine non è disponibile in questa versione.</value></data>
+  <data name="Artwork.Unavailable.NoTrack" xml:space="preserve"><value>Seleziona prima un brano.</value></data>
+  <data name="Artwork.Unavailable.NotFile" xml:space="preserve"><value>Le copertine possono essere salvate solo per i file della tua libreria.</value></data>
+  <data name="Artwork.UnknownError" xml:space="preserve"><value>errore sconosciuto</value></data>
+  <data name="Backups.Delete" xml:space="preserve"><value>Elimina backup…</value></data>
+  <data name="Backups.DeletePrompt" xml:space="preserve"><value>Eliminare definitivamente questo backup? Il file audio attuale e i metadati della libreria verranno mantenuti.
+{0}</value></data>
+  <data name="Backups.DeleteTitle" xml:space="preserve"><value>Elimina backup del file</value></data>
+  <data name="Backups.ListAutomation" xml:space="preserve"><value>Backup del file verificati</value></data>
+  <data name="Backups.Restore" xml:space="preserve"><value>Ripristina…</value></data>
+  <data name="Backups.RestoreAccept" xml:space="preserve"><value>Ripristina</value></data>
+  <data name="Backups.RestorePrompt" xml:space="preserve"><value>Ripristinare questo backup? Il file audio attuale verrà conservato come altro backup. Le modifiche non salvate dell'editor dei brani verranno scartate.</value></data>
+  <data name="Backups.RestoreTitle" xml:space="preserve"><value>Ripristina backup del file</value></data>
+  <data name="Backups.Rules" xml:space="preserve"><value>Solo i backup corrispondenti al file attuale possono essere ripristinati. Le versioni precedenti possono essere eliminate esplicitamente.</value></data>
+  <data name="Backups.Summary" xml:space="preserve"><value>{0} backup verificato/i, {1} MiB. </value></data>
+  <data name="Backups.Title" xml:space="preserve"><value>Backup dei file</value></data>
+  <data name="Backups.Unverified" xml:space="preserve"><value>{0} registro/i non verificato/i conservato/i per la revisione. </value></data>
+  <data name="Book.Add" xml:space="preserve"><value>Aggiungi file audio…</value></data>
+  <data name="Book.AddFailed" xml:space="preserve"><value>Impossibile aggiungere il file audio</value></data>
+  <data name="Book.AddTip" xml:space="preserve"><value>Scegli un file audio locale. Viene letto, non copiato né modificato</value></data>
+  <data name="Book.AddTitle" xml:space="preserve"><value>Aggiungi audiolibro</value></data>
+  <data name="Book.Added" xml:space="preserve"><value>Aggiunto «{0}». Il file audio non è stato copiato né modificato.</value></data>
+  <data name="Book.AlreadyOnShelf" xml:space="preserve"><value>«{0}» è già nello scaffale; la posizione salvata è stata mantenuta.</value></data>
+  <data name="Book.AlreadyRemoved" xml:space="preserve"><value>Quel libro era già stato rimosso.</value></data>
+  <data name="Book.AudioFiles" xml:space="preserve"><value>File audio</value></data>
+  <data name="Book.ChapterCount.One" xml:space="preserve"><value>{0} capitolo in «{1}». Scegline uno, poi Riproduci capitolo.</value></data>
+  <data name="Book.ChapterCount.Other" xml:space="preserve"><value>{0} capitoli in «{1}». Scegline uno, poi Riproduci capitolo.</value></data>
+  <data name="Book.ChapterFailed" xml:space="preserve"><value>Impossibile riprodurre il capitolo</value></data>
+  <data name="Book.Chapters" xml:space="preserve"><value>Capitoli</value></data>
+  <data name="Book.ChaptersFailed" xml:space="preserve"><value>Impossibile leggere i capitoli</value></data>
+  <data name="Book.ChaptersTip" xml:space="preserve"><value>Elenca i capitoli memorizzati in questo file. Non viene riprodotto nulla</value></data>
+  <data name="Book.Empty" xml:space="preserve"><value>Il tuo scaffale è vuoto. Scegli Aggiungi file audio… per iniziare.</value></data>
+  <data name="Book.FileSelectionUnavailable" xml:space="preserve"><value>La selezione dei file non è disponibile.</value></data>
+  <data name="Book.Finished" xml:space="preserve"><value>Terminato · salvato alla fine</value></data>
+  <data name="Book.FinishedRestart" xml:space="preserve"><value>«{0}» era terminato; riproduzione dall'inizio.</value></data>
+  <data name="Book.Intro" xml:space="preserve"><value>Audiolibri locali. Le posizioni vengono salvate solo quando scegli Salva posizione.</value></data>
+  <data name="Book.Length" xml:space="preserve"><value>Durata {0}</value></data>
+  <data name="Book.LengthUnknown" xml:space="preserve"><value>Durata sconosciuta</value></data>
+  <data name="Book.Missing" xml:space="preserve"><value>Il file non c'è — rimuovilo e aggiungilo di nuovo dalla nuova posizione</value></data>
+  <data name="Book.NoChapters" xml:space="preserve"><value>«{0}» non ha capitoli.</value></data>
+  <data name="Book.NoChaptersHelp" xml:space="preserve"><value>Questo file non ha capitoli. Usa Riproduci dall'inizio o Riprendi per riprodurre l'intero libro.</value></data>
+  <data name="Book.NoFile" xml:space="preserve"><value>Nessun file scelto.</value></data>
+  <data name="Book.NoPlayback" xml:space="preserve"><value>La riproduzione non è disponibile da questa finestra.</value></data>
+  <data name="Book.NoSaved" xml:space="preserve"><value>Nessuna posizione salvata</value></data>
+  <data name="Book.NotOnShelf" xml:space="preserve"><value>Il lettore non sta riproducendo un libro di questo scaffale. Avvia prima un libro con Riproduci o Riprendi.</value></data>
+  <data name="Book.NothingPlaying" xml:space="preserve"><value>Non è in riproduzione nulla. Avvia un libro con Riproduci o Riprendi, poi salva la sua posizione.</value></data>
+  <data name="Book.OnShelf.One" xml:space="preserve"><value>{0} audiolibro nello scaffale.</value></data>
+  <data name="Book.OnShelf.Other" xml:space="preserve"><value>{0} audiolibri nello scaffale.</value></data>
+  <data name="Book.PlayChapter" xml:space="preserve"><value>Riproduci capitolo</value></data>
+  <data name="Book.PlayChapterTip" xml:space="preserve"><value>Riproduce dal capitolo scelto nel lettore principale. Scegliere una riga non avvia la riproduzione</value></data>
+  <data name="Book.PlayFailed" xml:space="preserve"><value>Impossibile riprodurre l'audiolibro</value></data>
+  <data name="Book.PlayFromStart" xml:space="preserve"><value>Riproduci dall'inizio</value></data>
+  <data name="Book.PlayingChapter" xml:space="preserve"><value>Riproduzione di «{0}», {1}, da {2}.</value></data>
+  <data name="Book.PlayingFrom" xml:space="preserve"><value>Riproduzione di «{0}» da {1}.</value></data>
+  <data name="Book.PlayingStart" xml:space="preserve"><value>Riproduzione di «{0}» dall'inizio.</value></data>
+  <data name="Book.ReadFailed" xml:space="preserve"><value>Impossibile leggere lo scaffale degli audiolibri</value></data>
+  <data name="Book.RemoveFailed" xml:space="preserve"><value>Impossibile rimuovere l'audiolibro</value></data>
+  <data name="Book.RemovePrompt" xml:space="preserve"><value>Dimenticare questa voce dello scaffale e la sua posizione salvata?
+Il file audio resta sul disco.
+{0}</value></data>
+  <data name="Book.RemoveTip" xml:space="preserve"><value>Dimentica questa voce dello scaffale. Il file audio resta sul disco</value></data>
+  <data name="Book.RemoveTitle" xml:space="preserve"><value>Rimuovi audiolibro</value></data>
+  <data name="Book.RemovedFromShelf" xml:space="preserve"><value>«{0}» rimosso dallo scaffale. Il file audio non è stato toccato.</value></data>
+  <data name="Book.ResumeTip" xml:space="preserve"><value>Continua dall'ultima posizione salvata</value></data>
+  <data name="Book.SaveFailed" xml:space="preserve"><value>Impossibile salvare la posizione</value></data>
+  <data name="Book.SavePositionTip" xml:space="preserve"><value>Salva il punto in cui si trova il lettore principale nell'audiolibro che sta riproducendo o ha messo in pausa</value></data>
+  <data name="Book.SavedOf" xml:space="preserve"><value>Salvato {0} di {1}</value></data>
+  <data name="Book.SavedPos" xml:space="preserve"><value>Posizione {0} salvata per «{1}».</value></data>
+  <data name="Book.SelectionChanged" xml:space="preserve"><value>La selezione è cambiata, quindi i capitoli non sono stati mostrati.</value></data>
+  <data name="Book.ShowingFirst" xml:space="preserve"><value>Visualizzazione dei primi {0} capitoli.</value></data>
+  <data name="Book.StatusIntro" xml:space="preserve"><value>Aggiungi un file audio locale al tuo scaffale. Non viene riprodotto né salvato nulla finché non lo chiedi.</value></data>
+  <data name="Book.UnknownAuthor" xml:space="preserve"><value>Autore sconosciuto</value></data>
+  <data name="Column.Album" xml:space="preserve"><value>Album</value></data>
+  <data name="Column.AlbumArtist" xml:space="preserve"><value>Artista dell'album</value></data>
+  <data name="Column.Artist" xml:space="preserve"><value>Artista</value></data>
+  <data name="Column.BitRate" xml:space="preserve"><value>Bitrate</value></data>
+  <data name="Column.Bpm" xml:space="preserve"><value>BPM</value></data>
+  <data name="Column.Channels" xml:space="preserve"><value>Canali</value></data>
+  <data name="Column.Comment" xml:space="preserve"><value>Commento</value></data>
+  <data name="Column.Composer" xml:space="preserve"><value>Compositore</value></data>
+  <data name="Column.DateAdded" xml:space="preserve"><value>Data di aggiunta</value></data>
+  <data name="Column.DateModified" xml:space="preserve"><value>Data di modifica</value></data>
+  <data name="Column.Description" xml:space="preserve"><value>Descrizione</value></data>
+  <data name="Column.DiscNumber" xml:space="preserve"><value>Numero del disco</value></data>
+  <data name="Column.EpisodeNumber" xml:space="preserve"><value>Numero dell'episodio</value></data>
+  <data name="Column.Genre" xml:space="preserve"><value>Genere</value></data>
+  <data name="Column.Keywords" xml:space="preserve"><value>Parole chiave</value></data>
+  <data name="Column.LastPlayed" xml:space="preserve"><value>Ultima riproduzione</value></data>
+  <data name="Column.LastSkipped" xml:space="preserve"><value>Ultimo salto</value></data>
+  <data name="Column.Location" xml:space="preserve"><value>Posizione del file</value></data>
+  <data name="Column.PlayCount" xml:space="preserve"><value>Riproduzioni</value></data>
+  <data name="Column.Rating" xml:space="preserve"><value>Valutazione</value></data>
+  <data name="Column.SampleRate" xml:space="preserve"><value>Frequenza di campionamento</value></data>
+  <data name="Column.SeasonNumber" xml:space="preserve"><value>Numero della stagione</value></data>
+  <data name="Column.ShowName" xml:space="preserve"><value>Nome del programma</value></data>
+  <data name="Column.Size" xml:space="preserve"><value>Dimensione</value></data>
+  <data name="Column.SkipCount" xml:space="preserve"><value>Salti</value></data>
+  <data name="Column.Source" xml:space="preserve"><value>Sorgente</value></data>
+  <data name="Column.Time" xml:space="preserve"><value>Durata</value></data>
+  <data name="Column.Title" xml:space="preserve"><value>Titolo</value></data>
+  <data name="Column.TrackNumber" xml:space="preserve"><value>Numero del brano</value></data>
+  <data name="Column.Year" xml:space="preserve"><value>Anno</value></data>
+  <data name="Common.AllCount" xml:space="preserve"><value>Tutti ({0})</value></data>
+  <data name="Common.Cancel" xml:space="preserve"><value>Annulla</value></data>
+  <data name="Common.Cancelled" xml:space="preserve"><value>Annullato.</value></data>
+  <data name="Common.Cancelling" xml:space="preserve"><value>Annullamento…</value></data>
+  <data name="Common.Close" xml:space="preserve"><value>Chiudi</value></data>
+  <data name="Common.NameCount" xml:space="preserve"><value>{0} ({1})</value></data>
+  <data name="Common.NoLookupPlugin" xml:space="preserve"><value>Nessun plugin di ricerca è installato o attivo. Vedi Preferenze &gt; Plugin.</value></data>
+  <data name="Common.OnlineLookupOff" xml:space="preserve"><value>La ricerca online è disattivata. Attivala in Preferenze &gt; Online.</value></data>
+  <data name="Common.OperationCancelled" xml:space="preserve"><value>Operazione annullata.</value></data>
+  <data name="Common.OperationFailed" xml:space="preserve"><value>Operazione non riuscita: {0}</value></data>
+  <data name="Common.Unknown" xml:space="preserve"><value>Sconosciuto</value></data>
+  <data name="Dialog.Cancel" xml:space="preserve"><value>Annulla</value></data>
+  <data name="Dialog.CloseAutomation" xml:space="preserve"><value>Chiudi {0}</value></data>
+  <data name="Dialog.Create" xml:space="preserve"><value>Crea</value></data>
+  <data name="Dialog.CreatePlaylist" xml:space="preserve"><value>Crea playlist</value></data>
+  <data name="Dialog.Delete" xml:space="preserve"><value>Elimina</value></data>
+  <data name="Dialog.DeletePlaylist" xml:space="preserve"><value>Elimina playlist</value></data>
+  <data name="Dialog.DeletePlaylistPrompt" xml:space="preserve"><value>Eliminare '{0}'? I tuoi file musicali non verranno toccati.</value></data>
+  <data name="Dialog.PlaylistName" xml:space="preserve"><value>Nome della playlist</value></data>
+  <data name="Dialog.Remove" xml:space="preserve"><value>Rimuovi</value></data>
+  <data name="Dialog.RemoveFolder" xml:space="preserve"><value>Rimuovi cartella musicale</value></data>
+  <data name="Dialog.RemoveFolderPrompt" xml:space="preserve"><value>Smettere di controllare '{0}' e rimuovere i suoi brani dalla libreria? I file musicali non verranno toccati.</value></data>
+  <data name="Dialog.Rename" xml:space="preserve"><value>Rinomina</value></data>
+  <data name="Dialog.RenamePlaylist" xml:space="preserve"><value>Rinomina playlist</value></data>
+  <data name="Dialog.Save" xml:space="preserve"><value>Salva</value></data>
+  <data name="Disc.ActivePresent" xml:space="preserve"><value>oggi</value></data>
+  <data name="Disc.ActiveRange" xml:space="preserve"><value>Attivo {0}–{1}</value></data>
+  <data name="Disc.Artist" xml:space="preserve"><value>Informazioni sull'artista</value></data>
+  <data name="Disc.ArtistFailed" xml:space="preserve"><value>La ricerca dell'artista non ha funzionato: {0}</value></data>
+  <data name="Disc.ArtistFrom" xml:space="preserve"><value>Dettagli dell'artista da MusicBrainz.</value></data>
+  <data name="Disc.ArtistLooking" xml:space="preserve"><value>Ricerca di {0}…</value></data>
+  <data name="Disc.ArtistNoMatch" xml:space="preserve"><value>Nessuna corrispondenza ravvicinata per «{0}».</value></data>
+  <data name="Disc.ArtistTip" xml:space="preserve"><value>Cerca informazioni di base sull'artista: tipo, area, anni di attività, generi e link</value></data>
+  <data name="Disc.CoverAutomation" xml:space="preserve"><value>Copertina dell'album</value></data>
+  <data name="Disc.DriveAutomation" xml:space="preserve"><value>Unità CD o DVD</value></data>
+  <data name="Disc.Empty" xml:space="preserve"><value>Inserisci un CD audio, poi scegli Leggi disco.</value></data>
+  <data name="Disc.FoundMany" xml:space="preserve"><value>Trovati {0} album possibili; viene mostrata la corrispondenza migliore.</value></data>
+  <data name="Disc.FoundOne" xml:space="preserve"><value>Trovato questo album.</value></data>
+  <data name="Disc.Genres" xml:space="preserve"><value>Generi: {0}</value></data>
+  <data name="Disc.LookUp" xml:space="preserve"><value>Cerca</value></data>
+  <data name="Disc.LookingUp" xml:space="preserve"><value>Ricerca di questo disco…</value></data>
+  <data name="Disc.LookupFailed" xml:space="preserve"><value>La ricerca non è riuscita: {0} I brani mantengono la loro numerazione.</value></data>
+  <data name="Disc.LookupHintOff" xml:space="preserve"><value>La ricerca online è disattivata o non è installato alcun plugin. Attivala in Preferenze &gt; Online.</value></data>
+  <data name="Disc.LookupHintOn" xml:space="preserve"><value>Cerca invia l'indice del disco a MusicBrainz.</value></data>
+  <data name="Disc.NoDisc" xml:space="preserve"><value>Nessun disco audio in {0}.</value></data>
+  <data name="Disc.NoDrive" xml:space="preserve"><value>Non è stata trovata alcuna unità CD o DVD.</value></data>
+  <data name="Disc.NotKnown" xml:space="preserve"><value>Questo disco non è noto a MusicBrainz.</value></data>
+  <data name="Disc.OtherAlbums" xml:space="preserve"><value>Altri album possibili</value></data>
+  <data name="Disc.PlayingDisc" xml:space="preserve"><value>Riproduzione del disco dal primo brano.</value></data>
+  <data name="Disc.PlayingTrack" xml:space="preserve"><value>Riproduzione del brano {0}. Il resto del disco è in coda.</value></data>
+  <data name="Disc.PossibleAlbums" xml:space="preserve"><value>Album possibili</value></data>
+  <data name="Disc.Read" xml:space="preserve"><value>Leggi disco</value></data>
+  <data name="Disc.ReadTip" xml:space="preserve"><value>Rilegge l'indice del disco, per esempio dopo aver cambiato disco</value></data>
+  <data name="Disc.Reading" xml:space="preserve"><value>Lettura del disco…</value></data>
+  <data name="Disc.Title" xml:space="preserve"><value>CD audio</value></data>
+  <data name="Disc.TrackN" xml:space="preserve"><value>Brano {0}</value></data>
+  <data name="Disc.TracksAndLength" xml:space="preserve"><value>{0} brani · {1}</value></data>
+  <data name="Disc.TracksAutomation" xml:space="preserve"><value>Brani del disco</value></data>
+  <data name="Disc.TracksChooseLookup" xml:space="preserve"><value>{0} brani. Scegli Cerca per trovare i dettagli dell'album.</value></data>
+  <data name="Disc.TracksOnly" xml:space="preserve"><value>{0} brani.</value></data>
+  <data name="Equalizer.Title" xml:space="preserve"><value>Equalizzatore</value></data>
+  <data name="Equalizer.ButtonAutomation" xml:space="preserve"><value>Equalizzatore</value></data>
+  <data name="Equalizer.ButtonTip" xml:space="preserve"><value>Apri l’equalizzatore</value></data>
+  <data name="Equalizer.On" xml:space="preserve"><value>Attivo</value></data>
+  <data name="Equalizer.OnAutomation" xml:space="preserve"><value>Attiva o disattiva l’equalizzatore</value></data>
+  <data name="Equalizer.OnTip" xml:space="preserve"><value>Equalizzatore attivo; la curva vale per tutto ciò che riproduci</value></data>
+  <data name="Equalizer.PresetAutomation" xml:space="preserve"><value>Preset dell’equalizzatore</value></data>
+  <data name="Equalizer.Reset" xml:space="preserve"><value>Reimposta</value></data>
+  <data name="Equalizer.ResetTip" xml:space="preserve"><value>Riporta tutte le bande e il preamplificatore a 0 dB</value></data>
+  <data name="Equalizer.Preamp" xml:space="preserve"><value>Preamp.</value></data>
+  <data name="Equalizer.Preset.Custom" xml:space="preserve"><value>Personalizzato</value></data>
+  <data name="Equalizer.Preset.Flat" xml:space="preserve"><value>Piatto</value></data>
+  <data name="Equalizer.Preset.BassBoost" xml:space="preserve"><value>Bassi enfatizzati</value></data>
+  <data name="Equalizer.Preset.TrebleBoost" xml:space="preserve"><value>Alti enfatizzati</value></data>
+  <data name="Equalizer.Preset.Rock" xml:space="preserve"><value>Rock</value></data>
+  <data name="Equalizer.Preset.Pop" xml:space="preserve"><value>Pop</value></data>
+  <data name="Equalizer.Preset.Jazz" xml:space="preserve"><value>Jazz</value></data>
+  <data name="Equalizer.Preset.Classical" xml:space="preserve"><value>Classica</value></data>
+  <data name="Equalizer.Preset.Vocal" xml:space="preserve"><value>Voce</value></data>
+  <data name="Error.Reported" xml:space="preserve"><value>Qualcosa è andato storto ({0}). I dettagli sono stati salvati in {1}.</value></data>
+  <data name="Crash.EngineBuiltIn" xml:space="preserve"><value>integrato</value></data>
+  <data name="Crash.EngineVlc" xml:space="preserve"><value>VLC</value></data>
+  <data name="Crash.Message" xml:space="preserve"><value>L'ultima sessione non è terminata normalmente.</value></data>
+  <data name="Crash.Title" xml:space="preserve"><value>Aibell si è chiuso in modo imprevisto</value></data>
+  <data name="Crash.WhilePlaying" xml:space="preserve"><value>Si è fermato durante la riproduzione di «{0}» con il lettore {1}.</value></data>
+  <data name="ErrorDialog.Close" xml:space="preserve"><value>Chiudi</value></data>
+  <data name="ErrorDialog.Copied" xml:space="preserve"><value>Copiato</value></data>
+  <data name="ErrorDialog.Copy" xml:space="preserve"><value>Copia dettagli</value></data>
+  <data name="ErrorDialog.Details" xml:space="preserve"><value>Dettagli</value></data>
+  <data name="ErrorDialog.DetailsAutomation" xml:space="preserve"><value>Dettagli tecnici</value></data>
+  <data name="ErrorDialog.HideDetails" xml:space="preserve"><value>Nascondi dettagli</value></data>
+  <data name="ErrorDialog.LogLocation" xml:space="preserve"><value>File di log: {0}</value></data>
+  <data name="ErrorDialog.More" xml:space="preserve"><value>Si sono verificati altri {0} problemi; vedi i dettagli.</value></data>
+  <data name="ErrorDialog.Title" xml:space="preserve"><value>Qualcosa è andato storto</value></data>
+  <data name="Playback.FailedTitle" xml:space="preserve"><value>Impossibile riprodurre questo brano</value></data>
+  <data name="Playback.TryVlc" xml:space="preserve"><value>Se succede ancora, scegli VLC in Preferenze &gt; Riproduzione.</value></data>
+  <data name="Import.DuplicateCount.One" xml:space="preserve"><value>{0} duplicato</value></data>
+  <data name="Import.DuplicateCount.Other" xml:space="preserve"><value>{0} duplicati</value></data>
+  <data name="Import.Entry" xml:space="preserve"><value>Voce {0}: {1}</value></data>
+  <data name="Import.NoStations" xml:space="preserve"><value>Non sono state trovate nuove stazioni a flusso diretto.</value></data>
+  <data name="Import.NoTracks" xml:space="preserve"><value>Non sono stati trovati brani locali leggibili.</value></data>
+  <data name="Import.PlaylistCancelled" xml:space="preserve"><value>Revisione della playlist annullata. La libreria è invariata.</value></data>
+  <data name="Import.PlaylistFailed" xml:space="preserve"><value>Impossibile preparare la playlist.</value></data>
+  <data name="Import.PlaylistSummary" xml:space="preserve"><value>{0} pronti; {1} saltati; {2} omessi.</value></data>
+  <data name="Import.ReadingFiles" xml:space="preserve"><value>Lettura dei file audio referenziati…</value></data>
+  <data name="Import.ReadingStations" xml:space="preserve"><value>Lettura degli URL delle stazioni salvate…</value></data>
+  <data name="Import.ReviewPlaylist" xml:space="preserve"><value>Controlla la playlist prima di aggiungerla alla libreria. I file audio restano invariati.</value></data>
+  <data name="Import.ReviewStations" xml:space="preserve"><value>Controlla queste stazioni prima di salvare. Seleziona una stazione e premi Riproduci per connetterti dopo l'importazione.</value></data>
+  <data name="Import.SkippedCount" xml:space="preserve"><value>Voci saltate ({0})</value></data>
+  <data name="Import.SkippedPlaylist" xml:space="preserve"><value>Voci della playlist saltate</value></data>
+  <data name="Import.SkippedStations" xml:space="preserve"><value>Voci delle stazioni saltate</value></data>
+  <data name="Import.SkippedTab" xml:space="preserve"><value>Voci saltate</value></data>
+  <data name="Import.StationCount.One" xml:space="preserve"><value>{0} stazione</value></data>
+  <data name="Import.StationCount.Other" xml:space="preserve"><value>{0} stazioni</value></data>
+  <data name="Import.StationsCancelled" xml:space="preserve"><value>Revisione delle stazioni annullata.</value></data>
+  <data name="Import.StationsFailed" xml:space="preserve"><value>Impossibile preparare la playlist delle stazioni.</value></data>
+  <data name="Import.StationsReady" xml:space="preserve"><value>Stazioni pronte per l'importazione</value></data>
+  <data name="Import.StationsTab" xml:space="preserve"><value>Stazioni</value></data>
+  <data name="Import.TrackCount.One" xml:space="preserve"><value>{0} brano</value></data>
+  <data name="Import.TrackCount.Other" xml:space="preserve"><value>{0} brani</value></data>
+  <data name="Import.TracksReady" xml:space="preserve"><value>Brani pronti per l'importazione</value></data>
+  <data name="Import.TracksTab" xml:space="preserve"><value>Brani</value></data>
+  <data name="Library.AllMusic" xml:space="preserve"><value>Tutta la musica</value></data>
+  <data name="Library.Importing" xml:space="preserve"><value>Importazione di {0}…</value></data>
+  <data name="Library.Rescanned" xml:space="preserve"><value>Riscansionato {0}: {1} indicizzati, {2} rimossi, {3} illeggibili.</value></data>
+  <data name="Library.StoppedWatching.One" xml:space="preserve"><value>Interrotto il controllo di {1} e rimosso 1 brano indicizzato. I file non sono stati toccati.</value></data>
+  <data name="Library.StoppedWatching.Other" xml:space="preserve"><value>Interrotto il controllo di {1} e rimossi {0} brani indicizzati. I file non sono stati toccati.</value></data>
+  <data name="Library.Synced" xml:space="preserve"><value>Sincronizzati {0} file e rimossi {1}. {2}</value></data>
+  <data name="Library.SyncedIssues" xml:space="preserve"><value>Sincronizzati {0} file; rimossi {1}; {2} non leggibili.</value></data>
+  <data name="Library.Updated.Removed" xml:space="preserve"><value>Libreria aggiornata: rimossi {0} brani mancanti.</value></data>
+  <data name="Library.Updated.Unreadable" xml:space="preserve"><value>Libreria aggiornata con {0} file illeggibili.</value></data>
+  <data name="Main.AddEllipsis" xml:space="preserve"><value>Aggiungi…</value></data>
+  <data name="Main.AddFolder" xml:space="preserve"><value>Aggiungi cartella musicale</value></data>
+  <data name="Main.OpenFiles" xml:space="preserve"><value>Apri file…</value></data>
+  <data name="Main.AddToLibrary" xml:space="preserve"><value>Aggiungi alla libreria</value></data>
+  <data name="Main.AddToPlaylist" xml:space="preserve"><value>Aggiungi alla playlist</value></data>
+  <data name="Main.Album" xml:space="preserve"><value>ALBUM</value></data>
+  <data name="Main.Albums" xml:space="preserve"><value>Album</value></data>
+  <data name="Main.Artist" xml:space="preserve"><value>ARTISTA</value></data>
+  <data name="Main.Artists" xml:space="preserve"><value>Artisti</value></data>
+  <data name="Main.AudiobookShelf" xml:space="preserve"><value>Scaffale degli audiolibri</value></data>
+  <data name="Main.Audiobooks" xml:space="preserve"><value>Audiolibri</value></data>
+  <data name="Main.Clear" xml:space="preserve"><value>Svuota</value></data>
+  <data name="Main.ClearQueueTip" xml:space="preserve"><value>Svuota la coda senza interrompere la riproduzione</value></data>
+  <data name="Main.Closing" xml:space="preserve"><value>Completamento del lavoro in sospeso prima della chiusura…</value></data>
+  <data name="Main.CreatePlaylist" xml:space="preserve"><value>Crea playlist</value></data>
+  <data name="Main.CreateSmartPlaylist" xml:space="preserve"><value>Crea playlist intelligente</value></data>
+  <data name="Main.Delete" xml:space="preserve"><value>Elimina…</value></data>
+  <data name="Main.DeletePlaylistTip" xml:space="preserve"><value>Elimina la playlist selezionata</value></data>
+  <data name="Main.DropTracks" xml:space="preserve"><value>Trascina qui i brani</value></data>
+  <data name="Main.EditEllipsis" xml:space="preserve"><value>Modifica…</value></data>
+  <data name="Main.EditRules" xml:space="preserve"><value>Modifica regole…</value></data>
+  <data name="Main.EditStation" xml:space="preserve"><value>Modifica stazione…</value></data>
+  <data name="Main.ExportPlaylist" xml:space="preserve"><value>Esporta playlist…</value></data>
+  <data name="Main.FoldSidebar" xml:space="preserve"><value>Comprimi la barra laterale</value></data>
+  <data name="Main.ShowSidebar" xml:space="preserve"><value>Mostra la barra laterale</value></data>
+  <data name="Main.FoldQueue" xml:space="preserve"><value>Comprimi la coda di riproduzione</value></data>
+  <data name="Main.Folders" xml:space="preserve"><value>CARTELLE</value></data>
+  <data name="Main.Genre" xml:space="preserve"><value>GENERE</value></data>
+  <data name="Main.Genres" xml:space="preserve"><value>Generi</value></data>
+  <data name="Main.ImportEllipsis" xml:space="preserve"><value>Importa…</value></data>
+  <data name="Main.ImportPlaylistFile" xml:space="preserve"><value>Importa file di playlist</value></data>
+  <data name="Main.ImportStations" xml:space="preserve"><value>Importa stazioni radio</value></data>
+  <data name="Main.ImportStationsTip" xml:space="preserve"><value>Importa stazioni da una playlist M3U o PLS locale</value></data>
+  <data name="Main.Library" xml:space="preserve"><value>LIBRERIA</value></data>
+  <data name="Main.LibraryTracks" xml:space="preserve"><value>Brani della libreria</value></data>
+  <data name="Main.MoveDown" xml:space="preserve"><value>Sposta in basso nella playlist</value></data>
+  <data name="Main.MoveUp" xml:space="preserve"><value>Sposta in alto nella playlist</value></data>
+  <data name="Main.MusicFolders" xml:space="preserve"><value>Cartelle musicali</value></data>
+  <data name="Main.Next" xml:space="preserve"><value>Brano successivo</value></data>
+  <data name="Main.NextHint" xml:space="preserve"><value>Alt+Destra dalla libreria</value></data>
+  <data name="Main.NextTip" xml:space="preserve"><value>Brano successivo (Alt+Destra dalla libreria)</value></data>
+  <data name="Main.NoStations" xml:space="preserve"><value>Nessuna stazione corrispondente. Aggiungi un flusso audio HTTP/HTTPS diretto per iniziare.</value></data>
+  <data name="Main.NoTracks" xml:space="preserve"><value>Nessun brano in questa vista.</value></data>
+  <data name="Main.NowPlaying" xml:space="preserve"><value>IN RIPRODUZIONE</value></data>
+  <data name="Main.NowPlayingArt" xml:space="preserve"><value>Copertina del brano in riproduzione</value></data>
+  <data name="Main.Play" xml:space="preserve"><value>Riproduci</value></data>
+  <data name="Main.PlayHint" xml:space="preserve"><value>Spazio dall'elenco dei brani o dalla coda</value></data>
+  <data name="Main.PlayQueue" xml:space="preserve"><value>Coda di riproduzione</value></data>
+  <data name="Main.Playlists" xml:space="preserve"><value>PLAYLIST</value></data>
+  <data name="Main.PlaylistsAutomation" xml:space="preserve"><value>Playlist</value></data>
+  <data name="Main.Preferences" xml:space="preserve"><value>Preferenze</value></data>
+  <data name="Main.PreferencesTip" xml:space="preserve"><value>Preferenze (Ctrl+,)</value></data>
+  <data name="Main.Previous" xml:space="preserve"><value>Brano precedente</value></data>
+  <data name="Main.PreviousHint" xml:space="preserve"><value>Alt+Sinistra dalla libreria</value></data>
+  <data name="Main.PreviousTip" xml:space="preserve"><value>Brano precedente (Alt+Sinistra dalla libreria)</value></data>
+  <data name="Main.QueueLast" xml:space="preserve"><value>Accoda alla fine</value></data>
+  <data name="Main.QueueNext" xml:space="preserve"><value>Accoda come successivo</value></data>
+  <data name="Main.RadioHeader" xml:space="preserve"><value>RADIO</value></data>
+  <data name="Main.Rating" xml:space="preserve"><value>Valutazione</value></data>
+  <data name="Main.RatingClear" xml:space="preserve"><value>☆☆☆☆☆  Cancella</value></data>
+  <data name="Main.Remove" xml:space="preserve"><value>Rimuovi…</value></data>
+  <data name="Main.RemoveFolderTip" xml:space="preserve"><value>Rimuovi la cartella selezionata</value></data>
+  <data name="Main.RemoveFromPlaylist" xml:space="preserve"><value>Rimuovi dalla playlist</value></data>
+  <data name="Main.RemoveShort" xml:space="preserve"><value>Rimuovi</value></data>
+  <data name="Main.RemoveStation" xml:space="preserve"><value>Rimuovi stazione…</value></data>
+  <data name="Main.Rename" xml:space="preserve"><value>Rinomina…</value></data>
+  <data name="Main.Rescan" xml:space="preserve"><value>Riscansiona</value></data>
+  <data name="Main.SavedStations" xml:space="preserve"><value>Stazioni radio salvate</value></data>
+  <data name="Main.SearchTip" xml:space="preserve"><value>Cerca (Ctrl+F); Esc cancella la ricerca</value></data>
+  <data name="Main.SeekTip" xml:space="preserve"><value>Posizione di riproduzione (frecce ±5 s, Pag Su/Giù ±15 s, Home/Fine)</value></data>
+  <data name="Main.SeekUnavailable" xml:space="preserve"><value>Posizione di riproduzione, non disponibile</value></data>
+  <data name="Main.ShowFile" xml:space="preserve"><value>Mostra file</value></data>
+  <data name="Main.ShowQueue" xml:space="preserve"><value>Mostra la coda di riproduzione</value></data>
+  <data name="Main.StatusOperationFailed" xml:space="preserve"><value>Operazione non riuscita: {0}</value></data>
+  <data name="Main.StatusPrefs" xml:space="preserve"><value>Impossibile aprire le preferenze: {0}</value></data>
+  <data name="Main.StatusTrackProps" xml:space="preserve"><value>Impossibile aprire le proprietà del brano: {0}</value></data>
+  <data name="Main.Stop" xml:space="preserve"><value>Stop</value></data>
+  <data name="Main.TitleColumn" xml:space="preserve"><value>Titolo</value></data>
+  <data name="Main.ViewMetadata" xml:space="preserve"><value>Mostra metadati…</value></data>
+  <data name="Main.Volume" xml:space="preserve"><value>Volume</value></data>
+  <data name="Main.VolumeTip" xml:space="preserve"><value>Volume (frecce ±5%, Pag Su/Giù ±10%, Home/Fine)</value></data>
+  <data name="Menu.NewPlaylist" xml:space="preserve"><value>Nuova playlist…</value></data>
+  <data name="Menu.NoPlaylists" xml:space="preserve"><value>Nessuna playlist esistente</value></data>
+  <data name="Menu.RestoreDefaults" xml:space="preserve"><value>Ripristina predefiniti</value></data>
+  <data name="Meta.AddCover" xml:space="preserve"><value>Aggiungi copertina…</value></data>
+  <data name="Meta.AddCoverTip" xml:space="preserve"><value>Aggiunge o sostituisce la copertina incorporata visualizzata con un'immagine PNG o JPEG.</value></data>
+  <data name="Meta.AdditionalTags" xml:space="preserve"><value>Tag aggiuntivi del file ({0})</value></data>
+  <data name="Meta.AlbumArtist" xml:space="preserve"><value>Artista dell'album</value></data>
+  <data name="Meta.AlbumTitle" xml:space="preserve"><value>Titolo dell'album</value></data>
+  <data name="Meta.BackupsFailed" xml:space="preserve"><value>Impossibile gestire i backup: {0}</value></data>
+  <data name="Meta.BadNumbers" xml:space="preserve"><value>Inserisci numeri validi nei campi numerici.</value></data>
+  <data name="Meta.BitRate" xml:space="preserve"><value>Bitrate</value></data>
+  <data name="Meta.BitsPerSample" xml:space="preserve"><value>Bit per campione</value></data>
+  <data name="Meta.Bpm" xml:space="preserve"><value>Battiti al minuto</value></data>
+  <data name="Meta.Channels" xml:space="preserve"><value>Canali</value></data>
+  <data name="Meta.CloseAutomation" xml:space="preserve"><value>Chiudi le proprietà del brano</value></data>
+  <data name="Meta.Codec" xml:space="preserve"><value>Codec audio</value></data>
+  <data name="Meta.Comment" xml:space="preserve"><value>Commento</value></data>
+  <data name="Meta.Composer" xml:space="preserve"><value>Compositore</value></data>
+  <data name="Meta.Conductor" xml:space="preserve"><value>Direttore</value></data>
+  <data name="Meta.Copyright" xml:space="preserve"><value>Copyright</value></data>
+  <data name="Meta.CoverAutomation" xml:space="preserve"><value>Copertina del brano</value></data>
+  <data name="Meta.CoverLoadFailed" xml:space="preserve"><value>Impossibile caricare la copertina: {0}</value></data>
+  <data name="Meta.CoverTip" xml:space="preserve"><value>Copertina dal file audio o dalla sua cartella</value></data>
+  <data name="Meta.Description" xml:space="preserve"><value>Descrizione</value></data>
+  <data name="Meta.DestinationAutomation" xml:space="preserve"><value>Destinazione del salvataggio</value></data>
+  <data name="Meta.DestinationTip" xml:space="preserve"><value>Scegli dove salvare. La scrittura sui file richiede che la riproduzione sia ferma.</value></data>
+  <data name="Meta.DestinationUnavailable" xml:space="preserve"><value>La scrittura sui file è disponibile per file FLAC, M4A, MP3, Ogg, Opus e WAV PCM classico convalidati.</value></data>
+  <data name="Meta.Directory" xml:space="preserve"><value>Cartella</value></data>
+  <data name="Meta.DiscNumber" xml:space="preserve"><value>Numero del disco</value></data>
+  <data name="Meta.Duration" xml:space="preserve"><value>Durata</value></data>
+  <data name="Meta.EmbeddedPictures" xml:space="preserve"><value>Immagini incorporate</value></data>
+  <data name="Meta.EpisodeNumber" xml:space="preserve"><value>Numero dell'episodio</value></data>
+  <data name="Meta.FileAndLibrary" xml:space="preserve"><value>File e libreria</value></data>
+  <data name="Meta.FileModified" xml:space="preserve"><value>File modificato</value></data>
+  <data name="Meta.FileName" xml:space="preserve"><value>Nome del file</value></data>
+  <data name="Meta.FileSize" xml:space="preserve"><value>Dimensione del file</value></data>
+  <data name="Meta.Genre" xml:space="preserve"><value>Genere</value></data>
+  <data name="Meta.Grouping" xml:space="preserve"><value>Raggruppamento</value></data>
+  <data name="Meta.HintFile" xml:space="preserve"><value>Scrive i tag modificati e aggiorna la libreria. Viene conservato un backup del file originale. Le valutazioni restano nella libreria.</value></data>
+  <data name="Meta.HintLibrary" xml:space="preserve"><value>Le modifiche vengono salvate nella tua libreria. I tag del file audio restano invariati.</value></data>
+  <data name="Meta.HintWav" xml:space="preserve"><value>WAV: solo titolo, artista, album, genere, anno, numero del brano e commento. Viene conservato un backup del file originale.</value></data>
+  <data name="Meta.Imported" xml:space="preserve"><value>Importato</value></data>
+  <data name="Meta.Keywords" xml:space="preserve"><value>Parole chiave</value></data>
+  <data name="Meta.LastPlayed" xml:space="preserve"><value>Ultima riproduzione</value></data>
+  <data name="Meta.LastSkipped" xml:space="preserve"><value>Ultimo salto</value></data>
+  <data name="Meta.LibraryOnly" xml:space="preserve"><value>Solo libreria</value></data>
+  <data name="Meta.LibrarySource" xml:space="preserve"><value>Sorgente della libreria</value></data>
+  <data name="Meta.LicenseUri" xml:space="preserve"><value>URI della licenza</value></data>
+  <data name="Meta.Location" xml:space="preserve"><value>Posizione</value></data>
+  <data name="Meta.ManageBackups" xml:space="preserve"><value>Gestisci backup dei file…</value></data>
+  <data name="Meta.OfTotal" xml:space="preserve"><value>su un totale di</value></data>
+  <data name="Meta.PickCover" xml:space="preserve"><value>Scegli la copertina del brano</value></data>
+  <data name="Meta.PlayCount" xml:space="preserve"><value>Riproduzioni</value></data>
+  <data name="Meta.PngJpeg" xml:space="preserve"><value>Immagini PNG o JPEG</value></data>
+  <data name="Meta.Rating" xml:space="preserve"><value>Valutazione</value></data>
+  <data name="Meta.RemoveCover" xml:space="preserve"><value>Rimuovi copertina</value></data>
+  <data name="Meta.RemoveCoverTip" xml:space="preserve"><value>Rimuove l'immagine incorporata visualizzata. La copertina della cartella viene mantenuta.</value></data>
+  <data name="Meta.RestoreBackup" xml:space="preserve"><value>Ripristina backup…</value></data>
+  <data name="Meta.RestoreFailed" xml:space="preserve"><value>Impossibile ripristinare: {0}</value></data>
+  <data name="Meta.RestorePrompt" xml:space="preserve"><value>Ripristinare il file originale da questo backup? Il file attuale verrà conservato come nuovo backup. Le modifiche non salvate del modulo verranno scartate.</value></data>
+  <data name="Meta.RestoreTip" xml:space="preserve"><value>Ripristina i tag dell'ultimo salvataggio del file. Le modifiche attuali del file vengono prima salvate in un backup.</value></data>
+  <data name="Meta.SampleRate" xml:space="preserve"><value>Frequenza di campionamento</value></data>
+  <data name="Meta.SaveFailed" xml:space="preserve"><value>Impossibile salvare: {0}</value></data>
+  <data name="Meta.SaveTip" xml:space="preserve"><value>Salva le modifiche (Ctrl+Invio)</value></data>
+  <data name="Meta.SavingFile" xml:space="preserve"><value>Salvataggio dei tag del file e della libreria…</value></data>
+  <data name="Meta.SavingLibrary" xml:space="preserve"><value>Salvataggio delle modifiche alla libreria…</value></data>
+  <data name="Meta.SeasonNumber" xml:space="preserve"><value>Numero della stagione</value></data>
+  <data name="Meta.ShowDetails" xml:space="preserve"><value>Dettagli del programma e dell'episodio</value></data>
+  <data name="Meta.ShowName" xml:space="preserve"><value>Nome del programma</value></data>
+  <data name="Meta.SkipCount" xml:space="preserve"><value>Salti</value></data>
+  <data name="Meta.SortAlbum" xml:space="preserve"><value>Titolo dell'album per l'ordinamento</value></data>
+  <data name="Meta.SortAlbumArtist" xml:space="preserve"><value>Artista dell'album per l'ordinamento</value></data>
+  <data name="Meta.SortArtist" xml:space="preserve"><value>Artista del brano per l'ordinamento</value></data>
+  <data name="Meta.SortNote" xml:space="preserve"><value>Usa nomi alternativi per l'ordinamento, senza cambiare i tag visualizzati.</value></data>
+  <data name="Meta.SortTitle" xml:space="preserve"><value>Titolo del brano per l'ordinamento</value></data>
+  <data name="Meta.TabBasic" xml:space="preserve"><value>Base</value></data>
+  <data name="Meta.TabExtra" xml:space="preserve"><value>Extra</value></data>
+  <data name="Meta.TabProperties" xml:space="preserve"><value>Proprietà</value></data>
+  <data name="Meta.TabSorting" xml:space="preserve"><value>Ordinamento</value></data>
+  <data name="Meta.TagFormats" xml:space="preserve"><value>Formati dei tag</value></data>
+  <data name="Meta.Title" xml:space="preserve"><value>Proprietà del brano</value></data>
+  <data name="Meta.TotalAutomation" xml:space="preserve"><value>{0} in totale</value></data>
+  <data name="Meta.TrackArtist" xml:space="preserve"><value>Artista del brano</value></data>
+  <data name="Meta.TrackNumber" xml:space="preserve"><value>Numero del brano</value></data>
+  <data name="Meta.TrackTitle" xml:space="preserve"><value>Titolo del brano</value></data>
+  <data name="Meta.Unrated" xml:space="preserve"><value>Senza valutazione</value></data>
+  <data name="Meta.Year" xml:space="preserve"><value>Anno</value></data>
+  <data name="Picker.AddMusicFolder" xml:space="preserve"><value>Aggiungi cartella musicale</value></data>
+  <data name="Picker.ExportPlaylist" xml:space="preserve"><value>Esporta playlist</value></data>
+  <data name="Picker.ImportFolder" xml:space="preserve"><value>Importa cartella musicale</value></data>
+  <data name="Picker.OpenFiles" xml:space="preserve"><value>Apri file musicali</value></data>
+  <data name="Picker.MusicFiles" xml:space="preserve"><value>File musicali</value></data>
+  <data name="Picker.ImportPlaylist" xml:space="preserve"><value>Importa playlist</value></data>
+  <data name="Picker.ImportStations" xml:space="preserve"><value>Importa stazioni radio</value></data>
+  <data name="Picker.LocalPlaylists" xml:space="preserve"><value>Playlist locali</value></data>
+  <data name="Picker.M3u8Playlist" xml:space="preserve"><value>Playlist M3U UTF-8</value></data>
+  <data name="Picker.PluginArchive" xml:space="preserve"><value>Archivio del plugin</value></data>
+  <data name="Picker.PluginFolder" xml:space="preserve"><value>Scegli una cartella del plugin</value></data>
+  <data name="Picker.PluginZip" xml:space="preserve"><value>Scegli uno .zip del plugin</value></data>
+  <data name="Picker.PodcastFolder" xml:space="preserve"><value>Scegli la cartella di download dei podcast</value></data>
+  <data name="Picker.StationPlaylists" xml:space="preserve"><value>Playlist di stazioni</value></data>
+  <data name="Playback.EndOfQueue" xml:space="preserve"><value>Fine della coda.</value></data>
+  <data name="Playback.Mute" xml:space="preserve"><value>Disattiva audio</value></data>
+  <data name="Playback.Nothing" xml:space="preserve"><value>Nessuna riproduzione</value></data>
+  <data name="Playback.OperationFailed" xml:space="preserve"><value>Operazione di riproduzione non riuscita: {0}</value></data>
+  <data name="Playback.Pause" xml:space="preserve"><value>Pausa</value></data>
+  <data name="Playback.Paused" xml:space="preserve"><value>In pausa</value></data>
+  <data name="Playback.Play" xml:space="preserve"><value>Riproduci</value></data>
+  <data name="Playback.Playing" xml:space="preserve"><value>In riproduzione</value></data>
+  <data name="Playback.RadioEnded" xml:space="preserve"><value>Il flusso radio è terminato. Premi Riproduci per riconnetterti.</value></data>
+  <data name="Playback.RadioStopped" xml:space="preserve"><value>Radio interrotta.</value></data>
+  <data name="Playback.RepeatAll" xml:space="preserve"><value>Ripeti tutto</value></data>
+  <data name="Playback.RepeatOff" xml:space="preserve"><value>Ripetizione disattivata</value></data>
+  <data name="Playback.RepeatOne" xml:space="preserve"><value>Ripeti uno</value></data>
+  <data name="Playback.SaveFailed" xml:space="preserve"><value>Impossibile salvare le impostazioni di riproduzione: {0}</value></data>
+  <data name="Playback.ShuffleOff" xml:space="preserve"><value>Casuale disattivato</value></data>
+  <data name="Playback.ShuffleOn" xml:space="preserve"><value>Casuale attivato</value></data>
+  <data name="Playback.StopRadio" xml:space="preserve"><value>Ferma radio</value></data>
+  <data name="Playback.Unmute" xml:space="preserve"><value>Riattiva audio</value></data>
+  <data name="Playlist.Added" xml:space="preserve"><value>Aggiunto {0} a {1}.</value></data>
+  <data name="Playlist.Created" xml:space="preserve"><value>Creata la playlist {0}.</value></data>
+  <data name="Playlist.CreatedWith" xml:space="preserve"><value>Creata la playlist {0} e aggiunto {1}.</value></data>
+  <data name="Playlist.Deleted" xml:space="preserve"><value>Eliminata la playlist {0}. I tuoi file musicali non sono stati eliminati.</value></data>
+  <data name="Playlist.Moved" xml:space="preserve"><value>Spostato {0}.</value></data>
+  <data name="Playlist.MovedDown" xml:space="preserve"><value>Spostato {0} in basso.</value></data>
+  <data name="Playlist.MovedUp" xml:space="preserve"><value>Spostato {0} in alto.</value></data>
+  <data name="Playlist.OrderUpdated" xml:space="preserve"><value>Ordine della playlist aggiornato.</value></data>
+  <data name="Playlist.RemovedFrom" xml:space="preserve"><value>Rimosso {0} da {1}.</value></data>
+  <data name="Playlist.Renamed" xml:space="preserve"><value>Playlist rinominata in {0}.</value></data>
+  <data name="PlaylistFile.Exported" xml:space="preserve"><value>Esportati {0} brani in {1}.</value></data>
+  <data name="PlaylistFile.Imported" xml:space="preserve"><value>Importata '{0}': {1} brani; {2} voci saltate; {3} duplicati.</value></data>
+  <data name="PlaylistFile.ImportedNoRefresh" xml:space="preserve"><value>La playlist '{0}' è stata importata, ma la vista non ha potuto aggiornarsi. Riapri la libreria. {1}</value></data>
+  <data name="Plugins.EnableAutomation" xml:space="preserve"><value>Attiva {0}</value></data>
+  <data name="Plugins.Enabled" xml:space="preserve"><value>Attivo</value></data>
+  <data name="Plugins.InstallAccept" xml:space="preserve"><value>Installa</value></data>
+  <data name="Plugins.InstallFailed" xml:space="preserve"><value>Il plugin non è stato installato: {0}</value></data>
+  <data name="Plugins.InstallFolder" xml:space="preserve"><value>Installa da cartella…</value></data>
+  <data name="Plugins.InstallTitle" xml:space="preserve"><value>Installa plugin</value></data>
+  <data name="Plugins.InstallWarning" xml:space="preserve"><value>Un plugin è un programma che viene eseguito all'interno di Aibell con i tuoi permessi. Può leggere i tuoi file e usare la tua rete.
+
+Installa solo plugin da fonti di cui ti fidi.
+
+{0}</value></data>
+  <data name="Plugins.InstallZip" xml:space="preserve"><value>Installa da .zip…</value></data>
+  <data name="Plugins.Installed" xml:space="preserve"><value>{0} è stato installato. Si avvia al riavvio di Aibell.</value></data>
+  <data name="Plugins.Intro" xml:space="preserve"><value>I plugin aggiungono funzioni opzionali. Hanno lo stesso accesso ai tuoi file e alla tua rete di Aibell, quindi installa solo plugin di cui ti fidi. Le modifiche si applicano al riavvio di Aibell.</value></data>
+  <data name="Plugins.None" xml:space="preserve"><value>Nessun plugin installato.</value></data>
+  <data name="Plugins.OriginBundled" xml:space="preserve"><value>Incluso in Aibell. </value></data>
+  <data name="Plugins.OriginUser" xml:space="preserve"><value>Installato da te. </value></data>
+  <data name="Plugins.Saved" xml:space="preserve"><value>Salvato. La modifica si applica al riavvio di Aibell.</value></data>
+  <data name="Plugins.Status.Active" xml:space="preserve"><value>Attivo.</value></data>
+  <data name="Plugins.Status.Failed" xml:space="preserve"><value>Impossibile caricarlo: {0}</value></data>
+  <data name="Plugins.Status.Off" xml:space="preserve"><value>Disattivato.</value></data>
+  <data name="Plugins.Status.Removal" xml:space="preserve"><value>Verrà rimosso al riavvio di Aibell.</value></data>
+  <data name="Plugins.Status.WillStart" xml:space="preserve"><value>Si avvierà al riavvio di Aibell.</value></data>
+  <data name="Plugins.Status.WillStop" xml:space="preserve"><value>Verrà disattivato al riavvio di Aibell.</value></data>
+  <data name="Plugins.Uninstall" xml:space="preserve"><value>Disinstalla…</value></data>
+  <data name="Plugins.UninstallAccept" xml:space="preserve"><value>Disinstalla</value></data>
+  <data name="Plugins.UninstallAutomation" xml:space="preserve"><value>Disinstalla {0}</value></data>
+  <data name="Plugins.UninstallPrompt" xml:space="preserve"><value>Rimuovere «{0}»? Smette di funzionare e i suoi file vengono eliminati al prossimo avvio di Aibell.</value></data>
+  <data name="Plugins.UninstallScheduled" xml:space="preserve"><value>{0} verrà rimosso al riavvio di Aibell.</value></data>
+  <data name="Plugins.UninstallTitle" xml:space="preserve"><value>Disinstalla plugin</value></data>
+  <data name="Pod.AlreadySubscribed" xml:space="preserve"><value>Sei già iscritto a {0}.</value></data>
+  <data name="Pod.BadUrl" xml:space="preserve"><value>Usa un URL di feed HTTP o HTTPS completo, senza credenziali incorporate né frammento.</value></data>
+  <data name="Pod.CachedFailed" xml:space="preserve"><value>Impossibile leggere gli episodi nella cache: {0}</value></data>
+  <data name="Pod.CatalogFailed" xml:space="preserve"><value>Impossibile leggere il catalogo dei podcast: {0}</value></data>
+  <data name="Pod.Checked" xml:space="preserve"><value>Controllati {0} podcast su {1}. {2}{3}</value></data>
+  <data name="Pod.ClearSearch" xml:space="preserve"><value>Cancella la ricerca degli episodi</value></data>
+  <data name="Pod.ClearSearchTip" xml:space="preserve"><value>Cancella ricerca (Esc)</value></data>
+  <data name="Pod.CoverAutomation" xml:space="preserve"><value>Copertina dell'episodio</value></data>
+  <data name="Pod.DeleteAccept" xml:space="preserve"><value>Elimina file</value></data>
+  <data name="Pod.DeleteCancelled" xml:space="preserve"><value>Eliminazione annullata per {0}.</value></data>
+  <data name="Pod.DeleteFailed" xml:space="preserve"><value>Impossibile eliminare il download: {0}</value></data>
+  <data name="Pod.DeleteFile" xml:space="preserve"><value>Elimina file…</value></data>
+  <data name="Pod.DeleteFileAutomation" xml:space="preserve"><value>Elimina file scaricato</value></data>
+  <data name="Pod.DeleteFileTip" xml:space="preserve"><value>Elimina solo il file scaricato. L'episodio, le sue stelle e l'iscrizione vengono mantenuti</value></data>
+  <data name="Pod.DeletePrompt" xml:space="preserve"><value>Eliminare il file scaricato di «{0}»?
+
+L'episodio, le sue stelle e la tua iscrizione restano. La posizione di ascolto salvata viene cancellata e puoi scaricare di nuovo l'episodio in qualsiasi momento.</value></data>
+  <data name="Pod.DeleteTitle" xml:space="preserve"><value>Elimina file scaricato</value></data>
+  <data name="Pod.DeleteUnavailable" xml:space="preserve"><value>L'eliminazione dei download non è disponibile.</value></data>
+  <data name="Pod.Deleted" xml:space="preserve"><value>Eliminato il download di {0}. L'episodio e la sua valutazione sono stati mantenuti; scegli Scarica per ottenerlo di nuovo.</value></data>
+  <data name="Pod.Deleting" xml:space="preserve"><value>Eliminazione del download di {0}…</value></data>
+  <data name="Pod.Download" xml:space="preserve"><value>Scarica</value></data>
+  <data name="Pod.DownloadCancelled" xml:space="preserve"><value>Download annullato: {0}. Nessun file parziale è stato conservato.</value></data>
+  <data name="Pod.DownloadFailed" xml:space="preserve"><value>Download non riuscito: {0}. {1}</value></data>
+  <data name="Pod.DownloadNew" xml:space="preserve"><value>Scarica nuovi</value></data>
+  <data name="Pod.DownloadNewTip" xml:space="preserve"><value>Accoda gli episodi più recenti trovati da un aggiornamento (fino a dieci alla volta)</value></data>
+  <data name="Pod.DownloadProgress" xml:space="preserve"><value>Avanzamento del download</value></data>
+  <data name="Pod.DownloadedDone" xml:space="preserve"><value>Scaricato {0}. Scegli Riproduci per ascoltarlo.</value></data>
+  <data name="Pod.DownloadedOnly" xml:space="preserve"><value>Solo scaricati</value></data>
+  <data name="Pod.DownloadedOnlyAutomation" xml:space="preserve"><value>Mostra solo gli episodi scaricati</value></data>
+  <data name="Pod.DownloadedOnlyTip" xml:space="preserve"><value>Nasconde gli episodi non scaricati</value></data>
+  <data name="Pod.Downloading" xml:space="preserve"><value>Download di {0}…</value></data>
+  <data name="Pod.EnterFeed" xml:space="preserve"><value>Inserisci l'URL del feed di un podcast per iscriverti. I feed vengono controllati solo quando aggiorni o se il controllo orario (Preferenze) è attivo.</value></data>
+  <data name="Pod.EpisodeCount.One" xml:space="preserve"><value>1 episodio</value></data>
+  <data name="Pod.EpisodeCount.Other" xml:space="preserve"><value>{0} episodi</value></data>
+  <data name="Pod.EpisodeCountFiltered" xml:space="preserve"><value>{0} di {1} episodi</value></data>
+  <data name="Pod.Episodes" xml:space="preserve"><value>Episodi</value></data>
+  <data name="Pod.FailedSuffix" xml:space="preserve"><value> {0} non riusciti: {1}.</value></data>
+  <data name="Pod.FeedAutomation" xml:space="preserve"><value>URL del feed del podcast</value></data>
+  <data name="Pod.FeedPlaceholder" xml:space="preserve"><value>URL del feed del podcast (https://…/feed.xml)</value></data>
+  <data name="Pod.Fetching" xml:space="preserve"><value>Recupero del feed…</value></data>
+  <data name="Pod.FileMissing" xml:space="preserve"><value>Il file scaricato non c'è. Scegli Riprova per scaricarlo di nuovo.</value></data>
+  <data name="Pod.HideNotes" xml:space="preserve"><value>Nascondi note</value></data>
+  <data name="Pod.InPlayer" xml:space="preserve"><value>Questo episodio è caricato nel lettore principale. Fermalo lì, poi elimina il download.</value></data>
+  <data name="Pod.Issues.One" xml:space="preserve"><value> 1 voce del feed è stata saltata.</value></data>
+  <data name="Pod.Issues.Other" xml:space="preserve"><value> {0} voci del feed sono state saltate.</value></data>
+  <data name="Pod.KeptFiles" xml:space="preserve"><value> {0} file scaricati sono stati lasciati sul disco.</value></data>
+  <data name="Pod.MarkAllSeen" xml:space="preserve"><value>Segna tutti come visti</value></data>
+  <data name="Pod.MarkAllSeenTip" xml:space="preserve"><value>Rimuove il contrassegno Nuovo da ogni episodio di questo podcast</value></data>
+  <data name="Pod.MarkedSeen" xml:space="preserve"><value>Ogni episodio di {0} è stato segnato come visto.</value></data>
+  <data name="Pod.NeverRefreshed" xml:space="preserve"><value>Mai aggiornato</value></data>
+  <data name="Pod.New" xml:space="preserve"><value>NUOVO</value></data>
+  <data name="Pod.NewAutomation" xml:space="preserve"><value>Nuovo episodio</value></data>
+  <data name="Pod.NewEpisodes.One" xml:space="preserve"><value>1 nuovo episodio.</value></data>
+  <data name="Pod.NewEpisodes.Other" xml:space="preserve"><value>{0} nuovi episodi.</value></data>
+  <data name="Pod.NewSuffix" xml:space="preserve"><value> · {0} nuovi</value></data>
+  <data name="Pod.NewUpdateFailed" xml:space="preserve"><value>Impossibile aggiornare i nuovi episodi: {0}</value></data>
+  <data name="Pod.NoChanges" xml:space="preserve"><value>{0} non ha modifiche.</value></data>
+  <data name="Pod.NoCoverAutomation" xml:space="preserve"><value>Nessuna copertina disponibile</value></data>
+  <data name="Pod.NoDownloadedMatch" xml:space="preserve"><value>Nessun episodio scaricato di questo programma corrisponde a «{0}».</value></data>
+  <data name="Pod.NoEpisodes" xml:space="preserve"><value>Nessun episodio nella cache. Iscriviti a un podcast o scegli Aggiorna.</value></data>
+  <data name="Pod.NoFileToDelete" xml:space="preserve"><value>Questo episodio non ha alcun file scaricato da eliminare.</value></data>
+  <data name="Pod.NoMatch" xml:space="preserve"><value>Nessun episodio di questo programma corrisponde a «{0}». Cancella la ricerca per vedere tutti i {1}.</value></data>
+  <data name="Pod.NoNewEpisodes" xml:space="preserve"><value>Nessun nuovo episodio.</value></data>
+  <data name="Pod.NoNewToDownload" xml:space="preserve"><value>Nessun nuovo episodio da scaricare.</value></data>
+  <data name="Pod.NoPlayback" xml:space="preserve"><value>La riproduzione non è collegata alla finestra principale.</value></data>
+  <data name="Pod.NoProgress" xml:space="preserve"><value>Nessun avanzamento</value></data>
+  <data name="Pod.NoSavedPosition" xml:space="preserve"><value>Nessuna posizione salvata</value></data>
+  <data name="Pod.NoSubscriptions" xml:space="preserve"><value>Ancora nessuna iscrizione</value></data>
+  <data name="Pod.NoneDownloaded" xml:space="preserve"><value>Nessun episodio di questo programma è ancora stato scaricato.</value></data>
+  <data name="Pod.NoneSelected" xml:space="preserve"><value>Nessun podcast selezionato</value></data>
+  <data name="Pod.NotesAutomation" xml:space="preserve"><value>Note del programma per questo episodio</value></data>
+  <data name="Pod.NotesText" xml:space="preserve"><value>Note dell'episodio</value></data>
+  <data name="Pod.NotesTip" xml:space="preserve"><value>Mostra o nasconde la descrizione di questo episodio</value></data>
+  <data name="Pod.Op.Refresh" xml:space="preserve"><value>Aggiorna</value></data>
+  <data name="Pod.Op.RefreshAll" xml:space="preserve"><value>Aggiorna tutto</value></data>
+  <data name="Pod.Op.Remove" xml:space="preserve"><value>Rimuovi</value></data>
+  <data name="Pod.Op.Subscribe" xml:space="preserve"><value>Iscriviti</value></data>
+  <data name="Pod.OpCancelled" xml:space="preserve"><value>{0} annullato.</value></data>
+  <data name="Pod.OpFailed" xml:space="preserve"><value>{0} non riuscito: {1}</value></data>
+  <data name="Pod.Opening" xml:space="preserve"><value>Apertura di {0}…</value></data>
+  <data name="Pod.PauseAutomation" xml:space="preserve"><value>Metti in pausa l'episodio</value></data>
+  <data name="Pod.PauseFailed" xml:space="preserve"><value>Impossibile mettere in pausa: {0}</value></data>
+  <data name="Pod.PauseTip" xml:space="preserve"><value>Mette in pausa il lettore; l'avanzamento viene mantenuto</value></data>
+  <data name="Pod.PlayFailed" xml:space="preserve"><value>Impossibile riprodurre l'episodio: {0}</value></data>
+  <data name="Pod.PlaybackCancelled" xml:space="preserve"><value>Riproduzione annullata o interrotta.</value></data>
+  <data name="Pod.PositionCancelled" xml:space="preserve"><value>Salvataggio della posizione annullato.</value></data>
+  <data name="Pod.PositionFailed" xml:space="preserve"><value>Impossibile salvare la posizione: {0}</value></data>
+  <data name="Pod.ProgressPercent" xml:space="preserve"><value>Avanzamento {0} per cento</value></data>
+  <data name="Pod.QueuedNew.One" xml:space="preserve"><value>Accodato {0} nuovo episodio.</value></data>
+  <data name="Pod.QueuedNew.Other" xml:space="preserve"><value>Accodati {0} nuovi episodi.</value></data>
+  <data name="Pod.QueuedPartial" xml:space="preserve"><value>Accodati {0} di {1} nuovi episodi. Scegli di nuovo Scarica nuovi per averne altri.</value></data>
+  <data name="Pod.QueuedWaiting" xml:space="preserve"><value>Accodato {0}: {1} in attesa.</value></data>
+  <data name="Pod.RateTip" xml:space="preserve"><value>Valuta questo episodio (tasti 0–5 con la riga selezionata; 0 cancella)</value></data>
+  <data name="Pod.RatingCleared" xml:space="preserve"><value>Valutazione di {0} cancellata.</value></data>
+  <data name="Pod.RatingFailed" xml:space="preserve"><value>Impossibile salvare la valutazione: {0}</value></data>
+  <data name="Pod.RatingSet.One" xml:space="preserve"><value>{1} valutato con {0} stella.</value></data>
+  <data name="Pod.RatingSet.Other" xml:space="preserve"><value>{1} valutato con {0} stelle.</value></data>
+  <data name="Pod.RatingStars" xml:space="preserve"><value>Valutazione: {0} stelle su 5</value></data>
+  <data name="Pod.RatingUnrated" xml:space="preserve"><value>Valutazione: nessuna</value></data>
+  <data name="Pod.RatingsUnavailable" xml:space="preserve"><value>Le valutazioni degli episodi non sono disponibili.</value></data>
+  <data name="Pod.Refresh" xml:space="preserve"><value>Aggiorna</value></data>
+  <data name="Pod.RefreshAll" xml:space="preserve"><value>Aggiorna tutto</value></data>
+  <data name="Pod.RefreshAllTip" xml:space="preserve"><value>Controlla ogni iscrizione per nuovi episodi</value></data>
+  <data name="Pod.RefreshTip" xml:space="preserve"><value>Chiede al server i nuovi episodi (usa i validatori nella cache)</value></data>
+  <data name="Pod.Refreshed" xml:space="preserve"><value>Aggiornato {0}: {1} nuovi, {2} episodi nella cache.{3}</value></data>
+  <data name="Pod.Refreshing" xml:space="preserve"><value>Aggiornamento di {0}…</value></data>
+  <data name="Pod.RefreshingOf" xml:space="preserve"><value>Aggiornamento di {0} su {1}: {2}…</value></data>
+  <data name="Pod.RemovePrompt" xml:space="preserve"><value>Dimenticare questa iscrizione e il suo elenco di episodi nella cache?
+I file degli episodi scaricati restano sul disco.
+{0}</value></data>
+  <data name="Pod.RemoveTip" xml:space="preserve"><value>Dimentica questa iscrizione. I file scaricati restano sul disco</value></data>
+  <data name="Pod.RemoveTitle" xml:space="preserve"><value>Rimuovi podcast</value></data>
+  <data name="Pod.Removed" xml:space="preserve"><value>Rimosso {0}.{1}</value></data>
+  <data name="Pod.RemovedFromQueue" xml:space="preserve"><value>Rimosso {0} dalla coda di download.</value></data>
+  <data name="Pod.Resume" xml:space="preserve"><value>Riprendi</value></data>
+  <data name="Pod.ResumeSelected" xml:space="preserve"><value>Riprendi selezionato</value></data>
+  <data name="Pod.ResumeSelectedTip" xml:space="preserve"><value>Continua l'episodio scaricato selezionato dalla posizione salvata</value></data>
+  <data name="Pod.ResumedFromSaved" xml:space="preserve"><value>Ripresa di {0} dalla posizione salvata.</value></data>
+  <data name="Pod.Resuming" xml:space="preserve"><value>Ripresa di {0}…</value></data>
+  <data name="Pod.Retry" xml:space="preserve"><value>Riprova</value></data>
+  <data name="Pod.SavePosition" xml:space="preserve"><value>Salva posizione</value></data>
+  <data name="Pod.SavePositionTip" xml:space="preserve"><value>Salva ora mentre il lettore principale sta riproducendo o ha messo in pausa questo episodio selezionato</value></data>
+  <data name="Pod.SavedPosition" xml:space="preserve"><value>Salvato {0} di {1}</value></data>
+  <data name="Pod.SavedPositionDone" xml:space="preserve"><value>Posizione salvata per {0}.</value></data>
+  <data name="Pod.SavingPosition" xml:space="preserve"><value>Salvataggio della posizione di {0}…</value></data>
+  <data name="Pod.SearchAutomation" xml:space="preserve"><value>Cerca titoli di episodi</value></data>
+  <data name="Pod.SearchPlaceholder" xml:space="preserve"><value>Cerca titoli di episodi in questo programma</value></data>
+  <data name="Pod.SentFromStart" xml:space="preserve"><value>Inviato {0} al lettore dall'inizio.</value></data>
+  <data name="Pod.ShowAll" xml:space="preserve"><value>Mostra tutti gli episodi</value></data>
+  <data name="Pod.ShowNotes" xml:space="preserve"><value>Mostra note</value></data>
+  <data name="Pod.SizeOf" xml:space="preserve"><value>{0} di {1} · {2}%</value></data>
+  <data name="Pod.Speed" xml:space="preserve"><value>Velocità</value></data>
+  <data name="Pod.SpeedAutomation" xml:space="preserve"><value>Velocità di riproduzione del podcast</value></data>
+  <data name="Pod.SpeedFailed" xml:space="preserve"><value>Impossibile cambiare la velocità: {0}</value></data>
+  <data name="Pod.SpeedSet" xml:space="preserve"><value>Velocità del podcast: {0}.</value></data>
+  <data name="Pod.SpeedTip" xml:space="preserve"><value>Velocità di riproduzione degli episodi dei podcast. Musica, radio e audiolibri vengono sempre riprodotti a 1x</value></data>
+  <data name="Pod.StartOver" xml:space="preserve"><value>Ricomincia</value></data>
+  <data name="Pod.StartOverTip" xml:space="preserve"><value>Riproduce dall'inizio invece che dalla posizione salvata</value></data>
+  <data name="Pod.Starting" xml:space="preserve"><value>Avvio…</value></data>
+  <data name="Pod.State.Cancelled" xml:space="preserve"><value>Download annullato</value></data>
+  <data name="Pod.State.Deleting" xml:space="preserve"><value>Rimozione del file scaricato…</value></data>
+  <data name="Pod.State.Downloaded" xml:space="preserve"><value>Scaricato</value></data>
+  <data name="Pod.State.Downloading" xml:space="preserve"><value>Download in corso… {0}</value></data>
+  <data name="Pod.State.Failed" xml:space="preserve"><value>Download non riuscito: {0}</value></data>
+  <data name="Pod.State.Missing" xml:space="preserve"><value>Il file scaricato non c'è</value></data>
+  <data name="Pod.State.NotDownloaded" xml:space="preserve"><value>Non scaricato</value></data>
+  <data name="Pod.State.Queued" xml:space="preserve"><value>In attesa nella coda di download…</value></data>
+  <data name="Pod.Subscribe" xml:space="preserve"><value>Iscriviti</value></data>
+  <data name="Pod.SubscribeTip" xml:space="preserve"><value>Recupera questo feed una volta e lo conserva nella tua libreria</value></data>
+  <data name="Pod.Subscribed" xml:space="preserve"><value>Iscritto a {0}: {1} episodi.{2}</value></data>
+  <data name="Pod.SubscribedList" xml:space="preserve"><value>Podcast a cui sei iscritto</value></data>
+  <data name="Pod.Updated" xml:space="preserve"><value>Aggiornato {0}</value></data>
+  <data name="Pod.WaitPosition" xml:space="preserve"><value>Attendi che l'azione di riproduzione o di posizione in corso finisca.</value></data>
+  <data name="Podcasts.ProgressSaveFailed" xml:space="preserve"><value>Impossibile salvare l'avanzamento del podcast: {0}</value></data>
+  <data name="Prefs.AddFolder" xml:space="preserve"><value>Aggiungi cartella…</value></data>
+  <data name="Prefs.Appearance" xml:space="preserve"><value>Aspetto</value></data>
+  <data name="Prefs.AutoRefresh" xml:space="preserve"><value>Cerca nuovi episodi ogni ora mentre Aibell è aperto</value></data>
+  <data name="Prefs.AutoRefreshAutomation" xml:space="preserve"><value>Cerca automaticamente nuovi episodi dei podcast</value></data>
+  <data name="Prefs.AutoRefreshNote" xml:space="preserve"><value>I controlli usano i validatori nella cache del feed, quindi i programmi invariati costano una richiesta minima. Nulla viene scaricato automaticamente.</value></data>
+  <data name="Prefs.Browse" xml:space="preserve"><value>Sfoglia…</value></data>
+  <data name="Prefs.BrowseAutomation" xml:space="preserve"><value>Sfoglia la cartella di download dei podcast</value></data>
+  <data name="Prefs.DownloadFolder" xml:space="preserve"><value>Cartella di download</value></data>
+  <data name="Prefs.FolderChangesNow" xml:space="preserve"><value>Le modifiche alla cartella hanno effetto immediato.</value></data>
+  <data name="Prefs.FolderChecked" xml:space="preserve"><value>La cartella viene controllata quando premi Salva. Se non può essere usata, resta in vigore quella attuale.</value></data>
+  <data name="Prefs.FoldersNote" xml:space="preserve"><value>Le cartelle musicali vengono controllate per rilevare modifiche. Rimuovere una cartella toglie i suoi brani dalla libreria e conserva i file audio.</value></data>
+  <data name="Prefs.GeneralNote" xml:space="preserve"><value>Le colonne dei brani e la loro larghezza vengono salvate quando le modifichi nella libreria. La scrittura dei tag sui file richiede sempre di scegliere File e libreria nell'editor dei brani.</value></data>
+  <data name="Prefs.Mute" xml:space="preserve"><value>Disattiva audio</value></data>
+  <data name="Prefs.Notify" xml:space="preserve"><value>Notifica quando cambia il brano in riproduzione</value></data>
+  <data name="Prefs.NotifyTip" xml:space="preserve"><value>Notifiche del desktop opzionali. Il servizio del desktop può sopprimerle.</value></data>
+  <data name="Prefs.NotifyUnavailable" xml:space="preserve"><value>Le notifiche del desktop non sono disponibili su questa piattaforma.</value></data>
+  <data name="Prefs.OnlineExplain" xml:space="preserve"><value>Disattivato per impostazione predefinita. Se attivo, premendo Cerca su un CD audio, Informazioni sull'artista o Ottieni copertina si invia l'indice del disco, oppure il nome dell'album e dell'artista, al servizio del plugin (MusicBrainz). Non viene inviato nulla automaticamente.</value></data>
+  <data name="Prefs.OnlineLookup" xml:space="preserve"><value>Consenti la ricerca online dei dettagli di album e artisti</value></data>
+  <data name="Prefs.OnlineLookupAutomation" xml:space="preserve"><value>Consenti la ricerca online di album e artisti</value></data>
+  <data name="Prefs.PodcastFolderAutomation" xml:space="preserve"><value>Cartella di download dei podcast</value></data>
+  <data name="Prefs.PodcastFolderNote" xml:space="preserve"><value>I nuovi download dei podcast vengono salvati in questa cartella. Gli episodi già scaricati restano dove sono e rimangono riproducibili ed eliminabili; nulla viene spostato o eliminato.</value></data>
+  <data name="Prefs.RemoveFolderPrompt" xml:space="preserve"><value>Rimuovere questa cartella e i suoi brani dalla libreria? I file audio verranno mantenuti.
+{0}</value></data>
+  <data name="Prefs.Repeat" xml:space="preserve"><value>Ripeti</value></data>
+  <data name="Prefs.RepeatAll" xml:space="preserve"><value>Tutti i brani</value></data>
+  <data name="Prefs.RepeatOff" xml:space="preserve"><value>No</value></data>
+  <data name="Prefs.RepeatOne" xml:space="preserve"><value>Un brano</value></data>
+  <data name="Prefs.ReviewEdits" xml:space="preserve"><value>Controlla modifiche interrotte…</value></data>
+  <data name="Prefs.Saved" xml:space="preserve"><value>Preferenze salvate.</value></data>
+  <data name="Prefs.SavedFolder" xml:space="preserve"><value>Preferenze salvate. I nuovi download dei podcast andranno in {0}; quelli esistenti restano dove sono.</value></data>
+  <data name="Prefs.ShowQueue" xml:space="preserve"><value>Mostra la coda di riproduzione</value></data>
+  <data name="Prefs.Shuffle" xml:space="preserve"><value>Riproduzione casuale</value></data>
+  <data name="Prefs.Tab.Folders" xml:space="preserve"><value>Cartelle della libreria</value></data>
+  <data name="Prefs.Tab.General" xml:space="preserve"><value>Generale</value></data>
+  <data name="Prefs.Tab.Online" xml:space="preserve"><value>Online</value></data>
+  <data name="Prefs.Tab.Playback" xml:space="preserve"><value>Riproduzione</value></data>
+  <data name="Prefs.Tab.Plugins" xml:space="preserve"><value>Plugin</value></data>
+  <data name="Prefs.Tab.Podcasts" xml:space="preserve"><value>Podcast</value></data>
+  <data name="Prefs.ThemeDark" xml:space="preserve"><value>Scuro</value></data>
+  <data name="Prefs.ThemeLight" xml:space="preserve"><value>Chiaro</value></data>
+  <data name="Prefs.ThemeSystem" xml:space="preserve"><value>Sistema</value></data>
+  <data name="Prefs.Title" xml:space="preserve"><value>Preferenze</value></data>
+  <data name="Prefs.UseDefault" xml:space="preserve"><value>Usa predefinito</value></data>
+  <data name="Prefs.Volume" xml:space="preserve"><value>Volume</value></data>
+  <data name="Prefs.VolumeAutomation" xml:space="preserve"><value>Percentuale del volume di riproduzione</value></data>
+  <data name="Queue.Cleared" xml:space="preserve"><value>Coda di riproduzione svuotata.</value></data>
+  <data name="Queue.DropHint" xml:space="preserve"><value>Trascina qui i file musicali per aggiungerli alla coda di riproduzione.</value></data>
+  <data name="Queue.Gone" xml:space="preserve"><value>Il file in coda non è più disponibile.</value></data>
+  <data name="Queue.Header" xml:space="preserve"><value>Coda di riproduzione ({0})</value></data>
+  <data name="Queue.NoFolder" xml:space="preserve"><value>Impossibile aprire la cartella del file.</value></data>
+  <data name="Queue.QueuedFailures" xml:space="preserve"><value>Accodati {0} brani; {1} file non leggibili.</value></data>
+  <data name="Queue.QueuedLast.One" xml:space="preserve"><value>Accodato {0} brano alla fine.</value></data>
+  <data name="Queue.QueuedLast.Other" xml:space="preserve"><value>Accodati {0} brani alla fine.</value></data>
+  <data name="Queue.QueuedNext.One" xml:space="preserve"><value>Accodato {0} brano come successivo.</value></data>
+  <data name="Queue.QueuedNext.Other" xml:space="preserve"><value>Accodati {0} brani come successivi.</value></data>
+  <data name="Queue.ShowFileFailed" xml:space="preserve"><value>Impossibile mostrare il file: {0}</value></data>
+  <data name="Radio.Connecting" xml:space="preserve"><value>Connessione a {0}…</value></data>
+  <data name="Radio.Failed" xml:space="preserve"><value>Riproduzione radio non riuscita: {0}</value></data>
+  <data name="Radio.Playing" xml:space="preserve"><value>Riproduzione radio: {0}.</value></data>
+  <data name="Radio.RemovePrompt" xml:space="preserve"><value>Rimuovere questa stazione salvata? Si interrompe se è in riproduzione.
+{0}</value></data>
+  <data name="Radio.RemoveTitle" xml:space="preserve"><value>Rimuovi stazione radio</value></data>
+  <data name="Radio.Removed" xml:space="preserve"><value>Stazione rimossa. I file musicali e le richieste in coda in sospeso sono stati mantenuti.</value></data>
+  <data name="Radio.AllStations" xml:space="preserve"><value>Tutte le stazioni</value></data>
+  <data name="Radio.Genres" xml:space="preserve"><value>Generi</value></data>
+  <data name="Radio.SortBy" xml:space="preserve"><value>Ordina stazioni</value></data>
+  <data name="Radio.SortName" xml:space="preserve"><value>Nome</value></data>
+  <data name="Radio.SortMostPlayed" xml:space="preserve"><value>Più ascoltate</value></data>
+  <data name="Radio.SortRecent" xml:space="preserve"><value>Ascoltate di recente</value></data>
+  <data name="Radio.SortRating" xml:space="preserve"><value>Più votate</value></data>
+  <data name="Radio.Saved" xml:space="preserve"><value>Stazione salvata. Le modifiche si applicano alla prossima riproduzione.</value></data>
+  <data name="RadioFile.Imported" xml:space="preserve"><value>Importate {0} stazioni radio; {1} voci saltate; {2} duplicati omessi.</value></data>
+  <data name="RadioFile.ImportedNoRefresh" xml:space="preserve"><value>Importate {0} stazioni radio, ma la vista non ha potuto aggiornarsi. Riapri Radio. {1}</value></data>
+  <data name="Rating.Cleared" xml:space="preserve"><value>Valutazione di {0} cancellata.</value></data>
+  <data name="Rating.Set.One" xml:space="preserve"><value>{1} valutato con {0} stella.</value></data>
+  <data name="Rating.Set.Other" xml:space="preserve"><value>{1} valutato con {0} stelle.</value></data>
+  <data name="Recovery.CancelAndClose" xml:space="preserve"><value>Annulla e chiudi</value></data>
+  <data name="Recovery.ChooseFolder" xml:space="preserve"><value>Scegli cartella…</value></data>
+  <data name="Recovery.ChooseHint" xml:space="preserve"><value>Scegli una cartella da ispezionare. Le sottocartelle sono incluse; le cartelle collegate sono escluse.</value></data>
+  <data name="Recovery.Details" xml:space="preserve"><value>File audio: {0}
+Modifica temporanea: {1}</value></data>
+  <data name="Recovery.Discard" xml:space="preserve"><value>Scarta</value></data>
+  <data name="Recovery.DiscardButton" xml:space="preserve"><value>Scarta modifica temporanea…</value></data>
+  <data name="Recovery.DiscardPrompt" xml:space="preserve"><value>Eliminare questa modifica temporanea dei metadati e il suo record? Il file audio e i backup salvati verranno mantenuti.
+</value></data>
+  <data name="Recovery.DiscardTitle" xml:space="preserve"><value>Scarta modifica interrotta</value></data>
+  <data name="Recovery.Discarded" xml:space="preserve"><value>Modifica temporanea dei metadati scartata. Il file audio e i backup salvati sono stati mantenuti.</value></data>
+  <data name="Recovery.Found" xml:space="preserve"><value>Trovate {0} modifiche ai metadati interrotte; {1} elementi da controllare.</value></data>
+  <data name="Recovery.Incomplete" xml:space="preserve"><value>Anteprima incompleta</value></data>
+  <data name="Recovery.Intro" xml:space="preserve"><value>Controlla i file temporanei lasciati dai salvataggi di metadati interrotti. I file audio e i backup salvati restano invariati.</value></data>
+  <data name="Recovery.NeedsReview" xml:space="preserve"><value>Da controllare ({0})</value></data>
+  <data name="Recovery.NeedsReviewTab" xml:space="preserve"><value>Da controllare</value></data>
+  <data name="Recovery.PickTitle" xml:space="preserve"><value>Ispeziona le modifiche ai metadati interrotte</value></data>
+  <data name="Recovery.Scan" xml:space="preserve"><value>Scansiona cartelle</value></data>
+  <data name="Recovery.ScanCancelled" xml:space="preserve"><value>Scansione annullata. Nessun file audio è stato modificato.</value></data>
+  <data name="Recovery.Scanning" xml:space="preserve"><value>Scansione di cartelle e sottocartelle…</value></data>
+  <data name="Recovery.SubfoldersIncluded" xml:space="preserve"><value>Le sottocartelle sono incluse; le cartelle collegate sono escluse.</value></data>
+  <data name="Recovery.Summary" xml:space="preserve"><value>{0} modifiche interrotte; {1} elementi da controllare. Le modifiche attive vengono saltate.</value></data>
+  <data name="Recovery.Title" xml:space="preserve"><value>Modifiche ai metadati interrotte</value></data>
+  <data name="Recovery.Validated" xml:space="preserve"><value>Anteprima convalidata</value></data>
+  <data name="Result.ByArtist.One" xml:space="preserve"><value>1 brano di {1}.</value></data>
+  <data name="Result.ByArtist.Other" xml:space="preserve"><value>{0} brani di {1}.</value></data>
+  <data name="Result.InGenre.One" xml:space="preserve"><value>1 brano in {1}.</value></data>
+  <data name="Result.InGenre.Other" xml:space="preserve"><value>{0} brani in {1}.</value></data>
+  <data name="Result.InLibrary.One" xml:space="preserve"><value>1 brano nella libreria.</value></data>
+  <data name="Result.InLibrary.Other" xml:space="preserve"><value>{0} brani nella libreria.</value></data>
+  <data name="Result.InPlaylist.One" xml:space="preserve"><value>1 brano in {1}.</value></data>
+  <data name="Result.InPlaylist.Other" xml:space="preserve"><value>{0} brani in {1}.</value></data>
+  <data name="Result.Matching.One" xml:space="preserve"><value>1 brano corrispondente.</value></data>
+  <data name="Result.Matching.Other" xml:space="preserve"><value>{0} brani corrispondenti.</value></data>
+  <data name="Result.OnAlbum.One" xml:space="preserve"><value>1 brano in {1}.</value></data>
+  <data name="Result.OnAlbum.Other" xml:space="preserve"><value>{0} brani in {1}.</value></data>
+  <data name="Search.InPodcasts" xml:space="preserve"><value>La ricerca è nella vista Podcast</value></data>
+  <data name="Search.Library" xml:space="preserve"><value>Cerca nella libreria</value></data>
+  <data name="Search.Stations" xml:space="preserve"><value>Cerca stazioni</value></data>
+  <data name="Sidebar.AudioCd" xml:space="preserve"><value>CD audio</value></data>
+  <data name="Sidebar.AudioCdAutomation" xml:space="preserve"><value>CD audio</value></data>
+  <data name="Sidebar.AudioCdTip" xml:space="preserve"><value>Riproduce un CD audio e cerca i dettagli del suo album</value></data>
+  <data name="Sidebar.Devices" xml:space="preserve"><value>Dispositivi</value></data>
+  <data name="Sidebar.DevicesAutomation" xml:space="preserve"><value>Sincronizza con un dispositivo</value></data>
+  <data name="Sidebar.DevicesTip" xml:space="preserve"><value>Copia musica su una chiavetta USB, una scheda di memoria o un lettore a memoria di massa</value></data>
+  <data name="Sidebar.Music" xml:space="preserve"><value>Musica</value></data>
+  <data name="Sidebar.MusicAutomation" xml:space="preserve"><value>Libreria musicale</value></data>
+  <data name="Sidebar.Podcasts" xml:space="preserve"><value>Podcast</value></data>
+  <data name="Sidebar.Audiobooks" xml:space="preserve"><value>Audiolibri</value></data>
+  <data name="Sidebar.PodcastsAutomation" xml:space="preserve"><value>Podcast</value></data>
+  <data name="Sidebar.PodcastsTip" xml:space="preserve"><value>Iscrizioni ai podcast ed episodi scaricati</value></data>
+  <data name="Sidebar.Radio" xml:space="preserve"><value>Radio</value></data>
+  <data name="Sidebar.RadioAutomation" xml:space="preserve"><value>Stazioni radio</value></data>
+  <data name="Smart.AddRuleAutomation" xml:space="preserve"><value>Aggiungi regola dopo questa condizione</value></data>
+  <data name="Smart.AddTip" xml:space="preserve"><value>Aggiunge una condizione sotto questa</value></data>
+  <data name="Smart.All" xml:space="preserve"><value>tutte</value></data>
+  <data name="Smart.Any" xml:space="preserve"><value>almeno una</value></data>
+  <data name="Smart.AtLeast" xml:space="preserve"><value>almeno</value></data>
+  <data name="Smart.AtMost" xml:space="preserve"><value>al massimo</value></data>
+  <data name="Smart.CloseAutomation" xml:space="preserve"><value>Chiudi l'editor delle playlist intelligenti</value></data>
+  <data name="Smart.Conditions" xml:space="preserve"><value>delle seguenti condizioni:</value></data>
+  <data name="Smart.Contains" xml:space="preserve"><value>contiene</value></data>
+  <data name="Smart.CreateTitle" xml:space="preserve"><value>Crea playlist intelligente</value></data>
+  <data name="Smart.Created" xml:space="preserve"><value>Creata la playlist intelligente {0}. {1}</value></data>
+  <data name="Smart.EditTitle" xml:space="preserve"><value>Modifica le regole della playlist intelligente</value></data>
+  <data name="Smart.Equals" xml:space="preserve"><value>è uguale a</value></data>
+  <data name="Smart.Hint" xml:space="preserve"><value>Si aggiorna automaticamente con la tua libreria. Un valore vuoto corrisponde ai tag mancanti.</value></data>
+  <data name="Smart.Match" xml:space="preserve"><value>Soddisfa</value></data>
+  <data name="Smart.MatchAutomation" xml:space="preserve"><value>Soddisfa tutte o almeno una regola</value></data>
+  <data name="Smart.NameLabel" xml:space="preserve"><value>NOME DELLA PLAYLIST</value></data>
+  <data name="Smart.NotEquals" xml:space="preserve"><value>non è uguale a</value></data>
+  <data name="Smart.RemoveRule" xml:space="preserve"><value>Rimuovi regola</value></data>
+  <data name="Smart.RemoveTip" xml:space="preserve"><value>Rimuove questa condizione</value></data>
+  <data name="Smart.RuleComparison" xml:space="preserve"><value>Confronto della regola</value></data>
+  <data name="Smart.RuleField" xml:space="preserve"><value>Campo della regola</value></data>
+  <data name="Smart.RuleValue" xml:space="preserve"><value>Valore della regola</value></data>
+  <data name="Smart.SkipCount" xml:space="preserve"><value>Salti</value></data>
+  <data name="Smart.Updated" xml:space="preserve"><value>Playlist intelligente aggiornata. {0}</value></data>
+  <data name="Sort.Ascending" xml:space="preserve"><value>Ordinato per {0} in ordine crescente.</value></data>
+  <data name="Sort.Descending" xml:space="preserve"><value>Ordinato per {0} in ordine decrescente.</value></data>
+  <data name="Station.AddTitle" xml:space="preserve"><value>Aggiungi stazione radio</value></data>
+  <data name="Station.Creator" xml:space="preserve"><value>Creatore (facoltativo)</value></data>
+  <data name="Station.Description" xml:space="preserve"><value>Descrizione (facoltativa)</value></data>
+  <data name="Station.EditTitle" xml:space="preserve"><value>Modifica stazione radio</value></data>
+  <data name="Station.Genre" xml:space="preserve"><value>Genere (facoltativo)</value></data>
+  <data name="Station.Name" xml:space="preserve"><value>Nome della stazione</value></data>
+  <data name="Station.Never" xml:space="preserve"><value>Mai</value></data>
+  <data name="Station.NoRating" xml:space="preserve"><value>Nessuna valutazione</value></data>
+  <data name="Station.Note" xml:space="preserve"><value>Solo flussi audio HTTP/HTTPS. Il salvataggio non si connette; la riproduzione inizia quando scegli Riproduci. Le modifiche si applicano alla connessione successiva.</value></data>
+  <data name="Station.PlayInfo" xml:space="preserve"><value>{0} riproduzioni · Ultima riproduzione: {1}</value></data>
+  <data name="Station.RatingAutomation" xml:space="preserve"><value>Valutazione della stazione</value></data>
+  <data name="Status.Loading" xml:space="preserve"><value>Caricamento della libreria…</value></data>
+  <data name="Sync.Cancel" xml:space="preserve"><value>Annulla</value></data>
+  <data name="Sync.Cancelled" xml:space="preserve"><value>Annullato. I file copiati finora restano sul dispositivo.</value></data>
+  <data name="Sync.ChooseSource" xml:space="preserve"><value>Scegli un dispositivo e cosa copiare, poi premi Anteprima.</value></data>
+  <data name="Sync.Copying" xml:space="preserve"><value>Copia in corso…</value></data>
+  <data name="Sync.Done" xml:space="preserve"><value>Completato. Puoi smontare il dispositivo in sicurezza dal tuo gestore di file.</value></data>
+  <data name="Sync.DoneWithFailures" xml:space="preserve"><value>Completato, ma {0} file non sono stati copiati.</value></data>
+  <data name="Sync.Finishing" xml:space="preserve"><value>Completamento…</value></data>
+  <data name="Sync.NoTracks" xml:space="preserve"><value>Non ci sono brani da copiare. Selezionane alcuni o scegli un'altra sorgente.</value></data>
+  <data name="Sync.NoVolumes" xml:space="preserve"><value>Nessuna unità rimovibile trovata. Collegane una e lascia che il desktop la monti, poi scegli Aggiorna dispositivi.</value></data>
+  <data name="Sync.Note" xml:space="preserve"><value>La musica viene copiata in Music/Artista/Album sul dispositivo. Nulla sul dispositivo viene mai eliminato e nulla nella tua libreria cambia.</value></data>
+  <data name="Sync.Planning" xml:space="preserve"><value>Controllo dei file…</value></data>
+  <data name="Sync.Preview" xml:space="preserve"><value>Anteprima</value></data>
+  <data name="Sync.PreviewReady" xml:space="preserve"><value>Ecco cosa succederà. Premi Copia sul dispositivo per iniziare.</value></data>
+  <data name="Sync.Progress" xml:space="preserve"><value>Copia di {0} su {1}: {2}</value></data>
+  <data name="Sync.Refresh" xml:space="preserve"><value>Aggiorna dispositivi</value></data>
+  <data name="Sync.RefreshTip" xml:space="preserve"><value>Cerca le unità collegate o montate dopo l'apertura di questa finestra</value></data>
+  <data name="Sync.ReplaceDifferent" xml:space="preserve"><value>Sostituisci i file diversi già presenti sul dispositivo</value></data>
+  <data name="Sync.Result.Conflicts" xml:space="preserve"><value>{0} file diversi con lo stesso nome sono stati mantenuti.</value></data>
+  <data name="Sync.Result.Copied" xml:space="preserve"><value>{0} file copiati; {1} erano già aggiornati.</value></data>
+  <data name="Sync.Result.Failure" xml:space="preserve"><value>Problema: {0}</value></data>
+  <data name="Sync.Result.MoreFailures" xml:space="preserve"><value>…e altri {0} problemi.</value></data>
+  <data name="Sync.Result.Playlist" xml:space="preserve"><value>Playlist: {0}</value></data>
+  <data name="Sync.Source.Library" xml:space="preserve"><value>Intera libreria</value></data>
+  <data name="Sync.Source.Selected" xml:space="preserve"><value>Brani selezionati</value></data>
+  <data name="Sync.Source.Visible" xml:space="preserve"><value>Brani della vista attuale</value></data>
+  <data name="Sync.SourceLabel" xml:space="preserve"><value>Cosa copiare</value></data>
+  <data name="Sync.Start" xml:space="preserve"><value>Copia sul dispositivo</value></data>
+  <data name="Sync.Summary.Conflicts" xml:space="preserve"><value>{0} file diversi con lo stesso nome sul dispositivo verranno mantenuti.</value></data>
+  <data name="Sync.Summary.ExcludedMissing" xml:space="preserve"><value>{0} brani saltati: il file non c'è.</value></data>
+  <data name="Sync.Summary.ExcludedNotAFile" xml:space="preserve"><value>{0} brani saltati: non sono file della tua libreria (per esempio brani di un CD).</value></data>
+  <data name="Sync.Summary.ExcludedOther" xml:space="preserve"><value>{0} brani saltati.</value></data>
+  <data name="Sync.Summary.ExcludedUnsupported" xml:space="preserve"><value>{0} brani saltati: formato non supportato sui dispositivi.</value></data>
+  <data name="Sync.Summary.NoRoom" xml:space="preserve"><value>Servono {0} di spazio in più.</value></data>
+  <data name="Sync.Summary.Replace" xml:space="preserve"><value>{0} file diversi con lo stesso nome sul dispositivo verranno sostituiti.</value></data>
+  <data name="Sync.Summary.ToCopy" xml:space="preserve"><value>{0} file da copiare ({1}); il dispositivo ha {2} liberi.</value></data>
+  <data name="Sync.Summary.UpToDate" xml:space="preserve"><value>{0} già presenti sul dispositivo.</value></data>
+  <data name="Sync.TooBig" xml:space="preserve"><value>Il dispositivo non ha spazio libero sufficiente per questi brani.</value></data>
+  <data name="Sync.VolumeAutomation" xml:space="preserve"><value>Dispositivo</value></data>
+  <data name="Sync.VolumesFound.One" xml:space="preserve"><value>Trovata {0} unità.</value></data>
+  <data name="Sync.VolumesFound.Other" xml:space="preserve"><value>Trovate {0} unità.</value></data>
+  <data name="Sync.WritePlaylist" xml:space="preserve"><value>Scrivi una playlist Aibell.m3u8</value></data>
+  <data name="TrackProps.BackupDeleted" xml:space="preserve"><value>Backup del file eliminato. Il file audio e i metadati della libreria sono stati mantenuti.</value></data>
+  <data name="TrackProps.BackupsUnavailable" xml:space="preserve"><value>Backup del file non disponibili: {0}</value></data>
+  <data name="TrackProps.DetailsUnavailable" xml:space="preserve"><value>Dettagli del file non disponibili: {0}</value></data>
+  <data name="TrackProps.OperationError" xml:space="preserve"><value>L'operazione sui metadati è terminata con un errore: {0}</value></data>
+  <data name="TrackProps.Restored" xml:space="preserve"><value>Backup del file ripristinato e libreria aggiornata. Il file sostituito è stato conservato come nuovo backup.</value></data>
+  <data name="TrackProps.RestoredNoRefresh" xml:space="preserve"><value>Il backup del file è stato ripristinato, ma la libreria non ha potuto aggiornarsi. Riapri le proprietà del brano. {0}</value></data>
+  <data name="TrackProps.SavedFile" xml:space="preserve"><value>Tag del file e libreria salvati. Backup originale: {0}</value></data>
+  <data name="TrackProps.SavedLibrary" xml:space="preserve"><value>Proprietà del brano salvate nella libreria.</value></data>
+  <data name="TrackProps.SavedNoRefresh" xml:space="preserve"><value>I tag del file sono stati salvati, ma la libreria non ha potuto aggiornarsi. Riapri le proprietà del brano prima di riprovare. Backup: {0}</value></data>
+  <data name="TrackProps.SavedNoTags" xml:space="preserve"><value>Valori della libreria salvati; nessun tag del file è cambiato.</value></data>
+  <data name="Transport.KeysSeek" xml:space="preserve"><value>Sinistra/Giù e Destra/Su regolano di 5 secondi; Pag Giù/Su di 15 secondi; Home/Fine saltano all'inizio o alla fine</value></data>
+  <data name="Transport.KeysVolume" xml:space="preserve"><value>Sinistra/Giù e Destra/Su regolano del 5%; Pag Giù/Su del 10%; Home/Fine impostano lo 0% o il 100%</value></data>
+  <data name="Transport.PositionAutomation" xml:space="preserve"><value>Posizione di riproduzione</value></data>
+  <data name="Transport.SeekAt" xml:space="preserve"><value>Posizione di riproduzione, {0} di {1}</value></data>
+  <data name="Transport.SeekLive" xml:space="preserve"><value>Posizione di riproduzione, DIRETTA</value></data>
+  <data name="Transport.VolumeAt" xml:space="preserve"><value>Volume, {0}%</value></data>
+  <data name="Transport.VolumeAutomation" xml:space="preserve"><value>Volume di riproduzione</value></data>
+  <data name="Transport.VolumeMuted" xml:space="preserve"><value>Volume, {0}% (audio disattivato)</value></data>
+  <data name="Transport.VolumeUnavailable" xml:space="preserve"><value>Volume, non disponibile</value></data>
+  <data name="Main.BusyAutomation" xml:space="preserve"><value>Operazione in corso</value></data>
+  <data name="Sync.ProgressAutomation" xml:space="preserve"><value>Avanzamento della sincronizzazione</value></data>
+  <data name="Prefs.Engine" xml:space="preserve"><value>Motore di riproduzione</value></data>
+  <data name="Prefs.EngineMiniaudio" xml:space="preserve"><value>miniaudio</value></data>
+  <data name="Prefs.EngineMiniaudioNative" xml:space="preserve"><value>miniaudio (Native)</value></data>
+  <data name="Prefs.EngineVlc" xml:space="preserve"><value>VLC</value></data>
+  <data name="Prefs.EngineManaged" xml:space="preserve"><value>miniaudio (Managed)</value></data>
+  <data name="Prefs.EnginePipeWire" xml:space="preserve"><value>PipeWire (Managed)</value></data>
+  <data name="Prefs.EngineAlsa" xml:space="preserve"><value>ALSA (Managed)</value></data>
+  <data name="Prefs.EngineNote" xml:space="preserve"><value>Il lettore integrato non richiede nulla di installato e riproduce MP3, FLAC, Ogg Vorbis e WAV, oltre ad AAC e M4A su Windows. Scegli VLC per AAC e M4A su Linux e per i CD audio. La modifica si applica al prossimo avvio di Aibell.</value></data>
+  <data name="Prefs.EngineRestart" xml:space="preserve"><value>Il motore di riproduzione cambierà al prossimo avvio di Aibell.</value></data>
+  <data name="Prefs.Language" xml:space="preserve"><value>Lingua</value></data>
+  <data name="Prefs.LanguageSystem" xml:space="preserve"><value>Predefinito di sistema</value></data>
+  <data name="Prefs.LanguageRestart" xml:space="preserve"><value>La lingua cambierà al prossimo avvio di Aibell.</value></data>
+  <data name="Radio.ModeMine" xml:space="preserve"><value>Le mie stazioni</value></data>
+  <data name="Radio.ModeCatalog" xml:space="preserve"><value>Catalogo stazioni</value></data>
+  <data name="Radio.SearchStations" xml:space="preserve"><value>Cerca stazioni…</value></data>
+  <data name="Radio.SearchGenres" xml:space="preserve"><value>Cerca generi…</value></data>
+  <data name="Radio.AllGenres" xml:space="preserve"><value>Tutti i generi</value></data>
+  <data name="Radio.AllCountries" xml:space="preserve"><value>Tutti i paesi</value></data>
+  <data name="Radio.GenreFilter" xml:space="preserve"><value>Filtra per genere</value></data>
+  <data name="Radio.CountryFilter" xml:space="preserve"><value>Filtra per paese</value></data>
+  <data name="Radio.SortPopular" xml:space="preserve"><value>Più popolari</value></data>
+  <data name="Radio.NoMatches" xml:space="preserve"><value>Nessuna stazione corrisponde alla ricerca o ai filtri.</value></data>
+  <data name="Radio.OptInTitle" xml:space="preserve"><value>Sfoglia il catalogo delle stazioni</value></data>
+  <data name="Radio.OptInBody" xml:space="preserve"><value>Un elenco selezionato di stazioni radio da tutto il mondo, incluso in Aibell. Sfogliarlo non si collega mai a una stazione. Salva quelle che ti piacciono in Le mie stazioni oppure fai doppio clic su una per ascoltarla.</value></data>
+  <data name="Radio.OptInPrivacy" xml:space="preserve"><value>I loghi vengono scaricati dal sito web di ciascuna stazione, quindi quei siti possono vedere il tuo indirizzo IP. Non viene scaricato nulla finché non attivi il catalogo.</value></data>
+  <data name="Radio.OptInEnable" xml:space="preserve"><value>Attiva il catalogo</value></data>
+  <data name="Radio.OptInOff" xml:space="preserve"><value>Puoi disattivarlo in qualsiasi momento nelle Preferenze.</value></data>
+  <data name="Radio.FormatChip" xml:space="preserve"><value>{0} · richiede VLC</value></data>
+  <data name="Radio.FormatTipVlc" xml:space="preserve"><value>Il lettore integrato non può riprodurre {0}. Scegli VLC in Preferenze &gt; Riproduzione per ascoltare questa stazione.</value></data>
+  <data name="Radio.FormatTipVlcOrWindows" xml:space="preserve"><value>Il lettore integrato non può riprodurre {0} qui. Scegli VLC in Preferenze &gt; Riproduzione, oppure usa Aibell su Windows, per ascoltare questa stazione.</value></data>
+  <data name="Radio.SaveToMine" xml:space="preserve"><value>Salva in Le mie stazioni</value></data>
+  <data name="Radio.RemoveFromMine" xml:space="preserve"><value>Rimuovi da Le mie stazioni</value></data>
+  <data name="Radio.CatalogSaved" xml:space="preserve"><value>{0} è stata salvata in Le mie stazioni.</value></data>
+  <data name="Prefs.RadioCatalog" xml:space="preserve"><value>Mostra il catalogo delle stazioni e scarica i loghi</value></data>
+  <data name="Prefs.RadioCatalogAutomation" xml:space="preserve"><value>Attiva il catalogo delle stazioni radio</value></data>
+  <data name="Prefs.RadioCatalogNote" xml:space="preserve"><value>Disattivato per impostazione predefinita. Quando è attivo, la vista Radio offre un catalogo di stazioni integrato e scarica il logo di ogni stazione dal suo sito web, che può vedere il tuo indirizzo IP. Sfogliare il catalogo non si collega mai a una stazione.</value></data>
+  <data name="Radio.StationCount.One" xml:space="preserve"><value>{0} stazione radio.</value></data>
+  <data name="Radio.StationCount.Other" xml:space="preserve"><value>{0} stazioni radio.</value></data>
+  <data name="Menu.MainAutomation" xml:space="preserve"><value>Menu principale</value></data>
+  <data name="Menu.File" xml:space="preserve"><value>File</value></data>
+  <data name="Menu.Edit" xml:space="preserve"><value>Modifica</value></data>
+  <data name="Menu.View" xml:space="preserve"><value>Visualizza</value></data>
+  <data name="Menu.Controls" xml:space="preserve"><value>Controlli</value></data>
+  <data name="Menu.Library" xml:space="preserve"><value>Libreria</value></data>
+  <data name="Menu.Help" xml:space="preserve"><value>Aiuto</value></data>
+  <data name="Menu.Quit" xml:space="preserve"><value>Esci</value></data>
+  <data name="Menu.Find" xml:space="preserve"><value>Trova…</value></data>
+  <data name="Menu.SelectAll" xml:space="preserve"><value>Seleziona tutti i brani</value></data>
+  <data name="Menu.SortBy" xml:space="preserve"><value>Ordina per</value></data>
+  <data name="Menu.Columns" xml:space="preserve"><value>Colonne</value></data>
+  <data name="Menu.Sidebar" xml:space="preserve"><value>Barra laterale</value></data>
+  <data name="Menu.SeekBackward" xml:space="preserve"><value>Indietro</value></data>
+  <data name="Menu.SeekForward" xml:space="preserve"><value>Avanti</value></data>
+  <data name="Menu.VolumeUp" xml:space="preserve"><value>Alza volume</value></data>
+  <data name="Menu.VolumeDown" xml:space="preserve"><value>Abbassa volume</value></data>
+  <data name="Menu.ClearQueue" xml:space="preserve"><value>Svuota la coda di riproduzione</value></data>
+  <data name="Menu.AddStation" xml:space="preserve"><value>Aggiungi stazione…</value></data>
+  <data name="Menu.CancelDownload" xml:space="preserve"><value>Annulla download</value></data>
+  <data name="Menu.Website" xml:space="preserve"><value>Sito del progetto</value></data>
+  <data name="Menu.About" xml:space="preserve"><value>Informazioni su Aibell</value></data>
+  <data name="About.Tagline" xml:space="preserve"><value>Una libreria musicale e un lettore per Linux e Windows.</value></data>
+  <data name="About.Tab.About" xml:space="preserve"><value>Informazioni</value></data>
+  <data name="About.Tab.Features" xml:space="preserve"><value>Funzioni</value></data>
+  <data name="About.Tab.Credits" xml:space="preserve"><value>Ringraziamenti</value></data>
+  <data name="About.Version" xml:space="preserve"><value>Versione {0}</value></data>
+  <data name="About.Author" xml:space="preserve"><value>Autore</value></data>
+  <data name="About.License" xml:space="preserve"><value>Licenza</value></data>
+  <data name="About.Website" xml:space="preserve"><value>Sito web</value></data>
+  <data name="About.Independent" xml:space="preserve"><value>Aibell è un progetto indipendente, scritto da zero su .NET e Avalonia.</value></data>
+  <data name="About.Section.Playback" xml:space="preserve"><value>Riproduzione</value></data>
+  <data name="About.Section.Desktop" xml:space="preserve"><value>Desktop</value></data>
+  <data name="About.Section.Content" xml:space="preserve"><value>Contenuti e servizi</value></data>
+  <data name="About.Section.System" xml:space="preserve"><value>Sistema</value></data>
+  <data name="About.Engine" xml:space="preserve"><value>Lettore in uso</value></data>
+  <data name="About.Engine.Miniaudio" xml:space="preserve"><value>miniaudio</value></data>
+  <data name="About.Engine.Vlc" xml:space="preserve"><value>VLC (LibVLC)</value></data>
+  <data name="About.Engine.Managed" xml:space="preserve"><value>miniaudio (Managed)</value></data>
+  <data name="About.Engine.Alsa" xml:space="preserve"><value>ALSA (Managed)</value></data>
+  <data name="About.Engine.PipeWire" xml:space="preserve"><value>PipeWire (Managed)</value></data>
+  <data name="About.Status.InUse" xml:space="preserve"><value>In uso</value></data>
+  <data name="About.Status.Available" xml:space="preserve"><value>Disponibile</value></data>
+  <data name="About.Status.Unavailable" xml:space="preserve"><value>Non disponibile</value></data>
+  <data name="About.Status.VlcFound" xml:space="preserve"><value>Trovato: sceglilo in Preferenze &gt; Riproduzione</value></data>
+  <data name="About.Status.VlcMissing" xml:space="preserve"><value>Non trovato</value></data>
+  <data name="About.Status.On" xml:space="preserve"><value>Attivo</value></data>
+  <data name="About.Status.Off" xml:space="preserve"><value>Disattivato</value></data>
+  <data name="About.Status.None" xml:space="preserve"><value>Nessuno in esecuzione</value></data>
+  <data name="About.Feature.MediaControls" xml:space="preserve"><value>Controlli multimediali di sistema</value></data>
+  <data name="About.Feature.Notifications" xml:space="preserve"><value>Notifiche di cambio brano</value></data>
+  <data name="About.Feature.Catalog" xml:space="preserve"><value>Catalogo delle stazioni radio</value></data>
+  <data name="About.Feature.OnlineLookup" xml:space="preserve"><value>Ricerche online (MusicBrainz)</value></data>
+  <data name="About.Feature.Plugins" xml:space="preserve"><value>Plugin</value></data>
+  <data name="About.System.Os" xml:space="preserve"><value>Sistema operativo</value></data>
+  <data name="About.System.Language" xml:space="preserve"><value>Lingua dell’interfaccia</value></data>
+  <data name="About.Credits.Intro" xml:space="preserve"><value>Aibell è un progetto indipendente, scritto da zero. Deve molto a due lettori che lo hanno preceduto.</value></data>
+  <data name="About.Credits.Songbird" xml:space="preserve"><value>Il lettore multimediale open source. Gran parte dell’interfaccia di Aibell (i pannelli di navigazione, l’elenco delle sorgenti, la fitta tabella dei brani) segue il design di Songbird, che a sua volta si ispirava a iTunes. Aibell non copia codice né grafica di Songbird; la somiglianza è un omaggio voluto.</value></data>
+  <data name="About.Credits.Banshee" xml:space="preserve"><value>Il lettore multimediale Mono/GTK, la cui pratica vista della libreria e l’approccio «locale prima di tutto» hanno ispirato Aibell. Aibell non contiene codice sorgente di Banshee.</value></data>
+  <data name="About.Credits.Thanks" xml:space="preserve"><value>Grazie alle persone dietro entrambi i progetti. Aibell non è affiliato né approvato da loro. Songbird e iTunes sono marchi dei rispettivi proprietari.</value></data>
+  <data name="About.Credits.Libraries" xml:space="preserve"><value>Le librerie di terze parti mantengono le proprie licenze, tra cui LibVLC e LibVLCSharp (LGPL), miniaudio e stb_vorbis (pubblico dominio / MIT-0), Avalonia (MIT), le librerie Microsoft .NET (MIT) e ATL .NET (MIT).</value></data>
+  <data name="Menu.Shortcuts" xml:space="preserve"><value>Scorciatoie</value></data>
+  <data name="Shortcuts.Title" xml:space="preserve"><value>Scorciatoie da tastiera</value></data>
+  <data name="Shortcuts.Section.General" xml:space="preserve"><value>Generale</value></data>
+  <data name="Shortcuts.Section.Library" xml:space="preserve"><value>Libreria e brani</value></data>
+  <data name="Shortcuts.Section.Playback" xml:space="preserve"><value>Riproduzione</value></data>
+  <data name="Shortcuts.Section.Seek" xml:space="preserve"><value>Barra di posizione (con il focus)</value></data>
+  <data name="Shortcuts.Section.Volume" xml:space="preserve"><value>Barra del volume (con il focus)</value></data>
+  <data name="Shortcuts.Section.Podcasts" xml:space="preserve"><value>Podcast</value></data>
+  <data name="Shortcuts.Search" xml:space="preserve"><value>Cerca nella libreria o tra le stazioni</value></data>
+  <data name="Shortcuts.ClearSearch" xml:space="preserve"><value>Svuota la casella di ricerca</value></data>
+  <data name="Shortcuts.PlayPause" xml:space="preserve"><value>Riproduci o metti in pausa (negli elenchi di brani, coda e stazioni)</value></data>
+  <data name="Shortcuts.PlaySelected" xml:space="preserve"><value>Riproduci la stazione o il brano del disco selezionato</value></data>
+  <data name="Shortcuts.Seek5" xml:space="preserve"><value>Indietro o avanti di 5 secondi</value></data>
+  <data name="Shortcuts.Seek15" xml:space="preserve"><value>Indietro o avanti di 15 secondi</value></data>
+  <data name="Shortcuts.SeekEnds" xml:space="preserve"><value>Vai all’inizio o alla fine</value></data>
+  <data name="Shortcuts.Volume5" xml:space="preserve"><value>Cambia il volume del 5%</value></data>
+  <data name="Shortcuts.Volume10" xml:space="preserve"><value>Cambia il volume del 10%</value></data>
+  <data name="Shortcuts.VolumeEnds" xml:space="preserve"><value>Imposta il volume a 0% o 100%</value></data>
+  <data name="Shortcuts.Rate" xml:space="preserve"><value>Valuta l’episodio selezionato (0 cancella la valutazione)</value></data>
+  <data name="Shortcuts.DeleteDownload" xml:space="preserve"><value>Elimina il file scaricato dell’episodio selezionato</value></data>
+  <data name="Prefs.SoundFont" xml:space="preserve"><value>SoundFont per MIDI (facoltativo)</value></data>
+  <data name="Prefs.SoundFontNote" xml:space="preserve"><value>Senza un SoundFont, i file MIDI usano gli strumenti integrati di Aibell. Scegli un file SoundFont 2 (.sf2) per suoni più realistici; la sua licenza è una tua responsabilità. La modifica vale al prossimo avvio di Aibell.</value></data>
+  <data name="Prefs.SoundFontNone" xml:space="preserve"><value>Strumenti integrati</value></data>
+  <data name="Prefs.SoundFontClear" xml:space="preserve"><value>Usa integrati</value></data>
+  <data name="Prefs.SoundFontRestart" xml:space="preserve"><value>Il SoundFont cambia al prossimo avvio di Aibell.</value></data>
+  <data name="Picker.SoundFont" xml:space="preserve"><value>Scegli un SoundFont</value></data>
+  <data name="Picker.SoundFontFiles" xml:space="preserve"><value>Banchi SoundFont 2</value></data>
+  <data name="Main.ResizeSidebar" xml:space="preserve"><value>Ridimensiona la barra laterale</value></data>
+  <data name="Main.ResizeSidebarSection" xml:space="preserve"><value>Ridimensiona la sezione della barra laterale</value></data>
+  <data name="Main.ResizeQueue" xml:space="preserve"><value>Ridimensiona la coda di riproduzione</value></data>
+</root>

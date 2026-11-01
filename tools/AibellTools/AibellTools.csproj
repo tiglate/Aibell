@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Developer tooling (secret scan, coverage gate, release packaging, publish smoke test). The assembly name has no "Aibell." prefix so
+       the coverage collector, which measures Aibell.*.dll, never counts it as a production module. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>AibellTools</AssemblyName>
+    <RootNamespace>AibellTools</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="AibellTools.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/Aibell.Audio.Aac/Aibell.Audio.Aac.csproj" />
+  </ItemGroup>
+</Project>

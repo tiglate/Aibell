@@ -1,0 +1,112 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- Keep surface and text colors together so system theme changes update every panel. -->
+  <ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Light">
+      <SolidColorBrush x:Key="WindowBrush" Color="#ECEEEF" />
+      <SolidColorBrush x:Key="ContentBrush" Color="#FAFAFA" />
+      <SolidColorBrush x:Key="TextBrush" Color="#202428" />
+      <SolidColorBrush x:Key="SecondaryTextBrush" Color="#474D53" />
+      <SolidColorBrush x:Key="PanelBorderBrush" Color="#A9ADB1" />
+      <SolidColorBrush x:Key="AlternateRowBrush" Color="#F1F2F3" />
+      <SolidColorBrush x:Key="DialogBrush" Color="#F4F5F6" />
+      <SolidColorBrush x:Key="DialogFooterBrush" Color="#E1E3E5" />
+      <LinearGradientBrush x:Key="PanelHeaderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="#F5F6F7" />
+        <GradientStop Offset="0.5" Color="#E1E3E5" />
+        <GradientStop Offset="1" Color="#C5C9CC" />
+      </LinearGradientBrush>
+      <LinearGradientBrush x:Key="SidebarBrush" StartPoint="0%,0%" EndPoint="100%,0%">
+        <GradientStop Offset="0" Color="#ECEEEF" />
+        <GradientStop Offset="1" Color="#CCD0D3" />
+      </LinearGradientBrush>
+      <LinearGradientBrush x:Key="StatusBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="#E9EBED" />
+        <GradientStop Offset="1" Color="#C8CCD0" />
+      </LinearGradientBrush>
+      <SolidColorBrush x:Key="ScrollTrackBrush" Color="#E4E6E8" />
+      <SolidColorBrush x:Key="ScrollBorderBrush" Color="#9EA3A8" />
+      <SolidColorBrush x:Key="ScrollGlyphBrush" Color="#474D53" />
+      <LinearGradientBrush x:Key="ScrollThumbBrush" StartPoint="0%,0%" EndPoint="100%,0%">
+        <GradientStop Offset="0" Color="#FBFBFC" />
+        <GradientStop Offset="0.55" Color="#E3E5E8" />
+        <GradientStop Offset="1" Color="#C3C7CB" />
+      </LinearGradientBrush>
+      <LinearGradientBrush x:Key="SidebarSelectedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="#8A9096" />
+        <GradientStop Offset="1" Color="#666C72" />
+      </LinearGradientBrush>
+      <SolidColorBrush x:Key="LogoBackplateBrush" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="CanvasBrush" Color="#F4F5F7" />
+      <SolidColorBrush x:Key="CardBrush" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="CardBorderBrush" Color="#E0E4E9" />
+      <SolidColorBrush x:Key="CardSelectedBorderBrush" Color="#2F7DE1" />
+      <SolidColorBrush x:Key="AccentBrush" Color="#2F7DE1" />
+      <SolidColorBrush x:Key="AccentTintBrush" Color="#E6F0FD" />
+      <SolidColorBrush x:Key="AccentTextBrush" Color="#1D5FB8" />
+      <SolidColorBrush x:Key="PillBrush" Color="#E8EBEE" />
+      <SolidColorBrush x:Key="PillTextBrush" Color="#4A5056" />
+      <SolidColorBrush x:Key="NoticeBrush" Color="#FFF0D1" />
+      <SolidColorBrush x:Key="NoticeTextBrush" Color="#7A4B00" />
+      <SolidColorBrush x:Key="SelectedRowBrush" Color="#DCEAFC" />
+      <SolidColorBrush x:Key="FieldBrush" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="FieldBorderBrush" Color="#D3D8DE" />
+      <SolidColorBrush x:Key="SegmentTrackBrush" Color="#E3E6EA" />
+      <SolidColorBrush x:Key="SegmentActiveBrush" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="CodeBadgeBrush" Color="#E8EBEE" />
+    </ResourceDictionary>
+    <ResourceDictionary x:Key="Dark">
+      <SolidColorBrush x:Key="WindowBrush" Color="#202428" />
+      <SolidColorBrush x:Key="ContentBrush" Color="#25292D" />
+      <SolidColorBrush x:Key="TextBrush" Color="#F0F2F4" />
+      <SolidColorBrush x:Key="SecondaryTextBrush" Color="#B8BEC4" />
+      <SolidColorBrush x:Key="PanelBorderBrush" Color="#50565C" />
+      <SolidColorBrush x:Key="AlternateRowBrush" Color="#2E3338" />
+      <SolidColorBrush x:Key="DialogBrush" Color="#25292D" />
+      <SolidColorBrush x:Key="DialogFooterBrush" Color="#30363B" />
+      <LinearGradientBrush x:Key="PanelHeaderBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="#41474D" />
+        <GradientStop Offset="0.5" Color="#363C42" />
+        <GradientStop Offset="1" Color="#2D3339" />
+      </LinearGradientBrush>
+      <LinearGradientBrush x:Key="SidebarBrush" StartPoint="0%,0%" EndPoint="100%,0%">
+        <GradientStop Offset="0" Color="#30363C" />
+        <GradientStop Offset="1" Color="#282E34" />
+      </LinearGradientBrush>
+      <LinearGradientBrush x:Key="StatusBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="#383E44" />
+        <GradientStop Offset="1" Color="#2D3339" />
+      </LinearGradientBrush>
+      <SolidColorBrush x:Key="ScrollTrackBrush" Color="#2A2F34" />
+      <SolidColorBrush x:Key="ScrollBorderBrush" Color="#161A1D" />
+      <SolidColorBrush x:Key="ScrollGlyphBrush" Color="#C9CED3" />
+      <LinearGradientBrush x:Key="ScrollThumbBrush" StartPoint="0%,0%" EndPoint="100%,0%">
+        <GradientStop Offset="0" Color="#555C63" />
+        <GradientStop Offset="0.55" Color="#444A50" />
+        <GradientStop Offset="1" Color="#383D43" />
+      </LinearGradientBrush>
+      <LinearGradientBrush x:Key="SidebarSelectedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="#5A6168" />
+        <GradientStop Offset="1" Color="#444A50" />
+      </LinearGradientBrush>
+      <SolidColorBrush x:Key="LogoBackplateBrush" Color="#FFFFFF" />
+      <SolidColorBrush x:Key="CanvasBrush" Color="#202428" />
+      <SolidColorBrush x:Key="CardBrush" Color="#2B3035" />
+      <SolidColorBrush x:Key="CardBorderBrush" Color="#3E454C" />
+      <SolidColorBrush x:Key="CardSelectedBorderBrush" Color="#5AA0F2" />
+      <SolidColorBrush x:Key="AccentBrush" Color="#5AA0F2" />
+      <SolidColorBrush x:Key="AccentTintBrush" Color="#25405F" />
+      <SolidColorBrush x:Key="AccentTextBrush" Color="#9CC7F7" />
+      <SolidColorBrush x:Key="PillBrush" Color="#3A4046" />
+      <SolidColorBrush x:Key="PillTextBrush" Color="#C9CED3" />
+      <SolidColorBrush x:Key="NoticeBrush" Color="#4D3B17" />
+      <SolidColorBrush x:Key="NoticeTextBrush" Color="#F6D9A0" />
+      <SolidColorBrush x:Key="SelectedRowBrush" Color="#2B4A70" />
+      <SolidColorBrush x:Key="FieldBrush" Color="#2B3035" />
+      <SolidColorBrush x:Key="FieldBorderBrush" Color="#4A5159" />
+      <SolidColorBrush x:Key="SegmentTrackBrush" Color="#1B1F23" />
+      <SolidColorBrush x:Key="SegmentActiveBrush" Color="#3A4046" />
+      <SolidColorBrush x:Key="CodeBadgeBrush" Color="#3A4046" />
+    </ResourceDictionary>
+  </ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>

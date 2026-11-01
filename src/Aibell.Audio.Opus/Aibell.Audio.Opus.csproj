@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Aibell.Audio.Opus.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="COPYING.Opus" />
+    <ProjectReference Include="../Aibell.Audio.Core/Aibell.Audio.Core.csproj" />
+    <ProjectReference Include="../Aibell.Audio.Ogg/Aibell.Audio.Ogg.csproj" />
+  </ItemGroup>
+</Project>

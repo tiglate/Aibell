@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/Aibell.Playback.Miniaudio/Aibell.Playback.Miniaudio.csproj" />
+    <ProjectReference Include="../../src/Aibell.Playback.Core/Aibell.Playback.Core.csproj" />
+    <ProjectReference Include="../../src/Aibell.Audio.Aac/Aibell.Audio.Aac.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit.Analyzers">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NUnit3TestAdapter">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../fixtures/generated/fixture.*" Link="fixtures/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../fixtures/aac-synthetic/*" Link="fixtures/aac-synthetic/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../fixtures/aac/*" Link="fixtures/aac/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../fixtures/aac-mp4/*" Link="fixtures/aac-mp4/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <Compile Include="../Aibell.Audio.Aac.Tests/TestMpegTs.cs" Link="TestMpegTs.cs" />
+    <Compile Include="../Aibell.Audio.Midi.Tests/SoundFontBuilder.cs" Link="SoundFontBuilder.cs" />
+    <Compile Include="../Aibell.Audio.Spc.Tests/SpcBuilder.cs" Link="SpcBuilder.cs" />
+    <None Include="../fixtures/rar/songs*.rsn" Link="fixtures/rar/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+
+    <Compile Include="../Aibell.Audio.Aac.Tests/AacTestData.cs" Link="AacTestData.cs" />
+    <None Include="../fixtures/alac/s16_stereo_44k.m4a" Link="fixtures/alac.m4a" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../fixtures/alac/s16_stereo_44k.pcm.gz" Link="fixtures/alac.pcm.gz" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../fixtures/corrupt.mp3" Link="fixtures/corrupt.mp3" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

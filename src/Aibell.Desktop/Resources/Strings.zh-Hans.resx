@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Artwork.Close" xml:space="preserve"><value>关闭</value></data>
+  <data name="Artwork.ConsentAccept" xml:space="preserve"><value>开启</value></data>
+  <data name="Artwork.ConsentBody" xml:space="preserve"><value>查找封面时，专辑名和艺术家名会通过 MusicBrainz 插件发送到 MusicBrainz 和 Cover Art Archive。
+
+要开启在线查找并继续吗？您可以随时在“偏好设置”&gt;“在线”中再次关闭。</value></data>
+  <data name="Artwork.ConsentTitle" xml:space="preserve"><value>开启在线查找？</value></data>
+  <data name="Artwork.Downloading" xml:space="preserve"><value>正在下载封面…</value></data>
+  <data name="Artwork.Failed" xml:space="preserve"><value>查找失败：{0}</value></data>
+  <data name="Artwork.FoundMany" xml:space="preserve"><value>找到 {0} 张封面。请选择一张，然后点击“保存”。</value></data>
+  <data name="Artwork.FoundOne" xml:space="preserve"><value>找到一张封面。请检查后点击“保存”。</value></data>
+  <data name="Artwork.Matching" xml:space="preserve"><value>匹配的封面</value></data>
+  <data name="Artwork.Menu" xml:space="preserve"><value>获取封面…</value></data>
+  <data name="Artwork.MenuTip" xml:space="preserve"><value>在 MusicBrainz 上查找此专辑的封面，并以 cover.jpg 保存到专辑文件夹</value></data>
+  <data name="Artwork.NoCoverArt" xml:space="preserve"><value>MusicBrainz 收录了此专辑，但没有它的封面。</value></data>
+  <data name="Artwork.NotFound" xml:space="preserve"><value>未找到匹配的专辑。</value></data>
+  <data name="Artwork.Save" xml:space="preserve"><value>保存封面</value></data>
+  <data name="Artwork.SaveTip" xml:space="preserve"><value>将所选封面以 cover.jpg 保存到专辑文件夹。不会替换已有的封面文件。</value></data>
+  <data name="Artwork.Saved" xml:space="preserve"><value>已将 {0} 保存到 {1}。文件内含图片的曲目仍会显示该图片。</value></data>
+  <data name="Artwork.Searching" xml:space="preserve"><value>正在查找封面…</value></data>
+  <data name="Artwork.StatusFailed" xml:space="preserve"><value>无法获取封面：{0}</value></data>
+  <data name="Artwork.StatusSaved" xml:space="preserve"><value>封面已保存：{0}</value></data>
+  <data name="Artwork.Title" xml:space="preserve"><value>获取封面</value></data>
+  <data name="Artwork.Tracks" xml:space="preserve"><value>{0} 首曲目</value></data>
+  <data name="Artwork.Unavailable.NoAlbum" xml:space="preserve"><value>此曲目没有可供查找的专辑名。</value></data>
+  <data name="Artwork.Unavailable.NoFactory" xml:space="preserve"><value>此版本不支持封面查找。</value></data>
+  <data name="Artwork.Unavailable.NoTrack" xml:space="preserve"><value>请先选择一首曲目。</value></data>
+  <data name="Artwork.Unavailable.NotFile" xml:space="preserve"><value>只能为媒体库中的文件保存封面。</value></data>
+  <data name="Artwork.UnknownError" xml:space="preserve"><value>未知错误</value></data>
+  <data name="Backups.Delete" xml:space="preserve"><value>删除备份…</value></data>
+  <data name="Backups.DeletePrompt" xml:space="preserve"><value>要永久删除此备份吗？当前的音频文件和媒体库元数据会保留。
+{0}</value></data>
+  <data name="Backups.DeleteTitle" xml:space="preserve"><value>删除文件备份</value></data>
+  <data name="Backups.ListAutomation" xml:space="preserve"><value>已验证的文件备份</value></data>
+  <data name="Backups.Restore" xml:space="preserve"><value>还原…</value></data>
+  <data name="Backups.RestoreAccept" xml:space="preserve"><value>还原</value></data>
+  <data name="Backups.RestorePrompt" xml:space="preserve"><value>要还原此备份吗？当前的音频文件会作为另一份备份保留。曲目编辑器中未保存的更改将被丢弃。</value></data>
+  <data name="Backups.RestoreTitle" xml:space="preserve"><value>还原文件备份</value></data>
+  <data name="Backups.Rules" xml:space="preserve"><value>只能还原与当前文件匹配的备份。较早的版本可以明确删除。</value></data>
+  <data name="Backups.Summary" xml:space="preserve"><value>{0} 个已验证的备份，{1} MiB。 </value></data>
+  <data name="Backups.Title" xml:space="preserve"><value>文件备份</value></data>
+  <data name="Backups.Unverified" xml:space="preserve"><value>{0} 个未验证的日志已保留待查。 </value></data>
+  <data name="Book.Add" xml:space="preserve"><value>添加音频文件…</value></data>
+  <data name="Book.AddFailed" xml:space="preserve"><value>无法添加音频文件</value></data>
+  <data name="Book.AddTip" xml:space="preserve"><value>选择一个本地音频文件。只会读取它，不会复制或更改</value></data>
+  <data name="Book.AddTitle" xml:space="preserve"><value>添加有声书</value></data>
+  <data name="Book.Added" xml:space="preserve"><value>已添加《{0}》。音频文件未被复制或更改。</value></data>
+  <data name="Book.AlreadyOnShelf" xml:space="preserve"><value>《{0}》已在书架上；已保留其保存的位置。</value></data>
+  <data name="Book.AlreadyRemoved" xml:space="preserve"><value>这本书已被移除。</value></data>
+  <data name="Book.AudioFiles" xml:space="preserve"><value>音频文件</value></data>
+  <data name="Book.ChapterCount.Other" xml:space="preserve"><value>《{1}》中有 {0} 个章节。请选择一个，然后点击“播放章节”。</value></data>
+  <data name="Book.ChapterFailed" xml:space="preserve"><value>无法播放该章节</value></data>
+  <data name="Book.Chapters" xml:space="preserve"><value>章节</value></data>
+  <data name="Book.ChaptersFailed" xml:space="preserve"><value>无法读取章节</value></data>
+  <data name="Book.ChaptersTip" xml:space="preserve"><value>列出此文件中存储的章节。不会播放任何内容</value></data>
+  <data name="Book.Empty" xml:space="preserve"><value>书架是空的。请选择“添加音频文件…”开始。</value></data>
+  <data name="Book.FileSelectionUnavailable" xml:space="preserve"><value>文件选择不可用。</value></data>
+  <data name="Book.Finished" xml:space="preserve"><value>已听完 · 已保存在结尾</value></data>
+  <data name="Book.FinishedRestart" xml:space="preserve"><value>《{0}》已听完；将从头开始播放。</value></data>
+  <data name="Book.Intro" xml:space="preserve"><value>本地有声书。只有在您选择“保存位置”时才会保存位置。</value></data>
+  <data name="Book.Length" xml:space="preserve"><value>时长 {0}</value></data>
+  <data name="Book.LengthUnknown" xml:space="preserve"><value>时长未知</value></data>
+  <data name="Book.Missing" xml:space="preserve"><value>文件缺失 — 请移除它，并从新位置重新添加</value></data>
+  <data name="Book.NoChapters" xml:space="preserve"><value>《{0}》没有章节。</value></data>
+  <data name="Book.NoChaptersHelp" xml:space="preserve"><value>此文件没有章节。请使用“从头播放”或“继续”来播放整本书。</value></data>
+  <data name="Book.NoFile" xml:space="preserve"><value>未选择文件。</value></data>
+  <data name="Book.NoPlayback" xml:space="preserve"><value>无法从此窗口播放。</value></data>
+  <data name="Book.NoSaved" xml:space="preserve"><value>没有保存的位置</value></data>
+  <data name="Book.NotOnShelf" xml:space="preserve"><value>播放器当前没有播放此书架上的书。请先用“播放”或“继续”开始一本。</value></data>
+  <data name="Book.NothingPlaying" xml:space="preserve"><value>当前没有播放内容。请先用“播放”或“继续”开始一本书，然后保存其位置。</value></data>
+  <data name="Book.OnShelf.Other" xml:space="preserve"><value>书架上有 {0} 本有声书。</value></data>
+  <data name="Book.PlayChapter" xml:space="preserve"><value>播放章节</value></data>
+  <data name="Book.PlayChapterTip" xml:space="preserve"><value>在主播放器中从所选章节开始播放。选择某一行不会开始播放</value></data>
+  <data name="Book.PlayFailed" xml:space="preserve"><value>无法播放有声书</value></data>
+  <data name="Book.PlayFromStart" xml:space="preserve"><value>从头播放</value></data>
+  <data name="Book.PlayingChapter" xml:space="preserve"><value>正在从 {2} 播放《{0}》的 {1}。</value></data>
+  <data name="Book.PlayingFrom" xml:space="preserve"><value>正在从 {1} 播放《{0}》。</value></data>
+  <data name="Book.PlayingStart" xml:space="preserve"><value>正在从头播放《{0}》。</value></data>
+  <data name="Book.ReadFailed" xml:space="preserve"><value>无法读取有声书书架</value></data>
+  <data name="Book.RemoveFailed" xml:space="preserve"><value>无法移除有声书</value></data>
+  <data name="Book.RemovePrompt" xml:space="preserve"><value>要忘记此书架条目及其保存的位置吗？
+音频文件会保留在磁盘上。
+{0}</value></data>
+  <data name="Book.RemoveTip" xml:space="preserve"><value>忘记此书架条目。音频文件会保留在磁盘上</value></data>
+  <data name="Book.RemoveTitle" xml:space="preserve"><value>移除有声书</value></data>
+  <data name="Book.RemovedFromShelf" xml:space="preserve"><value>已将《{0}》从书架移除。未触动音频文件。</value></data>
+  <data name="Book.ResumeTip" xml:space="preserve"><value>从上次保存的位置继续</value></data>
+  <data name="Book.SaveFailed" xml:space="preserve"><value>无法保存位置</value></data>
+  <data name="Book.SavePositionTip" xml:space="preserve"><value>保存主播放器在其正在播放或已暂停的有声书中所处的位置</value></data>
+  <data name="Book.SavedOf" xml:space="preserve"><value>已保存 {0}，共 {1}</value></data>
+  <data name="Book.SavedPos" xml:space="preserve"><value>已保存《{1}》的位置 {0}。</value></data>
+  <data name="Book.SelectionChanged" xml:space="preserve"><value>所选内容已更改，因此未显示章节。</value></data>
+  <data name="Book.ShowingFirst" xml:space="preserve"><value>正在显示前 {0} 个章节。</value></data>
+  <data name="Book.StatusIntro" xml:space="preserve"><value>将本地音频文件添加到书架。在您提出要求之前，不会播放或保存任何内容。</value></data>
+  <data name="Book.UnknownAuthor" xml:space="preserve"><value>未知作者</value></data>
+  <data name="Column.Album" xml:space="preserve"><value>专辑</value></data>
+  <data name="Column.AlbumArtist" xml:space="preserve"><value>专辑艺术家</value></data>
+  <data name="Column.Artist" xml:space="preserve"><value>艺术家</value></data>
+  <data name="Column.BitRate" xml:space="preserve"><value>比特率</value></data>
+  <data name="Column.Bpm" xml:space="preserve"><value>BPM</value></data>
+  <data name="Column.Channels" xml:space="preserve"><value>声道</value></data>
+  <data name="Column.Comment" xml:space="preserve"><value>注释</value></data>
+  <data name="Column.Composer" xml:space="preserve"><value>作曲者</value></data>
+  <data name="Column.DateAdded" xml:space="preserve"><value>添加日期</value></data>
+  <data name="Column.DateModified" xml:space="preserve"><value>修改日期</value></data>
+  <data name="Column.Description" xml:space="preserve"><value>描述</value></data>
+  <data name="Column.DiscNumber" xml:space="preserve"><value>光盘编号</value></data>
+  <data name="Column.EpisodeNumber" xml:space="preserve"><value>剧集编号</value></data>
+  <data name="Column.Genre" xml:space="preserve"><value>流派</value></data>
+  <data name="Column.Keywords" xml:space="preserve"><value>关键词</value></data>
+  <data name="Column.LastPlayed" xml:space="preserve"><value>上次播放</value></data>
+  <data name="Column.LastSkipped" xml:space="preserve"><value>上次跳过</value></data>
+  <data name="Column.Location" xml:space="preserve"><value>文件位置</value></data>
+  <data name="Column.PlayCount" xml:space="preserve"><value>播放次数</value></data>
+  <data name="Column.Rating" xml:space="preserve"><value>评分</value></data>
+  <data name="Column.SampleRate" xml:space="preserve"><value>采样率</value></data>
+  <data name="Column.SeasonNumber" xml:space="preserve"><value>季编号</value></data>
+  <data name="Column.ShowName" xml:space="preserve"><value>节目名称</value></data>
+  <data name="Column.Size" xml:space="preserve"><value>大小</value></data>
+  <data name="Column.SkipCount" xml:space="preserve"><value>跳过次数</value></data>
+  <data name="Column.Source" xml:space="preserve"><value>来源</value></data>
+  <data name="Column.Time" xml:space="preserve"><value>时间</value></data>
+  <data name="Column.Title" xml:space="preserve"><value>标题</value></data>
+  <data name="Column.TrackNumber" xml:space="preserve"><value>曲目编号</value></data>
+  <data name="Column.Year" xml:space="preserve"><value>年份</value></data>
+  <data name="Common.AllCount" xml:space="preserve"><value>全部 ({0})</value></data>
+  <data name="Common.Cancel" xml:space="preserve"><value>取消</value></data>
+  <data name="Common.Cancelled" xml:space="preserve"><value>已取消。</value></data>
+  <data name="Common.Cancelling" xml:space="preserve"><value>正在取消…</value></data>
+  <data name="Common.Close" xml:space="preserve"><value>关闭</value></data>
+  <data name="Common.NameCount" xml:space="preserve"><value>{0} ({1})</value></data>
+  <data name="Common.NoLookupPlugin" xml:space="preserve"><value>未安装或未启用查找插件。请参阅“偏好设置”&gt;“插件”。</value></data>
+  <data name="Common.OnlineLookupOff" xml:space="preserve"><value>在线查找已关闭。请在“偏好设置”&gt;“在线”中开启。</value></data>
+  <data name="Common.OperationCancelled" xml:space="preserve"><value>操作已取消。</value></data>
+  <data name="Common.OperationFailed" xml:space="preserve"><value>操作失败：{0}</value></data>
+  <data name="Common.Unknown" xml:space="preserve"><value>未知</value></data>
+  <data name="Dialog.Cancel" xml:space="preserve"><value>取消</value></data>
+  <data name="Dialog.CloseAutomation" xml:space="preserve"><value>关闭 {0}</value></data>
+  <data name="Dialog.Create" xml:space="preserve"><value>创建</value></data>
+  <data name="Dialog.CreatePlaylist" xml:space="preserve"><value>创建播放列表</value></data>
+  <data name="Dialog.Delete" xml:space="preserve"><value>删除</value></data>
+  <data name="Dialog.DeletePlaylist" xml:space="preserve"><value>删除播放列表</value></data>
+  <data name="Dialog.DeletePlaylistPrompt" xml:space="preserve"><value>要删除“{0}”吗？您的音乐文件不会受到影响。</value></data>
+  <data name="Dialog.PlaylistName" xml:space="preserve"><value>播放列表名称</value></data>
+  <data name="Dialog.Remove" xml:space="preserve"><value>移除</value></data>
+  <data name="Dialog.RemoveFolder" xml:space="preserve"><value>移除音乐文件夹</value></data>
+  <data name="Dialog.RemoveFolderPrompt" xml:space="preserve"><value>要停止监视“{0}”并将其曲目从媒体库中移除吗？音乐文件不会受到影响。</value></data>
+  <data name="Dialog.Rename" xml:space="preserve"><value>重命名</value></data>
+  <data name="Dialog.RenamePlaylist" xml:space="preserve"><value>重命名播放列表</value></data>
+  <data name="Dialog.Save" xml:space="preserve"><value>保存</value></data>
+  <data name="Disc.ActivePresent" xml:space="preserve"><value>至今</value></data>
+  <data name="Disc.ActiveRange" xml:space="preserve"><value>活跃期 {0}–{1}</value></data>
+  <data name="Disc.Artist" xml:space="preserve"><value>关于艺术家</value></data>
+  <data name="Disc.ArtistFailed" xml:space="preserve"><value>艺术家查找未成功：{0}</value></data>
+  <data name="Disc.ArtistFrom" xml:space="preserve"><value>艺术家详情来自 MusicBrainz。</value></data>
+  <data name="Disc.ArtistLooking" xml:space="preserve"><value>正在查找 {0}…</value></data>
+  <data name="Disc.ArtistNoMatch" xml:space="preserve"><value>没有与“{0}”接近的匹配项。</value></data>
+  <data name="Disc.ArtistTip" xml:space="preserve"><value>查找艺术家的基本信息：类型、地区、活跃年份、流派和链接</value></data>
+  <data name="Disc.CoverAutomation" xml:space="preserve"><value>专辑封面</value></data>
+  <data name="Disc.DriveAutomation" xml:space="preserve"><value>CD 或 DVD 驱动器</value></data>
+  <data name="Disc.Empty" xml:space="preserve"><value>请插入音频 CD，然后选择“读取光盘”。</value></data>
+  <data name="Disc.FoundMany" xml:space="preserve"><value>找到 {0} 张可能的专辑；显示的是最佳匹配。</value></data>
+  <data name="Disc.FoundOne" xml:space="preserve"><value>已找到这张专辑。</value></data>
+  <data name="Disc.Genres" xml:space="preserve"><value>流派：{0}</value></data>
+  <data name="Disc.LookUp" xml:space="preserve"><value>查找</value></data>
+  <data name="Disc.LookingUp" xml:space="preserve"><value>正在查找这张光盘…</value></data>
+  <data name="Disc.LookupFailed" xml:space="preserve"><value>查找失败：{0} 曲目保留原有编号。</value></data>
+  <data name="Disc.LookupHintOff" xml:space="preserve"><value>在线查找已关闭，或未安装插件。请在“偏好设置”&gt;“在线”中开启。</value></data>
+  <data name="Disc.LookupHintOn" xml:space="preserve"><value>“查找”会将光盘的目录发送到 MusicBrainz。</value></data>
+  <data name="Disc.NoDisc" xml:space="preserve"><value>{0} 中没有音频光盘。</value></data>
+  <data name="Disc.NoDrive" xml:space="preserve"><value>未找到 CD 或 DVD 驱动器。</value></data>
+  <data name="Disc.NotKnown" xml:space="preserve"><value>MusicBrainz 不认识这张光盘。</value></data>
+  <data name="Disc.OtherAlbums" xml:space="preserve"><value>其他可能的专辑</value></data>
+  <data name="Disc.PlayingDisc" xml:space="preserve"><value>正在从第一首曲目开始播放光盘。</value></data>
+  <data name="Disc.PlayingTrack" xml:space="preserve"><value>正在播放第 {0} 首曲目。光盘的其余部分已加入队列。</value></data>
+  <data name="Disc.PossibleAlbums" xml:space="preserve"><value>可能的专辑</value></data>
+  <data name="Disc.Read" xml:space="preserve"><value>读取光盘</value></data>
+  <data name="Disc.ReadTip" xml:space="preserve"><value>重新读取目录，例如更换光盘之后</value></data>
+  <data name="Disc.Reading" xml:space="preserve"><value>正在读取光盘…</value></data>
+  <data name="Disc.Title" xml:space="preserve"><value>音频 CD</value></data>
+  <data name="Disc.TrackN" xml:space="preserve"><value>第 {0} 首曲目</value></data>
+  <data name="Disc.TracksAndLength" xml:space="preserve"><value>{0} 首曲目 · {1}</value></data>
+  <data name="Disc.TracksAutomation" xml:space="preserve"><value>光盘曲目</value></data>
+  <data name="Disc.TracksChooseLookup" xml:space="preserve"><value>{0} 首曲目。选择“查找”以获取专辑详情。</value></data>
+  <data name="Disc.TracksOnly" xml:space="preserve"><value>{0} 首曲目。</value></data>
+  <data name="Equalizer.Title" xml:space="preserve"><value>均衡器</value></data>
+  <data name="Equalizer.ButtonAutomation" xml:space="preserve"><value>均衡器</value></data>
+  <data name="Equalizer.ButtonTip" xml:space="preserve"><value>打开均衡器</value></data>
+  <data name="Equalizer.On" xml:space="preserve"><value>开启</value></data>
+  <data name="Equalizer.OnAutomation" xml:space="preserve"><value>开启或关闭均衡器</value></data>
+  <data name="Equalizer.OnTip" xml:space="preserve"><value>均衡器已开启；曲线应用于您播放的所有内容</value></data>
+  <data name="Equalizer.PresetAutomation" xml:space="preserve"><value>均衡器预设</value></data>
+  <data name="Equalizer.Reset" xml:space="preserve"><value>重置</value></data>
+  <data name="Equalizer.ResetTip" xml:space="preserve"><value>将所有频段和前置放大恢复为 0 dB</value></data>
+  <data name="Equalizer.Preamp" xml:space="preserve"><value>前置放大</value></data>
+  <data name="Equalizer.Preset.Custom" xml:space="preserve"><value>自定义</value></data>
+  <data name="Equalizer.Preset.Flat" xml:space="preserve"><value>平坦</value></data>
+  <data name="Equalizer.Preset.BassBoost" xml:space="preserve"><value>低音增强</value></data>
+  <data name="Equalizer.Preset.TrebleBoost" xml:space="preserve"><value>高音增强</value></data>
+  <data name="Equalizer.Preset.Rock" xml:space="preserve"><value>摇滚</value></data>
+  <data name="Equalizer.Preset.Pop" xml:space="preserve"><value>流行</value></data>
+  <data name="Equalizer.Preset.Jazz" xml:space="preserve"><value>爵士</value></data>
+  <data name="Equalizer.Preset.Classical" xml:space="preserve"><value>古典</value></data>
+  <data name="Equalizer.Preset.Vocal" xml:space="preserve"><value>人声</value></data>
+  <data name="Error.Reported" xml:space="preserve"><value>出了点问题（{0}）。详细信息已保存到 {1}。</value></data>
+  <data name="Crash.EngineBuiltIn" xml:space="preserve"><value>内置</value></data>
+  <data name="Crash.EngineVlc" xml:space="preserve"><value>VLC</value></data>
+  <data name="Crash.Message" xml:space="preserve"><value>上一次会话没有正常结束。</value></data>
+  <data name="Crash.Title" xml:space="preserve"><value>Aibell 意外关闭</value></data>
+  <data name="Crash.WhilePlaying" xml:space="preserve"><value>它在使用{1}播放器播放“{0}”时停止。</value></data>
+  <data name="ErrorDialog.Close" xml:space="preserve"><value>关闭</value></data>
+  <data name="ErrorDialog.Copied" xml:space="preserve"><value>已复制</value></data>
+  <data name="ErrorDialog.Copy" xml:space="preserve"><value>复制详细信息</value></data>
+  <data name="ErrorDialog.Details" xml:space="preserve"><value>详细信息</value></data>
+  <data name="ErrorDialog.DetailsAutomation" xml:space="preserve"><value>技术详细信息</value></data>
+  <data name="ErrorDialog.HideDetails" xml:space="preserve"><value>隐藏详细信息</value></data>
+  <data name="ErrorDialog.LogLocation" xml:space="preserve"><value>日志文件：{0}</value></data>
+  <data name="ErrorDialog.More" xml:space="preserve"><value>还发生了 {0} 个问题；请查看详细信息。</value></data>
+  <data name="ErrorDialog.Title" xml:space="preserve"><value>出现问题</value></data>
+  <data name="Playback.FailedTitle" xml:space="preserve"><value>无法播放此曲目</value></data>
+  <data name="Playback.TryVlc" xml:space="preserve"><value>如果反复出现，请在“首选项 &gt; 播放”中选择 VLC。</value></data>
+  <data name="Import.DuplicateCount.Other" xml:space="preserve"><value>{0} 个重复项</value></data>
+  <data name="Import.Entry" xml:space="preserve"><value>条目 {0}：{1}</value></data>
+  <data name="Import.NoStations" xml:space="preserve"><value>未找到新的直连流电台。</value></data>
+  <data name="Import.NoTracks" xml:space="preserve"><value>未找到可读取的本地曲目。</value></data>
+  <data name="Import.PlaylistCancelled" xml:space="preserve"><value>已取消播放列表审阅。媒体库未更改。</value></data>
+  <data name="Import.PlaylistFailed" xml:space="preserve"><value>无法准备播放列表。</value></data>
+  <data name="Import.PlaylistSummary" xml:space="preserve"><value>{0} 个就绪；{1} 个已跳过；{2} 个已省略。</value></data>
+  <data name="Import.ReadingFiles" xml:space="preserve"><value>正在读取所引用的音频文件…</value></data>
+  <data name="Import.ReadingStations" xml:space="preserve"><value>正在读取已保存的电台网址…</value></data>
+  <data name="Import.ReviewPlaylist" xml:space="preserve"><value>在将播放列表添加到媒体库之前请先审阅。音频文件保持不变。</value></data>
+  <data name="Import.ReviewStations" xml:space="preserve"><value>保存前请审阅这些电台。选择一个电台并点击“播放”，即可在导入后连接。</value></data>
+  <data name="Import.SkippedCount" xml:space="preserve"><value>已跳过的条目 ({0})</value></data>
+  <data name="Import.SkippedPlaylist" xml:space="preserve"><value>已跳过的播放列表条目</value></data>
+  <data name="Import.SkippedStations" xml:space="preserve"><value>已跳过的电台条目</value></data>
+  <data name="Import.SkippedTab" xml:space="preserve"><value>已跳过的条目</value></data>
+  <data name="Import.StationCount.Other" xml:space="preserve"><value>{0} 个电台</value></data>
+  <data name="Import.StationsCancelled" xml:space="preserve"><value>已取消电台审阅。</value></data>
+  <data name="Import.StationsFailed" xml:space="preserve"><value>无法准备电台播放列表。</value></data>
+  <data name="Import.StationsReady" xml:space="preserve"><value>可导入的电台</value></data>
+  <data name="Import.StationsTab" xml:space="preserve"><value>电台</value></data>
+  <data name="Import.TrackCount.Other" xml:space="preserve"><value>{0} 首曲目</value></data>
+  <data name="Import.TracksReady" xml:space="preserve"><value>可导入的曲目</value></data>
+  <data name="Import.TracksTab" xml:space="preserve"><value>曲目</value></data>
+  <data name="Library.AllMusic" xml:space="preserve"><value>全部音乐</value></data>
+  <data name="Library.Importing" xml:space="preserve"><value>正在导入 {0}…</value></data>
+  <data name="Library.Rescanned" xml:space="preserve"><value>已重新扫描 {0}：索引 {1} 个，移除 {2} 个，无法读取 {3} 个。</value></data>
+  <data name="Library.StoppedWatching.Other" xml:space="preserve"><value>已停止监视 {1}，并移除了 {0} 首已索引的曲目。文件未受影响。</value></data>
+  <data name="Library.Synced" xml:space="preserve"><value>已同步 {0} 个文件，移除了 {1} 个。{2}</value></data>
+  <data name="Library.SyncedIssues" xml:space="preserve"><value>已同步 {0} 个文件；移除 {1} 个；{2} 个无法读取。</value></data>
+  <data name="Library.Updated.Removed" xml:space="preserve"><value>媒体库已更新：移除了 {0} 首缺失的曲目。</value></data>
+  <data name="Library.Updated.Unreadable" xml:space="preserve"><value>媒体库已更新，有 {0} 个文件无法读取。</value></data>
+  <data name="Main.AddEllipsis" xml:space="preserve"><value>添加…</value></data>
+  <data name="Main.AddFolder" xml:space="preserve"><value>添加音乐文件夹</value></data>
+  <data name="Main.OpenFiles" xml:space="preserve"><value>打开文件…</value></data>
+  <data name="Main.AddToLibrary" xml:space="preserve"><value>添加到媒体库</value></data>
+  <data name="Main.AddToPlaylist" xml:space="preserve"><value>添加到播放列表</value></data>
+  <data name="Main.Album" xml:space="preserve"><value>专辑</value></data>
+  <data name="Main.Albums" xml:space="preserve"><value>专辑</value></data>
+  <data name="Main.Artist" xml:space="preserve"><value>艺术家</value></data>
+  <data name="Main.Artists" xml:space="preserve"><value>艺术家</value></data>
+  <data name="Main.AudiobookShelf" xml:space="preserve"><value>有声书书架</value></data>
+  <data name="Main.Audiobooks" xml:space="preserve"><value>有声书</value></data>
+  <data name="Main.Clear" xml:space="preserve"><value>清空</value></data>
+  <data name="Main.ClearQueueTip" xml:space="preserve"><value>清空队列，但不停止播放</value></data>
+  <data name="Main.Closing" xml:space="preserve"><value>关闭前正在完成待处理的工作…</value></data>
+  <data name="Main.CreatePlaylist" xml:space="preserve"><value>创建播放列表</value></data>
+  <data name="Main.CreateSmartPlaylist" xml:space="preserve"><value>创建智能播放列表</value></data>
+  <data name="Main.Delete" xml:space="preserve"><value>删除…</value></data>
+  <data name="Main.DeletePlaylistTip" xml:space="preserve"><value>删除所选播放列表</value></data>
+  <data name="Main.DropTracks" xml:space="preserve"><value>将曲目拖放到此处</value></data>
+  <data name="Main.EditEllipsis" xml:space="preserve"><value>编辑…</value></data>
+  <data name="Main.EditRules" xml:space="preserve"><value>编辑规则…</value></data>
+  <data name="Main.EditStation" xml:space="preserve"><value>编辑电台…</value></data>
+  <data name="Main.ExportPlaylist" xml:space="preserve"><value>导出播放列表…</value></data>
+  <data name="Main.FoldSidebar" xml:space="preserve"><value>折叠侧边栏</value></data>
+  <data name="Main.ShowSidebar" xml:space="preserve"><value>显示侧边栏</value></data>
+  <data name="Main.FoldQueue" xml:space="preserve"><value>折叠播放队列</value></data>
+  <data name="Main.Folders" xml:space="preserve"><value>文件夹</value></data>
+  <data name="Main.Genre" xml:space="preserve"><value>流派</value></data>
+  <data name="Main.Genres" xml:space="preserve"><value>流派</value></data>
+  <data name="Main.ImportEllipsis" xml:space="preserve"><value>导入…</value></data>
+  <data name="Main.ImportPlaylistFile" xml:space="preserve"><value>导入播放列表文件</value></data>
+  <data name="Main.ImportStations" xml:space="preserve"><value>导入电台</value></data>
+  <data name="Main.ImportStationsTip" xml:space="preserve"><value>从本地 M3U 或 PLS 播放列表导入电台</value></data>
+  <data name="Main.Library" xml:space="preserve"><value>媒体库</value></data>
+  <data name="Main.LibraryTracks" xml:space="preserve"><value>媒体库曲目</value></data>
+  <data name="Main.MoveDown" xml:space="preserve"><value>在播放列表中下移</value></data>
+  <data name="Main.MoveUp" xml:space="preserve"><value>在播放列表中上移</value></data>
+  <data name="Main.MusicFolders" xml:space="preserve"><value>音乐文件夹</value></data>
+  <data name="Main.Next" xml:space="preserve"><value>下一首</value></data>
+  <data name="Main.NextHint" xml:space="preserve"><value>在媒体库中按 Alt+向右</value></data>
+  <data name="Main.NextTip" xml:space="preserve"><value>下一首（在媒体库中按 Alt+向右）</value></data>
+  <data name="Main.NoStations" xml:space="preserve"><value>没有匹配的电台。请添加直连的 HTTP/HTTPS 音频流开始使用。</value></data>
+  <data name="Main.NoTracks" xml:space="preserve"><value>此视图中没有曲目。</value></data>
+  <data name="Main.NowPlaying" xml:space="preserve"><value>正在播放</value></data>
+  <data name="Main.NowPlayingArt" xml:space="preserve"><value>正在播放的封面</value></data>
+  <data name="Main.Play" xml:space="preserve"><value>播放</value></data>
+  <data name="Main.PlayHint" xml:space="preserve"><value>在曲目或队列列表中按空格键</value></data>
+  <data name="Main.PlayQueue" xml:space="preserve"><value>播放队列</value></data>
+  <data name="Main.Playlists" xml:space="preserve"><value>播放列表</value></data>
+  <data name="Main.PlaylistsAutomation" xml:space="preserve"><value>播放列表</value></data>
+  <data name="Main.Preferences" xml:space="preserve"><value>偏好设置</value></data>
+  <data name="Main.PreferencesTip" xml:space="preserve"><value>偏好设置 (Ctrl+,)</value></data>
+  <data name="Main.Previous" xml:space="preserve"><value>上一首</value></data>
+  <data name="Main.PreviousHint" xml:space="preserve"><value>在媒体库中按 Alt+向左</value></data>
+  <data name="Main.PreviousTip" xml:space="preserve"><value>上一首（在媒体库中按 Alt+向左）</value></data>
+  <data name="Main.QueueLast" xml:space="preserve"><value>加入队列末尾</value></data>
+  <data name="Main.QueueNext" xml:space="preserve"><value>下一首播放</value></data>
+  <data name="Main.RadioHeader" xml:space="preserve"><value>电台</value></data>
+  <data name="Main.Rating" xml:space="preserve"><value>评分</value></data>
+  <data name="Main.RatingClear" xml:space="preserve"><value>☆☆☆☆☆  清除</value></data>
+  <data name="Main.Remove" xml:space="preserve"><value>移除…</value></data>
+  <data name="Main.RemoveFolderTip" xml:space="preserve"><value>移除所选文件夹</value></data>
+  <data name="Main.RemoveFromPlaylist" xml:space="preserve"><value>从播放列表中移除</value></data>
+  <data name="Main.RemoveShort" xml:space="preserve"><value>移除</value></data>
+  <data name="Main.RemoveStation" xml:space="preserve"><value>移除电台…</value></data>
+  <data name="Main.Rename" xml:space="preserve"><value>重命名…</value></data>
+  <data name="Main.Rescan" xml:space="preserve"><value>重新扫描</value></data>
+  <data name="Main.SavedStations" xml:space="preserve"><value>已保存的电台</value></data>
+  <data name="Main.SearchTip" xml:space="preserve"><value>搜索 (Ctrl+F)；按 Esc 清除查询</value></data>
+  <data name="Main.SeekTip" xml:space="preserve"><value>播放位置（方向键 ±5 秒，Page Up/Down ±15 秒，Home/End）</value></data>
+  <data name="Main.SeekUnavailable" xml:space="preserve"><value>播放位置，不可用</value></data>
+  <data name="Main.ShowFile" xml:space="preserve"><value>显示文件</value></data>
+  <data name="Main.ShowQueue" xml:space="preserve"><value>显示播放队列</value></data>
+  <data name="Main.StatusOperationFailed" xml:space="preserve"><value>操作失败：{0}</value></data>
+  <data name="Main.StatusPrefs" xml:space="preserve"><value>无法打开偏好设置：{0}</value></data>
+  <data name="Main.StatusTrackProps" xml:space="preserve"><value>无法打开曲目属性：{0}</value></data>
+  <data name="Main.Stop" xml:space="preserve"><value>停止</value></data>
+  <data name="Main.TitleColumn" xml:space="preserve"><value>标题</value></data>
+  <data name="Main.ViewMetadata" xml:space="preserve"><value>查看元数据…</value></data>
+  <data name="Main.Volume" xml:space="preserve"><value>音量</value></data>
+  <data name="Main.VolumeTip" xml:space="preserve"><value>音量（方向键 ±5%，Page Up/Down ±10%，Home/End）</value></data>
+  <data name="Menu.NewPlaylist" xml:space="preserve"><value>新建播放列表…</value></data>
+  <data name="Menu.NoPlaylists" xml:space="preserve"><value>没有现有的播放列表</value></data>
+  <data name="Menu.RestoreDefaults" xml:space="preserve"><value>恢复默认值</value></data>
+  <data name="Meta.AddCover" xml:space="preserve"><value>添加封面…</value></data>
+  <data name="Meta.AddCoverTip" xml:space="preserve"><value>用 PNG 或 JPEG 图像添加或替换当前显示的内嵌封面。</value></data>
+  <data name="Meta.AdditionalTags" xml:space="preserve"><value>文件的附加标签 ({0})</value></data>
+  <data name="Meta.AlbumArtist" xml:space="preserve"><value>专辑艺术家</value></data>
+  <data name="Meta.AlbumTitle" xml:space="preserve"><value>专辑标题</value></data>
+  <data name="Meta.BackupsFailed" xml:space="preserve"><value>无法管理备份：{0}</value></data>
+  <data name="Meta.BadNumbers" xml:space="preserve"><value>请在数字字段中输入有效的数字。</value></data>
+  <data name="Meta.BitRate" xml:space="preserve"><value>比特率</value></data>
+  <data name="Meta.BitsPerSample" xml:space="preserve"><value>每采样位数</value></data>
+  <data name="Meta.Bpm" xml:space="preserve"><value>每分钟节拍数</value></data>
+  <data name="Meta.Channels" xml:space="preserve"><value>声道</value></data>
+  <data name="Meta.CloseAutomation" xml:space="preserve"><value>关闭曲目属性</value></data>
+  <data name="Meta.Codec" xml:space="preserve"><value>音频编解码器</value></data>
+  <data name="Meta.Comment" xml:space="preserve"><value>注释</value></data>
+  <data name="Meta.Composer" xml:space="preserve"><value>作曲者</value></data>
+  <data name="Meta.Conductor" xml:space="preserve"><value>指挥</value></data>
+  <data name="Meta.Copyright" xml:space="preserve"><value>版权</value></data>
+  <data name="Meta.CoverAutomation" xml:space="preserve"><value>曲目封面</value></data>
+  <data name="Meta.CoverLoadFailed" xml:space="preserve"><value>无法加载封面：{0}</value></data>
+  <data name="Meta.CoverTip" xml:space="preserve"><value>来自音频文件或其文件夹的封面</value></data>
+  <data name="Meta.Description" xml:space="preserve"><value>描述</value></data>
+  <data name="Meta.DestinationAutomation" xml:space="preserve"><value>保存目标</value></data>
+  <data name="Meta.DestinationTip" xml:space="preserve"><value>选择保存位置。写入文件需要先停止播放。</value></data>
+  <data name="Meta.DestinationUnavailable" xml:space="preserve"><value>已验证的 FLAC、M4A、MP3、Ogg、Opus 和经典 PCM WAV 文件支持写入文件。</value></data>
+  <data name="Meta.Directory" xml:space="preserve"><value>目录</value></data>
+  <data name="Meta.DiscNumber" xml:space="preserve"><value>光盘编号</value></data>
+  <data name="Meta.Duration" xml:space="preserve"><value>时长</value></data>
+  <data name="Meta.EmbeddedPictures" xml:space="preserve"><value>内嵌图片</value></data>
+  <data name="Meta.EpisodeNumber" xml:space="preserve"><value>剧集编号</value></data>
+  <data name="Meta.FileAndLibrary" xml:space="preserve"><value>文件和媒体库</value></data>
+  <data name="Meta.FileModified" xml:space="preserve"><value>文件修改时间</value></data>
+  <data name="Meta.FileName" xml:space="preserve"><value>文件名</value></data>
+  <data name="Meta.FileSize" xml:space="preserve"><value>文件大小</value></data>
+  <data name="Meta.Genre" xml:space="preserve"><value>流派</value></data>
+  <data name="Meta.Grouping" xml:space="preserve"><value>分组</value></data>
+  <data name="Meta.HintFile" xml:space="preserve"><value>写入已更改的标签并更新媒体库。会保留原始文件的备份。评分保留在媒体库中。</value></data>
+  <data name="Meta.HintLibrary" xml:space="preserve"><value>更改会保存到您的媒体库。音频文件的标签保持不变。</value></data>
+  <data name="Meta.HintWav" xml:space="preserve"><value>WAV：仅限标题、艺术家、专辑、流派、年份、曲目编号和注释。会保留原始文件的备份。</value></data>
+  <data name="Meta.Imported" xml:space="preserve"><value>导入时间</value></data>
+  <data name="Meta.Keywords" xml:space="preserve"><value>关键词</value></data>
+  <data name="Meta.LastPlayed" xml:space="preserve"><value>上次播放</value></data>
+  <data name="Meta.LastSkipped" xml:space="preserve"><value>上次跳过</value></data>
+  <data name="Meta.LibraryOnly" xml:space="preserve"><value>仅媒体库</value></data>
+  <data name="Meta.LibrarySource" xml:space="preserve"><value>媒体库来源</value></data>
+  <data name="Meta.LicenseUri" xml:space="preserve"><value>许可证 URI</value></data>
+  <data name="Meta.Location" xml:space="preserve"><value>位置</value></data>
+  <data name="Meta.ManageBackups" xml:space="preserve"><value>管理文件备份…</value></data>
+  <data name="Meta.OfTotal" xml:space="preserve"><value>共</value></data>
+  <data name="Meta.PickCover" xml:space="preserve"><value>选择曲目封面</value></data>
+  <data name="Meta.PlayCount" xml:space="preserve"><value>播放次数</value></data>
+  <data name="Meta.PngJpeg" xml:space="preserve"><value>PNG 或 JPEG 图像</value></data>
+  <data name="Meta.Rating" xml:space="preserve"><value>评分</value></data>
+  <data name="Meta.RemoveCover" xml:space="preserve"><value>移除封面</value></data>
+  <data name="Meta.RemoveCoverTip" xml:space="preserve"><value>移除当前显示的内嵌图片。文件夹中的封面会保留。</value></data>
+  <data name="Meta.RestoreBackup" xml:space="preserve"><value>还原备份…</value></data>
+  <data name="Meta.RestoreFailed" xml:space="preserve"><value>无法还原：{0}</value></data>
+  <data name="Meta.RestorePrompt" xml:space="preserve"><value>要从此备份还原原始文件吗？当前文件会作为新的备份保留。表单中未保存的编辑将被丢弃。</value></data>
+  <data name="Meta.RestoreTip" xml:space="preserve"><value>还原上次保存文件时的标签。当前对文件的编辑会先被备份。</value></data>
+  <data name="Meta.SampleRate" xml:space="preserve"><value>采样率</value></data>
+  <data name="Meta.SaveFailed" xml:space="preserve"><value>无法保存：{0}</value></data>
+  <data name="Meta.SaveTip" xml:space="preserve"><value>保存更改 (Ctrl+Enter)</value></data>
+  <data name="Meta.SavingFile" xml:space="preserve"><value>正在保存文件标签和媒体库…</value></data>
+  <data name="Meta.SavingLibrary" xml:space="preserve"><value>正在保存媒体库更改…</value></data>
+  <data name="Meta.SeasonNumber" xml:space="preserve"><value>季编号</value></data>
+  <data name="Meta.ShowDetails" xml:space="preserve"><value>节目和剧集详情</value></data>
+  <data name="Meta.ShowName" xml:space="preserve"><value>节目名称</value></data>
+  <data name="Meta.SkipCount" xml:space="preserve"><value>跳过次数</value></data>
+  <data name="Meta.SortAlbum" xml:space="preserve"><value>排序用专辑标题</value></data>
+  <data name="Meta.SortAlbumArtist" xml:space="preserve"><value>排序用专辑艺术家</value></data>
+  <data name="Meta.SortArtist" xml:space="preserve"><value>排序用曲目艺术家</value></data>
+  <data name="Meta.SortNote" xml:space="preserve"><value>排序时使用备用名称，不会更改所显示的标签。</value></data>
+  <data name="Meta.SortTitle" xml:space="preserve"><value>排序用曲目标题</value></data>
+  <data name="Meta.TabBasic" xml:space="preserve"><value>基本</value></data>
+  <data name="Meta.TabExtra" xml:space="preserve"><value>附加</value></data>
+  <data name="Meta.TabProperties" xml:space="preserve"><value>属性</value></data>
+  <data name="Meta.TabSorting" xml:space="preserve"><value>排序</value></data>
+  <data name="Meta.TagFormats" xml:space="preserve"><value>标签格式</value></data>
+  <data name="Meta.Title" xml:space="preserve"><value>曲目属性</value></data>
+  <data name="Meta.TotalAutomation" xml:space="preserve"><value>共 {0}</value></data>
+  <data name="Meta.TrackArtist" xml:space="preserve"><value>曲目艺术家</value></data>
+  <data name="Meta.TrackNumber" xml:space="preserve"><value>曲目编号</value></data>
+  <data name="Meta.TrackTitle" xml:space="preserve"><value>曲目标题</value></data>
+  <data name="Meta.Unrated" xml:space="preserve"><value>未评分</value></data>
+  <data name="Meta.Year" xml:space="preserve"><value>年份</value></data>
+  <data name="Picker.AddMusicFolder" xml:space="preserve"><value>添加音乐文件夹</value></data>
+  <data name="Picker.ExportPlaylist" xml:space="preserve"><value>导出播放列表</value></data>
+  <data name="Picker.ImportFolder" xml:space="preserve"><value>导入音乐文件夹</value></data>
+  <data name="Picker.OpenFiles" xml:space="preserve"><value>打开音乐文件</value></data>
+  <data name="Picker.MusicFiles" xml:space="preserve"><value>音乐文件</value></data>
+  <data name="Picker.ImportPlaylist" xml:space="preserve"><value>导入播放列表</value></data>
+  <data name="Picker.ImportStations" xml:space="preserve"><value>导入电台</value></data>
+  <data name="Picker.LocalPlaylists" xml:space="preserve"><value>本地播放列表</value></data>
+  <data name="Picker.M3u8Playlist" xml:space="preserve"><value>UTF-8 M3U 播放列表</value></data>
+  <data name="Picker.PluginArchive" xml:space="preserve"><value>插件压缩包</value></data>
+  <data name="Picker.PluginFolder" xml:space="preserve"><value>选择插件文件夹</value></data>
+  <data name="Picker.PluginZip" xml:space="preserve"><value>选择插件 .zip</value></data>
+  <data name="Picker.PodcastFolder" xml:space="preserve"><value>选择播客下载文件夹</value></data>
+  <data name="Picker.StationPlaylists" xml:space="preserve"><value>电台播放列表</value></data>
+  <data name="Playback.EndOfQueue" xml:space="preserve"><value>已到队列末尾。</value></data>
+  <data name="Playback.Mute" xml:space="preserve"><value>静音</value></data>
+  <data name="Playback.Nothing" xml:space="preserve"><value>未在播放</value></data>
+  <data name="Playback.OperationFailed" xml:space="preserve"><value>播放操作失败：{0}</value></data>
+  <data name="Playback.Pause" xml:space="preserve"><value>暂停</value></data>
+  <data name="Playback.Paused" xml:space="preserve"><value>已暂停</value></data>
+  <data name="Playback.Play" xml:space="preserve"><value>播放</value></data>
+  <data name="Playback.Playing" xml:space="preserve"><value>正在播放</value></data>
+  <data name="Playback.RadioEnded" xml:space="preserve"><value>电台流已结束。点击“播放”可重新连接。</value></data>
+  <data name="Playback.RadioStopped" xml:space="preserve"><value>电台已停止。</value></data>
+  <data name="Playback.RepeatAll" xml:space="preserve"><value>全部循环</value></data>
+  <data name="Playback.RepeatOff" xml:space="preserve"><value>不循环</value></data>
+  <data name="Playback.RepeatOne" xml:space="preserve"><value>单曲循环</value></data>
+  <data name="Playback.SaveFailed" xml:space="preserve"><value>无法保存播放设置：{0}</value></data>
+  <data name="Playback.ShuffleOff" xml:space="preserve"><value>随机播放已关闭</value></data>
+  <data name="Playback.ShuffleOn" xml:space="preserve"><value>随机播放已开启</value></data>
+  <data name="Playback.StopRadio" xml:space="preserve"><value>停止电台</value></data>
+  <data name="Playback.Unmute" xml:space="preserve"><value>取消静音</value></data>
+  <data name="Playlist.Added" xml:space="preserve"><value>已将 {0} 添加到 {1}。</value></data>
+  <data name="Playlist.Created" xml:space="preserve"><value>已创建播放列表 {0}。</value></data>
+  <data name="Playlist.CreatedWith" xml:space="preserve"><value>已创建播放列表 {0} 并添加了 {1}。</value></data>
+  <data name="Playlist.Deleted" xml:space="preserve"><value>已删除播放列表 {0}。您的音乐文件未被删除。</value></data>
+  <data name="Playlist.Moved" xml:space="preserve"><value>已移动 {0}。</value></data>
+  <data name="Playlist.MovedDown" xml:space="preserve"><value>已将 {0} 下移。</value></data>
+  <data name="Playlist.MovedUp" xml:space="preserve"><value>已将 {0} 上移。</value></data>
+  <data name="Playlist.OrderUpdated" xml:space="preserve"><value>播放列表顺序已更新。</value></data>
+  <data name="Playlist.RemovedFrom" xml:space="preserve"><value>已将 {0} 从 {1} 中移除。</value></data>
+  <data name="Playlist.Renamed" xml:space="preserve"><value>播放列表已重命名为 {0}。</value></data>
+  <data name="PlaylistFile.Exported" xml:space="preserve"><value>已将 {0} 首曲目导出到 {1}。</value></data>
+  <data name="PlaylistFile.Imported" xml:space="preserve"><value>已导入“{0}”：{1} 首曲目；{2} 个已跳过的条目；{3} 个重复项。</value></data>
+  <data name="PlaylistFile.ImportedNoRefresh" xml:space="preserve"><value>播放列表“{0}”已导入，但视图无法刷新。请重新打开媒体库。{1}</value></data>
+  <data name="Plugins.EnableAutomation" xml:space="preserve"><value>启用 {0}</value></data>
+  <data name="Plugins.Enabled" xml:space="preserve"><value>已启用</value></data>
+  <data name="Plugins.InstallAccept" xml:space="preserve"><value>安装</value></data>
+  <data name="Plugins.InstallFailed" xml:space="preserve"><value>插件未安装：{0}</value></data>
+  <data name="Plugins.InstallFolder" xml:space="preserve"><value>从文件夹安装…</value></data>
+  <data name="Plugins.InstallTitle" xml:space="preserve"><value>安装插件</value></data>
+  <data name="Plugins.InstallWarning" xml:space="preserve"><value>插件是在 Aibell 内部以您的权限运行的程序。它可以读取您的文件并使用您的网络。
+
+请只安装来自可信来源的插件。
+
+{0}</value></data>
+  <data name="Plugins.InstallZip" xml:space="preserve"><value>从 .zip 安装…</value></data>
+  <data name="Plugins.Installed" xml:space="preserve"><value>已安装 {0}。它将在 Aibell 重新启动时启动。</value></data>
+  <data name="Plugins.Intro" xml:space="preserve"><value>插件用于添加可选功能。它们对您的文件和网络拥有与 Aibell 本身相同的访问权限，因此请只安装您信任的插件。更改将在 Aibell 重新启动后生效。</value></data>
+  <data name="Plugins.None" xml:space="preserve"><value>尚未安装任何插件。</value></data>
+  <data name="Plugins.OriginBundled" xml:space="preserve"><value>随 Aibell 附带。 </value></data>
+  <data name="Plugins.OriginUser" xml:space="preserve"><value>由您安装。 </value></data>
+  <data name="Plugins.Saved" xml:space="preserve"><value>已保存。更改将在 Aibell 重新启动时生效。</value></data>
+  <data name="Plugins.Status.Active" xml:space="preserve"><value>已激活。</value></data>
+  <data name="Plugins.Status.Failed" xml:space="preserve"><value>无法加载：{0}</value></data>
+  <data name="Plugins.Status.Off" xml:space="preserve"><value>已关闭。</value></data>
+  <data name="Plugins.Status.Removal" xml:space="preserve"><value>将在 Aibell 重新启动时移除。</value></data>
+  <data name="Plugins.Status.WillStart" xml:space="preserve"><value>将在 Aibell 重新启动时启动。</value></data>
+  <data name="Plugins.Status.WillStop" xml:space="preserve"><value>将在 Aibell 重新启动时关闭。</value></data>
+  <data name="Plugins.Uninstall" xml:space="preserve"><value>卸载…</value></data>
+  <data name="Plugins.UninstallAccept" xml:space="preserve"><value>卸载</value></data>
+  <data name="Plugins.UninstallAutomation" xml:space="preserve"><value>卸载 {0}</value></data>
+  <data name="Plugins.UninstallPrompt" xml:space="preserve"><value>要移除“{0}”吗？它将停止工作，其文件会在 Aibell 下次启动时删除。</value></data>
+  <data name="Plugins.UninstallScheduled" xml:space="preserve"><value>{0} 将在 Aibell 重新启动时移除。</value></data>
+  <data name="Plugins.UninstallTitle" xml:space="preserve"><value>卸载插件</value></data>
+  <data name="Pod.AlreadySubscribed" xml:space="preserve"><value>已订阅 {0}。</value></data>
+  <data name="Pod.BadUrl" xml:space="preserve"><value>请使用完整的 HTTP 或 HTTPS 订阅源网址，不要包含内嵌凭据或片段。</value></data>
+  <data name="Pod.CachedFailed" xml:space="preserve"><value>无法读取已缓存的剧集：{0}</value></data>
+  <data name="Pod.CatalogFailed" xml:space="preserve"><value>无法读取播客目录：{0}</value></data>
+  <data name="Pod.Checked" xml:space="preserve"><value>已检查 {1} 个播客中的 {0} 个。{2}{3}</value></data>
+  <data name="Pod.ClearSearch" xml:space="preserve"><value>清除剧集搜索</value></data>
+  <data name="Pod.ClearSearchTip" xml:space="preserve"><value>清除搜索 (Esc)</value></data>
+  <data name="Pod.CoverAutomation" xml:space="preserve"><value>剧集封面</value></data>
+  <data name="Pod.DeleteAccept" xml:space="preserve"><value>删除文件</value></data>
+  <data name="Pod.DeleteCancelled" xml:space="preserve"><value>已取消删除 {0}。</value></data>
+  <data name="Pod.DeleteFailed" xml:space="preserve"><value>无法删除下载：{0}</value></data>
+  <data name="Pod.DeleteFile" xml:space="preserve"><value>删除文件…</value></data>
+  <data name="Pod.DeleteFileAutomation" xml:space="preserve"><value>删除已下载的文件</value></data>
+  <data name="Pod.DeleteFileTip" xml:space="preserve"><value>仅删除已下载的文件。剧集、其星级和订阅都会保留</value></data>
+  <data name="Pod.DeletePrompt" xml:space="preserve"><value>要删除“{0}”已下载的文件吗？
+
+剧集、其星级和您的订阅都会保留。已保存的收听位置会被清除，您随时可以重新下载该剧集。</value></data>
+  <data name="Pod.DeleteTitle" xml:space="preserve"><value>删除已下载的文件</value></data>
+  <data name="Pod.DeleteUnavailable" xml:space="preserve"><value>无法删除下载内容。</value></data>
+  <data name="Pod.Deleted" xml:space="preserve"><value>已删除 {0} 的下载。剧集及其评分已保留；选择“下载”可重新获取。</value></data>
+  <data name="Pod.Deleting" xml:space="preserve"><value>正在删除 {0} 的下载…</value></data>
+  <data name="Pod.Download" xml:space="preserve"><value>下载</value></data>
+  <data name="Pod.DownloadCancelled" xml:space="preserve"><value>下载已取消：{0}。未保留不完整的文件。</value></data>
+  <data name="Pod.DownloadFailed" xml:space="preserve"><value>下载失败：{0}。{1}</value></data>
+  <data name="Pod.DownloadNew" xml:space="preserve"><value>下载新剧集</value></data>
+  <data name="Pod.DownloadNewTip" xml:space="preserve"><value>将刷新时发现的最新剧集加入队列（一次最多十集）</value></data>
+  <data name="Pod.DownloadProgress" xml:space="preserve"><value>下载进度</value></data>
+  <data name="Pod.DownloadedDone" xml:space="preserve"><value>已下载 {0}。选择“播放”即可收听。</value></data>
+  <data name="Pod.DownloadedOnly" xml:space="preserve"><value>仅已下载</value></data>
+  <data name="Pod.DownloadedOnlyAutomation" xml:space="preserve"><value>仅显示已下载的剧集</value></data>
+  <data name="Pod.DownloadedOnlyTip" xml:space="preserve"><value>隐藏尚未下载的剧集</value></data>
+  <data name="Pod.Downloading" xml:space="preserve"><value>正在下载 {0}…</value></data>
+  <data name="Pod.EnterFeed" xml:space="preserve"><value>输入播客订阅源网址即可订阅。仅在刷新时，或开启每小时检查（偏好设置）时才会检查订阅源。</value></data>
+  <data name="Pod.EpisodeCount.Other" xml:space="preserve"><value>{0} 集</value></data>
+  <data name="Pod.EpisodeCountFiltered" xml:space="preserve"><value>{1} 集中的 {0} 集</value></data>
+  <data name="Pod.Episodes" xml:space="preserve"><value>剧集</value></data>
+  <data name="Pod.FailedSuffix" xml:space="preserve"><value> {0} 失败：{1}。</value></data>
+  <data name="Pod.FeedAutomation" xml:space="preserve"><value>播客订阅源网址</value></data>
+  <data name="Pod.FeedPlaceholder" xml:space="preserve"><value>播客订阅源网址 (https://…/feed.xml)</value></data>
+  <data name="Pod.Fetching" xml:space="preserve"><value>正在获取订阅源…</value></data>
+  <data name="Pod.FileMissing" xml:space="preserve"><value>已下载的文件缺失。选择“重试”可重新下载。</value></data>
+  <data name="Pod.HideNotes" xml:space="preserve"><value>隐藏备注</value></data>
+  <data name="Pod.InPlayer" xml:space="preserve"><value>此剧集已加载到主播放器中。请先在那里停止它，然后删除下载。</value></data>
+  <data name="Pod.Issues.Other" xml:space="preserve"><value> 已跳过 {0} 个订阅源条目。</value></data>
+  <data name="Pod.KeptFiles" xml:space="preserve"><value> 有 {0} 个已下载的文件保留在磁盘上。</value></data>
+  <data name="Pod.MarkAllSeen" xml:space="preserve"><value>全部标为已看</value></data>
+  <data name="Pod.MarkAllSeenTip" xml:space="preserve"><value>移除此播客每一集的“新”标记</value></data>
+  <data name="Pod.MarkedSeen" xml:space="preserve"><value>已将 {0} 的每一集标为已看。</value></data>
+  <data name="Pod.NeverRefreshed" xml:space="preserve"><value>从未刷新</value></data>
+  <data name="Pod.New" xml:space="preserve"><value>新</value></data>
+  <data name="Pod.NewAutomation" xml:space="preserve"><value>新剧集</value></data>
+  <data name="Pod.NewEpisodes.Other" xml:space="preserve"><value>有 {0} 集新剧集。</value></data>
+  <data name="Pod.NewSuffix" xml:space="preserve"><value> · {0} 个新</value></data>
+  <data name="Pod.NewUpdateFailed" xml:space="preserve"><value>无法更新新剧集：{0}</value></data>
+  <data name="Pod.NoChanges" xml:space="preserve"><value>{0} 没有更新。</value></data>
+  <data name="Pod.NoCoverAutomation" xml:space="preserve"><value>没有可用的封面图片</value></data>
+  <data name="Pod.NoDownloadedMatch" xml:space="preserve"><value>此节目中没有与“{0}”匹配的已下载剧集。</value></data>
+  <data name="Pod.NoEpisodes" xml:space="preserve"><value>没有已缓存的剧集。请订阅播客，或选择“刷新”。</value></data>
+  <data name="Pod.NoFileToDelete" xml:space="preserve"><value>此剧集没有可删除的已下载文件。</value></data>
+  <data name="Pod.NoMatch" xml:space="preserve"><value>此节目中没有与“{0}”匹配的剧集。清除搜索即可查看全部 {1} 集。</value></data>
+  <data name="Pod.NoNewEpisodes" xml:space="preserve"><value>没有新剧集。</value></data>
+  <data name="Pod.NoNewToDownload" xml:space="preserve"><value>没有可下载的新剧集。</value></data>
+  <data name="Pod.NoPlayback" xml:space="preserve"><value>播放功能未连接到主窗口。</value></data>
+  <data name="Pod.NoProgress" xml:space="preserve"><value>无进度</value></data>
+  <data name="Pod.NoSavedPosition" xml:space="preserve"><value>没有保存的位置</value></data>
+  <data name="Pod.NoSubscriptions" xml:space="preserve"><value>尚无订阅</value></data>
+  <data name="Pod.NoneDownloaded" xml:space="preserve"><value>此节目尚无已下载的剧集。</value></data>
+  <data name="Pod.NoneSelected" xml:space="preserve"><value>未选择播客</value></data>
+  <data name="Pod.NotesAutomation" xml:space="preserve"><value>此剧集的节目备注</value></data>
+  <data name="Pod.NotesText" xml:space="preserve"><value>剧集备注</value></data>
+  <data name="Pod.NotesTip" xml:space="preserve"><value>显示或隐藏此剧集的描述</value></data>
+  <data name="Pod.Op.Refresh" xml:space="preserve"><value>刷新</value></data>
+  <data name="Pod.Op.RefreshAll" xml:space="preserve"><value>全部刷新</value></data>
+  <data name="Pod.Op.Remove" xml:space="preserve"><value>移除</value></data>
+  <data name="Pod.Op.Subscribe" xml:space="preserve"><value>订阅</value></data>
+  <data name="Pod.OpCancelled" xml:space="preserve"><value>{0}已取消。</value></data>
+  <data name="Pod.OpFailed" xml:space="preserve"><value>{0}失败：{1}</value></data>
+  <data name="Pod.Opening" xml:space="preserve"><value>正在打开 {0}…</value></data>
+  <data name="Pod.PauseAutomation" xml:space="preserve"><value>暂停剧集</value></data>
+  <data name="Pod.PauseFailed" xml:space="preserve"><value>无法暂停：{0}</value></data>
+  <data name="Pod.PauseTip" xml:space="preserve"><value>暂停播放器；进度会保留</value></data>
+  <data name="Pod.PlayFailed" xml:space="preserve"><value>无法播放该剧集：{0}</value></data>
+  <data name="Pod.PlaybackCancelled" xml:space="preserve"><value>播放已取消或已停止。</value></data>
+  <data name="Pod.PositionCancelled" xml:space="preserve"><value>已取消保存位置。</value></data>
+  <data name="Pod.PositionFailed" xml:space="preserve"><value>无法保存位置：{0}</value></data>
+  <data name="Pod.ProgressPercent" xml:space="preserve"><value>进度百分之 {0}</value></data>
+  <data name="Pod.QueuedNew.Other" xml:space="preserve"><value>已将 {0} 集新剧集加入队列。</value></data>
+  <data name="Pod.QueuedPartial" xml:space="preserve"><value>已将 {1} 集新剧集中的 {0} 集加入队列。再次选择“下载新剧集”可获取更多。</value></data>
+  <data name="Pod.QueuedWaiting" xml:space="preserve"><value>已将 {0} 加入队列：{1} 个等待中。</value></data>
+  <data name="Pod.RateTip" xml:space="preserve"><value>为此剧集评分（选中该行后按 0–5 键；0 为清除）</value></data>
+  <data name="Pod.RatingCleared" xml:space="preserve"><value>已清除 {0} 的评分。</value></data>
+  <data name="Pod.RatingFailed" xml:space="preserve"><value>无法保存评分：{0}</value></data>
+  <data name="Pod.RatingSet.Other" xml:space="preserve"><value>已给 {1} 评 {0} 星。</value></data>
+  <data name="Pod.RatingStars" xml:space="preserve"><value>评分：{0} 星（满分 5 星）</value></data>
+  <data name="Pod.RatingUnrated" xml:space="preserve"><value>评分：未评分</value></data>
+  <data name="Pod.RatingsUnavailable" xml:space="preserve"><value>剧集评分不可用。</value></data>
+  <data name="Pod.Refresh" xml:space="preserve"><value>刷新</value></data>
+  <data name="Pod.RefreshAll" xml:space="preserve"><value>全部刷新</value></data>
+  <data name="Pod.RefreshAllTip" xml:space="preserve"><value>检查每个订阅是否有新剧集</value></data>
+  <data name="Pod.RefreshTip" xml:space="preserve"><value>向服务器请求新剧集（使用已缓存的验证信息）</value></data>
+  <data name="Pod.Refreshed" xml:space="preserve"><value>已刷新 {0}：{1} 集新剧集，{2} 集已缓存。{3}</value></data>
+  <data name="Pod.Refreshing" xml:space="preserve"><value>正在刷新 {0}…</value></data>
+  <data name="Pod.RefreshingOf" xml:space="preserve"><value>正在刷新第 {0} 个，共 {1} 个：{2}…</value></data>
+  <data name="Pod.RemovePrompt" xml:space="preserve"><value>要忘记此订阅及其已缓存的剧集列表吗？
+已下载的剧集文件会保留在磁盘上。
+{0}</value></data>
+  <data name="Pod.RemoveTip" xml:space="preserve"><value>忘记此订阅。已下载的文件会保留在磁盘上</value></data>
+  <data name="Pod.RemoveTitle" xml:space="preserve"><value>移除播客</value></data>
+  <data name="Pod.Removed" xml:space="preserve"><value>已移除 {0}。{1}</value></data>
+  <data name="Pod.RemovedFromQueue" xml:space="preserve"><value>已将 {0} 从下载队列中移除。</value></data>
+  <data name="Pod.Resume" xml:space="preserve"><value>继续</value></data>
+  <data name="Pod.ResumeSelected" xml:space="preserve"><value>继续所选</value></data>
+  <data name="Pod.ResumeSelectedTip" xml:space="preserve"><value>从保存的位置继续播放所选的已下载剧集</value></data>
+  <data name="Pod.ResumedFromSaved" xml:space="preserve"><value>正在从保存的位置继续 {0}。</value></data>
+  <data name="Pod.Resuming" xml:space="preserve"><value>正在继续 {0}…</value></data>
+  <data name="Pod.Retry" xml:space="preserve"><value>重试</value></data>
+  <data name="Pod.SavePosition" xml:space="preserve"><value>保存位置</value></data>
+  <data name="Pod.SavePositionTip" xml:space="preserve"><value>在主播放器正在播放或已暂停此所选剧集时立即保存</value></data>
+  <data name="Pod.SavedPosition" xml:space="preserve"><value>已保存 {0}，共 {1}</value></data>
+  <data name="Pod.SavedPositionDone" xml:space="preserve"><value>已保存 {0} 的位置。</value></data>
+  <data name="Pod.SavingPosition" xml:space="preserve"><value>正在保存 {0} 的位置…</value></data>
+  <data name="Pod.SearchAutomation" xml:space="preserve"><value>搜索剧集标题</value></data>
+  <data name="Pod.SearchPlaceholder" xml:space="preserve"><value>在此节目中搜索剧集标题</value></data>
+  <data name="Pod.SentFromStart" xml:space="preserve"><value>已将 {0} 从头发送到播放器。</value></data>
+  <data name="Pod.ShowAll" xml:space="preserve"><value>显示所有剧集</value></data>
+  <data name="Pod.ShowNotes" xml:space="preserve"><value>显示备注</value></data>
+  <data name="Pod.SizeOf" xml:space="preserve"><value>{0} / {1} · {2}%</value></data>
+  <data name="Pod.Speed" xml:space="preserve"><value>速度</value></data>
+  <data name="Pod.SpeedAutomation" xml:space="preserve"><value>播客播放速度</value></data>
+  <data name="Pod.SpeedFailed" xml:space="preserve"><value>无法更改速度：{0}</value></data>
+  <data name="Pod.SpeedSet" xml:space="preserve"><value>播客速度：{0}。</value></data>
+  <data name="Pod.SpeedTip" xml:space="preserve"><value>播客剧集的播放速度。音乐、电台和有声书始终以 1 倍速播放</value></data>
+  <data name="Pod.StartOver" xml:space="preserve"><value>重新开始</value></data>
+  <data name="Pod.StartOverTip" xml:space="preserve"><value>从头开始播放，而不是从保存的位置</value></data>
+  <data name="Pod.Starting" xml:space="preserve"><value>正在启动…</value></data>
+  <data name="Pod.State.Cancelled" xml:space="preserve"><value>下载已取消</value></data>
+  <data name="Pod.State.Deleting" xml:space="preserve"><value>正在移除已下载的文件…</value></data>
+  <data name="Pod.State.Downloaded" xml:space="preserve"><value>已下载</value></data>
+  <data name="Pod.State.Downloading" xml:space="preserve"><value>正在下载… {0}</value></data>
+  <data name="Pod.State.Failed" xml:space="preserve"><value>下载失败：{0}</value></data>
+  <data name="Pod.State.Missing" xml:space="preserve"><value>已下载的文件缺失</value></data>
+  <data name="Pod.State.NotDownloaded" xml:space="preserve"><value>未下载</value></data>
+  <data name="Pod.State.Queued" xml:space="preserve"><value>正在下载队列中等待…</value></data>
+  <data name="Pod.Subscribe" xml:space="preserve"><value>订阅</value></data>
+  <data name="Pod.SubscribeTip" xml:space="preserve"><value>获取一次此订阅源并保存在您的媒体库中</value></data>
+  <data name="Pod.Subscribed" xml:space="preserve"><value>已订阅 {0}：{1} 集。{2}</value></data>
+  <data name="Pod.SubscribedList" xml:space="preserve"><value>已订阅的播客</value></data>
+  <data name="Pod.Updated" xml:space="preserve"><value>已更新 {0}</value></data>
+  <data name="Pod.WaitPosition" xml:space="preserve"><value>请等待当前的播放或位置操作完成。</value></data>
+  <data name="Podcasts.ProgressSaveFailed" xml:space="preserve"><value>无法保存播客进度：{0}</value></data>
+  <data name="Prefs.AddFolder" xml:space="preserve"><value>添加文件夹…</value></data>
+  <data name="Prefs.Appearance" xml:space="preserve"><value>外观</value></data>
+  <data name="Prefs.AutoRefresh" xml:space="preserve"><value>Aibell 打开期间每小时检查一次新剧集</value></data>
+  <data name="Prefs.AutoRefreshAutomation" xml:space="preserve"><value>自动检查新的播客剧集</value></data>
+  <data name="Prefs.AutoRefreshNote" xml:space="preserve"><value>检查时使用订阅源已缓存的验证信息，因此未更新的节目只需一个很小的请求。不会自动下载任何内容。</value></data>
+  <data name="Prefs.Browse" xml:space="preserve"><value>浏览…</value></data>
+  <data name="Prefs.BrowseAutomation" xml:space="preserve"><value>浏览播客下载文件夹</value></data>
+  <data name="Prefs.DownloadFolder" xml:space="preserve"><value>下载文件夹</value></data>
+  <data name="Prefs.FolderChangesNow" xml:space="preserve"><value>文件夹更改会立即生效。</value></data>
+  <data name="Prefs.FolderChecked" xml:space="preserve"><value>点击“保存”时会检查该文件夹。如果无法使用，则继续使用当前文件夹。</value></data>
+  <data name="Prefs.FoldersNote" xml:space="preserve"><value>会监视音乐文件夹的变化。移除文件夹会将其曲目从媒体库中移除，但保留音频文件。</value></data>
+  <data name="Prefs.GeneralNote" xml:space="preserve"><value>在媒体库中更改曲目列及其宽度时会自动保存。向文件写入标签始终需要在曲目编辑器中选择“文件和媒体库”。</value></data>
+  <data name="Prefs.Mute" xml:space="preserve"><value>音频静音</value></data>
+  <data name="Prefs.Notify" xml:space="preserve"><value>正在播放的曲目更改时通知</value></data>
+  <data name="Prefs.NotifyTip" xml:space="preserve"><value>可选的桌面通知。桌面服务可能会屏蔽它们。</value></data>
+  <data name="Prefs.NotifyUnavailable" xml:space="preserve"><value>此平台不支持桌面通知。</value></data>
+  <data name="Prefs.OnlineExplain" xml:space="preserve"><value>默认关闭。开启后，在音频 CD 上点击“查找”、“关于艺术家”或“获取封面”时，会将光盘目录或专辑名和艺术家名发送到插件的服务 (MusicBrainz)。不会自动发送任何内容。</value></data>
+  <data name="Prefs.OnlineLookup" xml:space="preserve"><value>允许在线查找专辑和艺术家详情</value></data>
+  <data name="Prefs.OnlineLookupAutomation" xml:space="preserve"><value>允许在线查找专辑和艺术家</value></data>
+  <data name="Prefs.PodcastFolderAutomation" xml:space="preserve"><value>播客下载文件夹</value></data>
+  <data name="Prefs.PodcastFolderNote" xml:space="preserve"><value>新的播客下载会保存到此文件夹。已下载的剧集留在原处，仍可播放和删除；不会移动或删除任何内容。</value></data>
+  <data name="Prefs.RemoveFolderPrompt" xml:space="preserve"><value>要将此文件夹及其曲目从媒体库中移除吗？音频文件会保留。
+{0}</value></data>
+  <data name="Prefs.Repeat" xml:space="preserve"><value>循环</value></data>
+  <data name="Prefs.RepeatAll" xml:space="preserve"><value>所有曲目</value></data>
+  <data name="Prefs.RepeatOff" xml:space="preserve"><value>关闭</value></data>
+  <data name="Prefs.RepeatOne" xml:space="preserve"><value>单曲</value></data>
+  <data name="Prefs.ReviewEdits" xml:space="preserve"><value>审阅中断的编辑…</value></data>
+  <data name="Prefs.Saved" xml:space="preserve"><value>偏好设置已保存。</value></data>
+  <data name="Prefs.SavedFolder" xml:space="preserve"><value>偏好设置已保存。新的播客下载将存入 {0}；已有的下载留在原处。</value></data>
+  <data name="Prefs.ShowQueue" xml:space="preserve"><value>显示播放队列</value></data>
+  <data name="Prefs.Shuffle" xml:space="preserve"><value>随机播放曲目</value></data>
+  <data name="Prefs.Tab.Folders" xml:space="preserve"><value>媒体库文件夹</value></data>
+  <data name="Prefs.Tab.General" xml:space="preserve"><value>常规</value></data>
+  <data name="Prefs.Tab.Online" xml:space="preserve"><value>在线</value></data>
+  <data name="Prefs.Tab.Playback" xml:space="preserve"><value>播放</value></data>
+  <data name="Prefs.Tab.Plugins" xml:space="preserve"><value>插件</value></data>
+  <data name="Prefs.Tab.Podcasts" xml:space="preserve"><value>播客</value></data>
+  <data name="Prefs.ThemeDark" xml:space="preserve"><value>深色</value></data>
+  <data name="Prefs.ThemeLight" xml:space="preserve"><value>浅色</value></data>
+  <data name="Prefs.ThemeSystem" xml:space="preserve"><value>跟随系统</value></data>
+  <data name="Prefs.Title" xml:space="preserve"><value>偏好设置</value></data>
+  <data name="Prefs.UseDefault" xml:space="preserve"><value>使用默认值</value></data>
+  <data name="Prefs.Volume" xml:space="preserve"><value>音量</value></data>
+  <data name="Prefs.VolumeAutomation" xml:space="preserve"><value>播放音量百分比</value></data>
+  <data name="Queue.Cleared" xml:space="preserve"><value>播放队列已清空。</value></data>
+  <data name="Queue.DropHint" xml:space="preserve"><value>拖放音乐文件即可将其添加到播放队列。</value></data>
+  <data name="Queue.Gone" xml:space="preserve"><value>队列中的文件已不可用。</value></data>
+  <data name="Queue.Header" xml:space="preserve"><value>播放队列 ({0})</value></data>
+  <data name="Queue.NoFolder" xml:space="preserve"><value>无法打开该文件所在的文件夹。</value></data>
+  <data name="Queue.QueuedFailures" xml:space="preserve"><value>已将 {0} 首曲目加入队列；{1} 个文件无法读取。</value></data>
+  <data name="Queue.QueuedLast.Other" xml:space="preserve"><value>已将 {0} 首曲目加入队列末尾。</value></data>
+  <data name="Queue.QueuedNext.Other" xml:space="preserve"><value>已将 {0} 首曲目设为下一首播放。</value></data>
+  <data name="Queue.ShowFileFailed" xml:space="preserve"><value>无法显示文件：{0}</value></data>
+  <data name="Radio.Connecting" xml:space="preserve"><value>正在连接到 {0}…</value></data>
+  <data name="Radio.Failed" xml:space="preserve"><value>电台播放失败：{0}</value></data>
+  <data name="Radio.Playing" xml:space="preserve"><value>正在播放电台：{0}。</value></data>
+  <data name="Radio.RemovePrompt" xml:space="preserve"><value>要移除这个已保存的电台吗？如果它正在播放，将会停止。
+{0}</value></data>
+  <data name="Radio.RemoveTitle" xml:space="preserve"><value>移除电台</value></data>
+  <data name="Radio.Removed" xml:space="preserve"><value>电台已移除。音乐文件和待处理的队列请求已保留。</value></data>
+  <data name="Radio.AllStations" xml:space="preserve"><value>所有电台</value></data>
+  <data name="Radio.Genres" xml:space="preserve"><value>流派</value></data>
+  <data name="Radio.SortBy" xml:space="preserve"><value>电台排序</value></data>
+  <data name="Radio.SortName" xml:space="preserve"><value>名称</value></data>
+  <data name="Radio.SortMostPlayed" xml:space="preserve"><value>播放最多</value></data>
+  <data name="Radio.SortRecent" xml:space="preserve"><value>最近播放</value></data>
+  <data name="Radio.SortRating" xml:space="preserve"><value>评分最高</value></data>
+  <data name="Radio.Saved" xml:space="preserve"><value>电台已保存。更改将在下次播放时生效。</value></data>
+  <data name="RadioFile.Imported" xml:space="preserve"><value>已导入 {0} 个电台；{1} 个已跳过的条目；省略了 {2} 个重复项。</value></data>
+  <data name="RadioFile.ImportedNoRefresh" xml:space="preserve"><value>已导入 {0} 个电台，但视图无法刷新。请重新打开“电台”。{1}</value></data>
+  <data name="Rating.Cleared" xml:space="preserve"><value>已清除 {0} 的评分。</value></data>
+  <data name="Rating.Set.Other" xml:space="preserve"><value>已给 {1} 评 {0} 星。</value></data>
+  <data name="Recovery.CancelAndClose" xml:space="preserve"><value>取消并关闭</value></data>
+  <data name="Recovery.ChooseFolder" xml:space="preserve"><value>选择文件夹…</value></data>
+  <data name="Recovery.ChooseHint" xml:space="preserve"><value>请选择要检查的文件夹。包含子文件夹；排除链接的文件夹。</value></data>
+  <data name="Recovery.Details" xml:space="preserve"><value>音频文件：{0}
+临时编辑：{1}</value></data>
+  <data name="Recovery.Discard" xml:space="preserve"><value>丢弃</value></data>
+  <data name="Recovery.DiscardButton" xml:space="preserve"><value>丢弃临时编辑…</value></data>
+  <data name="Recovery.DiscardPrompt" xml:space="preserve"><value>要删除这份临时元数据编辑及其记录吗？音频文件和已保存的文件备份会保留。
+</value></data>
+  <data name="Recovery.DiscardTitle" xml:space="preserve"><value>丢弃中断的编辑</value></data>
+  <data name="Recovery.Discarded" xml:space="preserve"><value>已丢弃临时元数据编辑。音频文件和已保存的备份已保留。</value></data>
+  <data name="Recovery.Found" xml:space="preserve"><value>找到 {0} 个中断的元数据编辑；{1} 项需要审阅。</value></data>
+  <data name="Recovery.Incomplete" xml:space="preserve"><value>不完整的预览</value></data>
+  <data name="Recovery.Intro" xml:space="preserve"><value>审阅因元数据保存中断而留下的临时文件。音频文件和已保存的备份保持不变。</value></data>
+  <data name="Recovery.NeedsReview" xml:space="preserve"><value>需要审阅 ({0})</value></data>
+  <data name="Recovery.NeedsReviewTab" xml:space="preserve"><value>需要审阅</value></data>
+  <data name="Recovery.PickTitle" xml:space="preserve"><value>检查中断的元数据编辑</value></data>
+  <data name="Recovery.Scan" xml:space="preserve"><value>扫描文件夹</value></data>
+  <data name="Recovery.ScanCancelled" xml:space="preserve"><value>扫描已取消。没有更改任何音频文件。</value></data>
+  <data name="Recovery.Scanning" xml:space="preserve"><value>正在扫描文件夹及子文件夹…</value></data>
+  <data name="Recovery.SubfoldersIncluded" xml:space="preserve"><value>包含子文件夹；排除链接的文件夹。</value></data>
+  <data name="Recovery.Summary" xml:space="preserve"><value>{0} 个中断的编辑；{1} 项需要审阅。活动中的编辑会被跳过。</value></data>
+  <data name="Recovery.Title" xml:space="preserve"><value>中断的元数据编辑</value></data>
+  <data name="Recovery.Validated" xml:space="preserve"><value>已验证的预览</value></data>
+  <data name="Result.ByArtist.Other" xml:space="preserve"><value>{1} 的 {0} 首曲目。</value></data>
+  <data name="Result.InGenre.Other" xml:space="preserve"><value>{1} 流派中的 {0} 首曲目。</value></data>
+  <data name="Result.InLibrary.Other" xml:space="preserve"><value>媒体库中有 {0} 首曲目。</value></data>
+  <data name="Result.InPlaylist.Other" xml:space="preserve"><value>{1} 中有 {0} 首曲目。</value></data>
+  <data name="Result.Matching.Other" xml:space="preserve"><value>{0} 首匹配的曲目。</value></data>
+  <data name="Result.OnAlbum.Other" xml:space="preserve"><value>{1} 中有 {0} 首曲目。</value></data>
+  <data name="Search.InPodcasts" xml:space="preserve"><value>搜索位于“播客”视图中</value></data>
+  <data name="Search.Library" xml:space="preserve"><value>搜索媒体库</value></data>
+  <data name="Search.Stations" xml:space="preserve"><value>搜索电台</value></data>
+  <data name="Sidebar.AudioCd" xml:space="preserve"><value>音频 CD</value></data>
+  <data name="Sidebar.AudioCdAutomation" xml:space="preserve"><value>音频 CD</value></data>
+  <data name="Sidebar.AudioCdTip" xml:space="preserve"><value>播放音频 CD 并查找其专辑详情</value></data>
+  <data name="Sidebar.Devices" xml:space="preserve"><value>设备</value></data>
+  <data name="Sidebar.DevicesAutomation" xml:space="preserve"><value>同步到设备</value></data>
+  <data name="Sidebar.DevicesTip" xml:space="preserve"><value>将音乐复制到 U 盘、存储卡或大容量存储播放器</value></data>
+  <data name="Sidebar.Music" xml:space="preserve"><value>音乐</value></data>
+  <data name="Sidebar.MusicAutomation" xml:space="preserve"><value>音乐库</value></data>
+  <data name="Sidebar.Podcasts" xml:space="preserve"><value>播客</value></data>
+  <data name="Sidebar.Audiobooks" xml:space="preserve"><value>有声书</value></data>
+  <data name="Sidebar.PodcastsAutomation" xml:space="preserve"><value>播客</value></data>
+  <data name="Sidebar.PodcastsTip" xml:space="preserve"><value>播客订阅和已下载的剧集</value></data>
+  <data name="Sidebar.Radio" xml:space="preserve"><value>电台</value></data>
+  <data name="Sidebar.RadioAutomation" xml:space="preserve"><value>电台</value></data>
+  <data name="Smart.AddRuleAutomation" xml:space="preserve"><value>在此条件后添加规则</value></data>
+  <data name="Smart.AddTip" xml:space="preserve"><value>在此条件下方添加一个条件</value></data>
+  <data name="Smart.All" xml:space="preserve"><value>全部</value></data>
+  <data name="Smart.Any" xml:space="preserve"><value>任一</value></data>
+  <data name="Smart.AtLeast" xml:space="preserve"><value>至少</value></data>
+  <data name="Smart.AtMost" xml:space="preserve"><value>至多</value></data>
+  <data name="Smart.CloseAutomation" xml:space="preserve"><value>关闭智能播放列表编辑器</value></data>
+  <data name="Smart.Conditions" xml:space="preserve"><value>下列条件：</value></data>
+  <data name="Smart.Contains" xml:space="preserve"><value>包含</value></data>
+  <data name="Smart.CreateTitle" xml:space="preserve"><value>创建智能播放列表</value></data>
+  <data name="Smart.Created" xml:space="preserve"><value>已创建智能播放列表 {0}。{1}</value></data>
+  <data name="Smart.EditTitle" xml:space="preserve"><value>编辑智能播放列表规则</value></data>
+  <data name="Smart.Equals" xml:space="preserve"><value>等于</value></data>
+  <data name="Smart.Hint" xml:space="preserve"><value>会随媒体库自动更新。空值会匹配缺失的标签。</value></data>
+  <data name="Smart.Match" xml:space="preserve"><value>满足</value></data>
+  <data name="Smart.MatchAutomation" xml:space="preserve"><value>满足全部或任一规则</value></data>
+  <data name="Smart.NameLabel" xml:space="preserve"><value>播放列表名称</value></data>
+  <data name="Smart.NotEquals" xml:space="preserve"><value>不等于</value></data>
+  <data name="Smart.RemoveRule" xml:space="preserve"><value>移除规则</value></data>
+  <data name="Smart.RemoveTip" xml:space="preserve"><value>移除此条件</value></data>
+  <data name="Smart.RuleComparison" xml:space="preserve"><value>规则比较方式</value></data>
+  <data name="Smart.RuleField" xml:space="preserve"><value>规则字段</value></data>
+  <data name="Smart.RuleValue" xml:space="preserve"><value>规则值</value></data>
+  <data name="Smart.SkipCount" xml:space="preserve"><value>跳过次数</value></data>
+  <data name="Smart.Updated" xml:space="preserve"><value>智能播放列表已更新。{0}</value></data>
+  <data name="Sort.Ascending" xml:space="preserve"><value>已按 {0} 升序排序。</value></data>
+  <data name="Sort.Descending" xml:space="preserve"><value>已按 {0} 降序排序。</value></data>
+  <data name="Station.AddTitle" xml:space="preserve"><value>添加电台</value></data>
+  <data name="Station.Creator" xml:space="preserve"><value>创建者（可选）</value></data>
+  <data name="Station.Description" xml:space="preserve"><value>描述（可选）</value></data>
+  <data name="Station.EditTitle" xml:space="preserve"><value>编辑电台</value></data>
+  <data name="Station.Genre" xml:space="preserve"><value>流派（可选）</value></data>
+  <data name="Station.Name" xml:space="preserve"><value>电台名称</value></data>
+  <data name="Station.Never" xml:space="preserve"><value>从未</value></data>
+  <data name="Station.NoRating" xml:space="preserve"><value>无评分</value></data>
+  <data name="Station.Note" xml:space="preserve"><value>仅支持 HTTP/HTTPS 音频流。保存时不会连接；选择“播放”后才开始播放。更改将在下次连接时生效。</value></data>
+  <data name="Station.PlayInfo" xml:space="preserve"><value>播放 {0} 次 · 上次播放：{1}</value></data>
+  <data name="Station.RatingAutomation" xml:space="preserve"><value>电台评分</value></data>
+  <data name="Status.Loading" xml:space="preserve"><value>正在加载媒体库…</value></data>
+  <data name="Sync.Cancel" xml:space="preserve"><value>取消</value></data>
+  <data name="Sync.Cancelled" xml:space="preserve"><value>已取消。到目前为止已复制的文件会留在设备上。</value></data>
+  <data name="Sync.ChooseSource" xml:space="preserve"><value>选择设备和要复制的内容，然后点击“预览”。</value></data>
+  <data name="Sync.Copying" xml:space="preserve"><value>正在复制…</value></data>
+  <data name="Sync.Done" xml:space="preserve"><value>已完成。您可以在文件管理器中安全卸载设备。</value></data>
+  <data name="Sync.DoneWithFailures" xml:space="preserve"><value>已完成，但有 {0} 个文件无法复制。</value></data>
+  <data name="Sync.Finishing" xml:space="preserve"><value>正在收尾…</value></data>
+  <data name="Sync.NoTracks" xml:space="preserve"><value>没有可复制的曲目。请选择一些曲目，或选择其他来源。</value></data>
+  <data name="Sync.NoVolumes" xml:space="preserve"><value>未找到可移动驱动器。请插入一个并让桌面挂载它，然后选择“刷新设备”。</value></data>
+  <data name="Sync.Note" xml:space="preserve"><value>音乐会复制到设备上的 Music/艺术家/专辑 中。设备上的任何内容都不会被删除，您的媒体库也不会有任何更改。</value></data>
+  <data name="Sync.Planning" xml:space="preserve"><value>正在检查文件…</value></data>
+  <data name="Sync.Preview" xml:space="preserve"><value>预览</value></data>
+  <data name="Sync.PreviewReady" xml:space="preserve"><value>将会执行以下操作。点击“复制到设备”开始。</value></data>
+  <data name="Sync.Progress" xml:space="preserve"><value>正在复制第 {0} 个，共 {1} 个：{2}</value></data>
+  <data name="Sync.Refresh" xml:space="preserve"><value>刷新设备</value></data>
+  <data name="Sync.RefreshTip" xml:space="preserve"><value>查找在此窗口打开之后插入或挂载的驱动器</value></data>
+  <data name="Sync.ReplaceDifferent" xml:space="preserve"><value>替换设备上已有的不同文件</value></data>
+  <data name="Sync.Result.Conflicts" xml:space="preserve"><value>保留了 {0} 个同名的不同文件。</value></data>
+  <data name="Sync.Result.Copied" xml:space="preserve"><value>已复制 {0} 个文件；{1} 个已是最新。</value></data>
+  <data name="Sync.Result.Failure" xml:space="preserve"><value>问题：{0}</value></data>
+  <data name="Sync.Result.MoreFailures" xml:space="preserve"><value>…还有 {0} 个问题。</value></data>
+  <data name="Sync.Result.Playlist" xml:space="preserve"><value>播放列表：{0}</value></data>
+  <data name="Sync.Source.Library" xml:space="preserve"><value>整个媒体库</value></data>
+  <data name="Sync.Source.Selected" xml:space="preserve"><value>所选曲目</value></data>
+  <data name="Sync.Source.Visible" xml:space="preserve"><value>当前视图中的曲目</value></data>
+  <data name="Sync.SourceLabel" xml:space="preserve"><value>要复制的内容</value></data>
+  <data name="Sync.Start" xml:space="preserve"><value>复制到设备</value></data>
+  <data name="Sync.Summary.Conflicts" xml:space="preserve"><value>设备上 {0} 个同名的不同文件将被保留。</value></data>
+  <data name="Sync.Summary.ExcludedMissing" xml:space="preserve"><value>已跳过 {0} 首曲目：文件缺失。</value></data>
+  <data name="Sync.Summary.ExcludedNotAFile" xml:space="preserve"><value>已跳过 {0} 首曲目：不是媒体库中的文件（例如 CD 曲目）。</value></data>
+  <data name="Sync.Summary.ExcludedOther" xml:space="preserve"><value>已跳过 {0} 首曲目。</value></data>
+  <data name="Sync.Summary.ExcludedUnsupported" xml:space="preserve"><value>已跳过 {0} 首曲目：设备不支持该格式。</value></data>
+  <data name="Sync.Summary.NoRoom" xml:space="preserve"><value>还需要 {0} 的空间。</value></data>
+  <data name="Sync.Summary.Replace" xml:space="preserve"><value>设备上 {0} 个同名的不同文件将被替换。</value></data>
+  <data name="Sync.Summary.ToCopy" xml:space="preserve"><value>要复制 {0} 个文件（{1}）；设备有 {2} 可用空间。</value></data>
+  <data name="Sync.Summary.UpToDate" xml:space="preserve"><value>{0} 个已在设备上。</value></data>
+  <data name="Sync.TooBig" xml:space="preserve"><value>设备没有足够的可用空间存放这些曲目。</value></data>
+  <data name="Sync.VolumeAutomation" xml:space="preserve"><value>设备</value></data>
+  <data name="Sync.VolumesFound.Other" xml:space="preserve"><value>找到 {0} 个驱动器。</value></data>
+  <data name="Sync.WritePlaylist" xml:space="preserve"><value>写入 Aibell.m3u8 播放列表</value></data>
+  <data name="TrackProps.BackupDeleted" xml:space="preserve"><value>文件备份已删除。音频文件和媒体库元数据已保留。</value></data>
+  <data name="TrackProps.BackupsUnavailable" xml:space="preserve"><value>文件备份不可用：{0}</value></data>
+  <data name="TrackProps.DetailsUnavailable" xml:space="preserve"><value>文件详情不可用：{0}</value></data>
+  <data name="TrackProps.OperationError" xml:space="preserve"><value>元数据操作以错误结束：{0}</value></data>
+  <data name="TrackProps.Restored" xml:space="preserve"><value>文件备份已还原，媒体库已刷新。被替换的文件已作为新的备份保留。</value></data>
+  <data name="TrackProps.RestoredNoRefresh" xml:space="preserve"><value>文件备份已还原，但媒体库无法刷新。请重新打开曲目属性。{0}</value></data>
+  <data name="TrackProps.SavedFile" xml:space="preserve"><value>文件标签和媒体库已保存。原始备份：{0}</value></data>
+  <data name="TrackProps.SavedLibrary" xml:space="preserve"><value>曲目属性已保存到媒体库。</value></data>
+  <data name="TrackProps.SavedNoRefresh" xml:space="preserve"><value>文件标签已保存，但媒体库无法刷新。重试之前请重新打开曲目属性。备份：{0}</value></data>
+  <data name="TrackProps.SavedNoTags" xml:space="preserve"><value>媒体库的值已保存；没有更改任何文件标签。</value></data>
+  <data name="Transport.KeysSeek" xml:space="preserve"><value>向左/向下和向右/向上每次调整 5 秒；Page Down/Up 每次调整 15 秒；Home/End 跳到开头或结尾</value></data>
+  <data name="Transport.KeysVolume" xml:space="preserve"><value>向左/向下和向右/向上每次调整 5%；Page Down/Up 每次调整 10%；Home/End 设为 0% 或 100%</value></data>
+  <data name="Transport.PositionAutomation" xml:space="preserve"><value>播放位置</value></data>
+  <data name="Transport.SeekAt" xml:space="preserve"><value>播放位置，{0}，共 {1}</value></data>
+  <data name="Transport.SeekLive" xml:space="preserve"><value>播放位置，直播</value></data>
+  <data name="Transport.VolumeAt" xml:space="preserve"><value>音量，{0}%</value></data>
+  <data name="Transport.VolumeAutomation" xml:space="preserve"><value>播放音量</value></data>
+  <data name="Transport.VolumeMuted" xml:space="preserve"><value>音量，{0}%（已静音）</value></data>
+  <data name="Transport.VolumeUnavailable" xml:space="preserve"><value>音量，不可用</value></data>
+  <data name="Main.BusyAutomation" xml:space="preserve"><value>正在处理</value></data>
+  <data name="Sync.ProgressAutomation" xml:space="preserve"><value>同步进度</value></data>
+  <data name="Prefs.Engine" xml:space="preserve"><value>播放引擎</value></data>
+  <data name="Prefs.EngineMiniaudio" xml:space="preserve"><value>miniaudio</value></data>
+  <data name="Prefs.EngineMiniaudioNative" xml:space="preserve"><value>miniaudio (Native)</value></data>
+  <data name="Prefs.EngineVlc" xml:space="preserve"><value>VLC</value></data>
+  <data name="Prefs.EngineManaged" xml:space="preserve"><value>miniaudio (Managed)</value></data>
+  <data name="Prefs.EnginePipeWire" xml:space="preserve"><value>PipeWire (Managed)</value></data>
+  <data name="Prefs.EngineAlsa" xml:space="preserve"><value>ALSA (Managed)</value></data>
+  <data name="Prefs.EngineNote" xml:space="preserve"><value>内置播放器无需安装其他软件，可播放 MP3、FLAC、Ogg Vorbis 和 WAV，在 Windows 上还可播放 AAC 和 M4A。若要在 Linux 上播放 AAC 和 M4A 或播放音频 CD，请选择 VLC。更改将在下次启动 Aibell 时生效。</value></data>
+  <data name="Prefs.EngineRestart" xml:space="preserve"><value>播放引擎将在下次启动 Aibell 时更改。</value></data>
+  <data name="Prefs.Language" xml:space="preserve"><value>语言</value></data>
+  <data name="Prefs.LanguageSystem" xml:space="preserve"><value>系统默认</value></data>
+  <data name="Prefs.LanguageRestart" xml:space="preserve"><value>语言将在下次启动 Aibell 时更改。</value></data>
+  <data name="Radio.ModeMine" xml:space="preserve"><value>我的电台</value></data>
+  <data name="Radio.ModeCatalog" xml:space="preserve"><value>电台目录</value></data>
+  <data name="Radio.SearchStations" xml:space="preserve"><value>搜索电台…</value></data>
+  <data name="Radio.SearchGenres" xml:space="preserve"><value>搜索流派…</value></data>
+  <data name="Radio.AllGenres" xml:space="preserve"><value>所有流派</value></data>
+  <data name="Radio.AllCountries" xml:space="preserve"><value>所有国家/地区</value></data>
+  <data name="Radio.GenreFilter" xml:space="preserve"><value>按流派筛选</value></data>
+  <data name="Radio.CountryFilter" xml:space="preserve"><value>按国家/地区筛选</value></data>
+  <data name="Radio.SortPopular" xml:space="preserve"><value>最受欢迎</value></data>
+  <data name="Radio.NoMatches" xml:space="preserve"><value>没有与搜索或筛选条件匹配的电台。</value></data>
+  <data name="Radio.OptInTitle" xml:space="preserve"><value>浏览电台目录</value></data>
+  <data name="Radio.OptInBody" xml:space="preserve"><value>Aibell 内置了一份精心挑选的全球电台列表。浏览目录不会连接任何电台。可将喜欢的电台保存到“我的电台”，或双击电台直接收听。</value></data>
+  <data name="Radio.OptInPrivacy" xml:space="preserve"><value>电台徽标会从各电台自己的网站下载，因此这些网站可以看到您的 IP 地址。在您启用目录之前，不会下载任何内容。</value></data>
+  <data name="Radio.OptInEnable" xml:space="preserve"><value>启用目录</value></data>
+  <data name="Radio.OptInOff" xml:space="preserve"><value>您可以随时在“偏好设置”中关闭此功能。</value></data>
+  <data name="Radio.FormatChip" xml:space="preserve"><value>{0} · 需要 VLC</value></data>
+  <data name="Radio.FormatTipVlc" xml:space="preserve"><value>内置播放器无法播放 {0}。请在“首选项 &gt; 播放”中选择 VLC 以收听此电台。</value></data>
+  <data name="Radio.FormatTipVlcOrWindows" xml:space="preserve"><value>内置播放器在此无法播放 {0}。请在“首选项 &gt; 播放”中选择 VLC，或在 Windows 上运行 Aibell，以收听此电台。</value></data>
+  <data name="Radio.SaveToMine" xml:space="preserve"><value>保存到“我的电台”</value></data>
+  <data name="Radio.RemoveFromMine" xml:space="preserve"><value>从“我的电台”中移除</value></data>
+  <data name="Radio.CatalogSaved" xml:space="preserve"><value>已将“{0}”保存到“我的电台”。</value></data>
+  <data name="Prefs.RadioCatalog" xml:space="preserve"><value>显示电台目录并下载电台徽标</value></data>
+  <data name="Prefs.RadioCatalogAutomation" xml:space="preserve"><value>启用电台目录</value></data>
+  <data name="Prefs.RadioCatalogNote" xml:space="preserve"><value>默认关闭。开启后，“电台”视图会提供内置电台目录，并从各电台自己的网站下载其徽标，这些网站可以看到您的 IP 地址。浏览目录不会连接任何电台。</value></data>
+  <data name="Radio.StationCount.Other" xml:space="preserve"><value>{0} 个电台。</value></data>
+  <data name="Menu.MainAutomation" xml:space="preserve"><value>主菜单</value></data>
+  <data name="Menu.File" xml:space="preserve"><value>文件</value></data>
+  <data name="Menu.Edit" xml:space="preserve"><value>编辑</value></data>
+  <data name="Menu.View" xml:space="preserve"><value>视图</value></data>
+  <data name="Menu.Controls" xml:space="preserve"><value>控制</value></data>
+  <data name="Menu.Library" xml:space="preserve"><value>媒体库</value></data>
+  <data name="Menu.Help" xml:space="preserve"><value>帮助</value></data>
+  <data name="Menu.Quit" xml:space="preserve"><value>退出</value></data>
+  <data name="Menu.Find" xml:space="preserve"><value>查找…</value></data>
+  <data name="Menu.SelectAll" xml:space="preserve"><value>全选曲目</value></data>
+  <data name="Menu.SortBy" xml:space="preserve"><value>排序方式</value></data>
+  <data name="Menu.Columns" xml:space="preserve"><value>列</value></data>
+  <data name="Menu.Sidebar" xml:space="preserve"><value>侧边栏</value></data>
+  <data name="Menu.SeekBackward" xml:space="preserve"><value>后退</value></data>
+  <data name="Menu.SeekForward" xml:space="preserve"><value>快进</value></data>
+  <data name="Menu.VolumeUp" xml:space="preserve"><value>增大音量</value></data>
+  <data name="Menu.VolumeDown" xml:space="preserve"><value>减小音量</value></data>
+  <data name="Menu.ClearQueue" xml:space="preserve"><value>清空播放队列</value></data>
+  <data name="Menu.AddStation" xml:space="preserve"><value>添加电台…</value></data>
+  <data name="Menu.CancelDownload" xml:space="preserve"><value>取消下载</value></data>
+  <data name="Menu.Website" xml:space="preserve"><value>项目网站</value></data>
+  <data name="Menu.About" xml:space="preserve"><value>关于 Aibell</value></data>
+  <data name="About.Tagline" xml:space="preserve"><value>适用于 Linux 和 Windows 的音乐库与播放器。</value></data>
+  <data name="About.Tab.About" xml:space="preserve"><value>关于</value></data>
+  <data name="About.Tab.Features" xml:space="preserve"><value>功能</value></data>
+  <data name="About.Tab.Credits" xml:space="preserve"><value>致谢</value></data>
+  <data name="About.Version" xml:space="preserve"><value>版本 {0}</value></data>
+  <data name="About.Author" xml:space="preserve"><value>作者</value></data>
+  <data name="About.License" xml:space="preserve"><value>许可证</value></data>
+  <data name="About.Website" xml:space="preserve"><value>网站</value></data>
+  <data name="About.Independent" xml:space="preserve"><value>Aibell 是一个独立项目，基于 .NET 和 Avalonia 从零编写。</value></data>
+  <data name="About.Section.Playback" xml:space="preserve"><value>播放</value></data>
+  <data name="About.Section.Desktop" xml:space="preserve"><value>桌面</value></data>
+  <data name="About.Section.Content" xml:space="preserve"><value>内容与服务</value></data>
+  <data name="About.Section.System" xml:space="preserve"><value>系统</value></data>
+  <data name="About.Engine" xml:space="preserve"><value>当前播放器</value></data>
+  <data name="About.Engine.Miniaudio" xml:space="preserve"><value>miniaudio</value></data>
+  <data name="About.Engine.Vlc" xml:space="preserve"><value>VLC (LibVLC)</value></data>
+  <data name="About.Engine.Managed" xml:space="preserve"><value>miniaudio (Managed)</value></data>
+  <data name="About.Engine.Alsa" xml:space="preserve"><value>ALSA (Managed)</value></data>
+  <data name="About.Engine.PipeWire" xml:space="preserve"><value>PipeWire (Managed)</value></data>
+  <data name="About.Status.InUse" xml:space="preserve"><value>使用中</value></data>
+  <data name="About.Status.Available" xml:space="preserve"><value>可用</value></data>
+  <data name="About.Status.Unavailable" xml:space="preserve"><value>不可用</value></data>
+  <data name="About.Status.VlcFound" xml:space="preserve"><value>已找到 — 可在“首选项 &gt; 播放”中选择</value></data>
+  <data name="About.Status.VlcMissing" xml:space="preserve"><value>未找到</value></data>
+  <data name="About.Status.On" xml:space="preserve"><value>开</value></data>
+  <data name="About.Status.Off" xml:space="preserve"><value>关</value></data>
+  <data name="About.Status.None" xml:space="preserve"><value>无运行中的插件</value></data>
+  <data name="About.Feature.MediaControls" xml:space="preserve"><value>系统媒体控制</value></data>
+  <data name="About.Feature.Notifications" xml:space="preserve"><value>切换曲目通知</value></data>
+  <data name="About.Feature.Catalog" xml:space="preserve"><value>电台目录</value></data>
+  <data name="About.Feature.OnlineLookup" xml:space="preserve"><value>在线查询 (MusicBrainz)</value></data>
+  <data name="About.Feature.Plugins" xml:space="preserve"><value>插件</value></data>
+  <data name="About.System.Os" xml:space="preserve"><value>操作系统</value></data>
+  <data name="About.System.Language" xml:space="preserve"><value>界面语言</value></data>
+  <data name="About.Credits.Intro" xml:space="preserve"><value>Aibell 是从零编写的独立项目，它受益于两款先行的播放器。</value></data>
+  <data name="About.Credits.Songbird" xml:space="preserve"><value>开源媒体播放器。Aibell 界面的很大一部分（浏览窗格、来源列表、紧凑的曲目表）沿用了 Songbird 的设计，而 Songbird 本身借鉴了 iTunes。Aibell 没有复制 Songbird 的任何代码或美术资源，相似之处是有意的致敬。</value></data>
+  <data name="About.Credits.Banshee" xml:space="preserve"><value>基于 Mono/GTK 的媒体播放器，其实用的媒体库视图和本地优先的理念启发了 Aibell。Aibell 不包含任何 Banshee 源代码。</value></data>
+  <data name="About.Credits.Thanks" xml:space="preserve"><value>感谢这两个项目背后的所有人。Aibell 与它们没有隶属关系，也未获其认可。Songbird 和 iTunes 是各自所有者的商标。</value></data>
+  <data name="About.Credits.Libraries" xml:space="preserve"><value>第三方库保留各自的许可证，包括 LibVLC 和 LibVLCSharp (LGPL)、miniaudio 和 stb_vorbis（公有领域 / MIT-0）、Avalonia (MIT)、Microsoft .NET 库 (MIT) 以及 ATL .NET (MIT)。</value></data>
+  <data name="Menu.Shortcuts" xml:space="preserve"><value>快捷键</value></data>
+  <data name="Shortcuts.Title" xml:space="preserve"><value>键盘快捷键</value></data>
+  <data name="Shortcuts.Section.General" xml:space="preserve"><value>常规</value></data>
+  <data name="Shortcuts.Section.Library" xml:space="preserve"><value>媒体库与曲目</value></data>
+  <data name="Shortcuts.Section.Playback" xml:space="preserve"><value>播放</value></data>
+  <data name="Shortcuts.Section.Seek" xml:space="preserve"><value>进度条（获得焦点时）</value></data>
+  <data name="Shortcuts.Section.Volume" xml:space="preserve"><value>音量条（获得焦点时）</value></data>
+  <data name="Shortcuts.Section.Podcasts" xml:space="preserve"><value>播客</value></data>
+  <data name="Shortcuts.Search" xml:space="preserve"><value>搜索媒体库或电台</value></data>
+  <data name="Shortcuts.ClearSearch" xml:space="preserve"><value>清空搜索框</value></data>
+  <data name="Shortcuts.PlayPause" xml:space="preserve"><value>播放或暂停（在曲目、队列和电台列表中）</value></data>
+  <data name="Shortcuts.PlaySelected" xml:space="preserve"><value>播放所选电台或光盘曲目</value></data>
+  <data name="Shortcuts.Seek5" xml:space="preserve"><value>后退或快进 5 秒</value></data>
+  <data name="Shortcuts.Seek15" xml:space="preserve"><value>后退或快进 15 秒</value></data>
+  <data name="Shortcuts.SeekEnds" xml:space="preserve"><value>跳到开头或结尾</value></data>
+  <data name="Shortcuts.Volume5" xml:space="preserve"><value>音量增减 5%</value></data>
+  <data name="Shortcuts.Volume10" xml:space="preserve"><value>音量增减 10%</value></data>
+  <data name="Shortcuts.VolumeEnds" xml:space="preserve"><value>将音量设为 0% 或 100%</value></data>
+  <data name="Shortcuts.Rate" xml:space="preserve"><value>为所选剧集评分（0 清除评分）</value></data>
+  <data name="Shortcuts.DeleteDownload" xml:space="preserve"><value>删除所选剧集已下载的文件</value></data>
+  <data name="Prefs.SoundFont" xml:space="preserve"><value>MIDI 音色库 SoundFont（可选）</value></data>
+  <data name="Prefs.SoundFontNote" xml:space="preserve"><value>没有 SoundFont 时，MIDI 文件使用 Aibell 内置乐器播放。选择 SoundFont 2（.sf2）文件可获得更逼真的音色；其许可证需由您自行确认。更改将在下次启动 Aibell 时生效。</value></data>
+  <data name="Prefs.SoundFontNone" xml:space="preserve"><value>内置乐器</value></data>
+  <data name="Prefs.SoundFontClear" xml:space="preserve"><value>使用内置</value></data>
+  <data name="Prefs.SoundFontRestart" xml:space="preserve"><value>SoundFont 将在下次启动 Aibell 时更改。</value></data>
+  <data name="Picker.SoundFont" xml:space="preserve"><value>选择 SoundFont</value></data>
+  <data name="Picker.SoundFontFiles" xml:space="preserve"><value>SoundFont 2 音色库</value></data>
+  <data name="Main.ResizeSidebar" xml:space="preserve"><value>调整侧边栏大小</value></data>
+  <data name="Main.ResizeSidebarSection" xml:space="preserve"><value>调整侧边栏分区大小</value></data>
+  <data name="Main.ResizeQueue" xml:space="preserve"><value>调整播放队列大小</value></data>
+</root>

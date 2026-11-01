@@ -1,0 +1,16 @@
+<Window
+    x:Class="Aibell.Desktop.PodcastsWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="using:Aibell.Desktop.Localization"
+    xmlns:desktop="using:Aibell.Desktop"
+    Name="PodcastsWindowRoot"
+    Title="{loc:T Sidebar.PodcastsAutomation}"
+    Width="620"
+    Height="620"
+    MinWidth="360"
+    MinHeight="420"
+    WindowStartupLocation="CenterOwner"
+    Background="{DynamicResource WindowBrush}">
+  <desktop:PodcastsView Name="HostedPodcastsView" />
+</Window>

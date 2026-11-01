@@ -1,0 +1,152 @@
+<UserControl
+    x:Class="Aibell.Desktop.PodcastsView"
+    x:DataType="viewModels:PodcastsViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="using:Aibell.Desktop.Localization"
+    xmlns:viewModels="using:Aibell.Desktop.ViewModels"
+    Name="PodcastsViewRoot">
+  <Grid RowDefinitions="Auto,Auto,Auto,*,Auto,28" Background="{DynamicResource ContentBrush}">
+    <Border Padding="10,8" Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1">
+      <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+        <TextBox Name="PodcastFeedUrl" Text="{Binding FeedUrl, Mode=TwoWay}" PlaceholderText="{loc:T Pod.FeedPlaceholder}"
+                 MaxLength="4096" AutomationProperties.Name="{loc:T Pod.FeedAutomation}" KeyDown="FeedUrlKeyDown" />
+        <Button Name="SubscribePodcast" Grid.Column="1" Content="{loc:T Pod.Subscribe}" Classes="dialogAccept" MinWidth="84"
+                IsEnabled="{Binding CanSubscribe}" Click="Subscribe" ToolTip.Tip="{loc:T Pod.SubscribeTip}" />
+        <Button Name="CancelPodcastOperation" Grid.Column="2" Content="{loc:T Common.Cancel}" IsVisible="{Binding IsWorking}" Click="CancelOperation" />
+      </Grid>
+    </Border>
+    <Border Grid.Row="1" Padding="10,8" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1">
+      <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,Auto,Auto,Auto" RowSpacing="3" ColumnSpacing="6">
+        <ComboBox Name="PodcastSubscriptionList" ItemsSource="{Binding Subscriptions}" SelectedItem="{Binding SelectedSubscription}"
+                  HorizontalAlignment="Stretch" PlaceholderText="{loc:T Pod.NoSubscriptions}" AutomationProperties.Name="{loc:T Pod.SubscribedList}">
+          <ComboBox.ItemTemplate>
+            <DataTemplate x:DataType="viewModels:PodcastSubscriptionItem">
+              <StackPanel Spacing="1">
+                <TextBlock Text="{Binding Title}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                <TextBlock Text="{Binding Detail}" Classes="secondary" FontSize="11" TextTrimming="CharacterEllipsis" />
+              </StackPanel>
+            </DataTemplate>
+          </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Name="RefreshPodcast" Grid.Column="1" Content="{loc:T Pod.Refresh}" IsEnabled="{Binding CanRefresh}" Click="Refresh"
+                ToolTip.Tip="{loc:T Pod.RefreshTip}" />
+        <Button Name="RefreshAllButton" Grid.Column="2" Content="{loc:T Pod.RefreshAll}" IsEnabled="{Binding CanRefreshAll}" Click="RefreshAll"
+                ToolTip.Tip="{loc:T Pod.RefreshAllTip}" />
+        <Button Name="RemovePodcast" Grid.Column="3" Content="{loc:T Main.Remove}" IsEnabled="{Binding CanRemove}" Click="Remove"
+                ToolTip.Tip="{loc:T Pod.RemoveTip}" />
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="4" Text="{Binding SelectedDescription}" Classes="secondary" FontSize="11"
+                   MaxLines="2" TextWrapping="Wrap" TextTrimming="CharacterEllipsis" />
+      </Grid>
+    </Border>
+    <Grid Grid.Row="2" Margin="10,6" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8" RowDefinitions="Auto,Auto">
+      <TextBox Name="PodcastEpisodeSearch" Text="{Binding SearchText, Mode=TwoWay}" PlaceholderText="{loc:T Pod.SearchPlaceholder}"
+               MaxLength="200" AutomationProperties.Name="{loc:T Pod.SearchAutomation}" KeyDown="SearchKeyDown">
+        <TextBox.InnerRightContent>
+          <Button Name="ClearPodcastSearch" Content="✕" Padding="6,0" Background="Transparent" BorderThickness="0" Click="ClearSearch"
+                  IsVisible="{Binding HasSearch}" AutomationProperties.Name="{loc:T Pod.ClearSearch}" ToolTip.Tip="{loc:T Pod.ClearSearchTip}" />
+        </TextBox.InnerRightContent>
+      </TextBox>
+      <CheckBox Name="DownloadedOnlyFilter" Grid.Column="1" Content="{loc:T Pod.DownloadedOnly}" IsChecked="{Binding DownloadedOnly, Mode=TwoWay}"
+                AutomationProperties.Name="{loc:T Pod.DownloadedOnlyAutomation}" ToolTip.Tip="{loc:T Pod.DownloadedOnlyTip}" />
+      <TextBlock Name="PodcastEpisodeCount" Grid.Column="2" VerticalAlignment="Center" Classes="secondary" FontSize="11"
+                 Text="{Binding EpisodeCountText}" AutomationProperties.LiveSetting="Polite" />
+    </Grid>
+    <Grid Grid.Row="3">
+      <ListBox Name="PodcastEpisodeList" ItemsSource="{Binding Episodes}" SelectedItem="{Binding SelectedEpisode}"
+               BorderThickness="0,1,0,0" BorderBrush="{DynamicResource PanelBorderBrush}" AutomationProperties.Name="{loc:T Pod.Episodes}"
+               DoubleTapped="EpisodeDoubleTapped" KeyDown="EpisodeListKeyDown">
+        <ListBox.Styles><Style Selector="ListBoxItem"><Setter Property="HorizontalContentAlignment" Value="Stretch" /></Style></ListBox.Styles>
+        <ListBox.ItemTemplate>
+          <DataTemplate x:DataType="viewModels:PodcastEpisodeItem">
+            <Grid ColumnDefinitions="Auto,*" Margin="10,7">
+            <Border Name="EpisodeCover" Grid.Column="0" Width="72" Height="72" Margin="0,0,10,0" VerticalAlignment="Top" CornerRadius="6"
+                    ClipToBounds="True" BorderThickness="1" BorderBrush="{DynamicResource PanelBorderBrush}"
+                    AttachedToVisualTree="CoverAttached" AutomationProperties.Name="{Binding CoverAutomationName}">
+              <Grid>
+                <Border Background="{DynamicResource PanelBorderBrush}" Opacity="0.18" />
+                <Image Source="{Binding Cover}" Stretch="UniformToFill" IsVisible="{Binding HasCover}" />
+                <Viewbox Width="40" Height="40" IsVisible="{Binding ShowCoverPlaceholder}" Opacity="0.75">
+                  <Canvas Width="24" Height="24">
+                    <Path Data="M5,3 H19 A2,2 0 0 1 21,5 V19 A2,2 0 0 1 19,21 H5 A2,2 0 0 1 3,19 V5 A2,2 0 0 1 5,3 Z"
+                          Stroke="{DynamicResource SecondaryTextBrush}" StrokeThickness="1.4" StrokeJoin="Round" />
+                    <Path Data="M3,17 L8.5,11.5 L13,16 L15.5,13.5 L21,19" Stroke="{DynamicResource SecondaryTextBrush}"
+                          StrokeThickness="1.4" StrokeJoin="Round" StrokeLineCap="Round" />
+                    <Path Data="M16.5,8 A1.5,1.5 0 1 1 13.5,8 A1.5,1.5 0 1 1 16.5,8 Z" Stroke="{DynamicResource SecondaryTextBrush}" StrokeThickness="1.4" />
+                    <Path Data="M4,21 L20,3" Stroke="{DynamicResource SecondaryTextBrush}" StrokeThickness="2.2" StrokeLineCap="Round" />
+                  </Canvas>
+                </Viewbox>
+              </Grid>
+            </Border>
+            <StackPanel Grid.Column="1" Spacing="3">
+              <TextBlock Name="NewEpisodeBadge" Text="{loc:T Pod.New}" IsVisible="{Binding IsNew}" FontSize="10" FontWeight="Bold" Foreground="#E0356F"
+                         AutomationProperties.Name="{loc:T Pod.NewAutomation}" />
+              <TextBlock Text="{Binding Title}" FontWeight="SemiBold" TextWrapping="Wrap" MaxLines="2" TextTrimming="CharacterEllipsis" />
+              <TextBlock Text="{Binding Meta}" Classes="secondary" FontSize="11" TextTrimming="CharacterEllipsis" />
+              <TextBlock Text="{Binding SavedPositionText}" Classes="secondary" FontSize="11" TextTrimming="CharacterEllipsis" />
+              <ProgressBar Name="EpisodeProgress" Height="4" MinWidth="0" Minimum="0" Maximum="100" Value="{Binding ProgressPercent}"
+                           IsVisible="{Binding HasProgress}" ShowProgressText="False" AutomationProperties.Name="{Binding ProgressAutomationName}" />
+              <ProgressBar Name="EpisodeDownloadProgress" Height="6" MinWidth="0" Minimum="0" Maximum="100" Value="{Binding DownloadPercent}"
+                           IsIndeterminate="{Binding DownloadIndeterminate}" IsVisible="{Binding IsDownloading}" ShowProgressText="False"
+                           AutomationProperties.Name="{loc:T Pod.DownloadProgress}" />
+              <TextBlock Text="{Binding StateText}" Classes="secondary" FontSize="11" TextTrimming="CharacterEllipsis" />
+              <WrapPanel Orientation="Horizontal">
+                <Button Name="DownloadEpisode" Content="{Binding DownloadText}" IsVisible="{Binding CanDownload}" Click="DownloadEpisode" MinWidth="76" Margin="0,0,6,0" />
+                <Button Name="CancelEpisodeDownload" Content="{loc:T Common.Cancel}" IsVisible="{Binding CanCancel}" Click="CancelEpisodeDownload" MinWidth="76" Margin="0,0,6,0" />
+                <Button Name="PlayEpisode" Content="{Binding PlayText}" IsVisible="{Binding ShowPlay}" Click="PlayEpisode" Classes="dialogAccept" MinWidth="76" Margin="0,0,6,0" />
+                <Button Name="PauseEpisode" Content="{loc:T Playback.Pause}" IsVisible="{Binding CanPause}" Click="PauseEpisode" Classes="dialogAccept" MinWidth="76" Margin="0,0,6,0"
+                        AutomationProperties.Name="{loc:T Pod.PauseAutomation}" ToolTip.Tip="{loc:T Pod.PauseTip}" />
+                <Button Name="StartOverEpisode" Content="{loc:T Pod.StartOver}" IsVisible="{Binding ShowStartOver}" Click="StartOverEpisode" Margin="0,0,6,0"
+                        ToolTip.Tip="{loc:T Pod.StartOverTip}" />
+                <Button Name="DeleteDownload" Content="{loc:T Pod.DeleteFile}" IsVisible="{Binding CanDeleteDownload}" Click="DeleteDownload" Margin="0,0,6,0"
+                        AutomationProperties.Name="{loc:T Pod.DeleteFileAutomation}" ToolTip.Tip="{loc:T Pod.DeleteFileTip}" />
+                <Button Name="ToggleNotes" Content="{Binding NotesToggleText}" IsVisible="{Binding HasNotes}" Click="ToggleNotes" Margin="0,0,6,0"
+                        AutomationProperties.Name="{loc:T Pod.NotesAutomation}" ToolTip.Tip="{loc:T Pod.NotesTip}" />
+                <Button Name="RateEpisode" Content="{Binding RatingText}" Click="BeginRating" Margin="0,0,6,0" Padding="8,0"
+                        AutomationProperties.Name="{Binding RatingAutomationName}" ToolTip.Tip="{loc:T Pod.RateTip}">
+                  <Button.Flyout>
+                    <MenuFlyout>
+                      <MenuItem Header="{loc:T Main.RatingClear}" Tag="0" Click="SetEpisodeRating" />
+                      <MenuItem Header="★☆☆☆☆" Tag="1" Click="SetEpisodeRating" />
+                      <MenuItem Header="★★☆☆☆" Tag="2" Click="SetEpisodeRating" />
+                      <MenuItem Header="★★★☆☆" Tag="3" Click="SetEpisodeRating" />
+                      <MenuItem Header="★★★★☆" Tag="4" Click="SetEpisodeRating" />
+                      <MenuItem Header="★★★★★" Tag="5" Click="SetEpisodeRating" />
+                    </MenuFlyout>
+                  </Button.Flyout>
+                </Button>
+              </WrapPanel>
+              <TextBlock Name="EpisodeNotes" Text="{Binding NotesText}" IsVisible="{Binding NotesExpanded}" TextWrapping="Wrap" Classes="secondary"
+                         FontSize="12" Margin="0,4,0,0" AutomationProperties.Name="{loc:T Pod.NotesText}" />
+            </StackPanel>
+            </Grid>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+      <StackPanel Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8" IsVisible="{Binding HasNoMatches}">
+        <TextBlock Name="PodcastNoMatches" Classes="secondary" TextWrapping="Wrap" TextAlignment="Center" Text="{Binding NoMatchesText}" />
+        <Button Name="ClearPodcastFilters" Content="{loc:T Pod.ShowAll}" HorizontalAlignment="Center" Click="ClearFilters" />
+      </StackPanel>
+      <TextBlock Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" Classes="secondary" TextWrapping="Wrap" TextAlignment="Center"
+                 IsVisible="{Binding !HasEpisodes}" Text="{loc:T Pod.NoEpisodes}" />
+    </Grid>
+    <WrapPanel Grid.Row="4" Orientation="Horizontal" ItemSpacing="8" LineSpacing="6" Margin="10,6">
+      <Button Name="ResumePodcastEpisode" Content="{loc:T Pod.ResumeSelected}" IsEnabled="{Binding CanResumeSelected}" Click="ResumeSelectedEpisode"
+              ToolTip.Tip="{loc:T Pod.ResumeSelectedTip}" />
+      <Button Name="SavePodcastPosition" Content="{loc:T Pod.SavePosition}" IsEnabled="{Binding CanSaveSelectedPosition}" Click="SaveSelectedPosition"
+              ToolTip.Tip="{loc:T Pod.SavePositionTip}" />
+      <Button Name="DownloadNewButton" Content="{loc:T Pod.DownloadNew}" IsEnabled="{Binding CanDownloadNew}" IsVisible="{Binding HasNewEpisodes}" Click="DownloadNew"
+              ToolTip.Tip="{loc:T Pod.DownloadNewTip}" />
+      <Button Name="MarkAllSeenButton" Content="{loc:T Pod.MarkAllSeen}" IsVisible="{Binding HasNewEpisodes}" Click="MarkAllSeen"
+              ToolTip.Tip="{loc:T Pod.MarkAllSeenTip}" />
+      <TextBlock Text="{loc:T Pod.Speed}" VerticalAlignment="Center" Classes="secondary" IsVisible="{Binding CanChooseSpeed}" />
+      <ComboBox Name="PodcastSpeed" ItemsSource="{Binding SpeedLabels}" SelectedIndex="{Binding SelectedSpeedIndex, Mode=TwoWay}"
+                IsVisible="{Binding CanChooseSpeed}" MinWidth="84" AutomationProperties.Name="{loc:T Pod.SpeedAutomation}"
+                ToolTip.Tip="{loc:T Pod.SpeedTip}" />
+    </WrapPanel>
+    <Border Grid.Row="5" Background="{DynamicResource StatusBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,1,0,0" Padding="10,0">
+      <TextBlock Name="PodcastStatus" Text="{Binding StatusMessage}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
+                 AutomationProperties.LiveSetting="Polite" />
+    </Border>
+  </Grid>
+</UserControl>

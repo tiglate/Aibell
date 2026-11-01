@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <InternalsVisibleTo Include="Aibell.Audio.Ogg.Tests" />
+    <InternalsVisibleTo Include="Aibell.Audio.Vorbis.Tests" />
+    <InternalsVisibleTo Include="Aibell.Audio.Opus.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Aibell.Audio.Core/Aibell.Audio.Core.csproj" />
+  </ItemGroup>
+</Project>

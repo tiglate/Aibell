@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <InternalsVisibleTo Include="Aibell.Audio.Spc.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Aibell.Audio.Core/Aibell.Audio.Core.csproj" />
+    <ProjectReference Include="../Aibell.Archive.Rar/Aibell.Archive.Rar.csproj" />
+  </ItemGroup>
+</Project>

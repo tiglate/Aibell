@@ -1,0 +1,367 @@
+MPEG-1 / MPEG-2 AUDIO LAYER II: RECONSTRUCTED TABLE DATA
+
+1. TABLE 3-B.1: LAYER I, II SCALEFACTORS
+
+The standard defines 63 scalefactors, indices 0 through 62. Index 63 is not a defined scalefactor; it is not a 64th numerical entry. For indices 0 through 62, the values below are 2^(1 - index/3), rounded to 9 significant digits. The formula must not be extended to index 63 as a standard-defined value.
+
+index  scalefactor       index  scalefactor
+ 0     2.00000000e+0     32     1.23039165e-3
+ 1     1.58740105e+0     33     9.76562500e-4
+ 2     1.25992105e+0     34     7.75098170e-4
+ 3     1.00000000e+0     35     6.15195825e-4
+ 4     7.93700526e-1     36     4.88281250e-4
+ 5     6.29960525e-1     37     3.87549085e-4
+ 6     5.00000000e-1     38     3.07597913e-4
+ 7     3.96850263e-1     39     2.44140625e-4
+ 8     3.14980262e-1     40     1.93774542e-4
+ 9     2.50000000e-1     41     1.53798956e-4
+10     1.98425131e-1     42     1.22070312e-4
+11     1.57490131e-1     43     9.68872712e-5
+12     1.25000000e-1     44     7.68994781e-5
+13     9.92125657e-2     45     6.10351562e-5
+14     7.87450656e-2     46     4.84436356e-5
+15     6.25000000e-2     47     3.84497391e-5
+16     4.96062829e-2     48     3.05175781e-5
+17     3.93725328e-2     49     2.42218178e-5
+18     3.12500000e-2     50     1.92248695e-5
+19     2.48031414e-2     51     1.52587891e-5
+20     1.96862664e-2     52     1.21109089e-5
+21     1.56250000e-2     53     9.61243477e-6
+22     1.24015707e-2     54     7.62939453e-6
+23     9.84313320e-3     55     6.05545445e-6
+24     7.81250000e-3     56     4.80621738e-6
+25     6.20078536e-3     57     3.81469727e-6
+26     4.92156660e-3     58     3.02772723e-6
+27     3.90625000e-3     59     2.40310869e-6
+28     3.10039268e-3     60     1.90734863e-6
+29     2.46078330e-3     61     1.51386361e-6
+30     1.95312500e-3     62     1.20155435e-6
+31     1.55019634e-3     63     NOT DEFINED (invalid index)
+
+2. LAYER II BIT ALLOCATION TABLES
+
+Bit rates below are kbit/s PER CHANNEL: total bit rate divided by 1 for single channel, or by 2 for stereo, joint stereo, and dual channel.
+For non-free-format MPEG-1, the complete selection rule for permitted combinations is:
+
+Bit rate per channel             32 kHz   44.1 kHz   48 kHz
+32, 48                           B.2d     B.2c       B.2c
+56, 64, 80                       B.2a     B.2a       B.2a
+96, 112, 128, 160, 192            B.2b     B.2b       B.2a
+Free format                      B.2b     B.2b       B.2a
+
+Free-format selection depends only on sampling frequency, not on a bit rate inferred from frame length. The mode/total-bit-rate restrictions in section 4 apply before the non-free-format table is selected. In particular, per-channel rates 16, 24, 28, and 40 resulting from two-channel totals 32, 48, 56, and 80 are not permitted MPEG-1 combinations. Single-channel totals 224, 256, 320, and 384 are not permitted. All three MPEG-1 sampling frequencies admit the valid bit-rate/mode combinations in section 4.
+
+In each matrix the column numbers are unsigned allocation codes; entries are nlevels. Zero means no allocation and zero subband samples. A dash means that the column is outside the allocation field's range. With nbal = 0, no allocation field is transmitted; the zero in column 0 denotes the implied absence of allocation. Every representable allocation code for nbal > 0 is valid; there are no forbidden allocation codes in these five tables.
+The sum of nbal is for one set of allocation fields across subbands, not necessarily the total allocation-bit count in a two-channel frame.
+
+TABLE 3-B.2a
+48 kHz: 56, 64, 80, 96, 112, 128, 160, 192 per channel, and free format.
+44.1 or 32 kHz: 56, 64, 80 per channel.
+sblimit = 27; sum of nbal = 88.
+
+subband nbal |     0     1     2     3     4     5     6     7     8     9    10    11    12    13    14    15
+      0    4 |     0     3     7    15    31    63   127   255   511  1023  2047  4095  8191 16383 32767 65535
+      1    4 |     0     3     7    15    31    63   127   255   511  1023  2047  4095  8191 16383 32767 65535
+      2    4 |     0     3     7    15    31    63   127   255   511  1023  2047  4095  8191 16383 32767 65535
+      3    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+      4    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+      5    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+      6    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+      7    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+      8    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+      9    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+     10    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+     11    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     12    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     13    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     14    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     15    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     16    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     17    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     18    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     19    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     20    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     21    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     22    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     23    2 |     0     3     5 65535     -     -     -     -     -     -     -     -     -     -     -     -
+     24    2 |     0     3     5 65535     -     -     -     -     -     -     -     -     -     -     -     -
+     25    2 |     0     3     5 65535     -     -     -     -     -     -     -     -     -     -     -     -
+     26    2 |     0     3     5 65535     -     -     -     -     -     -     -     -     -     -     -     -
+     27    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     28    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     29    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     30    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     31    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+
+TABLE 3-B.2b
+44.1 or 32 kHz: 96, 112, 128, 160, 192 per channel, and free format.
+Not selected at 48 kHz.
+sblimit = 30; sum of nbal = 94.
+
+subband nbal |     0     1     2     3     4     5     6     7     8     9    10    11    12    13    14    15
+      0    4 |     0     3     7    15    31    63   127   255   511  1023  2047  4095  8191 16383 32767 65535
+      1    4 |     0     3     7    15    31    63   127   255   511  1023  2047  4095  8191 16383 32767 65535
+      2    4 |     0     3     7    15    31    63   127   255   511  1023  2047  4095  8191 16383 32767 65535
+      3    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+      4    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+      5    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+      6    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+      7    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+      8    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+      9    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+     10    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 65535
+     11    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     12    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     13    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     14    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     15    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     16    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     17    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     18    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     19    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     20    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     21    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     22    3 |     0     3     5     7     9    15    31 65535     -     -     -     -     -     -     -     -
+     23    2 |     0     3     5 65535     -     -     -     -     -     -     -     -     -     -     -     -
+     24    2 |     0     3     5 65535     -     -     -     -     -     -     -     -     -     -     -     -
+     25    2 |     0     3     5 65535     -     -     -     -     -     -     -     -     -     -     -     -
+     26    2 |     0     3     5 65535     -     -     -     -     -     -     -     -     -     -     -     -
+     27    2 |     0     3     5 65535     -     -     -     -     -     -     -     -     -     -     -     -
+     28    2 |     0     3     5 65535     -     -     -     -     -     -     -     -     -     -     -     -
+     29    2 |     0     3     5 65535     -     -     -     -     -     -     -     -     -     -     -     -
+     30    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     31    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+
+TABLE 3-B.2c
+44.1 or 48 kHz: 32 or 48 per channel.
+Not selected at 32 kHz or for free format.
+sblimit = 8; sum of nbal = 26.
+
+subband nbal |     0     1     2     3     4     5     6     7     8     9    10    11    12    13    14    15
+      0    4 |     0     3     5     9    15    31    63   127   255   511  1023  2047  4095  8191 16383 32767
+      1    4 |     0     3     5     9    15    31    63   127   255   511  1023  2047  4095  8191 16383 32767
+      2    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      3    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      4    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      5    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      6    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      7    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      8    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+      9    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     10    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     11    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     12    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     13    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     14    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     15    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     16    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     17    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     18    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     19    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     20    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     21    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     22    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     23    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     24    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     25    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     26    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     27    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     28    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     29    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     30    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     31    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+
+TABLE 3-B.2d
+32 kHz: 32 or 48 per channel.
+Not selected at 44.1 or 48 kHz, or for free format.
+sblimit = 12; sum of nbal = 38.
+
+subband nbal |     0     1     2     3     4     5     6     7     8     9    10    11    12    13    14    15
+      0    4 |     0     3     5     9    15    31    63   127   255   511  1023  2047  4095  8191 16383 32767
+      1    4 |     0     3     5     9    15    31    63   127   255   511  1023  2047  4095  8191 16383 32767
+      2    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      3    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      4    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      5    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      6    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      7    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      8    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      9    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+     10    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+     11    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+     12    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     13    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     14    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     15    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     16    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     17    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     18    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     19    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     20    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     21    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     22    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     23    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     24    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     25    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     26    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     27    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     28    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     29    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     30    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     31    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+
+TABLE B.1 (ISO/IEC 13818-3, low sampling frequencies)
+16, 22.05, or 24 kHz: this single table applies to every permitted bit rate and mode, including free format.
+sblimit = 30; sum of nbal = 75.
+
+subband nbal |     0     1     2     3     4     5     6     7     8     9    10    11    12    13    14    15
+      0    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 16383
+      1    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 16383
+      2    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 16383
+      3    4 |     0     3     5     7     9    15    31    63   127   255   511  1023  2047  4095  8191 16383
+      4    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      5    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      6    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      7    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      8    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+      9    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+     10    3 |     0     3     5     9    15    31    63   127     -     -     -     -     -     -     -     -
+     11    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     12    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     13    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     14    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     15    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     16    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     17    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     18    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     19    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     20    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     21    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     22    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     23    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     24    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     25    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     26    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     27    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     28    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     29    2 |     0     3     5     9     -     -     -     -     -     -     -     -     -     -     -     -
+     30    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+     31    0 |     0     -     -     -     -     -     -     -     -     -     -     -     -     -     -     -
+
+The MPEG-2 low-sampling-frequency data agrees with the supplied reference in every entry: 4 subbands with nbal = 4, 7 with nbal = 3, and 19 with nbal = 2; sblimit = 30; sum = 4*4 + 7*3 + 19*2 = 75. The supplied reference is correct.
+
+3. TABLE 3-B.4: LAYER II CLASSES OF QUANTIZATION
+
+Requantization: s'' = C * (s''' + D).
+C and D below preserve the decimal digits of the table. These are finite decimal transcriptions, not claims that a repeating rational value has a finite exact decimal expansion.
+
+nlevels grouping bits/codeword samples/codeword C             D
+      3 yes                  5                3 1.33333333333 0.50000000000
+      5 yes                  7                3 1.60000000000 0.50000000000
+      7 no                   3                1 1.14285714286 0.25000000000
+      9 yes                 10                3 1.77777777777 0.50000000000
+     15 no                   4                1 1.06666666666 0.12500000000
+     31 no                   5                1 1.03225806452 0.06250000000
+     63 no                   6                1 1.01587301587 0.03125000000
+    127 no                   7                1 1.00787401575 0.01562500000
+    255 no                   8                1 1.00392156863 0.00781250000
+    511 no                   9                1 1.00195694716 0.00390625000
+   1023 no                  10                1 1.00097751711 0.00195312500
+   2047 no                  11                1 1.00048851979 0.00097656250
+   4095 no                  12                1 1.00024420024 0.00048828125
+   8191 no                  13                1 1.00012208522 0.00024414063
+  16383 no                  14                1 1.00006103888 0.00012207031
+  32767 no                  15                1 1.00003051851 0.00006103516
+  65535 no                  16                1 1.00001525902 0.00003051758
+
+To obtain s''', first obtain the unsigned sample code, including degrouping when required. Use 2 bits for a 3-level sample, 3 bits for a 5-level sample, and 4 bits for a 9-level sample. For an ungrouped sample, use its transmitted codeword width. Invert only the most significant bit. Interpret the result as a fractional two's-complement number: the most significant bit has weight -1, followed by weights 1/2, 1/4, and so on. With unsigned sample code q and sample width m, the equivalent numerical relation is s''' = q / 2^(m-1) - 1. Do not invert the most significant bit of the entire grouped codeword.
+
+For a grouped codeword with unsigned value w and nlevels = L, the three sample codes q0, q1, q2, in chronological order, satisfy:
+w = q0 + L*q1 + L^2*q2, with 0 <= q0, q1, q2 < L.
+Thus the first sample is the least-significant base-L digit, the second is the next digit, and the third is the most-significant base-L digit. The transmitted bits of the codeword are still read most significant bit first.
+
+Grouped sample-codeword ranges (distinct from allocation codes):
+nlevels  bits/codeword  valid unsigned codewords  unused codewords
+3        5              0..26                     27..31
+5        7              0..124                    125..127
+9        10             0..728                    729..1023
+For an ungrouped class, valid sample codes are 0 through nlevels-1; the all-ones codeword is unused. These unused sample codewords do not change the validity of allocation codes in section 2.
+
+4. ALLOWED TOTAL BIT RATE / MODE COMBINATIONS
+
+MPEG-1 Layer II, at 32, 44.1, or 48 kHz. Bit rates are TOTAL kbit/s.
+
+Total bit rate  single channel  stereo  joint stereo  dual channel
+free format    yes             yes     yes           yes
+32             yes             no      no            no
+48             yes             no      no            no
+56             yes             no      no            no
+64             yes             yes     yes           yes
+80             yes             no      no            no
+96             yes             yes     yes           yes
+112            yes             yes     yes           yes
+128            yes             yes     yes           yes
+160            yes             yes     yes           yes
+192            yes             yes     yes           yes
+224            no              yes     yes           yes
+256            no              yes     yes           yes
+320            no              yes     yes           yes
+384            no              yes     yes           yes
+
+MPEG-2 Layer II low sampling frequencies, at 16, 22.05, or 24 kHz:
+
+Total bit rate  single channel  stereo  joint stereo  dual channel
+free format    yes             yes     yes           yes
+8              yes             yes     yes           yes
+16             yes             yes     yes           yes
+24             yes             yes     yes           yes
+32             yes             yes     yes           yes
+40             yes             yes     yes           yes
+48             yes             yes     yes           yes
+56             yes             yes     yes           yes
+64             yes             yes     yes           yes
+80             yes             yes     yes           yes
+96             yes             yes     yes           yes
+112            yes             yes     yes           yes
+128            yes             yes     yes           yes
+144            yes             yes     yes           yes
+160            yes             yes     yes           yes
+
+For both versions, bit-rate index 0000 identifies free format; index 1111 is forbidden. Free format has a fixed bit rate, which need not equal a tabulated bit rate. It uses the free-format allocation-table selection given in section 2.
+
+5. DECODING BEHAVIOUR
+
+For Layer II joint stereo, the mode extension selects a nominal bound of 4, 8, 12, or 16 subbands for mode-extension values 00, 01, 10, or 11 respectively. The effective bound is the smaller of that value and sblimit. A bound greater than sblimit therefore gives independent channel allocation and sample coding throughout all transmitted subbands; no intensity-coded subband remains.
+
+Below the effective bound, the two channels have separate allocation fields and separate coded samples. From the effective bound through sblimit-1, one allocation field and one set of coded samples are shared. The channels retain separate scalefactor selection information and scalefactors, so each channel multiplies the shared requantized samples by its own scalefactor.
+
+All 36 subband samples per frame in every channel are zero for subband indices sblimit through 31 inclusive. This includes subband sblimit itself. The ranges are:
+Table        Subbands forced to zero
+3-B.2a       27..31
+3-B.2b       30..31
+3-B.2c        8..31
+3-B.2d       12..31
+LSF B.1      30..31
+A subband below sblimit with allocation code zero also has zero samples. No allocation, scalefactor selection information, scalefactors, or sample codewords are transmitted for subbands at or above sblimit.
+
+When error protection is present, the Layer II CRC covers, in bitstream order:
+- Header bits 16 through 31 inclusive, counting the first syncword bit as bit 0: bit-rate index (4 bits), sampling-frequency index (2), padding (1), private bit (1), mode (2), mode extension (2), copyright (1), original/copy (1), and emphasis (2).
+- Every transmitted allocation field below sblimit: both channels below the effective bound, and the single shared allocation above it in joint stereo.
+- Every transmitted 2-bit scalefactor selection information field for a nonzero allocation. Both channels contribute their own selection information even where allocation and samples are shared.
+The CRC excludes header bits 0..15, the transmitted CRC word itself, the scalefactor values, sample codewords, and ancillary data. It does not add byte-alignment bits at the end of the scalefactor selection information. The same Layer II coverage applies at the MPEG-2 low sampling frequencies.
+
+UNCERTAIN ITEMS AND CHECKS
+
+UNCERTAIN: none of the numerical table entries or decoding rules reported above. Scalefactor index 63 is not a missing or uncertain number: the standard does not define a value for it.
+
+Checks performed:
+- Consulted six implementation families, including five decoders and two encoders. The encoder and decoder sharing one family were not counted as independent confirmations.
+- Expanded and compared all five allocation matrices across four independent implementation families. All 976 transmitted allocation-code entries agreed, including code zero. All 160 subband rows are included above.
+- Checked that each active row contains exactly 2^nbal entries, including code zero, and that every nonzero entry belongs to one of the 17 quantization classes.
+- Independently summed nbal: B.2a = 11*4 + 12*3 + 4*2 = 88; B.2b = 11*4 + 12*3 + 7*2 = 94; B.2c = 2*4 + 6*3 = 26; B.2d = 2*4 + 10*3 = 38; LSF B.1 = 4*4 + 7*3 + 19*2 = 75.
+- Confirmed sblimit values 27, 30, 8, 12, 30 and their first omitted subbands.
+- Compared all 63 defined scalefactors across an independent encoder and decoder, then checked that each rounds to the same 9 significant digits as 2^(1-index/3). Checked the absence of a standard-defined index-63 value in two independent decoders.
+- Compared all 17 C and D decimal strings between two independent decoders. Compared all 17 grouping flags and codeword widths across an encoder and two independent decoder families.
+- Checked grouped sample ordering in both encoding and decoding directions and exhaustively verified the 27, 125, and 729 valid grouped codewords.
+- Cross-checked selection rules, free-format handling, mode restrictions, joint-stereo bound limiting, zero subbands, and CRC coverage across independent sources.
+- Resolved the additional decoder's conflicting highest allocation entry in B.2c and B.2d, subbands 0 and 1, allocation code 15: the correct value is 32767, confirmed by four other independent implementations and the published standard table.

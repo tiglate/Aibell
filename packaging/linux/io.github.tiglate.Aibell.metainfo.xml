@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.tiglate.Aibell</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Aibell</name>
+  <summary>Music library and player</summary>
+  <description>
+    <p>Aibell is a desktop music library and player built with .NET and Avalonia. It aims for a dense, practical library view, strong browsing and local-first playback, in the spirit of Songbird and Banshee.</p>
+    <p>It includes a built-in player that needs no other software, a ten-band equalizer, playlists and smart playlists, podcasts, audiobooks, internet radio, and tag and artwork editing.</p>
+  </description>
+  <launchable type="desktop-id">io.github.tiglate.Aibell.desktop</launchable>
+  <developer id="io.github.tiglate"><name>Tiglate Pileser III</name></developer>
+  <url type="homepage">https://github.com/tiglate/Aibell</url>
+  <url type="bugtracker">https://github.com/tiglate/Aibell/issues</url>
+  <provides>
+    <binary>aibell</binary>
+  </provides>
+  <categories>
+    <category>AudioVideo</category>
+    <category>Audio</category>
+    <category>Player</category>
+    <category>Music</category>
+  </categories>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="@VERSION@" date="@DATE@" />
+  </releases>
+</component>

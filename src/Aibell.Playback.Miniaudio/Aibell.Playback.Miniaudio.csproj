@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- The audio shim is compiled for the machine that builds; a cross-RID publish would ship the wrong library. -->
+    <NativeAudioRid>$(NETCoreSdkPortableRuntimeIdentifier)</NativeAudioRid>
+    <NativeAudioDirectory>$(MSBuildThisFileDirectory)../../artifacts/native-audio/$(NativeAudioRid)/</NativeAudioDirectory>
+    <NativeAudioFileName Condition="$([MSBuild]::IsOSPlatform('Windows'))">aibell_audio.dll</NativeAudioFileName>
+    <NativeAudioFileName Condition="'$(NativeAudioFileName)' == ''">libaibell_audio.so</NativeAudioFileName>
+    <NativeAudioFile>$(NativeAudioDirectory)$(NativeAudioFileName)</NativeAudioFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Aibell.Playback.Miniaudio.Tests" />
+    <InternalsVisibleTo Include="Aibell.Desktop.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Aibell.Application/Aibell.Application.csproj" />
+    <ProjectReference Include="../Aibell.Playback.Core/Aibell.Playback.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeAudioSource Include="../../native/aibell-audio/aibell_audio.c;../../native/aibell-audio/vendor/miniaudio.h;../../native/aibell-audio/vendor/stb_vorbis.c;../../scripts/build-native-audio.*" />
+    <None Include="$(NativeAudioFile)" Link="$(NativeAudioFileName)" Visible="false" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <Target Name="BuildNativeAudio" BeforeTargets="AssignTargetPaths;CoreCompile" Inputs="@(NativeAudioSource)" Outputs="$(NativeAudioFile)">
+    <Error Condition="'$(RuntimeIdentifier)' != '' and '$(RuntimeIdentifier)' != '$(NativeAudioRid)'"
+           Text="The Aibell audio library is compiled on the machine that builds it. Build the $(RuntimeIdentifier) package on a $(RuntimeIdentifier) machine (this one is $(NativeAudioRid))." />
+    <Exec Condition="!$([MSBuild]::IsOSPlatform('Windows'))" Command="bash &quot;$(MSBuildThisFileDirectory)../../scripts/build-native-audio.sh&quot; &quot;$(NativeAudioDirectory)&quot;" />
+    <Exec Condition="$([MSBuild]::IsOSPlatform('Windows'))" Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildThisFileDirectory)../../scripts/build-native-audio.ps1&quot; -OutputDirectory &quot;$(NativeAudioDirectory)&quot;" />
+  </Target>
+</Project>

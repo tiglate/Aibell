@@ -1,0 +1,62 @@
+<Window
+    x:Class="Aibell.Desktop.EqualizerWindow"
+    x:DataType="viewModels:EqualizerViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewModels="using:Aibell.Desktop.ViewModels"
+    xmlns:loc="using:Aibell.Desktop.Localization"
+    Name="EqualizerWindowRoot"
+    Title="{loc:T Equalizer.Title}"
+    SizeToContent="WidthAndHeight"
+    CanResize="False"
+    WindowStartupLocation="CenterOwner"
+    Background="{DynamicResource WindowBrush}">
+  <Window.Resources>
+    <DataTemplate x:Key="BandColumn" x:DataType="viewModels:EqualizerBandViewModel">
+      <StackPanel Width="46" Spacing="4">
+        <TextBlock Classes="eqValue" Text="{Binding Gain, StringFormat={}{0:+0.#;-0.#;0} dB}" />
+        <Slider Classes="eq" Maximum="{Binding Maximum}" Value="{Binding Gain, Mode=TwoWay}" AutomationProperties.Name="{Binding Label}" />
+        <TextBlock HorizontalAlignment="Center" FontSize="11" FontWeight="SemiBold" Text="{Binding Label}" />
+      </StackPanel>
+    </DataTemplate>
+  </Window.Resources>
+  <Window.Styles>
+    <Style Selector="Slider.eq">
+      <Setter Property="Orientation" Value="Vertical" />
+      <Setter Property="Minimum" Value="-12" />
+      <Setter Property="Maximum" Value="12" />
+      <Setter Property="SmallChange" Value="0.5" />
+      <Setter Property="LargeChange" Value="3" />
+      <Setter Property="TickFrequency" Value="0.5" />
+      <Setter Property="IsSnapToTickEnabled" Value="True" />
+      <Setter Property="Height" Value="170" />
+      <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+    <Style Selector="TextBlock.eqValue">
+      <Setter Property="FontSize" Value="10" />
+      <Setter Property="HorizontalAlignment" Value="Center" />
+      <Setter Property="Opacity" Value="0.75" />
+    </Style>
+  </Window.Styles>
+  <Grid RowDefinitions="Auto,Auto" Margin="0">
+    <Border Padding="10" Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1">
+      <WrapPanel Orientation="Horizontal" ItemSpacing="8" LineSpacing="6">
+        <ToggleButton Name="EqualizerEnabled" Content="{loc:T Equalizer.On}" IsChecked="{Binding IsEnabled, Mode=TwoWay}"
+                      AutomationProperties.Name="{loc:T Equalizer.OnAutomation}" ToolTip.Tip="{loc:T Equalizer.OnTip}" MinWidth="56" HorizontalContentAlignment="Center" />
+        <ComboBox Name="EqualizerPreset" MinWidth="150" ItemsSource="{Binding Presets}" SelectedItem="{Binding SelectedPreset, Mode=TwoWay}"
+                  AutomationProperties.Name="{loc:T Equalizer.PresetAutomation}" />
+        <Button Name="EqualizerReset" Content="{loc:T Equalizer.Reset}" Click="Reset" ToolTip.Tip="{loc:T Equalizer.ResetTip}" />
+      </WrapPanel>
+    </Border>
+    <!-- Bands run low to high from the left in every language, like a mixing desk. -->
+    <Grid Grid.Row="1" Margin="14,12,14,12" ColumnDefinitions="Auto,18,Auto" FlowDirection="LeftToRight" IsEnabled="{Binding IsEnabled}">
+      <ContentControl Name="PreampColumn" Content="{Binding Preamp}" ContentTemplate="{StaticResource BandColumn}" />
+      <Border Grid.Column="1" Width="1" HorizontalAlignment="Center" Background="{DynamicResource PanelBorderBrush}" />
+      <ItemsControl Name="BandSliders" Grid.Column="2" ItemsSource="{Binding Bands}" ItemTemplate="{StaticResource BandColumn}">
+        <ItemsControl.ItemsPanel>
+          <ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+      </ItemsControl>
+    </Grid>
+  </Grid>
+</Window>

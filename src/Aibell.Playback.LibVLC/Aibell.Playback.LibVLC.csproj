@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <InternalsVisibleTo Include="Aibell.Desktop.Tests" />
+    <InternalsVisibleTo Include="Aibell.Desktop.UiTests" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Aibell.Application/Aibell.Application.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LibVLCSharp" />
+  </ItemGroup>
+</Project>

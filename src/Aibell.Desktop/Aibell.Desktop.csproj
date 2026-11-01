@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <ApplicationIcon>Assets/aibell.ico</ApplicationIcon>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <SatelliteResourceLanguages>en;ar;de;es;fr;he;it;ja;pl;pt-BR;ru;zh-Hans</SatelliteResourceLanguages>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Aibell.Application/Aibell.Application.csproj" />
+    <ProjectReference Include="../Aibell.Domain/Aibell.Domain.csproj" />
+    <ProjectReference Include="../Aibell.Platform.Linux/Aibell.Platform.Linux.csproj" />
+    <ProjectReference Include="../Aibell.Platform.Windows/Aibell.Platform.Windows.csproj" />
+    <ProjectReference Include="../Aibell.Infrastructure/Aibell.Infrastructure.csproj" />
+    <ProjectReference Include="../Aibell.Playback.LibVLC/Aibell.Playback.LibVLC.csproj" />
+    <ProjectReference Include="../Aibell.Playback.Miniaudio/Aibell.Playback.Miniaudio.csproj" />
+    <ProjectReference Include="../Aibell.Playback.Alsa/Aibell.Playback.Alsa.csproj" />
+    <ProjectReference Include="../Aibell.Playback.PipeWire/Aibell.Playback.PipeWire.csproj" />
+    <!-- Plugins are built and shipped next to the application but never referenced: the code loads them at run time from plugins/. -->
+    <ProjectReference Include="../Aibell.Metadata.MusicBrainz/Aibell.Metadata.MusicBrainz.csproj" ReferenceOutputAssembly="false" OutputItemType="PluginAssembly" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Aibell.Desktop.Tests" />
+    <AvaloniaResource Include="Assets/**" />
+  </ItemGroup>
+  <Target Name="IncludePluginAssemblies" BeforeTargets="AssignTargetPaths">
+    <ItemGroup>
+      <None Include="@(PluginAssembly)" Link="plugins/%(Filename)/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+      <!-- Debug symbols let the coverage tool measure the plugin whichever copy it meets first. -->
+      <PluginSymbol Include="@(PluginAssembly->'%(RootDir)%(Directory)%(Filename).pdb')" Condition="'$(Configuration)' == 'Debug'" />
+      <None Include="@(PluginSymbol)" Link="plugins/%(Filename)/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" Condition="Exists('%(FullPath)')" />
+    </ItemGroup>
+  </Target>
+</Project>

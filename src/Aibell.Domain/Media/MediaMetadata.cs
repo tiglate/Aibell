@@ -1,0 +1,26 @@
+namespace Aibell.Domain.Media;
+
+public sealed record MediaMetadata(
+    string? Title,
+    string? Artist,
+    string? Album,
+    TimeSpan Duration,
+    string? Genre = null,
+    string? AlbumArtist = null,
+    int TrackNumber = 0,
+    int Year = 0,
+    int Rating = 0,
+    int BitRate = 0,
+    double BeatsPerMinute = 0,
+    int Channels = 0,
+    string? Comment = null,
+    string? Composer = null,
+    DateTimeOffset? DateModified = null,
+    string? Description = null,
+    int DiscNumber = 0,
+    int EpisodeNumber = 0,
+    string? Keywords = null,
+    int SampleRate = 0,
+    int SeasonNumber = 0,
+    string? ShowName = null,
+    long FileSize = 0);

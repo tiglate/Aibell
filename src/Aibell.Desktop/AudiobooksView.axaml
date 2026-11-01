@@ -1,0 +1,77 @@
+<UserControl
+    x:Class="Aibell.Desktop.AudiobooksView"
+    x:DataType="viewModels:AudiobooksViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="using:Aibell.Desktop.Localization"
+    xmlns:viewModels="using:Aibell.Desktop.ViewModels"
+    Name="AudiobooksViewRoot">
+  <Grid RowDefinitions="Auto,*,Auto,28">
+    <Border Padding="10" Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1">
+      <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
+        <TextBlock VerticalAlignment="Center" Classes="secondary" TextTrimming="CharacterEllipsis"
+                   Text="{loc:T Book.Intro}" />
+        <Button Name="CancelAudiobookOperation" Grid.Column="1" Content="{loc:T Common.Cancel}" Width="80" IsVisible="{Binding IsBusy}" Click="CancelOperation" />
+        <Button Name="AddAudiobook" Grid.Column="2" Content="{loc:T Book.Add}" Classes="dialogAccept" IsEnabled="{Binding CanAdd}" Click="Add"
+                ToolTip.Tip="{loc:T Book.AddTip}" />
+      </Grid>
+    </Border>
+    <Grid Grid.Row="1" ColumnDefinitions="*,Auto">
+      <ListBox Name="AudiobookList" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}" BorderThickness="0"
+               Background="{DynamicResource ContentBrush}" AutomationProperties.Name="{loc:T Main.AudiobookShelf}" DoubleTapped="ItemDoubleTapped">
+        <ListBox.Styles><Style Selector="ListBoxItem"><Setter Property="HorizontalContentAlignment" Value="Stretch" /></Style></ListBox.Styles>
+        <ListBox.ItemTemplate>
+          <DataTemplate x:DataType="viewModels:AudiobookItem">
+            <StackPanel Margin="12,7" Spacing="2">
+              <TextBlock Text="{Binding Title}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+              <TextBlock Text="{Binding Author}" Classes="secondary" FontSize="11" TextTrimming="CharacterEllipsis" />
+              <TextBlock Text="{Binding Meta}" Classes="secondary" FontSize="11" TextTrimming="CharacterEllipsis" />
+              <TextBlock Text="{Binding StateText}" Classes="secondary" FontSize="11" TextTrimming="CharacterEllipsis" />
+            </StackPanel>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+      <TextBlock Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Classes="secondary"
+                 IsVisible="{Binding !HasItems}" Text="{loc:T Book.Empty}" />
+      <Border Grid.Column="1" Width="260" IsVisible="{Binding ChaptersVisible}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="1,0,0,0"
+              Background="{DynamicResource ContentBrush}">
+        <Grid RowDefinitions="Auto,Auto,*,Auto">
+          <TextBlock Margin="10,8,10,4" FontWeight="SemiBold" Text="{loc:T Book.Chapters}" />
+          <TextBlock Grid.Row="1" Name="ChaptersMessage" Margin="10,0,10,6" TextWrapping="Wrap" Classes="secondary" FontSize="11"
+                     IsVisible="{Binding ChaptersMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" Text="{Binding ChaptersMessage}" />
+          <ListBox Grid.Row="2" Name="ChapterList" ItemsSource="{Binding Chapters}" SelectedItem="{Binding SelectedChapter}" BorderThickness="0"
+                   Background="Transparent" AutomationProperties.Name="{loc:T Book.Chapters}">
+            <ListBox.ItemTemplate>
+              <DataTemplate x:DataType="viewModels:AudiobookChapterRow">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8" Margin="6,2">
+                  <TextBlock Text="{Binding Time}" Classes="secondary" FontSize="11" VerticalAlignment="Center" MinWidth="44" />
+                  <TextBlock Grid.Column="1" Text="{Binding Title}" TextTrimming="CharacterEllipsis" ToolTip.Tip="{Binding Title}" />
+                </Grid>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+          <Button Grid.Row="3" Name="PlayChapter" Margin="10" Content="{loc:T Book.PlayChapter}" Classes="dialogAccept" HorizontalAlignment="Left"
+                  IsEnabled="{Binding CanPlayChapter}" Click="PlaySelectedChapter"
+                  ToolTip.Tip="{loc:T Book.PlayChapterTip}" />
+        </Grid>
+      </Border>
+    </Grid>
+    <Border Grid.Row="2" Padding="10" Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,1,0,0">
+      <WrapPanel Orientation="Horizontal" ItemSpacing="8" LineSpacing="6">
+        <Button Name="PlayAudiobook" Content="{loc:T Book.PlayFromStart}" IsEnabled="{Binding CanPlay}" Click="Play" />
+        <Button Name="ResumeAudiobook" Content="{loc:T Pod.Resume}" Classes="dialogAccept" IsEnabled="{Binding CanResume}" Click="Resume"
+                ToolTip.Tip="{loc:T Book.ResumeTip}" />
+        <Button Name="SaveAudiobookPosition" Content="{loc:T Pod.SavePosition}" IsEnabled="{Binding CanSave}" Click="SavePosition"
+                ToolTip.Tip="{loc:T Book.SavePositionTip}" />
+        <Button Name="ShowChapters" Content="{loc:T Book.Chapters}" IsEnabled="{Binding CanShowChapters}" Click="ListChapters"
+                ToolTip.Tip="{loc:T Book.ChaptersTip}" />
+        <Button Name="RemoveAudiobook" Content="{loc:T Main.Remove}" IsEnabled="{Binding CanRemove}" Click="Remove"
+                ToolTip.Tip="{loc:T Book.RemoveTip}" />
+      </WrapPanel>
+    </Border>
+    <Border Grid.Row="3" Background="{DynamicResource StatusBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,1,0,0" Padding="10,0">
+      <TextBlock Name="AudiobookStatus" Text="{Binding StatusMessage}" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
+                 AutomationProperties.LiveSetting="Polite" />
+    </Border>
+  </Grid>
+</UserControl>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- ALSA is reached through the system library, so there is nothing to build here. -->
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Aibell.Playback.Alsa.Tests" />
+    <InternalsVisibleTo Include="Aibell.Desktop.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Aibell.Application/Aibell.Application.csproj" />
+    <ProjectReference Include="../Aibell.Playback.Core/Aibell.Playback.Core.csproj" />
+  </ItemGroup>
+</Project>

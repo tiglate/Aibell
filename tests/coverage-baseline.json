@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "profile": "linux-x64-debug-full-native",
+  "tool": "dotnet-coverage 18.10.0",
+  "sourceRevision": "dc2f3f92ded273c65dc75a5f228d903d05bb596a",
+  "policy": "Initial per-module floors retain approximately two percentage points of headroom; raise them as coverage improves. Changes require recorded measurement evidence.",
+  "modules": {
+    "Aibell.Application": {
+      "linePercentMinimum": 95,
+      "branchPercentMinimum": 89
+    },
+    "Aibell.Archive.Rar": {
+      "linePercentMinimum": 85,
+      "branchPercentMinimum": 75
+    },
+    "Aibell.Audio.Aac": {
+      "linePercentMinimum": 93,
+      "branchPercentMinimum": 80
+    },
+    "Aibell.Audio.Alac": {
+      "linePercentMinimum": 92,
+      "branchPercentMinimum": 80
+    },
+    "Aibell.Audio.Cdda": {
+      "linePercentMinimum": 66,
+      "branchPercentMinimum": 51
+    },
+    "Aibell.Audio.Midi": {
+      "linePercentMinimum": 93,
+      "branchPercentMinimum": 77
+    },
+    "Aibell.Audio.Core": {
+      "linePercentMinimum": 78.5,
+      "branchPercentMinimum": 72
+    },
+    "Aibell.Audio.Flac": {
+      "linePercentMinimum": 74,
+      "branchPercentMinimum": 60
+    },
+    "Aibell.Audio.Mp3": {
+      "linePercentMinimum": 97,
+      "branchPercentMinimum": 93
+    },
+    "Aibell.Audio.Ogg": {
+      "linePercentMinimum": 84,
+      "branchPercentMinimum": 71
+    },
+    "Aibell.Audio.Opus": {
+      "linePercentMinimum": 96,
+      "branchPercentMinimum": 90
+    },
+    "Aibell.Audio.Spc": {
+      "linePercentMinimum": 78,
+      "branchPercentMinimum": 61
+    },
+    "Aibell.Audio.Vorbis": {
+      "linePercentMinimum": 89,
+      "branchPercentMinimum": 73.5
+    },
+    "Aibell.Audio.Wav": {
+      "linePercentMinimum": 81,
+      "branchPercentMinimum": 65
+    },
+    "Aibell.Desktop": {
+      "linePercentMinimum": 65,
+      "branchPercentMinimum": 52.5
+    },
+    "Aibell.Domain": {
+      "linePercentMinimum": 95.5,
+      "branchPercentMinimum": 91.5
+    },
+    "Aibell.Infrastructure": {
+      "linePercentMinimum": 95.5,
+      "branchPercentMinimum": 83
+    },
+    "Aibell.Metadata.MusicBrainz": {
+      "linePercentMinimum": 92,
+      "branchPercentMinimum": 72
+    },
+    "Aibell.Platform.Linux": {
+      "linePercentMinimum": 92,
+      "branchPercentMinimum": 75.5
+    },
+    "Aibell.Platform.Windows": {
+      "linePercentMinimum": 37,
+      "branchPercentMinimum": 32,
+      "measurementScope": "Portable adapter/ABI paths executed on Linux; native Windows pump, notification-area and WinRT code runs only on Windows and stays separate acceptance work."
+    },
+    "Aibell.Playback.LibVLC": {
+      "linePercentMinimum": 85.5,
+      "branchPercentMinimum": 76
+    },
+    "Aibell.Playback.Core": {
+      "linePercentMinimum": 85,
+      "branchPercentMinimum": 79
+    },
+    "Aibell.Playback.PipeWire": {
+      "linePercentMinimum": 49,
+      "branchPercentMinimum": 38
+    },
+    "Aibell.Playback.Alsa": {
+      "linePercentMinimum": 46,
+      "branchPercentMinimum": 30
+    },
+    "Aibell.Playback.Miniaudio": {
+      "linePercentMinimum": 80.5,
+      "branchPercentMinimum": 77.5,
+      "measurementScope": "Everything except the Windows-only Media Foundation source (MediaFoundationSource), which runs only on Windows CI."
+    }
+  }
+}

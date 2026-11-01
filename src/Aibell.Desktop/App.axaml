@@ -1,0 +1,474 @@
+<Application
+    x:Class="Aibell.Desktop.App"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    RequestedThemeVariant="Default">
+  <Application.Resources>
+    <ResourceDictionary>
+      <StreamGeometry x:Key="IconMusic">M9,18 L9,5 L19,3 L19,16 M9,18 A3,3 0 1 1 6,15 A3,3 0 0 1 9,18 Z M19,16 A3,3 0 1 1 16,13 A3,3 0 0 1 19,16 Z</StreamGeometry>
+      <StreamGeometry x:Key="IconRadio">M3,9 L21,9 L21,20 L3,20 Z M7,9 L18,3.5 M6.5,14.5 L10.5,14.5 M14.5,14.5 A2.5,2.5 0 1 1 19.5,14.5 A2.5,2.5 0 1 1 14.5,14.5 Z</StreamGeometry>
+      <StreamGeometry x:Key="IconDisc">M12,3 A9,9 0 1 1 11.99,3 Z M12,10 A2,2 0 1 1 11.99,10 Z M6.5,12 A5.5,5.5 0 0 1 9,7.4</StreamGeometry>
+      <StreamGeometry x:Key="IconDevice">M7,2.5 L17,2.5 L17,21.5 L7,21.5 Z M9.5,5.5 L14.5,5.5 L14.5,10 L9.5,10 Z M12,13 A2.6,2.6 0 1 1 11.99,13 Z</StreamGeometry>
+      <StreamGeometry x:Key="IconPodcast">M12,3 A3,3 0 0 1 15,6 L15,12 A3,3 0 0 1 9,12 L9,6 A3,3 0 0 1 12,3 Z M5.5,11 C5.5,15 8.4,18 12,18 C15.6,18 18.5,15 18.5,11 M12,18 L12,21.5 M8,21.5 L16,21.5</StreamGeometry>
+      <StreamGeometry x:Key="IconBook">M3.5,4.5 L10,4.5 C11.1,4.5 12,5.4 12,6.5 L12,20 C12,19 11.1,18 10,18 L3.5,18 Z M20.5,4.5 L14,4.5 C12.9,4.5 12,5.4 12,6.5 M20.5,4.5 L20.5,18 L14,18 C12.9,18 12,19 12,20</StreamGeometry>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://Aibell.Desktop/ThemeResources.axaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <LinearGradientBrush x:Key="ToolbarBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="#51565A" />
+        <GradientStop Offset="0.5" Color="#34383C" />
+        <GradientStop Offset="1" Color="#222528" />
+      </LinearGradientBrush>
+      <LinearGradientBrush x:Key="TransportBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="#FAFBFC" />
+        <GradientStop Offset="0.55" Color="#D7DADD" />
+        <GradientStop Offset="1" Color="#AEB3B7" />
+      </LinearGradientBrush>
+      <LinearGradientBrush x:Key="TransportHoverBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="#FFFFFF" />
+        <GradientStop Offset="0.55" Color="#F0F2F3" />
+        <GradientStop Offset="1" Color="#CED3D6" />
+      </LinearGradientBrush>
+      <LinearGradientBrush x:Key="TransportPressedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="#AEB4B8" />
+        <GradientStop Offset="1" Color="#E3E6E8" />
+      </LinearGradientBrush>
+      <LinearGradientBrush x:Key="DisplayBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="#1D2022" />
+        <GradientStop Offset="1" Color="#0D0F10" />
+      </LinearGradientBrush>
+    </ResourceDictionary>
+  </Application.Resources>
+  <Application.Styles>
+    <FluentTheme DensityStyle="Compact" />
+    <Style Selector="TextBox">
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style Selector="ComboBox">
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Window">
+      <Setter Property="FontFamily" Value="Inter, Segoe UI, sans-serif" />
+      <Setter Property="FontSize" Value="12" />
+      <Setter Property="Background" Value="{DynamicResource WindowBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+    </Style>
+    <Style Selector="Button">
+      <Setter Property="MinHeight" Value="26" />
+      <Setter Property="Padding" Value="9,3" />
+      <Setter Property="CornerRadius" Value="3" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Button.dialogAccept">
+      <Setter Property="Foreground" Value="#FFFFFF" />
+      <Setter Property="Background" Value="#D52268" />
+      <Setter Property="BorderBrush" Value="#A91651" />
+    </Style>
+    <Style Selector="Button.dialogAccept:pointerover /template/ ContentPresenter">
+      <Setter Property="Foreground" Value="#FFFFFF" />
+      <Setter Property="Background" Value="#BD1D5C" />
+    </Style>
+    <Style Selector="Button.dialogAccept:pressed /template/ ContentPresenter">
+      <Setter Property="Foreground" Value="#FFFFFF" />
+      <Setter Property="Background" Value="#A91651" />
+    </Style>
+    <Style Selector="Button.toolbar">
+      <Setter Property="MinHeight" Value="24" />
+      <Setter Property="Padding" Value="7,2" />
+      <Setter Property="Foreground" Value="#F0F1F2" />
+      <Setter Property="Background" Value="#45494D" />
+      <Setter Property="BorderBrush" Value="#5C6166" />
+    </Style>
+    <Style Selector="Button.toolbar:pointerover /template/ ContentPresenter">
+      <Setter Property="Background" Value="#565C62" />
+      <Setter Property="Foreground" Value="#FFFFFF" />
+      <Setter Property="BorderBrush" Value="#7D8388" />
+    </Style>
+    <Style Selector="Button.toolbar:pressed /template/ ContentPresenter">
+      <Setter Property="Background" Value="#292D31" />
+      <Setter Property="Foreground" Value="#FFFFFF" />
+      <Setter Property="BorderBrush" Value="#7D8388" />
+    </Style>
+    <Style Selector="Button.toolbar:disabled /template/ ContentPresenter">
+      <Setter Property="Background" Value="#35393D" />
+      <Setter Property="Foreground" Value="#AEB4BA" />
+      <Setter Property="BorderBrush" Value="#50565C" />
+    </Style>
+    <Style Selector="Button.icon">
+      <Setter Property="Width" Value="30" />
+      <Setter Property="Height" Value="26" />
+      <Setter Property="MinHeight" Value="0" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Foreground" Value="#8E959B" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Button.icon.active">
+      <Setter Property="Foreground" Value="#F0467F" />
+    </Style>
+    <Style Selector="Button.icon:pointerover /template/ ContentPresenter">
+      <Setter Property="Background" Value="#3A3E42" />
+      <Setter Property="Foreground" Value="#FFFFFF" />
+    </Style>
+    <Style Selector="Button.icon:pressed /template/ ContentPresenter">
+      <Setter Property="Background" Value="#292D31" />
+    </Style>
+    <Style Selector="Button.icon:disabled /template/ ContentPresenter">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Foreground" Value="#5A6066" />
+    </Style>
+    <Style Selector="Button.icon Path">
+      <Setter Property="Stroke" Value="{Binding $parent[Button].Foreground}" />
+      <Setter Property="StrokeThickness" Value="1.8" />
+      <Setter Property="StrokeLineCap" Value="Round" />
+      <Setter Property="StrokeJoin" Value="Round" />
+      <Setter Property="Stretch" Value="Uniform" />
+      <Setter Property="Width" Value="16" />
+      <Setter Property="Height" Value="16" />
+    </Style>
+    <!-- Classic scrollbars everywhere: bevelled arrow buttons, a sunken track and a gripped thumb; they never auto-hide. -->
+    <Style Selector="RepeatButton.classicArrow">
+      <Setter Property="Height" Value="16" />
+      <Setter Property="Width" Value="16" />
+      <Setter Property="MinHeight" Value="16" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Border Background="{DynamicResource ScrollThumbBrush}" BorderBrush="{DynamicResource ScrollBorderBrush}" BorderThickness="1">
+            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+          </Border>
+        </ControlTemplate>
+      </Setter>
+    </Style>
+    <Style Selector="RepeatButton.classicArrow:pressed /template/ Border">
+      <Setter Property="Background" Value="{DynamicResource ScrollTrackBrush}" />
+    </Style>
+    <Style Selector="RepeatButton.classicPage">
+      <Setter Property="Template">
+        <ControlTemplate><Border Background="Transparent" /></ControlTemplate>
+      </Setter>
+    </Style>
+    <Style Selector="ScrollBar:vertical">
+      <Setter Property="AllowAutoHide" Value="False" />
+      <Setter Property="Width" Value="16" />
+      <Setter Property="MinWidth" Value="16" />
+      <Setter Property="Background" Value="{DynamicResource ScrollTrackBrush}" />
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Border Background="{TemplateBinding Background}" BorderBrush="{DynamicResource ScrollBorderBrush}" BorderThickness="1,0,0,0">
+            <Grid RowDefinitions="16,*,16">
+              <RepeatButton Name="PART_LineUpButton" Classes="classicArrow" Focusable="False">
+                <Path Fill="{DynamicResource ScrollGlyphBrush}" Data="M0,4 L8,4 L4,0 Z" />
+              </RepeatButton>
+              <Track Grid.Row="1" Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}"
+                     Value="{TemplateBinding Value, Mode=TwoWay}" ViewportSize="{TemplateBinding ViewportSize}"
+                     Orientation="{TemplateBinding Orientation}" IsDirectionReversed="True">
+                <Track.DecreaseButton><RepeatButton Name="PART_PageUpButton" Classes="classicPage" Focusable="False" /></Track.DecreaseButton>
+                <Track.IncreaseButton><RepeatButton Name="PART_PageDownButton" Classes="classicPage" Focusable="False" /></Track.IncreaseButton>
+                <Thumb MinHeight="24">
+                  <Thumb.Template>
+                    <ControlTemplate>
+                      <Border Background="{DynamicResource ScrollThumbBrush}" BorderBrush="{DynamicResource ScrollBorderBrush}" BorderThickness="1" CornerRadius="1">
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="2">
+                          <Border Width="7" Height="1" Background="{DynamicResource ScrollBorderBrush}" />
+                          <Border Width="7" Height="1" Background="{DynamicResource ScrollBorderBrush}" />
+                          <Border Width="7" Height="1" Background="{DynamicResource ScrollBorderBrush}" />
+                        </StackPanel>
+                      </Border>
+                    </ControlTemplate>
+                  </Thumb.Template>
+                </Thumb>
+              </Track>
+              <RepeatButton Name="PART_LineDownButton" Grid.Row="2" Classes="classicArrow" Focusable="False">
+                <Path Fill="{DynamicResource ScrollGlyphBrush}" Data="M0,0 L8,0 L4,4 Z" />
+              </RepeatButton>
+            </Grid>
+          </Border>
+        </ControlTemplate>
+      </Setter>
+    </Style>
+    <Style Selector="ScrollBar:horizontal">
+      <Setter Property="AllowAutoHide" Value="False" />
+      <Setter Property="Height" Value="16" />
+      <Setter Property="MinHeight" Value="16" />
+      <Setter Property="Background" Value="{DynamicResource ScrollTrackBrush}" />
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Border Background="{TemplateBinding Background}" BorderBrush="{DynamicResource ScrollBorderBrush}" BorderThickness="0,1,0,0">
+            <Grid ColumnDefinitions="16,*,16">
+              <RepeatButton Name="PART_LineUpButton" Classes="classicArrow" Focusable="False">
+                <Path Fill="{DynamicResource ScrollGlyphBrush}" Data="M4,0 L4,8 L0,4 Z" />
+              </RepeatButton>
+              <Track Grid.Column="1" Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}"
+                     Value="{TemplateBinding Value, Mode=TwoWay}" ViewportSize="{TemplateBinding ViewportSize}"
+                     Orientation="{TemplateBinding Orientation}">
+                <Track.DecreaseButton><RepeatButton Name="PART_PageUpButton" Classes="classicPage" Focusable="False" /></Track.DecreaseButton>
+                <Track.IncreaseButton><RepeatButton Name="PART_PageDownButton" Classes="classicPage" Focusable="False" /></Track.IncreaseButton>
+                <Thumb MinWidth="24">
+                  <Thumb.Template>
+                    <ControlTemplate>
+                      <Border Background="{DynamicResource ScrollThumbBrush}" BorderBrush="{DynamicResource ScrollBorderBrush}" BorderThickness="1" CornerRadius="1">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="2">
+                          <Border Width="1" Height="7" Background="{DynamicResource ScrollBorderBrush}" />
+                          <Border Width="1" Height="7" Background="{DynamicResource ScrollBorderBrush}" />
+                          <Border Width="1" Height="7" Background="{DynamicResource ScrollBorderBrush}" />
+                        </StackPanel>
+                      </Border>
+                    </ControlTemplate>
+                  </Thumb.Template>
+                </Thumb>
+              </Track>
+              <RepeatButton Name="PART_LineDownButton" Grid.Column="2" Classes="classicArrow" Focusable="False">
+                <Path Fill="{DynamicResource ScrollGlyphBrush}" Data="M0,0 L4,4 L0,8 Z" />
+              </RepeatButton>
+            </Grid>
+          </Border>
+        </ControlTemplate>
+      </Setter>
+    </Style>
+    <Style Selector="Button.sidebarItem">
+      <Setter Property="MinHeight" Value="30" />
+      <Setter Property="Height" Value="30" />
+      <Setter Property="Padding" Value="10,0" />
+      <Setter Property="HorizontalContentAlignment" Value="Left" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="HorizontalAlignment" Value="Stretch" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="CornerRadius" Value="0" />
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Border Name="PART_Background" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
+              <Viewbox Width="18" Height="18" VerticalAlignment="Center">
+                <Canvas Width="24" Height="24">
+                  <Path Data="{TemplateBinding Tag}" Stroke="{TemplateBinding Foreground}" StrokeThickness="1.8" StrokeLineCap="Round" StrokeJoin="Round" />
+                </Canvas>
+              </Viewbox>
+              <ContentPresenter Grid.Column="1" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"
+                                VerticalAlignment="Center" TextElement.Foreground="{TemplateBinding Foreground}" />
+            </Grid>
+          </Border>
+        </ControlTemplate>
+      </Setter>
+    </Style>
+    <Style Selector="Button.sidebarItem:pointerover /template/ Border#PART_Background">
+      <Setter Property="Background" Value="#22808A90" />
+    </Style>
+    <Style Selector="Button.sidebarItem.selected">
+      <Setter Property="Foreground" Value="#FFFFFF" />
+    </Style>
+    <Style Selector="Button.sidebarItem.selected /template/ Border#PART_Background">
+      <Setter Property="Background" Value="{DynamicResource SidebarSelectedBrush}" />
+    </Style>
+    <Style Selector="Button.sidebarItem:disabled">
+      <Setter Property="Opacity" Value="0.5" />
+    </Style>
+    <Style Selector="Button.sidebarHeader">
+      <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+      <Setter Property="MinWidth" Value="25" />
+      <Setter Property="MinHeight" Value="0" />
+      <Setter Property="Width" Value="25" />
+      <Setter Property="Height" Value="24" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="FontSize" Value="17" />
+      <Setter Property="FontWeight" Value="Normal" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="CornerRadius" Value="0" />
+    </Style>
+    <Style Selector="Button.transport">
+      <Setter Property="Width" Value="44" />
+      <Setter Property="Height" Value="44" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="CornerRadius" Value="22" />
+      <Setter Property="Background" Value="{DynamicResource TransportBrush}" />
+      <Setter Property="BorderBrush" Value="#7D8388" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Border Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{TemplateBinding CornerRadius}">
+            <ContentPresenter Content="{TemplateBinding Content}"
+                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+          </Border>
+        </ControlTemplate>
+      </Setter>
+    </Style>
+    <Style Selector="Button.transport.play">
+      <Setter Property="Width" Value="52" />
+      <Setter Property="Height" Value="52" />
+      <Setter Property="CornerRadius" Value="26" />
+    </Style>
+    <Style Selector="Button.transport:pointerover">
+      <Setter Property="Opacity" Value="1" />
+      <Setter Property="Background" Value="{DynamicResource TransportHoverBrush}" />
+      <Setter Property="BorderBrush" Value="#AEB5BA" />
+    </Style>
+    <Style Selector="Button.transport:pressed">
+      <Setter Property="Opacity" Value="1" />
+      <Setter Property="Background" Value="{DynamicResource TransportPressedBrush}" />
+      <Setter Property="BorderBrush" Value="#666D72" />
+    </Style>
+    <Style Selector="Button.transport:disabled">
+      <Setter Property="Opacity" Value="0.45" />
+    </Style>
+    <Style Selector="Button.column">
+      <Setter Property="MinHeight" Value="0" />
+      <Setter Property="Height" Value="26" />
+      <Setter Property="Padding" Value="7,0" />
+      <Setter Property="HorizontalContentAlignment" Value="Left" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="VerticalAlignment" Value="Stretch" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="CornerRadius" Value="0" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+    <Style Selector="Button.column-right">
+      <Setter Property="MinHeight" Value="0" />
+      <Setter Property="Height" Value="26" />
+      <Setter Property="Padding" Value="7,0" />
+      <Setter Property="HorizontalContentAlignment" Value="Right" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="VerticalAlignment" Value="Stretch" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="CornerRadius" Value="0" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+    <Style Selector="Border.radioCard">
+      <Setter Property="Padding" Value="14" />
+      <Setter Property="CornerRadius" Value="10" />
+      <Setter Property="Background" Value="{DynamicResource CardBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource CardBorderBrush}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="BoxShadow" Value="0 1 3 0 #14000000" />
+    </Style>
+    <Style Selector="Border.chip">
+      <Setter Property="CornerRadius" Value="6" />
+      <Setter Property="Padding" Value="8,3" />
+    </Style>
+    <Style Selector="Border.segmentTrack">
+      <Setter Property="CornerRadius" Value="8" />
+      <Setter Property="Padding" Value="2" />
+      <Setter Property="Background" Value="{DynamicResource SegmentTrackBrush}" />
+    </Style>
+    <Style Selector="Button.segment">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="CornerRadius" Value="6" />
+      <Setter Property="Padding" Value="12,3" />
+      <Setter Property="Foreground" Value="{DynamicResource SecondaryTextBrush}" />
+    </Style>
+    <Style Selector="Button.segment:pointerover /template/ ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource SegmentActiveBrush}" />
+    </Style>
+    <Style Selector="Button.segment.active /template/ ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource SegmentActiveBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+      <Setter Property="TextElement.FontWeight" Value="SemiBold" />
+    </Style>
+    <Style Selector="Button.star">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Padding" Value="4" />
+      <Setter Property="MinHeight" Value="0" />
+      <Setter Property="CornerRadius" Value="14" />
+    </Style>
+    <Style Selector="Button.star:pointerover /template/ ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource AccentTintBrush}" />
+    </Style>
+    <Style Selector="TextBox.radioField">
+      <Setter Property="MinHeight" Value="34" />
+      <Setter Property="CornerRadius" Value="8" />
+      <Setter Property="Background" Value="{DynamicResource FieldBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource FieldBorderBrush}" />
+    </Style>
+    <Style Selector="ComboBox.radioField">
+      <Setter Property="MinHeight" Value="34" />
+      <Setter Property="CornerRadius" Value="8" />
+      <Setter Property="Background" Value="{DynamicResource FieldBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource FieldBorderBrush}" />
+    </Style>
+    <Style Selector="TextBlock.secondary">
+      <Setter Property="Foreground" Value="{DynamicResource SecondaryTextBrush}" />
+    </Style>
+    <Style Selector="ListBoxItem:selected TextBlock.secondary, ListBoxItem:pointerover TextBlock.secondary">
+      <Setter Property="Foreground" Value="{DynamicResource SystemControlHighlightAltBaseHighBrush}" />
+    </Style>
+    <Style Selector="ListBox">
+      <Setter Property="Background" Value="{DynamicResource ContentBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+    </Style>
+    <Style Selector="ListBoxItem">
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="CornerRadius" Value="0" />
+    </Style>
+    <Style Selector="MenuItem">
+      <Setter Property="MinHeight" Value="27" />
+      <Setter Property="Padding" Value="10,0" />
+    </Style>
+    <Style Selector="MenuItem /template/ ContentPresenter">
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style Selector="TabItem">
+      <Setter Property="FontSize" Value="11" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+      <Setter Property="Padding" Value="10,6" />
+    </Style>
+    <Style Selector="Slider.timeline">
+      <Setter Property="Height" Value="18" />
+      <Setter Property="MinHeight" Value="18" />
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Grid>
+            <ProgressBar Height="4" VerticalAlignment="Center" IsHitTestVisible="False"
+                         Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}"
+                         Value="{TemplateBinding Value}" Background="#555B60" Foreground="#D52268" />
+            <Track Name="PART_Track" Height="16" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                   Orientation="Horizontal" Minimum="{TemplateBinding Minimum}"
+                   Maximum="{TemplateBinding Maximum}" Value="{TemplateBinding Value, Mode=TwoWay}">
+              <Track.DecreaseButton><RepeatButton Background="Transparent" BorderThickness="0" /></Track.DecreaseButton>
+              <Track.Thumb>
+                <Thumb Width="13" Height="13" Background="#F3F4F5" BorderBrush="#24272A" BorderThickness="2" CornerRadius="7" />
+              </Track.Thumb>
+              <Track.IncreaseButton><RepeatButton Background="Transparent" BorderThickness="0" /></Track.IncreaseButton>
+            </Track>
+          </Grid>
+        </ControlTemplate>
+      </Setter>
+    </Style>
+    <Style Selector="Slider.volume">
+      <Setter Property="Height" Value="18" />
+      <Setter Property="MinHeight" Value="18" />
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Grid>
+            <ProgressBar Height="4" VerticalAlignment="Center" IsHitTestVisible="False"
+                         Minimum="{TemplateBinding Minimum}" Maximum="{TemplateBinding Maximum}"
+                         Value="{TemplateBinding Value}" Background="#17191B" Foreground="#D9DCDE" />
+            <Track Name="PART_Track" Height="16" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                   Orientation="Horizontal" Minimum="{TemplateBinding Minimum}"
+                   Maximum="{TemplateBinding Maximum}" Value="{TemplateBinding Value, Mode=TwoWay}">
+              <Track.DecreaseButton><RepeatButton Background="Transparent" BorderThickness="0" /></Track.DecreaseButton>
+              <Track.Thumb>
+                <Thumb Width="11" Height="11" Background="#F2F3F4" BorderBrush="#25282B" BorderThickness="1" CornerRadius="6" />
+              </Track.Thumb>
+              <Track.IncreaseButton><RepeatButton Background="Transparent" BorderThickness="0" /></Track.IncreaseButton>
+            </Track>
+          </Grid>
+        </ControlTemplate>
+      </Setter>
+    </Style>
+  </Application.Styles>
+</Application>

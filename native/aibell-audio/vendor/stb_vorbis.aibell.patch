@@ -1,0 +1,42 @@
+--- a/stb_vorbis.c
++++ b/stb_vorbis.c
+@@ -3650,6 +3650,9 @@
+    if (!vorbis_validate(header))                    return error(f, VORBIS_invalid_setup);
+    //file vendor
+    len = get32_packet(f);
++   // AIBELL: a header packet that continues on a page which has not arrived yet (push mode) ends early and reads as -1 bytes, so
++   // len is garbage; reject instead of allocating. open_pushdata turns this into "need more data" when the input ran out.
++   if (len < 0 || len > (1 << 26))                  return error(f, VORBIS_invalid_setup);
+    f->vendor = (char*)setup_malloc(f, sizeof(char) * (len+1));
+    if (f->vendor == NULL)                           return error(f, VORBIS_outofmem);
+    for(i=0; i < len; ++i) {
+@@ -3657,16 +3660,24 @@
+    }
+    f->vendor[len] = (char)'\0';
+    //user comments
+-   f->comment_list_length = get32_packet(f);
+-   f->comment_list = NULL;
+-   if (f->comment_list_length > 0)
++   // AIBELL: validate the count before storing it (a failed open frees comment_list_length entries) and zero the list so a
++   // partially read list can be freed safely.
+    {
+-      f->comment_list = (char**) setup_malloc(f, sizeof(char*) * (f->comment_list_length));
+-      if (f->comment_list == NULL)                  return error(f, VORBIS_outofmem);
++      int count = get32_packet(f);
++      if (count < 0 || count > (1 << 20))              return error(f, VORBIS_invalid_setup);
++      f->comment_list = NULL;
++      if (count > 0)
++      {
++         f->comment_list = (char**) setup_malloc(f, sizeof(char*) * count);
++         if (f->comment_list == NULL)                  return error(f, VORBIS_outofmem);
++         memset(f->comment_list, 0, sizeof(char*) * count);
++      }
++      f->comment_list_length = count;
+    }
+ 
+    for(i=0; i < f->comment_list_length; ++i) {
+       len = get32_packet(f);
++      if (len < 0 || len > (1 << 26))                  return error(f, VORBIS_invalid_setup);
+       f->comment_list[i] = (char*)setup_malloc(f, sizeof(char) * (len+1));
+       if (f->comment_list[i] == NULL)               return error(f, VORBIS_outofmem);
+ 

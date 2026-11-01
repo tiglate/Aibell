@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Artwork.Close" xml:space="preserve"><value>סגירה</value></data>
+  <data name="Artwork.ConsentAccept" xml:space="preserve"><value>הפעלה</value></data>
+  <data name="Artwork.ConsentBody" xml:space="preserve"><value>חיפוש עטיפה שולח את שם האלבום ושם האמן אל MusicBrainz ואל Cover Art Archive, דרך התוסף של MusicBrainz.
+
+להפעיל חיפוש מקוון ולהמשיך? אפשר לכבות אותו שוב ב"העדפות" &gt; "מקוון".</value></data>
+  <data name="Artwork.ConsentTitle" xml:space="preserve"><value>להפעיל חיפוש מקוון?</value></data>
+  <data name="Artwork.Downloading" xml:space="preserve"><value>מוריד את העטיפה…</value></data>
+  <data name="Artwork.Failed" xml:space="preserve"><value>החיפוש נכשל: {0}</value></data>
+  <data name="Artwork.FoundMany" xml:space="preserve"><value>נמצאו {0} עטיפות. בחרו אחת ולחצו על "שמירה".</value></data>
+  <data name="Artwork.FoundOne" xml:space="preserve"><value>נמצאה עטיפה אחת. בדקו אותה ולחצו על "שמירה".</value></data>
+  <data name="Artwork.Matching" xml:space="preserve"><value>עטיפות תואמות</value></data>
+  <data name="Artwork.Menu" xml:space="preserve"><value>קבלת עטיפה…</value></data>
+  <data name="Artwork.MenuTip" xml:space="preserve"><value>מחפש את עטיפת האלבום ב-MusicBrainz ושומר אותה בשם cover.jpg בתיקיית האלבום</value></data>
+  <data name="Artwork.NoCoverArt" xml:space="preserve"><value>MusicBrainz מכיר את האלבום הזה אך אין לו עטיפה עבורו.</value></data>
+  <data name="Artwork.NotFound" xml:space="preserve"><value>לא נמצא אלבום תואם.</value></data>
+  <data name="Artwork.Save" xml:space="preserve"><value>שמירת עטיפה</value></data>
+  <data name="Artwork.SaveTip" xml:space="preserve"><value>שומר את העטיפה שנבחרה בשם cover.jpg בתיקיית האלבום. קובץ עטיפה קיים לעולם אינו מוחלף.</value></data>
+  <data name="Artwork.Saved" xml:space="preserve"><value>הקובץ {0} נשמר ב-{1}. רצועות עם תמונה בתוך הקובץ ממשיכות להציג את התמונה הזו.</value></data>
+  <data name="Artwork.Searching" xml:space="preserve"><value>מחפש עטיפות…</value></data>
+  <data name="Artwork.StatusFailed" xml:space="preserve"><value>לא ניתן היה לקבל את העטיפה: {0}</value></data>
+  <data name="Artwork.StatusSaved" xml:space="preserve"><value>העטיפה נשמרה: {0}</value></data>
+  <data name="Artwork.Title" xml:space="preserve"><value>קבלת עטיפה</value></data>
+  <data name="Artwork.Tracks" xml:space="preserve"><value>{0} רצועות</value></data>
+  <data name="Artwork.Unavailable.NoAlbum" xml:space="preserve"><value>לרצועה הזו אין שם אלבום לחיפוש.</value></data>
+  <data name="Artwork.Unavailable.NoFactory" xml:space="preserve"><value>חיפוש עטיפות אינו זמין בגרסה זו.</value></data>
+  <data name="Artwork.Unavailable.NoTrack" xml:space="preserve"><value>בחרו תחילה רצועה.</value></data>
+  <data name="Artwork.Unavailable.NotFile" xml:space="preserve"><value>אפשר לשמור עטיפות רק עבור קבצים בספרייה שלכם.</value></data>
+  <data name="Artwork.UnknownError" xml:space="preserve"><value>שגיאה לא ידועה</value></data>
+  <data name="Backups.Delete" xml:space="preserve"><value>מחיקת גיבוי…</value></data>
+  <data name="Backups.DeletePrompt" xml:space="preserve"><value>למחוק את הגיבוי הזה לצמיתות? קובץ האודיו הנוכחי ומטא-נתוני הספרייה יישמרו.
+{0}</value></data>
+  <data name="Backups.DeleteTitle" xml:space="preserve"><value>מחיקת גיבוי קובץ</value></data>
+  <data name="Backups.ListAutomation" xml:space="preserve"><value>גיבויי קבצים מאומתים</value></data>
+  <data name="Backups.Restore" xml:space="preserve"><value>שחזור…</value></data>
+  <data name="Backups.RestoreAccept" xml:space="preserve"><value>שחזור</value></data>
+  <data name="Backups.RestorePrompt" xml:space="preserve"><value>לשחזר את הגיבוי הזה? קובץ האודיו הנוכחי יישמר כגיבוי נוסף. שינויים שלא נשמרו בעורך הרצועות יימחקו.</value></data>
+  <data name="Backups.RestoreTitle" xml:space="preserve"><value>שחזור גיבוי קובץ</value></data>
+  <data name="Backups.Rules" xml:space="preserve"><value>אפשר לשחזר רק גיבויים התואמים לקובץ הנוכחי. אפשר למחוק גרסאות קודמות במפורש.</value></data>
+  <data name="Backups.Summary" xml:space="preserve"><value>{0} גיבויים מאומתים, {1} MiB. </value></data>
+  <data name="Backups.Title" xml:space="preserve"><value>גיבויי קבצים</value></data>
+  <data name="Backups.Unverified" xml:space="preserve"><value>{0} יומנים לא מאומתים נשמרו לבדיקה. </value></data>
+  <data name="Book.Add" xml:space="preserve"><value>הוספת קובץ אודיו…</value></data>
+  <data name="Book.AddFailed" xml:space="preserve"><value>לא ניתן להוסיף את קובץ האודיו</value></data>
+  <data name="Book.AddTip" xml:space="preserve"><value>בחרו קובץ אודיו מקומי. הוא נקרא, לא מועתק ולא משתנה</value></data>
+  <data name="Book.AddTitle" xml:space="preserve"><value>הוספת ספר שמע</value></data>
+  <data name="Book.Added" xml:space="preserve"><value>"{0}" נוסף. קובץ האודיו לא הועתק ולא שונה.</value></data>
+  <data name="Book.AlreadyOnShelf" xml:space="preserve"><value>"{0}" כבר על המדף; המיקום ששמרתם נשמר.</value></data>
+  <data name="Book.AlreadyRemoved" xml:space="preserve"><value>הספר הזה כבר הוסר.</value></data>
+  <data name="Book.AudioFiles" xml:space="preserve"><value>קובצי אודיו</value></data>
+  <data name="Book.ChapterCount.One" xml:space="preserve"><value>פרק אחד ב-"{1}". בחרו אחד ואז "ניגון פרק".</value></data>
+  <data name="Book.ChapterCount.Other" xml:space="preserve"><value>{0} פרקים ב-"{1}". בחרו אחד ואז "ניגון פרק".</value></data>
+  <data name="Book.ChapterCount.Two" xml:space="preserve"><value>{0} פרקים ב-"{1}". בחרו אחד ואז "ניגון פרק".</value></data>
+  <data name="Book.ChapterFailed" xml:space="preserve"><value>לא ניתן היה לנגן את הפרק</value></data>
+  <data name="Book.Chapters" xml:space="preserve"><value>פרקים</value></data>
+  <data name="Book.ChaptersFailed" xml:space="preserve"><value>לא ניתן היה לקרוא את הפרקים</value></data>
+  <data name="Book.ChaptersTip" xml:space="preserve"><value>מציג את הפרקים השמורים בקובץ הזה. שום דבר אינו מתנגן</value></data>
+  <data name="Book.Empty" xml:space="preserve"><value>המדף שלכם ריק. בחרו "הוספת קובץ אודיו…" כדי להתחיל.</value></data>
+  <data name="Book.FileSelectionUnavailable" xml:space="preserve"><value>בחירת קבצים אינה זמינה.</value></data>
+  <data name="Book.Finished" xml:space="preserve"><value>הסתיים · נשמר בסוף</value></data>
+  <data name="Book.FinishedRestart" xml:space="preserve"><value>"{0}" הסתיים; מנגן מההתחלה.</value></data>
+  <data name="Book.Intro" xml:space="preserve"><value>ספרי שמע מקומיים. מיקומים נשמרים רק כשבוחרים "שמירת מיקום".</value></data>
+  <data name="Book.Length" xml:space="preserve"><value>אורך {0}</value></data>
+  <data name="Book.LengthUnknown" xml:space="preserve"><value>אורך לא ידוע</value></data>
+  <data name="Book.Missing" xml:space="preserve"><value>הקובץ חסר — הסירו אותו והוסיפו אותו שוב מהמיקום החדש</value></data>
+  <data name="Book.NoChapters" xml:space="preserve"><value>ל-"{0}" אין פרקים.</value></data>
+  <data name="Book.NoChaptersHelp" xml:space="preserve"><value>לקובץ הזה אין פרקים. השתמשו ב"ניגון מההתחלה" או ב"המשך" כדי לנגן את כל הספר.</value></data>
+  <data name="Book.NoFile" xml:space="preserve"><value>לא נבחר קובץ.</value></data>
+  <data name="Book.NoPlayback" xml:space="preserve"><value>ניגון אינו זמין מהחלון הזה.</value></data>
+  <data name="Book.NoSaved" xml:space="preserve"><value>אין מיקום שמור</value></data>
+  <data name="Book.NotOnShelf" xml:space="preserve"><value>הנגן אינו מנגן ספר מהמדף הזה. התחילו קודם ספר באמצעות "ניגון" או "המשך".</value></data>
+  <data name="Book.NothingPlaying" xml:space="preserve"><value>שום דבר אינו מתנגן. התחילו ספר באמצעות "ניגון" או "המשך" ואז שמרו את המיקום שלו.</value></data>
+  <data name="Book.OnShelf.One" xml:space="preserve"><value>ספר שמע אחד על המדף.</value></data>
+  <data name="Book.OnShelf.Other" xml:space="preserve"><value>{0} ספרי שמע על המדף.</value></data>
+  <data name="Book.OnShelf.Two" xml:space="preserve"><value>{0} ספרי שמע על המדף.</value></data>
+  <data name="Book.PlayChapter" xml:space="preserve"><value>ניגון פרק</value></data>
+  <data name="Book.PlayChapterTip" xml:space="preserve"><value>מנגן מהפרק שנבחר בנגן הראשי. בחירת שורה אינה מתחילה ניגון</value></data>
+  <data name="Book.PlayFailed" xml:space="preserve"><value>לא ניתן היה לנגן את ספר השמע</value></data>
+  <data name="Book.PlayFromStart" xml:space="preserve"><value>ניגון מההתחלה</value></data>
+  <data name="Book.PlayingChapter" xml:space="preserve"><value>מנגן את "{0}", {1}, מ-{2}.</value></data>
+  <data name="Book.PlayingFrom" xml:space="preserve"><value>מנגן את "{0}" מ-{1}.</value></data>
+  <data name="Book.PlayingStart" xml:space="preserve"><value>מנגן את "{0}" מההתחלה.</value></data>
+  <data name="Book.ReadFailed" xml:space="preserve"><value>לא ניתן היה לקרוא את מדף ספרי השמע</value></data>
+  <data name="Book.RemoveFailed" xml:space="preserve"><value>לא ניתן היה להסיר את ספר השמע</value></data>
+  <data name="Book.RemovePrompt" xml:space="preserve"><value>לשכוח את הרשומה הזו במדף ואת המיקום השמור שלה?
+קובץ האודיו נשאר בדיסק.
+{0}</value></data>
+  <data name="Book.RemoveTip" xml:space="preserve"><value>שוכח את הרשומה הזו במדף. קובץ האודיו נשאר בדיסק</value></data>
+  <data name="Book.RemoveTitle" xml:space="preserve"><value>הסרת ספר שמע</value></data>
+  <data name="Book.RemovedFromShelf" xml:space="preserve"><value>"{0}" הוסר מהמדף. קובץ האודיו לא נגע.</value></data>
+  <data name="Book.ResumeTip" xml:space="preserve"><value>ממשיך מהמיקום ששמרתם לאחרונה</value></data>
+  <data name="Book.SaveFailed" xml:space="preserve"><value>לא ניתן היה לשמור את המיקום</value></data>
+  <data name="Book.SavePositionTip" xml:space="preserve"><value>שומר את המקום שבו הנגן הראשי נמצא בספר השמע שהוא מנגן או שהשהה</value></data>
+  <data name="Book.SavedOf" xml:space="preserve"><value>נשמר {0} מתוך {1}</value></data>
+  <data name="Book.SavedPos" xml:space="preserve"><value>המיקום {0} נשמר עבור "{1}".</value></data>
+  <data name="Book.SelectionChanged" xml:space="preserve"><value>הבחירה השתנתה, ולכן הפרקים לא הוצגו.</value></data>
+  <data name="Book.ShowingFirst" xml:space="preserve"><value>מציג את {0} הפרקים הראשונים.</value></data>
+  <data name="Book.StatusIntro" xml:space="preserve"><value>הוסיפו קובץ אודיו מקומי למדף שלכם. שום דבר לא מתנגן או נשמר עד שתבקשו.</value></data>
+  <data name="Book.UnknownAuthor" xml:space="preserve"><value>מחבר לא ידוע</value></data>
+  <data name="Column.Album" xml:space="preserve"><value>אלבום</value></data>
+  <data name="Column.AlbumArtist" xml:space="preserve"><value>אמן האלבום</value></data>
+  <data name="Column.Artist" xml:space="preserve"><value>אמן</value></data>
+  <data name="Column.BitRate" xml:space="preserve"><value>קצב סיביות</value></data>
+  <data name="Column.Bpm" xml:space="preserve"><value>BPM</value></data>
+  <data name="Column.Channels" xml:space="preserve"><value>ערוצים</value></data>
+  <data name="Column.Comment" xml:space="preserve"><value>הערה</value></data>
+  <data name="Column.Composer" xml:space="preserve"><value>מלחין</value></data>
+  <data name="Column.DateAdded" xml:space="preserve"><value>תאריך הוספה</value></data>
+  <data name="Column.DateModified" xml:space="preserve"><value>תאריך שינוי</value></data>
+  <data name="Column.Description" xml:space="preserve"><value>תיאור</value></data>
+  <data name="Column.DiscNumber" xml:space="preserve"><value>מספר דיסק</value></data>
+  <data name="Column.EpisodeNumber" xml:space="preserve"><value>מספר פרק</value></data>
+  <data name="Column.Genre" xml:space="preserve"><value>סגנון</value></data>
+  <data name="Column.Keywords" xml:space="preserve"><value>מילות מפתח</value></data>
+  <data name="Column.LastPlayed" xml:space="preserve"><value>נוגן לאחרונה</value></data>
+  <data name="Column.LastSkipped" xml:space="preserve"><value>דולג לאחרונה</value></data>
+  <data name="Column.Location" xml:space="preserve"><value>מיקום הקובץ</value></data>
+  <data name="Column.PlayCount" xml:space="preserve"><value>מספר ניגונים</value></data>
+  <data name="Column.Rating" xml:space="preserve"><value>דירוג</value></data>
+  <data name="Column.SampleRate" xml:space="preserve"><value>קצב דגימה</value></data>
+  <data name="Column.SeasonNumber" xml:space="preserve"><value>מספר עונה</value></data>
+  <data name="Column.ShowName" xml:space="preserve"><value>שם התוכנית</value></data>
+  <data name="Column.Size" xml:space="preserve"><value>גודל</value></data>
+  <data name="Column.SkipCount" xml:space="preserve"><value>מספר דילוגים</value></data>
+  <data name="Column.Source" xml:space="preserve"><value>מקור</value></data>
+  <data name="Column.Time" xml:space="preserve"><value>זמן</value></data>
+  <data name="Column.Title" xml:space="preserve"><value>כותרת</value></data>
+  <data name="Column.TrackNumber" xml:space="preserve"><value>מספר רצועה</value></data>
+  <data name="Column.Year" xml:space="preserve"><value>שנה</value></data>
+  <data name="Common.AllCount" xml:space="preserve"><value>הכול ({0})</value></data>
+  <data name="Common.Cancel" xml:space="preserve"><value>ביטול</value></data>
+  <data name="Common.Cancelled" xml:space="preserve"><value>בוטל.</value></data>
+  <data name="Common.Cancelling" xml:space="preserve"><value>מבטל…</value></data>
+  <data name="Common.Close" xml:space="preserve"><value>סגירה</value></data>
+  <data name="Common.NameCount" xml:space="preserve"><value>{0} ({1})</value></data>
+  <data name="Common.NoLookupPlugin" xml:space="preserve"><value>לא מותקן או מופעל תוסף חיפוש. ראו "העדפות" &gt; "תוספים".</value></data>
+  <data name="Common.OnlineLookupOff" xml:space="preserve"><value>החיפוש המקוון כבוי. הפעילו אותו ב"העדפות" &gt; "מקוון".</value></data>
+  <data name="Common.OperationCancelled" xml:space="preserve"><value>הפעולה בוטלה.</value></data>
+  <data name="Common.OperationFailed" xml:space="preserve"><value>הפעולה נכשלה: {0}</value></data>
+  <data name="Common.Unknown" xml:space="preserve"><value>לא ידוע</value></data>
+  <data name="Dialog.Cancel" xml:space="preserve"><value>ביטול</value></data>
+  <data name="Dialog.CloseAutomation" xml:space="preserve"><value>סגירת {0}</value></data>
+  <data name="Dialog.Create" xml:space="preserve"><value>יצירה</value></data>
+  <data name="Dialog.CreatePlaylist" xml:space="preserve"><value>יצירת רשימת השמעה</value></data>
+  <data name="Dialog.Delete" xml:space="preserve"><value>מחיקה</value></data>
+  <data name="Dialog.DeletePlaylist" xml:space="preserve"><value>מחיקת רשימת השמעה</value></data>
+  <data name="Dialog.DeletePlaylistPrompt" xml:space="preserve"><value>למחוק את "{0}"? קובצי המוזיקה שלכם לא ייפגעו.</value></data>
+  <data name="Dialog.PlaylistName" xml:space="preserve"><value>שם רשימת ההשמעה</value></data>
+  <data name="Dialog.Remove" xml:space="preserve"><value>הסרה</value></data>
+  <data name="Dialog.RemoveFolder" xml:space="preserve"><value>הסרת תיקיית מוזיקה</value></data>
+  <data name="Dialog.RemoveFolderPrompt" xml:space="preserve"><value>להפסיק לעקוב אחר "{0}" ולהסיר את הרצועות שלה מהספרייה? קובצי המוזיקה לא ייפגעו.</value></data>
+  <data name="Dialog.Rename" xml:space="preserve"><value>שינוי שם</value></data>
+  <data name="Dialog.RenamePlaylist" xml:space="preserve"><value>שינוי שם רשימת ההשמעה</value></data>
+  <data name="Dialog.Save" xml:space="preserve"><value>שמירה</value></data>
+  <data name="Disc.ActivePresent" xml:space="preserve"><value>היום</value></data>
+  <data name="Disc.ActiveRange" xml:space="preserve"><value>פעיל {0}–{1}</value></data>
+  <data name="Disc.Artist" xml:space="preserve"><value>על האמן</value></data>
+  <data name="Disc.ArtistFailed" xml:space="preserve"><value>חיפוש האמן לא הצליח: {0}</value></data>
+  <data name="Disc.ArtistFrom" xml:space="preserve"><value>פרטי האמן מ-MusicBrainz.</value></data>
+  <data name="Disc.ArtistLooking" xml:space="preserve"><value>מחפש את {0}…</value></data>
+  <data name="Disc.ArtistNoMatch" xml:space="preserve"><value>אין התאמה קרובה ל-"{0}".</value></data>
+  <data name="Disc.ArtistTip" xml:space="preserve"><value>מחפש עובדות בסיסיות על האמן: סוג, אזור, שנות פעילות, סגנונות וקישורים</value></data>
+  <data name="Disc.CoverAutomation" xml:space="preserve"><value>עטיפת האלבום</value></data>
+  <data name="Disc.DriveAutomation" xml:space="preserve"><value>כונן תקליטורים (CD או DVD)</value></data>
+  <data name="Disc.Empty" xml:space="preserve"><value>הכניסו תקליטור שמע ואז בחרו "קריאת תקליטור".</value></data>
+  <data name="Disc.FoundMany" xml:space="preserve"><value>נמצאו {0} אלבומים אפשריים; ההתאמה הטובה ביותר מוצגת.</value></data>
+  <data name="Disc.FoundOne" xml:space="preserve"><value>האלבום הזה נמצא.</value></data>
+  <data name="Disc.Genres" xml:space="preserve"><value>סגנונות: {0}</value></data>
+  <data name="Disc.LookUp" xml:space="preserve"><value>חיפוש</value></data>
+  <data name="Disc.LookingUp" xml:space="preserve"><value>מחפש את התקליטור הזה…</value></data>
+  <data name="Disc.LookupFailed" xml:space="preserve"><value>החיפוש נכשל: {0} הרצועות שומרות על המספור שלהן.</value></data>
+  <data name="Disc.LookupHintOff" xml:space="preserve"><value>החיפוש המקוון כבוי או שלא מותקן תוסף. הפעילו אותו ב"העדפות" &gt; "מקוון".</value></data>
+  <data name="Disc.LookupHintOn" xml:space="preserve"><value>"חיפוש" שולח את תוכן העניינים של התקליטור אל MusicBrainz.</value></data>
+  <data name="Disc.NoDisc" xml:space="preserve"><value>אין תקליטור שמע ב-{0}.</value></data>
+  <data name="Disc.NoDrive" xml:space="preserve"><value>לא נמצא כונן CD או DVD.</value></data>
+  <data name="Disc.NotKnown" xml:space="preserve"><value>התקליטור הזה אינו מוכר ל-MusicBrainz.</value></data>
+  <data name="Disc.OtherAlbums" xml:space="preserve"><value>אלבומים אפשריים נוספים</value></data>
+  <data name="Disc.PlayingDisc" xml:space="preserve"><value>מנגן את התקליטור מהרצועה הראשונה.</value></data>
+  <data name="Disc.PlayingTrack" xml:space="preserve"><value>מנגן את רצועה {0}. שאר התקליטור בתור.</value></data>
+  <data name="Disc.PossibleAlbums" xml:space="preserve"><value>אלבומים אפשריים</value></data>
+  <data name="Disc.Read" xml:space="preserve"><value>קריאת תקליטור</value></data>
+  <data name="Disc.ReadTip" xml:space="preserve"><value>קורא שוב את תוכן העניינים, למשל לאחר החלפת התקליטור</value></data>
+  <data name="Disc.Reading" xml:space="preserve"><value>קורא את התקליטור…</value></data>
+  <data name="Disc.Title" xml:space="preserve"><value>תקליטור שמע</value></data>
+  <data name="Disc.TrackN" xml:space="preserve"><value>רצועה {0}</value></data>
+  <data name="Disc.TracksAndLength" xml:space="preserve"><value>{0} רצועות · {1}</value></data>
+  <data name="Disc.TracksAutomation" xml:space="preserve"><value>רצועות התקליטור</value></data>
+  <data name="Disc.TracksChooseLookup" xml:space="preserve"><value>{0} רצועות. בחרו "חיפוש" כדי למצוא את פרטי האלבום.</value></data>
+  <data name="Disc.TracksOnly" xml:space="preserve"><value>{0} רצועות.</value></data>
+  <data name="Equalizer.Title" xml:space="preserve"><value>אקולייזר</value></data>
+  <data name="Equalizer.ButtonAutomation" xml:space="preserve"><value>אקולייזר</value></data>
+  <data name="Equalizer.ButtonTip" xml:space="preserve"><value>פתיחת האקולייזר</value></data>
+  <data name="Equalizer.On" xml:space="preserve"><value>פעיל</value></data>
+  <data name="Equalizer.OnAutomation" xml:space="preserve"><value>הפעלה או כיבוי של האקולייזר</value></data>
+  <data name="Equalizer.OnTip" xml:space="preserve"><value>האקולייזר פעיל; העקומה חלה על כל מה שמנגנים</value></data>
+  <data name="Equalizer.PresetAutomation" xml:space="preserve"><value>הגדרה מוכנה לאקולייזר</value></data>
+  <data name="Equalizer.Reset" xml:space="preserve"><value>איפוס</value></data>
+  <data name="Equalizer.ResetTip" xml:space="preserve"><value>מחזיר את כל הרצועות ואת מגבר הקדם ל-0 dB</value></data>
+  <data name="Equalizer.Preamp" xml:space="preserve"><value>מגבר קדם</value></data>
+  <data name="Equalizer.Preset.Custom" xml:space="preserve"><value>מותאם אישית</value></data>
+  <data name="Equalizer.Preset.Flat" xml:space="preserve"><value>שטוח</value></data>
+  <data name="Equalizer.Preset.BassBoost" xml:space="preserve"><value>הגברת בס</value></data>
+  <data name="Equalizer.Preset.TrebleBoost" xml:space="preserve"><value>הגברת טרבל</value></data>
+  <data name="Equalizer.Preset.Rock" xml:space="preserve"><value>רוק</value></data>
+  <data name="Equalizer.Preset.Pop" xml:space="preserve"><value>פופ</value></data>
+  <data name="Equalizer.Preset.Jazz" xml:space="preserve"><value>ג׳אז</value></data>
+  <data name="Equalizer.Preset.Classical" xml:space="preserve"><value>קלאסי</value></data>
+  <data name="Equalizer.Preset.Vocal" xml:space="preserve"><value>שירה</value></data>
+  <data name="Error.Reported" xml:space="preserve"><value>משהו השתבש ({0}). הפרטים נשמרו ב-{1}.</value></data>
+  <data name="Crash.EngineBuiltIn" xml:space="preserve"><value>המובנה</value></data>
+  <data name="Crash.EngineVlc" xml:space="preserve"><value>VLC</value></data>
+  <data name="Crash.Message" xml:space="preserve"><value>ההפעלה הקודמת לא הסתיימה כרגיל.</value></data>
+  <data name="Crash.Title" xml:space="preserve"><value>Aibell נסגרה באופן בלתי צפוי</value></data>
+  <data name="Crash.WhilePlaying" xml:space="preserve"><value>היא נעצרה בעת ניגון “{0}” עם הנגן {1}.</value></data>
+  <data name="ErrorDialog.Close" xml:space="preserve"><value>סגור</value></data>
+  <data name="ErrorDialog.Copied" xml:space="preserve"><value>הועתק</value></data>
+  <data name="ErrorDialog.Copy" xml:space="preserve"><value>העתק פרטים</value></data>
+  <data name="ErrorDialog.Details" xml:space="preserve"><value>פרטים</value></data>
+  <data name="ErrorDialog.DetailsAutomation" xml:space="preserve"><value>פרטים טכניים</value></data>
+  <data name="ErrorDialog.HideDetails" xml:space="preserve"><value>הסתר פרטים</value></data>
+  <data name="ErrorDialog.LogLocation" xml:space="preserve"><value>קובץ יומן: {0}</value></data>
+  <data name="ErrorDialog.More" xml:space="preserve"><value>אירעו עוד {0} בעיות; ראו פרטים.</value></data>
+  <data name="ErrorDialog.Title" xml:space="preserve"><value>משהו השתבש</value></data>
+  <data name="Playback.FailedTitle" xml:space="preserve"><value>לא ניתן היה לנגן את הרצועה</value></data>
+  <data name="Playback.TryVlc" xml:space="preserve"><value>אם הבעיה חוזרת, בחרו VLC תחת העדפות &gt; ניגון.</value></data>
+  <data name="Import.DuplicateCount.One" xml:space="preserve"><value>כפילות אחת</value></data>
+  <data name="Import.DuplicateCount.Other" xml:space="preserve"><value>{0} כפילויות</value></data>
+  <data name="Import.DuplicateCount.Two" xml:space="preserve"><value>{0} כפילויות</value></data>
+  <data name="Import.Entry" xml:space="preserve"><value>רשומה {0}: {1}</value></data>
+  <data name="Import.NoStations" xml:space="preserve"><value>לא נמצאו תחנות חדשות עם זרם ישיר.</value></data>
+  <data name="Import.NoTracks" xml:space="preserve"><value>לא נמצאו רצועות מקומיות הניתנות לקריאה.</value></data>
+  <data name="Import.PlaylistCancelled" xml:space="preserve"><value>סקירת רשימת ההשמעה בוטלה. הספרייה לא השתנתה.</value></data>
+  <data name="Import.PlaylistFailed" xml:space="preserve"><value>לא ניתן היה להכין את רשימת ההשמעה.</value></data>
+  <data name="Import.PlaylistSummary" xml:space="preserve"><value>{0} מוכנות; {1} דולגו; {2} הושמטו.</value></data>
+  <data name="Import.ReadingFiles" xml:space="preserve"><value>קורא את קובצי האודיו המוזכרים…</value></data>
+  <data name="Import.ReadingStations" xml:space="preserve"><value>קורא את כתובות התחנות השמורות…</value></data>
+  <data name="Import.ReviewPlaylist" xml:space="preserve"><value>סקרו את רשימת ההשמעה לפני הוספתה לספרייה. קובצי האודיו נשארים ללא שינוי.</value></data>
+  <data name="Import.ReviewStations" xml:space="preserve"><value>סקרו את התחנות האלה לפני השמירה. בחרו תחנה ולחצו על "ניגון" כדי להתחבר לאחר הייבוא.</value></data>
+  <data name="Import.SkippedCount" xml:space="preserve"><value>רשומות שדולגו ({0})</value></data>
+  <data name="Import.SkippedPlaylist" xml:space="preserve"><value>רשומות רשימת השמעה שדולגו</value></data>
+  <data name="Import.SkippedStations" xml:space="preserve"><value>רשומות תחנות שדולגו</value></data>
+  <data name="Import.SkippedTab" xml:space="preserve"><value>רשומות שדולגו</value></data>
+  <data name="Import.StationCount.One" xml:space="preserve"><value>תחנה אחת</value></data>
+  <data name="Import.StationCount.Other" xml:space="preserve"><value>{0} תחנות</value></data>
+  <data name="Import.StationCount.Two" xml:space="preserve"><value>{0} תחנות</value></data>
+  <data name="Import.StationsCancelled" xml:space="preserve"><value>סקירת התחנות בוטלה.</value></data>
+  <data name="Import.StationsFailed" xml:space="preserve"><value>לא ניתן היה להכין את רשימת ההשמעה של התחנות.</value></data>
+  <data name="Import.StationsReady" xml:space="preserve"><value>תחנות מוכנות לייבוא</value></data>
+  <data name="Import.StationsTab" xml:space="preserve"><value>תחנות</value></data>
+  <data name="Import.TrackCount.One" xml:space="preserve"><value>רצועה אחת</value></data>
+  <data name="Import.TrackCount.Other" xml:space="preserve"><value>{0} רצועות</value></data>
+  <data name="Import.TrackCount.Two" xml:space="preserve"><value>{0} רצועות</value></data>
+  <data name="Import.TracksReady" xml:space="preserve"><value>רצועות מוכנות לייבוא</value></data>
+  <data name="Import.TracksTab" xml:space="preserve"><value>רצועות</value></data>
+  <data name="Library.AllMusic" xml:space="preserve"><value>כל המוזיקה</value></data>
+  <data name="Library.Importing" xml:space="preserve"><value>מייבא את {0}…</value></data>
+  <data name="Library.Rescanned" xml:space="preserve"><value>{0} נסרק מחדש: {1} אונדקסו, {2} הוסרו, {3} לא ניתנים לקריאה.</value></data>
+  <data name="Library.StoppedWatching.One" xml:space="preserve"><value>המעקב אחר {1} הופסק ורצועה אחת שאונדקסה הוסרה. הקבצים לא נגעו.</value></data>
+  <data name="Library.StoppedWatching.Other" xml:space="preserve"><value>המעקב אחר {1} הופסק ו-{0} רצועות שאונדקסו הוסרו. הקבצים לא נגעו.</value></data>
+  <data name="Library.StoppedWatching.Two" xml:space="preserve"><value>המעקב אחר {1} הופסק ו-{0} רצועות שאונדקסו הוסרו. הקבצים לא נגעו.</value></data>
+  <data name="Library.Synced" xml:space="preserve"><value>{0} קבצים סונכרנו ו-{1} הוסרו. {2}</value></data>
+  <data name="Library.SyncedIssues" xml:space="preserve"><value>{0} קבצים סונכרנו; {1} הוסרו; {2} לא ניתנים לקריאה.</value></data>
+  <data name="Library.Updated.Removed" xml:space="preserve"><value>הספרייה עודכנה: {0} רצועות חסרות הוסרו.</value></data>
+  <data name="Library.Updated.Unreadable" xml:space="preserve"><value>הספרייה עודכנה עם {0} קבצים שלא ניתן לקרוא.</value></data>
+  <data name="Main.AddEllipsis" xml:space="preserve"><value>הוספה…</value></data>
+  <data name="Main.AddFolder" xml:space="preserve"><value>הוספת תיקיית מוזיקה</value></data>
+  <data name="Main.OpenFiles" xml:space="preserve"><value>פתיחת קבצים…</value></data>
+  <data name="Main.AddToLibrary" xml:space="preserve"><value>הוספה לספרייה</value></data>
+  <data name="Main.AddToPlaylist" xml:space="preserve"><value>הוספה לרשימת השמעה</value></data>
+  <data name="Main.Album" xml:space="preserve"><value>אלבום</value></data>
+  <data name="Main.Albums" xml:space="preserve"><value>אלבומים</value></data>
+  <data name="Main.Artist" xml:space="preserve"><value>אמן</value></data>
+  <data name="Main.Artists" xml:space="preserve"><value>אמנים</value></data>
+  <data name="Main.AudiobookShelf" xml:space="preserve"><value>מדף ספרי שמע</value></data>
+  <data name="Main.Audiobooks" xml:space="preserve"><value>ספרי שמע</value></data>
+  <data name="Main.Clear" xml:space="preserve"><value>ניקוי</value></data>
+  <data name="Main.ClearQueueTip" xml:space="preserve"><value>מנקה את התור בלי להפסיק את הניגון</value></data>
+  <data name="Main.Closing" xml:space="preserve"><value>מסיים עבודה ממתינה לפני הסגירה…</value></data>
+  <data name="Main.CreatePlaylist" xml:space="preserve"><value>יצירת רשימת השמעה</value></data>
+  <data name="Main.CreateSmartPlaylist" xml:space="preserve"><value>יצירת רשימת השמעה חכמה</value></data>
+  <data name="Main.Delete" xml:space="preserve"><value>מחיקה…</value></data>
+  <data name="Main.DeletePlaylistTip" xml:space="preserve"><value>מחיקת רשימת ההשמעה שנבחרה</value></data>
+  <data name="Main.DropTracks" xml:space="preserve"><value>שחררו כאן רצועות</value></data>
+  <data name="Main.EditEllipsis" xml:space="preserve"><value>עריכה…</value></data>
+  <data name="Main.EditRules" xml:space="preserve"><value>עריכת כללים…</value></data>
+  <data name="Main.EditStation" xml:space="preserve"><value>עריכת תחנה…</value></data>
+  <data name="Main.ExportPlaylist" xml:space="preserve"><value>ייצוא רשימת השמעה…</value></data>
+  <data name="Main.FoldSidebar" xml:space="preserve"><value>כיווץ סרגל הצד</value></data>
+  <data name="Main.ShowSidebar" xml:space="preserve"><value>הצגת סרגל הצד</value></data>
+  <data name="Main.FoldQueue" xml:space="preserve"><value>כיווץ תור הניגון</value></data>
+  <data name="Main.Folders" xml:space="preserve"><value>תיקיות</value></data>
+  <data name="Main.Genre" xml:space="preserve"><value>סגנון</value></data>
+  <data name="Main.Genres" xml:space="preserve"><value>סגנונות</value></data>
+  <data name="Main.ImportEllipsis" xml:space="preserve"><value>ייבוא…</value></data>
+  <data name="Main.ImportPlaylistFile" xml:space="preserve"><value>ייבוא קובץ רשימת השמעה</value></data>
+  <data name="Main.ImportStations" xml:space="preserve"><value>ייבוא תחנות רדיו</value></data>
+  <data name="Main.ImportStationsTip" xml:space="preserve"><value>מייבא תחנות מרשימת השמעה מקומית מסוג M3U או PLS</value></data>
+  <data name="Main.Library" xml:space="preserve"><value>ספרייה</value></data>
+  <data name="Main.LibraryTracks" xml:space="preserve"><value>רצועות הספרייה</value></data>
+  <data name="Main.MoveDown" xml:space="preserve"><value>הזזה למטה ברשימת ההשמעה</value></data>
+  <data name="Main.MoveUp" xml:space="preserve"><value>הזזה למעלה ברשימת ההשמעה</value></data>
+  <data name="Main.MusicFolders" xml:space="preserve"><value>תיקיות מוזיקה</value></data>
+  <data name="Main.Next" xml:space="preserve"><value>הרצועה הבאה</value></data>
+  <data name="Main.NextHint" xml:space="preserve"><value>Alt+חץ ימינה מהספרייה</value></data>
+  <data name="Main.NextTip" xml:space="preserve"><value>הרצועה הבאה (Alt+חץ ימינה מהספרייה)</value></data>
+  <data name="Main.NoStations" xml:space="preserve"><value>אין תחנות תואמות. הוסיפו זרם שמע ישיר מסוג HTTP/HTTPS כדי להתחיל.</value></data>
+  <data name="Main.NoTracks" xml:space="preserve"><value>אין רצועות בתצוגה הזו.</value></data>
+  <data name="Main.NowPlaying" xml:space="preserve"><value>מתנגן כעת</value></data>
+  <data name="Main.NowPlayingArt" xml:space="preserve"><value>עטיפת הרצועה המתנגנת</value></data>
+  <data name="Main.Play" xml:space="preserve"><value>ניגון</value></data>
+  <data name="Main.PlayHint" xml:space="preserve"><value>מקש הרווח מרשימת הרצועות או התור</value></data>
+  <data name="Main.PlayQueue" xml:space="preserve"><value>תור ניגון</value></data>
+  <data name="Main.Playlists" xml:space="preserve"><value>רשימות השמעה</value></data>
+  <data name="Main.PlaylistsAutomation" xml:space="preserve"><value>רשימות השמעה</value></data>
+  <data name="Main.Preferences" xml:space="preserve"><value>העדפות</value></data>
+  <data name="Main.PreferencesTip" xml:space="preserve"><value>העדפות (Ctrl+,)</value></data>
+  <data name="Main.Previous" xml:space="preserve"><value>הרצועה הקודמת</value></data>
+  <data name="Main.PreviousHint" xml:space="preserve"><value>Alt+חץ שמאלה מהספרייה</value></data>
+  <data name="Main.PreviousTip" xml:space="preserve"><value>הרצועה הקודמת (Alt+חץ שמאלה מהספרייה)</value></data>
+  <data name="Main.QueueLast" xml:space="preserve"><value>הוספה לסוף התור</value></data>
+  <data name="Main.QueueNext" xml:space="preserve"><value>הוספה כרצועה הבאה</value></data>
+  <data name="Main.RadioHeader" xml:space="preserve"><value>רדיו</value></data>
+  <data name="Main.Rating" xml:space="preserve"><value>דירוג</value></data>
+  <data name="Main.RatingClear" xml:space="preserve"><value>☆☆☆☆☆  ניקוי</value></data>
+  <data name="Main.Remove" xml:space="preserve"><value>הסרה…</value></data>
+  <data name="Main.RemoveFolderTip" xml:space="preserve"><value>הסרת התיקייה שנבחרה</value></data>
+  <data name="Main.RemoveFromPlaylist" xml:space="preserve"><value>הסרה מרשימת ההשמעה</value></data>
+  <data name="Main.RemoveShort" xml:space="preserve"><value>הסרה</value></data>
+  <data name="Main.RemoveStation" xml:space="preserve"><value>הסרת תחנה…</value></data>
+  <data name="Main.Rename" xml:space="preserve"><value>שינוי שם…</value></data>
+  <data name="Main.Rescan" xml:space="preserve"><value>סריקה מחדש</value></data>
+  <data name="Main.SavedStations" xml:space="preserve"><value>תחנות רדיו שמורות</value></data>
+  <data name="Main.SearchTip" xml:space="preserve"><value>חיפוש (Ctrl+F); Escape מנקה את השאילתה</value></data>
+  <data name="Main.SeekTip" xml:space="preserve"><value>מיקום ניגון (מקשי חצים ‎±5 שנ׳, Page Up/Down ‎±15 שנ׳, Home/End)</value></data>
+  <data name="Main.SeekUnavailable" xml:space="preserve"><value>מיקום ניגון, לא זמין</value></data>
+  <data name="Main.ShowFile" xml:space="preserve"><value>הצגת הקובץ</value></data>
+  <data name="Main.ShowQueue" xml:space="preserve"><value>הצגת תור הניגון</value></data>
+  <data name="Main.StatusOperationFailed" xml:space="preserve"><value>הפעולה נכשלה: {0}</value></data>
+  <data name="Main.StatusPrefs" xml:space="preserve"><value>לא ניתן היה לפתוח את ההעדפות: {0}</value></data>
+  <data name="Main.StatusTrackProps" xml:space="preserve"><value>לא ניתן היה לפתוח את מאפייני הרצועה: {0}</value></data>
+  <data name="Main.Stop" xml:space="preserve"><value>עצירה</value></data>
+  <data name="Main.TitleColumn" xml:space="preserve"><value>כותרת</value></data>
+  <data name="Main.ViewMetadata" xml:space="preserve"><value>הצגת מטא-נתונים…</value></data>
+  <data name="Main.Volume" xml:space="preserve"><value>עוצמת קול</value></data>
+  <data name="Main.VolumeTip" xml:space="preserve"><value>עוצמת קול (מקשי חצים ‎±5%‎, Page Up/Down ‎±10%‎, Home/End)</value></data>
+  <data name="Menu.NewPlaylist" xml:space="preserve"><value>רשימת השמעה חדשה…</value></data>
+  <data name="Menu.NoPlaylists" xml:space="preserve"><value>אין רשימות השמעה קיימות</value></data>
+  <data name="Menu.RestoreDefaults" xml:space="preserve"><value>שחזור ברירות מחדל</value></data>
+  <data name="Meta.AddCover" xml:space="preserve"><value>הוספת עטיפה…</value></data>
+  <data name="Meta.AddCoverTip" xml:space="preserve"><value>מוסיף או מחליף את העטיפה המוטמעת המוצגת בתמונת PNG או JPEG.</value></data>
+  <data name="Meta.AdditionalTags" xml:space="preserve"><value>תגיות נוספות בקובץ ({0})</value></data>
+  <data name="Meta.AlbumArtist" xml:space="preserve"><value>אמן האלבום</value></data>
+  <data name="Meta.AlbumTitle" xml:space="preserve"><value>כותרת האלבום</value></data>
+  <data name="Meta.BackupsFailed" xml:space="preserve"><value>לא ניתן היה לנהל גיבויים: {0}</value></data>
+  <data name="Meta.BadNumbers" xml:space="preserve"><value>הזינו מספרים תקינים בשדות המספריים.</value></data>
+  <data name="Meta.BitRate" xml:space="preserve"><value>קצב סיביות</value></data>
+  <data name="Meta.BitsPerSample" xml:space="preserve"><value>סיביות לדגימה</value></data>
+  <data name="Meta.Bpm" xml:space="preserve"><value>פעימות לדקה</value></data>
+  <data name="Meta.Channels" xml:space="preserve"><value>ערוצים</value></data>
+  <data name="Meta.CloseAutomation" xml:space="preserve"><value>סגירת מאפייני הרצועה</value></data>
+  <data name="Meta.Codec" xml:space="preserve"><value>מקודד אודיו</value></data>
+  <data name="Meta.Comment" xml:space="preserve"><value>הערה</value></data>
+  <data name="Meta.Composer" xml:space="preserve"><value>מלחין</value></data>
+  <data name="Meta.Conductor" xml:space="preserve"><value>מנצח</value></data>
+  <data name="Meta.Copyright" xml:space="preserve"><value>זכויות יוצרים</value></data>
+  <data name="Meta.CoverAutomation" xml:space="preserve"><value>עטיפת הרצועה</value></data>
+  <data name="Meta.CoverLoadFailed" xml:space="preserve"><value>לא ניתן היה לטעון את העטיפה: {0}</value></data>
+  <data name="Meta.CoverTip" xml:space="preserve"><value>עטיפה מקובץ האודיו או מהתיקייה שלו</value></data>
+  <data name="Meta.Description" xml:space="preserve"><value>תיאור</value></data>
+  <data name="Meta.DestinationAutomation" xml:space="preserve"><value>יעד השמירה</value></data>
+  <data name="Meta.DestinationTip" xml:space="preserve"><value>בחרו היכן לשמור. כתיבה לקבצים דורשת ניגון מופסק.</value></data>
+  <data name="Meta.DestinationUnavailable" xml:space="preserve"><value>כתיבה לקבצים זמינה לקובצי FLAC, M4A, MP3, Ogg, Opus ו-WAV מסוג PCM קלאסי שאומתו.</value></data>
+  <data name="Meta.Directory" xml:space="preserve"><value>ספרייה</value></data>
+  <data name="Meta.DiscNumber" xml:space="preserve"><value>מספר דיסק</value></data>
+  <data name="Meta.Duration" xml:space="preserve"><value>משך</value></data>
+  <data name="Meta.EmbeddedPictures" xml:space="preserve"><value>תמונות מוטמעות</value></data>
+  <data name="Meta.EpisodeNumber" xml:space="preserve"><value>מספר פרק</value></data>
+  <data name="Meta.FileAndLibrary" xml:space="preserve"><value>קובץ וספרייה</value></data>
+  <data name="Meta.FileModified" xml:space="preserve"><value>הקובץ שונה</value></data>
+  <data name="Meta.FileName" xml:space="preserve"><value>שם הקובץ</value></data>
+  <data name="Meta.FileSize" xml:space="preserve"><value>גודל הקובץ</value></data>
+  <data name="Meta.Genre" xml:space="preserve"><value>סגנון</value></data>
+  <data name="Meta.Grouping" xml:space="preserve"><value>קיבוץ</value></data>
+  <data name="Meta.HintFile" xml:space="preserve"><value>כותב את התגיות ששונו ומעדכן את הספרייה. גיבוי של הקובץ המקורי נשמר. הדירוגים נשארים בספרייה.</value></data>
+  <data name="Meta.HintLibrary" xml:space="preserve"><value>השינויים נשמרים בספרייה שלכם. תגיות קובץ האודיו לא משתנות.</value></data>
+  <data name="Meta.HintWav" xml:space="preserve"><value>WAV: כותרת, אמן, אלבום, סגנון, שנה, מספר רצועה והערה בלבד. גיבוי של הקובץ המקורי נשמר.</value></data>
+  <data name="Meta.Imported" xml:space="preserve"><value>יובא</value></data>
+  <data name="Meta.Keywords" xml:space="preserve"><value>מילות מפתח</value></data>
+  <data name="Meta.LastPlayed" xml:space="preserve"><value>נוגן לאחרונה</value></data>
+  <data name="Meta.LastSkipped" xml:space="preserve"><value>דולג לאחרונה</value></data>
+  <data name="Meta.LibraryOnly" xml:space="preserve"><value>ספרייה בלבד</value></data>
+  <data name="Meta.LibrarySource" xml:space="preserve"><value>מקור הספרייה</value></data>
+  <data name="Meta.LicenseUri" xml:space="preserve"><value>כתובת הרישיון (URI)</value></data>
+  <data name="Meta.Location" xml:space="preserve"><value>מיקום</value></data>
+  <data name="Meta.ManageBackups" xml:space="preserve"><value>ניהול גיבויי קבצים…</value></data>
+  <data name="Meta.OfTotal" xml:space="preserve"><value>מתוך סך הכול</value></data>
+  <data name="Meta.PickCover" xml:space="preserve"><value>בחירת עטיפה לרצועה</value></data>
+  <data name="Meta.PlayCount" xml:space="preserve"><value>מספר ניגונים</value></data>
+  <data name="Meta.PngJpeg" xml:space="preserve"><value>תמונות PNG או JPEG</value></data>
+  <data name="Meta.Rating" xml:space="preserve"><value>דירוג</value></data>
+  <data name="Meta.RemoveCover" xml:space="preserve"><value>הסרת עטיפה</value></data>
+  <data name="Meta.RemoveCoverTip" xml:space="preserve"><value>מסיר את התמונה המוטמעת המוצגת. עטיפת התיקייה נשמרת.</value></data>
+  <data name="Meta.RestoreBackup" xml:space="preserve"><value>שחזור גיבוי…</value></data>
+  <data name="Meta.RestoreFailed" xml:space="preserve"><value>לא ניתן היה לשחזר: {0}</value></data>
+  <data name="Meta.RestorePrompt" xml:space="preserve"><value>לשחזר את הקובץ המקורי מהגיבוי הזה? הקובץ הנוכחי יישמר כגיבוי חדש. עריכות הטופס שלא נשמרו יימחקו.</value></data>
+  <data name="Meta.RestoreTip" xml:space="preserve"><value>משחזר תגיות מהשמירה האחרונה של הקובץ. עריכות הקובץ הנוכחיות מגובות קודם.</value></data>
+  <data name="Meta.SampleRate" xml:space="preserve"><value>קצב דגימה</value></data>
+  <data name="Meta.SaveFailed" xml:space="preserve"><value>לא ניתן היה לשמור: {0}</value></data>
+  <data name="Meta.SaveTip" xml:space="preserve"><value>שמירת השינויים (Ctrl+Enter)</value></data>
+  <data name="Meta.SavingFile" xml:space="preserve"><value>שומר את תגיות הקובץ והספרייה…</value></data>
+  <data name="Meta.SavingLibrary" xml:space="preserve"><value>שומר את שינויי הספרייה…</value></data>
+  <data name="Meta.SeasonNumber" xml:space="preserve"><value>מספר עונה</value></data>
+  <data name="Meta.ShowDetails" xml:space="preserve"><value>פרטי התוכנית והפרק</value></data>
+  <data name="Meta.ShowName" xml:space="preserve"><value>שם התוכנית</value></data>
+  <data name="Meta.SkipCount" xml:space="preserve"><value>מספר דילוגים</value></data>
+  <data name="Meta.SortAlbum" xml:space="preserve"><value>כותרת אלבום למיון</value></data>
+  <data name="Meta.SortAlbumArtist" xml:space="preserve"><value>אמן אלבום למיון</value></data>
+  <data name="Meta.SortArtist" xml:space="preserve"><value>אמן רצועה למיון</value></data>
+  <data name="Meta.SortNote" xml:space="preserve"><value>משתמש בשמות חלופיים בעת המיון, בלי לשנות את התגיות המוצגות.</value></data>
+  <data name="Meta.SortTitle" xml:space="preserve"><value>כותרת רצועה למיון</value></data>
+  <data name="Meta.TabBasic" xml:space="preserve"><value>בסיסי</value></data>
+  <data name="Meta.TabExtra" xml:space="preserve"><value>נוסף</value></data>
+  <data name="Meta.TabProperties" xml:space="preserve"><value>מאפיינים</value></data>
+  <data name="Meta.TabSorting" xml:space="preserve"><value>מיון</value></data>
+  <data name="Meta.TagFormats" xml:space="preserve"><value>תבניות תגיות</value></data>
+  <data name="Meta.Title" xml:space="preserve"><value>מאפייני הרצועה</value></data>
+  <data name="Meta.TotalAutomation" xml:space="preserve"><value>{0} בסך הכול</value></data>
+  <data name="Meta.TrackArtist" xml:space="preserve"><value>אמן הרצועה</value></data>
+  <data name="Meta.TrackNumber" xml:space="preserve"><value>מספר רצועה</value></data>
+  <data name="Meta.TrackTitle" xml:space="preserve"><value>כותרת הרצועה</value></data>
+  <data name="Meta.Unrated" xml:space="preserve"><value>ללא דירוג</value></data>
+  <data name="Meta.Year" xml:space="preserve"><value>שנה</value></data>
+  <data name="Picker.AddMusicFolder" xml:space="preserve"><value>הוספת תיקיית מוזיקה</value></data>
+  <data name="Picker.ExportPlaylist" xml:space="preserve"><value>ייצוא רשימת השמעה</value></data>
+  <data name="Picker.ImportFolder" xml:space="preserve"><value>ייבוא תיקיית מוזיקה</value></data>
+  <data name="Picker.OpenFiles" xml:space="preserve"><value>פתיחת קובצי מוזיקה</value></data>
+  <data name="Picker.MusicFiles" xml:space="preserve"><value>קובצי מוזיקה</value></data>
+  <data name="Picker.ImportPlaylist" xml:space="preserve"><value>ייבוא רשימת השמעה</value></data>
+  <data name="Picker.ImportStations" xml:space="preserve"><value>ייבוא תחנות רדיו</value></data>
+  <data name="Picker.LocalPlaylists" xml:space="preserve"><value>רשימות השמעה מקומיות</value></data>
+  <data name="Picker.M3u8Playlist" xml:space="preserve"><value>רשימת השמעה M3U בקידוד UTF-8</value></data>
+  <data name="Picker.PluginArchive" xml:space="preserve"><value>ארכיון תוסף</value></data>
+  <data name="Picker.PluginFolder" xml:space="preserve"><value>בחירת תיקיית תוסף</value></data>
+  <data name="Picker.PluginZip" xml:space="preserve"><value>בחירת קובץ .zip של תוסף</value></data>
+  <data name="Picker.PodcastFolder" xml:space="preserve"><value>בחירת תיקיית ההורדה של פודקאסטים</value></data>
+  <data name="Picker.StationPlaylists" xml:space="preserve"><value>רשימות השמעה של תחנות</value></data>
+  <data name="Playback.EndOfQueue" xml:space="preserve"><value>סוף התור.</value></data>
+  <data name="Playback.Mute" xml:space="preserve"><value>השתקה</value></data>
+  <data name="Playback.Nothing" xml:space="preserve"><value>שום דבר אינו מתנגן</value></data>
+  <data name="Playback.OperationFailed" xml:space="preserve"><value>פעולת הניגון נכשלה: {0}</value></data>
+  <data name="Playback.Pause" xml:space="preserve"><value>השהיה</value></data>
+  <data name="Playback.Paused" xml:space="preserve"><value>מושהה</value></data>
+  <data name="Playback.Play" xml:space="preserve"><value>ניגון</value></data>
+  <data name="Playback.Playing" xml:space="preserve"><value>מתנגן</value></data>
+  <data name="Playback.RadioEnded" xml:space="preserve"><value>זרם הרדיו הסתיים. לחצו על "ניגון" כדי להתחבר מחדש.</value></data>
+  <data name="Playback.RadioStopped" xml:space="preserve"><value>הרדיו נעצר.</value></data>
+  <data name="Playback.RepeatAll" xml:space="preserve"><value>חזרה על הכול</value></data>
+  <data name="Playback.RepeatOff" xml:space="preserve"><value>חזרה כבויה</value></data>
+  <data name="Playback.RepeatOne" xml:space="preserve"><value>חזרה על רצועה אחת</value></data>
+  <data name="Playback.SaveFailed" xml:space="preserve"><value>לא ניתן היה לשמור את הגדרות הניגון: {0}</value></data>
+  <data name="Playback.ShuffleOff" xml:space="preserve"><value>ערבוב כבוי</value></data>
+  <data name="Playback.ShuffleOn" xml:space="preserve"><value>ערבוב פעיל</value></data>
+  <data name="Playback.StopRadio" xml:space="preserve"><value>עצירת הרדיו</value></data>
+  <data name="Playback.Unmute" xml:space="preserve"><value>ביטול השתקה</value></data>
+  <data name="Playlist.Added" xml:space="preserve"><value>{0} נוסף אל {1}.</value></data>
+  <data name="Playlist.Created" xml:space="preserve"><value>רשימת ההשמעה {0} נוצרה.</value></data>
+  <data name="Playlist.CreatedWith" xml:space="preserve"><value>רשימת ההשמעה {0} נוצרה ו-{1} נוספו אליה.</value></data>
+  <data name="Playlist.Deleted" xml:space="preserve"><value>רשימת ההשמעה {0} נמחקה. קובצי המוזיקה שלכם לא נמחקו.</value></data>
+  <data name="Playlist.Moved" xml:space="preserve"><value>{0} הוזז.</value></data>
+  <data name="Playlist.MovedDown" xml:space="preserve"><value>{0} הוזז למטה.</value></data>
+  <data name="Playlist.MovedUp" xml:space="preserve"><value>{0} הוזז למעלה.</value></data>
+  <data name="Playlist.OrderUpdated" xml:space="preserve"><value>סדר רשימת ההשמעה עודכן.</value></data>
+  <data name="Playlist.RemovedFrom" xml:space="preserve"><value>{0} הוסר מ-{1}.</value></data>
+  <data name="Playlist.Renamed" xml:space="preserve"><value>שם רשימת ההשמעה שונה ל-{0}.</value></data>
+  <data name="PlaylistFile.Exported" xml:space="preserve"><value>{0} רצועות יוצאו אל {1}.</value></data>
+  <data name="PlaylistFile.Imported" xml:space="preserve"><value>"{0}" יובאה: {1} רצועות; {2} רשומות שדולגו; {3} כפילויות.</value></data>
+  <data name="PlaylistFile.ImportedNoRefresh" xml:space="preserve"><value>רשימת ההשמעה "{0}" יובאה, אך לא ניתן היה לרענן את התצוגה. פתחו את הספרייה מחדש. {1}</value></data>
+  <data name="Plugins.EnableAutomation" xml:space="preserve"><value>הפעלת {0}</value></data>
+  <data name="Plugins.Enabled" xml:space="preserve"><value>מופעל</value></data>
+  <data name="Plugins.InstallAccept" xml:space="preserve"><value>התקנה</value></data>
+  <data name="Plugins.InstallFailed" xml:space="preserve"><value>התוסף לא הותקן: {0}</value></data>
+  <data name="Plugins.InstallFolder" xml:space="preserve"><value>התקנה מתיקייה…</value></data>
+  <data name="Plugins.InstallTitle" xml:space="preserve"><value>התקנת תוסף</value></data>
+  <data name="Plugins.InstallWarning" xml:space="preserve"><value>תוסף הוא תוכנית הרצה בתוך Aibell עם ההרשאות שלכם. הוא יכול לקרוא את הקבצים שלכם ולהשתמש ברשת שלכם.
+
+התקינו רק תוספים ממקורות מהימנים.
+
+{0}</value></data>
+  <data name="Plugins.InstallZip" xml:space="preserve"><value>התקנה מקובץ .zip…</value></data>
+  <data name="Plugins.Installed" xml:space="preserve"><value>{0} הותקן. הוא יופעל כש-Aibell יופעל מחדש.</value></data>
+  <data name="Plugins.Intro" xml:space="preserve"><value>תוספים מוסיפים יכולות אופציונליות. הם פועלים עם אותה גישה לקבצים ולרשת כמו Aibell עצמו, ולכן התקינו רק תוספים מהימנים. שינויים נכנסים לתוקף לאחר הפעלה מחדש של Aibell.</value></data>
+  <data name="Plugins.None" xml:space="preserve"><value>לא מותקנים תוספים.</value></data>
+  <data name="Plugins.OriginBundled" xml:space="preserve"><value>כלול ב-Aibell. </value></data>
+  <data name="Plugins.OriginUser" xml:space="preserve"><value>הותקן על ידכם. </value></data>
+  <data name="Plugins.Saved" xml:space="preserve"><value>נשמר. השינוי ייכנס לתוקף כש-Aibell יופעל מחדש.</value></data>
+  <data name="Plugins.Status.Active" xml:space="preserve"><value>פעיל.</value></data>
+  <data name="Plugins.Status.Failed" xml:space="preserve"><value>לא ניתן היה לטעון: {0}</value></data>
+  <data name="Plugins.Status.Off" xml:space="preserve"><value>כבוי.</value></data>
+  <data name="Plugins.Status.Removal" xml:space="preserve"><value>יוסר כש-Aibell יופעל מחדש.</value></data>
+  <data name="Plugins.Status.WillStart" xml:space="preserve"><value>יופעל כש-Aibell יופעל מחדש.</value></data>
+  <data name="Plugins.Status.WillStop" xml:space="preserve"><value>יכובה כש-Aibell יופעל מחדש.</value></data>
+  <data name="Plugins.Uninstall" xml:space="preserve"><value>הסרת התקנה…</value></data>
+  <data name="Plugins.UninstallAccept" xml:space="preserve"><value>הסרת התקנה</value></data>
+  <data name="Plugins.UninstallAutomation" xml:space="preserve"><value>הסרת ההתקנה של {0}</value></data>
+  <data name="Plugins.UninstallPrompt" xml:space="preserve"><value>להסיר את "{0}"? הוא יפסיק לפעול וקבציו יימחקו בהפעלה הבאה של Aibell.</value></data>
+  <data name="Plugins.UninstallScheduled" xml:space="preserve"><value>{0} יוסר כש-Aibell יופעל מחדש.</value></data>
+  <data name="Plugins.UninstallTitle" xml:space="preserve"><value>הסרת התקנת תוסף</value></data>
+  <data name="Pod.AlreadySubscribed" xml:space="preserve"><value>כבר רשומים למינוי על {0}.</value></data>
+  <data name="Pod.BadUrl" xml:space="preserve"><value>השתמשו בכתובת עדכון HTTP או HTTPS מלאה, בלי פרטי הזדהות מוטמעים או מקטע.</value></data>
+  <data name="Pod.CachedFailed" xml:space="preserve"><value>לא ניתן היה לקרוא פרקים שמורים במטמון: {0}</value></data>
+  <data name="Pod.CatalogFailed" xml:space="preserve"><value>לא ניתן היה לקרוא את קטלוג הפודקאסטים: {0}</value></data>
+  <data name="Pod.Checked" xml:space="preserve"><value>נבדקו {0} מתוך {1} פודקאסטים. {2}{3}</value></data>
+  <data name="Pod.ClearSearch" xml:space="preserve"><value>ניקוי חיפוש הפרקים</value></data>
+  <data name="Pod.ClearSearchTip" xml:space="preserve"><value>ניקוי החיפוש (Escape)</value></data>
+  <data name="Pod.CoverAutomation" xml:space="preserve"><value>עטיפת הפרק</value></data>
+  <data name="Pod.DeleteAccept" xml:space="preserve"><value>מחיקת קובץ</value></data>
+  <data name="Pod.DeleteCancelled" xml:space="preserve"><value>המחיקה בוטלה עבור {0}.</value></data>
+  <data name="Pod.DeleteFailed" xml:space="preserve"><value>לא ניתן היה למחוק את ההורדה: {0}</value></data>
+  <data name="Pod.DeleteFile" xml:space="preserve"><value>מחיקת קובץ…</value></data>
+  <data name="Pod.DeleteFileAutomation" xml:space="preserve"><value>מחיקת קובץ שהורד</value></data>
+  <data name="Pod.DeleteFileTip" xml:space="preserve"><value>מוחק רק את הקובץ שהורד. הפרק, הכוכבים שלו והמינוי נשמרים</value></data>
+  <data name="Pod.DeletePrompt" xml:space="preserve"><value>למחוק את הקובץ שהורד של "{0}"?
+
+הפרק, הכוכבים שלו והמינוי שלכם נשארים. מיקום ההאזנה השמור נמחק, ואפשר להוריד את הפרק שוב בכל עת.</value></data>
+  <data name="Pod.DeleteTitle" xml:space="preserve"><value>מחיקת קובץ שהורד</value></data>
+  <data name="Pod.DeleteUnavailable" xml:space="preserve"><value>מחיקת הורדות אינה זמינה.</value></data>
+  <data name="Pod.Deleted" xml:space="preserve"><value>ההורדה של {0} נמחקה. הפרק והדירוג שלו נשמרו; בחרו "הורדה" כדי להביא אותו שוב.</value></data>
+  <data name="Pod.Deleting" xml:space="preserve"><value>מוחק את ההורדה של {0}…</value></data>
+  <data name="Pod.Download" xml:space="preserve"><value>הורדה</value></data>
+  <data name="Pod.DownloadCancelled" xml:space="preserve"><value>ההורדה בוטלה: {0}. לא נשמר קובץ חלקי.</value></data>
+  <data name="Pod.DownloadFailed" xml:space="preserve"><value>ההורדה נכשלה: {0}. {1}</value></data>
+  <data name="Pod.DownloadNew" xml:space="preserve"><value>הורדת חדשים</value></data>
+  <data name="Pod.DownloadNewTip" xml:space="preserve"><value>מוסיף לתור את הפרקים החדשים ביותר שנמצאו ברענון (עד עשרה בכל פעם)</value></data>
+  <data name="Pod.DownloadProgress" xml:space="preserve"><value>התקדמות ההורדה</value></data>
+  <data name="Pod.DownloadedDone" xml:space="preserve"><value>{0} הורד. בחרו "ניגון" כדי להאזין.</value></data>
+  <data name="Pod.DownloadedOnly" xml:space="preserve"><value>שהורדו בלבד</value></data>
+  <data name="Pod.DownloadedOnlyAutomation" xml:space="preserve"><value>הצגת פרקים שהורדו בלבד</value></data>
+  <data name="Pod.DownloadedOnlyTip" xml:space="preserve"><value>מסתיר פרקים שלא הורדו</value></data>
+  <data name="Pod.Downloading" xml:space="preserve"><value>מוריד את {0}…</value></data>
+  <data name="Pod.EnterFeed" xml:space="preserve"><value>הזינו כתובת עדכון של פודקאסט כדי להירשם. עדכונים נבדקים רק ברענון או כשהבדיקה השעתית (העדפות) מופעלת.</value></data>
+  <data name="Pod.EpisodeCount.One" xml:space="preserve"><value>פרק אחד</value></data>
+  <data name="Pod.EpisodeCount.Other" xml:space="preserve"><value>{0} פרקים</value></data>
+  <data name="Pod.EpisodeCount.Two" xml:space="preserve"><value>{0} פרקים</value></data>
+  <data name="Pod.EpisodeCountFiltered" xml:space="preserve"><value>{0} מתוך {1} פרקים</value></data>
+  <data name="Pod.Episodes" xml:space="preserve"><value>פרקים</value></data>
+  <data name="Pod.FailedSuffix" xml:space="preserve"><value> {0} נכשלו: {1}.</value></data>
+  <data name="Pod.FeedAutomation" xml:space="preserve"><value>כתובת עדכון הפודקאסט</value></data>
+  <data name="Pod.FeedPlaceholder" xml:space="preserve"><value>כתובת עדכון הפודקאסט (https://…/feed.xml)</value></data>
+  <data name="Pod.Fetching" xml:space="preserve"><value>מביא את העדכון…</value></data>
+  <data name="Pod.FileMissing" xml:space="preserve"><value>הקובץ שהורד חסר. בחרו "ניסיון חוזר" כדי להוריד אותו שוב.</value></data>
+  <data name="Pod.HideNotes" xml:space="preserve"><value>הסתרת הערות</value></data>
+  <data name="Pod.InPlayer" xml:space="preserve"><value>הפרק הזה טעון בנגן הראשי. עצרו אותו שם ואז מחקו את ההורדה.</value></data>
+  <data name="Pod.Issues.One" xml:space="preserve"><value> רשומת עדכון אחת דולגה.</value></data>
+  <data name="Pod.Issues.Other" xml:space="preserve"><value> {0} רשומות עדכון דולגו.</value></data>
+  <data name="Pod.Issues.Two" xml:space="preserve"><value> {0} רשומות עדכון דולגו.</value></data>
+  <data name="Pod.KeptFiles" xml:space="preserve"><value> {0} קבצים שהורדו נשמרו בדיסק.</value></data>
+  <data name="Pod.MarkAllSeen" xml:space="preserve"><value>סימון הכול כנצפה</value></data>
+  <data name="Pod.MarkAllSeenTip" xml:space="preserve"><value>מסיר את הסימון "חדש" מכל פרק בפודקאסט הזה</value></data>
+  <data name="Pod.MarkedSeen" xml:space="preserve"><value>כל הפרקים של {0} סומנו כנצפו.</value></data>
+  <data name="Pod.NeverRefreshed" xml:space="preserve"><value>מעולם לא רוענן</value></data>
+  <data name="Pod.New" xml:space="preserve"><value>חדש</value></data>
+  <data name="Pod.NewAutomation" xml:space="preserve"><value>פרק חדש</value></data>
+  <data name="Pod.NewEpisodes.One" xml:space="preserve"><value>פרק חדש אחד.</value></data>
+  <data name="Pod.NewEpisodes.Other" xml:space="preserve"><value>{0} פרקים חדשים.</value></data>
+  <data name="Pod.NewEpisodes.Two" xml:space="preserve"><value>{0} פרקים חדשים.</value></data>
+  <data name="Pod.NewSuffix" xml:space="preserve"><value> · {0} חדשים</value></data>
+  <data name="Pod.NewUpdateFailed" xml:space="preserve"><value>לא ניתן היה לעדכן פרקים חדשים: {0}</value></data>
+  <data name="Pod.NoChanges" xml:space="preserve"><value>אין שינויים ב-{0}.</value></data>
+  <data name="Pod.NoCoverAutomation" xml:space="preserve"><value>אין תמונת עטיפה זמינה</value></data>
+  <data name="Pod.NoDownloadedMatch" xml:space="preserve"><value>אף פרק שהורד מהתוכנית הזו לא תואם ל-"{0}".</value></data>
+  <data name="Pod.NoEpisodes" xml:space="preserve"><value>אין פרקים במטמון. הירשמו לפודקאסט או בחרו "רענון".</value></data>
+  <data name="Pod.NoFileToDelete" xml:space="preserve"><value>לפרק הזה אין קובץ שהורד למחיקה.</value></data>
+  <data name="Pod.NoMatch" xml:space="preserve"><value>אף פרק בתוכנית הזו אינו תואם ל-"{0}". נקו את החיפוש כדי לראות את כל {1}.</value></data>
+  <data name="Pod.NoNewEpisodes" xml:space="preserve"><value>אין פרקים חדשים.</value></data>
+  <data name="Pod.NoNewToDownload" xml:space="preserve"><value>אין פרקים חדשים להורדה.</value></data>
+  <data name="Pod.NoPlayback" xml:space="preserve"><value>הניגון אינו מחובר לחלון הראשי.</value></data>
+  <data name="Pod.NoProgress" xml:space="preserve"><value>אין התקדמות</value></data>
+  <data name="Pod.NoSavedPosition" xml:space="preserve"><value>אין מיקום שמור</value></data>
+  <data name="Pod.NoSubscriptions" xml:space="preserve"><value>אין עדיין מינויים</value></data>
+  <data name="Pod.NoneDownloaded" xml:space="preserve"><value>עדיין לא הורד אף פרק מהתוכנית הזו.</value></data>
+  <data name="Pod.NoneSelected" xml:space="preserve"><value>לא נבחר פודקאסט</value></data>
+  <data name="Pod.NotesAutomation" xml:space="preserve"><value>הערות התוכנית לפרק הזה</value></data>
+  <data name="Pod.NotesText" xml:space="preserve"><value>הערות הפרק</value></data>
+  <data name="Pod.NotesTip" xml:space="preserve"><value>מציג או מסתיר את תיאור הפרק הזה</value></data>
+  <data name="Pod.Op.Refresh" xml:space="preserve"><value>רענון</value></data>
+  <data name="Pod.Op.RefreshAll" xml:space="preserve"><value>רענון הכול</value></data>
+  <data name="Pod.Op.Remove" xml:space="preserve"><value>הסרה</value></data>
+  <data name="Pod.Op.Subscribe" xml:space="preserve"><value>הרשמה</value></data>
+  <data name="Pod.OpCancelled" xml:space="preserve"><value>{0} בוטל.</value></data>
+  <data name="Pod.OpFailed" xml:space="preserve"><value>{0} נכשל: {1}</value></data>
+  <data name="Pod.Opening" xml:space="preserve"><value>פותח את {0}…</value></data>
+  <data name="Pod.PauseAutomation" xml:space="preserve"><value>השהיית הפרק</value></data>
+  <data name="Pod.PauseFailed" xml:space="preserve"><value>לא ניתן היה להשהות: {0}</value></data>
+  <data name="Pod.PauseTip" xml:space="preserve"><value>משהה את הנגן; ההתקדמות נשמרת</value></data>
+  <data name="Pod.PlayFailed" xml:space="preserve"><value>לא ניתן היה לנגן את הפרק: {0}</value></data>
+  <data name="Pod.PlaybackCancelled" xml:space="preserve"><value>הניגון בוטל או נעצר.</value></data>
+  <data name="Pod.PositionCancelled" xml:space="preserve"><value>שמירת המיקום בוטלה.</value></data>
+  <data name="Pod.PositionFailed" xml:space="preserve"><value>לא ניתן היה לשמור את המיקום: {0}</value></data>
+  <data name="Pod.ProgressPercent" xml:space="preserve"><value>התקדמות {0} אחוז</value></data>
+  <data name="Pod.QueuedNew.One" xml:space="preserve"><value>פרק חדש אחד נוסף לתור.</value></data>
+  <data name="Pod.QueuedNew.Other" xml:space="preserve"><value>{0} פרקים חדשים נוספו לתור.</value></data>
+  <data name="Pod.QueuedNew.Two" xml:space="preserve"><value>{0} פרקים חדשים נוספו לתור.</value></data>
+  <data name="Pod.QueuedPartial" xml:space="preserve"><value>{0} מתוך {1} פרקים חדשים נוספו לתור. בחרו "הורדת חדשים" שוב לקבלת עוד.</value></data>
+  <data name="Pod.QueuedWaiting" xml:space="preserve"><value>{0} נוסף לתור: {1} ממתינים.</value></data>
+  <data name="Pod.RateTip" xml:space="preserve"><value>דירוג הפרק הזה (מקשים 0–5 כשהשורה נבחרה; 0 מנקה)</value></data>
+  <data name="Pod.RatingCleared" xml:space="preserve"><value>הדירוג של {0} נוקה.</value></data>
+  <data name="Pod.RatingFailed" xml:space="preserve"><value>לא ניתן היה לשמור את הדירוג: {0}</value></data>
+  <data name="Pod.RatingSet.One" xml:space="preserve"><value>{1} דורג בכוכב אחד.</value></data>
+  <data name="Pod.RatingSet.Other" xml:space="preserve"><value>{1} דורג ב-{0} כוכבים.</value></data>
+  <data name="Pod.RatingSet.Two" xml:space="preserve"><value>{1} דורג ב-{0} כוכבים.</value></data>
+  <data name="Pod.RatingStars" xml:space="preserve"><value>דירוג: {0} מתוך 5 כוכבים</value></data>
+  <data name="Pod.RatingUnrated" xml:space="preserve"><value>דירוג: ללא דירוג</value></data>
+  <data name="Pod.RatingsUnavailable" xml:space="preserve"><value>דירוגי פרקים אינם זמינים.</value></data>
+  <data name="Pod.Refresh" xml:space="preserve"><value>רענון</value></data>
+  <data name="Pod.RefreshAll" xml:space="preserve"><value>רענון הכול</value></data>
+  <data name="Pod.RefreshAllTip" xml:space="preserve"><value>בודק כל מינוי לפרקים חדשים</value></data>
+  <data name="Pod.RefreshTip" xml:space="preserve"><value>מבקש מהשרת פרקים חדשים (משתמש במאמתים שבמטמון)</value></data>
+  <data name="Pod.Refreshed" xml:space="preserve"><value>{0} רוענן: {1} חדשים, {2} פרקים במטמון.{3}</value></data>
+  <data name="Pod.Refreshing" xml:space="preserve"><value>מרענן את {0}…</value></data>
+  <data name="Pod.RefreshingOf" xml:space="preserve"><value>מרענן {0} מתוך {1}: {2}…</value></data>
+  <data name="Pod.RemovePrompt" xml:space="preserve"><value>לשכוח את המינוי הזה ואת רשימת הפרקים שלו במטמון?
+קובצי הפרקים שהורדו נשארים בדיסק.
+{0}</value></data>
+  <data name="Pod.RemoveTip" xml:space="preserve"><value>שוכח את המינוי הזה. קבצים שהורדו נשארים בדיסק</value></data>
+  <data name="Pod.RemoveTitle" xml:space="preserve"><value>הסרת פודקאסט</value></data>
+  <data name="Pod.Removed" xml:space="preserve"><value>{0} הוסר.{1}</value></data>
+  <data name="Pod.RemovedFromQueue" xml:space="preserve"><value>{0} הוסר מתור ההורדות.</value></data>
+  <data name="Pod.Resume" xml:space="preserve"><value>המשך</value></data>
+  <data name="Pod.ResumeSelected" xml:space="preserve"><value>המשך הנבחר</value></data>
+  <data name="Pod.ResumeSelectedTip" xml:space="preserve"><value>ממשיך את הפרק שהורד ונבחר מהמיקום השמור שלו</value></data>
+  <data name="Pod.ResumedFromSaved" xml:space="preserve"><value>ממשיך את {0} מהמיקום השמור שלו.</value></data>
+  <data name="Pod.Resuming" xml:space="preserve"><value>ממשיך את {0}…</value></data>
+  <data name="Pod.Retry" xml:space="preserve"><value>ניסיון חוזר</value></data>
+  <data name="Pod.SavePosition" xml:space="preserve"><value>שמירת מיקום</value></data>
+  <data name="Pod.SavePositionTip" xml:space="preserve"><value>שומר עכשיו בזמן שהנגן הראשי מנגן או השהה את הפרק הנבחר הזה</value></data>
+  <data name="Pod.SavedPosition" xml:space="preserve"><value>נשמר {0} מתוך {1}</value></data>
+  <data name="Pod.SavedPositionDone" xml:space="preserve"><value>המיקום נשמר עבור {0}.</value></data>
+  <data name="Pod.SavingPosition" xml:space="preserve"><value>שומר את המיקום עבור {0}…</value></data>
+  <data name="Pod.SearchAutomation" xml:space="preserve"><value>חיפוש בכותרות פרקים</value></data>
+  <data name="Pod.SearchPlaceholder" xml:space="preserve"><value>חיפוש בכותרות הפרקים של התוכנית הזו</value></data>
+  <data name="Pod.SentFromStart" xml:space="preserve"><value>{0} נשלח לנגן מההתחלה.</value></data>
+  <data name="Pod.ShowAll" xml:space="preserve"><value>הצגת כל הפרקים</value></data>
+  <data name="Pod.ShowNotes" xml:space="preserve"><value>הצגת הערות</value></data>
+  <data name="Pod.SizeOf" xml:space="preserve"><value>{0} מתוך {1} · {2}%</value></data>
+  <data name="Pod.Speed" xml:space="preserve"><value>מהירות</value></data>
+  <data name="Pod.SpeedAutomation" xml:space="preserve"><value>מהירות ניגון הפודקאסט</value></data>
+  <data name="Pod.SpeedFailed" xml:space="preserve"><value>לא ניתן היה לשנות את המהירות: {0}</value></data>
+  <data name="Pod.SpeedSet" xml:space="preserve"><value>מהירות הפודקאסט: {0}.</value></data>
+  <data name="Pod.SpeedTip" xml:space="preserve"><value>מהירות הניגון של פרקי פודקאסט. מוזיקה, רדיו וספרי שמע מתנגנים תמיד במהירות 1x</value></data>
+  <data name="Pod.StartOver" xml:space="preserve"><value>התחלה מחדש</value></data>
+  <data name="Pod.StartOverTip" xml:space="preserve"><value>מנגן מההתחלה במקום מהמיקום השמור</value></data>
+  <data name="Pod.Starting" xml:space="preserve"><value>מתחיל…</value></data>
+  <data name="Pod.State.Cancelled" xml:space="preserve"><value>ההורדה בוטלה</value></data>
+  <data name="Pod.State.Deleting" xml:space="preserve"><value>מסיר את הקובץ שהורד…</value></data>
+  <data name="Pod.State.Downloaded" xml:space="preserve"><value>הורד</value></data>
+  <data name="Pod.State.Downloading" xml:space="preserve"><value>מוריד… {0}</value></data>
+  <data name="Pod.State.Failed" xml:space="preserve"><value>ההורדה נכשלה: {0}</value></data>
+  <data name="Pod.State.Missing" xml:space="preserve"><value>הקובץ שהורד חסר</value></data>
+  <data name="Pod.State.NotDownloaded" xml:space="preserve"><value>לא הורד</value></data>
+  <data name="Pod.State.Queued" xml:space="preserve"><value>ממתין בתור ההורדות…</value></data>
+  <data name="Pod.Subscribe" xml:space="preserve"><value>הרשמה</value></data>
+  <data name="Pod.SubscribeTip" xml:space="preserve"><value>מביא את העדכון הזה פעם אחת ושומר אותו בספרייה שלכם</value></data>
+  <data name="Pod.Subscribed" xml:space="preserve"><value>נרשמתם ל-{0}: {1} פרקים.{2}</value></data>
+  <data name="Pod.SubscribedList" xml:space="preserve"><value>פודקאסטים שנרשמתם אליהם</value></data>
+  <data name="Pod.Updated" xml:space="preserve"><value>{0} עודכן</value></data>
+  <data name="Pod.WaitPosition" xml:space="preserve"><value>המתינו לסיום פעולת הניגון או המיקום הנוכחית.</value></data>
+  <data name="Podcasts.ProgressSaveFailed" xml:space="preserve"><value>לא ניתן היה לשמור את התקדמות הפודקאסט: {0}</value></data>
+  <data name="Prefs.AddFolder" xml:space="preserve"><value>הוספת תיקייה…</value></data>
+  <data name="Prefs.Appearance" xml:space="preserve"><value>מראה</value></data>
+  <data name="Prefs.AutoRefresh" xml:space="preserve"><value>בדיקת פרקים חדשים בכל שעה כש-Aibell פתוח</value></data>
+  <data name="Prefs.AutoRefreshAutomation" xml:space="preserve"><value>בדיקה אוטומטית של פרקי פודקאסט חדשים</value></data>
+  <data name="Prefs.AutoRefreshNote" xml:space="preserve"><value>הבדיקות משתמשות במאמתים שבמטמון של העדכון, כך שתוכניות ללא שינוי עולות בקשה זעירה בלבד. שום דבר אינו מורד אוטומטית.</value></data>
+  <data name="Prefs.Browse" xml:space="preserve"><value>עיון…</value></data>
+  <data name="Prefs.BrowseAutomation" xml:space="preserve"><value>עיון בתיקיית ההורדה של פודקאסטים</value></data>
+  <data name="Prefs.DownloadFolder" xml:space="preserve"><value>תיקיית הורדה</value></data>
+  <data name="Prefs.FolderChangesNow" xml:space="preserve"><value>שינויי תיקיות נכנסים לתוקף מיד.</value></data>
+  <data name="Prefs.FolderChecked" xml:space="preserve"><value>התיקייה נבדקת בלחיצה על "שמירה". אם אי אפשר להשתמש בה, התיקייה הנוכחית נשארת בתוקף.</value></data>
+  <data name="Prefs.FoldersNote" xml:space="preserve"><value>תיקיות המוזיקה מנוטרות לשינויים. הסרת תיקייה מסירה את הרצועות שלה מהספרייה ומשאירה את קובצי האודיו.</value></data>
+  <data name="Prefs.GeneralNote" xml:space="preserve"><value>עמודות הרצועות ורוחבן נשמרים כשמשנים אותם בספרייה. כתיבת תגיות לקבצים דורשת תמיד לבחור "קובץ וספרייה" בעורך הרצועות.</value></data>
+  <data name="Prefs.Mute" xml:space="preserve"><value>השתקת האודיו</value></data>
+  <data name="Prefs.Notify" xml:space="preserve"><value>הצגת התראה כשהרצועה המתנגנת מתחלפת</value></data>
+  <data name="Prefs.NotifyTip" xml:space="preserve"><value>התראות שולחן עבודה אופציונליות. שירות שולחן העבודה עשוי לדכא אותן.</value></data>
+  <data name="Prefs.NotifyUnavailable" xml:space="preserve"><value>התראות שולחן עבודה אינן זמינות בפלטפורמה הזו.</value></data>
+  <data name="Prefs.OnlineExplain" xml:space="preserve"><value>כבוי כברירת מחדל. כשהוא פעיל, לחיצה על "חיפוש" בתקליטור שמע, "על האמן" או "קבלת עטיפה" שולחת את תוכן העניינים של התקליטור או את שם האלבום והאמן אל שירות התוסף (MusicBrainz). שום דבר אינו נשלח אוטומטית.</value></data>
+  <data name="Prefs.OnlineLookup" xml:space="preserve"><value>אפשר חיפוש מקוון של פרטי אלבומים ואמנים</value></data>
+  <data name="Prefs.OnlineLookupAutomation" xml:space="preserve"><value>אפשר חיפוש מקוון של אלבומים ואמנים</value></data>
+  <data name="Prefs.PodcastFolderAutomation" xml:space="preserve"><value>תיקיית הורדה של פודקאסטים</value></data>
+  <data name="Prefs.PodcastFolderNote" xml:space="preserve"><value>הורדות פודקאסט חדשות נשמרות בתיקייה הזו. פרקים שכבר הורדו נשארים במקומם וממשיכים להיות ניתנים לניגון ולמחיקה; שום דבר אינו מועבר או נמחק.</value></data>
+  <data name="Prefs.RemoveFolderPrompt" xml:space="preserve"><value>להסיר את התיקייה הזו ואת הרצועות שלה מהספרייה? קובצי האודיו יישמרו.
+{0}</value></data>
+  <data name="Prefs.Repeat" xml:space="preserve"><value>חזרה</value></data>
+  <data name="Prefs.RepeatAll" xml:space="preserve"><value>כל הרצועות</value></data>
+  <data name="Prefs.RepeatOff" xml:space="preserve"><value>כבויה</value></data>
+  <data name="Prefs.RepeatOne" xml:space="preserve"><value>רצועה אחת</value></data>
+  <data name="Prefs.ReviewEdits" xml:space="preserve"><value>סקירת עריכות שהופסקו…</value></data>
+  <data name="Prefs.Saved" xml:space="preserve"><value>ההעדפות נשמרו.</value></data>
+  <data name="Prefs.SavedFolder" xml:space="preserve"><value>ההעדפות נשמרו. הורדות פודקאסט חדשות יישמרו ב-{0}; הורדות קיימות נשארות במקומן.</value></data>
+  <data name="Prefs.ShowQueue" xml:space="preserve"><value>הצגת תור הניגון</value></data>
+  <data name="Prefs.Shuffle" xml:space="preserve"><value>ערבוב רצועות</value></data>
+  <data name="Prefs.Tab.Folders" xml:space="preserve"><value>תיקיות הספרייה</value></data>
+  <data name="Prefs.Tab.General" xml:space="preserve"><value>כללי</value></data>
+  <data name="Prefs.Tab.Online" xml:space="preserve"><value>מקוון</value></data>
+  <data name="Prefs.Tab.Playback" xml:space="preserve"><value>ניגון</value></data>
+  <data name="Prefs.Tab.Plugins" xml:space="preserve"><value>תוספים</value></data>
+  <data name="Prefs.Tab.Podcasts" xml:space="preserve"><value>פודקאסטים</value></data>
+  <data name="Prefs.ThemeDark" xml:space="preserve"><value>כהה</value></data>
+  <data name="Prefs.ThemeLight" xml:space="preserve"><value>בהיר</value></data>
+  <data name="Prefs.ThemeSystem" xml:space="preserve"><value>מערכת</value></data>
+  <data name="Prefs.Title" xml:space="preserve"><value>העדפות</value></data>
+  <data name="Prefs.UseDefault" xml:space="preserve"><value>שימוש בברירת המחדל</value></data>
+  <data name="Prefs.Volume" xml:space="preserve"><value>עוצמת קול</value></data>
+  <data name="Prefs.VolumeAutomation" xml:space="preserve"><value>עוצמת הניגון באחוזים</value></data>
+  <data name="Queue.Cleared" xml:space="preserve"><value>תור הניגון נוקה.</value></data>
+  <data name="Queue.DropHint" xml:space="preserve"><value>שחררו כאן קובצי מוזיקה כדי להוסיף אותם לתור הניגון.</value></data>
+  <data name="Queue.Gone" xml:space="preserve"><value>הקובץ שבתור אינו זמין עוד.</value></data>
+  <data name="Queue.Header" xml:space="preserve"><value>תור ניגון ({0})</value></data>
+  <data name="Queue.NoFolder" xml:space="preserve"><value>לא ניתן היה לפתוח את תיקיית הקובץ.</value></data>
+  <data name="Queue.QueuedFailures" xml:space="preserve"><value>{0} רצועות נוספו לתור; {1} קבצים לא ניתנים לקריאה.</value></data>
+  <data name="Queue.QueuedLast.One" xml:space="preserve"><value>רצועה אחת נוספה לסוף התור.</value></data>
+  <data name="Queue.QueuedLast.Other" xml:space="preserve"><value>{0} רצועות נוספו לסוף התור.</value></data>
+  <data name="Queue.QueuedLast.Two" xml:space="preserve"><value>{0} רצועות נוספו לסוף התור.</value></data>
+  <data name="Queue.QueuedNext.One" xml:space="preserve"><value>רצועה אחת נוספה כרצועה הבאה.</value></data>
+  <data name="Queue.QueuedNext.Other" xml:space="preserve"><value>{0} רצועות נוספו כרצועות הבאות.</value></data>
+  <data name="Queue.QueuedNext.Two" xml:space="preserve"><value>{0} רצועות נוספו כרצועות הבאות.</value></data>
+  <data name="Queue.ShowFileFailed" xml:space="preserve"><value>לא ניתן היה להציג את הקובץ: {0}</value></data>
+  <data name="Radio.Connecting" xml:space="preserve"><value>מתחבר אל {0}…</value></data>
+  <data name="Radio.Failed" xml:space="preserve"><value>ניגון הרדיו נכשל: {0}</value></data>
+  <data name="Radio.Playing" xml:space="preserve"><value>מנגן רדיו: {0}.</value></data>
+  <data name="Radio.RemovePrompt" xml:space="preserve"><value>להסיר את התחנה השמורה הזו? היא תיעצר אם היא מתנגנת.
+{0}</value></data>
+  <data name="Radio.RemoveTitle" xml:space="preserve"><value>הסרת תחנת רדיו</value></data>
+  <data name="Radio.Removed" xml:space="preserve"><value>התחנה הוסרה. קובצי המוזיקה ובקשות תור ממתינות נשמרו.</value></data>
+  <data name="Radio.AllStations" xml:space="preserve"><value>כל התחנות</value></data>
+  <data name="Radio.Genres" xml:space="preserve"><value>סוגות</value></data>
+  <data name="Radio.SortBy" xml:space="preserve"><value>מיין תחנות</value></data>
+  <data name="Radio.SortName" xml:space="preserve"><value>שם</value></data>
+  <data name="Radio.SortMostPlayed" xml:space="preserve"><value>הכי מושמעות</value></data>
+  <data name="Radio.SortRecent" xml:space="preserve"><value>הושמעו לאחרונה</value></data>
+  <data name="Radio.SortRating" xml:space="preserve"><value>בדירוג הגבוה ביותר</value></data>
+  <data name="Radio.Saved" xml:space="preserve"><value>התחנה נשמרה. שינויים ייכנסו לתוקף בניגון הבא.</value></data>
+  <data name="RadioFile.Imported" xml:space="preserve"><value>יובאו {0} תחנות רדיו; {1} רשומות שדולגו; {2} כפילויות הושמטו.</value></data>
+  <data name="RadioFile.ImportedNoRefresh" xml:space="preserve"><value>יובאו {0} תחנות רדיו, אך לא ניתן היה לרענן את התצוגה. פתחו את הרדיו מחדש. {1}</value></data>
+  <data name="Rating.Cleared" xml:space="preserve"><value>הדירוג של {0} נוקה.</value></data>
+  <data name="Rating.Set.One" xml:space="preserve"><value>{1} דורג בכוכב אחד.</value></data>
+  <data name="Rating.Set.Other" xml:space="preserve"><value>{1} דורג ב-{0} כוכבים.</value></data>
+  <data name="Rating.Set.Two" xml:space="preserve"><value>{1} דורג ב-{0} כוכבים.</value></data>
+  <data name="Recovery.CancelAndClose" xml:space="preserve"><value>ביטול וסגירה</value></data>
+  <data name="Recovery.ChooseFolder" xml:space="preserve"><value>בחירת תיקייה…</value></data>
+  <data name="Recovery.ChooseHint" xml:space="preserve"><value>בחרו תיקייה לבדיקה. תיקיות משנה נכללות; תיקיות מקושרות אינן נכללות.</value></data>
+  <data name="Recovery.Details" xml:space="preserve"><value>קובץ אודיו: {0}
+עריכה זמנית: {1}</value></data>
+  <data name="Recovery.Discard" xml:space="preserve"><value>השלכה</value></data>
+  <data name="Recovery.DiscardButton" xml:space="preserve"><value>השלכת עריכה זמנית…</value></data>
+  <data name="Recovery.DiscardPrompt" xml:space="preserve"><value>למחוק את עריכת המטא-נתונים הזמנית הזו ואת הרשומה שלה? קובץ האודיו וגיבויי הקבצים השמורים יישמרו.
+</value></data>
+  <data name="Recovery.DiscardTitle" xml:space="preserve"><value>השלכת עריכה שהופסקה</value></data>
+  <data name="Recovery.Discarded" xml:space="preserve"><value>עריכת המטא-נתונים הזמנית הושלכה. קובץ האודיו והגיבויים השמורים נשמרו.</value></data>
+  <data name="Recovery.Found" xml:space="preserve"><value>נמצאו {0} עריכות מטא-נתונים שהופסקו; {1} פריטים דורשים סקירה.</value></data>
+  <data name="Recovery.Incomplete" xml:space="preserve"><value>תצוגה מקדימה חלקית</value></data>
+  <data name="Recovery.Intro" xml:space="preserve"><value>סקרו קבצים זמניים שנותרו משמירות מטא-נתונים שהופסקו. קובצי האודיו והגיבויים השמורים נשארים ללא שינוי.</value></data>
+  <data name="Recovery.NeedsReview" xml:space="preserve"><value>דורשים סקירה ({0})</value></data>
+  <data name="Recovery.NeedsReviewTab" xml:space="preserve"><value>דורשים סקירה</value></data>
+  <data name="Recovery.PickTitle" xml:space="preserve"><value>בדיקת עריכות מטא-נתונים שהופסקו</value></data>
+  <data name="Recovery.Scan" xml:space="preserve"><value>סריקת תיקיות</value></data>
+  <data name="Recovery.ScanCancelled" xml:space="preserve"><value>הסריקה בוטלה. לא שונה אף קובץ אודיו.</value></data>
+  <data name="Recovery.Scanning" xml:space="preserve"><value>סורק תיקיות ותיקיות משנה…</value></data>
+  <data name="Recovery.SubfoldersIncluded" xml:space="preserve"><value>תיקיות משנה נכללות; תיקיות מקושרות אינן נכללות.</value></data>
+  <data name="Recovery.Summary" xml:space="preserve"><value>{0} עריכות שהופסקו; {1} פריטים דורשים סקירה. עריכות פעילות מדולגות.</value></data>
+  <data name="Recovery.Title" xml:space="preserve"><value>עריכות מטא-נתונים שהופסקו</value></data>
+  <data name="Recovery.Validated" xml:space="preserve"><value>תצוגה מקדימה מאומתת</value></data>
+  <data name="Result.ByArtist.One" xml:space="preserve"><value>רצועה אחת מאת {1}.</value></data>
+  <data name="Result.ByArtist.Other" xml:space="preserve"><value>{0} רצועות מאת {1}.</value></data>
+  <data name="Result.ByArtist.Two" xml:space="preserve"><value>{0} רצועות מאת {1}.</value></data>
+  <data name="Result.InGenre.One" xml:space="preserve"><value>רצועה אחת בסגנון {1}.</value></data>
+  <data name="Result.InGenre.Other" xml:space="preserve"><value>{0} רצועות בסגנון {1}.</value></data>
+  <data name="Result.InGenre.Two" xml:space="preserve"><value>{0} רצועות בסגנון {1}.</value></data>
+  <data name="Result.InLibrary.One" xml:space="preserve"><value>רצועה אחת בספרייה.</value></data>
+  <data name="Result.InLibrary.Other" xml:space="preserve"><value>{0} רצועות בספרייה.</value></data>
+  <data name="Result.InLibrary.Two" xml:space="preserve"><value>{0} רצועות בספרייה.</value></data>
+  <data name="Result.InPlaylist.One" xml:space="preserve"><value>רצועה אחת ב-{1}.</value></data>
+  <data name="Result.InPlaylist.Other" xml:space="preserve"><value>{0} רצועות ב-{1}.</value></data>
+  <data name="Result.InPlaylist.Two" xml:space="preserve"><value>{0} רצועות ב-{1}.</value></data>
+  <data name="Result.Matching.One" xml:space="preserve"><value>רצועה אחת תואמת.</value></data>
+  <data name="Result.Matching.Other" xml:space="preserve"><value>{0} רצועות תואמות.</value></data>
+  <data name="Result.Matching.Two" xml:space="preserve"><value>{0} רצועות תואמות.</value></data>
+  <data name="Result.OnAlbum.One" xml:space="preserve"><value>רצועה אחת באלבום {1}.</value></data>
+  <data name="Result.OnAlbum.Other" xml:space="preserve"><value>{0} רצועות באלבום {1}.</value></data>
+  <data name="Result.OnAlbum.Two" xml:space="preserve"><value>{0} רצועות באלבום {1}.</value></data>
+  <data name="Search.InPodcasts" xml:space="preserve"><value>החיפוש נמצא בתצוגת הפודקאסטים</value></data>
+  <data name="Search.Library" xml:space="preserve"><value>חיפוש בספרייה</value></data>
+  <data name="Search.Stations" xml:space="preserve"><value>חיפוש תחנות</value></data>
+  <data name="Sidebar.AudioCd" xml:space="preserve"><value>תקליטור שמע</value></data>
+  <data name="Sidebar.AudioCdAutomation" xml:space="preserve"><value>תקליטור שמע</value></data>
+  <data name="Sidebar.AudioCdTip" xml:space="preserve"><value>מנגן תקליטור שמע ומחפש את פרטי האלבום שלו</value></data>
+  <data name="Sidebar.Devices" xml:space="preserve"><value>התקנים</value></data>
+  <data name="Sidebar.DevicesAutomation" xml:space="preserve"><value>סנכרון להתקן</value></data>
+  <data name="Sidebar.DevicesTip" xml:space="preserve"><value>מעתיק מוזיקה לכונן USB, כרטיס זיכרון או נגן עם אחסון המונים</value></data>
+  <data name="Sidebar.Music" xml:space="preserve"><value>מוזיקה</value></data>
+  <data name="Sidebar.MusicAutomation" xml:space="preserve"><value>ספריית מוזיקה</value></data>
+  <data name="Sidebar.Podcasts" xml:space="preserve"><value>פודקאסטים</value></data>
+  <data name="Sidebar.Audiobooks" xml:space="preserve"><value>ספרי שמע</value></data>
+  <data name="Sidebar.PodcastsAutomation" xml:space="preserve"><value>פודקאסטים</value></data>
+  <data name="Sidebar.PodcastsTip" xml:space="preserve"><value>מינויי פודקאסט ופרקים שהורדו</value></data>
+  <data name="Sidebar.Radio" xml:space="preserve"><value>רדיו</value></data>
+  <data name="Sidebar.RadioAutomation" xml:space="preserve"><value>תחנות רדיו</value></data>
+  <data name="Smart.AddRuleAutomation" xml:space="preserve"><value>הוספת כלל אחרי התנאי הזה</value></data>
+  <data name="Smart.AddTip" xml:space="preserve"><value>מוסיף תנאי מתחת לזה</value></data>
+  <data name="Smart.All" xml:space="preserve"><value>כל</value></data>
+  <data name="Smart.Any" xml:space="preserve"><value>אחד מ</value></data>
+  <data name="Smart.AtLeast" xml:space="preserve"><value>לפחות</value></data>
+  <data name="Smart.AtMost" xml:space="preserve"><value>לכל היותר</value></data>
+  <data name="Smart.CloseAutomation" xml:space="preserve"><value>סגירת עורך הרשימות החכמות</value></data>
+  <data name="Smart.Conditions" xml:space="preserve"><value>התנאים הבאים:</value></data>
+  <data name="Smart.Contains" xml:space="preserve"><value>מכיל</value></data>
+  <data name="Smart.CreateTitle" xml:space="preserve"><value>יצירת רשימת השמעה חכמה</value></data>
+  <data name="Smart.Created" xml:space="preserve"><value>רשימת ההשמעה החכמה {0} נוצרה. {1}</value></data>
+  <data name="Smart.EditTitle" xml:space="preserve"><value>עריכת כללי רשימת השמעה חכמה</value></data>
+  <data name="Smart.Equals" xml:space="preserve"><value>שווה ל</value></data>
+  <data name="Smart.Hint" xml:space="preserve"><value>מתעדכנת אוטומטית עם הספרייה שלכם. ערך ריק תואם לתגיות חסרות.</value></data>
+  <data name="Smart.Match" xml:space="preserve"><value>התאמה ל</value></data>
+  <data name="Smart.MatchAutomation" xml:space="preserve"><value>התאמה לכל הכללים או לאחד מהם</value></data>
+  <data name="Smart.NameLabel" xml:space="preserve"><value>שם רשימת ההשמעה</value></data>
+  <data name="Smart.NotEquals" xml:space="preserve"><value>שונה מ</value></data>
+  <data name="Smart.RemoveRule" xml:space="preserve"><value>הסרת כלל</value></data>
+  <data name="Smart.RemoveTip" xml:space="preserve"><value>מסיר את התנאי הזה</value></data>
+  <data name="Smart.RuleComparison" xml:space="preserve"><value>השוואת הכלל</value></data>
+  <data name="Smart.RuleField" xml:space="preserve"><value>שדה הכלל</value></data>
+  <data name="Smart.RuleValue" xml:space="preserve"><value>ערך הכלל</value></data>
+  <data name="Smart.SkipCount" xml:space="preserve"><value>מספר דילוגים</value></data>
+  <data name="Smart.Updated" xml:space="preserve"><value>רשימת ההשמעה החכמה עודכנה. {0}</value></data>
+  <data name="Sort.Ascending" xml:space="preserve"><value>ממוין לפי {0} בסדר עולה.</value></data>
+  <data name="Sort.Descending" xml:space="preserve"><value>ממוין לפי {0} בסדר יורד.</value></data>
+  <data name="Station.AddTitle" xml:space="preserve"><value>הוספת תחנת רדיו</value></data>
+  <data name="Station.Creator" xml:space="preserve"><value>יוצר (אופציונלי)</value></data>
+  <data name="Station.Description" xml:space="preserve"><value>תיאור (אופציונלי)</value></data>
+  <data name="Station.EditTitle" xml:space="preserve"><value>עריכת תחנת רדיו</value></data>
+  <data name="Station.Genre" xml:space="preserve"><value>סגנון (אופציונלי)</value></data>
+  <data name="Station.Name" xml:space="preserve"><value>שם התחנה</value></data>
+  <data name="Station.Never" xml:space="preserve"><value>אף פעם</value></data>
+  <data name="Station.NoRating" xml:space="preserve"><value>ללא דירוג</value></data>
+  <data name="Station.Note" xml:space="preserve"><value>זרמי שמע HTTP/HTTPS בלבד. שמירה אינה מתחברת; הניגון מתחיל כשבוחרים "ניגון". שינויים ייכנסו לתוקף בחיבור הבא.</value></data>
+  <data name="Station.PlayInfo" xml:space="preserve"><value>{0} ניגונים · נוגן לאחרונה: {1}</value></data>
+  <data name="Station.RatingAutomation" xml:space="preserve"><value>דירוג התחנה</value></data>
+  <data name="Status.Loading" xml:space="preserve"><value>טוען את הספרייה…</value></data>
+  <data name="Sync.Cancel" xml:space="preserve"><value>ביטול</value></data>
+  <data name="Sync.Cancelled" xml:space="preserve"><value>בוטל. קבצים שהועתקו עד כה נשארים בהתקן.</value></data>
+  <data name="Sync.ChooseSource" xml:space="preserve"><value>בחרו התקן ומה להעתיק, ואז לחצו על "תצוגה מקדימה".</value></data>
+  <data name="Sync.Copying" xml:space="preserve"><value>מעתיק…</value></data>
+  <data name="Sync.Done" xml:space="preserve"><value>הסתיים. אפשר לנתק את ההתקן בבטחה מתוך מנהל הקבצים.</value></data>
+  <data name="Sync.DoneWithFailures" xml:space="preserve"><value>הסתיים, אך לא ניתן היה להעתיק {0} קבצים.</value></data>
+  <data name="Sync.Finishing" xml:space="preserve"><value>מסיים…</value></data>
+  <data name="Sync.NoTracks" xml:space="preserve"><value>אין רצועות להעתקה. בחרו כמה רצועות או בחרו מקור אחר.</value></data>
+  <data name="Sync.NoVolumes" xml:space="preserve"><value>לא נמצא כונן נשלף. חברו כונן ותנו לשולחן העבודה לטעון אותו, ואז בחרו "רענון התקנים".</value></data>
+  <data name="Sync.Note" xml:space="preserve"><value>המוזיקה מועתקת אל Music/אמן/אלבום בהתקן. שום דבר בהתקן לעולם אינו נמחק, ושום דבר בספרייה שלכם אינו משתנה.</value></data>
+  <data name="Sync.Planning" xml:space="preserve"><value>בודק את הקבצים…</value></data>
+  <data name="Sync.Preview" xml:space="preserve"><value>תצוגה מקדימה</value></data>
+  <data name="Sync.PreviewReady" xml:space="preserve"><value>זה מה שיקרה. לחצו על "העתקה להתקן" כדי להתחיל.</value></data>
+  <data name="Sync.Progress" xml:space="preserve"><value>מעתיק {0} מתוך {1}: {2}</value></data>
+  <data name="Sync.Refresh" xml:space="preserve"><value>רענון התקנים</value></data>
+  <data name="Sync.RefreshTip" xml:space="preserve"><value>מחפש כוננים שחוברו או נטענו לאחר פתיחת החלון הזה</value></data>
+  <data name="Sync.ReplaceDifferent" xml:space="preserve"><value>החלפת קבצים שונים שכבר נמצאים בהתקן</value></data>
+  <data name="Sync.Result.Conflicts" xml:space="preserve"><value>{0} קבצים שונים עם אותו שם נשמרו.</value></data>
+  <data name="Sync.Result.Copied" xml:space="preserve"><value>{0} קבצים הועתקו; {1} כבר היו מעודכנים.</value></data>
+  <data name="Sync.Result.Failure" xml:space="preserve"><value>בעיה: {0}</value></data>
+  <data name="Sync.Result.MoreFailures" xml:space="preserve"><value>…ועוד {0} בעיות.</value></data>
+  <data name="Sync.Result.Playlist" xml:space="preserve"><value>רשימת השמעה: {0}</value></data>
+  <data name="Sync.Source.Library" xml:space="preserve"><value>כל הספרייה</value></data>
+  <data name="Sync.Source.Selected" xml:space="preserve"><value>הרצועות שנבחרו</value></data>
+  <data name="Sync.Source.Visible" xml:space="preserve"><value>הרצועות בתצוגה הנוכחית</value></data>
+  <data name="Sync.SourceLabel" xml:space="preserve"><value>מה להעתיק</value></data>
+  <data name="Sync.Start" xml:space="preserve"><value>העתקה להתקן</value></data>
+  <data name="Sync.Summary.Conflicts" xml:space="preserve"><value>{0} קבצים שונים עם אותו שם בהתקן יישמרו.</value></data>
+  <data name="Sync.Summary.ExcludedMissing" xml:space="preserve"><value>{0} רצועות דולגו: הקובץ חסר.</value></data>
+  <data name="Sync.Summary.ExcludedNotAFile" xml:space="preserve"><value>{0} רצועות דולגו: אינן קבצים בספרייה שלכם (למשל רצועות תקליטור).</value></data>
+  <data name="Sync.Summary.ExcludedOther" xml:space="preserve"><value>{0} רצועות דולגו.</value></data>
+  <data name="Sync.Summary.ExcludedUnsupported" xml:space="preserve"><value>{0} רצועות דולגו: התבנית אינה נתמכת בהתקנים.</value></data>
+  <data name="Sync.Summary.NoRoom" xml:space="preserve"><value>נדרש מקום נוסף בגודל {0}.</value></data>
+  <data name="Sync.Summary.Replace" xml:space="preserve"><value>{0} קבצים שונים עם אותו שם בהתקן יוחלפו.</value></data>
+  <data name="Sync.Summary.ToCopy" xml:space="preserve"><value>{0} קבצים להעתקה ({1}); בהתקן יש {2} פנויים.</value></data>
+  <data name="Sync.Summary.UpToDate" xml:space="preserve"><value>{0} כבר בהתקן.</value></data>
+  <data name="Sync.TooBig" xml:space="preserve"><value>בהתקן אין מספיק מקום פנוי לרצועות האלה.</value></data>
+  <data name="Sync.VolumeAutomation" xml:space="preserve"><value>התקן</value></data>
+  <data name="Sync.VolumesFound.One" xml:space="preserve"><value>נמצא כונן אחד.</value></data>
+  <data name="Sync.VolumesFound.Other" xml:space="preserve"><value>נמצאו {0} כוננים.</value></data>
+  <data name="Sync.VolumesFound.Two" xml:space="preserve"><value>נמצאו {0} כוננים.</value></data>
+  <data name="Sync.WritePlaylist" xml:space="preserve"><value>כתיבת רשימת השמעה Aibell.m3u8</value></data>
+  <data name="TrackProps.BackupDeleted" xml:space="preserve"><value>גיבוי הקובץ נמחק. קובץ האודיו ומטא-נתוני הספרייה נשמרו.</value></data>
+  <data name="TrackProps.BackupsUnavailable" xml:space="preserve"><value>גיבויי הקובץ אינם זמינים: {0}</value></data>
+  <data name="TrackProps.DetailsUnavailable" xml:space="preserve"><value>פרטי הקובץ אינם זמינים: {0}</value></data>
+  <data name="TrackProps.OperationError" xml:space="preserve"><value>פעולת המטא-נתונים הסתיימה בשגיאה: {0}</value></data>
+  <data name="TrackProps.Restored" xml:space="preserve"><value>גיבוי הקובץ שוחזר והספרייה רועננה. הקובץ שהוחלף נשמר כגיבוי חדש.</value></data>
+  <data name="TrackProps.RestoredNoRefresh" xml:space="preserve"><value>גיבוי הקובץ שוחזר, אך לא ניתן היה לרענן את הספרייה. פתחו את מאפייני הרצועה מחדש. {0}</value></data>
+  <data name="TrackProps.SavedFile" xml:space="preserve"><value>תגיות הקובץ והספרייה נשמרו. הגיבוי המקורי: {0}</value></data>
+  <data name="TrackProps.SavedLibrary" xml:space="preserve"><value>מאפייני הרצועה נשמרו בספרייה.</value></data>
+  <data name="TrackProps.SavedNoRefresh" xml:space="preserve"><value>תגיות הקובץ נשמרו, אך לא ניתן היה לרענן את הספרייה. פתחו את מאפייני הרצועה מחדש לפני ניסיון נוסף. גיבוי: {0}</value></data>
+  <data name="TrackProps.SavedNoTags" xml:space="preserve"><value>ערכי הספרייה נשמרו; לא שונו תגיות קובץ.</value></data>
+  <data name="Transport.KeysSeek" xml:space="preserve"><value>שמאלה/למטה וימינה/למעלה משנים ב-5 שניות; Page Down/Up ב-15 שניות; Home/End קופצים להתחלה או לסוף</value></data>
+  <data name="Transport.KeysVolume" xml:space="preserve"><value>שמאלה/למטה וימינה/למעלה משנים ב-5%; Page Down/Up ב-10%; Home/End קובעים 0% או 100%</value></data>
+  <data name="Transport.PositionAutomation" xml:space="preserve"><value>מיקום ניגון</value></data>
+  <data name="Transport.SeekAt" xml:space="preserve"><value>מיקום ניגון, {0} מתוך {1}</value></data>
+  <data name="Transport.SeekLive" xml:space="preserve"><value>מיקום ניגון, שידור חי</value></data>
+  <data name="Transport.VolumeAt" xml:space="preserve"><value>עוצמת קול, {0}%</value></data>
+  <data name="Transport.VolumeAutomation" xml:space="preserve"><value>עוצמת ניגון</value></data>
+  <data name="Transport.VolumeMuted" xml:space="preserve"><value>עוצמת קול, {0}% (מושתק)</value></data>
+  <data name="Transport.VolumeUnavailable" xml:space="preserve"><value>עוצמת קול, לא זמינה</value></data>
+  <data name="Main.BusyAutomation" xml:space="preserve"><value>בביצוע</value></data>
+  <data name="Sync.ProgressAutomation" xml:space="preserve"><value>התקדמות הסנכרון</value></data>
+  <data name="Prefs.Engine" xml:space="preserve"><value>מנוע ניגון</value></data>
+  <data name="Prefs.EngineMiniaudio" xml:space="preserve"><value>miniaudio</value></data>
+  <data name="Prefs.EngineMiniaudioNative" xml:space="preserve"><value>miniaudio (Native)</value></data>
+  <data name="Prefs.EngineVlc" xml:space="preserve"><value>VLC</value></data>
+  <data name="Prefs.EngineManaged" xml:space="preserve"><value>miniaudio (Managed)</value></data>
+  <data name="Prefs.EnginePipeWire" xml:space="preserve"><value>PipeWire (Managed)</value></data>
+  <data name="Prefs.EngineAlsa" xml:space="preserve"><value>ALSA (Managed)</value></data>
+  <data name="Prefs.EngineNote" xml:space="preserve"><value>הנגן המובנה אינו דורש התקנה של דבר נוסף ומנגן MP3‏, FLAC‏, Ogg Vorbis ו-WAV, ובווינדוס גם AAC ו-M4A. בחרו ב-VLC עבור AAC ו-M4A בלינוקס ועבור תקליטורי שמע. השינוי ייכנס לתוקף בפעם הבאה ש-Aibell יופעל.</value></data>
+  <data name="Prefs.EngineRestart" xml:space="preserve"><value>מנוע הניגון יוחלף בפעם הבאה ש-Aibell יופעל.</value></data>
+  <data name="Prefs.Language" xml:space="preserve"><value>שפה</value></data>
+  <data name="Prefs.LanguageSystem" xml:space="preserve"><value>ברירת המחדל של המערכת</value></data>
+  <data name="Prefs.LanguageRestart" xml:space="preserve"><value>השפה תוחלף בפעם הבאה ש-Aibell יופעל.</value></data>
+  <data name="Radio.ModeMine" xml:space="preserve"><value>התחנות שלי</value></data>
+  <data name="Radio.ModeCatalog" xml:space="preserve"><value>קטלוג תחנות</value></data>
+  <data name="Radio.SearchStations" xml:space="preserve"><value>חיפוש תחנות…</value></data>
+  <data name="Radio.SearchGenres" xml:space="preserve"><value>חיפוש ז'אנרים…</value></data>
+  <data name="Radio.AllGenres" xml:space="preserve"><value>כל הז'אנרים</value></data>
+  <data name="Radio.AllCountries" xml:space="preserve"><value>כל המדינות</value></data>
+  <data name="Radio.GenreFilter" xml:space="preserve"><value>סינון לפי ז'אנר</value></data>
+  <data name="Radio.CountryFilter" xml:space="preserve"><value>סינון לפי מדינה</value></data>
+  <data name="Radio.SortPopular" xml:space="preserve"><value>הפופולריות ביותר</value></data>
+  <data name="Radio.NoMatches" xml:space="preserve"><value>אין תחנות שמתאימות לחיפוש או למסננים.</value></data>
+  <data name="Radio.OptInTitle" xml:space="preserve"><value>עיון בקטלוג התחנות</value></data>
+  <data name="Radio.OptInBody" xml:space="preserve"><value>רשימה שנבחרה בקפידה של תחנות רדיו מכל העולם, מובנית ב-Aibell. עיון בקטלוג אינו מתחבר לאף תחנה. שמרו את התחנות שאהבתם ב״התחנות שלי״ או לחצו עליהן פעמיים כדי להאזין.</value></data>
+  <data name="Radio.OptInPrivacy" xml:space="preserve"><value>הלוגואים מורדים מאתר האינטרנט של כל תחנה, ולכן אתרים אלה יכולים לראות את כתובת ה-IP שלכם. דבר אינו מורד עד שתפעילו את הקטלוג.</value></data>
+  <data name="Radio.OptInEnable" xml:space="preserve"><value>הפעלת הקטלוג</value></data>
+  <data name="Radio.OptInOff" xml:space="preserve"><value>אפשר לכבות זאת בכל עת בהעדפות.</value></data>
+  <data name="Radio.FormatChip" xml:space="preserve"><value>{0} · נדרש VLC</value></data>
+  <data name="Radio.FormatTipVlc" xml:space="preserve"><value>הנגן המובנה אינו יכול לנגן {0}. בחרו VLC תחת העדפות &gt; ניגון כדי להאזין לתחנה זו.</value></data>
+  <data name="Radio.FormatTipVlcOrWindows" xml:space="preserve"><value>הנגן המובנה אינו יכול לנגן {0} כאן. בחרו VLC תחת העדפות &gt; ניגון, או הריצו את Aibell ב-Windows, כדי להאזין לתחנה זו.</value></data>
+  <data name="Radio.SaveToMine" xml:space="preserve"><value>שמירה ב״התחנות שלי״</value></data>
+  <data name="Radio.RemoveFromMine" xml:space="preserve"><value>הסרה מ״התחנות שלי״</value></data>
+  <data name="Radio.CatalogSaved" xml:space="preserve"><value>{0} נשמרה ב״התחנות שלי״.</value></data>
+  <data name="Prefs.RadioCatalog" xml:space="preserve"><value>הצגת קטלוג התחנות והורדת הלוגואים שלהן</value></data>
+  <data name="Prefs.RadioCatalogAutomation" xml:space="preserve"><value>הפעלת קטלוג תחנות הרדיו</value></data>
+  <data name="Prefs.RadioCatalogNote" xml:space="preserve"><value>כבוי כברירת מחדל. כשהוא פעיל, תצוגת הרדיו מציעה קטלוג תחנות מובנה ומורידה את הלוגו של כל תחנה מאתר האינטרנט שלה, שיכול לראות את כתובת ה-IP שלכם. עיון בקטלוג אינו מתחבר לאף תחנה.</value></data>
+  <data name="Radio.StationCount.One" xml:space="preserve"><value>תחנת רדיו אחת.</value></data>
+  <data name="Radio.StationCount.Other" xml:space="preserve"><value>{0} תחנות רדיו.</value></data>
+  <data name="Radio.StationCount.Two" xml:space="preserve"><value>שתי תחנות רדיו.</value></data>
+  <data name="Menu.MainAutomation" xml:space="preserve"><value>תפריט ראשי</value></data>
+  <data name="Menu.File" xml:space="preserve"><value>קובץ</value></data>
+  <data name="Menu.Edit" xml:space="preserve"><value>עריכה</value></data>
+  <data name="Menu.View" xml:space="preserve"><value>תצוגה</value></data>
+  <data name="Menu.Controls" xml:space="preserve"><value>בקרה</value></data>
+  <data name="Menu.Library" xml:space="preserve"><value>ספרייה</value></data>
+  <data name="Menu.Help" xml:space="preserve"><value>עזרה</value></data>
+  <data name="Menu.Quit" xml:space="preserve"><value>יציאה</value></data>
+  <data name="Menu.Find" xml:space="preserve"><value>חיפוש…</value></data>
+  <data name="Menu.SelectAll" xml:space="preserve"><value>בחירת כל הרצועות</value></data>
+  <data name="Menu.SortBy" xml:space="preserve"><value>מיון לפי</value></data>
+  <data name="Menu.Columns" xml:space="preserve"><value>עמודות</value></data>
+  <data name="Menu.Sidebar" xml:space="preserve"><value>סרגל צד</value></data>
+  <data name="Menu.SeekBackward" xml:space="preserve"><value>הרצה אחורה</value></data>
+  <data name="Menu.SeekForward" xml:space="preserve"><value>הרצה קדימה</value></data>
+  <data name="Menu.VolumeUp" xml:space="preserve"><value>הגברת עוצמה</value></data>
+  <data name="Menu.VolumeDown" xml:space="preserve"><value>הנמכת עוצמה</value></data>
+  <data name="Menu.ClearQueue" xml:space="preserve"><value>ניקוי תור ההשמעה</value></data>
+  <data name="Menu.AddStation" xml:space="preserve"><value>הוספת תחנה…</value></data>
+  <data name="Menu.CancelDownload" xml:space="preserve"><value>ביטול ההורדה</value></data>
+  <data name="Menu.Website" xml:space="preserve"><value>אתר הפרויקט</value></data>
+  <data name="Menu.About" xml:space="preserve"><value>על אודות Aibell</value></data>
+  <data name="About.Tagline" xml:space="preserve"><value>ספריית מוזיקה ונגן ל-Linux ול-Windows.</value></data>
+  <data name="About.Tab.About" xml:space="preserve"><value>אודות</value></data>
+  <data name="About.Tab.Features" xml:space="preserve"><value>תכונות</value></data>
+  <data name="About.Tab.Credits" xml:space="preserve"><value>תודות</value></data>
+  <data name="About.Version" xml:space="preserve"><value>גרסה {0}</value></data>
+  <data name="About.Author" xml:space="preserve"><value>יוצר</value></data>
+  <data name="About.License" xml:space="preserve"><value>רישיון</value></data>
+  <data name="About.Website" xml:space="preserve"><value>אתר</value></data>
+  <data name="About.Independent" xml:space="preserve"><value>Aibell הוא פרויקט עצמאי שנכתב מאפס על גבי .NET ו-Avalonia.</value></data>
+  <data name="About.Section.Playback" xml:space="preserve"><value>השמעה</value></data>
+  <data name="About.Section.Desktop" xml:space="preserve"><value>שולחן העבודה</value></data>
+  <data name="About.Section.Content" xml:space="preserve"><value>תוכן ושירותים</value></data>
+  <data name="About.Section.System" xml:space="preserve"><value>מערכת</value></data>
+  <data name="About.Engine" xml:space="preserve"><value>הנגן בשימוש</value></data>
+  <data name="About.Engine.Miniaudio" xml:space="preserve"><value>miniaudio</value></data>
+  <data name="About.Engine.Vlc" xml:space="preserve"><value>VLC (LibVLC)</value></data>
+  <data name="About.Engine.Managed" xml:space="preserve"><value>miniaudio (Managed)</value></data>
+  <data name="About.Engine.Alsa" xml:space="preserve"><value>ALSA (Managed)</value></data>
+  <data name="About.Engine.PipeWire" xml:space="preserve"><value>PipeWire (Managed)</value></data>
+  <data name="About.Status.InUse" xml:space="preserve"><value>בשימוש</value></data>
+  <data name="About.Status.Available" xml:space="preserve"><value>זמין</value></data>
+  <data name="About.Status.Unavailable" xml:space="preserve"><value>לא זמין</value></data>
+  <data name="About.Status.VlcFound" xml:space="preserve"><value>נמצא — ניתן לבחור בהעדפות &gt; השמעה</value></data>
+  <data name="About.Status.VlcMissing" xml:space="preserve"><value>לא נמצא</value></data>
+  <data name="About.Status.On" xml:space="preserve"><value>פעיל</value></data>
+  <data name="About.Status.Off" xml:space="preserve"><value>כבוי</value></data>
+  <data name="About.Status.None" xml:space="preserve"><value>אף אחד לא פועל</value></data>
+  <data name="About.Feature.MediaControls" xml:space="preserve"><value>בקרי מדיה של המערכת</value></data>
+  <data name="About.Feature.Notifications" xml:space="preserve"><value>התראות על החלפת רצועה</value></data>
+  <data name="About.Feature.Catalog" xml:space="preserve"><value>קטלוג תחנות רדיו</value></data>
+  <data name="About.Feature.OnlineLookup" xml:space="preserve"><value>חיפושים מקוונים (MusicBrainz)</value></data>
+  <data name="About.Feature.Plugins" xml:space="preserve"><value>תוספים</value></data>
+  <data name="About.System.Os" xml:space="preserve"><value>מערכת הפעלה</value></data>
+  <data name="About.System.Language" xml:space="preserve"><value>שפת הממשק</value></data>
+  <data name="About.Credits.Intro" xml:space="preserve"><value>Aibell הוא פרויקט עצמאי שנכתב מאפס. הוא חב תודה לשני נגנים קודמים.</value></data>
+  <data name="About.Credits.Songbird" xml:space="preserve"><value>נגן המדיה בקוד פתוח. חלק גדול מהממשק של Aibell (חלוניות הדפדוף, רשימת המקורות, טבלת הרצועות הצפופה) מבוסס על העיצוב של Songbird, שבתורו שאב מ-iTunes. Aibell אינו מעתיק קוד או יצירות גרפיות של Songbird; הדמיון הוא מחווה מכוונת.</value></data>
+  <data name="About.Credits.Banshee" xml:space="preserve"><value>נגן המדיה של Mono/GTK, שתצוגת הספרייה המעשית שלו וגישת ״מקומי קודם״ שלו היוו השראה ל-Aibell. Aibell אינו כולל קוד מקור של Banshee.</value></data>
+  <data name="About.Credits.Thanks" xml:space="preserve"><value>תודה לאנשים שמאחורי שני הפרויקטים. Aibell אינו קשור אליהם ואינו מאושר על ידם. Songbird ו-iTunes הם סימנים מסחריים של בעליהם.</value></data>
+  <data name="About.Credits.Libraries" xml:space="preserve"><value>ספריות צד שלישי שומרות על הרישיונות שלהן, ובהן LibVLC ו-LibVLCSharp (LGPL), ‏miniaudio ו-stb_vorbis (נחלת הכלל / MIT-0), ‏Avalonia (MIT), ספריות Microsoft .NET (MIT) ו-ATL .NET (MIT).</value></data>
+  <data name="Menu.Shortcuts" xml:space="preserve"><value>קיצורי דרך</value></data>
+  <data name="Shortcuts.Title" xml:space="preserve"><value>קיצורי מקלדת</value></data>
+  <data name="Shortcuts.Section.General" xml:space="preserve"><value>כללי</value></data>
+  <data name="Shortcuts.Section.Library" xml:space="preserve"><value>ספרייה ורצועות</value></data>
+  <data name="Shortcuts.Section.Playback" xml:space="preserve"><value>השמעה</value></data>
+  <data name="Shortcuts.Section.Seek" xml:space="preserve"><value>פס המיקום (כשהוא בפוקוס)</value></data>
+  <data name="Shortcuts.Section.Volume" xml:space="preserve"><value>פס העוצמה (כשהוא בפוקוס)</value></data>
+  <data name="Shortcuts.Section.Podcasts" xml:space="preserve"><value>פודקאסטים</value></data>
+  <data name="Shortcuts.Search" xml:space="preserve"><value>חיפוש בספרייה או בתחנות</value></data>
+  <data name="Shortcuts.ClearSearch" xml:space="preserve"><value>ניקוי תיבת החיפוש</value></data>
+  <data name="Shortcuts.PlayPause" xml:space="preserve"><value>הפעלה או השהיה (ברשימות הרצועות, התור והתחנות)</value></data>
+  <data name="Shortcuts.PlaySelected" xml:space="preserve"><value>השמעת התחנה או רצועת הדיסק שנבחרה</value></data>
+  <data name="Shortcuts.Seek5" xml:space="preserve"><value>הרצה של 5 שניות אחורה או קדימה</value></data>
+  <data name="Shortcuts.Seek15" xml:space="preserve"><value>הרצה של 15 שניות אחורה או קדימה</value></data>
+  <data name="Shortcuts.SeekEnds" xml:space="preserve"><value>קפיצה להתחלה או לסוף</value></data>
+  <data name="Shortcuts.Volume5" xml:space="preserve"><value>שינוי העוצמה ב-5%</value></data>
+  <data name="Shortcuts.Volume10" xml:space="preserve"><value>שינוי העוצמה ב-10%</value></data>
+  <data name="Shortcuts.VolumeEnds" xml:space="preserve"><value>הגדרת העוצמה ל-0% או ל-100%</value></data>
+  <data name="Shortcuts.Rate" xml:space="preserve"><value>דירוג הפרק שנבחר (0 מנקה את הדירוג)</value></data>
+  <data name="Shortcuts.DeleteDownload" xml:space="preserve"><value>מחיקת הקובץ שהורד של הפרק שנבחר</value></data>
+  <data name="Prefs.SoundFont" xml:space="preserve"><value>SoundFont ל-MIDI (לא חובה)</value></data>
+  <data name="Prefs.SoundFontNote" xml:space="preserve"><value>ללא SoundFont, קובצי MIDI מנוגנים בכלי הנגינה המובנים של Aibell. בחרו קובץ SoundFont 2 ‏(.sf2) לצלילים ריאליסטיים יותר; הרישיון שלו באחריותכם. השינוי ייכנס לתוקף בהפעלה הבאה של Aibell.</value></data>
+  <data name="Prefs.SoundFontNone" xml:space="preserve"><value>כלי נגינה מובנים</value></data>
+  <data name="Prefs.SoundFontClear" xml:space="preserve"><value>השתמש במובנים</value></data>
+  <data name="Prefs.SoundFontRestart" xml:space="preserve"><value>ה-SoundFont ישתנה בהפעלה הבאה של Aibell.</value></data>
+  <data name="Picker.SoundFont" xml:space="preserve"><value>בחירת SoundFont</value></data>
+  <data name="Picker.SoundFontFiles" xml:space="preserve"><value>מאגרי SoundFont 2</value></data>
+  <data name="Main.ResizeSidebar" xml:space="preserve"><value>שינוי גודל סרגל הצד</value></data>
+  <data name="Main.ResizeSidebarSection" xml:space="preserve"><value>שינוי גודל מקטע סרגל הצד</value></data>
+  <data name="Main.ResizeQueue" xml:space="preserve"><value>שינוי גודל תור הניגון</value></data>
+</root>

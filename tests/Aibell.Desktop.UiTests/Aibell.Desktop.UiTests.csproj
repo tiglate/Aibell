@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/Aibell.Desktop/Aibell.Desktop.csproj" />
+    <PackageReference Include="Avalonia.Headless.NUnit" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="NUnit" />
+    <PackageReference Include="NUnit.Analyzers">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NUnit3TestAdapter">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../fixtures/generated/fixture.flac" Link="fixtures/fixture.flac" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../fixtures/generated/fixture.mp3" Link="fixtures/fixture.mp3" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../fixtures/generated/fixture.m4a" Link="fixtures/fixture.m4a" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../fixtures/generated/fixture.wav" Link="fixtures/fixture.wav" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../fixtures/artwork/cover.png" Link="fixtures/cover.png" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../fixtures/artwork/back.png" Link="fixtures/back.png" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

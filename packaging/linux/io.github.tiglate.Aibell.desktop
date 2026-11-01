@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Version=1.5
+Name=Aibell
+GenericName=Music Player
+Comment=Music library and player
+Comment[pt_BR]=Biblioteca e reprodutor de música
+Exec=aibell %U
+Icon=io.github.tiglate.Aibell
+Terminal=false
+MimeType=audio/mpeg;audio/mp4;audio/x-m4a;audio/aac;audio/flac;audio/x-flac;audio/ogg;audio/x-vorbis+ogg;audio/opus;audio/x-opus+ogg;audio/wav;audio/x-wav;audio/x-aiff;audio/x-ms-wma;audio/midi;audio/x-spc;
+Categories=AudioVideo;Audio;Player;Music;
+Keywords=music;audio;player;library;podcast;radio;playlist;
+StartupWMClass=Aibell.Desktop

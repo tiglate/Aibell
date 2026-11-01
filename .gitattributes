@@ -1,0 +1,3 @@
+# Keep modern C# whitespace checks identical across Linux and Windows checkouts.
+src/Aibell.*/**/*.cs text eol=lf
+tests/Aibell.*/**/*.cs text eol=lf

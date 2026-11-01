@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <InternalsVisibleTo Include="Aibell.Archive.Rar.Tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="COPYING.Rar" />
+  </ItemGroup>
+</Project>

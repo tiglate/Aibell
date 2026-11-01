@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Artwork.Close" xml:space="preserve"><value>閉じる</value></data>
+  <data name="Artwork.ConsentAccept" xml:space="preserve"><value>オンにする</value></data>
+  <data name="Artwork.ConsentBody" xml:space="preserve"><value>カバーを検索すると、MusicBrainz プラグインを通じて、アルバム名とアーティスト名が MusicBrainz と Cover Art Archive に送信されます。
+
+オンライン検索をオンにして続行しますか？ 「設定」&gt;「オンライン」でいつでもオフに戻せます。</value></data>
+  <data name="Artwork.ConsentTitle" xml:space="preserve"><value>オンライン検索をオンにしますか？</value></data>
+  <data name="Artwork.Downloading" xml:space="preserve"><value>カバーをダウンロードしています…</value></data>
+  <data name="Artwork.Failed" xml:space="preserve"><value>検索に失敗しました: {0}</value></data>
+  <data name="Artwork.FoundMany" xml:space="preserve"><value>カバーが {0} 件見つかりました。1 つ選んで「保存」を押してください。</value></data>
+  <data name="Artwork.FoundOne" xml:space="preserve"><value>カバーが 1 件見つかりました。確認して「保存」を押してください。</value></data>
+  <data name="Artwork.Matching" xml:space="preserve"><value>一致するカバー</value></data>
+  <data name="Artwork.Menu" xml:space="preserve"><value>アートワークを取得…</value></data>
+  <data name="Artwork.MenuTip" xml:space="preserve"><value>このアルバムのカバーを MusicBrainz で探し、アルバムのフォルダーに cover.jpg として保存します</value></data>
+  <data name="Artwork.NoCoverArt" xml:space="preserve"><value>MusicBrainz はこのアルバムを知っていますが、カバーアートがありません。</value></data>
+  <data name="Artwork.NotFound" xml:space="preserve"><value>一致するアルバムが見つかりませんでした。</value></data>
+  <data name="Artwork.Save" xml:space="preserve"><value>カバーを保存</value></data>
+  <data name="Artwork.SaveTip" xml:space="preserve"><value>選んだカバーをアルバムのフォルダーに cover.jpg として保存します。既存のカバーファイルは置き換えません。</value></data>
+  <data name="Artwork.Saved" xml:space="preserve"><value>{1} に {0} を保存しました。ファイル内に画像があるトラックは、引き続きその画像を表示します。</value></data>
+  <data name="Artwork.Searching" xml:space="preserve"><value>カバーを検索しています…</value></data>
+  <data name="Artwork.StatusFailed" xml:space="preserve"><value>アートワークを取得できませんでした: {0}</value></data>
+  <data name="Artwork.StatusSaved" xml:space="preserve"><value>カバーを保存しました: {0}</value></data>
+  <data name="Artwork.Title" xml:space="preserve"><value>アートワークを取得</value></data>
+  <data name="Artwork.Tracks" xml:space="preserve"><value>{0} トラック</value></data>
+  <data name="Artwork.Unavailable.NoAlbum" xml:space="preserve"><value>このトラックには検索するアルバム名がありません。</value></data>
+  <data name="Artwork.Unavailable.NoFactory" xml:space="preserve"><value>このビルドではカバー検索は利用できません。</value></data>
+  <data name="Artwork.Unavailable.NoTrack" xml:space="preserve"><value>先にトラックを選んでください。</value></data>
+  <data name="Artwork.Unavailable.NotFile" xml:space="preserve"><value>カバーはライブラリ内のファイルにのみ保存できます。</value></data>
+  <data name="Artwork.UnknownError" xml:space="preserve"><value>不明なエラー</value></data>
+  <data name="Backups.Delete" xml:space="preserve"><value>バックアップを削除…</value></data>
+  <data name="Backups.DeletePrompt" xml:space="preserve"><value>このバックアップを完全に削除しますか？ 現在の音声ファイルとライブラリのメタデータは保持されます。
+{0}</value></data>
+  <data name="Backups.DeleteTitle" xml:space="preserve"><value>ファイルのバックアップを削除</value></data>
+  <data name="Backups.ListAutomation" xml:space="preserve"><value>検証済みのファイルバックアップ</value></data>
+  <data name="Backups.Restore" xml:space="preserve"><value>復元…</value></data>
+  <data name="Backups.RestoreAccept" xml:space="preserve"><value>復元</value></data>
+  <data name="Backups.RestorePrompt" xml:space="preserve"><value>このバックアップを復元しますか？ 現在の音声ファイルは別のバックアップとして保持されます。トラックエディターの未保存の変更は破棄されます。</value></data>
+  <data name="Backups.RestoreTitle" xml:space="preserve"><value>ファイルのバックアップを復元</value></data>
+  <data name="Backups.Rules" xml:space="preserve"><value>現在のファイルに一致するバックアップのみ復元できます。古いバージョンは明示的に削除できます。</value></data>
+  <data name="Backups.Summary" xml:space="preserve"><value>検証済みバックアップ {0} 件、{1} MiB。 </value></data>
+  <data name="Backups.Title" xml:space="preserve"><value>ファイルのバックアップ</value></data>
+  <data name="Backups.Unverified" xml:space="preserve"><value>確認用に保持された未検証のジャーナル {0} 件。 </value></data>
+  <data name="Book.Add" xml:space="preserve"><value>音声ファイルを追加…</value></data>
+  <data name="Book.AddFailed" xml:space="preserve"><value>音声ファイルを追加できませんでした</value></data>
+  <data name="Book.AddTip" xml:space="preserve"><value>ローカルの音声ファイルを選びます。読み取るだけで、コピーも変更もしません</value></data>
+  <data name="Book.AddTitle" xml:space="preserve"><value>オーディオブックを追加</value></data>
+  <data name="Book.Added" xml:space="preserve"><value>「{0}」を追加しました。音声ファイルはコピーも変更もされていません。</value></data>
+  <data name="Book.AlreadyOnShelf" xml:space="preserve"><value>「{0}」はすでに本棚にあります。保存済みの位置は保持されました。</value></data>
+  <data name="Book.AlreadyRemoved" xml:space="preserve"><value>その本はすでに削除されています。</value></data>
+  <data name="Book.AudioFiles" xml:space="preserve"><value>音声ファイル</value></data>
+  <data name="Book.ChapterCount.Other" xml:space="preserve"><value>「{1}」に {0} 個のチャプターがあります。1 つ選んで「チャプターを再生」を押してください。</value></data>
+  <data name="Book.ChapterFailed" xml:space="preserve"><value>チャプターを再生できませんでした</value></data>
+  <data name="Book.Chapters" xml:space="preserve"><value>チャプター</value></data>
+  <data name="Book.ChaptersFailed" xml:space="preserve"><value>チャプターを読み取れませんでした</value></data>
+  <data name="Book.ChaptersTip" xml:space="preserve"><value>このファイルに保存されているチャプターを一覧表示します。何も再生されません</value></data>
+  <data name="Book.Empty" xml:space="preserve"><value>本棚は空です。「音声ファイルを追加…」を選んで始めましょう。</value></data>
+  <data name="Book.FileSelectionUnavailable" xml:space="preserve"><value>ファイルの選択は利用できません。</value></data>
+  <data name="Book.Finished" xml:space="preserve"><value>再生済み · 最後の位置を保存</value></data>
+  <data name="Book.FinishedRestart" xml:space="preserve"><value>「{0}」は最後まで再生済みのため、最初から再生します。</value></data>
+  <data name="Book.Intro" xml:space="preserve"><value>ローカルのオーディオブックです。位置は「位置を保存」を選んだときにのみ保存されます。</value></data>
+  <data name="Book.Length" xml:space="preserve"><value>長さ {0}</value></data>
+  <data name="Book.LengthUnknown" xml:space="preserve"><value>長さ不明</value></data>
+  <data name="Book.Missing" xml:space="preserve"><value>ファイルが見つかりません — 削除して、新しい場所から追加し直してください</value></data>
+  <data name="Book.NoChapters" xml:space="preserve"><value>「{0}」にはチャプターがありません。</value></data>
+  <data name="Book.NoChaptersHelp" xml:space="preserve"><value>このファイルにはチャプターがありません。「最初から再生」または「再開」で本全体を再生してください。</value></data>
+  <data name="Book.NoFile" xml:space="preserve"><value>ファイルが選ばれていません。</value></data>
+  <data name="Book.NoPlayback" xml:space="preserve"><value>このウィンドウからは再生できません。</value></data>
+  <data name="Book.NoSaved" xml:space="preserve"><value>保存された位置なし</value></data>
+  <data name="Book.NotOnShelf" xml:space="preserve"><value>プレーヤーはこの本棚の本を再生していません。先に「再生」または「再開」で本を開始してください。</value></data>
+  <data name="Book.NothingPlaying" xml:space="preserve"><value>何も再生されていません。「再生」または「再開」で本を開始してから、位置を保存してください。</value></data>
+  <data name="Book.OnShelf.Other" xml:space="preserve"><value>本棚にオーディオブックが {0} 冊あります。</value></data>
+  <data name="Book.PlayChapter" xml:space="preserve"><value>チャプターを再生</value></data>
+  <data name="Book.PlayChapterTip" xml:space="preserve"><value>選んだチャプターからメインプレーヤーで再生します。行を選んでも再生は始まりません</value></data>
+  <data name="Book.PlayFailed" xml:space="preserve"><value>オーディオブックを再生できませんでした</value></data>
+  <data name="Book.PlayFromStart" xml:space="preserve"><value>最初から再生</value></data>
+  <data name="Book.PlayingChapter" xml:space="preserve"><value>「{0}」の {1} を {2} から再生しています。</value></data>
+  <data name="Book.PlayingFrom" xml:space="preserve"><value>「{0}」を {1} から再生しています。</value></data>
+  <data name="Book.PlayingStart" xml:space="preserve"><value>「{0}」を最初から再生しています。</value></data>
+  <data name="Book.ReadFailed" xml:space="preserve"><value>オーディオブックの本棚を読み取れませんでした</value></data>
+  <data name="Book.RemoveFailed" xml:space="preserve"><value>オーディオブックを削除できませんでした</value></data>
+  <data name="Book.RemovePrompt" xml:space="preserve"><value>この本棚のエントリーと保存済みの位置を削除しますか？
+音声ファイルはディスクに残ります。
+{0}</value></data>
+  <data name="Book.RemoveTip" xml:space="preserve"><value>この本棚のエントリーを削除します。音声ファイルはディスクに残ります</value></data>
+  <data name="Book.RemoveTitle" xml:space="preserve"><value>オーディオブックを削除</value></data>
+  <data name="Book.RemovedFromShelf" xml:space="preserve"><value>「{0}」を本棚から削除しました。音声ファイルには触れていません。</value></data>
+  <data name="Book.ResumeTip" xml:space="preserve"><value>最後に保存した位置から続けます</value></data>
+  <data name="Book.SaveFailed" xml:space="preserve"><value>位置を保存できませんでした</value></data>
+  <data name="Book.SavePositionTip" xml:space="preserve"><value>再生中または一時停止中のオーディオブックで、メインプレーヤーが今いる位置を保存します</value></data>
+  <data name="Book.SavedOf" xml:space="preserve"><value>{1} 中 {0} を保存</value></data>
+  <data name="Book.SavedPos" xml:space="preserve"><value>「{1}」の位置 {0} を保存しました。</value></data>
+  <data name="Book.SelectionChanged" xml:space="preserve"><value>選択が変わったため、チャプターは表示されませんでした。</value></data>
+  <data name="Book.ShowingFirst" xml:space="preserve"><value>最初の {0} 個のチャプターを表示しています。</value></data>
+  <data name="Book.StatusIntro" xml:space="preserve"><value>ローカルの音声ファイルを本棚に追加します。操作するまで、再生も保存もされません。</value></data>
+  <data name="Book.UnknownAuthor" xml:space="preserve"><value>作者不明</value></data>
+  <data name="Column.Album" xml:space="preserve"><value>アルバム</value></data>
+  <data name="Column.AlbumArtist" xml:space="preserve"><value>アルバムアーティスト</value></data>
+  <data name="Column.Artist" xml:space="preserve"><value>アーティスト</value></data>
+  <data name="Column.BitRate" xml:space="preserve"><value>ビットレート</value></data>
+  <data name="Column.Bpm" xml:space="preserve"><value>BPM</value></data>
+  <data name="Column.Channels" xml:space="preserve"><value>チャンネル</value></data>
+  <data name="Column.Comment" xml:space="preserve"><value>コメント</value></data>
+  <data name="Column.Composer" xml:space="preserve"><value>作曲者</value></data>
+  <data name="Column.DateAdded" xml:space="preserve"><value>追加日</value></data>
+  <data name="Column.DateModified" xml:space="preserve"><value>更新日</value></data>
+  <data name="Column.Description" xml:space="preserve"><value>説明</value></data>
+  <data name="Column.DiscNumber" xml:space="preserve"><value>ディスク番号</value></data>
+  <data name="Column.EpisodeNumber" xml:space="preserve"><value>エピソード番号</value></data>
+  <data name="Column.Genre" xml:space="preserve"><value>ジャンル</value></data>
+  <data name="Column.Keywords" xml:space="preserve"><value>キーワード</value></data>
+  <data name="Column.LastPlayed" xml:space="preserve"><value>最終再生</value></data>
+  <data name="Column.LastSkipped" xml:space="preserve"><value>最終スキップ</value></data>
+  <data name="Column.Location" xml:space="preserve"><value>ファイルの場所</value></data>
+  <data name="Column.PlayCount" xml:space="preserve"><value>再生回数</value></data>
+  <data name="Column.Rating" xml:space="preserve"><value>評価</value></data>
+  <data name="Column.SampleRate" xml:space="preserve"><value>サンプルレート</value></data>
+  <data name="Column.SeasonNumber" xml:space="preserve"><value>シーズン番号</value></data>
+  <data name="Column.ShowName" xml:space="preserve"><value>番組名</value></data>
+  <data name="Column.Size" xml:space="preserve"><value>サイズ</value></data>
+  <data name="Column.SkipCount" xml:space="preserve"><value>スキップ回数</value></data>
+  <data name="Column.Source" xml:space="preserve"><value>ソース</value></data>
+  <data name="Column.Time" xml:space="preserve"><value>時間</value></data>
+  <data name="Column.Title" xml:space="preserve"><value>タイトル</value></data>
+  <data name="Column.TrackNumber" xml:space="preserve"><value>トラック番号</value></data>
+  <data name="Column.Year" xml:space="preserve"><value>年</value></data>
+  <data name="Common.AllCount" xml:space="preserve"><value>すべて ({0})</value></data>
+  <data name="Common.Cancel" xml:space="preserve"><value>キャンセル</value></data>
+  <data name="Common.Cancelled" xml:space="preserve"><value>キャンセルしました。</value></data>
+  <data name="Common.Cancelling" xml:space="preserve"><value>キャンセルしています…</value></data>
+  <data name="Common.Close" xml:space="preserve"><value>閉じる</value></data>
+  <data name="Common.NameCount" xml:space="preserve"><value>{0} ({1})</value></data>
+  <data name="Common.NoLookupPlugin" xml:space="preserve"><value>検索プラグインがインストールされていないか、有効になっていません。「設定」&gt;「プラグイン」を確認してください。</value></data>
+  <data name="Common.OnlineLookupOff" xml:space="preserve"><value>オンライン検索はオフです。「設定」&gt;「オンライン」でオンにしてください。</value></data>
+  <data name="Common.OperationCancelled" xml:space="preserve"><value>操作をキャンセルしました。</value></data>
+  <data name="Common.OperationFailed" xml:space="preserve"><value>操作に失敗しました: {0}</value></data>
+  <data name="Common.Unknown" xml:space="preserve"><value>不明</value></data>
+  <data name="Dialog.Cancel" xml:space="preserve"><value>キャンセル</value></data>
+  <data name="Dialog.CloseAutomation" xml:space="preserve"><value>{0} を閉じる</value></data>
+  <data name="Dialog.Create" xml:space="preserve"><value>作成</value></data>
+  <data name="Dialog.CreatePlaylist" xml:space="preserve"><value>プレイリストを作成</value></data>
+  <data name="Dialog.Delete" xml:space="preserve"><value>削除</value></data>
+  <data name="Dialog.DeletePlaylist" xml:space="preserve"><value>プレイリストを削除</value></data>
+  <data name="Dialog.DeletePlaylistPrompt" xml:space="preserve"><value>「{0}」を削除しますか？ 音楽ファイルには触れません。</value></data>
+  <data name="Dialog.PlaylistName" xml:space="preserve"><value>プレイリスト名</value></data>
+  <data name="Dialog.Remove" xml:space="preserve"><value>削除</value></data>
+  <data name="Dialog.RemoveFolder" xml:space="preserve"><value>音楽フォルダーを削除</value></data>
+  <data name="Dialog.RemoveFolderPrompt" xml:space="preserve"><value>「{0}」の監視をやめ、そのトラックをライブラリから削除しますか？ 音楽ファイルには触れません。</value></data>
+  <data name="Dialog.Rename" xml:space="preserve"><value>名前を変更</value></data>
+  <data name="Dialog.RenamePlaylist" xml:space="preserve"><value>プレイリスト名を変更</value></data>
+  <data name="Dialog.Save" xml:space="preserve"><value>保存</value></data>
+  <data name="Disc.ActivePresent" xml:space="preserve"><value>現在</value></data>
+  <data name="Disc.ActiveRange" xml:space="preserve"><value>活動期間 {0}～{1}</value></data>
+  <data name="Disc.Artist" xml:space="preserve"><value>アーティスト情報</value></data>
+  <data name="Disc.ArtistFailed" xml:space="preserve"><value>アーティストの検索に失敗しました: {0}</value></data>
+  <data name="Disc.ArtistFrom" xml:space="preserve"><value>アーティストの詳細は MusicBrainz から取得しています。</value></data>
+  <data name="Disc.ArtistLooking" xml:space="preserve"><value>{0} を検索しています…</value></data>
+  <data name="Disc.ArtistNoMatch" xml:space="preserve"><value>「{0}」に近い一致は見つかりませんでした。</value></data>
+  <data name="Disc.ArtistTip" xml:space="preserve"><value>アーティストの基本情報（種類、地域、活動年、ジャンル、リンク）を検索します</value></data>
+  <data name="Disc.CoverAutomation" xml:space="preserve"><value>アルバムカバー</value></data>
+  <data name="Disc.DriveAutomation" xml:space="preserve"><value>CD または DVD ドライブ</value></data>
+  <data name="Disc.Empty" xml:space="preserve"><value>音楽 CD を挿入して、「ディスクを読み取る」を選んでください。</value></data>
+  <data name="Disc.FoundMany" xml:space="preserve"><value>アルバム候補が {0} 件見つかりました。最も一致するものを表示しています。</value></data>
+  <data name="Disc.FoundOne" xml:space="preserve"><value>このアルバムが見つかりました。</value></data>
+  <data name="Disc.Genres" xml:space="preserve"><value>ジャンル: {0}</value></data>
+  <data name="Disc.LookUp" xml:space="preserve"><value>検索</value></data>
+  <data name="Disc.LookingUp" xml:space="preserve"><value>このディスクを検索しています…</value></data>
+  <data name="Disc.LookupFailed" xml:space="preserve"><value>検索に失敗しました: {0} トラックは番号のままです。</value></data>
+  <data name="Disc.LookupHintOff" xml:space="preserve"><value>オンライン検索がオフか、プラグインがインストールされていません。「設定」&gt;「オンライン」でオンにしてください。</value></data>
+  <data name="Disc.LookupHintOn" xml:space="preserve"><value>「検索」を押すと、ディスクの目次が MusicBrainz に送信されます。</value></data>
+  <data name="Disc.NoDisc" xml:space="preserve"><value>{0} に音楽ディスクがありません。</value></data>
+  <data name="Disc.NoDrive" xml:space="preserve"><value>CD または DVD ドライブが見つかりませんでした。</value></data>
+  <data name="Disc.NotKnown" xml:space="preserve"><value>このディスクは MusicBrainz に登録されていません。</value></data>
+  <data name="Disc.OtherAlbums" xml:space="preserve"><value>その他のアルバム候補</value></data>
+  <data name="Disc.PlayingDisc" xml:space="preserve"><value>ディスクを最初のトラックから再生しています。</value></data>
+  <data name="Disc.PlayingTrack" xml:space="preserve"><value>トラック {0} を再生しています。ディスクの残りはキューに入っています。</value></data>
+  <data name="Disc.PossibleAlbums" xml:space="preserve"><value>アルバム候補</value></data>
+  <data name="Disc.Read" xml:space="preserve"><value>ディスクを読み取る</value></data>
+  <data name="Disc.ReadTip" xml:space="preserve"><value>ディスクの交換後などに、目次を再度読み取ります</value></data>
+  <data name="Disc.Reading" xml:space="preserve"><value>ディスクを読み取っています…</value></data>
+  <data name="Disc.Title" xml:space="preserve"><value>音楽 CD</value></data>
+  <data name="Disc.TrackN" xml:space="preserve"><value>トラック {0}</value></data>
+  <data name="Disc.TracksAndLength" xml:space="preserve"><value>{0} トラック · {1}</value></data>
+  <data name="Disc.TracksAutomation" xml:space="preserve"><value>ディスクのトラック</value></data>
+  <data name="Disc.TracksChooseLookup" xml:space="preserve"><value>{0} トラック。「検索」を選ぶとアルバムの詳細が見つかります。</value></data>
+  <data name="Disc.TracksOnly" xml:space="preserve"><value>{0} トラック。</value></data>
+  <data name="Equalizer.Title" xml:space="preserve"><value>イコライザー</value></data>
+  <data name="Equalizer.ButtonAutomation" xml:space="preserve"><value>イコライザー</value></data>
+  <data name="Equalizer.ButtonTip" xml:space="preserve"><value>イコライザーを開く</value></data>
+  <data name="Equalizer.On" xml:space="preserve"><value>オン</value></data>
+  <data name="Equalizer.OnAutomation" xml:space="preserve"><value>イコライザーのオン/オフ</value></data>
+  <data name="Equalizer.OnTip" xml:space="preserve"><value>イコライザーはオンです。再生するすべての音に適用されます</value></data>
+  <data name="Equalizer.PresetAutomation" xml:space="preserve"><value>イコライザーのプリセット</value></data>
+  <data name="Equalizer.Reset" xml:space="preserve"><value>リセット</value></data>
+  <data name="Equalizer.ResetTip" xml:space="preserve"><value>すべてのバンドとプリアンプを 0 dB に戻します</value></data>
+  <data name="Equalizer.Preamp" xml:space="preserve"><value>プリアンプ</value></data>
+  <data name="Equalizer.Preset.Custom" xml:space="preserve"><value>カスタム</value></data>
+  <data name="Equalizer.Preset.Flat" xml:space="preserve"><value>フラット</value></data>
+  <data name="Equalizer.Preset.BassBoost" xml:space="preserve"><value>低音ブースト</value></data>
+  <data name="Equalizer.Preset.TrebleBoost" xml:space="preserve"><value>高音ブースト</value></data>
+  <data name="Equalizer.Preset.Rock" xml:space="preserve"><value>ロック</value></data>
+  <data name="Equalizer.Preset.Pop" xml:space="preserve"><value>ポップ</value></data>
+  <data name="Equalizer.Preset.Jazz" xml:space="preserve"><value>ジャズ</value></data>
+  <data name="Equalizer.Preset.Classical" xml:space="preserve"><value>クラシック</value></data>
+  <data name="Equalizer.Preset.Vocal" xml:space="preserve"><value>ボーカル</value></data>
+  <data name="Error.Reported" xml:space="preserve"><value>問題が発生しました ({0})。詳細は {1} に保存されました。</value></data>
+  <data name="Crash.EngineBuiltIn" xml:space="preserve"><value>内蔵</value></data>
+  <data name="Crash.EngineVlc" xml:space="preserve"><value>VLC</value></data>
+  <data name="Crash.Message" xml:space="preserve"><value>前回のセッションは正常に終了しませんでした。</value></data>
+  <data name="Crash.Title" xml:space="preserve"><value>Aibell が予期せず終了しました</value></data>
+  <data name="Crash.WhilePlaying" xml:space="preserve"><value>{1} プレーヤーで「{0}」を再生中に停止しました。</value></data>
+  <data name="ErrorDialog.Close" xml:space="preserve"><value>閉じる</value></data>
+  <data name="ErrorDialog.Copied" xml:space="preserve"><value>コピーしました</value></data>
+  <data name="ErrorDialog.Copy" xml:space="preserve"><value>詳細をコピー</value></data>
+  <data name="ErrorDialog.Details" xml:space="preserve"><value>詳細</value></data>
+  <data name="ErrorDialog.DetailsAutomation" xml:space="preserve"><value>技術的な詳細</value></data>
+  <data name="ErrorDialog.HideDetails" xml:space="preserve"><value>詳細を隠す</value></data>
+  <data name="ErrorDialog.LogLocation" xml:space="preserve"><value>ログファイル: {0}</value></data>
+  <data name="ErrorDialog.More" xml:space="preserve"><value>ほかに {0} 件の問題が発生しました。詳細をご覧ください。</value></data>
+  <data name="ErrorDialog.Title" xml:space="preserve"><value>問題が発生しました</value></data>
+  <data name="Playback.FailedTitle" xml:space="preserve"><value>このトラックを再生できませんでした</value></data>
+  <data name="Playback.TryVlc" xml:space="preserve"><value>繰り返し発生する場合は、環境設定 &gt; 再生 で VLC を選んでください。</value></data>
+  <data name="Import.DuplicateCount.Other" xml:space="preserve"><value>重複 {0} 件</value></data>
+  <data name="Import.Entry" xml:space="preserve"><value>エントリー {0}: {1}</value></data>
+  <data name="Import.NoStations" xml:space="preserve"><value>新しいダイレクトストリームのステーションは見つかりませんでした。</value></data>
+  <data name="Import.NoTracks" xml:space="preserve"><value>読み取れるローカルのトラックは見つかりませんでした。</value></data>
+  <data name="Import.PlaylistCancelled" xml:space="preserve"><value>プレイリストの確認をキャンセルしました。ライブラリは変更されていません。</value></data>
+  <data name="Import.PlaylistFailed" xml:space="preserve"><value>プレイリストを準備できませんでした。</value></data>
+  <data name="Import.PlaylistSummary" xml:space="preserve"><value>準備完了 {0} 件、スキップ {1} 件、除外 {2} 件。</value></data>
+  <data name="Import.ReadingFiles" xml:space="preserve"><value>参照されている音声ファイルを読み取っています…</value></data>
+  <data name="Import.ReadingStations" xml:space="preserve"><value>保存されたステーションの URL を読み取っています…</value></data>
+  <data name="Import.ReviewPlaylist" xml:space="preserve"><value>ライブラリに追加する前にプレイリストを確認してください。音声ファイルは変更されません。</value></data>
+  <data name="Import.ReviewStations" xml:space="preserve"><value>保存する前にこれらのステーションを確認してください。ステーションを選んで「再生」を押すと、インポート後に接続します。</value></data>
+  <data name="Import.SkippedCount" xml:space="preserve"><value>スキップしたエントリー ({0})</value></data>
+  <data name="Import.SkippedPlaylist" xml:space="preserve"><value>スキップしたプレイリストのエントリー</value></data>
+  <data name="Import.SkippedStations" xml:space="preserve"><value>スキップしたステーションのエントリー</value></data>
+  <data name="Import.SkippedTab" xml:space="preserve"><value>スキップしたエントリー</value></data>
+  <data name="Import.StationCount.Other" xml:space="preserve"><value>ステーション {0} 件</value></data>
+  <data name="Import.StationsCancelled" xml:space="preserve"><value>ステーションの確認をキャンセルしました。</value></data>
+  <data name="Import.StationsFailed" xml:space="preserve"><value>ステーションのプレイリストを準備できませんでした。</value></data>
+  <data name="Import.StationsReady" xml:space="preserve"><value>インポートできるステーション</value></data>
+  <data name="Import.StationsTab" xml:space="preserve"><value>ステーション</value></data>
+  <data name="Import.TrackCount.Other" xml:space="preserve"><value>{0} トラック</value></data>
+  <data name="Import.TracksReady" xml:space="preserve"><value>インポートできるトラック</value></data>
+  <data name="Import.TracksTab" xml:space="preserve"><value>トラック</value></data>
+  <data name="Library.AllMusic" xml:space="preserve"><value>すべての音楽</value></data>
+  <data name="Library.Importing" xml:space="preserve"><value>{0} をインポートしています…</value></data>
+  <data name="Library.Rescanned" xml:space="preserve"><value>{0} を再スキャンしました: インデックス {1} 件、削除 {2} 件、読み取り不可 {3} 件。</value></data>
+  <data name="Library.StoppedWatching.Other" xml:space="preserve"><value>{1} の監視を停止し、インデックス済みのトラック {0} 件を削除しました。ファイルには触れていません。</value></data>
+  <data name="Library.Synced" xml:space="preserve"><value>ファイル {0} 件を同期し、{1} 件を削除しました。{2}</value></data>
+  <data name="Library.SyncedIssues" xml:space="preserve"><value>ファイル {0} 件を同期、{1} 件を削除、{2} 件は読み取れませんでした。</value></data>
+  <data name="Library.Updated.Removed" xml:space="preserve"><value>ライブラリを更新しました: 見つからないトラック {0} 件を削除しました。</value></data>
+  <data name="Library.Updated.Unreadable" xml:space="preserve"><value>ライブラリを更新しました（読み取れないファイル {0} 件）。</value></data>
+  <data name="Main.AddEllipsis" xml:space="preserve"><value>追加…</value></data>
+  <data name="Main.AddFolder" xml:space="preserve"><value>音楽フォルダーを追加</value></data>
+  <data name="Main.OpenFiles" xml:space="preserve"><value>ファイルを開く…</value></data>
+  <data name="Main.AddToLibrary" xml:space="preserve"><value>ライブラリに追加</value></data>
+  <data name="Main.AddToPlaylist" xml:space="preserve"><value>プレイリストに追加</value></data>
+  <data name="Main.Album" xml:space="preserve"><value>アルバム</value></data>
+  <data name="Main.Albums" xml:space="preserve"><value>アルバム</value></data>
+  <data name="Main.Artist" xml:space="preserve"><value>アーティスト</value></data>
+  <data name="Main.Artists" xml:space="preserve"><value>アーティスト</value></data>
+  <data name="Main.AudiobookShelf" xml:space="preserve"><value>オーディオブックの本棚</value></data>
+  <data name="Main.Audiobooks" xml:space="preserve"><value>オーディオブック</value></data>
+  <data name="Main.Clear" xml:space="preserve"><value>クリア</value></data>
+  <data name="Main.ClearQueueTip" xml:space="preserve"><value>再生を止めずにキューをクリアします</value></data>
+  <data name="Main.Closing" xml:space="preserve"><value>閉じる前に保留中の処理を終えています…</value></data>
+  <data name="Main.CreatePlaylist" xml:space="preserve"><value>プレイリストを作成</value></data>
+  <data name="Main.CreateSmartPlaylist" xml:space="preserve"><value>スマートプレイリストを作成</value></data>
+  <data name="Main.Delete" xml:space="preserve"><value>削除…</value></data>
+  <data name="Main.DeletePlaylistTip" xml:space="preserve"><value>選択したプレイリストを削除</value></data>
+  <data name="Main.DropTracks" xml:space="preserve"><value>ここにトラックをドロップ</value></data>
+  <data name="Main.EditEllipsis" xml:space="preserve"><value>編集…</value></data>
+  <data name="Main.EditRules" xml:space="preserve"><value>規則を編集…</value></data>
+  <data name="Main.EditStation" xml:space="preserve"><value>ステーションを編集…</value></data>
+  <data name="Main.ExportPlaylist" xml:space="preserve"><value>プレイリストをエクスポート…</value></data>
+  <data name="Main.FoldSidebar" xml:space="preserve"><value>サイドバーを折りたたむ</value></data>
+  <data name="Main.ShowSidebar" xml:space="preserve"><value>サイドバーを表示</value></data>
+  <data name="Main.FoldQueue" xml:space="preserve"><value>再生キューを折りたたむ</value></data>
+  <data name="Main.Folders" xml:space="preserve"><value>フォルダー</value></data>
+  <data name="Main.Genre" xml:space="preserve"><value>ジャンル</value></data>
+  <data name="Main.Genres" xml:space="preserve"><value>ジャンル</value></data>
+  <data name="Main.ImportEllipsis" xml:space="preserve"><value>インポート…</value></data>
+  <data name="Main.ImportPlaylistFile" xml:space="preserve"><value>プレイリストファイルをインポート</value></data>
+  <data name="Main.ImportStations" xml:space="preserve"><value>ラジオ局をインポート</value></data>
+  <data name="Main.ImportStationsTip" xml:space="preserve"><value>ローカルの M3U または PLS プレイリストからステーションをインポートします</value></data>
+  <data name="Main.Library" xml:space="preserve"><value>ライブラリ</value></data>
+  <data name="Main.LibraryTracks" xml:space="preserve"><value>ライブラリのトラック</value></data>
+  <data name="Main.MoveDown" xml:space="preserve"><value>プレイリスト内で下へ移動</value></data>
+  <data name="Main.MoveUp" xml:space="preserve"><value>プレイリスト内で上へ移動</value></data>
+  <data name="Main.MusicFolders" xml:space="preserve"><value>音楽フォルダー</value></data>
+  <data name="Main.Next" xml:space="preserve"><value>次のトラック</value></data>
+  <data name="Main.NextHint" xml:space="preserve"><value>ライブラリから Alt+右</value></data>
+  <data name="Main.NextTip" xml:space="preserve"><value>次のトラック (ライブラリから Alt+右)</value></data>
+  <data name="Main.NoStations" xml:space="preserve"><value>一致するステーションがありません。直接の HTTP/HTTPS 音声ストリームを追加して始めましょう。</value></data>
+  <data name="Main.NoTracks" xml:space="preserve"><value>このビューにトラックはありません。</value></data>
+  <data name="Main.NowPlaying" xml:space="preserve"><value>再生中</value></data>
+  <data name="Main.NowPlayingArt" xml:space="preserve"><value>再生中のアートワーク</value></data>
+  <data name="Main.Play" xml:space="preserve"><value>再生</value></data>
+  <data name="Main.PlayHint" xml:space="preserve"><value>トラックまたはキューのリストからスペース</value></data>
+  <data name="Main.PlayQueue" xml:space="preserve"><value>再生キュー</value></data>
+  <data name="Main.Playlists" xml:space="preserve"><value>プレイリスト</value></data>
+  <data name="Main.PlaylistsAutomation" xml:space="preserve"><value>プレイリスト</value></data>
+  <data name="Main.Preferences" xml:space="preserve"><value>設定</value></data>
+  <data name="Main.PreferencesTip" xml:space="preserve"><value>設定 (Ctrl+,)</value></data>
+  <data name="Main.Previous" xml:space="preserve"><value>前のトラック</value></data>
+  <data name="Main.PreviousHint" xml:space="preserve"><value>ライブラリから Alt+左</value></data>
+  <data name="Main.PreviousTip" xml:space="preserve"><value>前のトラック (ライブラリから Alt+左)</value></data>
+  <data name="Main.QueueLast" xml:space="preserve"><value>キューの最後に追加</value></data>
+  <data name="Main.QueueNext" xml:space="preserve"><value>次に再生するよう追加</value></data>
+  <data name="Main.RadioHeader" xml:space="preserve"><value>ラジオ</value></data>
+  <data name="Main.Rating" xml:space="preserve"><value>評価</value></data>
+  <data name="Main.RatingClear" xml:space="preserve"><value>☆☆☆☆☆  クリア</value></data>
+  <data name="Main.Remove" xml:space="preserve"><value>削除…</value></data>
+  <data name="Main.RemoveFolderTip" xml:space="preserve"><value>選択したフォルダーを削除</value></data>
+  <data name="Main.RemoveFromPlaylist" xml:space="preserve"><value>プレイリストから削除</value></data>
+  <data name="Main.RemoveShort" xml:space="preserve"><value>削除</value></data>
+  <data name="Main.RemoveStation" xml:space="preserve"><value>ステーションを削除…</value></data>
+  <data name="Main.Rename" xml:space="preserve"><value>名前を変更…</value></data>
+  <data name="Main.Rescan" xml:space="preserve"><value>再スキャン</value></data>
+  <data name="Main.SavedStations" xml:space="preserve"><value>保存したラジオ局</value></data>
+  <data name="Main.SearchTip" xml:space="preserve"><value>検索 (Ctrl+F)。Esc で入力をクリア</value></data>
+  <data name="Main.SeekTip" xml:space="preserve"><value>再生位置 (矢印キー ±5 秒、Page Up/Down ±15 秒、Home/End)</value></data>
+  <data name="Main.SeekUnavailable" xml:space="preserve"><value>再生位置（利用不可）</value></data>
+  <data name="Main.ShowFile" xml:space="preserve"><value>ファイルを表示</value></data>
+  <data name="Main.ShowQueue" xml:space="preserve"><value>再生キューを表示</value></data>
+  <data name="Main.StatusOperationFailed" xml:space="preserve"><value>操作に失敗しました: {0}</value></data>
+  <data name="Main.StatusPrefs" xml:space="preserve"><value>設定を開けませんでした: {0}</value></data>
+  <data name="Main.StatusTrackProps" xml:space="preserve"><value>トラックのプロパティを開けませんでした: {0}</value></data>
+  <data name="Main.Stop" xml:space="preserve"><value>停止</value></data>
+  <data name="Main.TitleColumn" xml:space="preserve"><value>タイトル</value></data>
+  <data name="Main.ViewMetadata" xml:space="preserve"><value>メタデータを表示…</value></data>
+  <data name="Main.Volume" xml:space="preserve"><value>音量</value></data>
+  <data name="Main.VolumeTip" xml:space="preserve"><value>音量 (矢印キー ±5%、Page Up/Down ±10%、Home/End)</value></data>
+  <data name="Menu.NewPlaylist" xml:space="preserve"><value>新しいプレイリスト…</value></data>
+  <data name="Menu.NoPlaylists" xml:space="preserve"><value>既存のプレイリストがありません</value></data>
+  <data name="Menu.RestoreDefaults" xml:space="preserve"><value>既定に戻す</value></data>
+  <data name="Meta.AddCover" xml:space="preserve"><value>アートワークを追加…</value></data>
+  <data name="Meta.AddCoverTip" xml:space="preserve"><value>表示中の埋め込みカバーを PNG または JPEG 画像で追加または置き換えます。</value></data>
+  <data name="Meta.AdditionalTags" xml:space="preserve"><value>ファイルの追加タグ ({0})</value></data>
+  <data name="Meta.AlbumArtist" xml:space="preserve"><value>アルバムアーティスト</value></data>
+  <data name="Meta.AlbumTitle" xml:space="preserve"><value>アルバムタイトル</value></data>
+  <data name="Meta.BackupsFailed" xml:space="preserve"><value>バックアップを管理できませんでした: {0}</value></data>
+  <data name="Meta.BadNumbers" xml:space="preserve"><value>数値フィールドには有効な数値を入力してください。</value></data>
+  <data name="Meta.BitRate" xml:space="preserve"><value>ビットレート</value></data>
+  <data name="Meta.BitsPerSample" xml:space="preserve"><value>サンプルあたりのビット数</value></data>
+  <data name="Meta.Bpm" xml:space="preserve"><value>毎分拍数</value></data>
+  <data name="Meta.Channels" xml:space="preserve"><value>チャンネル</value></data>
+  <data name="Meta.CloseAutomation" xml:space="preserve"><value>トラックのプロパティを閉じる</value></data>
+  <data name="Meta.Codec" xml:space="preserve"><value>音声コーデック</value></data>
+  <data name="Meta.Comment" xml:space="preserve"><value>コメント</value></data>
+  <data name="Meta.Composer" xml:space="preserve"><value>作曲者</value></data>
+  <data name="Meta.Conductor" xml:space="preserve"><value>指揮者</value></data>
+  <data name="Meta.Copyright" xml:space="preserve"><value>著作権</value></data>
+  <data name="Meta.CoverAutomation" xml:space="preserve"><value>トラックのアートワーク</value></data>
+  <data name="Meta.CoverLoadFailed" xml:space="preserve"><value>アートワークを読み込めませんでした: {0}</value></data>
+  <data name="Meta.CoverTip" xml:space="preserve"><value>音声ファイルまたはそのフォルダーのアートワーク</value></data>
+  <data name="Meta.Description" xml:space="preserve"><value>説明</value></data>
+  <data name="Meta.DestinationAutomation" xml:space="preserve"><value>保存先</value></data>
+  <data name="Meta.DestinationTip" xml:space="preserve"><value>保存先を選びます。ファイルへの書き込みには再生の停止が必要です。</value></data>
+  <data name="Meta.DestinationUnavailable" xml:space="preserve"><value>ファイルへの書き込みは、検証済みの FLAC、M4A、MP3、Ogg、Opus、標準的な PCM WAV ファイルで利用できます。</value></data>
+  <data name="Meta.Directory" xml:space="preserve"><value>ディレクトリ</value></data>
+  <data name="Meta.DiscNumber" xml:space="preserve"><value>ディスク番号</value></data>
+  <data name="Meta.Duration" xml:space="preserve"><value>再生時間</value></data>
+  <data name="Meta.EmbeddedPictures" xml:space="preserve"><value>埋め込み画像</value></data>
+  <data name="Meta.EpisodeNumber" xml:space="preserve"><value>エピソード番号</value></data>
+  <data name="Meta.FileAndLibrary" xml:space="preserve"><value>ファイルとライブラリ</value></data>
+  <data name="Meta.FileModified" xml:space="preserve"><value>ファイルの更新日</value></data>
+  <data name="Meta.FileName" xml:space="preserve"><value>ファイル名</value></data>
+  <data name="Meta.FileSize" xml:space="preserve"><value>ファイルサイズ</value></data>
+  <data name="Meta.Genre" xml:space="preserve"><value>ジャンル</value></data>
+  <data name="Meta.Grouping" xml:space="preserve"><value>グループ</value></data>
+  <data name="Meta.HintFile" xml:space="preserve"><value>変更したタグを書き込み、ライブラリを更新します。元のファイルのバックアップは保持されます。評価はライブラリに残ります。</value></data>
+  <data name="Meta.HintLibrary" xml:space="preserve"><value>変更はライブラリに保存されます。音声ファイルのタグは変更されません。</value></data>
+  <data name="Meta.HintWav" xml:space="preserve"><value>WAV: タイトル、アーティスト、アルバム、ジャンル、年、トラック番号、コメントのみ。元のファイルのバックアップは保持されます。</value></data>
+  <data name="Meta.Imported" xml:space="preserve"><value>インポート日</value></data>
+  <data name="Meta.Keywords" xml:space="preserve"><value>キーワード</value></data>
+  <data name="Meta.LastPlayed" xml:space="preserve"><value>最終再生</value></data>
+  <data name="Meta.LastSkipped" xml:space="preserve"><value>最終スキップ</value></data>
+  <data name="Meta.LibraryOnly" xml:space="preserve"><value>ライブラリのみ</value></data>
+  <data name="Meta.LibrarySource" xml:space="preserve"><value>ライブラリのソース</value></data>
+  <data name="Meta.LicenseUri" xml:space="preserve"><value>ライセンス URI</value></data>
+  <data name="Meta.Location" xml:space="preserve"><value>場所</value></data>
+  <data name="Meta.ManageBackups" xml:space="preserve"><value>ファイルのバックアップを管理…</value></data>
+  <data name="Meta.OfTotal" xml:space="preserve"><value>／全体</value></data>
+  <data name="Meta.PickCover" xml:space="preserve"><value>トラックのアートワークを選ぶ</value></data>
+  <data name="Meta.PlayCount" xml:space="preserve"><value>再生回数</value></data>
+  <data name="Meta.PngJpeg" xml:space="preserve"><value>PNG または JPEG 画像</value></data>
+  <data name="Meta.Rating" xml:space="preserve"><value>評価</value></data>
+  <data name="Meta.RemoveCover" xml:space="preserve"><value>カバーを削除</value></data>
+  <data name="Meta.RemoveCoverTip" xml:space="preserve"><value>表示中の埋め込み画像を削除します。フォルダーのアートワークは保持されます。</value></data>
+  <data name="Meta.RestoreBackup" xml:space="preserve"><value>バックアップを復元…</value></data>
+  <data name="Meta.RestoreFailed" xml:space="preserve"><value>復元できませんでした: {0}</value></data>
+  <data name="Meta.RestorePrompt" xml:space="preserve"><value>このバックアップから元のファイルを復元しますか？ 現在のファイルは新しいバックアップとして保持されます。フォームの未保存の編集は破棄されます。</value></data>
+  <data name="Meta.RestoreTip" xml:space="preserve"><value>最後のファイル保存時のタグを復元します。現在のファイルの編集は先にバックアップされます。</value></data>
+  <data name="Meta.SampleRate" xml:space="preserve"><value>サンプルレート</value></data>
+  <data name="Meta.SaveFailed" xml:space="preserve"><value>保存できませんでした: {0}</value></data>
+  <data name="Meta.SaveTip" xml:space="preserve"><value>変更を保存 (Ctrl+Enter)</value></data>
+  <data name="Meta.SavingFile" xml:space="preserve"><value>ファイルのタグとライブラリを保存しています…</value></data>
+  <data name="Meta.SavingLibrary" xml:space="preserve"><value>ライブラリの変更を保存しています…</value></data>
+  <data name="Meta.SeasonNumber" xml:space="preserve"><value>シーズン番号</value></data>
+  <data name="Meta.ShowDetails" xml:space="preserve"><value>番組とエピソードの詳細</value></data>
+  <data name="Meta.ShowName" xml:space="preserve"><value>番組名</value></data>
+  <data name="Meta.SkipCount" xml:space="preserve"><value>スキップ回数</value></data>
+  <data name="Meta.SortAlbum" xml:space="preserve"><value>並べ替え用アルバムタイトル</value></data>
+  <data name="Meta.SortAlbumArtist" xml:space="preserve"><value>並べ替え用アルバムアーティスト</value></data>
+  <data name="Meta.SortArtist" xml:space="preserve"><value>並べ替え用トラックアーティスト</value></data>
+  <data name="Meta.SortNote" xml:space="preserve"><value>表示されるタグを変えずに、並べ替えに別の名前を使います。</value></data>
+  <data name="Meta.SortTitle" xml:space="preserve"><value>並べ替え用トラックタイトル</value></data>
+  <data name="Meta.TabBasic" xml:space="preserve"><value>基本</value></data>
+  <data name="Meta.TabExtra" xml:space="preserve"><value>追加</value></data>
+  <data name="Meta.TabProperties" xml:space="preserve"><value>プロパティ</value></data>
+  <data name="Meta.TabSorting" xml:space="preserve"><value>並べ替え</value></data>
+  <data name="Meta.TagFormats" xml:space="preserve"><value>タグ形式</value></data>
+  <data name="Meta.Title" xml:space="preserve"><value>トラックのプロパティ</value></data>
+  <data name="Meta.TotalAutomation" xml:space="preserve"><value>全体 {0}</value></data>
+  <data name="Meta.TrackArtist" xml:space="preserve"><value>トラックアーティスト</value></data>
+  <data name="Meta.TrackNumber" xml:space="preserve"><value>トラック番号</value></data>
+  <data name="Meta.TrackTitle" xml:space="preserve"><value>トラックタイトル</value></data>
+  <data name="Meta.Unrated" xml:space="preserve"><value>未評価</value></data>
+  <data name="Meta.Year" xml:space="preserve"><value>年</value></data>
+  <data name="Picker.AddMusicFolder" xml:space="preserve"><value>音楽フォルダーを追加</value></data>
+  <data name="Picker.ExportPlaylist" xml:space="preserve"><value>プレイリストをエクスポート</value></data>
+  <data name="Picker.ImportFolder" xml:space="preserve"><value>音楽フォルダーをインポート</value></data>
+  <data name="Picker.OpenFiles" xml:space="preserve"><value>音楽ファイルを開く</value></data>
+  <data name="Picker.MusicFiles" xml:space="preserve"><value>音楽ファイル</value></data>
+  <data name="Picker.ImportPlaylist" xml:space="preserve"><value>プレイリストをインポート</value></data>
+  <data name="Picker.ImportStations" xml:space="preserve"><value>ラジオ局をインポート</value></data>
+  <data name="Picker.LocalPlaylists" xml:space="preserve"><value>ローカルのプレイリスト</value></data>
+  <data name="Picker.M3u8Playlist" xml:space="preserve"><value>UTF-8 の M3U プレイリスト</value></data>
+  <data name="Picker.PluginArchive" xml:space="preserve"><value>プラグインのアーカイブ</value></data>
+  <data name="Picker.PluginFolder" xml:space="preserve"><value>プラグインのフォルダーを選択</value></data>
+  <data name="Picker.PluginZip" xml:space="preserve"><value>プラグインの .zip を選択</value></data>
+  <data name="Picker.PodcastFolder" xml:space="preserve"><value>ポッドキャストのダウンロード先フォルダーを選択</value></data>
+  <data name="Picker.StationPlaylists" xml:space="preserve"><value>ステーションのプレイリスト</value></data>
+  <data name="Playback.EndOfQueue" xml:space="preserve"><value>キューの最後です。</value></data>
+  <data name="Playback.Mute" xml:space="preserve"><value>ミュート</value></data>
+  <data name="Playback.Nothing" xml:space="preserve"><value>再生中のものはありません</value></data>
+  <data name="Playback.OperationFailed" xml:space="preserve"><value>再生の操作に失敗しました: {0}</value></data>
+  <data name="Playback.Pause" xml:space="preserve"><value>一時停止</value></data>
+  <data name="Playback.Paused" xml:space="preserve"><value>一時停止中</value></data>
+  <data name="Playback.Play" xml:space="preserve"><value>再生</value></data>
+  <data name="Playback.Playing" xml:space="preserve"><value>再生中</value></data>
+  <data name="Playback.RadioEnded" xml:space="preserve"><value>ラジオのストリームが終了しました。「再生」を押すと再接続します。</value></data>
+  <data name="Playback.RadioStopped" xml:space="preserve"><value>ラジオを停止しました。</value></data>
+  <data name="Playback.RepeatAll" xml:space="preserve"><value>すべてリピート</value></data>
+  <data name="Playback.RepeatOff" xml:space="preserve"><value>リピートなし</value></data>
+  <data name="Playback.RepeatOne" xml:space="preserve"><value>1 曲リピート</value></data>
+  <data name="Playback.SaveFailed" xml:space="preserve"><value>再生設定を保存できませんでした: {0}</value></data>
+  <data name="Playback.ShuffleOff" xml:space="preserve"><value>シャッフルオフ</value></data>
+  <data name="Playback.ShuffleOn" xml:space="preserve"><value>シャッフルオン</value></data>
+  <data name="Playback.StopRadio" xml:space="preserve"><value>ラジオを停止</value></data>
+  <data name="Playback.Unmute" xml:space="preserve"><value>ミュート解除</value></data>
+  <data name="Playlist.Added" xml:space="preserve"><value>{0} を {1} に追加しました。</value></data>
+  <data name="Playlist.Created" xml:space="preserve"><value>プレイリスト {0} を作成しました。</value></data>
+  <data name="Playlist.CreatedWith" xml:space="preserve"><value>プレイリスト {0} を作成し、{1} を追加しました。</value></data>
+  <data name="Playlist.Deleted" xml:space="preserve"><value>プレイリスト {0} を削除しました。音楽ファイルは削除されていません。</value></data>
+  <data name="Playlist.Moved" xml:space="preserve"><value>{0} を移動しました。</value></data>
+  <data name="Playlist.MovedDown" xml:space="preserve"><value>{0} を下へ移動しました。</value></data>
+  <data name="Playlist.MovedUp" xml:space="preserve"><value>{0} を上へ移動しました。</value></data>
+  <data name="Playlist.OrderUpdated" xml:space="preserve"><value>プレイリストの順序を更新しました。</value></data>
+  <data name="Playlist.RemovedFrom" xml:space="preserve"><value>{1} から {0} を削除しました。</value></data>
+  <data name="Playlist.Renamed" xml:space="preserve"><value>プレイリスト名を {0} に変更しました。</value></data>
+  <data name="PlaylistFile.Exported" xml:space="preserve"><value>{0} トラックを {1} にエクスポートしました。</value></data>
+  <data name="PlaylistFile.Imported" xml:space="preserve"><value>「{0}」をインポートしました: {1} トラック、スキップしたエントリー {2} 件、重複 {3} 件。</value></data>
+  <data name="PlaylistFile.ImportedNoRefresh" xml:space="preserve"><value>プレイリスト「{0}」をインポートしましたが、ビューを更新できませんでした。ライブラリを開き直してください。{1}</value></data>
+  <data name="Plugins.EnableAutomation" xml:space="preserve"><value>{0} を有効にする</value></data>
+  <data name="Plugins.Enabled" xml:space="preserve"><value>有効</value></data>
+  <data name="Plugins.InstallAccept" xml:space="preserve"><value>インストール</value></data>
+  <data name="Plugins.InstallFailed" xml:space="preserve"><value>プラグインはインストールされませんでした: {0}</value></data>
+  <data name="Plugins.InstallFolder" xml:space="preserve"><value>フォルダーからインストール…</value></data>
+  <data name="Plugins.InstallTitle" xml:space="preserve"><value>プラグインをインストール</value></data>
+  <data name="Plugins.InstallWarning" xml:space="preserve"><value>プラグインは、あなたの権限で Aibell の内部で動作するプログラムです。ファイルを読み取ったり、ネットワークを使ったりできます。
+
+信頼できる提供元のプラグインだけをインストールしてください。
+
+{0}</value></data>
+  <data name="Plugins.InstallZip" xml:space="preserve"><value>.zip からインストール…</value></data>
+  <data name="Plugins.Installed" xml:space="preserve"><value>{0} をインストールしました。Aibell の再起動時に開始します。</value></data>
+  <data name="Plugins.Intro" xml:space="preserve"><value>プラグインはオプション機能を追加します。Aibell 自身と同じ権限でファイルとネットワークにアクセスできるため、信頼できるプラグインだけをインストールしてください。変更は Aibell の再起動後に反映されます。</value></data>
+  <data name="Plugins.None" xml:space="preserve"><value>インストールされているプラグインはありません。</value></data>
+  <data name="Plugins.OriginBundled" xml:space="preserve"><value>Aibell に同梱。 </value></data>
+  <data name="Plugins.OriginUser" xml:space="preserve"><value>ユーザーがインストール。 </value></data>
+  <data name="Plugins.Saved" xml:space="preserve"><value>保存しました。変更は Aibell の再起動時に反映されます。</value></data>
+  <data name="Plugins.Status.Active" xml:space="preserve"><value>有効です。</value></data>
+  <data name="Plugins.Status.Failed" xml:space="preserve"><value>読み込めませんでした: {0}</value></data>
+  <data name="Plugins.Status.Off" xml:space="preserve"><value>オフです。</value></data>
+  <data name="Plugins.Status.Removal" xml:space="preserve"><value>Aibell の再起動時に削除されます。</value></data>
+  <data name="Plugins.Status.WillStart" xml:space="preserve"><value>Aibell の再起動時に開始します。</value></data>
+  <data name="Plugins.Status.WillStop" xml:space="preserve"><value>Aibell の再起動時にオフになります。</value></data>
+  <data name="Plugins.Uninstall" xml:space="preserve"><value>アンインストール…</value></data>
+  <data name="Plugins.UninstallAccept" xml:space="preserve"><value>アンインストール</value></data>
+  <data name="Plugins.UninstallAutomation" xml:space="preserve"><value>{0} をアンインストール</value></data>
+  <data name="Plugins.UninstallPrompt" xml:space="preserve"><value>「{0}」を削除しますか？ 動作しなくなり、次回 Aibell を起動したときにファイルが削除されます。</value></data>
+  <data name="Plugins.UninstallScheduled" xml:space="preserve"><value>{0} は Aibell の再起動時に削除されます。</value></data>
+  <data name="Plugins.UninstallTitle" xml:space="preserve"><value>プラグインをアンインストール</value></data>
+  <data name="Pod.AlreadySubscribed" xml:space="preserve"><value>{0} はすでに購読しています。</value></data>
+  <data name="Pod.BadUrl" xml:space="preserve"><value>認証情報やフラグメントを含まない、完全な HTTP または HTTPS のフィード URL を使ってください。</value></data>
+  <data name="Pod.CachedFailed" xml:space="preserve"><value>キャッシュされたエピソードを読み取れませんでした: {0}</value></data>
+  <data name="Pod.CatalogFailed" xml:space="preserve"><value>ポッドキャストのカタログを読み取れませんでした: {0}</value></data>
+  <data name="Pod.Checked" xml:space="preserve"><value>{1} 件中 {0} 件のポッドキャストを確認しました。{2}{3}</value></data>
+  <data name="Pod.ClearSearch" xml:space="preserve"><value>エピソード検索をクリア</value></data>
+  <data name="Pod.ClearSearchTip" xml:space="preserve"><value>検索をクリア (Esc)</value></data>
+  <data name="Pod.CoverAutomation" xml:space="preserve"><value>エピソードのカバー</value></data>
+  <data name="Pod.DeleteAccept" xml:space="preserve"><value>ファイルを削除</value></data>
+  <data name="Pod.DeleteCancelled" xml:space="preserve"><value>{0} の削除をキャンセルしました。</value></data>
+  <data name="Pod.DeleteFailed" xml:space="preserve"><value>ダウンロードを削除できませんでした: {0}</value></data>
+  <data name="Pod.DeleteFile" xml:space="preserve"><value>ファイルを削除…</value></data>
+  <data name="Pod.DeleteFileAutomation" xml:space="preserve"><value>ダウンロード済みファイルを削除</value></data>
+  <data name="Pod.DeleteFileTip" xml:space="preserve"><value>ダウンロード済みファイルだけを削除します。エピソード、星の評価、購読は保持されます</value></data>
+  <data name="Pod.DeletePrompt" xml:space="preserve"><value>「{0}」のダウンロード済みファイルを削除しますか？
+
+エピソード、星の評価、購読は残ります。保存済みの再生位置は消去され、エピソードはいつでも再ダウンロードできます。</value></data>
+  <data name="Pod.DeleteTitle" xml:space="preserve"><value>ダウンロード済みファイルを削除</value></data>
+  <data name="Pod.DeleteUnavailable" xml:space="preserve"><value>ダウンロードの削除は利用できません。</value></data>
+  <data name="Pod.Deleted" xml:space="preserve"><value>{0} のダウンロードを削除しました。エピソードと評価は保持されました。再取得するには「ダウンロード」を選んでください。</value></data>
+  <data name="Pod.Deleting" xml:space="preserve"><value>{0} のダウンロードを削除しています…</value></data>
+  <data name="Pod.Download" xml:space="preserve"><value>ダウンロード</value></data>
+  <data name="Pod.DownloadCancelled" xml:space="preserve"><value>ダウンロードをキャンセルしました: {0}。不完全なファイルは残していません。</value></data>
+  <data name="Pod.DownloadFailed" xml:space="preserve"><value>ダウンロードに失敗しました: {0}。{1}</value></data>
+  <data name="Pod.DownloadNew" xml:space="preserve"><value>新着をダウンロード</value></data>
+  <data name="Pod.DownloadNewTip" xml:space="preserve"><value>更新で見つかった最新のエピソードをキューに入れます (一度に最大 10 件)</value></data>
+  <data name="Pod.DownloadProgress" xml:space="preserve"><value>ダウンロードの進行状況</value></data>
+  <data name="Pod.DownloadedDone" xml:space="preserve"><value>{0} をダウンロードしました。「再生」を選んで聴きましょう。</value></data>
+  <data name="Pod.DownloadedOnly" xml:space="preserve"><value>ダウンロード済みのみ</value></data>
+  <data name="Pod.DownloadedOnlyAutomation" xml:space="preserve"><value>ダウンロード済みのエピソードだけを表示</value></data>
+  <data name="Pod.DownloadedOnlyTip" xml:space="preserve"><value>ダウンロードされていないエピソードを非表示にします</value></data>
+  <data name="Pod.Downloading" xml:space="preserve"><value>{0} をダウンロードしています…</value></data>
+  <data name="Pod.EnterFeed" xml:space="preserve"><value>購読するポッドキャストのフィード URL を入力してください。フィードは、更新したときか、毎時チェック (設定) がオンのときだけ確認されます。</value></data>
+  <data name="Pod.EpisodeCount.Other" xml:space="preserve"><value>{0} エピソード</value></data>
+  <data name="Pod.EpisodeCountFiltered" xml:space="preserve"><value>{1} 件中 {0} 件のエピソード</value></data>
+  <data name="Pod.Episodes" xml:space="preserve"><value>エピソード</value></data>
+  <data name="Pod.FailedSuffix" xml:space="preserve"><value> {0} 件失敗: {1}。</value></data>
+  <data name="Pod.FeedAutomation" xml:space="preserve"><value>ポッドキャストのフィード URL</value></data>
+  <data name="Pod.FeedPlaceholder" xml:space="preserve"><value>ポッドキャストのフィード URL (https://…/feed.xml)</value></data>
+  <data name="Pod.Fetching" xml:space="preserve"><value>フィードを取得しています…</value></data>
+  <data name="Pod.FileMissing" xml:space="preserve"><value>ダウンロード済みのファイルが見つかりません。「再試行」を選んで再ダウンロードしてください。</value></data>
+  <data name="Pod.HideNotes" xml:space="preserve"><value>ノートを隠す</value></data>
+  <data name="Pod.InPlayer" xml:space="preserve"><value>このエピソードはメインプレーヤーに読み込まれています。そこで停止してから、ダウンロードを削除してください。</value></data>
+  <data name="Pod.Issues.Other" xml:space="preserve"><value> フィードのエントリー {0} 件をスキップしました。</value></data>
+  <data name="Pod.KeptFiles" xml:space="preserve"><value> ダウンロード済みファイル {0} 件はディスクに残しました。</value></data>
+  <data name="Pod.MarkAllSeen" xml:space="preserve"><value>すべて既読にする</value></data>
+  <data name="Pod.MarkAllSeenTip" xml:space="preserve"><value>このポッドキャストのすべてのエピソードから「新着」の印を外します</value></data>
+  <data name="Pod.MarkedSeen" xml:space="preserve"><value>{0} のすべてのエピソードを既読にしました。</value></data>
+  <data name="Pod.NeverRefreshed" xml:space="preserve"><value>未更新</value></data>
+  <data name="Pod.New" xml:space="preserve"><value>新着</value></data>
+  <data name="Pod.NewAutomation" xml:space="preserve"><value>新着エピソード</value></data>
+  <data name="Pod.NewEpisodes.Other" xml:space="preserve"><value>新着エピソードが {0} 件あります。</value></data>
+  <data name="Pod.NewSuffix" xml:space="preserve"><value> · 新着 {0} 件</value></data>
+  <data name="Pod.NewUpdateFailed" xml:space="preserve"><value>新着エピソードを更新できませんでした: {0}</value></data>
+  <data name="Pod.NoChanges" xml:space="preserve"><value>{0} に変更はありません。</value></data>
+  <data name="Pod.NoCoverAutomation" xml:space="preserve"><value>利用できるカバー画像はありません</value></data>
+  <data name="Pod.NoDownloadedMatch" xml:space="preserve"><value>この番組のダウンロード済みエピソードに「{0}」と一致するものはありません。</value></data>
+  <data name="Pod.NoEpisodes" xml:space="preserve"><value>キャッシュされたエピソードはありません。ポッドキャストを購読するか、「更新」を選んでください。</value></data>
+  <data name="Pod.NoFileToDelete" xml:space="preserve"><value>このエピソードには削除するダウンロード済みファイルがありません。</value></data>
+  <data name="Pod.NoMatch" xml:space="preserve"><value>この番組に「{0}」と一致するエピソードはありません。検索をクリアすると、すべての {1} 件が表示されます。</value></data>
+  <data name="Pod.NoNewEpisodes" xml:space="preserve"><value>新着エピソードはありません。</value></data>
+  <data name="Pod.NoNewToDownload" xml:space="preserve"><value>ダウンロードする新着エピソードはありません。</value></data>
+  <data name="Pod.NoPlayback" xml:space="preserve"><value>再生がメインウィンドウに接続されていません。</value></data>
+  <data name="Pod.NoProgress" xml:space="preserve"><value>進行状況なし</value></data>
+  <data name="Pod.NoSavedPosition" xml:space="preserve"><value>保存された位置なし</value></data>
+  <data name="Pod.NoSubscriptions" xml:space="preserve"><value>購読はまだありません</value></data>
+  <data name="Pod.NoneDownloaded" xml:space="preserve"><value>この番組のエピソードはまだダウンロードされていません。</value></data>
+  <data name="Pod.NoneSelected" xml:space="preserve"><value>ポッドキャストが選ばれていません</value></data>
+  <data name="Pod.NotesAutomation" xml:space="preserve"><value>このエピソードの番組ノート</value></data>
+  <data name="Pod.NotesText" xml:space="preserve"><value>エピソードのノート</value></data>
+  <data name="Pod.NotesTip" xml:space="preserve"><value>このエピソードの説明を表示または非表示にします</value></data>
+  <data name="Pod.Op.Refresh" xml:space="preserve"><value>更新</value></data>
+  <data name="Pod.Op.RefreshAll" xml:space="preserve"><value>すべて更新</value></data>
+  <data name="Pod.Op.Remove" xml:space="preserve"><value>削除</value></data>
+  <data name="Pod.Op.Subscribe" xml:space="preserve"><value>購読</value></data>
+  <data name="Pod.OpCancelled" xml:space="preserve"><value>{0} をキャンセルしました。</value></data>
+  <data name="Pod.OpFailed" xml:space="preserve"><value>{0} に失敗しました: {1}</value></data>
+  <data name="Pod.Opening" xml:space="preserve"><value>{0} を開いています…</value></data>
+  <data name="Pod.PauseAutomation" xml:space="preserve"><value>エピソードを一時停止</value></data>
+  <data name="Pod.PauseFailed" xml:space="preserve"><value>一時停止できませんでした: {0}</value></data>
+  <data name="Pod.PauseTip" xml:space="preserve"><value>プレーヤーを一時停止します。進行状況は保持されます</value></data>
+  <data name="Pod.PlayFailed" xml:space="preserve"><value>エピソードを再生できませんでした: {0}</value></data>
+  <data name="Pod.PlaybackCancelled" xml:space="preserve"><value>再生がキャンセルまたは停止されました。</value></data>
+  <data name="Pod.PositionCancelled" xml:space="preserve"><value>位置の保存をキャンセルしました。</value></data>
+  <data name="Pod.PositionFailed" xml:space="preserve"><value>位置を保存できませんでした: {0}</value></data>
+  <data name="Pod.ProgressPercent" xml:space="preserve"><value>進行状況 {0} パーセント</value></data>
+  <data name="Pod.QueuedNew.Other" xml:space="preserve"><value>新着エピソード {0} 件をキューに入れました。</value></data>
+  <data name="Pod.QueuedPartial" xml:space="preserve"><value>新着エピソード {1} 件のうち {0} 件をキューに入れました。さらに追加するには、もう一度「新着をダウンロード」を選んでください。</value></data>
+  <data name="Pod.QueuedWaiting" xml:space="preserve"><value>{0} をキューに入れました: {1} 件待機中。</value></data>
+  <data name="Pod.RateTip" xml:space="preserve"><value>このエピソードを評価 (行を選んだ状態でキー 0～5。0 でクリア)</value></data>
+  <data name="Pod.RatingCleared" xml:space="preserve"><value>{0} の評価をクリアしました。</value></data>
+  <data name="Pod.RatingFailed" xml:space="preserve"><value>評価を保存できませんでした: {0}</value></data>
+  <data name="Pod.RatingSet.Other" xml:space="preserve"><value>{1} に星 {0} 個の評価を付けました。</value></data>
+  <data name="Pod.RatingStars" xml:space="preserve"><value>評価: 星 5 つ中 {0} 個</value></data>
+  <data name="Pod.RatingUnrated" xml:space="preserve"><value>評価: 未評価</value></data>
+  <data name="Pod.RatingsUnavailable" xml:space="preserve"><value>エピソードの評価は利用できません。</value></data>
+  <data name="Pod.Refresh" xml:space="preserve"><value>更新</value></data>
+  <data name="Pod.RefreshAll" xml:space="preserve"><value>すべて更新</value></data>
+  <data name="Pod.RefreshAllTip" xml:space="preserve"><value>すべての購読で新着エピソードを確認します</value></data>
+  <data name="Pod.RefreshTip" xml:space="preserve"><value>サーバーに新着エピソードを問い合わせます (キャッシュされた検証情報を使用)</value></data>
+  <data name="Pod.Refreshed" xml:space="preserve"><value>{0} を更新しました: 新着 {1} 件、キャッシュ済みエピソード {2} 件。{3}</value></data>
+  <data name="Pod.Refreshing" xml:space="preserve"><value>{0} を更新しています…</value></data>
+  <data name="Pod.RefreshingOf" xml:space="preserve"><value>{1} 件中 {0} 件目を更新しています: {2}…</value></data>
+  <data name="Pod.RemovePrompt" xml:space="preserve"><value>この購読とキャッシュされたエピソード一覧を削除しますか？
+ダウンロード済みのエピソードファイルはディスクに残ります。
+{0}</value></data>
+  <data name="Pod.RemoveTip" xml:space="preserve"><value>この購読を削除します。ダウンロード済みのファイルはディスクに残ります</value></data>
+  <data name="Pod.RemoveTitle" xml:space="preserve"><value>ポッドキャストを削除</value></data>
+  <data name="Pod.Removed" xml:space="preserve"><value>{0} を削除しました。{1}</value></data>
+  <data name="Pod.RemovedFromQueue" xml:space="preserve"><value>ダウンロードキューから {0} を削除しました。</value></data>
+  <data name="Pod.Resume" xml:space="preserve"><value>再開</value></data>
+  <data name="Pod.ResumeSelected" xml:space="preserve"><value>選択したものを再開</value></data>
+  <data name="Pod.ResumeSelectedTip" xml:space="preserve"><value>選択したダウンロード済みエピソードを保存した位置から続けます</value></data>
+  <data name="Pod.ResumedFromSaved" xml:space="preserve"><value>{0} を保存した位置から再開しています。</value></data>
+  <data name="Pod.Resuming" xml:space="preserve"><value>{0} を再開しています…</value></data>
+  <data name="Pod.Retry" xml:space="preserve"><value>再試行</value></data>
+  <data name="Pod.SavePosition" xml:space="preserve"><value>位置を保存</value></data>
+  <data name="Pod.SavePositionTip" xml:space="preserve"><value>メインプレーヤーが選択中のエピソードを再生中または一時停止中のときに、今すぐ保存します</value></data>
+  <data name="Pod.SavedPosition" xml:space="preserve"><value>{1} 中 {0} を保存</value></data>
+  <data name="Pod.SavedPositionDone" xml:space="preserve"><value>{0} の位置を保存しました。</value></data>
+  <data name="Pod.SavingPosition" xml:space="preserve"><value>{0} の位置を保存しています…</value></data>
+  <data name="Pod.SearchAutomation" xml:space="preserve"><value>エピソードのタイトルを検索</value></data>
+  <data name="Pod.SearchPlaceholder" xml:space="preserve"><value>この番組のエピソードのタイトルを検索</value></data>
+  <data name="Pod.SentFromStart" xml:space="preserve"><value>{0} を最初からプレーヤーに送りました。</value></data>
+  <data name="Pod.ShowAll" xml:space="preserve"><value>すべてのエピソードを表示</value></data>
+  <data name="Pod.ShowNotes" xml:space="preserve"><value>ノートを表示</value></data>
+  <data name="Pod.SizeOf" xml:space="preserve"><value>{0} / {1} · {2}%</value></data>
+  <data name="Pod.Speed" xml:space="preserve"><value>速度</value></data>
+  <data name="Pod.SpeedAutomation" xml:space="preserve"><value>ポッドキャストの再生速度</value></data>
+  <data name="Pod.SpeedFailed" xml:space="preserve"><value>速度を変更できませんでした: {0}</value></data>
+  <data name="Pod.SpeedSet" xml:space="preserve"><value>ポッドキャストの速度: {0}。</value></data>
+  <data name="Pod.SpeedTip" xml:space="preserve"><value>ポッドキャストのエピソードの再生速度です。音楽、ラジオ、オーディオブックは常に 1 倍速で再生されます</value></data>
+  <data name="Pod.StartOver" xml:space="preserve"><value>最初から</value></data>
+  <data name="Pod.StartOverTip" xml:space="preserve"><value>保存した位置ではなく、最初から再生します</value></data>
+  <data name="Pod.Starting" xml:space="preserve"><value>開始しています…</value></data>
+  <data name="Pod.State.Cancelled" xml:space="preserve"><value>ダウンロードをキャンセルしました</value></data>
+  <data name="Pod.State.Deleting" xml:space="preserve"><value>ダウンロード済みファイルを削除しています…</value></data>
+  <data name="Pod.State.Downloaded" xml:space="preserve"><value>ダウンロード済み</value></data>
+  <data name="Pod.State.Downloading" xml:space="preserve"><value>ダウンロード中… {0}</value></data>
+  <data name="Pod.State.Failed" xml:space="preserve"><value>ダウンロードに失敗しました: {0}</value></data>
+  <data name="Pod.State.Missing" xml:space="preserve"><value>ダウンロード済みのファイルが見つかりません</value></data>
+  <data name="Pod.State.NotDownloaded" xml:space="preserve"><value>未ダウンロード</value></data>
+  <data name="Pod.State.Queued" xml:space="preserve"><value>ダウンロードキューで待機中…</value></data>
+  <data name="Pod.Subscribe" xml:space="preserve"><value>購読</value></data>
+  <data name="Pod.SubscribeTip" xml:space="preserve"><value>このフィードを一度取得し、ライブラリに保持します</value></data>
+  <data name="Pod.Subscribed" xml:space="preserve"><value>{0} を購読しました: {1} エピソード。{2}</value></data>
+  <data name="Pod.SubscribedList" xml:space="preserve"><value>購読中のポッドキャスト</value></data>
+  <data name="Pod.Updated" xml:space="preserve"><value>{0} を更新しました</value></data>
+  <data name="Pod.WaitPosition" xml:space="preserve"><value>現在の再生または位置の操作が終わるまでお待ちください。</value></data>
+  <data name="Podcasts.ProgressSaveFailed" xml:space="preserve"><value>ポッドキャストの進行状況を保存できませんでした: {0}</value></data>
+  <data name="Prefs.AddFolder" xml:space="preserve"><value>フォルダーを追加…</value></data>
+  <data name="Prefs.Appearance" xml:space="preserve"><value>外観</value></data>
+  <data name="Prefs.AutoRefresh" xml:space="preserve"><value>Aibell を開いている間、1 時間ごとに新着エピソードを確認する</value></data>
+  <data name="Prefs.AutoRefreshAutomation" xml:space="preserve"><value>新しいポッドキャストのエピソードを自動的に確認する</value></data>
+  <data name="Prefs.AutoRefreshNote" xml:space="preserve"><value>確認ではフィードのキャッシュされた検証情報を使うため、変更のない番組は小さなリクエストだけで済みます。自動でダウンロードされるものはありません。</value></data>
+  <data name="Prefs.Browse" xml:space="preserve"><value>参照…</value></data>
+  <data name="Prefs.BrowseAutomation" xml:space="preserve"><value>ポッドキャストのダウンロード先フォルダーを参照</value></data>
+  <data name="Prefs.DownloadFolder" xml:space="preserve"><value>ダウンロード先フォルダー</value></data>
+  <data name="Prefs.FolderChangesNow" xml:space="preserve"><value>フォルダーの変更はすぐに反映されます。</value></data>
+  <data name="Prefs.FolderChecked" xml:space="preserve"><value>フォルダーは「保存」を押したときに確認されます。使用できない場合は、現在のフォルダーのままになります。</value></data>
+  <data name="Prefs.FoldersNote" xml:space="preserve"><value>音楽フォルダーは変更が監視されます。フォルダーを削除すると、そのトラックはライブラリから削除されますが、音声ファイルは残ります。</value></data>
+  <data name="Prefs.GeneralNote" xml:space="preserve"><value>トラックの列とその幅は、ライブラリで変更すると保存されます。ファイルへのタグの書き込みには、トラックエディターで必ず「ファイルとライブラリ」を選ぶ必要があります。</value></data>
+  <data name="Prefs.Mute" xml:space="preserve"><value>音声をミュート</value></data>
+  <data name="Prefs.Notify" xml:space="preserve"><value>再生中のトラックが変わったら通知する</value></data>
+  <data name="Prefs.NotifyTip" xml:space="preserve"><value>任意のデスクトップ通知です。デスクトップのサービスが抑制する場合があります。</value></data>
+  <data name="Prefs.NotifyUnavailable" xml:space="preserve"><value>このプラットフォームではデスクトップ通知は利用できません。</value></data>
+  <data name="Prefs.OnlineExplain" xml:space="preserve"><value>既定ではオフです。オンにすると、音楽 CD の「検索」、「アーティスト情報」、「アートワークを取得」を押したときに、ディスクの目次、またはアルバム名とアーティスト名がプラグインのサービス (MusicBrainz) に送信されます。自動的に送信されるものはありません。</value></data>
+  <data name="Prefs.OnlineLookup" xml:space="preserve"><value>アルバムとアーティストの詳細をオンラインで検索することを許可する</value></data>
+  <data name="Prefs.OnlineLookupAutomation" xml:space="preserve"><value>アルバムとアーティストのオンライン検索を許可する</value></data>
+  <data name="Prefs.PodcastFolderAutomation" xml:space="preserve"><value>ポッドキャストのダウンロード先フォルダー</value></data>
+  <data name="Prefs.PodcastFolderNote" xml:space="preserve"><value>新しいポッドキャストのダウンロードはこのフォルダーに保存されます。ダウンロード済みのエピソードはそのままの場所に残り、再生も削除もできます。移動や削除は行われません。</value></data>
+  <data name="Prefs.RemoveFolderPrompt" xml:space="preserve"><value>このフォルダーとそのトラックをライブラリから削除しますか？ 音声ファイルは保持されます。
+{0}</value></data>
+  <data name="Prefs.Repeat" xml:space="preserve"><value>リピート</value></data>
+  <data name="Prefs.RepeatAll" xml:space="preserve"><value>すべてのトラック</value></data>
+  <data name="Prefs.RepeatOff" xml:space="preserve"><value>オフ</value></data>
+  <data name="Prefs.RepeatOne" xml:space="preserve"><value>1 トラック</value></data>
+  <data name="Prefs.ReviewEdits" xml:space="preserve"><value>中断された編集を確認…</value></data>
+  <data name="Prefs.Saved" xml:space="preserve"><value>設定を保存しました。</value></data>
+  <data name="Prefs.SavedFolder" xml:space="preserve"><value>設定を保存しました。新しいポッドキャストのダウンロードは {0} に保存されます。既存のダウンロードはそのままの場所に残ります。</value></data>
+  <data name="Prefs.ShowQueue" xml:space="preserve"><value>再生キューを表示</value></data>
+  <data name="Prefs.Shuffle" xml:space="preserve"><value>トラックをシャッフル</value></data>
+  <data name="Prefs.Tab.Folders" xml:space="preserve"><value>ライブラリのフォルダー</value></data>
+  <data name="Prefs.Tab.General" xml:space="preserve"><value>一般</value></data>
+  <data name="Prefs.Tab.Online" xml:space="preserve"><value>オンライン</value></data>
+  <data name="Prefs.Tab.Playback" xml:space="preserve"><value>再生</value></data>
+  <data name="Prefs.Tab.Plugins" xml:space="preserve"><value>プラグイン</value></data>
+  <data name="Prefs.Tab.Podcasts" xml:space="preserve"><value>ポッドキャスト</value></data>
+  <data name="Prefs.ThemeDark" xml:space="preserve"><value>ダーク</value></data>
+  <data name="Prefs.ThemeLight" xml:space="preserve"><value>ライト</value></data>
+  <data name="Prefs.ThemeSystem" xml:space="preserve"><value>システム</value></data>
+  <data name="Prefs.Title" xml:space="preserve"><value>設定</value></data>
+  <data name="Prefs.UseDefault" xml:space="preserve"><value>既定を使う</value></data>
+  <data name="Prefs.Volume" xml:space="preserve"><value>音量</value></data>
+  <data name="Prefs.VolumeAutomation" xml:space="preserve"><value>再生音量 (パーセント)</value></data>
+  <data name="Queue.Cleared" xml:space="preserve"><value>再生キューをクリアしました。</value></data>
+  <data name="Queue.DropHint" xml:space="preserve"><value>音楽ファイルをドロップして再生キューに追加します。</value></data>
+  <data name="Queue.Gone" xml:space="preserve"><value>キューに入れたファイルは利用できなくなりました。</value></data>
+  <data name="Queue.Header" xml:space="preserve"><value>再生キュー ({0})</value></data>
+  <data name="Queue.NoFolder" xml:space="preserve"><value>ファイルのフォルダーを開けませんでした。</value></data>
+  <data name="Queue.QueuedFailures" xml:space="preserve"><value>{0} トラックをキューに入れました。読み取れなかったファイルが {1} 件あります。</value></data>
+  <data name="Queue.QueuedLast.Other" xml:space="preserve"><value>{0} トラックをキューの最後に追加しました。</value></data>
+  <data name="Queue.QueuedNext.Other" xml:space="preserve"><value>{0} トラックを次に再生するよう追加しました。</value></data>
+  <data name="Queue.ShowFileFailed" xml:space="preserve"><value>ファイルを表示できませんでした: {0}</value></data>
+  <data name="Radio.Connecting" xml:space="preserve"><value>{0} に接続しています…</value></data>
+  <data name="Radio.Failed" xml:space="preserve"><value>ラジオの再生に失敗しました: {0}</value></data>
+  <data name="Radio.Playing" xml:space="preserve"><value>ラジオを再生しています: {0}。</value></data>
+  <data name="Radio.RemovePrompt" xml:space="preserve"><value>この保存済みステーションを削除しますか？ 再生中の場合は停止します。
+{0}</value></data>
+  <data name="Radio.RemoveTitle" xml:space="preserve"><value>ラジオ局を削除</value></data>
+  <data name="Radio.Removed" xml:space="preserve"><value>ステーションを削除しました。音楽ファイルと保留中のキューの要求は保持されました。</value></data>
+  <data name="Radio.AllStations" xml:space="preserve"><value>すべての局</value></data>
+  <data name="Radio.Genres" xml:space="preserve"><value>ジャンル</value></data>
+  <data name="Radio.SortBy" xml:space="preserve"><value>局の並べ替え</value></data>
+  <data name="Radio.SortName" xml:space="preserve"><value>名前</value></data>
+  <data name="Radio.SortMostPlayed" xml:space="preserve"><value>再生回数順</value></data>
+  <data name="Radio.SortRecent" xml:space="preserve"><value>最近再生した順</value></data>
+  <data name="Radio.SortRating" xml:space="preserve"><value>評価の高い順</value></data>
+  <data name="Radio.Saved" xml:space="preserve"><value>ステーションを保存しました。変更は次回の再生時に反映されます。</value></data>
+  <data name="RadioFile.Imported" xml:space="preserve"><value>ラジオ局 {0} 件をインポートしました。スキップしたエントリー {1} 件、除外した重複 {2} 件。</value></data>
+  <data name="RadioFile.ImportedNoRefresh" xml:space="preserve"><value>ラジオ局 {0} 件をインポートしましたが、ビューを更新できませんでした。ラジオを開き直してください。{1}</value></data>
+  <data name="Rating.Cleared" xml:space="preserve"><value>{0} の評価をクリアしました。</value></data>
+  <data name="Rating.Set.Other" xml:space="preserve"><value>{1} に星 {0} 個の評価を付けました。</value></data>
+  <data name="Recovery.CancelAndClose" xml:space="preserve"><value>キャンセルして閉じる</value></data>
+  <data name="Recovery.ChooseFolder" xml:space="preserve"><value>フォルダーを選択…</value></data>
+  <data name="Recovery.ChooseHint" xml:space="preserve"><value>調べるフォルダーを選んでください。サブフォルダーは含まれ、リンクされたフォルダーは除外されます。</value></data>
+  <data name="Recovery.Details" xml:space="preserve"><value>音声ファイル: {0}
+一時的な編集: {1}</value></data>
+  <data name="Recovery.Discard" xml:space="preserve"><value>破棄</value></data>
+  <data name="Recovery.DiscardButton" xml:space="preserve"><value>一時的な編集を破棄…</value></data>
+  <data name="Recovery.DiscardPrompt" xml:space="preserve"><value>この一時的なメタデータの編集とその記録を削除しますか？ 音声ファイルと保存済みのファイルバックアップは保持されます。
+</value></data>
+  <data name="Recovery.DiscardTitle" xml:space="preserve"><value>中断された編集を破棄</value></data>
+  <data name="Recovery.Discarded" xml:space="preserve"><value>一時的なメタデータの編集を破棄しました。音声ファイルと保存済みのバックアップは保持されました。</value></data>
+  <data name="Recovery.Found" xml:space="preserve"><value>中断されたメタデータの編集が {0} 件見つかりました。確認が必要な項目は {1} 件です。</value></data>
+  <data name="Recovery.Incomplete" xml:space="preserve"><value>不完全なプレビュー</value></data>
+  <data name="Recovery.Intro" xml:space="preserve"><value>中断されたメタデータの保存によって残った一時ファイルを確認します。音声ファイルと保存済みのバックアップは変更されません。</value></data>
+  <data name="Recovery.NeedsReview" xml:space="preserve"><value>要確認 ({0})</value></data>
+  <data name="Recovery.NeedsReviewTab" xml:space="preserve"><value>要確認</value></data>
+  <data name="Recovery.PickTitle" xml:space="preserve"><value>中断されたメタデータの編集を調べる</value></data>
+  <data name="Recovery.Scan" xml:space="preserve"><value>フォルダーをスキャン</value></data>
+  <data name="Recovery.ScanCancelled" xml:space="preserve"><value>スキャンをキャンセルしました。音声ファイルは変更されていません。</value></data>
+  <data name="Recovery.Scanning" xml:space="preserve"><value>フォルダーとサブフォルダーをスキャンしています…</value></data>
+  <data name="Recovery.SubfoldersIncluded" xml:space="preserve"><value>サブフォルダーは含まれ、リンクされたフォルダーは除外されます。</value></data>
+  <data name="Recovery.Summary" xml:space="preserve"><value>中断された編集 {0} 件、確認が必要な項目 {1} 件。アクティブな編集はスキップされます。</value></data>
+  <data name="Recovery.Title" xml:space="preserve"><value>中断されたメタデータの編集</value></data>
+  <data name="Recovery.Validated" xml:space="preserve"><value>検証済みのプレビュー</value></data>
+  <data name="Result.ByArtist.Other" xml:space="preserve"><value>{1} の曲 {0} トラック。</value></data>
+  <data name="Result.InGenre.Other" xml:space="preserve"><value>{1} ジャンルの {0} トラック。</value></data>
+  <data name="Result.InLibrary.Other" xml:space="preserve"><value>ライブラリに {0} トラック。</value></data>
+  <data name="Result.InPlaylist.Other" xml:space="preserve"><value>{1} に {0} トラック。</value></data>
+  <data name="Result.Matching.Other" xml:space="preserve"><value>一致するトラック {0} 件。</value></data>
+  <data name="Result.OnAlbum.Other" xml:space="preserve"><value>{1} に {0} トラック。</value></data>
+  <data name="Search.InPodcasts" xml:space="preserve"><value>検索はポッドキャストのビューにあります</value></data>
+  <data name="Search.Library" xml:space="preserve"><value>ライブラリを検索</value></data>
+  <data name="Search.Stations" xml:space="preserve"><value>ステーションを検索</value></data>
+  <data name="Sidebar.AudioCd" xml:space="preserve"><value>音楽 CD</value></data>
+  <data name="Sidebar.AudioCdAutomation" xml:space="preserve"><value>音楽 CD</value></data>
+  <data name="Sidebar.AudioCdTip" xml:space="preserve"><value>音楽 CD を再生し、そのアルバムの詳細を検索します</value></data>
+  <data name="Sidebar.Devices" xml:space="preserve"><value>デバイス</value></data>
+  <data name="Sidebar.DevicesAutomation" xml:space="preserve"><value>デバイスと同期</value></data>
+  <data name="Sidebar.DevicesTip" xml:space="preserve"><value>USB ドライブ、メモリーカード、マスストレージプレーヤーに音楽をコピーします</value></data>
+  <data name="Sidebar.Music" xml:space="preserve"><value>音楽</value></data>
+  <data name="Sidebar.MusicAutomation" xml:space="preserve"><value>音楽ライブラリ</value></data>
+  <data name="Sidebar.Podcasts" xml:space="preserve"><value>ポッドキャスト</value></data>
+  <data name="Sidebar.Audiobooks" xml:space="preserve"><value>オーディオブック</value></data>
+  <data name="Sidebar.PodcastsAutomation" xml:space="preserve"><value>ポッドキャスト</value></data>
+  <data name="Sidebar.PodcastsTip" xml:space="preserve"><value>ポッドキャストの購読とダウンロード済みエピソード</value></data>
+  <data name="Sidebar.Radio" xml:space="preserve"><value>ラジオ</value></data>
+  <data name="Sidebar.RadioAutomation" xml:space="preserve"><value>ラジオ局</value></data>
+  <data name="Smart.AddRuleAutomation" xml:space="preserve"><value>この条件の後に規則を追加</value></data>
+  <data name="Smart.AddTip" xml:space="preserve"><value>この下に条件を追加します</value></data>
+  <data name="Smart.All" xml:space="preserve"><value>すべて</value></data>
+  <data name="Smart.Any" xml:space="preserve"><value>いずれか</value></data>
+  <data name="Smart.AtLeast" xml:space="preserve"><value>以上</value></data>
+  <data name="Smart.AtMost" xml:space="preserve"><value>以下</value></data>
+  <data name="Smart.CloseAutomation" xml:space="preserve"><value>スマートプレイリストエディターを閉じる</value></data>
+  <data name="Smart.Conditions" xml:space="preserve"><value>次の条件を満たす:</value></data>
+  <data name="Smart.Contains" xml:space="preserve"><value>を含む</value></data>
+  <data name="Smart.CreateTitle" xml:space="preserve"><value>スマートプレイリストを作成</value></data>
+  <data name="Smart.Created" xml:space="preserve"><value>スマートプレイリスト {0} を作成しました。{1}</value></data>
+  <data name="Smart.EditTitle" xml:space="preserve"><value>スマートプレイリストの規則を編集</value></data>
+  <data name="Smart.Equals" xml:space="preserve"><value>と等しい</value></data>
+  <data name="Smart.Hint" xml:space="preserve"><value>ライブラリに合わせて自動的に更新されます。空の値は、タグがないものに一致します。</value></data>
+  <data name="Smart.Match" xml:space="preserve"><value>一致条件</value></data>
+  <data name="Smart.MatchAutomation" xml:space="preserve"><value>すべての規則またはいずれかの規則に一致</value></data>
+  <data name="Smart.NameLabel" xml:space="preserve"><value>プレイリスト名</value></data>
+  <data name="Smart.NotEquals" xml:space="preserve"><value>と等しくない</value></data>
+  <data name="Smart.RemoveRule" xml:space="preserve"><value>規則を削除</value></data>
+  <data name="Smart.RemoveTip" xml:space="preserve"><value>この条件を削除します</value></data>
+  <data name="Smart.RuleComparison" xml:space="preserve"><value>規則の比較</value></data>
+  <data name="Smart.RuleField" xml:space="preserve"><value>規則のフィールド</value></data>
+  <data name="Smart.RuleValue" xml:space="preserve"><value>規則の値</value></data>
+  <data name="Smart.SkipCount" xml:space="preserve"><value>スキップ回数</value></data>
+  <data name="Smart.Updated" xml:space="preserve"><value>スマートプレイリストを更新しました。{0}</value></data>
+  <data name="Sort.Ascending" xml:space="preserve"><value>{0} の昇順で並べ替えました。</value></data>
+  <data name="Sort.Descending" xml:space="preserve"><value>{0} の降順で並べ替えました。</value></data>
+  <data name="Station.AddTitle" xml:space="preserve"><value>ラジオ局を追加</value></data>
+  <data name="Station.Creator" xml:space="preserve"><value>作成者 (任意)</value></data>
+  <data name="Station.Description" xml:space="preserve"><value>説明 (任意)</value></data>
+  <data name="Station.EditTitle" xml:space="preserve"><value>ラジオ局を編集</value></data>
+  <data name="Station.Genre" xml:space="preserve"><value>ジャンル (任意)</value></data>
+  <data name="Station.Name" xml:space="preserve"><value>ステーション名</value></data>
+  <data name="Station.Never" xml:space="preserve"><value>なし</value></data>
+  <data name="Station.NoRating" xml:space="preserve"><value>評価なし</value></data>
+  <data name="Station.Note" xml:space="preserve"><value>HTTP/HTTPS の音声ストリームのみ。保存しても接続はせず、「再生」を選んだときに再生が始まります。変更は次回の接続時に反映されます。</value></data>
+  <data name="Station.PlayInfo" xml:space="preserve"><value>再生 {0} 回 · 最終再生: {1}</value></data>
+  <data name="Station.RatingAutomation" xml:space="preserve"><value>ステーションの評価</value></data>
+  <data name="Status.Loading" xml:space="preserve"><value>ライブラリを読み込んでいます…</value></data>
+  <data name="Sync.Cancel" xml:space="preserve"><value>キャンセル</value></data>
+  <data name="Sync.Cancelled" xml:space="preserve"><value>キャンセルしました。ここまでにコピーしたファイルはデバイスに残ります。</value></data>
+  <data name="Sync.ChooseSource" xml:space="preserve"><value>デバイスとコピーする内容を選んで、「プレビュー」を押してください。</value></data>
+  <data name="Sync.Copying" xml:space="preserve"><value>コピーしています…</value></data>
+  <data name="Sync.Done" xml:space="preserve"><value>完了しました。ファイルマネージャーからデバイスを安全にマウント解除できます。</value></data>
+  <data name="Sync.DoneWithFailures" xml:space="preserve"><value>完了しましたが、{0} 件のファイルをコピーできませんでした。</value></data>
+  <data name="Sync.Finishing" xml:space="preserve"><value>仕上げています…</value></data>
+  <data name="Sync.NoTracks" xml:space="preserve"><value>コピーするトラックがありません。トラックを選ぶか、別のソースを選んでください。</value></data>
+  <data name="Sync.NoVolumes" xml:space="preserve"><value>取り外し可能なドライブが見つかりませんでした。ドライブを接続してデスクトップにマウントさせてから、「デバイスを更新」を選んでください。</value></data>
+  <data name="Sync.Note" xml:space="preserve"><value>音楽はデバイスの Music/アーティスト/アルバム にコピーされます。デバイス上のものは削除されず、ライブラリも変更されません。</value></data>
+  <data name="Sync.Planning" xml:space="preserve"><value>ファイルを確認しています…</value></data>
+  <data name="Sync.Preview" xml:space="preserve"><value>プレビュー</value></data>
+  <data name="Sync.PreviewReady" xml:space="preserve"><value>実行内容は次のとおりです。開始するには「デバイスにコピー」を押してください。</value></data>
+  <data name="Sync.Progress" xml:space="preserve"><value>{1} 件中 {0} 件目をコピーしています: {2}</value></data>
+  <data name="Sync.Refresh" xml:space="preserve"><value>デバイスを更新</value></data>
+  <data name="Sync.RefreshTip" xml:space="preserve"><value>このウィンドウを開いた後に接続またはマウントされたドライブを探します</value></data>
+  <data name="Sync.ReplaceDifferent" xml:space="preserve"><value>デバイス上にある内容の異なるファイルを置き換える</value></data>
+  <data name="Sync.Result.Conflicts" xml:space="preserve"><value>同じ名前で内容の異なるファイル {0} 件を保持しました。</value></data>
+  <data name="Sync.Result.Copied" xml:space="preserve"><value>ファイル {0} 件をコピーしました。{1} 件はすでに最新でした。</value></data>
+  <data name="Sync.Result.Failure" xml:space="preserve"><value>問題: {0}</value></data>
+  <data name="Sync.Result.MoreFailures" xml:space="preserve"><value>…ほかに {0} 件の問題があります。</value></data>
+  <data name="Sync.Result.Playlist" xml:space="preserve"><value>プレイリスト: {0}</value></data>
+  <data name="Sync.Source.Library" xml:space="preserve"><value>ライブラリ全体</value></data>
+  <data name="Sync.Source.Selected" xml:space="preserve"><value>選択したトラック</value></data>
+  <data name="Sync.Source.Visible" xml:space="preserve"><value>現在のビューのトラック</value></data>
+  <data name="Sync.SourceLabel" xml:space="preserve"><value>コピーする内容</value></data>
+  <data name="Sync.Start" xml:space="preserve"><value>デバイスにコピー</value></data>
+  <data name="Sync.Summary.Conflicts" xml:space="preserve"><value>デバイス上の同じ名前で内容の異なるファイル {0} 件は保持されます。</value></data>
+  <data name="Sync.Summary.ExcludedMissing" xml:space="preserve"><value>{0} トラックをスキップしました: ファイルが見つかりません。</value></data>
+  <data name="Sync.Summary.ExcludedNotAFile" xml:space="preserve"><value>{0} トラックをスキップしました: ライブラリ内のファイルではありません (たとえば CD のトラック)。</value></data>
+  <data name="Sync.Summary.ExcludedOther" xml:space="preserve"><value>{0} トラックをスキップしました。</value></data>
+  <data name="Sync.Summary.ExcludedUnsupported" xml:space="preserve"><value>{0} トラックをスキップしました: デバイスで対応していない形式です。</value></data>
+  <data name="Sync.Summary.NoRoom" xml:space="preserve"><value>あと {0} の空き容量が必要です。</value></data>
+  <data name="Sync.Summary.Replace" xml:space="preserve"><value>デバイス上の同じ名前で内容の異なるファイル {0} 件は置き換えられます。</value></data>
+  <data name="Sync.Summary.ToCopy" xml:space="preserve"><value>コピーするファイル {0} 件 ({1})。デバイスの空き容量は {2} です。</value></data>
+  <data name="Sync.Summary.UpToDate" xml:space="preserve"><value>{0} 件はすでにデバイスにあります。</value></data>
+  <data name="Sync.TooBig" xml:space="preserve"><value>デバイスにこれらのトラックを入れる十分な空き容量がありません。</value></data>
+  <data name="Sync.VolumeAutomation" xml:space="preserve"><value>デバイス</value></data>
+  <data name="Sync.VolumesFound.Other" xml:space="preserve"><value>ドライブが {0} 台見つかりました。</value></data>
+  <data name="Sync.WritePlaylist" xml:space="preserve"><value>Aibell.m3u8 プレイリストを書き出す</value></data>
+  <data name="TrackProps.BackupDeleted" xml:space="preserve"><value>ファイルのバックアップを削除しました。音声ファイルとライブラリのメタデータは保持されました。</value></data>
+  <data name="TrackProps.BackupsUnavailable" xml:space="preserve"><value>ファイルのバックアップは利用できません: {0}</value></data>
+  <data name="TrackProps.DetailsUnavailable" xml:space="preserve"><value>ファイルの詳細は利用できません: {0}</value></data>
+  <data name="TrackProps.OperationError" xml:space="preserve"><value>メタデータの操作がエラーで終了しました: {0}</value></data>
+  <data name="TrackProps.Restored" xml:space="preserve"><value>ファイルのバックアップを復元し、ライブラリを更新しました。置き換えられたファイルは新しいバックアップとして保持されました。</value></data>
+  <data name="TrackProps.RestoredNoRefresh" xml:space="preserve"><value>ファイルのバックアップは復元されましたが、ライブラリを更新できませんでした。トラックのプロパティを開き直してください。{0}</value></data>
+  <data name="TrackProps.SavedFile" xml:space="preserve"><value>ファイルのタグとライブラリを保存しました。元のバックアップ: {0}</value></data>
+  <data name="TrackProps.SavedLibrary" xml:space="preserve"><value>トラックのプロパティをライブラリに保存しました。</value></data>
+  <data name="TrackProps.SavedNoRefresh" xml:space="preserve"><value>ファイルのタグは保存されましたが、ライブラリを更新できませんでした。再試行する前にトラックのプロパティを開き直してください。バックアップ: {0}</value></data>
+  <data name="TrackProps.SavedNoTags" xml:space="preserve"><value>ライブラリの値を保存しました。ファイルのタグは変更されていません。</value></data>
+  <data name="Transport.KeysSeek" xml:space="preserve"><value>左/下と右/上で 5 秒ずつ、Page Down/Up で 15 秒ずつ調整します。Home/End で先頭または末尾へ移動します</value></data>
+  <data name="Transport.KeysVolume" xml:space="preserve"><value>左/下と右/上で 5% ずつ、Page Down/Up で 10% ずつ調整します。Home/End で 0% または 100% にします</value></data>
+  <data name="Transport.PositionAutomation" xml:space="preserve"><value>再生位置</value></data>
+  <data name="Transport.SeekAt" xml:space="preserve"><value>再生位置、{1} 中 {0}</value></data>
+  <data name="Transport.SeekLive" xml:space="preserve"><value>再生位置、ライブ</value></data>
+  <data name="Transport.VolumeAt" xml:space="preserve"><value>音量 {0}%</value></data>
+  <data name="Transport.VolumeAutomation" xml:space="preserve"><value>再生音量</value></data>
+  <data name="Transport.VolumeMuted" xml:space="preserve"><value>音量 {0}% (ミュート中)</value></data>
+  <data name="Transport.VolumeUnavailable" xml:space="preserve"><value>音量（利用不可）</value></data>
+  <data name="Main.BusyAutomation" xml:space="preserve"><value>処理中</value></data>
+  <data name="Sync.ProgressAutomation" xml:space="preserve"><value>同期の進行状況</value></data>
+  <data name="Prefs.Engine" xml:space="preserve"><value>再生エンジン</value></data>
+  <data name="Prefs.EngineMiniaudio" xml:space="preserve"><value>miniaudio</value></data>
+  <data name="Prefs.EngineMiniaudioNative" xml:space="preserve"><value>miniaudio (Native)</value></data>
+  <data name="Prefs.EngineVlc" xml:space="preserve"><value>VLC</value></data>
+  <data name="Prefs.EngineManaged" xml:space="preserve"><value>miniaudio (Managed)</value></data>
+  <data name="Prefs.EnginePipeWire" xml:space="preserve"><value>PipeWire (Managed)</value></data>
+  <data name="Prefs.EngineAlsa" xml:space="preserve"><value>ALSA (Managed)</value></data>
+  <data name="Prefs.EngineNote" xml:space="preserve"><value>内蔵プレーヤーは追加のインストールが不要で、MP3、FLAC、Ogg Vorbis、WAV を再生できます。Windows では AAC と M4A も再生できます。Linux での AAC と M4A、およびオーディオ CD には VLC を選んでください。変更は次回 Aibell を起動したときに反映されます。</value></data>
+  <data name="Prefs.EngineRestart" xml:space="preserve"><value>再生エンジンは次回 Aibell を起動したときに切り替わります。</value></data>
+  <data name="Prefs.Language" xml:space="preserve"><value>言語</value></data>
+  <data name="Prefs.LanguageSystem" xml:space="preserve"><value>システムの既定</value></data>
+  <data name="Prefs.LanguageRestart" xml:space="preserve"><value>言語は次回 Aibell を起動したときに切り替わります。</value></data>
+  <data name="Radio.ModeMine" xml:space="preserve"><value>マイステーション</value></data>
+  <data name="Radio.ModeCatalog" xml:space="preserve"><value>ステーションカタログ</value></data>
+  <data name="Radio.SearchStations" xml:space="preserve"><value>ステーションを検索…</value></data>
+  <data name="Radio.SearchGenres" xml:space="preserve"><value>ジャンルを検索…</value></data>
+  <data name="Radio.AllGenres" xml:space="preserve"><value>すべてのジャンル</value></data>
+  <data name="Radio.AllCountries" xml:space="preserve"><value>すべての国</value></data>
+  <data name="Radio.GenreFilter" xml:space="preserve"><value>ジャンルで絞り込む</value></data>
+  <data name="Radio.CountryFilter" xml:space="preserve"><value>国で絞り込む</value></data>
+  <data name="Radio.SortPopular" xml:space="preserve"><value>人気順</value></data>
+  <data name="Radio.NoMatches" xml:space="preserve"><value>検索条件やフィルターに一致するステーションはありません。</value></data>
+  <data name="Radio.OptInTitle" xml:space="preserve"><value>ステーションカタログを見る</value></data>
+  <data name="Radio.OptInBody" xml:space="preserve"><value>世界中のラジオ局を厳選したリストが Aibell に内蔵されています。カタログを見るだけでは、どのステーションにも接続しません。気に入ったものは「マイステーション」に保存するか、ダブルクリックしてすぐに聴けます。</value></data>
+  <data name="Radio.OptInPrivacy" xml:space="preserve"><value>ロゴは各ステーション自身のウェブサイトからダウンロードされるため、それらのサイトにあなたの IP アドレスが見えます。カタログを有効にするまで何もダウンロードされません。</value></data>
+  <data name="Radio.OptInEnable" xml:space="preserve"><value>カタログを有効にする</value></data>
+  <data name="Radio.OptInOff" xml:space="preserve"><value>この設定は、環境設定でいつでもオフにできます。</value></data>
+  <data name="Radio.FormatChip" xml:space="preserve"><value>{0} · VLC が必要</value></data>
+  <data name="Radio.FormatTipVlc" xml:space="preserve"><value>内蔵プレーヤーは {0} を再生できません。このステーションを聴くには、環境設定 &gt; 再生 で VLC を選んでください。</value></data>
+  <data name="Radio.FormatTipVlcOrWindows" xml:space="preserve"><value>内蔵プレーヤーはここでは {0} を再生できません。このステーションを聴くには、環境設定 &gt; 再生 で VLC を選ぶか、Windows で Aibell を使ってください。</value></data>
+  <data name="Radio.SaveToMine" xml:space="preserve"><value>マイステーションに保存</value></data>
+  <data name="Radio.RemoveFromMine" xml:space="preserve"><value>マイステーションから削除</value></data>
+  <data name="Radio.CatalogSaved" xml:space="preserve"><value>「{0}」をマイステーションに保存しました。</value></data>
+  <data name="Prefs.RadioCatalog" xml:space="preserve"><value>ステーションカタログを表示し、ロゴをダウンロードする</value></data>
+  <data name="Prefs.RadioCatalogAutomation" xml:space="preserve"><value>ラジオステーションカタログを有効にする</value></data>
+  <data name="Prefs.RadioCatalogNote" xml:space="preserve"><value>既定ではオフです。オンにすると、ラジオ画面に内蔵のステーションカタログが表示され、各ステーションのロゴがそのステーション自身のウェブサイトからダウンロードされます(そのサイトにはあなたの IP アドレスが見えます)。カタログを見るだけでは、どのステーションにも接続しません。</value></data>
+  <data name="Radio.StationCount.Other" xml:space="preserve"><value>ラジオ局 {0} 件。</value></data>
+  <data name="Menu.MainAutomation" xml:space="preserve"><value>メインメニュー</value></data>
+  <data name="Menu.File" xml:space="preserve"><value>ファイル</value></data>
+  <data name="Menu.Edit" xml:space="preserve"><value>編集</value></data>
+  <data name="Menu.View" xml:space="preserve"><value>表示</value></data>
+  <data name="Menu.Controls" xml:space="preserve"><value>コントロール</value></data>
+  <data name="Menu.Library" xml:space="preserve"><value>ライブラリ</value></data>
+  <data name="Menu.Help" xml:space="preserve"><value>ヘルプ</value></data>
+  <data name="Menu.Quit" xml:space="preserve"><value>終了</value></data>
+  <data name="Menu.Find" xml:space="preserve"><value>検索…</value></data>
+  <data name="Menu.SelectAll" xml:space="preserve"><value>すべてのトラックを選択</value></data>
+  <data name="Menu.SortBy" xml:space="preserve"><value>並べ替え</value></data>
+  <data name="Menu.Columns" xml:space="preserve"><value>列</value></data>
+  <data name="Menu.Sidebar" xml:space="preserve"><value>サイドバー</value></data>
+  <data name="Menu.SeekBackward" xml:space="preserve"><value>巻き戻し</value></data>
+  <data name="Menu.SeekForward" xml:space="preserve"><value>早送り</value></data>
+  <data name="Menu.VolumeUp" xml:space="preserve"><value>音量を上げる</value></data>
+  <data name="Menu.VolumeDown" xml:space="preserve"><value>音量を下げる</value></data>
+  <data name="Menu.ClearQueue" xml:space="preserve"><value>再生キューをクリア</value></data>
+  <data name="Menu.AddStation" xml:space="preserve"><value>局を追加…</value></data>
+  <data name="Menu.CancelDownload" xml:space="preserve"><value>ダウンロードを取り消す</value></data>
+  <data name="Menu.Website" xml:space="preserve"><value>プロジェクトのWebサイト</value></data>
+  <data name="Menu.About" xml:space="preserve"><value>Aibell について</value></data>
+  <data name="About.Tagline" xml:space="preserve"><value>Linux と Windows 向けの音楽ライブラリ兼プレーヤーです。</value></data>
+  <data name="About.Tab.About" xml:space="preserve"><value>概要</value></data>
+  <data name="About.Tab.Features" xml:space="preserve"><value>機能</value></data>
+  <data name="About.Tab.Credits" xml:space="preserve"><value>謝辞</value></data>
+  <data name="About.Version" xml:space="preserve"><value>バージョン {0}</value></data>
+  <data name="About.Author" xml:space="preserve"><value>作者</value></data>
+  <data name="About.License" xml:space="preserve"><value>ライセンス</value></data>
+  <data name="About.Website" xml:space="preserve"><value>Webサイト</value></data>
+  <data name="About.Independent" xml:space="preserve"><value>Aibell は .NET と Avalonia でゼロから書かれた独立したプロジェクトです。</value></data>
+  <data name="About.Section.Playback" xml:space="preserve"><value>再生</value></data>
+  <data name="About.Section.Desktop" xml:space="preserve"><value>デスクトップ</value></data>
+  <data name="About.Section.Content" xml:space="preserve"><value>コンテンツとサービス</value></data>
+  <data name="About.Section.System" xml:space="preserve"><value>システム</value></data>
+  <data name="About.Engine" xml:space="preserve"><value>使用中のプレーヤー</value></data>
+  <data name="About.Engine.Miniaudio" xml:space="preserve"><value>miniaudio</value></data>
+  <data name="About.Engine.Vlc" xml:space="preserve"><value>VLC (LibVLC)</value></data>
+  <data name="About.Engine.Managed" xml:space="preserve"><value>miniaudio (Managed)</value></data>
+  <data name="About.Engine.Alsa" xml:space="preserve"><value>ALSA (Managed)</value></data>
+  <data name="About.Engine.PipeWire" xml:space="preserve"><value>PipeWire (Managed)</value></data>
+  <data name="About.Status.InUse" xml:space="preserve"><value>使用中</value></data>
+  <data name="About.Status.Available" xml:space="preserve"><value>利用可能</value></data>
+  <data name="About.Status.Unavailable" xml:space="preserve"><value>利用不可</value></data>
+  <data name="About.Status.VlcFound" xml:space="preserve"><value>検出済み — 設定 &gt; 再生 で選択できます</value></data>
+  <data name="About.Status.VlcMissing" xml:space="preserve"><value>見つかりません</value></data>
+  <data name="About.Status.On" xml:space="preserve"><value>オン</value></data>
+  <data name="About.Status.Off" xml:space="preserve"><value>オフ</value></data>
+  <data name="About.Status.None" xml:space="preserve"><value>実行中なし</value></data>
+  <data name="About.Feature.MediaControls" xml:space="preserve"><value>システムのメディアコントロール</value></data>
+  <data name="About.Feature.Notifications" xml:space="preserve"><value>トラック変更の通知</value></data>
+  <data name="About.Feature.Catalog" xml:space="preserve"><value>ラジオ局カタログ</value></data>
+  <data name="About.Feature.OnlineLookup" xml:space="preserve"><value>オンライン検索 (MusicBrainz)</value></data>
+  <data name="About.Feature.Plugins" xml:space="preserve"><value>プラグイン</value></data>
+  <data name="About.System.Os" xml:space="preserve"><value>オペレーティングシステム</value></data>
+  <data name="About.System.Language" xml:space="preserve"><value>表示言語</value></data>
+  <data name="About.Credits.Intro" xml:space="preserve"><value>Aibell はゼロから書かれた独立したプロジェクトですが、先行する 2 つのプレーヤーから多くを学んでいます。</value></data>
+  <data name="About.Credits.Songbird" xml:space="preserve"><value>オープンソースのメディアプレーヤー。Aibell のインターフェース(ブラウズ ペイン、ソース一覧、密度の高いトラック表)の多くは Songbird のデザインに倣っており、Songbird 自身も iTunes を参考にしています。Aibell は Songbird のコードもアートワークも複製しておらず、似ているのは意図的なオマージュです。</value></data>
+  <data name="About.Credits.Banshee" xml:space="preserve"><value>Mono/GTK 製のメディアプレーヤー。実用的なライブラリ表示とローカル優先の考え方が Aibell のきっかけになりました。Aibell には Banshee のソースコードは含まれていません。</value></data>
+  <data name="About.Credits.Thanks" xml:space="preserve"><value>両プロジェクトの関係者の皆さまに感謝します。Aibell はこれらと提携しておらず、承認も受けていません。Songbird と iTunes は、それぞれの所有者の商標です。</value></data>
+  <data name="About.Credits.Libraries" xml:space="preserve"><value>サードパーティのライブラリはそれぞれのライセンスに従います。LibVLC と LibVLCSharp (LGPL)、miniaudio と stb_vorbis (パブリックドメイン / MIT-0)、Avalonia (MIT)、Microsoft .NET ライブラリ (MIT)、ATL .NET (MIT) などです。</value></data>
+  <data name="Menu.Shortcuts" xml:space="preserve"><value>ショートカット</value></data>
+  <data name="Shortcuts.Title" xml:space="preserve"><value>キーボードショートカット</value></data>
+  <data name="Shortcuts.Section.General" xml:space="preserve"><value>一般</value></data>
+  <data name="Shortcuts.Section.Library" xml:space="preserve"><value>ライブラリとトラック</value></data>
+  <data name="Shortcuts.Section.Playback" xml:space="preserve"><value>再生</value></data>
+  <data name="Shortcuts.Section.Seek" xml:space="preserve"><value>シークバー(フォーカス時)</value></data>
+  <data name="Shortcuts.Section.Volume" xml:space="preserve"><value>音量バー(フォーカス時)</value></data>
+  <data name="Shortcuts.Section.Podcasts" xml:space="preserve"><value>ポッドキャスト</value></data>
+  <data name="Shortcuts.Search" xml:space="preserve"><value>ライブラリまたは局を検索</value></data>
+  <data name="Shortcuts.ClearSearch" xml:space="preserve"><value>検索ボックスをクリア</value></data>
+  <data name="Shortcuts.PlayPause" xml:space="preserve"><value>再生または一時停止(トラック、キュー、局の一覧で)</value></data>
+  <data name="Shortcuts.PlaySelected" xml:space="preserve"><value>選択した局またはディスクのトラックを再生</value></data>
+  <data name="Shortcuts.Seek5" xml:space="preserve"><value>5 秒戻る/進む</value></data>
+  <data name="Shortcuts.Seek15" xml:space="preserve"><value>15 秒戻る/進む</value></data>
+  <data name="Shortcuts.SeekEnds" xml:space="preserve"><value>先頭または末尾へ移動</value></data>
+  <data name="Shortcuts.Volume5" xml:space="preserve"><value>音量を 5% 変更</value></data>
+  <data name="Shortcuts.Volume10" xml:space="preserve"><value>音量を 10% 変更</value></data>
+  <data name="Shortcuts.VolumeEnds" xml:space="preserve"><value>音量を 0% または 100% に設定</value></data>
+  <data name="Shortcuts.Rate" xml:space="preserve"><value>選択したエピソードを評価(0 で評価を消去)</value></data>
+  <data name="Shortcuts.DeleteDownload" xml:space="preserve"><value>選択したエピソードのダウンロード済みファイルを削除</value></data>
+  <data name="Prefs.SoundFont" xml:space="preserve"><value>MIDI 用 SoundFont（任意）</value></data>
+  <data name="Prefs.SoundFontNote" xml:space="preserve"><value>SoundFont がない場合、MIDI ファイルは Aibell 内蔵の楽器で再生されます。よりリアルな音にするには SoundFont 2（.sf2）ファイルを選んでください。ライセンスの確認はご自身で行ってください。変更は次回 Aibell を起動したときに反映されます。</value></data>
+  <data name="Prefs.SoundFontNone" xml:space="preserve"><value>内蔵の楽器</value></data>
+  <data name="Prefs.SoundFontClear" xml:space="preserve"><value>内蔵を使う</value></data>
+  <data name="Prefs.SoundFontRestart" xml:space="preserve"><value>SoundFont は次回 Aibell を起動したときに変更されます。</value></data>
+  <data name="Picker.SoundFont" xml:space="preserve"><value>SoundFont を選択</value></data>
+  <data name="Picker.SoundFontFiles" xml:space="preserve"><value>SoundFont 2 バンク</value></data>
+  <data name="Main.ResizeSidebar" xml:space="preserve"><value>サイドバーのサイズを変更</value></data>
+  <data name="Main.ResizeSidebarSection" xml:space="preserve"><value>サイドバーのセクションのサイズを変更</value></data>
+  <data name="Main.ResizeQueue" xml:space="preserve"><value>再生キューのサイズを変更</value></data>
+</root>

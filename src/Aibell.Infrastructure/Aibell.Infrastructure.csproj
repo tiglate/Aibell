@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="../Aibell.Application/Aibell.Application.csproj" />
+    <ProjectReference Include="../Aibell.Domain/Aibell.Domain.csproj" />
+    <ProjectReference Include="../Aibell.Audio.Spc/Aibell.Audio.Spc.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Radio/curated-stations.json" LogicalName="Aibell.Infrastructure.Radio.curated-stations.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Aibell.Infrastructure.Tests" />
+    <PackageReference Include="Microsoft.Data.Sqlite" />
+    <PackageReference Include="z440.atl.core" />
+  </ItemGroup>
+</Project>

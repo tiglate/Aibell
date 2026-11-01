@@ -97,6 +97,44 @@ public sealed class ManagedPcmSourceTests
         Assert.That(stream.Position, Is.EqualTo(0));
     }
 
+    [Test]
+    public void AnAiffFile_PlaysAndSeeks()
+    {
+        short[] samples = new short[48000 * 2];
+        for (int i = 0; i < samples.Length; i++) samples[i] = (short)(8000 * Math.Sin(2 * Math.PI * 440 * (i / 2) / 48000.0));
+        using MemoryStream stream = new(Aibell.Audio.Aiff.Tests.AiffBuilder.Build(2, 48000, 16, Aibell.Audio.Aiff.Tests.AiffBuilder.Pcm16Be(samples)));
+        using ManagedPcmSource? managed = ManagedPcmSource.TryOpen(stream, 48000);
+        Assert.That(managed, Is.Not.Null);
+        float[] pcm = DrainAll(managed!);
+        Assert.That(pcm, Has.Length.EqualTo(samples.Length));
+        Assert.That(managed!.Seek(12000), Is.True);
+        Assert.That(DrainAll(managed), Is.EqualTo(pcm[(12000 * 2)..]));
+    }
+
+    [TestCase(".aiff")]
+    [TestCase(".aif")]
+    [TestCase(".aifc")]
+    public async Task Factory_PlaysAiffWithoutTheManagedEngineSetting(string extension)
+    {
+        short[] samples = new short[4800 * 2];
+        for (int i = 0; i < samples.Length; i++) samples[i] = (short)(8000 * Math.Sin(2 * Math.PI * 440 * (i / 2) / 48000.0));
+        string path = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString("N") + extension);
+        File.WriteAllBytes(path, Aibell.Audio.Aiff.Tests.AiffBuilder.Build(2, 48000, 16, Aibell.Audio.Aiff.Tests.AiffBuilder.Pcm16Be(samples),
+            compression: extension == ".aifc" ? "twos" : null));
+        try
+        {
+            using HttpClient client = new();
+            using IPcmSource source = await new AudioSourceFactory(client).OpenAsync(new Uri(path), 48000, CancellationToken.None);
+            float[] buffer = new float[2 * 4800];
+            Assert.That(source.Read(buffer, 4800), Is.EqualTo(4800));
+            Assert.That(buffer.Max(Math.Abs), Is.GreaterThan(0.1f));
+        }
+        finally
+        {
+            File.Delete(path);
+        }
+    }
+
     [TestCase("fixture.wav")]
     [TestCase("fixture.flac")]
     [TestCase("fixture.mp3")]

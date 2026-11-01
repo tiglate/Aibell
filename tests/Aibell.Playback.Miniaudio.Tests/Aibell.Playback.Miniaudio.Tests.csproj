@@ -26,6 +26,7 @@
     <None Include="../fixtures/aac/*" Link="fixtures/aac/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <None Include="../fixtures/aac-mp4/*" Link="fixtures/aac-mp4/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Compile Include="../Aibell.Audio.Aac.Tests/TestMpegTs.cs" Link="TestMpegTs.cs" />
+    <Compile Include="../Aibell.Audio.Aiff.Tests/AiffBuilder.cs" Link="AiffBuilder.cs" />
     <Compile Include="../Aibell.Audio.Midi.Tests/SoundFontBuilder.cs" Link="SoundFontBuilder.cs" />
     <Compile Include="../Aibell.Audio.Spc.Tests/SpcBuilder.cs" Link="SpcBuilder.cs" />
     <None Include="../fixtures/rar/songs*.rsn" Link="fixtures/rar/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />

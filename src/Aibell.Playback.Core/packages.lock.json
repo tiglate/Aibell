@@ -17,6 +17,12 @@
           "Aibell.Audio.Core": "[1.0.0, )"
         }
       },
+      "aibell.audio.aiff": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Audio.Core": "[1.0.0, )"
+        }
+      },
       "aibell.audio.alac": {
         "type": "Project",
         "dependencies": {

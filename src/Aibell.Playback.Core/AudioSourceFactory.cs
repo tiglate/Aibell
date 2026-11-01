@@ -28,6 +28,9 @@ internal sealed class AudioSourceFactory(HttpClient? http, HlsOptions? hlsOption
     // SPC files (a snapshot of the SNES sound unit, alone or in an RSN archive) have no native or Windows decoder either: the managed emulator plays them on every engine setting.
     private static readonly HashSet<string> SpcExtensions = new(StringComparer.OrdinalIgnoreCase) { ".spc", ".rsn" };
 
+    // AIFF and AIFF-C files have no miniaudio decoder: the managed reader plays them on every engine setting.
+    private static readonly HashSet<string> AiffExtensions = new(StringComparer.OrdinalIgnoreCase) { ".aiff", ".aif", ".aifc" };
+
     // MP4 audio files: the managed decoders read them on every system; Media Foundation is the Windows fallback (and the default engine's first choice there).
     private static readonly HashSet<string> Mp4Extensions = new(StringComparer.OrdinalIgnoreCase) { ".m4a", ".m4b", ".mp4", ".3gp", ".3g2" };
 
@@ -86,18 +89,18 @@ internal sealed class AudioSourceFactory(HttpClient? http, HlsOptions? hlsOption
             stream.Dispose();
             throw new NotSupportedException(UnsupportedMessage($"The built-in player cannot decode the audio in this {extension} file on this system."));
         }
-        if (OperatingSystem.IsWindows() && !hls && !NativeExtensions.Contains(extension) && !MidiExtensions.Contains(extension) && !SpcExtensions.Contains(extension)) return await Task.Run(() => OpenMediaFoundation(location, sampleRate), cancellationToken).ConfigureAwait(false);
+        if (OperatingSystem.IsWindows() && !hls && !NativeExtensions.Contains(extension) && !MidiExtensions.Contains(extension) && !SpcExtensions.Contains(extension) && !AiffExtensions.Contains(extension)) return await Task.Run(() => OpenMediaFoundation(location, sampleRate), cancellationToken).ConfigureAwait(false);
         throw new NotSupportedException(UnsupportedMessage(hls
             ? "The built-in player does not recognize the audio inside this HLS stream."
             : "The built-in player does not recognize this audio format."));
     }
 
-    // The managed decoders first when asked for (and always for MP4, MIDI and SPC, which nothing else plays off Windows), then the managed AAC reader and miniaudio.
+    // The managed decoders first when asked for (and always for MP4, AIFF, MIDI and SPC, which nothing else plays off Windows), then the managed AAC reader and miniaudio.
     // The stream stays open when nothing recognizes it.
     private IPcmSource? OpenDecoder(Stream stream, string extension, bool mp4Extension, uint sampleRate)
     {
         bool midi = MidiExtensions.Contains(extension);
-        if (managedCodecs || mp4Extension || midi || SpcExtensions.Contains(extension))
+        if (managedCodecs || mp4Extension || midi || SpcExtensions.Contains(extension) || AiffExtensions.Contains(extension))
         {
             IPcmSource? managed = ManagedPcmSource.TryOpen(stream, sampleRate, midi ? soundFont.Value : null);
             if (managed is not null) return managed;

@@ -1,6 +1,6 @@
 namespace Aibell.Audio;
 
-public enum AudioContainer { Unknown, Wav, Flac, OggVorbis, OggOpus, OggOther, Mp4, Midi, Spc }
+public enum AudioContainer { Unknown, Wav, Aiff, Flac, OggVorbis, OggOpus, OggOther, Mp4, Midi, Spc }
 
 /// <summary>Recognizes the managed decoders' formats from their first bytes.</summary>
 public static class AudioSniffer
@@ -26,6 +26,7 @@ public static class AudioSniffer
         if (head.Length >= 27 && head[..27].SequenceEqual("SNES-SPC700 Sound File Data"u8)) return AudioContainer.Spc;
         if (head.Length >= 12 && head[..4].SequenceEqual("RIFF"u8) && head.Slice(8, 4).SequenceEqual("RMID"u8)) return AudioContainer.Midi;
         if (head.Length >= 12 && (head[..4].SequenceEqual("RIFF"u8) || head[..4].SequenceEqual("RF64"u8)) && head.Slice(8, 4).SequenceEqual("WAVE"u8)) return AudioContainer.Wav;
+        if (head.Length >= 12 && head[..4].SequenceEqual("FORM"u8) && (head.Slice(8, 4).SequenceEqual("AIFF"u8) || head.Slice(8, 4).SequenceEqual("AIFC"u8))) return AudioContainer.Aiff;
         if (head.Length >= 4 && head[..4].SequenceEqual("fLaC"u8)) return AudioContainer.Flac;
         if (head.Length >= 4 && head[..4].SequenceEqual("OggS"u8)) return DetectOgg(head);
         if (head.Length >= 12 && head.Slice(4, 4).SequenceEqual("ftyp"u8)) return AudioContainer.Mp4;

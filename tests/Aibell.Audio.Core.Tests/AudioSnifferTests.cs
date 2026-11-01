@@ -7,6 +7,9 @@ public class AudioSnifferTests
     {
         Assert.That(AudioSniffer.Detect("RIFF\0\0\0\0WAVEfmt "u8), Is.EqualTo(AudioContainer.Wav));
         Assert.That(AudioSniffer.Detect([(byte)'R', (byte)'F', (byte)'6', (byte)'4', 255, 255, 255, 255, (byte)'W', (byte)'A', (byte)'V', (byte)'E']), Is.EqualTo(AudioContainer.Wav));
+        Assert.That(AudioSniffer.Detect("FORM\0\0\0\0AIFFCOMM"u8), Is.EqualTo(AudioContainer.Aiff));
+        Assert.That(AudioSniffer.Detect("FORM\0\0\0\0AIFCFVER"u8), Is.EqualTo(AudioContainer.Aiff));
+        Assert.That(AudioSniffer.Detect("FORM\0\0\0\08SVX"u8), Is.EqualTo(AudioContainer.Unknown));
         Assert.That(AudioSniffer.Detect("fLaC\0\0\0\"extra"u8), Is.EqualTo(AudioContainer.Flac));
         Assert.That(AudioSniffer.Detect("OggS\0\x02extra"u8), Is.EqualTo(AudioContainer.OggOther));
         Assert.That(AudioSniffer.Detect(OggFirstPage("\x01vorbis"u8.ToArray())), Is.EqualTo(AudioContainer.OggVorbis));

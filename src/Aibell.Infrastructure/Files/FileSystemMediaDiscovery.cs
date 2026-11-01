@@ -15,7 +15,7 @@ public sealed class FileSystemMediaDiscovery : IMediaFileDiscovery
 
     private static readonly HashSet<string> SupportedExtensions = new(StringComparer.OrdinalIgnoreCase)
     {
-        ".aac", ".aiff", ".alac", ".flac", ".m4a", ".mid", ".midi", ".mp3", ".ogg", ".opus", ".rmi", ".rsn", ".spc", ".wav", ".wma"
+        ".aac", ".aif", ".aifc", ".aiff", ".alac", ".flac", ".m4a", ".mid", ".midi", ".mp3", ".ogg", ".opus", ".rmi", ".rsn", ".spc", ".wav", ".wma"
     };
 
     private static IReadOnlyList<string> ListRsnTracks(string path)

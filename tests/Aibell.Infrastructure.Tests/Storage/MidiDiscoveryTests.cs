@@ -9,6 +9,7 @@ public sealed class MidiDiscoveryTests
     private static readonly string[] EmptyQuery = [""];
     private static readonly string[] ExpectedRsnEntries = ["?entry=song_01.spc", "?entry=song_02.spc", "?entry=song_03.spc"];
     private static readonly string[] ExpectedMidiNames = ["a.mid", "b.MIDI", "c.rmi"];
+    private static readonly string[] ExpectedAiffNames = ["a.aiff", "b.AIF", "c.aifc"];
 
     [Test]
     public async Task Discover_FindsSpcFiles()
@@ -84,6 +85,25 @@ public sealed class MidiDiscoveryTests
             await foreach (Uri file in new FileSystemMediaDiscovery().DiscoverAsync([directory])) found.Add(Path.GetFileName(file.LocalPath));
 
             Assert.That(found, Is.EquivalentTo(ExpectedMidiNames));
+        }
+        finally
+        {
+            Directory.Delete(directory, true);
+        }
+    }
+
+    [Test]
+    public async Task Discover_FindsAiffFiles()
+    {
+        string directory = Directory.CreateTempSubdirectory().FullName;
+        try
+        {
+            foreach (string name in (string[])["a.aiff", "b.AIF", "c.aifc", "d.txt"]) File.WriteAllBytes(Path.Combine(directory, name), [0]);
+
+            List<string> found = [];
+            await foreach (Uri file in new FileSystemMediaDiscovery().DiscoverAsync([directory])) found.Add(Path.GetFileName(file.LocalPath));
+
+            Assert.That(found, Is.EquivalentTo(ExpectedAiffNames));
         }
         finally
         {

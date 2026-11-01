@@ -1,0 +1,116 @@
+{
+  "version": 2,
+  "dependencies": {
+    "net10.0": {
+      "aibell.application": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Domain": "[1.0.0, )"
+        }
+      },
+      "aibell.archive.rar": {
+        "type": "Project"
+      },
+      "aibell.audio.aac": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Audio.Core": "[1.0.0, )"
+        }
+      },
+      "aibell.audio.aiff": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Audio.Core": "[1.0.0, )"
+        }
+      },
+      "aibell.audio.alac": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Audio.Core": "[1.0.0, )"
+        }
+      },
+      "aibell.audio.cdda": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Audio.Core": "[1.0.0, )"
+        }
+      },
+      "aibell.audio.core": {
+        "type": "Project"
+      },
+      "aibell.audio.flac": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Audio.Core": "[1.0.0, )"
+        }
+      },
+      "aibell.audio.midi": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Audio.Core": "[1.0.0, )"
+        }
+      },
+      "aibell.audio.mp3": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Audio.Core": "[1.0.0, )"
+        }
+      },
+      "aibell.audio.ogg": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Audio.Core": "[1.0.0, )"
+        }
+      },
+      "aibell.audio.opus": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Audio.Core": "[1.0.0, )",
+          "Aibell.Audio.Ogg": "[1.0.0, )"
+        }
+      },
+      "aibell.audio.spc": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Archive.Rar": "[1.0.0, )",
+          "Aibell.Audio.Core": "[1.0.0, )"
+        }
+      },
+      "aibell.audio.vorbis": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Audio.Core": "[1.0.0, )",
+          "Aibell.Audio.Ogg": "[1.0.0, )"
+        }
+      },
+      "aibell.audio.wav": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Audio.Core": "[1.0.0, )"
+        }
+      },
+      "aibell.domain": {
+        "type": "Project"
+      },
+      "aibell.playback.core": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Application": "[1.0.0, )",
+          "Aibell.Audio.Aac": "[1.0.0, )",
+          "Aibell.Audio.Aiff": "[1.0.0, )",
+          "Aibell.Audio.Alac": "[1.0.0, )",
+          "Aibell.Audio.Cdda": "[1.0.0, )",
+          "Aibell.Audio.Core": "[1.0.0, )",
+          "Aibell.Audio.Flac": "[1.0.0, )",
+          "Aibell.Audio.Midi": "[1.0.0, )",
+          "Aibell.Audio.Mp3": "[1.0.0, )",
+          "Aibell.Audio.Opus": "[1.0.0, )",
+          "Aibell.Audio.Spc": "[1.0.0, )",
+          "Aibell.Audio.Vorbis": "[1.0.0, )",
+          "Aibell.Audio.Wav": "[1.0.0, )"
+        }
+      }
+    },
+    "net10.0/win-x64": {}
+  }
+}

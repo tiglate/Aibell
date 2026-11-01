@@ -531,6 +531,12 @@
           "Aibell.Audio.Core": "[1.0.0, )"
         }
       },
+      "aibell.audio.aiff": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Audio.Core": "[1.0.0, )"
+        }
+      },
       "aibell.audio.alac": {
         "type": "Project",
         "dependencies": {
@@ -636,6 +642,7 @@
         "dependencies": {
           "Aibell.Application": "[1.0.0, )",
           "Aibell.Audio.Aac": "[1.0.0, )",
+          "Aibell.Audio.Aiff": "[1.0.0, )",
           "Aibell.Audio.Alac": "[1.0.0, )",
           "Aibell.Audio.Cdda": "[1.0.0, )",
           "Aibell.Audio.Core": "[1.0.0, )",

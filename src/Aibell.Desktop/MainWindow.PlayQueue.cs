@@ -284,7 +284,7 @@ public sealed partial class MainWindow
                 [
                     new FilePickerFileType(Loc.Get("Picker.MusicFiles"))
                     {
-                        Patterns = ["*.aac", "*.aiff", "*.alac", "*.flac", "*.m4a", "*.m4b", "*.mid", "*.midi", "*.mp3", "*.ogg", "*.oga", "*.opus", "*.rmi", "*.rsn", "*.spc", "*.wav", "*.wma"]
+                        Patterns = ["*.aac", "*.aif", "*.aifc", "*.aiff", "*.alac", "*.flac", "*.m4a", "*.m4b", "*.mid", "*.midi", "*.mp3", "*.ogg", "*.oga", "*.opus", "*.rmi", "*.rsn", "*.spc", "*.wav", "*.wma"]
                     },
                     FilePickerFileTypes.All
                 ]

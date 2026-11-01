@@ -1,5 +1,6 @@
 using Aibell.Audio;
 using Aibell.Audio.Aac;
+using Aibell.Audio.Aiff;
 using Aibell.Audio.Alac;
 using Aibell.Audio.Flac;
 using Aibell.Audio.Midi;
@@ -76,6 +77,7 @@ internal sealed class ManagedPcmSource : IPcmSource
             IAudioDecoder? decoder = container switch
             {
                 AudioContainer.Wav => WavDecoder.Open(stream),
+                AudioContainer.Aiff => AiffDecoder.Open(stream),
                 AudioContainer.Flac => FlacDecoder.Open(stream),
                 AudioContainer.OggVorbis => VorbisDecoder.Open(stream),
                 AudioContainer.OggOpus => OggOpusDecoder.Open(stream),

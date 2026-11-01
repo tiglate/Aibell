@@ -17,6 +17,10 @@
       "linePercentMinimum": 93,
       "branchPercentMinimum": 80
     },
+    "Aibell.Audio.Aiff": {
+      "linePercentMinimum": 98,
+      "branchPercentMinimum": 88
+    },
     "Aibell.Audio.Alac": {
       "linePercentMinimum": 92,
       "branchPercentMinimum": 80

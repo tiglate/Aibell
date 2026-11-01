@@ -5,6 +5,7 @@
   <Project Path="src/Aibell.Audio.Aac/Aibell.Audio.Aac.csproj" />
   <Project Path="src/Aibell.Audio.Cdda/Aibell.Audio.Cdda.csproj" />
   <Project Path="src/Aibell.Audio.Core/Aibell.Audio.Core.csproj" />
+  <Project Path="src/Aibell.Audio.Aiff/Aibell.Audio.Aiff.csproj" />
   <Project Path="src/Aibell.Audio.Wav/Aibell.Audio.Wav.csproj" />
   <Project Path="src/Aibell.Audio.Flac/Aibell.Audio.Flac.csproj" />
   <Project Path="src/Aibell.Audio.Ogg/Aibell.Audio.Ogg.csproj" />
@@ -32,6 +33,7 @@
   <Project Path="tests/Aibell.Audio.Aac.Tests/Aibell.Audio.Aac.Tests.csproj" />
   <Project Path="tests/Aibell.Audio.Cdda.Tests/Aibell.Audio.Cdda.Tests.csproj" />
   <Project Path="tests/Aibell.Audio.Core.Tests/Aibell.Audio.Core.Tests.csproj" />
+  <Project Path="tests/Aibell.Audio.Aiff.Tests/Aibell.Audio.Aiff.Tests.csproj" />
   <Project Path="tests/Aibell.Audio.Wav.Tests/Aibell.Audio.Wav.Tests.csproj" />
   <Project Path="tests/Aibell.Audio.Flac.Tests/Aibell.Audio.Flac.Tests.csproj" />
   <Project Path="tests/Aibell.Audio.Ogg.Tests/Aibell.Audio.Ogg.Tests.csproj" />

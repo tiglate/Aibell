@@ -15,25 +15,24 @@ Beyond ordinary music files, Aibell plays two kinds of game music with no extra 
 **Super Nintendo music**: `.spc` files, and `.rsn` archives of them (RAR files holding a game's soundtrack, one track per SPC),
 played by emulating the console's SPC700 processor and S-DSP sound chip. Audio CDs are read from the drive in C# as well.
 
-> **Status:** Aibell is under active development and has no signed release yet. Linux is the platform it is developed and
-> tested on, with Debian/Ubuntu, AppImage, Flatpak and Snap packages. Windows 11 has a `.msi` installer, system media controls,
-> notifications and taskbar progress and buttons; there is no
-> Windows CI, so Windows is built and tested by hand. macOS is not supported.
+![Aibell's main window in the dark theme: sidebar with library sections, playlists and folders; genre, artist and album panes; the track list; the now-playing cover; and the play queue](screenshots/screenshot01.png)
 
 ## Features
 
 **Library**
+
 - Browse by genre, artist and album in a compact three-pane view; search with **Ctrl+F**.
 - Watch one or more music folders; added, changed and removed files are reconciled automatically.
 - Customise track columns: resize, reorder, hide, sort and best-fit.
 - Ratings, play counts and preferences are stored in a local SQLite library.
 
 **Playback**
+
 - Seek, volume, mute, shuffle, repeat, pause and stop; a play queue that survives restarts and accepts dropped files.
 - Playlists (create, rename, delete, sort, reorder, export to UTF-8 M3U8) and smart playlists with All/Any rules.
 - Import M3U, M3U8 and PLS playlists after reviewing them.
 - Internet radio: save HTTP/HTTPS direct-stream stations, import station playlists, reconnect explicitly.
-- Formats include MP3, FLAC, Ogg Vorbis, Opus, WAV, AAC-LC and Apple Lossless (M4A), MIDI, and SNES music (SPC and RSN).
+- Formats include MP3, FLAC, Ogg Vorbis, Opus, WAV, AIFF (.aiff, .aif, .aifc), AAC-LC and Apple Lossless (M4A), MIDI, and SNES music (SPC and RSN).
   WMA is available through Windows Media Foundation or VLC. Support varies by engine and file encoding.
 - SNES music: `.spc` files and the SPC tracks inside `.rsn` archives appear in the library like any other tracks (title, game as
   album, artist and length come from the file's own tags) and play with a fade-out at the tagged length. Seeking works; tag editing does not.
@@ -43,6 +42,7 @@ played by emulating the console's SPC700 processor and S-DSP sound chip. Audio C
 - Audiobooks: a shelf of local files with saved positions and chapter playback.
 
 **Metadata and artwork**
+
 - **View Metadata…** (context menu or **Alt+Enter**) shows detailed properties and edits tags in the library only, or
   writes them to the file (FLAC, M4A, MP3, Ogg, Opus and classic PCM WAV) with a verified backup you can restore.
 - **Get Artwork…** looks up an album cover on MusicBrainz and saves it as `cover.jpg` in the album folder. It never
@@ -50,6 +50,7 @@ played by emulating the console's SPC700 processor and S-DSP sound chip. Audio C
 - Artwork from the file or the folder is shown in the now-playing panel.
 
 **Devices and desktop**
+
 - **Devices** copies music to a mounted USB drive, memory card or mass-storage player. It shows a preview first, only
   adds files (nothing on the device is ever deleted) and can write an `Aibell.m3u8` playlist.
 - Linux: MPRIS media controls and optional track-change notifications. Windows: system media transport controls, notifications,
@@ -127,24 +128,24 @@ identifier. Published files go to `artifacts/<runtime-id>/`. On Windows, use `./
 
 ### Where your data lives
 
-| | Location |
-| --- | --- |
+|                                       | Location                                                           |
+| ------------------------------------- | ------------------------------------------------------------------ |
 | Library, settings, logs, user plugins | `~/.local/share/Aibell` (Linux), `%LOCALAPPDATA%\Aibell` (Windows) |
-| Different profile | set `AIBELL_DATA_DIRECTORY` to an absolute folder |
-| Album covers you save | `cover.jpg` inside the album folder |
+| Different profile                     | set `AIBELL_DATA_DIRECTORY` to an absolute folder                  |
+| Album covers you save                 | `cover.jpg` inside the album folder                                |
 
 Your music files are never moved, changed or deleted by the library, playlist, podcast or device features unless you explicitly
 choose to write tags to a file.
 
 ### Environment variables
 
-| Variable | Purpose |
-| --- | --- |
-| `AIBELL_DATA_DIRECTORY` | Absolute folder for the profile (library, settings, logs, user plugins) |
-| `AIBELL_LIBVLC_PATH` | Absolute folder with the LibVLC runtime (Windows) |
-| `AIBELL_AUDIO_NULL` | `1` makes the miniaudio player use a silent device (tests, machines without sound) |
-| `AIBELL_LANGUAGE` | UI language override, for example `pt-BR` or `ar` |
-| `AIBELL_TITLE_BAR` | Set to `on` or `off` to override title-bar detection on Linux |
+| Variable                | Purpose                                                                            |
+| ----------------------- | ---------------------------------------------------------------------------------- |
+| `AIBELL_DATA_DIRECTORY` | Absolute folder for the profile (library, settings, logs, user plugins)            |
+| `AIBELL_LIBVLC_PATH`    | Absolute folder with the LibVLC runtime (Windows)                                  |
+| `AIBELL_AUDIO_NULL`     | `1` makes the miniaudio player use a silent device (tests, machines without sound) |
+| `AIBELL_LANGUAGE`       | UI language override, for example `pt-BR` or `ar`                                  |
+| `AIBELL_TITLE_BAR`      | Set to `on` or `off` to override title-bar detection on Linux                      |
 
 ### Debian and Ubuntu package
 
@@ -170,35 +171,35 @@ The results are written to `artifacts/packages`. The AppImage, the Flatpak and t
 
 ## Keyboard shortcuts
 
-| Keys | Action |
-| --- | --- |
-| **Ctrl+F** / **Escape** | Focus search / clear a focused query |
-| **Space** | Play or pause from the track, queue or radio list |
-| **Alt+Left** / **Alt+Right** | Previous / next track from the library |
-| **Alt+Enter** | Track properties |
-| **Ctrl+,** | Preferences |
-| **Ctrl+Q** | Quit after pending work finishes |
-| **Tab**, then arrows, **Page Up/Down**, **Home/End** | Adjust the focused seek or volume slider |
+| Keys                                                 | Action                                            |
+| ---------------------------------------------------- | ------------------------------------------------- |
+| **Ctrl+F** / **Escape**                              | Focus search / clear a focused query              |
+| **Space**                                            | Play or pause from the track, queue or radio list |
+| **Alt+Left** / **Alt+Right**                         | Previous / next track from the library            |
+| **Alt+Enter**                                        | Track properties                                  |
+| **Ctrl+,**                                           | Preferences                                       |
+| **Ctrl+Q**                                           | Quit after pending work finishes                  |
+| **Tab**, then arrows, **Page Up/Down**, **Home/End** | Adjust the focused seek or volume slider          |
 
 ## Project layout
 
 The solution is `Aibell.slnx`; code is split into layers that only depend inward:
 
-| Project | Responsibility |
-| --- | --- |
-| `Aibell.Domain` | Framework-free media, playlist, podcast and playback rules |
-| `Aibell.Application` | Use cases and the ports the outer layers implement |
-| `Aibell.Infrastructure` | SQLite storage, settings, metadata, artwork, plugins, device sync |
-| `Aibell.Audio.*` | Managed decoders (AAC, WAV, FLAC, Ogg, Vorbis, Opus, MP3, ALAC, MIDI, SNES SPC), audio CD reader and shared audio code |
-| `Aibell.Archive.Rar` | Managed RAR 3/4/5 reader (decompress only) behind `.rsn` archives |
-| `Aibell.Playback.Core` | Shared decoding pipeline, source selection, equalizer and speed control |
-| `Aibell.Playback.PipeWire` / `Aibell.Playback.Alsa` | Linux output engines using managed decoders and system audio libraries |
-| `Aibell.Playback.LibVLC` | LibVLC playback adapter |
-| `Aibell.Playback.Miniaudio` | Built-in playback engine over a small native shim (`native/aibell-audio`) around miniaudio |
-| `Aibell.Platform.Linux` / `Aibell.Platform.Windows` | Media session, notifications, optical drives and removable volumes |
-| `Aibell.Metadata.MusicBrainz` | Optional online-lookup plugin, shipped in `plugins/` and loaded at run time |
-| `Aibell.Desktop` | The Avalonia UI and the composition root |
-| `tools/AibellTools` | Developer tool in C#: secret scan, coverage gate, candidate packaging, Linux publish smoke test (run with `dotnet run --project tools/AibellTools -- <command>`) |
+| Project                                             | Responsibility                                                                                                                                                   |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Aibell.Domain`                                     | Framework-free media, playlist, podcast and playback rules                                                                                                       |
+| `Aibell.Application`                                | Use cases and the ports the outer layers implement                                                                                                               |
+| `Aibell.Infrastructure`                             | SQLite storage, settings, metadata, artwork, plugins, device sync                                                                                                |
+| `Aibell.Audio.*`                                    | Managed decoders (AAC, WAV, FLAC, Ogg, Vorbis, Opus, MP3, ALAC, MIDI, SNES SPC), audio CD reader and shared audio code                                           |
+| `Aibell.Archive.Rar`                                | Managed RAR 3/4/5 reader (decompress only) behind `.rsn` archives                                                                                                |
+| `Aibell.Playback.Core`                              | Shared decoding pipeline, source selection, equalizer and speed control                                                                                          |
+| `Aibell.Playback.PipeWire` / `Aibell.Playback.Alsa` | Linux output engines using managed decoders and system audio libraries                                                                                           |
+| `Aibell.Playback.LibVLC`                            | LibVLC playback adapter                                                                                                                                          |
+| `Aibell.Playback.Miniaudio`                         | Built-in playback engine over a small native shim (`native/aibell-audio`) around miniaudio                                                                       |
+| `Aibell.Platform.Linux` / `Aibell.Platform.Windows` | Media session, notifications, optical drives and removable volumes                                                                                               |
+| `Aibell.Metadata.MusicBrainz`                       | Optional online-lookup plugin, shipped in `plugins/` and loaded at run time                                                                                      |
+| `Aibell.Desktop`                                    | The Avalonia UI and the composition root                                                                                                                         |
+| `tools/AibellTools`                                 | Developer tool in C#: secret scan, coverage gate, candidate packaging, Linux publish smoke test (run with `dotnet run --project tools/AibellTools -- <command>`) |
 
 Tests live in `tests/Aibell.*.Tests`. The user interface text is in `src/Aibell.Desktop/Resources/Strings*.resx`; to add a
 language, copy `Strings.pt-BR.resx`, translate it, add the plural forms the language needs, list the culture in

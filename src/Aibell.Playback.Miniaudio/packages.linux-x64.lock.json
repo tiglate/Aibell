@@ -85,6 +85,23 @@
       },
       "aibell.domain": {
         "type": "Project"
+      },
+      "aibell.playback.core": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Application": "[1.0.0, )",
+          "Aibell.Audio.Aac": "[1.0.0, )",
+          "Aibell.Audio.Alac": "[1.0.0, )",
+          "Aibell.Audio.Cdda": "[1.0.0, )",
+          "Aibell.Audio.Core": "[1.0.0, )",
+          "Aibell.Audio.Flac": "[1.0.0, )",
+          "Aibell.Audio.Midi": "[1.0.0, )",
+          "Aibell.Audio.Mp3": "[1.0.0, )",
+          "Aibell.Audio.Opus": "[1.0.0, )",
+          "Aibell.Audio.Spc": "[1.0.0, )",
+          "Aibell.Audio.Vorbis": "[1.0.0, )",
+          "Aibell.Audio.Wav": "[1.0.0, )"
+        }
       }
     },
     "net10.0/linux-x64": {}

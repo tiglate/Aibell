@@ -624,14 +624,14 @@
           "Aibell.Application": "[1.0.0, )"
         }
       },
-      "aibell.playback.libvlc": {
+      "aibell.playback.alsa": {
         "type": "Project",
         "dependencies": {
           "Aibell.Application": "[1.0.0, )",
-          "LibVLCSharp": "[3.10.1, )"
+          "Aibell.Playback.Core": "[1.0.0, )"
         }
       },
-      "aibell.playback.miniaudio": {
+      "aibell.playback.core": {
         "type": "Project",
         "dependencies": {
           "Aibell.Application": "[1.0.0, )",
@@ -646,6 +646,28 @@
           "Aibell.Audio.Spc": "[1.0.0, )",
           "Aibell.Audio.Vorbis": "[1.0.0, )",
           "Aibell.Audio.Wav": "[1.0.0, )"
+        }
+      },
+      "aibell.playback.libvlc": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Application": "[1.0.0, )",
+          "LibVLCSharp": "[3.10.1, )"
+        }
+      },
+      "aibell.playback.miniaudio": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Application": "[1.0.0, )",
+          "Aibell.Playback.Core": "[1.0.0, )"
+        }
+      },
+      "aibell.playback.pipewire": {
+        "type": "Project",
+        "dependencies": {
+          "Aibell.Application": "[1.0.0, )",
+          "Aibell.Domain": "[1.0.0, )",
+          "Aibell.Playback.Core": "[1.0.0, )"
         }
       },
       "LibVLCSharp": {

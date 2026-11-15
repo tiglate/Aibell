@@ -26,7 +26,7 @@ public sealed partial class MainWindowViewModel
 
     /// <summary>The player this run started with (the About window shows it); it can differ from the saved choice after a fallback.</summary>
     public PlaybackEngineKind ActivePlaybackEngine => activePlaybackEngine;
-    public PreferencesData GetPreferences() => new(AppearanceTheme, IsPlayQueueVisible, Volume, preferredMuted,
+    public PreferencesData GetPreferences() => new(AppearanceTheme, IsPlayQueueVisible, ServerVolumeActive ? localVolume : Volume, ServerVolumeActive ? localMuted : preferredMuted,
         playbackQueue.ShuffleEnabled, playbackQueue.RepeatMode, ShowDesktopNotifications, PodcastAutoRefresh: podcastAutoRefresh, OnlineLookup: onlineLookup, PlaybackEngine: playbackEngineKind, Language: language, RadioCatalog: radioCatalogEnabled, SoundFont: soundFontPath);
 
     public Task SavePreferencesAsync(PreferencesData preferences, CancellationToken cancellationToken = default) =>
@@ -39,7 +39,8 @@ public sealed partial class MainWindowViewModel
             throw new ArgumentException("Choose valid appearance and playback preferences.");
         // Validate the new download folder before anything else changes, so a bad path leaves every setting as it was.
         PodcastDownloadConfiguration? preparedFolder = await PreparePodcastFolderAsync(preferences.PodcastFolder, cancellationToken);
-        if (playbackEngine.Snapshot.Track is not null)
+        bool serverVolume = ServerVolumeActive;
+        if (playbackEngine.Snapshot.Track is not null && !serverVolume)
         {
             await playbackEngine.SetVolumeAsync(preferences.Volume, cancellationToken);
             await playbackEngine.SetMutedAsync(preferences.Muted, cancellationToken);
@@ -56,7 +57,8 @@ public sealed partial class MainWindowViewModel
         if (!ShowDesktopNotifications) CancelDesktopNotifications();
         AppearanceTheme = preferences.Theme; ApplyAppearanceTheme();
         IsPlayQueueVisible = preferences.ShowPlayQueue;
-        Volume = preferences.Volume; preferredMuted = preferences.Muted;
+        localVolume = preferences.Volume; localMuted = preferences.Muted;
+        if (!serverVolume) { Volume = preferences.Volume; preferredMuted = preferences.Muted; }
         playbackQueue.SetShuffle(preferences.Shuffle); playbackQueue.SetRepeatMode(preferences.Repeat);
         ShuffleButtonText = preferences.Shuffle ? Loc.Get("Playback.ShuffleOn") : Loc.Get("Playback.ShuffleOff");
         RepeatButtonText = preferences.Repeat switch { RepeatMode.All => Loc.Get("Playback.RepeatAll"), RepeatMode.One => Loc.Get("Playback.RepeatOne"), _ => Loc.Get("Playback.RepeatOff") };

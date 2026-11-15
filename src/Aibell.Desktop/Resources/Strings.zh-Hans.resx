@@ -996,4 +996,118 @@
   <data name="Main.ResizeSidebar" xml:space="preserve"><value>调整侧边栏大小</value></data>
   <data name="Main.ResizeSidebarSection" xml:space="preserve"><value>调整侧边栏分区大小</value></data>
   <data name="Main.ResizeQueue" xml:space="preserve"><value>调整播放队列大小</value></data>
+  <data name="Sidebar.Mpd" xml:space="preserve"><value>MPD</value></data>
+  <data name="Sidebar.MpdAutomation" xml:space="preserve"><value>Music Player Daemon</value></data>
+  <data name="Sidebar.MpdTip" xml:space="preserve"><value>控制 Music Player Daemon（MPD）服务器：它的队列、播放列表和媒体库</value></data>
+  <data name="Mpd.Connect" xml:space="preserve"><value>连接</value></data>
+  <data name="Mpd.Disconnect" xml:space="preserve"><value>断开连接</value></data>
+  <data name="Mpd.Connection" xml:space="preserve"><value>连接设置…</value></data>
+  <data name="Mpd.ServerSettings" xml:space="preserve"><value>服务器设置…</value></data>
+  <data name="Mpd.NotConnected" xml:space="preserve"><value>未连接到 MPD 服务器。</value></data>
+  <data name="Mpd.Connecting" xml:space="preserve"><value>正在连接到 {0}…</value></data>
+  <data name="Mpd.Connected" xml:space="preserve"><value>已连接到 {0}（协议 {1}）。</value></data>
+  <data name="Mpd.ConnectFailed" xml:space="preserve"><value>无法连接到 {0}：{1}</value></data>
+  <data name="Mpd.Lost" xml:space="preserve"><value>与 MPD 的连接已断开：{0}</value></data>
+  <data name="Mpd.CommandFailed" xml:space="preserve"><value>MPD 拒绝了该请求：{0}</value></data>
+  <data name="Mpd.TimedOut" xml:space="preserve"><value>服务器未能及时响应</value></data>
+  <data name="Mpd.TabOutputs" xml:space="preserve"><value>输出</value></data>
+  <data name="Mpd.OutputsEmpty" xml:space="preserve"><value>服务器未报告任何音频输出。</value></data>
+  <data name="Mpd.AddToQueue" xml:space="preserve"><value>添加到队列</value></data>
+  <data name="Mpd.UpdateDatabase" xml:space="preserve"><value>更新数据库</value></data>
+  <data name="Mpd.Updating" xml:space="preserve"><value>服务器正在更新数据库…</value></data>
+  <data name="Mpd.DeletePlaylistPrompt" xml:space="preserve"><value>要从服务器删除播放列表“{0}”吗？此操作无法撤销。</value></data>
+  <data name="Mpd.ConnectionTitle" xml:space="preserve"><value>MPD 连接</value></data>
+  <data name="Mpd.Automatic" xml:space="preserve"><value>自动查找服务器</value></data>
+  <data name="Mpd.AutomaticNote" xml:space="preserve"><value>如已设置则使用 MPD_HOST 和 MPD_PORT，其次是本地 mpd.conf、用户套接字，最后是 localhost:6600。</value></data>
+  <data name="Mpd.Host" xml:space="preserve"><value>主机或套接字路径</value></data>
+  <data name="Mpd.Port" xml:space="preserve"><value>端口</value></data>
+  <data name="Mpd.Password" xml:space="preserve"><value>密码</value></data>
+  <data name="Mpd.PasswordNote" xml:space="preserve"><value>密码仅在本次会话中保留，绝不会保存。</value></data>
+  <data name="Mpd.HostInvalid" xml:space="preserve"><value>请输入主机名或套接字路径。</value></data>
+  <data name="Mpd.PortInvalid" xml:space="preserve"><value>端口必须是 1 到 65535 之间的数字。</value></data>
+  <data name="MpdConfig.Title" xml:space="preserve"><value>MPD 服务器设置</value></data>
+  <data name="MpdConfig.File" xml:space="preserve"><value>配置文件</value></data>
+  <data name="MpdConfig.Open" xml:space="preserve"><value>打开…</value></data>
+  <data name="MpdConfig.Reload" xml:space="preserve"><value>重新载入</value></data>
+  <data name="MpdConfig.NewFile" xml:space="preserve"><value>新建文件</value></data>
+  <data name="MpdConfig.SaveAs" xml:space="preserve"><value>另存为…</value></data>
+  <data name="MpdConfig.Restart" xml:space="preserve"><value>重启 MPD</value></data>
+  <data name="MpdConfig.RestartConfirm" xml:space="preserve"><value>现在重启 MPD 服务吗？播放会短暂停止，客户端会重新连接。</value></data>
+  <data name="MpdConfig.RestartDone" xml:space="preserve"><value>MPD 已重启。</value></data>
+  <data name="MpdConfig.RestartFailed" xml:space="preserve"><value>无法重启 MPD：{0}</value></data>
+  <data name="MpdConfig.RestartNote" xml:space="preserve"><value>MPD 只在启动时读取配置：保存后请重启 MPD。</value></data>
+  <data name="MpdConfig.ReadOnly" xml:space="preserve"><value>你无法写入此文件。请使用“另存为…”保存副本，例如保存为 ~/.config/mpd/mpd.conf。</value></data>
+  <data name="MpdConfig.Installed" xml:space="preserve"><value>已安装：MPD {0}；仅提供其编译时包含的插件。</value></data>
+  <data name="MpdConfig.NoFileFound" xml:space="preserve"><value>未找到 mpd.conf。请打开一个文件，或选择“新建文件”来创建 {0}。</value></data>
+  <data name="MpdConfig.LoadFailed" xml:space="preserve"><value>无法读取 {0}：{1}</value></data>
+  <data name="MpdConfig.Saved" xml:space="preserve"><value>已保存 {0}。</value></data>
+  <data name="MpdConfig.SavedBackup" xml:space="preserve"><value>已保存 {0}。之前的版本保留为 {1}。</value></data>
+  <data name="MpdConfig.SaveFailed" xml:space="preserve"><value>无法保存：{0}</value></data>
+  <data name="MpdConfig.Untitled" xml:space="preserve"><value>（新文件）</value></data>
+  <data name="MpdConfig.UnsavedTitle" xml:space="preserve"><value>未保存的更改</value></data>
+  <data name="MpdConfig.UnsavedPrompt" xml:space="preserve"><value>要放弃对 {0} 的未保存更改吗？</value></data>
+  <data name="MpdConfig.Discard" xml:space="preserve"><value>放弃</value></data>
+  <data name="MpdConfig.ConfigFiles" xml:space="preserve"><value>MPD 配置</value></data>
+  <data name="MpdConfig.TabFiles" xml:space="preserve"><value>文件和数据库</value></data>
+  <data name="MpdConfig.TabNetwork" xml:space="preserve"><value>网络和访问</value></data>
+  <data name="MpdConfig.TabAudio" xml:space="preserve"><value>音频</value></data>
+  <data name="MpdConfig.TabOutputs" xml:space="preserve"><value>输出</value></data>
+  <data name="MpdConfig.TabPlugins" xml:space="preserve"><value>插件</value></data>
+  <data name="MpdConfig.TabAdvanced" xml:space="preserve"><value>高级</value></data>
+  <data name="MpdConfig.TabText" xml:space="preserve"><value>文本</value></data>
+  <data name="MpdConfig.GroupFiles" xml:space="preserve"><value>文件</value></data>
+  <data name="MpdConfig.GroupDatabase" xml:space="preserve"><value>数据库</value></data>
+  <data name="MpdConfig.GroupMetadata" xml:space="preserve"><value>元数据</value></data>
+  <data name="MpdConfig.GroupNetwork" xml:space="preserve"><value>网络</value></data>
+  <data name="MpdConfig.GroupPermissions" xml:space="preserve"><value>权限和密码</value></data>
+  <data name="MpdConfig.GroupZeroconf" xml:space="preserve"><value>Zeroconf</value></data>
+  <data name="MpdConfig.GroupAudio" xml:space="preserve"><value>音频</value></data>
+  <data name="MpdConfig.GroupReplayGain" xml:space="preserve"><value>ReplayGain</value></data>
+  <data name="MpdConfig.GroupDaemon" xml:space="preserve"><value>守护进程和日志</value></data>
+  <data name="MpdConfig.GroupLimits" xml:space="preserve"><value>限制和缓冲区</value></data>
+  <data name="MpdConfig.GroupDeprecated" xml:space="preserve"><value>已弃用的设置</value></data>
+  <data name="MpdConfig.GroupOther" xml:space="preserve"><value>其他设置</value></data>
+  <data name="MpdConfig.GroupIncludes" xml:space="preserve"><value>包含的文件</value></data>
+  <data name="MpdConfig.PermissionsNote" xml:space="preserve"><value>选择新客户端获得的权限，或保持默认。下面的主机规则和密码会给客户端更多权限。</value></data>
+  <data name="MpdConfig.OneValuePerLine" xml:space="preserve"><value>每行一个值。</value></data>
+  <data name="MpdConfig.NotSet" xml:space="preserve"><value>（未设置）</value></data>
+  <data name="MpdConfig.NotSetDefault" xml:space="preserve"><value>（未设置：{0}）</value></data>
+  <data name="MpdConfig.DefaultValue" xml:space="preserve"><value>默认：{0}</value></data>
+  <data name="MpdConfig.Yes" xml:space="preserve"><value>是</value></data>
+  <data name="MpdConfig.No" xml:space="preserve"><value>否</value></data>
+  <data name="MpdConfig.AddBlock" xml:space="preserve"><value>添加…</value></data>
+  <data name="MpdConfig.MoveUp" xml:space="preserve"><value>上移</value></data>
+  <data name="MpdConfig.MoveDown" xml:space="preserve"><value>下移</value></data>
+  <data name="MpdConfig.NoBlocks" xml:space="preserve"><value>尚未配置。</value></data>
+  <data name="MpdConfig.OtherSettings" xml:space="preserve"><value>此块中的其他设置</value></data>
+  <data name="MpdConfig.OtherNote" xml:space="preserve"><value>本窗口不认识的设置会被保留并列在这里，因此文件中的每一行都可以访问。</value></data>
+  <data name="MpdConfig.IncludesNote" xml:space="preserve"><value>由 include 和 include_optional 指定的文件保持原样；请单独编辑它们。</value></data>
+  <data name="MpdConfig.UnknownBlocks" xml:space="preserve"><value>本窗口不认识的块（{0}）会保留在文件中；请在“文本”选项卡中编辑。</value></data>
+  <data name="MpdConfig.AddSetting" xml:space="preserve"><value>添加设置</value></data>
+  <data name="MpdConfig.SettingName" xml:space="preserve"><value>名称</value></data>
+  <data name="MpdConfig.SettingValue" xml:space="preserve"><value>值</value></data>
+  <data name="MpdConfig.InvalidSetting" xml:space="preserve"><value>请输入名称（字母、数字和下划线，以字母开头）以及单行的值。</value></data>
+  <data name="MpdConfig.PluginUnavailable" xml:space="preserve"><value>{0} 未包含在已安装的 MPD 中。</value></data>
+  <data name="MpdConfig.TextNote" xml:space="preserve"><value>整个文件。在此编辑，离开文本框即可应用；注释和格式保持原样。</value></data>
+  <data name="MpdConfig.ProblemLine" xml:space="preserve"><value>第 {0} 行：{1}</value></data>
+  <data name="MpdConfig.Error.NotNumber" xml:space="preserve"><value>{0} 必须是数字。</value></data>
+  <data name="MpdConfig.Error.OutOfRange" xml:space="preserve"><value>{0} 超出了允许的范围。</value></data>
+  <data name="MpdConfig.Error.NotYesNo" xml:space="preserve"><value>{0} 必须是 yes 或 no。</value></data>
+  <data name="MpdConfig.Error.NotChoice" xml:space="preserve"><value>{0} 不是已知的值之一。</value></data>
+  <data name="MpdConfig.Error.NotAudioFormat" xml:space="preserve"><value>{0} 的格式应类似 44100:16:2（任何部分都可以是 *）。</value></data>
+  <data name="MpdConfig.Error.LineBreak" xml:space="preserve"><value>{0} 不能包含换行。</value></data>
+  <data name="MpdConfig.Error.PluginMissing" xml:space="preserve"><value>{0} 是必需的。</value></data>
+  <data name="Mpd.ConnectFirst" xml:space="preserve"><value>请先连接到 MPD 服务器（在侧边栏打开 MPD 并点击“连接”）。</value></data>
+  <data name="Mpd.ConnectionLost" xml:space="preserve"><value>与 MPD 的连接已断开。</value></data>
+  <data name="Mpd.PlaylistFilled" xml:space="preserve"><value>播放列表“{0}”：已添加歌曲：{1}。</value></data>
+  <data name="Mpd.Reconnected" xml:space="preserve"><value>已重新连接到 MPD。</value></data>
+  <data name="Mpd.Reconnecting" xml:space="preserve"><value>连接已断开。正在重新连接（第 {0}/{1} 次）…</value></data>
+  <data name="Mpd.TabConnection" xml:space="preserve"><value>连接</value></data>
+  <data name="Mpd.TabDatabase" xml:space="preserve"><value>数据库</value></data>
+  <data name="Mpd.Stats" xml:space="preserve"><value>歌曲：{0} · 专辑：{1} · 艺术家：{2}</value></data>
+  <data name="Mpd.Error.Connect" xml:space="preserve"><value>Aibell 无法连接到 {0} 的 MPD 服务器。请检查 MPD 是否正在运行，以及地址和密码是否正确。</value></data>
+  <data name="Mpd.Error.Lost" xml:space="preserve"><value>与 MPD 服务器的连接已断开，且无法恢复。请点击“连接”重试。</value></data>
+  <data name="Mpd.Error.Command" xml:space="preserve"><value>MPD 服务器无法执行该操作：{0}</value></data>
+  <data name="Mpd.Error.Library" xml:space="preserve"><value>Aibell 无法从 MPD 服务器读取音乐库。</value></data>
+  <data name="Mpd.PlaylistAlready" xml:space="preserve"><value>播放列表“{0}”已包含所有这些歌曲：未添加任何内容。</value></data>
 </root>

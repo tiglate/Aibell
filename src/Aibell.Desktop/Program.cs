@@ -22,6 +22,7 @@ using Aibell.Playback.Alsa;
 using Aibell.Playback.PipeWire;
 using Aibell.Infrastructure.Metadata;
 using Aibell.Infrastructure.Plugins;
+using Aibell.Mpd.Client;
 using Aibell.Infrastructure.Storage;
 using Aibell.Infrastructure.Settings;
 using Aibell.Infrastructure.Radio;
@@ -133,8 +134,9 @@ internal static class Program
         builder.Services.AddSingleton<IMetadataEditStager, AtlMetadataEditStager>();
         builder.Services.AddSingleton<IMetadataFileWriter, MetadataFileWriter>();
         builder.Services.AddSingleton<IMetadataEditRecovery, MetadataEditRecovery>();
-        builder.Services.AddSingleton<IArtworkProvider>(
-            new LocalArtworkCache(Path.Combine(dataDirectory, "artwork")));
+        builder.Services.AddSingleton<MpdPlaybackEngine>();
+        builder.Services.AddSingleton<IArtworkProvider>(services => new MpdArtworkProvider(new LocalArtworkCache(Path.Combine(dataDirectory, "artwork")),
+            () => services.GetRequiredService<MpdPlaybackEngine>().Transport, Path.Combine(dataDirectory, "artwork", "mpd")));
         // Online metadata comes only from plugins found in the plugins folder next to the application. Without them nothing
         // here can reach the network, and with them nothing is sent until the user allows lookups and presses Look up.
         string bundledPlugins = Path.Combine(AppContext.BaseDirectory, "plugins");
@@ -213,23 +215,37 @@ internal static class Program
         builder.Services.AddSingleton<AudiobookShelfService>();
         builder.Services.AddSingleton<Func<IAudiobookPlaybackHandoff, AudiobooksViewModel>>(services => handoff =>
             new AudiobooksViewModel(services.GetRequiredService<AudiobookShelfService>(), handoff));
+        // MPD is controlled remotely: its connection settings (never the password) live in the data folder, and nothing connects until the user asks.
+        string mpdSettingsPath = Path.Combine(dataDirectory, "mpd-connection.json");
+        builder.Services.AddSingleton<IMpdConnector, MpdConnector>();
+        builder.Services.AddSingleton<Func<MpdViewModel>>(services => () =>
+        {
+            ApplicationErrorReporter reporter = services.GetRequiredService<ApplicationErrorReporter>();
+            MpdViewModel model = new(services.GetRequiredService<IMpdConnector>(), MpdConnectionSettings.Load(mpdSettingsPath), settings => settings.Save(mpdSettingsPath),
+                action => Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(action),
+                reportError: (exception, friendly, context) => reporter.Report(exception, "mpd", context, friendly));
+            MpdPlaybackEngine engine = services.GetRequiredService<MpdPlaybackEngine>();
+            engine.Attach(model);
+            model.ReleasePlaybackAsync = engine.ReleaseAsync;
+            return model;
+        });
         PlaybackEngineKind engineKind = PlaybackEngineChooser.Choose(Path.Combine(dataDirectory, "settings.json"), dataDirectory, MiniaudioRuntime.IsAvailable);
         builder.Services.AddSingleton(new ActivePlaybackEngine(engineKind));
         string soundFontPath = PlaybackEngineChooser.SavedSoundFont(Path.Combine(dataDirectory, "settings.json")) ?? "";
         if (engineKind is PlaybackEngineKind.Miniaudio or PlaybackEngineKind.Managed)
-            builder.Services.AddSingleton<IPlaybackEngine>(services => new MiniaudioPlaybackEngine(services.GetRequiredService<HttpClient>(), engineKind == PlaybackEngineKind.Managed,
+            builder.Services.AddSingleton<IPlaybackEngine>(services => new MpdPlaybackRouter(new MiniaudioPlaybackEngine(services.GetRequiredService<HttpClient>(), engineKind == PlaybackEngineKind.Managed,
                 soundFontPath,
-                services.GetRequiredService<IOpticalDriveService>()));
+                services.GetRequiredService<IOpticalDriveService>()), services.GetRequiredService<MpdPlaybackEngine>()));
         else if (engineKind == PlaybackEngineKind.PipeWire)
-            builder.Services.AddSingleton<IPlaybackEngine>(services => new PipeWirePlaybackEngine(services.GetRequiredService<HttpClient>(),
+            builder.Services.AddSingleton<IPlaybackEngine>(services => new MpdPlaybackRouter(new PipeWirePlaybackEngine(services.GetRequiredService<HttpClient>(),
                 soundFontPath,
-                services.GetRequiredService<IOpticalDriveService>()));
+                services.GetRequiredService<IOpticalDriveService>()), services.GetRequiredService<MpdPlaybackEngine>()));
         else if (engineKind == PlaybackEngineKind.Alsa)
-            builder.Services.AddSingleton<IPlaybackEngine>(services => new AlsaPlaybackEngine(services.GetRequiredService<HttpClient>(),
+            builder.Services.AddSingleton<IPlaybackEngine>(services => new MpdPlaybackRouter(new AlsaPlaybackEngine(services.GetRequiredService<HttpClient>(),
                 soundFontPath,
-                services.GetRequiredService<IOpticalDriveService>()));
+                services.GetRequiredService<IOpticalDriveService>()), services.GetRequiredService<MpdPlaybackEngine>()));
         else
-            builder.Services.AddSingleton<IPlaybackEngine, LibVlcPlaybackEngine>();
+            builder.Services.AddSingleton<IPlaybackEngine>(services => new MpdPlaybackRouter(ActivatorUtilities.CreateInstance<LibVlcPlaybackEngine>(services), services.GetRequiredService<MpdPlaybackEngine>()));
         if (OperatingSystem.IsLinux())
         {
             builder.Services.AddSingleton<IMediaSession>(_ => new MprisMediaSession());
@@ -263,7 +279,8 @@ internal static class Program
             audiobooksViewModelFactory: services.GetRequiredService<Func<IAudiobookPlaybackHandoff, AudiobooksViewModel>>(),
             discViewModelFactory: services.GetRequiredService<Func<IDiscPlaybackHandoff, DiscViewModel>>(),
             deviceSyncViewModelFactory: services.GetRequiredService<Func<IDeviceTrackSource, DeviceSyncViewModel>>(),
-            artworkWindowFactory: services.GetRequiredService<Func<Track, ArtworkWindow>>()));
+            artworkWindowFactory: services.GetRequiredService<Func<Track, ArtworkWindow>>(),
+            mpdViewModelFactory: services.GetRequiredService<Func<MpdViewModel>>()));
         return builder.Build();
     }
 }

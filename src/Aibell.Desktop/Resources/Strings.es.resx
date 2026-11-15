@@ -1018,4 +1018,118 @@ Edición temporal: {1}</value></data>
   <data name="Main.ResizeSidebar" xml:space="preserve"><value>Cambiar el tamaño de la barra lateral</value></data>
   <data name="Main.ResizeSidebarSection" xml:space="preserve"><value>Cambiar el tamaño de la sección de la barra lateral</value></data>
   <data name="Main.ResizeQueue" xml:space="preserve"><value>Cambiar el tamaño de la cola de reproducción</value></data>
+  <data name="Sidebar.Mpd" xml:space="preserve"><value>MPD</value></data>
+  <data name="Sidebar.MpdAutomation" xml:space="preserve"><value>Music Player Daemon</value></data>
+  <data name="Sidebar.MpdTip" xml:space="preserve"><value>Controla un servidor Music Player Daemon (MPD): su cola, listas de reproducción y biblioteca</value></data>
+  <data name="Mpd.Connect" xml:space="preserve"><value>Conectar</value></data>
+  <data name="Mpd.Disconnect" xml:space="preserve"><value>Desconectar</value></data>
+  <data name="Mpd.Connection" xml:space="preserve"><value>Conexión…</value></data>
+  <data name="Mpd.ServerSettings" xml:space="preserve"><value>Ajustes del servidor…</value></data>
+  <data name="Mpd.NotConnected" xml:space="preserve"><value>No conectado a un servidor MPD.</value></data>
+  <data name="Mpd.Connecting" xml:space="preserve"><value>Conectando con {0}…</value></data>
+  <data name="Mpd.Connected" xml:space="preserve"><value>Conectado a {0} (protocolo {1}).</value></data>
+  <data name="Mpd.ConnectFailed" xml:space="preserve"><value>No se pudo conectar con {0}: {1}</value></data>
+  <data name="Mpd.Lost" xml:space="preserve"><value>Se perdió la conexión con MPD: {0}</value></data>
+  <data name="Mpd.CommandFailed" xml:space="preserve"><value>MPD rechazó la solicitud: {0}</value></data>
+  <data name="Mpd.TimedOut" xml:space="preserve"><value>el servidor no respondió a tiempo</value></data>
+  <data name="Mpd.TabOutputs" xml:space="preserve"><value>Salidas</value></data>
+  <data name="Mpd.OutputsEmpty" xml:space="preserve"><value>El servidor no informa de ninguna salida de audio.</value></data>
+  <data name="Mpd.AddToQueue" xml:space="preserve"><value>Añadir a la cola</value></data>
+  <data name="Mpd.UpdateDatabase" xml:space="preserve"><value>Actualizar base de datos</value></data>
+  <data name="Mpd.Updating" xml:space="preserve"><value>El servidor está actualizando su base de datos…</value></data>
+  <data name="Mpd.DeletePlaylistPrompt" xml:space="preserve"><value>¿Eliminar la lista «{0}» del servidor? No se puede deshacer.</value></data>
+  <data name="Mpd.ConnectionTitle" xml:space="preserve"><value>Conexión con MPD</value></data>
+  <data name="Mpd.Automatic" xml:space="preserve"><value>Buscar el servidor automáticamente</value></data>
+  <data name="Mpd.AutomaticNote" xml:space="preserve"><value>Usa MPD_HOST y MPD_PORT si están definidos; después el mpd.conf local, el socket del usuario y localhost:6600.</value></data>
+  <data name="Mpd.Host" xml:space="preserve"><value>Host o ruta del socket</value></data>
+  <data name="Mpd.Port" xml:space="preserve"><value>Puerto</value></data>
+  <data name="Mpd.Password" xml:space="preserve"><value>Contraseña</value></data>
+  <data name="Mpd.PasswordNote" xml:space="preserve"><value>La contraseña solo se conserva durante esta sesión y nunca se guarda.</value></data>
+  <data name="Mpd.HostInvalid" xml:space="preserve"><value>Introduce un nombre de host o una ruta de socket.</value></data>
+  <data name="Mpd.PortInvalid" xml:space="preserve"><value>El puerto debe ser un número del 1 al 65535.</value></data>
+  <data name="MpdConfig.Title" xml:space="preserve"><value>Ajustes del servidor MPD</value></data>
+  <data name="MpdConfig.File" xml:space="preserve"><value>Archivo de configuración</value></data>
+  <data name="MpdConfig.Open" xml:space="preserve"><value>Abrir…</value></data>
+  <data name="MpdConfig.Reload" xml:space="preserve"><value>Recargar</value></data>
+  <data name="MpdConfig.NewFile" xml:space="preserve"><value>Archivo nuevo</value></data>
+  <data name="MpdConfig.SaveAs" xml:space="preserve"><value>Guardar como…</value></data>
+  <data name="MpdConfig.Restart" xml:space="preserve"><value>Reiniciar MPD</value></data>
+  <data name="MpdConfig.RestartConfirm" xml:space="preserve"><value>¿Reiniciar ahora el servicio MPD? La reproducción se detiene un momento y los clientes se reconectan.</value></data>
+  <data name="MpdConfig.RestartDone" xml:space="preserve"><value>MPD se reinició.</value></data>
+  <data name="MpdConfig.RestartFailed" xml:space="preserve"><value>No se pudo reiniciar MPD: {0}</value></data>
+  <data name="MpdConfig.RestartNote" xml:space="preserve"><value>MPD lee su configuración solo al iniciarse: reinícialo después de guardar.</value></data>
+  <data name="MpdConfig.ReadOnly" xml:space="preserve"><value>No puedes escribir en este archivo. Usa Guardar como… para guardar una copia, por ejemplo en ~/.config/mpd/mpd.conf.</value></data>
+  <data name="MpdConfig.Installed" xml:space="preserve"><value>Instalado: MPD {0}; solo se ofrecen los plugins incluidos en su compilación.</value></data>
+  <data name="MpdConfig.NoFileFound" xml:space="preserve"><value>No se encontró ningún mpd.conf. Abre uno o pulsa Archivo nuevo para crear {0}.</value></data>
+  <data name="MpdConfig.LoadFailed" xml:space="preserve"><value>No se pudo leer {0}: {1}</value></data>
+  <data name="MpdConfig.Saved" xml:space="preserve"><value>{0} guardado.</value></data>
+  <data name="MpdConfig.SavedBackup" xml:space="preserve"><value>{0} guardado. La versión anterior se conserva como {1}.</value></data>
+  <data name="MpdConfig.SaveFailed" xml:space="preserve"><value>No se pudo guardar: {0}</value></data>
+  <data name="MpdConfig.Untitled" xml:space="preserve"><value>(archivo nuevo)</value></data>
+  <data name="MpdConfig.UnsavedTitle" xml:space="preserve"><value>Cambios sin guardar</value></data>
+  <data name="MpdConfig.UnsavedPrompt" xml:space="preserve"><value>¿Descartar los cambios sin guardar de {0}?</value></data>
+  <data name="MpdConfig.Discard" xml:space="preserve"><value>Descartar</value></data>
+  <data name="MpdConfig.ConfigFiles" xml:space="preserve"><value>Configuración de MPD</value></data>
+  <data name="MpdConfig.TabFiles" xml:space="preserve"><value>Archivos y base de datos</value></data>
+  <data name="MpdConfig.TabNetwork" xml:space="preserve"><value>Red y acceso</value></data>
+  <data name="MpdConfig.TabAudio" xml:space="preserve"><value>Audio</value></data>
+  <data name="MpdConfig.TabOutputs" xml:space="preserve"><value>Salidas</value></data>
+  <data name="MpdConfig.TabPlugins" xml:space="preserve"><value>Plugins</value></data>
+  <data name="MpdConfig.TabAdvanced" xml:space="preserve"><value>Avanzado</value></data>
+  <data name="MpdConfig.TabText" xml:space="preserve"><value>Texto</value></data>
+  <data name="MpdConfig.GroupFiles" xml:space="preserve"><value>Archivos</value></data>
+  <data name="MpdConfig.GroupDatabase" xml:space="preserve"><value>Base de datos</value></data>
+  <data name="MpdConfig.GroupMetadata" xml:space="preserve"><value>Metadatos</value></data>
+  <data name="MpdConfig.GroupNetwork" xml:space="preserve"><value>Red</value></data>
+  <data name="MpdConfig.GroupPermissions" xml:space="preserve"><value>Permisos y contraseñas</value></data>
+  <data name="MpdConfig.GroupZeroconf" xml:space="preserve"><value>Zeroconf</value></data>
+  <data name="MpdConfig.GroupAudio" xml:space="preserve"><value>Audio</value></data>
+  <data name="MpdConfig.GroupReplayGain" xml:space="preserve"><value>ReplayGain</value></data>
+  <data name="MpdConfig.GroupDaemon" xml:space="preserve"><value>Demonio y registro</value></data>
+  <data name="MpdConfig.GroupLimits" xml:space="preserve"><value>Límites y búferes</value></data>
+  <data name="MpdConfig.GroupDeprecated" xml:space="preserve"><value>Ajustes obsoletos</value></data>
+  <data name="MpdConfig.GroupOther" xml:space="preserve"><value>Otros ajustes</value></data>
+  <data name="MpdConfig.GroupIncludes" xml:space="preserve"><value>Archivos incluidos</value></data>
+  <data name="MpdConfig.PermissionsNote" xml:space="preserve"><value>Elige los permisos de un cliente nuevo o conserva el valor predeterminado. Las reglas de host y las contraseñas de abajo dan más permisos.</value></data>
+  <data name="MpdConfig.OneValuePerLine" xml:space="preserve"><value>Un valor por línea.</value></data>
+  <data name="MpdConfig.NotSet" xml:space="preserve"><value>(sin definir)</value></data>
+  <data name="MpdConfig.NotSetDefault" xml:space="preserve"><value>(sin definir: {0})</value></data>
+  <data name="MpdConfig.DefaultValue" xml:space="preserve"><value>Predeterminado: {0}</value></data>
+  <data name="MpdConfig.Yes" xml:space="preserve"><value>Sí</value></data>
+  <data name="MpdConfig.No" xml:space="preserve"><value>No</value></data>
+  <data name="MpdConfig.AddBlock" xml:space="preserve"><value>Añadir…</value></data>
+  <data name="MpdConfig.MoveUp" xml:space="preserve"><value>Subir</value></data>
+  <data name="MpdConfig.MoveDown" xml:space="preserve"><value>Bajar</value></data>
+  <data name="MpdConfig.NoBlocks" xml:space="preserve"><value>Nada configurado.</value></data>
+  <data name="MpdConfig.OtherSettings" xml:space="preserve"><value>Otros ajustes de este bloque</value></data>
+  <data name="MpdConfig.OtherNote" xml:space="preserve"><value>Los ajustes que esta ventana no conoce se conservan y se listan aquí, de modo que todas las líneas del archivo siguen accesibles.</value></data>
+  <data name="MpdConfig.IncludesNote" xml:space="preserve"><value>Los archivos indicados con include e include_optional no se modifican; edítalos por separado.</value></data>
+  <data name="MpdConfig.UnknownBlocks" xml:space="preserve"><value>Los bloques que esta ventana no conoce ({0}) permanecen en el archivo; edítalos en la pestaña Texto.</value></data>
+  <data name="MpdConfig.AddSetting" xml:space="preserve"><value>Añadir ajuste</value></data>
+  <data name="MpdConfig.SettingName" xml:space="preserve"><value>Nombre</value></data>
+  <data name="MpdConfig.SettingValue" xml:space="preserve"><value>Valor</value></data>
+  <data name="MpdConfig.InvalidSetting" xml:space="preserve"><value>Introduce un nombre (letras, dígitos y guiones bajos, empezando por una letra) y un valor en una sola línea.</value></data>
+  <data name="MpdConfig.PluginUnavailable" xml:space="preserve"><value>{0} no está incluido en el MPD instalado.</value></data>
+  <data name="MpdConfig.TextNote" xml:space="preserve"><value>Todo el archivo. Edítalo aquí y sal del cuadro para aplicar; los comentarios y el formato se conservan tal como están.</value></data>
+  <data name="MpdConfig.ProblemLine" xml:space="preserve"><value>Línea {0}: {1}</value></data>
+  <data name="MpdConfig.Error.NotNumber" xml:space="preserve"><value>{0} debe ser un número.</value></data>
+  <data name="MpdConfig.Error.OutOfRange" xml:space="preserve"><value>{0} está fuera del intervalo permitido.</value></data>
+  <data name="MpdConfig.Error.NotYesNo" xml:space="preserve"><value>{0} debe ser yes o no.</value></data>
+  <data name="MpdConfig.Error.NotChoice" xml:space="preserve"><value>{0} no es uno de los valores conocidos.</value></data>
+  <data name="MpdConfig.Error.NotAudioFormat" xml:space="preserve"><value>{0} debe tener el formato 44100:16:2 (cualquier parte puede ser *).</value></data>
+  <data name="MpdConfig.Error.LineBreak" xml:space="preserve"><value>{0} no puede contener saltos de línea.</value></data>
+  <data name="MpdConfig.Error.PluginMissing" xml:space="preserve"><value>{0} es obligatorio.</value></data>
+  <data name="Mpd.ConnectFirst" xml:space="preserve"><value>Conéctate primero a un servidor MPD (abre MPD en la barra lateral y pulsa Conectar).</value></data>
+  <data name="Mpd.ConnectionLost" xml:space="preserve"><value>Se perdió la conexión con MPD.</value></data>
+  <data name="Mpd.PlaylistFilled" xml:space="preserve"><value>Lista «{0}»: canciones añadidas: {1}.</value></data>
+  <data name="Mpd.Reconnected" xml:space="preserve"><value>Reconectado con MPD.</value></data>
+  <data name="Mpd.Reconnecting" xml:space="preserve"><value>Conexión perdida. Reconectando (intento {0} de {1})…</value></data>
+  <data name="Mpd.TabConnection" xml:space="preserve"><value>Conexión</value></data>
+  <data name="Mpd.TabDatabase" xml:space="preserve"><value>Base de datos</value></data>
+  <data name="Mpd.Stats" xml:space="preserve"><value>Canciones: {0} · Álbumes: {1} · Artistas: {2}</value></data>
+  <data name="Mpd.Error.Connect" xml:space="preserve"><value>Aibell no pudo llegar al servidor MPD en {0}. Comprueba que MPD se esté ejecutando y que la dirección y la contraseña sean correctas.</value></data>
+  <data name="Mpd.Error.Lost" xml:space="preserve"><value>Se perdió la conexión con el servidor MPD y no se pudo restablecer. Pulsa Conectar para intentarlo de nuevo.</value></data>
+  <data name="Mpd.Error.Command" xml:space="preserve"><value>El servidor MPD no pudo hacerlo: {0}</value></data>
+  <data name="Mpd.Error.Library" xml:space="preserve"><value>Aibell no pudo leer la biblioteca de música del servidor MPD.</value></data>
+  <data name="Mpd.PlaylistAlready" xml:space="preserve"><value>La lista «{0}» ya tiene todas estas canciones: no se añadió nada.</value></data>
 </root>

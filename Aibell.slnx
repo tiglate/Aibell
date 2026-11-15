@@ -2,6 +2,7 @@
   <Project Path="src/Aibell.Domain/Aibell.Domain.csproj" />
   <Project Path="src/Aibell.Application/Aibell.Application.csproj" />
   <Project Path="src/Aibell.Infrastructure/Aibell.Infrastructure.csproj" />
+  <Project Path="src/Aibell.Mpd/Aibell.Mpd.csproj" />
   <Project Path="src/Aibell.Audio.Aac/Aibell.Audio.Aac.csproj" />
   <Project Path="src/Aibell.Audio.Cdda/Aibell.Audio.Cdda.csproj" />
   <Project Path="src/Aibell.Audio.Core/Aibell.Audio.Core.csproj" />
@@ -30,6 +31,7 @@
   <Project Path="tests/Aibell.Domain.Tests/Aibell.Domain.Tests.csproj" />
   <Project Path="tests/Aibell.Desktop.Tests/Aibell.Desktop.Tests.csproj" />
   <Project Path="tests/Aibell.Desktop.UiTests/Aibell.Desktop.UiTests.csproj" />
+  <Project Path="tests/Aibell.Mpd.Tests/Aibell.Mpd.Tests.csproj" />
   <Project Path="tests/Aibell.Audio.Aac.Tests/Aibell.Audio.Aac.Tests.csproj" />
   <Project Path="tests/Aibell.Audio.Cdda.Tests/Aibell.Audio.Cdda.Tests.csproj" />
   <Project Path="tests/Aibell.Audio.Core.Tests/Aibell.Audio.Core.Tests.csproj" />

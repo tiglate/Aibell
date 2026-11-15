@@ -81,6 +81,10 @@
       "linePercentMinimum": 92,
       "branchPercentMinimum": 72
     },
+    "Aibell.Mpd": {
+      "linePercentMinimum": 94,
+      "branchPercentMinimum": 90
+    },
     "Aibell.Platform.Linux": {
       "linePercentMinimum": 92,
       "branchPercentMinimum": 75.5

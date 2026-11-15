@@ -1106,4 +1106,118 @@
   <data name="Main.ResizeSidebar" xml:space="preserve"><value>تغيير حجم الشريط الجانبي</value></data>
   <data name="Main.ResizeSidebarSection" xml:space="preserve"><value>تغيير حجم قسم الشريط الجانبي</value></data>
   <data name="Main.ResizeQueue" xml:space="preserve"><value>تغيير حجم قائمة التشغيل</value></data>
+  <data name="Sidebar.Mpd" xml:space="preserve"><value>MPD</value></data>
+  <data name="Sidebar.MpdAutomation" xml:space="preserve"><value>Music Player Daemon</value></data>
+  <data name="Sidebar.MpdTip" xml:space="preserve"><value>تحكّم في خادم Music Player Daemon ‏(MPD): قائمة الانتظار وقوائم التشغيل والمكتبة</value></data>
+  <data name="Mpd.Connect" xml:space="preserve"><value>اتصال</value></data>
+  <data name="Mpd.Disconnect" xml:space="preserve"><value>قطع الاتصال</value></data>
+  <data name="Mpd.Connection" xml:space="preserve"><value>الاتصال…</value></data>
+  <data name="Mpd.ServerSettings" xml:space="preserve"><value>إعدادات الخادم…</value></data>
+  <data name="Mpd.NotConnected" xml:space="preserve"><value>غير متصل بخادم MPD.</value></data>
+  <data name="Mpd.Connecting" xml:space="preserve"><value>جارٍ الاتصال بـ {0}…</value></data>
+  <data name="Mpd.Connected" xml:space="preserve"><value>تم الاتصال بـ {0} (البروتوكول {1}).</value></data>
+  <data name="Mpd.ConnectFailed" xml:space="preserve"><value>تعذّر الاتصال بـ {0}: {1}</value></data>
+  <data name="Mpd.Lost" xml:space="preserve"><value>فُقد الاتصال بـ MPD: {0}</value></data>
+  <data name="Mpd.CommandFailed" xml:space="preserve"><value>رفض MPD الطلب: {0}</value></data>
+  <data name="Mpd.TimedOut" xml:space="preserve"><value>لم يستجب الخادم في الوقت المناسب</value></data>
+  <data name="Mpd.TabOutputs" xml:space="preserve"><value>المخارج</value></data>
+  <data name="Mpd.OutputsEmpty" xml:space="preserve"><value>لا يُبلغ الخادم عن أي مخرج صوتي.</value></data>
+  <data name="Mpd.AddToQueue" xml:space="preserve"><value>إضافة إلى قائمة الانتظار</value></data>
+  <data name="Mpd.UpdateDatabase" xml:space="preserve"><value>تحديث قاعدة البيانات</value></data>
+  <data name="Mpd.Updating" xml:space="preserve"><value>يقوم الخادم بتحديث قاعدة بياناته…</value></data>
+  <data name="Mpd.DeletePlaylistPrompt" xml:space="preserve"><value>هل تريد حذف قائمة التشغيل «{0}» من الخادم؟ لا يمكن التراجع عن ذلك.</value></data>
+  <data name="Mpd.ConnectionTitle" xml:space="preserve"><value>اتصال MPD</value></data>
+  <data name="Mpd.Automatic" xml:space="preserve"><value>العثور على الخادم تلقائيًا</value></data>
+  <data name="Mpd.AutomaticNote" xml:space="preserve"><value>يستخدم MPD_HOST وMPD_PORT إن وُجدا، ثم ملف mpd.conf المحلي، ثم مقبس المستخدم، ثم localhost:6600.</value></data>
+  <data name="Mpd.Host" xml:space="preserve"><value>المضيف أو مسار المقبس</value></data>
+  <data name="Mpd.Port" xml:space="preserve"><value>المنفذ</value></data>
+  <data name="Mpd.Password" xml:space="preserve"><value>كلمة المرور</value></data>
+  <data name="Mpd.PasswordNote" xml:space="preserve"><value>تُحفظ كلمة المرور لهذه الجلسة فقط ولا تُخزَّن أبدًا.</value></data>
+  <data name="Mpd.HostInvalid" xml:space="preserve"><value>أدخل اسم مضيف أو مسار مقبس.</value></data>
+  <data name="Mpd.PortInvalid" xml:space="preserve"><value>يجب أن يكون المنفذ رقمًا من 1 إلى 65535.</value></data>
+  <data name="MpdConfig.Title" xml:space="preserve"><value>إعدادات خادم MPD</value></data>
+  <data name="MpdConfig.File" xml:space="preserve"><value>ملف الإعدادات</value></data>
+  <data name="MpdConfig.Open" xml:space="preserve"><value>فتح…</value></data>
+  <data name="MpdConfig.Reload" xml:space="preserve"><value>إعادة التحميل</value></data>
+  <data name="MpdConfig.NewFile" xml:space="preserve"><value>ملف جديد</value></data>
+  <data name="MpdConfig.SaveAs" xml:space="preserve"><value>حفظ باسم…</value></data>
+  <data name="MpdConfig.Restart" xml:space="preserve"><value>إعادة تشغيل MPD</value></data>
+  <data name="MpdConfig.RestartConfirm" xml:space="preserve"><value>هل تريد إعادة تشغيل خدمة MPD الآن؟ يتوقف التشغيل لحظة وتعيد العملاء الاتصال.</value></data>
+  <data name="MpdConfig.RestartDone" xml:space="preserve"><value>أُعيد تشغيل MPD.</value></data>
+  <data name="MpdConfig.RestartFailed" xml:space="preserve"><value>تعذّرت إعادة تشغيل MPD: {0}</value></data>
+  <data name="MpdConfig.RestartNote" xml:space="preserve"><value>يقرأ MPD إعداداته عند بدء التشغيل فقط: أعد تشغيله بعد الحفظ.</value></data>
+  <data name="MpdConfig.ReadOnly" xml:space="preserve"><value>لا يمكنك الكتابة في هذا الملف. استخدم «حفظ باسم…» لحفظ نسخة، مثلًا في ~/.config/mpd/mpd.conf.</value></data>
+  <data name="MpdConfig.Installed" xml:space="preserve"><value>المثبّت: MPD {0}؛ لا تُعرض إلا الإضافات المضمّنة في بنائه.</value></data>
+  <data name="MpdConfig.NoFileFound" xml:space="preserve"><value>لم يُعثر على ملف mpd.conf. افتح ملفًا أو اختر «ملف جديد» لإنشاء {0}.</value></data>
+  <data name="MpdConfig.LoadFailed" xml:space="preserve"><value>تعذّرت قراءة {0}: {1}</value></data>
+  <data name="MpdConfig.Saved" xml:space="preserve"><value>تم حفظ {0}.</value></data>
+  <data name="MpdConfig.SavedBackup" xml:space="preserve"><value>تم حفظ {0}. بقيت النسخة السابقة باسم {1}.</value></data>
+  <data name="MpdConfig.SaveFailed" xml:space="preserve"><value>تعذّر الحفظ: {0}</value></data>
+  <data name="MpdConfig.Untitled" xml:space="preserve"><value>(ملف جديد)</value></data>
+  <data name="MpdConfig.UnsavedTitle" xml:space="preserve"><value>تغييرات غير محفوظة</value></data>
+  <data name="MpdConfig.UnsavedPrompt" xml:space="preserve"><value>هل تريد تجاهل التغييرات غير المحفوظة في {0}؟</value></data>
+  <data name="MpdConfig.Discard" xml:space="preserve"><value>تجاهل</value></data>
+  <data name="MpdConfig.ConfigFiles" xml:space="preserve"><value>إعدادات MPD</value></data>
+  <data name="MpdConfig.TabFiles" xml:space="preserve"><value>الملفات وقاعدة البيانات</value></data>
+  <data name="MpdConfig.TabNetwork" xml:space="preserve"><value>الشبكة والوصول</value></data>
+  <data name="MpdConfig.TabAudio" xml:space="preserve"><value>الصوت</value></data>
+  <data name="MpdConfig.TabOutputs" xml:space="preserve"><value>المخارج</value></data>
+  <data name="MpdConfig.TabPlugins" xml:space="preserve"><value>الإضافات</value></data>
+  <data name="MpdConfig.TabAdvanced" xml:space="preserve"><value>متقدم</value></data>
+  <data name="MpdConfig.TabText" xml:space="preserve"><value>نص</value></data>
+  <data name="MpdConfig.GroupFiles" xml:space="preserve"><value>الملفات</value></data>
+  <data name="MpdConfig.GroupDatabase" xml:space="preserve"><value>قاعدة البيانات</value></data>
+  <data name="MpdConfig.GroupMetadata" xml:space="preserve"><value>البيانات الوصفية</value></data>
+  <data name="MpdConfig.GroupNetwork" xml:space="preserve"><value>الشبكة</value></data>
+  <data name="MpdConfig.GroupPermissions" xml:space="preserve"><value>الأذونات وكلمات المرور</value></data>
+  <data name="MpdConfig.GroupZeroconf" xml:space="preserve"><value>Zeroconf</value></data>
+  <data name="MpdConfig.GroupAudio" xml:space="preserve"><value>الصوت</value></data>
+  <data name="MpdConfig.GroupReplayGain" xml:space="preserve"><value>ReplayGain</value></data>
+  <data name="MpdConfig.GroupDaemon" xml:space="preserve"><value>الخدمة والسجل</value></data>
+  <data name="MpdConfig.GroupLimits" xml:space="preserve"><value>الحدود والمخازن المؤقتة</value></data>
+  <data name="MpdConfig.GroupDeprecated" xml:space="preserve"><value>إعدادات مهجورة</value></data>
+  <data name="MpdConfig.GroupOther" xml:space="preserve"><value>إعدادات أخرى</value></data>
+  <data name="MpdConfig.GroupIncludes" xml:space="preserve"><value>الملفات المضمّنة</value></data>
+  <data name="MpdConfig.PermissionsNote" xml:space="preserve"><value>اختر الأذونات التي يحصل عليها العميل الجديد أو أبقِ الافتراضي. قواعد المضيف وكلمات المرور أدناه تمنح العملاء المزيد.</value></data>
+  <data name="MpdConfig.OneValuePerLine" xml:space="preserve"><value>قيمة واحدة في كل سطر.</value></data>
+  <data name="MpdConfig.NotSet" xml:space="preserve"><value>(غير معيّن)</value></data>
+  <data name="MpdConfig.NotSetDefault" xml:space="preserve"><value>(غير معيّن: {0})</value></data>
+  <data name="MpdConfig.DefaultValue" xml:space="preserve"><value>الافتراضي: {0}</value></data>
+  <data name="MpdConfig.Yes" xml:space="preserve"><value>نعم</value></data>
+  <data name="MpdConfig.No" xml:space="preserve"><value>لا</value></data>
+  <data name="MpdConfig.AddBlock" xml:space="preserve"><value>إضافة…</value></data>
+  <data name="MpdConfig.MoveUp" xml:space="preserve"><value>نقل لأعلى</value></data>
+  <data name="MpdConfig.MoveDown" xml:space="preserve"><value>نقل لأسفل</value></data>
+  <data name="MpdConfig.NoBlocks" xml:space="preserve"><value>لا شيء مُهيّأ.</value></data>
+  <data name="MpdConfig.OtherSettings" xml:space="preserve"><value>إعدادات أخرى في هذه الكتلة</value></data>
+  <data name="MpdConfig.OtherNote" xml:space="preserve"><value>الإعدادات التي لا تعرفها هذه النافذة تُحفظ وتُسرد هنا، فيبقى كل سطر في الملف في المتناول.</value></data>
+  <data name="MpdConfig.IncludesNote" xml:space="preserve"><value>الملفات المذكورة بواسطة include وinclude_optional تبقى كما هي؛ عدّلها على حدة.</value></data>
+  <data name="MpdConfig.UnknownBlocks" xml:space="preserve"><value>الكتل التي لا تعرفها هذه النافذة ({0}) تبقى في الملف؛ عدّلها في تبويب «نص».</value></data>
+  <data name="MpdConfig.AddSetting" xml:space="preserve"><value>إضافة إعداد</value></data>
+  <data name="MpdConfig.SettingName" xml:space="preserve"><value>الاسم</value></data>
+  <data name="MpdConfig.SettingValue" xml:space="preserve"><value>القيمة</value></data>
+  <data name="MpdConfig.InvalidSetting" xml:space="preserve"><value>أدخل اسمًا (أحرف وأرقام وشرطات سفلية، يبدأ بحرف) وقيمة في سطر واحد.</value></data>
+  <data name="MpdConfig.PluginUnavailable" xml:space="preserve"><value>{0} غير مضمّن في MPD المثبّت.</value></data>
+  <data name="MpdConfig.TextNote" xml:space="preserve"><value>الملف كاملًا. عدّله هنا واترك المربع للتطبيق؛ تبقى التعليقات والتنسيق كما كُتبت.</value></data>
+  <data name="MpdConfig.ProblemLine" xml:space="preserve"><value>السطر {0}: {1}</value></data>
+  <data name="MpdConfig.Error.NotNumber" xml:space="preserve"><value>يجب أن يكون {0} رقمًا.</value></data>
+  <data name="MpdConfig.Error.OutOfRange" xml:space="preserve"><value>{0} خارج النطاق المسموح.</value></data>
+  <data name="MpdConfig.Error.NotYesNo" xml:space="preserve"><value>يجب أن يكون {0} هو yes أو no.</value></data>
+  <data name="MpdConfig.Error.NotChoice" xml:space="preserve"><value>{0} ليس من القيم المعروفة.</value></data>
+  <data name="MpdConfig.Error.NotAudioFormat" xml:space="preserve"><value>يجب أن يبدو {0} مثل 44100:16:2 (يمكن أن يكون أي جزء *).</value></data>
+  <data name="MpdConfig.Error.LineBreak" xml:space="preserve"><value>لا يمكن أن يحتوي {0} على فاصل أسطر.</value></data>
+  <data name="MpdConfig.Error.PluginMissing" xml:space="preserve"><value>{0} مطلوب.</value></data>
+  <data name="Mpd.ConnectFirst" xml:space="preserve"><value>اتصل أولًا بخادم MPD (افتح MPD في الشريط الجانبي واضغط «اتصال»).</value></data>
+  <data name="Mpd.ConnectionLost" xml:space="preserve"><value>فُقد الاتصال بـ MPD.</value></data>
+  <data name="Mpd.PlaylistFilled" xml:space="preserve"><value>قائمة التشغيل «{0}»: الأغاني المضافة: {1}.</value></data>
+  <data name="Mpd.Reconnected" xml:space="preserve"><value>أُعيد الاتصال بـ MPD.</value></data>
+  <data name="Mpd.Reconnecting" xml:space="preserve"><value>فُقد الاتصال. جارٍ إعادة الاتصال (المحاولة {0} من {1})…</value></data>
+  <data name="Mpd.TabConnection" xml:space="preserve"><value>الاتصال</value></data>
+  <data name="Mpd.TabDatabase" xml:space="preserve"><value>قاعدة البيانات</value></data>
+  <data name="Mpd.Stats" xml:space="preserve"><value>الأغاني: {0} · الألبومات: {1} · الفنانون: {2}</value></data>
+  <data name="Mpd.Error.Connect" xml:space="preserve"><value>تعذّر على Aibell الوصول إلى خادم MPD على {0}. تأكد من أن MPD يعمل وأن العنوان وكلمة المرور صحيحان.</value></data>
+  <data name="Mpd.Error.Lost" xml:space="preserve"><value>فُقد الاتصال بخادم MPD وتعذّرت استعادته. اضغط «اتصال» للمحاولة مرة أخرى.</value></data>
+  <data name="Mpd.Error.Command" xml:space="preserve"><value>تعذّر على خادم MPD تنفيذ ذلك: {0}</value></data>
+  <data name="Mpd.Error.Library" xml:space="preserve"><value>تعذّر على Aibell قراءة مكتبة الموسيقى من خادم MPD.</value></data>
+  <data name="Mpd.PlaylistAlready" xml:space="preserve"><value>قائمة التشغيل «{0}» تحتوي بالفعل على كل هذه الأغاني: لم تُضف أي أغنية.</value></data>
 </root>

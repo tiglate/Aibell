@@ -8,7 +8,7 @@ namespace Aibell.Desktop;
 
 /// <summary>
 /// The main menu. Every action reuses the handler of the button or context-menu item it mirrors, so there is one copy of each
-/// behavior. What is enabled follows the selected library item (Music, Radio, Audio CD, Devices, Podcasts, Audiobooks) and the
+/// behavior. What is enabled follows the selected library item (Music, Radio, Audio CD, Devices, Podcasts, Audiobooks, MPD) and the
 /// selection inside it: <see cref="RefreshMenuState"/> runs each time a top-level menu opens, which also covers pane view models
 /// that are created lazily. Shortcuts the window already handles in key handlers are display-only (<c>InputGesture</c>) so they
 /// never fire twice; only new shortcuts carry a <c>HotKey</c>, and their handlers check state themselves.
@@ -44,14 +44,15 @@ public sealed partial class MainWindow
         TrackRowViewModel? track = viewModel.IsMusicView ? viewModel.SelectedTrack : null;
         bool hasTrack = track is not null && !viewModel.IsBusy;
         MenuSelectAll.IsEnabled = viewModel.IsMusicView && viewModel.Tracks.Count > 0;
-        MenuViewMetadata.IsEnabled = hasTrack;
+        bool local = !viewModel.IsMpdView; // ratings, tags, covers and local playlists belong to the local library, not to the server's songs
+        MenuViewMetadata.IsEnabled = hasTrack && local;
         string? artworkReason = ArtworkUnavailableReason(track);
-        MenuGetArtwork.IsEnabled = hasTrack && artworkReason is null;
+        MenuGetArtwork.IsEnabled = hasTrack && local && artworkReason is null;
         ToolTip.SetTip(MenuGetArtwork, hasTrack ? artworkReason ?? Loc.Get("Artwork.MenuTip") : null);
         MenuAddToPlaylist.IsEnabled = hasTrack;
         MenuAddToPlaylist.ItemsSource = hasTrack ? BuildAddToPlaylistItems(track) : null;
         MenuQueueNext.IsEnabled = MenuQueueLast.IsEnabled = hasTrack;
-        MenuRating.IsEnabled = hasTrack;
+        MenuRating.IsEnabled = hasTrack && local;
         MenuRemoveFromPlaylist.IsEnabled = hasTrack && viewModel.CanRemoveFromPlaylist;
         MenuMoveUp.IsEnabled = MenuMoveDown.IsEnabled = hasTrack && viewModel.CanReorderPlaylist;
         MenuFind.IsEnabled = viewModel.CanSearchLibrary;
@@ -60,17 +61,19 @@ public sealed partial class MainWindow
 
     private void RefreshViewMenu()
     {
-        MenuViewMusic.IsChecked = viewModel.IsMusicView;
+        MenuViewMusic.IsChecked = viewModel.IsLocalMusicView;
         MenuViewRadio.IsChecked = viewModel.IsRadioView;
         MenuViewDisc.IsChecked = viewModel.IsDiscView;
         MenuViewDevices.IsChecked = viewModel.IsDevicesView;
         MenuViewPodcasts.IsChecked = viewModel.IsPodcastsView;
         MenuViewAudiobooks.IsChecked = viewModel.IsAudiobooksView;
+        MenuViewMpd.IsChecked = viewModel.IsMpdView;
         MenuViewRadio.IsEnabled = viewModel.CanUseRadio;
         MenuViewDisc.IsEnabled = viewModel.CanUseDisc && discViewModelFactory is not null;
         MenuViewDevices.IsEnabled = viewModel.CanUseDevices && deviceSyncViewModelFactory is not null;
         MenuViewPodcasts.IsEnabled = podcastViewModelFactory is not null;
         MenuViewAudiobooks.IsEnabled = audiobooksViewModelFactory is not null;
+        MenuViewMpd.IsEnabled = mpdViewModelFactory is not null;
         MenuSortBy.IsEnabled = viewModel.IsMusicView;
         MenuColumns.IsEnabled = viewModel.IsMusicView;
         MenuColumns.ItemsSource = viewModel.IsMusicView ? BuildColumnMenuItems() : null;
@@ -111,6 +114,7 @@ public sealed partial class MainWindow
         RefreshDiscMenu();
         RefreshDevicesMenu();
         RefreshAudiobooksMenu();
+        RefreshMpdMenu();
     }
 
     private void RefreshRadioMenu()

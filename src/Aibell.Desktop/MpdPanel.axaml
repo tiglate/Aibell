@@ -1,0 +1,57 @@
+<UserControl
+    x:Class="Aibell.Desktop.MpdPanel"
+    x:DataType="viewModels:MpdViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:loc="using:Aibell.Desktop.Localization"
+    xmlns:viewModels="using:Aibell.Desktop.ViewModels"
+    Name="MpdPanelRoot" Height="250">
+  <Grid RowDefinitions="25,*">
+    <Border Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1">
+      <Grid ColumnDefinitions="*,Auto">
+        <TextBlock Margin="8,0" VerticalAlignment="Center" FontSize="11" FontWeight="SemiBold" Text="{loc:T Sidebar.Mpd}" />
+        <TextBlock Grid.Column="1" Margin="8,0" VerticalAlignment="Center" FontSize="11" Classes="secondary" Text="{Binding StatsText}" TextTrimming="CharacterEllipsis" />
+      </Grid>
+    </Border>
+    <TabControl Grid.Row="1" Name="MpdTabs" Margin="0,2,0,0" Padding="0">
+      <TabItem Name="MpdConnectionTab" Header="{loc:T Mpd.TabConnection}">
+        <StackPanel Margin="8,6" Spacing="6">
+          <TextBlock Name="MpdEndpointText" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" Text="{Binding EndpointText}" />
+          <TextBlock Name="MpdStatus" TextWrapping="Wrap" FontSize="11" Text="{Binding StatusMessage}" AutomationProperties.LiveSetting="Polite" />
+          <WrapPanel ItemSpacing="6" LineSpacing="6">
+            <Button Name="MpdConnectButton" Content="{loc:T Mpd.Connect}" Classes="dialogAccept" IsEnabled="{Binding CanConnect}" Click="Connect" />
+            <Button Name="MpdDisconnectButton" Content="{loc:T Mpd.Disconnect}" IsEnabled="{Binding CanDisconnect}" Click="Disconnect" />
+            <Button Name="MpdConnectionButton" Content="{loc:T Mpd.Connection}" IsEnabled="{Binding CanChangeConnection}" Click="EditConnection" />
+          </WrapPanel>
+        </StackPanel>
+      </TabItem>
+      <TabItem Name="MpdDatabaseTab" Header="{loc:T Mpd.TabDatabase}">
+        <StackPanel Margin="8,6" Spacing="6">
+          <TextBlock TextWrapping="Wrap" FontSize="11" Text="{Binding StatsText}" />
+          <WrapPanel ItemSpacing="6" LineSpacing="6">
+            <Button Name="MpdUpdate" Content="{loc:T Mpd.UpdateDatabase}" IsEnabled="{Binding CanControl}" Click="UpdateDatabase" />
+            <Button Name="MpdSettingsButton" Content="{loc:T Mpd.ServerSettings}" Click="OpenServerSettings" />
+          </WrapPanel>
+        </StackPanel>
+      </TabItem>
+      <TabItem Name="MpdOutputsTab" Header="{loc:T Mpd.TabOutputs}">
+        <Grid>
+          <ListBox Name="MpdOutputList" ItemsSource="{Binding Outputs}" BorderThickness="0" Background="Transparent" AutomationProperties.Name="{loc:T Mpd.TabOutputs}">
+            <ListBox.ItemTemplate>
+              <DataTemplate x:DataType="viewModels:MpdOutputRow">
+                <CheckBox IsChecked="{Binding IsEnabled, Mode=OneWay}" Margin="6,2" Click="OutputToggled">
+                  <StackPanel Orientation="Horizontal" Spacing="8">
+                    <TextBlock Text="{Binding Name}" />
+                    <TextBlock Text="{Binding Plugin}" Classes="secondary" />
+                  </StackPanel>
+                </CheckBox>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+          <TextBlock Margin="12" HorizontalAlignment="Center" VerticalAlignment="Center" Classes="secondary" TextWrapping="Wrap"
+                     IsVisible="{Binding !HasOutputs}" Text="{loc:T Mpd.OutputsEmpty}" />
+        </Grid>
+      </TabItem>
+    </TabControl>
+  </Grid>
+</UserControl>

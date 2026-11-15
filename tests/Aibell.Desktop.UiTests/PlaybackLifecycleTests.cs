@@ -71,6 +71,17 @@ public sealed class PlaybackLifecycleTests
     }
 
     [AvaloniaTest]
+    public async Task DoubleClick_WithPlayQueueWaiting_PlaysTheClickedRowNotTheQueue()
+    {
+        await OpenAsync();
+        model.QueueTracks([third]);
+        model.SelectedTrack = model.Tracks.Single(row => row.Source.Id == second.Id);
+        await model.PlaySelectedTrackAsync();
+        await model.WaitForPlaybackOperationsAsync();
+        Assert.That(engine.Loads, Is.EqualTo(new[] { second.Id }));
+    }
+
+    [AvaloniaTest]
     public async Task NaturalEnd_StaleCallbackAfterManualChange_DoesNotSkipTheNewTrack()
     {
         await OpenAsync(); await model.TogglePlaybackAsync();

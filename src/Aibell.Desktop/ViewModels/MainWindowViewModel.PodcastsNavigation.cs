@@ -2,7 +2,7 @@ namespace Aibell.Desktop.ViewModels;
 
 public sealed partial class MainWindowViewModel
 {
-    // Podcasts, Audio CD, Devices and Audiobooks are overlays on the underlying Music/Radio view, so leaving any of them
+    // Podcasts, Audio CD, Devices, Audiobooks and MPD are overlays on the underlying Music/Radio view, so leaving any of them
     // restores the exact library state. At most one of them is active at a time.
     private enum OverlayView { None, Podcasts, Disc, Devices, Audiobooks }
 
@@ -29,6 +29,7 @@ public sealed partial class MainWindowViewModel
     private void ShowOverlay(OverlayView view, string status)
     {
         if (overlay == view) return;
+        if (isMpdSource) { LeaveMpdState(); _ = ReloadLocalLibraryAsync(); }
         overlay = view;
         NotifyOverlayChanged();
         StatusMessage = status;

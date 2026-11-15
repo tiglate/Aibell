@@ -1040,4 +1040,118 @@
   <data name="Main.ResizeSidebar" xml:space="preserve"><value>שינוי גודל סרגל הצד</value></data>
   <data name="Main.ResizeSidebarSection" xml:space="preserve"><value>שינוי גודל מקטע סרגל הצד</value></data>
   <data name="Main.ResizeQueue" xml:space="preserve"><value>שינוי גודל תור הניגון</value></data>
+  <data name="Sidebar.Mpd" xml:space="preserve"><value>MPD</value></data>
+  <data name="Sidebar.MpdAutomation" xml:space="preserve"><value>Music Player Daemon</value></data>
+  <data name="Sidebar.MpdTip" xml:space="preserve"><value>שליטה בשרת Music Player Daemon‏ (MPD): התור, רשימות ההשמעה והספרייה שלו</value></data>
+  <data name="Mpd.Connect" xml:space="preserve"><value>התחברות</value></data>
+  <data name="Mpd.Disconnect" xml:space="preserve"><value>התנתקות</value></data>
+  <data name="Mpd.Connection" xml:space="preserve"><value>חיבור…</value></data>
+  <data name="Mpd.ServerSettings" xml:space="preserve"><value>הגדרות שרת…</value></data>
+  <data name="Mpd.NotConnected" xml:space="preserve"><value>לא מחובר לשרת MPD.</value></data>
+  <data name="Mpd.Connecting" xml:space="preserve"><value>מתחבר אל {0}…</value></data>
+  <data name="Mpd.Connected" xml:space="preserve"><value>מחובר אל {0} (פרוטוקול {1}).</value></data>
+  <data name="Mpd.ConnectFailed" xml:space="preserve"><value>לא ניתן להתחבר אל {0}: {1}</value></data>
+  <data name="Mpd.Lost" xml:space="preserve"><value>החיבור ל-MPD אבד: {0}</value></data>
+  <data name="Mpd.CommandFailed" xml:space="preserve"><value>MPD דחה את הבקשה: {0}</value></data>
+  <data name="Mpd.TimedOut" xml:space="preserve"><value>השרת לא ענה בזמן</value></data>
+  <data name="Mpd.TabOutputs" xml:space="preserve"><value>יציאות</value></data>
+  <data name="Mpd.OutputsEmpty" xml:space="preserve"><value>השרת לא מדווח על יציאות שמע.</value></data>
+  <data name="Mpd.AddToQueue" xml:space="preserve"><value>הוספה לתור</value></data>
+  <data name="Mpd.UpdateDatabase" xml:space="preserve"><value>עדכון מסד הנתונים</value></data>
+  <data name="Mpd.Updating" xml:space="preserve"><value>השרת מעדכן את מסד הנתונים שלו…</value></data>
+  <data name="Mpd.DeletePlaylistPrompt" xml:space="preserve"><value>למחוק את רשימת ההשמעה "{0}" מהשרת? לא ניתן לבטל פעולה זו.</value></data>
+  <data name="Mpd.ConnectionTitle" xml:space="preserve"><value>חיבור MPD</value></data>
+  <data name="Mpd.Automatic" xml:space="preserve"><value>איתור השרת אוטומטית</value></data>
+  <data name="Mpd.AutomaticNote" xml:space="preserve"><value>משתמש ב-MPD_HOST וב-MPD_PORT אם הוגדרו, אחר כך ב-mpd.conf המקומי, בשקע המשתמש ולבסוף ב-localhost:6600.</value></data>
+  <data name="Mpd.Host" xml:space="preserve"><value>מארח או נתיב שקע</value></data>
+  <data name="Mpd.Port" xml:space="preserve"><value>יציאה</value></data>
+  <data name="Mpd.Password" xml:space="preserve"><value>סיסמה</value></data>
+  <data name="Mpd.PasswordNote" xml:space="preserve"><value>הסיסמה נשמרת רק להפעלה הנוכחית ואינה נשמרת לעולם.</value></data>
+  <data name="Mpd.HostInvalid" xml:space="preserve"><value>הזינו שם מארח או נתיב שקע.</value></data>
+  <data name="Mpd.PortInvalid" xml:space="preserve"><value>היציאה חייבת להיות מספר בין 1 ל-65535.</value></data>
+  <data name="MpdConfig.Title" xml:space="preserve"><value>הגדרות שרת MPD</value></data>
+  <data name="MpdConfig.File" xml:space="preserve"><value>קובץ תצורה</value></data>
+  <data name="MpdConfig.Open" xml:space="preserve"><value>פתיחה…</value></data>
+  <data name="MpdConfig.Reload" xml:space="preserve"><value>טעינה מחדש</value></data>
+  <data name="MpdConfig.NewFile" xml:space="preserve"><value>קובץ חדש</value></data>
+  <data name="MpdConfig.SaveAs" xml:space="preserve"><value>שמירה בשם…</value></data>
+  <data name="MpdConfig.Restart" xml:space="preserve"><value>הפעלה מחדש של MPD</value></data>
+  <data name="MpdConfig.RestartConfirm" xml:space="preserve"><value>להפעיל מחדש את שירות MPD עכשיו? הנגינה תיעצר לרגע והלקוחות יתחברו מחדש.</value></data>
+  <data name="MpdConfig.RestartDone" xml:space="preserve"><value>MPD הופעל מחדש.</value></data>
+  <data name="MpdConfig.RestartFailed" xml:space="preserve"><value>לא ניתן להפעיל מחדש את MPD: {0}</value></data>
+  <data name="MpdConfig.RestartNote" xml:space="preserve"><value>MPD קורא את התצורה רק בעת ההפעלה: הפעילו אותו מחדש לאחר השמירה.</value></data>
+  <data name="MpdConfig.ReadOnly" xml:space="preserve"><value>אי אפשר לכתוב לקובץ זה. השתמשו ב"שמירה בשם…" כדי לשמור עותק, למשל בתור ‎~/.config/mpd/mpd.conf.</value></data>
+  <data name="MpdConfig.Installed" xml:space="preserve"><value>מותקן: MPD {0}; מוצעות רק תוספות שנכללו בבנייה שלו.</value></data>
+  <data name="MpdConfig.NoFileFound" xml:space="preserve"><value>לא נמצא קובץ mpd.conf. פתחו קובץ או בחרו "קובץ חדש" כדי ליצור את {0}.</value></data>
+  <data name="MpdConfig.LoadFailed" xml:space="preserve"><value>לא ניתן לקרוא את {0}: {1}</value></data>
+  <data name="MpdConfig.Saved" xml:space="preserve"><value>‏{0} נשמר.</value></data>
+  <data name="MpdConfig.SavedBackup" xml:space="preserve"><value>‏{0} נשמר. הגרסה הקודמת נשמרה בשם {1}.</value></data>
+  <data name="MpdConfig.SaveFailed" xml:space="preserve"><value>לא ניתן לשמור: {0}</value></data>
+  <data name="MpdConfig.Untitled" xml:space="preserve"><value>(קובץ חדש)</value></data>
+  <data name="MpdConfig.UnsavedTitle" xml:space="preserve"><value>שינויים שלא נשמרו</value></data>
+  <data name="MpdConfig.UnsavedPrompt" xml:space="preserve"><value>לבטל את השינויים שלא נשמרו ב-{0}?</value></data>
+  <data name="MpdConfig.Discard" xml:space="preserve"><value>ביטול שינויים</value></data>
+  <data name="MpdConfig.ConfigFiles" xml:space="preserve"><value>תצורת MPD</value></data>
+  <data name="MpdConfig.TabFiles" xml:space="preserve"><value>קבצים ומסד נתונים</value></data>
+  <data name="MpdConfig.TabNetwork" xml:space="preserve"><value>רשת וגישה</value></data>
+  <data name="MpdConfig.TabAudio" xml:space="preserve"><value>שמע</value></data>
+  <data name="MpdConfig.TabOutputs" xml:space="preserve"><value>יציאות</value></data>
+  <data name="MpdConfig.TabPlugins" xml:space="preserve"><value>תוספים</value></data>
+  <data name="MpdConfig.TabAdvanced" xml:space="preserve"><value>מתקדם</value></data>
+  <data name="MpdConfig.TabText" xml:space="preserve"><value>טקסט</value></data>
+  <data name="MpdConfig.GroupFiles" xml:space="preserve"><value>קבצים</value></data>
+  <data name="MpdConfig.GroupDatabase" xml:space="preserve"><value>מסד נתונים</value></data>
+  <data name="MpdConfig.GroupMetadata" xml:space="preserve"><value>מטא-נתונים</value></data>
+  <data name="MpdConfig.GroupNetwork" xml:space="preserve"><value>רשת</value></data>
+  <data name="MpdConfig.GroupPermissions" xml:space="preserve"><value>הרשאות וסיסמאות</value></data>
+  <data name="MpdConfig.GroupZeroconf" xml:space="preserve"><value>Zeroconf</value></data>
+  <data name="MpdConfig.GroupAudio" xml:space="preserve"><value>שמע</value></data>
+  <data name="MpdConfig.GroupReplayGain" xml:space="preserve"><value>ReplayGain</value></data>
+  <data name="MpdConfig.GroupDaemon" xml:space="preserve"><value>דמון ויומן</value></data>
+  <data name="MpdConfig.GroupLimits" xml:space="preserve"><value>מגבלות ומאגרים</value></data>
+  <data name="MpdConfig.GroupDeprecated" xml:space="preserve"><value>הגדרות מיושנות</value></data>
+  <data name="MpdConfig.GroupOther" xml:space="preserve"><value>הגדרות אחרות</value></data>
+  <data name="MpdConfig.GroupIncludes" xml:space="preserve"><value>קבצים כלולים</value></data>
+  <data name="MpdConfig.PermissionsNote" xml:space="preserve"><value>בחרו את ההרשאות שלקוח חדש מקבל, או השאירו את ברירת המחדל. כללי מארחים וסיסמאות להלן נותנים ללקוחות יותר.</value></data>
+  <data name="MpdConfig.OneValuePerLine" xml:space="preserve"><value>ערך אחד בכל שורה.</value></data>
+  <data name="MpdConfig.NotSet" xml:space="preserve"><value>(לא הוגדר)</value></data>
+  <data name="MpdConfig.NotSetDefault" xml:space="preserve"><value>(לא הוגדר: {0})</value></data>
+  <data name="MpdConfig.DefaultValue" xml:space="preserve"><value>ברירת מחדל: {0}</value></data>
+  <data name="MpdConfig.Yes" xml:space="preserve"><value>כן</value></data>
+  <data name="MpdConfig.No" xml:space="preserve"><value>לא</value></data>
+  <data name="MpdConfig.AddBlock" xml:space="preserve"><value>הוספה…</value></data>
+  <data name="MpdConfig.MoveUp" xml:space="preserve"><value>העברה למעלה</value></data>
+  <data name="MpdConfig.MoveDown" xml:space="preserve"><value>העברה למטה</value></data>
+  <data name="MpdConfig.NoBlocks" xml:space="preserve"><value>לא הוגדר דבר.</value></data>
+  <data name="MpdConfig.OtherSettings" xml:space="preserve"><value>הגדרות אחרות בבלוק זה</value></data>
+  <data name="MpdConfig.OtherNote" xml:space="preserve"><value>הגדרות שחלון זה אינו מכיר נשמרות ומופיעות כאן, כך שכל שורה בקובץ נשארת נגישה.</value></data>
+  <data name="MpdConfig.IncludesNote" xml:space="preserve"><value>קבצים שמצוינים ב-include וב-include_optional נשארים כפי שהם; ערכו אותם בנפרד.</value></data>
+  <data name="MpdConfig.UnknownBlocks" xml:space="preserve"><value>בלוקים שחלון זה אינו מכיר ({0}) נשארים בקובץ; ערכו אותם בלשונית "טקסט".</value></data>
+  <data name="MpdConfig.AddSetting" xml:space="preserve"><value>הוספת הגדרה</value></data>
+  <data name="MpdConfig.SettingName" xml:space="preserve"><value>שם</value></data>
+  <data name="MpdConfig.SettingValue" xml:space="preserve"><value>ערך</value></data>
+  <data name="MpdConfig.InvalidSetting" xml:space="preserve"><value>הזינו שם (אותיות, ספרות וקווים תחתונים, המתחיל באות) וערך בשורה אחת.</value></data>
+  <data name="MpdConfig.PluginUnavailable" xml:space="preserve"><value>‏{0} אינו כלול ב-MPD המותקן.</value></data>
+  <data name="MpdConfig.TextNote" xml:space="preserve"><value>הקובץ כולו. ערכו אותו כאן ועזבו את התיבה כדי להחיל; הערות ופריסה נשמרות כפי שנכתבו.</value></data>
+  <data name="MpdConfig.ProblemLine" xml:space="preserve"><value>שורה {0}: {1}</value></data>
+  <data name="MpdConfig.Error.NotNumber" xml:space="preserve"><value>‏{0} חייב להיות מספר.</value></data>
+  <data name="MpdConfig.Error.OutOfRange" xml:space="preserve"><value>‏{0} מחוץ לטווח המותר.</value></data>
+  <data name="MpdConfig.Error.NotYesNo" xml:space="preserve"><value>‏{0} חייב להיות yes או no.</value></data>
+  <data name="MpdConfig.Error.NotChoice" xml:space="preserve"><value>‏{0} אינו אחד הערכים המוכרים.</value></data>
+  <data name="MpdConfig.Error.NotAudioFormat" xml:space="preserve"><value>‏{0} צריך להיראות כמו 44100:16:2 (כל חלק יכול להיות *).</value></data>
+  <data name="MpdConfig.Error.LineBreak" xml:space="preserve"><value>‏{0} לא יכול להכיל מעבר שורה.</value></data>
+  <data name="MpdConfig.Error.PluginMissing" xml:space="preserve"><value>‏{0} נדרש.</value></data>
+  <data name="Mpd.ConnectFirst" xml:space="preserve"><value>התחברו תחילה לשרת MPD (פתחו את MPD בסרגל הצד ולחצו על התחברות).</value></data>
+  <data name="Mpd.ConnectionLost" xml:space="preserve"><value>החיבור ל-MPD אבד.</value></data>
+  <data name="Mpd.PlaylistFilled" xml:space="preserve"><value>רשימת ההשמעה "{0}": שירים שנוספו: {1}.</value></data>
+  <data name="Mpd.Reconnected" xml:space="preserve"><value>החיבור ל-MPD שוחזר.</value></data>
+  <data name="Mpd.Reconnecting" xml:space="preserve"><value>החיבור אבד. מתחבר מחדש (ניסיון {0} מתוך {1})…</value></data>
+  <data name="Mpd.TabConnection" xml:space="preserve"><value>חיבור</value></data>
+  <data name="Mpd.TabDatabase" xml:space="preserve"><value>מסד נתונים</value></data>
+  <data name="Mpd.Stats" xml:space="preserve"><value>שירים: {0} · אלבומים: {1} · אמנים: {2}</value></data>
+  <data name="Mpd.Error.Connect" xml:space="preserve"><value>Aibell לא הצליח להגיע לשרת MPD בכתובת {0}. ודאו ש-MPD פועל ושהכתובת והסיסמה נכונות.</value></data>
+  <data name="Mpd.Error.Lost" xml:space="preserve"><value>החיבור לשרת MPD אבד ולא ניתן היה לשחזר אותו. לחצו על התחברות כדי לנסות שוב.</value></data>
+  <data name="Mpd.Error.Command" xml:space="preserve"><value>שרת MPD לא הצליח לעשות זאת: {0}</value></data>
+  <data name="Mpd.Error.Library" xml:space="preserve"><value>Aibell לא הצליח לקרוא את ספריית המוזיקה משרת MPD.</value></data>
+  <data name="Mpd.PlaylistAlready" xml:space="preserve"><value>רשימת ההשמעה "{0}" כבר כוללת את כל השירים האלה: לא נוסף דבר.</value></data>
 </root>

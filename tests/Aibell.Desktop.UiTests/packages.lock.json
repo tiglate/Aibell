@@ -675,6 +675,7 @@
           "Aibell.Application": "[1.0.0, )",
           "Aibell.Domain": "[1.0.0, )",
           "Aibell.Infrastructure": "[1.0.0, )",
+          "Aibell.Mpd": "[1.0.0, )",
           "Aibell.Platform.Linux": "[1.0.0, )",
           "Aibell.Platform.Windows": "[1.0.0, )",
           "Aibell.Playback.Alsa": "[1.0.0, )",
@@ -702,6 +703,9 @@
           "Ude.NetStandard": "[1.2.0, )",
           "z440.atl.core": "[7.17.0, )"
         }
+      },
+      "aibell.mpd": {
+        "type": "Project"
       },
       "aibell.platform.linux": {
         "type": "Project",

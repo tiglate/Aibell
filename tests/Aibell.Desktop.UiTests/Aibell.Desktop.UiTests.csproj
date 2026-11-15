@@ -2,9 +2,12 @@
   <PropertyGroup>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+    <NoWarn>$(NoWarn);CA1861</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="../../src/Aibell.Desktop/Aibell.Desktop.csproj" />
+    <ProjectReference Include="../../src/Aibell.Mpd/Aibell.Mpd.csproj" />
+    <Compile Include="../Aibell.Desktop.Tests/ViewModels/MpdFakes.cs" Link="MpdFakes.cs" />
     <PackageReference Include="Avalonia.Headless.NUnit" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="NUnit" />

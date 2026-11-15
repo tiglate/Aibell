@@ -41,6 +41,32 @@ played by emulating the console's SPC700 processor and S-DSP sound chip. Audio C
   hourly new-episode check you can switch off.
 - Audiobooks: a shelf of local files with saved positions and chapter playback.
 
+**Music Player Daemon (MPD)**
+
+- **MPD** in the sidebar's Library list makes the Music view show an MPD server's library (local or on the network): the
+  same genre, artist and album lists, search and track list, with the server's stored playlists in the Playlists section
+  (the **+** button there saves the selected song as a new server playlist; the track menu's **Add to Playlist** lists them
+  too). Songs play through Aibell's own transport bar, play queue and now-playing cover, on the server: queue them, shuffle
+  and repeat as usual. Aibell and MPD never play at the same time: starting one stops the other. Only the song being
+  played is added to the server's queue, behind anything other clients put there, and it is removed afterwards; the server's
+  `single` setting is put back as it was. While MPD is selected (or an MPD song is playing) the volume bar and the mute button
+  show and control the server's volume instead of Aibell's own; the volume Aibell saves for itself is not changed, and the
+  player's habit of re-applying its volume at every track never reaches the server. While MPD is selected, an **MPD** group under the play queue (with tabs for the
+  connection, the database and the outputs) holds Connect and Disconnect, **Connection…**, Update database, the server
+  settings and the audio outputs. Nothing connects until you press **Connect**. The server is found as MPD's own clients do
+  (`MPD_HOST`/`MPD_PORT`, then your `mpd.conf`, then the per-user socket, then `localhost:6600`), or you can enter a host and
+  port under **Connection…**. The password is kept for the session only and never written to disk. MPD closes a client that is
+  silent for a minute, so Aibell pings the server regularly, and if the connection breaks anyway it reconnects a few times
+  (not forever). Problems are explained in plain words in the usual error window, with the technical details (exception,
+  stack trace, server and protocol, MPD's error code) behind its **Details** button and in the error log.
+- **Server settings…** edits the `mpd.conf` of an MPD running on this computer: every setting MPD documents (files, database,
+  network, permissions and passwords, audio, ReplayGain, limits, zeroconf), every block (`audio_output`, `decoder`, `input`,
+  `database`, `resampler`, `filter`, `playlist_plugin`, `archive_plugin`, `neighbors`, `input_cache`, `partition`) with the
+  settings of each plugin, a list of settings it does not know, and the whole file as text. Comments, order and unknown lines
+  are kept as written; each save keeps a timestamped backup beside the file and checks values first. MPD reads its
+  configuration only at start-up; when MPD runs as a systemd user service, **Restart MPD** (only on your click) applies it.
+  Setting names are MPD's own and are shown unchanged.
+
 **Metadata and artwork**
 
 - **View Metadata…** (context menu or **Alt+Enter**) shows detailed properties and edits tags in the library only, or
@@ -130,7 +156,7 @@ identifier. Published files go to `artifacts/<runtime-id>/`. On Windows, use `./
 
 |                                       | Location                                                           |
 | ------------------------------------- | ------------------------------------------------------------------ |
-| Library, settings, logs, user plugins | `~/.local/share/Aibell` (Linux), `%LOCALAPPDATA%\Aibell` (Windows) |
+| Library, settings, logs, user plugins, MPD host and port | `~/.local/share/Aibell` (Linux), `%LOCALAPPDATA%\Aibell` (Windows) |
 | Different profile                     | set `AIBELL_DATA_DIRECTORY` to an absolute folder                  |
 | Album covers you save                 | `cover.jpg` inside the album folder                                |
 
@@ -197,6 +223,7 @@ The solution is `Aibell.slnx`; code is split into layers that only depend inward
 | `Aibell.Playback.LibVLC`                            | LibVLC playback adapter                                                                                                                                          |
 | `Aibell.Playback.Miniaudio`                         | Built-in playback engine over a small native shim (`native/aibell-audio`) around miniaudio                                                                       |
 | `Aibell.Platform.Linux` / `Aibell.Platform.Windows` | Media session, notifications, optical drives and removable volumes                                                                                               |
+| `Aibell.Mpd`                                        | MPD protocol client and a lossless `mpd.conf` reader, editor and setting catalog (no other dependencies)                                                         |
 | `Aibell.Metadata.MusicBrainz`                       | Optional online-lookup plugin, shipped in `plugins/` and loaded at run time                                                                                      |
 | `Aibell.Desktop`                                    | The Avalonia UI and the composition root                                                                                                                         |
 | `tools/AibellTools`                                 | Developer tool in C#: secret scan, coverage gate, candidate packaging, Linux publish smoke test (run with `dotnet run --project tools/AibellTools -- <command>`) |

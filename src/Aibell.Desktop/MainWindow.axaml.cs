@@ -70,7 +70,8 @@ public sealed partial class MainWindow : Window, IDisposable
             audiobooksViewModelFactory: App.Services.GetService<Func<Aibell.Application.Audiobooks.IAudiobookPlaybackHandoff, AudiobooksViewModel>>(),
             discViewModelFactory: App.Services.GetService<Func<Aibell.Application.Discs.IDiscPlaybackHandoff, DiscViewModel>>(),
             artworkWindowFactory: App.Services.GetService<Func<Aibell.Domain.Media.Track, ArtworkWindow>>(),
-            deviceSyncViewModelFactory: App.Services.GetService<Func<Aibell.Application.Devices.IDeviceTrackSource, DeviceSyncViewModel>>())
+            deviceSyncViewModelFactory: App.Services.GetService<Func<Aibell.Application.Devices.IDeviceTrackSource, DeviceSyncViewModel>>(),
+            mpdViewModelFactory: App.Services.GetService<Func<MpdViewModel>>())
     {
     }
 
@@ -79,7 +80,8 @@ public sealed partial class MainWindow : Window, IDisposable
         Func<Aibell.Application.Audiobooks.IAudiobookPlaybackHandoff, AudiobooksViewModel>? audiobooksViewModelFactory = null,
         Func<Aibell.Application.Discs.IDiscPlaybackHandoff, DiscViewModel>? discViewModelFactory = null,
         Func<Aibell.Domain.Media.Track, ArtworkWindow>? artworkWindowFactory = null,
-        Func<Aibell.Application.Devices.IDeviceTrackSource, DeviceSyncViewModel>? deviceSyncViewModelFactory = null)
+        Func<Aibell.Application.Devices.IDeviceTrackSource, DeviceSyncViewModel>? deviceSyncViewModelFactory = null,
+        Func<MpdViewModel>? mpdViewModelFactory = null)
     {
         this.viewModel = viewModel;
         this.podcastViewModelFactory = podcastViewModelFactory;
@@ -87,6 +89,7 @@ public sealed partial class MainWindow : Window, IDisposable
         this.discViewModelFactory = discViewModelFactory;
         this.artworkWindowFactory = artworkWindowFactory;
         this.deviceSyncViewModelFactory = deviceSyncViewModelFactory;
+        this.mpdViewModelFactory = mpdViewModelFactory;
         this.mediaSession = mediaSession;
         this.filePicker = filePicker ?? new AvaloniaFilePicker();
         InitializeComponent();
@@ -155,6 +158,8 @@ public sealed partial class MainWindow : Window, IDisposable
 
     private async void OnOpened(object? sender, EventArgs eventArgs)
     {
+        // Some window managers ignore the XAML state while the window is first shown.
+        if (WindowState == WindowState.Normal) WindowState = WindowState.Maximized;
         await RunUserActionAsync(() => viewModel.LoadAsync(lifetimeCancellation.Token));
         if (CanRunUserAction) mediaSessionStartup = StartMediaSessionAsync();
         startupFilesTaken = true;
@@ -268,6 +273,8 @@ public sealed partial class MainWindow : Window, IDisposable
 
     private async void CreatePlaylist(object? sender, RoutedEventArgs eventArgs)
     {
+        // With MPD selected the same button makes a stored playlist on the server from the selected track.
+        if (viewModel.IsMpdView) { await CreateMpdPlaylistFromSelectionAsync(); return; }
         string? name = await ShowTextPromptAsync(
             Loc.Get("Dialog.CreatePlaylist"),
             Loc.Get("Dialog.PlaylistName"),
@@ -285,6 +292,7 @@ public sealed partial class MainWindow : Window, IDisposable
     private async void SelectAllMusic(object? sender, RoutedEventArgs eventArgs)
     {
         // Returning from Podcasts, Audio CD, Devices or Audiobooks keeps the exact Music browser, sort and selection that were showing before.
+        if (viewModel.IsMpdView) { viewModel.LeaveMpdState(); await viewModel.ReloadLocalLibraryAsync(); return; }
         if (viewModel.TryReturnFromOverlayToMusic()) return;
         PlaylistFilterViewModel? allMusic = viewModel.Playlists.FirstOrDefault(item => item.Id is null);
         if (allMusic is null)
@@ -354,6 +362,7 @@ public sealed partial class MainWindow : Window, IDisposable
     // Shared by the track context menu and Edit > Add to Playlist.
     private List<Control> BuildAddToPlaylistItems(TrackRowViewModel? track)
     {
+        if (viewModel.IsMpdView) return BuildMpdAddToPlaylistItems(track);
         List<Control> items = [];
         foreach (PlaylistFilterViewModel playlist in viewModel.EditablePlaylists.Where(item => !item.IsSmart))
         {
@@ -1196,6 +1205,7 @@ public sealed partial class MainWindow : Window, IDisposable
         viewModel.BeginPlaybackShutdown();
         viewModel.StopListening();
         await ShutdownAudiobooksAsync();
+        await ShutdownMpdAsync();
         await ShutdownDiscAsync();
         await ShutdownEqualizerAsync();
         await ShutdownDeviceSyncAsync();
@@ -1234,7 +1244,7 @@ public sealed partial class MainWindow : Window, IDisposable
 
     private async void PlaySelected(object? sender, TappedEventArgs eventArgs)
     {
-        await RunUserActionAsync(() => viewModel.TogglePlaybackAsync(lifetimeCancellation.Token));
+        await RunUserActionAsync(() => viewModel.PlaySelectedTrackAsync(lifetimeCancellation.Token));
     }
 
     private async void PreviousTrack(object? sender, RoutedEventArgs eventArgs)

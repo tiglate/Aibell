@@ -2,9 +2,11 @@
   <PropertyGroup>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+    <NoWarn>$(NoWarn);CA1861</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="../../src/Aibell.Desktop/Aibell.Desktop.csproj" />
+    <ProjectReference Include="../../src/Aibell.Mpd/Aibell.Mpd.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" />

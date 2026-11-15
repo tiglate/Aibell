@@ -68,6 +68,7 @@
       <MenuItem x:Name="MenuViewDevices" Header="{loc:T Sidebar.Devices}" ToggleType="Radio" GroupName="LibraryView" Click="OpenDeviceSync" />
       <MenuItem x:Name="MenuViewPodcasts" Header="{loc:T Sidebar.Podcasts}" ToggleType="Radio" GroupName="LibraryView" Click="OpenPodcasts" />
       <MenuItem x:Name="MenuViewAudiobooks" Header="{loc:T Sidebar.Audiobooks}" ToggleType="Radio" GroupName="LibraryView" Click="OpenAudiobooks" />
+      <MenuItem x:Name="MenuViewMpd" Header="{loc:T Sidebar.Mpd}" ToggleType="Radio" GroupName="LibraryView" Click="OpenMpd" />
       <Separator />
       <MenuItem x:Name="MenuSortBy" Header="{loc:T Menu.SortBy}">
         <MenuItem Header="{loc:T Column.Title}" Click="SortByTitle" />
@@ -177,6 +178,14 @@
         <MenuItem x:Name="MenuBookRemove" Header="{loc:T Book.RemoveTitle}" Click="AudiobookRemove" />
         <Separator />
         <MenuItem x:Name="MenuBookCancel" Header="{loc:T Common.Cancel}" Click="AudiobookCancel" />
+      </MenuItem>
+      <MenuItem x:Name="MenuMpd" Header="{loc:T Sidebar.Mpd}">
+        <MenuItem x:Name="MenuMpdConnect" Header="{loc:T Mpd.Connect}" Click="MpdConnect" />
+        <MenuItem x:Name="MenuMpdDisconnect" Header="{loc:T Mpd.Disconnect}" Click="MpdDisconnect" />
+        <MenuItem x:Name="MenuMpdRefresh" Header="{loc:T Pod.Refresh}" Click="MpdRefresh" />
+        <MenuItem x:Name="MenuMpdUpdate" Header="{loc:T Mpd.UpdateDatabase}" Click="MpdUpdateDatabase" />
+        <Separator />
+        <MenuItem x:Name="MenuMpdSettings" Header="{loc:T Mpd.ServerSettings}" Click="OpenMpdSettings" />
       </MenuItem>
     </MenuItem>
     <MenuItem x:Name="HelpMenu" Header="{loc:T Menu.Help}">
@@ -310,12 +319,13 @@
           </Border>
           <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
           <StackPanel>
-            <Button Name="SelectMusicButton" Classes="sidebarItem" Tag="{StaticResource IconMusic}" Classes.selected="{Binding IsMusicView}" Click="SelectAllMusic" Content="{loc:T Sidebar.Music}" AutomationProperties.Name="{loc:T Sidebar.MusicAutomation}" />
+            <Button Name="SelectMusicButton" Classes="sidebarItem" Tag="{StaticResource IconMusic}" Classes.selected="{Binding IsLocalMusicView}" Click="SelectAllMusic" Content="{loc:T Sidebar.Music}" AutomationProperties.Name="{loc:T Sidebar.MusicAutomation}" />
             <Button Name="SelectRadioButton" Classes="sidebarItem" Tag="{StaticResource IconRadio}" Classes.selected="{Binding IsRadioView}" Click="SelectRadio" Content="{loc:T Sidebar.Radio}" IsEnabled="{Binding CanUseRadio}" AutomationProperties.Name="{loc:T Sidebar.RadioAutomation}" />
             <Button Name="OpenDiscButton" Classes="sidebarItem" Tag="{StaticResource IconDisc}" Classes.selected="{Binding IsDiscView}" Click="OpenDisc" Content="{loc:T Sidebar.AudioCd}" IsEnabled="{Binding CanUseDisc}" AutomationProperties.Name="{loc:T Sidebar.AudioCdAutomation}" ToolTip.Tip="{loc:T Sidebar.AudioCdTip}" />
             <Button Name="OpenDevicesButton" Classes="sidebarItem" Tag="{StaticResource IconDevice}" Classes.selected="{Binding IsDevicesView}" Click="OpenDeviceSync" Content="{loc:T Sidebar.Devices}" IsEnabled="{Binding CanUseDevices}" AutomationProperties.Name="{loc:T Sidebar.DevicesAutomation}" ToolTip.Tip="{loc:T Sidebar.DevicesTip}" />
             <Button Name="OpenPodcastsButton" Classes="sidebarItem" Tag="{StaticResource IconPodcast}" Classes.selected="{Binding IsPodcastsView}" Click="OpenPodcasts" Content="{loc:T Sidebar.Podcasts}" AutomationProperties.Name="{loc:T Sidebar.PodcastsAutomation}" ToolTip.Tip="{loc:T Sidebar.PodcastsTip}" />
             <Button Name="OpenAudiobooksButton" Classes="sidebarItem" Tag="{StaticResource IconBook}" Classes.selected="{Binding IsAudiobooksView}" Click="OpenAudiobooks" Content="{loc:T Sidebar.Audiobooks}" AutomationProperties.Name="{loc:T Main.Audiobooks}" ToolTip.Tip="{loc:T Main.AudiobookShelf}" />
+            <Button Name="OpenMpdButton" Classes="sidebarItem" Tag="{StaticResource IconServer}" Classes.selected="{Binding IsMpdView}" Click="OpenMpd" Content="{loc:T Sidebar.Mpd}" AutomationProperties.Name="{loc:T Sidebar.MpdAutomation}" ToolTip.Tip="{loc:T Sidebar.MpdTip}" />
           </StackPanel>
           </ScrollViewer>
           </Grid>
@@ -330,7 +340,7 @@
             <Grid ColumnDefinitions="*,25,25,25,25">
               <TextBlock Margin="7,0" VerticalAlignment="Center" FontSize="11" FontWeight="SemiBold" Text="{loc:T Main.Playlists}" />
               <Button Grid.Column="1" Classes="sidebarHeader" Click="CreatePlaylist" Content="+" ToolTip.Tip="{loc:T Main.CreatePlaylist}" />
-              <Button Grid.Column="2" Classes="sidebarHeader" Click="CreateSmartPlaylist" Content="◇"
+              <Button Grid.Column="2" Classes="sidebarHeader" IsEnabled="{Binding !IsMpdView}" Click="CreateSmartPlaylist" Content="◇"
                       AutomationProperties.Name="{loc:T Main.CreateSmartPlaylist}" ToolTip.Tip="{loc:T Main.CreateSmartPlaylist}" />
               <Button Grid.Column="3" Classes="sidebarHeader" IsEnabled="{Binding CanEditPlaylist}"
                       Click="DeletePlaylist" Content="−" ToolTip.Tip="{loc:T Main.DeletePlaylistTip}" />
@@ -339,7 +349,27 @@
                       AutomationProperties.Name="{loc:T Main.ImportPlaylistFile}" />
             </Grid>
           </Border>
+          <!-- While the MPD view is showing, the server's stored playlists take the place of the local ones in this section. -->
+          <ListBox x:Name="MpdPlaylistList" AutomationProperties.Name="{loc:T Main.PlaylistsAutomation}" Grid.Row="1" BorderThickness="0" Background="Transparent"
+                   IsVisible="{Binding IsMpdView}" SelectionChanged="MpdPlaylistChanged">
+            <ListBox.Styles><Style Selector="ListBoxItem"><Setter Property="HorizontalContentAlignment" Value="Stretch" /></Style></ListBox.Styles>
+            <ListBox.ItemTemplate>
+              <DataTemplate x:DataType="viewModels:PlaylistFilterViewModel">
+                <Border Background="Transparent" PointerPressed="MpdPlaylistItemPointerPressed">
+                  <Border.ContextMenu><ContextMenu>
+                    <MenuItem Header="{loc:T Main.Play}" Click="MpdPlaylistPlay" />
+                    <MenuItem Header="{loc:T Mpd.AddToQueue}" Click="MpdPlaylistQueue" />
+                    <Separator />
+                    <MenuItem Header="{loc:T Main.Rename}" Click="MpdPlaylistRename" />
+                    <MenuItem Header="{loc:T Main.Delete}" Click="MpdPlaylistDelete" />
+                  </ContextMenu></Border.ContextMenu>
+                  <TextBlock Margin="9,5" Text="{Binding Name}" TextTrimming="CharacterEllipsis" />
+                </Border>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
           <ListBox x:Name="PlaylistList" AutomationProperties.Name="{loc:T Main.PlaylistsAutomation}" Grid.Row="1" BorderThickness="0" Background="Transparent"
+                   IsVisible="{Binding !IsMpdView}"
                    ItemsSource="{Binding EditablePlaylists}" SelectedItem="{Binding SelectedPlaylist, Mode=OneWay}"
                    SelectionChanged="PlaylistChanged">
             <ListBox.Styles><Style Selector="ListBoxItem"><Setter Property="HorizontalContentAlignment" Value="Stretch" /></Style></ListBox.Styles>
@@ -757,7 +787,8 @@
               DragDrop.AllowDrop="True" DragDrop.DragOver="PlayQueueDragOver"
               DragDrop.DragLeave="PlayQueueDragLeave" DragDrop.Drop="PlayQueueDrop">
         <Grid>
-          <Grid IsVisible="{Binding IsPlayQueueVisible}" RowDefinitions="25,25,*,32">
+          <Grid IsVisible="{Binding IsPlayQueueVisible}" RowDefinitions="*,Auto">
+          <Grid RowDefinitions="25,25,*,32">
             <Border Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1">
               <Grid ColumnDefinitions="*,28">
                 <TextBlock Margin="8,0" VerticalAlignment="Center" FontWeight="SemiBold" Text="{Binding PlayQueueHeader}" />
@@ -813,6 +844,11 @@
                 <Button Grid.Column="1" Content="{loc:T Main.Clear}" IsEnabled="{Binding CanImport}" Click="ClearPlayQueue" ToolTip.Tip="{loc:T Main.ClearQueueTip}" />
               </Grid>
             </Border>
+          </Grid>
+          <!-- Only while MPD is selected in the Library list: the server connection, its database and its outputs. -->
+          <Border Grid.Row="1" IsVisible="{Binding IsMpdView}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,1,0,0">
+            <desktop:MpdPanel x:Name="MpdPane" DataContext="{x:Null}" />
+          </Border>
           </Grid>
           <StackPanel IsVisible="{Binding IsPlayQueueCollapsed}" Spacing="8">
             <Button Classes="sidebarHeader" Content="‹" Click="TogglePlayQueue"

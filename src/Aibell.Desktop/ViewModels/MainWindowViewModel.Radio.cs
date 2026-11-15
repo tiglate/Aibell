@@ -79,6 +79,7 @@ public sealed partial class MainWindowViewModel
         await RunBusyAsync(async () =>
         {
             await RefreshRadioAsync(cancellationToken);
+            if (isMpdSource) { LeaveMpdState(); _ = ReloadLocalLibraryAsync(); }
             SetActiveView(LibraryViewKind.Radio); SelectedTrack = null;
             // Choosing Radio always opens the station catalog first; "My stations" is one click away.
             SetRadioCatalogMode(true);

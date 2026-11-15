@@ -617,6 +617,9 @@
           "z440.atl.core": "[7.17.0, )"
         }
       },
+      "aibell.mpd": {
+        "type": "Project"
+      },
       "aibell.platform.linux": {
         "type": "Project",
         "dependencies": {

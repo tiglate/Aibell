@@ -47,6 +47,8 @@ public sealed partial class MainWindowViewModel(
     private bool preferencesLoaded;
     private Task pendingPreferencesSave = Task.CompletedTask;
     private bool preferredMuted;
+    private double localVolume = 0.8;
+    private bool localMuted;
     private (Guid? TrackId, PlaybackStatus Status) playbackIndicator;
 
     [ObservableProperty]
@@ -183,8 +185,9 @@ public sealed partial class MainWindowViewModel(
         !IsBusy && SelectedTrack is not null && PlaylistTarget is { Id: not null, IsSmart: false };
 
     public bool CanRemoveFromPlaylist =>
-        !IsBusy && activeView == LibraryViewKind.Playlist &&
-        SelectedTrack is not null && SelectedPlaylist is { Id: not null, IsSmart: false };
+        !IsBusy && SelectedTrack is not null &&
+        (activeView == LibraryViewKind.Playlist && SelectedPlaylist is { Id: not null, IsSmart: false } ||
+         isMpdSource && mpdPlaylist is not null && SearchQuery.Length == 0);
 
     public bool CanEditPlaylist =>
         !IsBusy && activeView == LibraryViewKind.Playlist && SelectedPlaylist?.Id is not null;
@@ -484,6 +487,11 @@ public sealed partial class MainWindowViewModel(
     public async Task RemoveSelectedTrackFromPlaylistAsync(
         CancellationToken cancellationToken = default)
     {
+        if (isMpdSource)
+        {
+            await RemoveSelectedMpdTrackAsync(cancellationToken);
+            return;
+        }
         if (SelectedPlaylist?.IsSmart == true || activeView != LibraryViewKind.Playlist ||
             SelectedTrack is not { } selected || SelectedPlaylist?.Id is not Guid playlistId)
         {
@@ -716,6 +724,26 @@ public sealed partial class MainWindowViewModel(
     public Task TogglePlaybackAsync(CancellationToken cancellationToken = default) =>
         RunPlaybackOperation(() => TogglePlaybackCoreAsync(cancellationToken));
 
+    /// <summary>Double-click on a track row: play that row (and its list as the queue), ahead of anything waiting in the Play Queue.</summary>
+    public Task PlaySelectedTrackAsync(CancellationToken cancellationToken = default) =>
+        RunPlaybackOperation(() => PlaySelectedTrackCoreAsync(cancellationToken));
+
+    private async Task PlaySelectedTrackCoreAsync(CancellationToken cancellationToken)
+    {
+        if (changingTrack) return;
+        if (SelectedTrack is null || !CanSearchLibrary || playbackEngine.Snapshot.Track?.Id == SelectedTrack.Source.Id) { await TogglePlaybackCoreAsync(cancellationToken); return; }
+        try
+        {
+            playbackQueue.Replace(Tracks.Select(row => row.Source));
+            playbackQueue.TrySelect(SelectedTrack.Source.Id);
+            await PlayCurrentAsync(cancellationToken);
+        }
+        catch (Exception exception) when (exception is InvalidOperationException or DllNotFoundException)
+        {
+            ReportPlaybackFailure(playbackEngine.Snapshot.Track, exception.Message, exception, null);
+        }
+    }
+
     private async Task TogglePlaybackCoreAsync(CancellationToken cancellationToken)
     {
         if (changingTrack) return;
@@ -841,15 +869,17 @@ public sealed partial class MainWindowViewModel(
 
     public async Task ToggleMuteAsync(CancellationToken cancellationToken = default)
     {
-        if (playbackEngine.Snapshot.Track is null)
+        bool server = ServerVolumeActive;
+        if (playbackEngine.Snapshot.Track is null && !server)
         {
             return;
         }
 
         try
         {
-            preferredMuted = !playbackEngine.Snapshot.IsMuted;
-            await playbackEngine.SetMutedAsync(preferredMuted, cancellationToken);
+            bool muted = !playbackEngine.Snapshot.IsMuted;
+            if (!server) preferredMuted = localMuted = muted;
+            await playbackEngine.SetMutedAsync(muted, cancellationToken);
             await PersistPreferencesAsync(cancellationToken);
         }
         catch (InvalidOperationException exception)
@@ -888,9 +918,12 @@ public sealed partial class MainWindowViewModel(
             Math.Clamp(value, 0, 1),
             2,
             MidpointRounding.AwayFromZero);
+        // While MPD is selected the bar is the server's volume: the local level (the one that is saved) stays as it was.
+        bool server = ServerVolumeActive;
+        if (!server) localVolume = Volume;
         try
         {
-            if (playbackEngine.Snapshot.Track is not null)
+            if (server || playbackEngine.Snapshot.Track is not null)
             {
                 await playbackEngine.SetVolumeAsync(Volume, cancellationToken);
             }
@@ -960,8 +993,8 @@ public sealed partial class MainWindowViewModel(
         SidebarNowPlayingHeight = preferences.SidebarNowPlayingHeight;
         SidebarLibraryFraction = preferences.SidebarLibraryFraction;
         IsSidebarVisible = preferences.IsSidebarVisible;
-        Volume = preferences.Volume;
-        preferredMuted = preferences.IsMuted;
+        Volume = localVolume = preferences.Volume;
+        preferredMuted = localMuted = preferences.IsMuted;
         await RestoreEqualizerAsync(preferences.Equalizer, cancellationToken);
         playbackQueue.SetShuffle(preferences.ShuffleEnabled);
         playbackQueue.SetRepeatMode(preferences.RepeatMode);
@@ -1007,8 +1040,8 @@ public sealed partial class MainWindowViewModel(
     private ApplicationPreferences BuildPreferences(PodcastFolderState folder)
     {
         return new(
-            Volume,
-            preferredMuted,
+            ServerVolumeActive ? localVolume : Volume,
+            ServerVolumeActive ? localMuted : preferredMuted,
             playbackQueue.ShuffleEnabled,
             playbackQueue.RepeatMode,
             TrackColumns
@@ -1124,7 +1157,7 @@ public sealed partial class MainWindowViewModel(
         (string? Artist, string? Title)? albumSelection = SelectedAlbum is null
             ? null
             : (SelectedAlbum.Artist, SelectedAlbum.Title);
-        IReadOnlyList<GenreSummary> storedGenres = await libraryBrowser
+        IReadOnlyList<GenreSummary> storedGenres = await ActiveBrowser
             .ListGenresAsync(cancellationToken);
 
         Genres.Clear();
@@ -1147,7 +1180,7 @@ public sealed partial class MainWindowViewModel(
         (string? Artist, string? Title)? selectedAlbum,
         CancellationToken cancellationToken)
     {
-        IReadOnlyList<ArtistSummary> storedArtists = await libraryBrowser
+        IReadOnlyList<ArtistSummary> storedArtists = await ActiveBrowser
             .ListArtistsAsync(SelectedGenre?.Name, cancellationToken);
         Artists.Clear();
         Artists.Add(new ArtistFilterViewModel(
@@ -1168,7 +1201,7 @@ public sealed partial class MainWindowViewModel(
         (string? Artist, string? Title)? selectedAlbum,
         CancellationToken cancellationToken)
     {
-        IReadOnlyList<AlbumSummary> storedAlbums = await libraryBrowser.ListAlbumsAsync(
+        IReadOnlyList<AlbumSummary> storedAlbums = await ActiveBrowser.ListAlbumsAsync(
             SelectedGenre?.Name,
             SelectedArtist?.Name,
             cancellationToken);
@@ -1219,7 +1252,7 @@ public sealed partial class MainWindowViewModel(
     {
         activeView = view;
         overlay = OverlayView.None;
-        OnPropertyChanged(nameof(IsColumnBrowserVisible)); OnPropertyChanged(nameof(IsPodcastsView)); OnPropertyChanged(nameof(IsDiscView)); OnPropertyChanged(nameof(IsDevicesView)); OnPropertyChanged(nameof(IsAudiobooksView)); OnPropertyChanged(nameof(CanSearchLibrary));
+        OnPropertyChanged(nameof(IsColumnBrowserVisible)); OnPropertyChanged(nameof(IsPodcastsView)); OnPropertyChanged(nameof(IsDiscView)); OnPropertyChanged(nameof(IsDevicesView)); OnPropertyChanged(nameof(IsAudiobooksView)); OnPropertyChanged(nameof(IsMpdView)); OnPropertyChanged(nameof(IsLocalMusicView)); OnPropertyChanged(nameof(CanSearchLibrary));
         OnPropertyChanged(nameof(IsRadioView)); OnPropertyChanged(nameof(IsMusicView));
         OnPropertyChanged(nameof(SearchPlaceholder)); OnPropertyChanged(nameof(CanPlay));
         OnPropertyChanged(nameof(CanRemoveFromPlaylist));
@@ -1230,11 +1263,12 @@ public sealed partial class MainWindowViewModel(
 
     private Task<IReadOnlyList<Track>> QueryVisibleTracksAsync(CancellationToken cancellationToken)
     {
+        if (QueryMpdPlaylistTracks(cancellationToken) is { } mpdTracks) return mpdTracks;
         return activeView switch
         {
             LibraryViewKind.Playlist when SelectedPlaylist?.Id is Guid playlistId =>
                 playlistRepository.GetTracksAsync(playlistId, SearchQuery, cancellationToken),
-            _ => libraryBrowser.GetTracksAsync(
+            _ => ActiveBrowser.GetTracksAsync(
                 SelectedGenre?.Name,
                 SelectedAlbum?.Title is not null
                     ? SelectedAlbum.Artist
@@ -1363,9 +1397,10 @@ public sealed partial class MainWindowViewModel(
         {
             AutoFitTrackColumns(trackArray);
         }
-        bool isPlaylistTrack = activeView == LibraryViewKind.Playlist &&
+        bool mpdPlaylistTrack = isMpdSource && mpdPlaylist is not null && SearchQuery.Length == 0; // positions only mean something in the whole playlist
+        bool isPlaylistTrack = mpdPlaylistTrack || activeView == LibraryViewKind.Playlist &&
             SelectedPlaylist is { Id: not null, IsSmart: false };
-        bool canReorder = isPlaylistTrack && SearchQuery.Length == 0;
+        bool canReorder = !isMpdSource && isPlaylistTrack && SearchQuery.Length == 0;
         Tracks.Clear();
         foreach (Track track in trackArray)
         {

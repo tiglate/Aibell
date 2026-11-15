@@ -64,7 +64,7 @@ public sealed partial class MainWindowViewModel
         if (key == lastReportedFault || errorReporter is null) return;
         lastReportedFault = key;
         string context = DescribePlaybackContext(track);
-        string hint = activePlaybackEngine != PlaybackEngineKind.Vlc ? " " + Loc.Get("Playback.TryVlc") : "";
+        string hint = activePlaybackEngine != PlaybackEngineKind.Vlc && !(track is not null && MpdTracks.TryGetSongUri(track.Location, out _)) ? " " + Loc.Get("Playback.TryVlc") : "";
         string title = Loc.Get("Playback.FailedTitle");
         if (exception is not null) errorReporter.Report(exception, "playback", context, message + hint);
         else errorReporter.Report(title, message + hint, context + Environment.NewLine + Environment.NewLine + (engineDetails ?? message), "playback");

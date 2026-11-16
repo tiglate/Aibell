@@ -4,11 +4,19 @@ name: Release
 on:
   release:
     types: [published]
+  # Rebuild and re-attach the packages of an existing release (for example after fixing this workflow).
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to build and attach to (for example v1.2.0)
+        required: true
+        type: string
 
 permissions:
   contents: write
 
 env:
+  TAG: ${{ github.event.release.tag_name || inputs.tag }}
   DOTNET_NOLOGO: "1"
   DOTNET_CLI_TELEMETRY_OPTOUT: "1"
 
@@ -19,11 +27,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.release.tag_name }}
+          ref: ${{ env.TAG }}
       - name: Compare
         run: |
           version="$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' Directory.Build.props | head -1)"
-          tag="${{ github.event.release.tag_name }}"
+          tag="$TAG"
           if [ "v$version" != "$tag" ]; then
             echo "::error::Tag $tag does not match the application version $version in Directory.Build.props."
             exit 1
@@ -41,7 +49,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.release.tag_name }}
+          ref: ${{ env.TAG }}
       - uses: actions/setup-dotnet@v4
         with:
           global-json-file: global.json
@@ -57,7 +65,10 @@ jobs:
           flatpak install --user -y --noninteractive flathub org.freedesktop.Platform//24.08 org.freedesktop.Sdk//24.08
       - name: Install packaging tools (Snap)
         if: matrix.format == 'snap'
-        run: sudo snap install snapcraft --classic
+        run: |
+          sudo snap install snapcraft --classic
+          # snapcraft runs as this user and cannot install the extension's content snaps itself.
+          sudo snap install gnome-46-2404 gnome-46-2404-sdk
       - name: Build
         env:
           # Build the snap on the runner itself (Ubuntu 24.04 is the core24 base) instead of inside LXD.
@@ -79,7 +90,7 @@ jobs:
             snap) files=(artifacts/packages/*.snap) ;;
           esac
           [ ${#files[@]} -gt 0 ] || { echo "::error::No ${{ matrix.format }} package was produced."; exit 1; }
-          gh release upload "${{ github.event.release.tag_name }}" "${files[@]}" --clobber --repo "${{ github.repository }}"
+          gh release upload "${{ env.TAG }}" "${files[@]}" --clobber --repo "${{ github.repository }}"
 
   msi:
     name: msi
@@ -89,7 +100,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.release.tag_name }}
+          ref: ${{ env.TAG }}
       - uses: actions/setup-dotnet@v4
         with:
           global-json-file: global.json
@@ -101,6 +112,6 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          $files = Get-ChildItem artifacts/packages -Filter *.msi | ForEach-Object FullName
+          $files = @(Get-ChildItem artifacts/packages -Filter *.msi | ForEach-Object FullName)
           if (-not $files) { throw 'No MSI was produced.' }
-          gh release upload "${{ github.event.release.tag_name }}" @files --clobber --repo "${{ github.repository }}"
+          gh release upload "${{ env.TAG }}" @files --clobber --repo "${{ github.repository }}"

@@ -12,6 +12,7 @@ namespace Aibell.Playback.Alsa.Tests;
 /// discarding device elsewhere.
 /// </summary>
 [TestFixture]
+[Platform("Linux", Reason = "ALSA exists only on Linux.")]
 public sealed class AlsaPlaybackTests
 {
     private static string? FixturePath => FindFixture();

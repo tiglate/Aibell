@@ -4,6 +4,7 @@ using Aibell.Mpd.Config;
 namespace Aibell.Mpd.Tests;
 
 [TestFixture]
+[Platform("Linux", Reason = "The expectations use Unix socket paths.")]
 public sealed class MpdEndpointTests
 {
     private static Func<string, string?> Env(params (string Key, string Value)[] values) => name => values.FirstOrDefault(item => item.Key == name).Value;

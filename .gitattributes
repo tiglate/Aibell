@@ -1,3 +1,6 @@
 # Keep modern C# whitespace checks identical across Linux and Windows checkouts.
 src/Aibell.*/**/*.cs text eol=lf
 tests/Aibell.*/**/*.cs text eol=lf
+
+# Test data is compared byte for byte; never convert its line endings.
+tests/fixtures/** -text

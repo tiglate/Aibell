@@ -69,6 +69,7 @@ public sealed class AlsaPlaybackTests
         if (fixture is null) Assert.Ignore("There is no audio fixture to play.");
 
         string device = DeviceForTest();
+        if (device == "null") Assert.Ignore("The discarding device does not keep time, so a short track ends at once; this needs a real sound device.");
         using var engine = new AlsaPlaybackEngine(device: device);
         Track track = ATrack(fixture);
 
@@ -94,6 +95,7 @@ public sealed class AlsaPlaybackTests
 
         // The engine is the one the application uses, with the real decoder and the real device.
         string device = DeviceForTest();
+        if (device == "null") Assert.Ignore("The discarding device does not keep time, so a short track ends at once; this needs a real sound device.");
         using var engine = new AlsaPlaybackEngine(device: device);
         Track track = ATrack(fixture);
 
@@ -119,6 +121,7 @@ public sealed class AlsaPlaybackTests
         if (fixture is null) Assert.Ignore("There is no audio fixture to play.");
 
         string device = DeviceForTest();
+        if (device == "null") Assert.Ignore("The discarding device does not keep time, so a short track ends at once; this needs a real sound device.");
         using var engine = new AlsaPlaybackEngine(device: device);
         Track track = ATrack(fixture);
 

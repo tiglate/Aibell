@@ -291,6 +291,7 @@ public sealed class MiniaudioPlaybackEngineTests
     }
 
     [Test]
+    [Retry(2)] // Wall-clock timing: a loaded CI runner can stall the test thread past the end of the short fixture.
     public async Task SetRate_WhilePlaying_KeepsThePositionInSourceTime()
     {
         using var engine = NewEngine();

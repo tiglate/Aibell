@@ -131,13 +131,13 @@ public sealed class SpectrumVisualizer : Control
     private static readonly Color High = Color.Parse("#FF3D8B");
     private static readonly IBrush CapBrush = new SolidColorBrush(Color.Parse("#F4F5F6"));
 
-    private static IBrush Ramp(double t)
+    private static SolidColorBrush Ramp(double t)
     {
         byte Mix(byte a, byte b) => (byte)(a + ((b - a) * t));
         return new SolidColorBrush(Color.FromRgb(Mix(Low.R, High.R), Mix(Low.G, High.G), Mix(Low.B, High.B)));
     }
 
-    private IBrush[] ramp = [];
+    private SolidColorBrush[] ramp = [];
 
     public override void Render(DrawingContext context)
     {

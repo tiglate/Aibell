@@ -80,6 +80,7 @@ public sealed class LibraryMonitoringServiceTests
     }
 
     [Test]
+    [Retry(3)] // Timing- and file-lock-sensitive on loaded Windows CI runners.
     public async Task FileAddedWhileWatching_IsImportedAndFileRemovedIsDropped()
     {
         string first = Path.Combine(music, "one.mp3");

@@ -271,12 +271,13 @@ public sealed class AlsaPlaybackTests
         }, "null");
         output.Start();
 
+        // The decoder fills its buffer on another thread, so the first buffers can be silence; wait for sound, not for a count.
         DateTime deadline = DateTime.UtcNow.AddSeconds(5);
         while (DateTime.UtcNow < deadline)
         {
             lock (captured)
             {
-                if (captured.Count > 48000 * 2) break;
+                if (captured.Any(value => Math.Abs(value) > 0.01f)) break;
             }
             Thread.Sleep(50);
         }

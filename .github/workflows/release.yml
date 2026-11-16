@@ -68,7 +68,7 @@ jobs:
         run: |
           sudo snap install snapcraft --classic
           # snapcraft runs as this user and cannot install the extension's content snaps itself.
-          sudo snap install gnome-46-2404 gnome-46-2404-sdk
+          sudo snap install gnome-46-2404 gnome-46-2404-sdk gtk-common-themes mesa-2404
       - name: Build
         env:
           # Build the snap on the runner itself (Ubuntu 24.04 is the core24 base) instead of inside LXD.

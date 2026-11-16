@@ -22,6 +22,13 @@ public sealed class PlaybackEngineChooserTests
         await store.SaveAsync(ApplicationPreferences.Default with { PlaybackEngine = kind });
     }
 
+    // The preferred player is PipeWire on Linux; on a machine without a PipeWire daemon (a CI runner) the chooser rightly falls back.
+    private static void RequirePreferredPlayer()
+    {
+        if (PlaybackEngineDefaults.Preferred == PlaybackEngineKind.PipeWire && !Aibell.Playback.PipeWire.PipeWireRuntime.IsAvailable(out string? problem))
+            Assert.Ignore("PipeWire is not running here: " + problem);
+    }
+
     private static bool Available(out string? problem) { problem = null; return true; }
 
     private static bool Unavailable(out string? problem) { problem = "libaibell_audio.so could not be loaded"; return false; }
@@ -72,6 +79,7 @@ public sealed class PlaybackEngineChooserTests
     [Test]
     public void Choose_NoSettingsFile_UsesThePreferredPlayer()
     {
+        RequirePreferredPlayer();
         // With nothing chosen, the platform's own choice is used: PipeWire on Linux.
         Assert.That(PlaybackEngineChooser.Choose(SettingsPath, directory, Available), Is.EqualTo(PlaybackEngineDefaults.Preferred));
     }
@@ -79,6 +87,7 @@ public sealed class PlaybackEngineChooserTests
     [Test]
     public void Choose_CorruptSettingsFile_UsesThePreferredPlayer()
     {
+        RequirePreferredPlayer();
         File.WriteAllText(SettingsPath, "{ this is not json");
 
         Assert.That(PlaybackEngineChooser.Choose(SettingsPath, directory, Available), Is.EqualTo(PlaybackEngineDefaults.Preferred));

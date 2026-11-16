@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  linux:
+    name: Build and test (Linux)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Cache NuGet packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: nuget-linux-${{ hashFiles('**/packages.linux-x64.lock.json', '**/packages.lock.json', 'Directory.Packages.props') }}
+          restore-keys: nuget-linux-
+      - name: Install ALSA (the engine tests load libasound.so)
+        run: sudo apt-get update && sudo apt-get install -y libasound2-dev
+      - name: Build
+        run: ./make.sh build
+      - name: Test
+        run: ./make.sh test --no-build
+
+  windows:
+    name: Build and test (Windows)
+    runs-on: windows-2025
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Cache NuGet packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.nuget/packages
+          key: nuget-windows-${{ hashFiles('**/packages.win-x64.lock.json', '**/packages.lock.json', 'Directory.Packages.props') }}
+          restore-keys: nuget-windows-
+      - name: Build
+        shell: pwsh
+        run: ./make.ps1 build
+      - name: Test
+        shell: pwsh
+        run: ./make.ps1 test --no-build

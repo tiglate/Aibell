@@ -1221,4 +1221,7 @@ Edycja tymczasowa: {1}</value></data>
   <data name="Prefs.Lyrics" xml:space="preserve"><value>Pokazuj teksty i wyszukuj je w sieci</value></data>
   <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>Pokazuj teksty i wyszukuj je w sieci</value></data>
   <data name="Prefs.LyricsNote" xml:space="preserve"><value>Po włączeniu obok kolejki odtwarzania pojawia się karta Teksty, a tytuł, wykonawca, album i długość każdego utworu są wysyłane do zainstalowanej wtyczki tekstów (domyślnie LRCLIB) przy pierwszym odtworzeniu, chyba że tekst jest już zapisany. Znalezione teksty są przechowywane na tym komputerze. Wyłącz, aby zatrzymać wszystkie wyszukiwania tekstów i ukryć kartę.</value></data>
+  <data name="Prefs.Visualizer" xml:space="preserve"><value>Pokaż wizualizację dźwięku za paskiem postępu</value></data>
+  <data name="Prefs.VisualizerAutomation" xml:space="preserve"><value>Pokaż wizualizację dźwięku za paskiem postępu</value></data>
+  <data name="Prefs.VisualizerNote" xml:space="preserve"><value>Podczas odtwarzania rysuje widmo dźwięku na żywo za paskiem postępu. Niedostępne, gdy gra serwer MPD, ani w odtwarzaczu VLC. Wyłączenie zatrzymuje analizę.</value></data>
 </root>

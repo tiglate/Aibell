@@ -14,6 +14,7 @@ public sealed class MpdConfigFileTests
     public void DeleteDirectory() => Directory.Delete(directory, recursive: true);
 
     [Test]
+    [Platform("Linux", Reason = "The expected paths use forward slashes.")]
     public void Candidates_FollowMpdsSearchOrder()
     {
         Assert.That(MpdConfigFile.Candidates("/cfg", "/home/a"), Is.EqualTo(new[] { "/cfg/mpd/mpd.conf", "/home/a/.mpdconf", "/home/a/.mpd/mpd.conf", "/etc/mpd.conf" }));

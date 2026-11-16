@@ -9,7 +9,7 @@ namespace Aibell.Desktop.ViewModels;
 public sealed record PreferencesData(ApplicationTheme Theme, bool ShowPlayQueue, double Volume, bool Muted,
     bool Shuffle, RepeatMode Repeat, bool ShowNotifications = false, string? PodcastFolder = null,
     bool PodcastAutoRefresh = true, bool OnlineLookup = false, PlaybackEngineKind PlaybackEngine = PlaybackEngineKind.Miniaudio,
-    string? Language = null, bool RadioCatalog = false, string? SoundFont = null, bool Lyrics = true);
+    string? Language = null, bool RadioCatalog = false, string? SoundFont = null, bool Lyrics = true, bool Visualizer = true);
 
 public sealed partial class MainWindowViewModel
 {
@@ -27,7 +27,7 @@ public sealed partial class MainWindowViewModel
     /// <summary>The player this run started with (the About window shows it); it can differ from the saved choice after a fallback.</summary>
     public PlaybackEngineKind ActivePlaybackEngine => activePlaybackEngine;
     public PreferencesData GetPreferences() => new(AppearanceTheme, IsPlayQueueVisible, ServerVolumeActive ? localVolume : Volume, ServerVolumeActive ? localMuted : preferredMuted,
-        playbackQueue.ShuffleEnabled, playbackQueue.RepeatMode, ShowDesktopNotifications, PodcastAutoRefresh: podcastAutoRefresh, OnlineLookup: onlineLookup, PlaybackEngine: playbackEngineKind, Language: language, RadioCatalog: radioCatalogEnabled, SoundFont: soundFontPath, Lyrics: lyricsEnabled);
+        playbackQueue.ShuffleEnabled, playbackQueue.RepeatMode, ShowDesktopNotifications, PodcastAutoRefresh: podcastAutoRefresh, OnlineLookup: onlineLookup, PlaybackEngine: playbackEngineKind, Language: language, RadioCatalog: radioCatalogEnabled, SoundFont: soundFontPath, Lyrics: lyricsEnabled, Visualizer: visualizerEnabled);
 
     public Task SavePreferencesAsync(PreferencesData preferences, CancellationToken cancellationToken = default) =>
         RunPlaybackOperation(() => SavePreferencesCoreAsync(preferences, cancellationToken));
@@ -55,6 +55,7 @@ public sealed partial class MainWindowViewModel
         soundFontPath = string.IsNullOrWhiteSpace(preferences.SoundFont) ? null : preferences.SoundFont.Trim();
         ApplyRadioCatalogEnabled(preferences.RadioCatalog);
         ApplyLyricsEnabled(preferences.Lyrics);
+        ApplyVisualizerEnabled(preferences.Visualizer);
         if (!ShowDesktopNotifications) CancelDesktopNotifications();
         AppearanceTheme = preferences.Theme; ApplyAppearanceTheme();
         IsPlayQueueVisible = preferences.ShowPlayQueue;

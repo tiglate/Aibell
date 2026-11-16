@@ -1177,4 +1177,7 @@ Temporary edit: {1}</value></data>
   <data name="Prefs.Lyrics" xml:space="preserve"><value>Show lyrics and look them up online</value></data>
   <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>Show lyrics and look them up online</value></data>
   <data name="Prefs.LyricsNote" xml:space="preserve"><value>When on, the Lyrics tab appears beside the play queue and each track's title, artist, album and length are sent to the installed lyrics plugin (LRCLIB by default) the first time it plays, unless the lyrics are already stored. Found lyrics are kept on this computer. Turn it off to stop all lyrics lookups and hide the tab.</value></data>
+  <data name="Prefs.Visualizer" xml:space="preserve"><value>Show the audio visualizer behind the progress bar</value></data>
+  <data name="Prefs.VisualizerAutomation" xml:space="preserve"><value>Show the audio visualizer behind the progress bar</value></data>
+  <data name="Prefs.VisualizerNote" xml:space="preserve"><value>Draws a live spectrum of the sound behind the progress bar while a track plays. It is not available when an MPD server is playing or with the VLC player. Turn it off to stop the analysis.</value></data>
 </root>

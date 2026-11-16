@@ -1155,4 +1155,7 @@
   <data name="Prefs.Lyrics" xml:space="preserve"><value>显示歌词并在线查找</value></data>
   <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>显示歌词并在线查找</value></data>
   <data name="Prefs.LyricsNote" xml:space="preserve"><value>开启后，播放队列旁会出现“歌词”选项卡；在歌词尚未保存的情况下，每首曲目首次播放时，其标题、艺术家、专辑和时长会发送给已安装的歌词插件（默认 LRCLIB）。找到的歌词保存在这台电脑上。关闭后将停止所有歌词查找并隐藏该选项卡。</value></data>
+  <data name="Prefs.Visualizer" xml:space="preserve"><value>在进度条背景中显示音频可视化效果</value></data>
+  <data name="Prefs.VisualizerAutomation" xml:space="preserve"><value>在进度条背景中显示音频可视化效果</value></data>
+  <data name="Prefs.VisualizerNote" xml:space="preserve"><value>播放曲目时，在进度条背景中实时绘制声音频谱。MPD 服务器播放时或使用 VLC 播放器时不可用。关闭后将停止分析。</value></data>
 </root>

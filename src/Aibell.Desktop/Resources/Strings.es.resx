@@ -1177,4 +1177,7 @@ Edición temporal: {1}</value></data>
   <data name="Prefs.Lyrics" xml:space="preserve"><value>Mostrar letras y buscarlas en línea</value></data>
   <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>Mostrar letras y buscarlas en línea</value></data>
   <data name="Prefs.LyricsNote" xml:space="preserve"><value>Si está activado, la pestaña Letras aparece junto a la cola de reproducción y el título, el artista, el álbum y la duración de cada pista se envían al complemento de letras instalado (LRCLIB por defecto) la primera vez que suena, salvo que la letra ya esté guardada. Las letras encontradas se guardan en este equipo. Desactívalo para detener todas las búsquedas de letras y ocultar la pestaña.</value></data>
+  <data name="Prefs.Visualizer" xml:space="preserve"><value>Mostrar el visualizador de audio detrás de la barra de progreso</value></data>
+  <data name="Prefs.VisualizerAutomation" xml:space="preserve"><value>Mostrar el visualizador de audio detrás de la barra de progreso</value></data>
+  <data name="Prefs.VisualizerNote" xml:space="preserve"><value>Dibuja un espectro en vivo del sonido detrás de la barra de progreso mientras suena una pista. No está disponible cuando suena un servidor MPD ni con el reproductor VLC. Desactívalo para detener el análisis.</value></data>
 </root>

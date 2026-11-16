@@ -8,6 +8,7 @@ namespace Aibell.Playback.Alsa.Tests;
 /// the checks that need one are skipped elsewhere; the ones that do not are always run.
 /// </summary>
 [TestFixture]
+[Platform("Linux", Reason = "ALSA exists only on Linux.")]
 public sealed class AlsaOutputTests
 {
     [Test]

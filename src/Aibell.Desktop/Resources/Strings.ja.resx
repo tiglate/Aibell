@@ -1155,4 +1155,7 @@
   <data name="Prefs.Lyrics" xml:space="preserve"><value>歌詞を表示し、オンラインで検索する</value></data>
   <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>歌詞を表示し、オンラインで検索する</value></data>
   <data name="Prefs.LyricsNote" xml:space="preserve"><value>オンにすると、再生キューの横に「歌詞」タブが表示され、歌詞がまだ保存されていない場合は、初めて再生するときに各トラックのタイトル、アーティスト、アルバム、長さがインストール済みの歌詞プラグイン (既定は LRCLIB) に送信されます。見つかった歌詞はこのコンピューターに保存されます。オフにすると、すべての歌詞検索が停止し、タブも非表示になります。</value></data>
+  <data name="Prefs.Visualizer" xml:space="preserve"><value>プログレスバーの背面にオーディオビジュアライザーを表示</value></data>
+  <data name="Prefs.VisualizerAutomation" xml:space="preserve"><value>プログレスバーの背面にオーディオビジュアライザーを表示</value></data>
+  <data name="Prefs.VisualizerNote" xml:space="preserve"><value>曲の再生中、プログレスバーの背面に音のスペクトラムをリアルタイムで描画します。MPD サーバーで再生中や VLC プレーヤーでは使用できません。オフにすると解析を停止します。</value></data>
 </root>

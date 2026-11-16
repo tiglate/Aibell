@@ -982,6 +982,7 @@ public sealed partial class MainWindowViewModel(
         languageAtStart ??= language;
         radioCatalogEnabled = preferences.RadioCatalogEnabled;
         ApplyLyricsEnabled(preferences.LyricsEnabled);
+        ApplyVisualizerEnabled(preferences.VisualizerEnabled);
         soundFontPath = preferences.SoundFontPath;
         soundFontAtStart ??= soundFontPath;
         podcastRate = preferences.PodcastPlaybackRate is 1.0 or 1.25 or 1.5 or 2.0 ? preferences.PodcastPlaybackRate : 1.0;
@@ -1074,7 +1075,8 @@ public sealed partial class MainWindowViewModel(
             language,
             radioCatalogEnabled,
             soundFontPath,
-            lyricsEnabled);
+            lyricsEnabled,
+            visualizerEnabled);
     }
 
     private Task PersistPreferencesAsync(CancellationToken cancellationToken)

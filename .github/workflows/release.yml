@@ -1,0 +1,106 @@
+name: Release
+
+# Runs when a release is published. Builds every supported package and attaches it to that release.
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+env:
+  DOTNET_NOLOGO: "1"
+  DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+
+jobs:
+  check-version:
+    name: Check the tag matches the version
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+      - name: Compare
+        run: |
+          version="$(sed -n 's:.*<Version>\(.*\)</Version>.*:\1:p' Directory.Build.props | head -1)"
+          tag="${{ github.event.release.tag_name }}"
+          if [ "v$version" != "$tag" ]; then
+            echo "::error::Tag $tag does not match the application version $version in Directory.Build.props."
+            exit 1
+          fi
+
+  linux-package:
+    name: ${{ matrix.format }}
+    needs: check-version
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        format: [deb, appimage, flatpak, snap]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Install packaging tools (AppImage)
+        if: matrix.format == 'appimage'
+        run: sudo apt-get update && sudo apt-get install -y squashfs-tools
+      - name: Install packaging tools (Flatpak)
+        if: matrix.format == 'flatpak'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y flatpak flatpak-builder
+          flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+          flatpak install --user -y --noninteractive flathub org.freedesktop.Platform//24.08 org.freedesktop.Sdk//24.08
+      - name: Install packaging tools (Snap)
+        if: matrix.format == 'snap'
+        run: sudo snap install snapcraft --classic
+      - name: Build
+        env:
+          # Build the snap on the runner itself (Ubuntu 24.04 is the core24 base) instead of inside LXD.
+          SNAPCRAFT_BUILD_ENVIRONMENT: host
+        run: |
+          case "${{ matrix.format }}" in
+            appimage) ./make.sh appimage --download-runtime ;;
+            *) ./make.sh ${{ matrix.format }} ;;
+          esac
+      - name: Upload to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          shopt -s nullglob
+          case "${{ matrix.format }}" in
+            deb) files=(artifacts/packages/*.deb) ;;
+            appimage) files=(artifacts/packages/*.AppImage) ;;
+            flatpak) files=(artifacts/packages/*.flatpak) ;;
+            snap) files=(artifacts/packages/*.snap) ;;
+          esac
+          [ ${#files[@]} -gt 0 ] || { echo "::error::No ${{ matrix.format }} package was produced."; exit 1; }
+          gh release upload "${{ github.event.release.tag_name }}" "${files[@]}" --clobber --repo "${{ github.repository }}"
+
+  msi:
+    name: msi
+    needs: check-version
+    runs-on: windows-2025
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Build
+        shell: pwsh
+        run: ./make.ps1 msi
+      - name: Upload to the release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $files = Get-ChildItem artifacts/packages -Filter *.msi | ForEach-Object FullName
+          if (-not $files) { throw 'No MSI was produced.' }
+          gh release upload "${{ github.event.release.tag_name }}" @files --clobber --repo "${{ github.repository }}"

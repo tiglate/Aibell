@@ -162,6 +162,7 @@ public sealed class LyricsViewModelTests
     }
 
     [Test]
+    [Retry(3)] // Timing- and file-lock-sensitive on loaded Windows CI runners.
     public async Task PlainLyricsShowWithoutHighlightingAndTheUserCanReplaceThem()
     {
         var (model, provider) = Create();

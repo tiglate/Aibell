@@ -181,6 +181,7 @@ public sealed class MpdConfigWindowTests
     }
 
     [AvaloniaTest]
+    [Platform("Linux", Reason = "Restarting MPD is a systemd user service feature.")]
     public async Task RestartButton_AppearsOnlyForAUserService()
     {
         await OpenAsync(serviceAvailable: false);

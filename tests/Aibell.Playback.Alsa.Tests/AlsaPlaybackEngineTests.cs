@@ -11,6 +11,7 @@ namespace Aibell.Playback.Alsa.Tests;
 /// the transport can be exercised on a machine without one.
 /// </summary>
 [TestFixture]
+[Platform("Linux", Reason = "ALSA exists only on Linux.")]
 public sealed class AlsaPlaybackEngineTests
 {
     private static Track ATrack() =>

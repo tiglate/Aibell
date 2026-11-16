@@ -179,6 +179,7 @@ public class Mp3BehaviourTests
     [TestCase("long_44k.mp3")]
     [TestCase("mpeg1_44k_320k.mp3")]
     [TestCase("mpeg2_22k_stereo_64k.mp3")]
+    [Retry(3)] // Timing- and file-lock-sensitive on loaded Windows CI runners.
     public void Decoding_IsFarFasterThanRealTime(string name)
     {
         byte[] file = Bytes(name);

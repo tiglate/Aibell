@@ -1265,4 +1265,7 @@
   <data name="Prefs.Lyrics" xml:space="preserve"><value>عرض الكلمات والبحث عنها عبر الإنترنت</value></data>
   <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>عرض الكلمات والبحث عنها عبر الإنترنت</value></data>
   <data name="Prefs.LyricsNote" xml:space="preserve"><value>عند التفعيل يظهر تبويب كلمات الأغاني بجانب قائمة التشغيل، ويُرسَل عنوان كل مقطع وفنانه وألبومه ومدته إلى إضافة الكلمات المثبتة (LRCLIB افتراضيًا) عند تشغيله لأول مرة ما لم تكن الكلمات محفوظة بالفعل. تُحفَظ الكلمات التي يُعثر عليها على هذا الحاسوب. عطّل الخيار لإيقاف كل عمليات البحث عن الكلمات وإخفاء التبويب.</value></data>
+  <data name="Prefs.Visualizer" xml:space="preserve"><value>إظهار مؤثّر الصوت المرئي خلف شريط التقدّم</value></data>
+  <data name="Prefs.VisualizerAutomation" xml:space="preserve"><value>إظهار مؤثّر الصوت المرئي خلف شريط التقدّم</value></data>
+  <data name="Prefs.VisualizerNote" xml:space="preserve"><value>يرسم طيف الصوت مباشرةً خلف شريط التقدّم أثناء تشغيل المقطع. غير متاح عند التشغيل من خادم MPD أو مع مشغّل VLC. أوقفه لإيقاف التحليل.</value></data>
 </root>

@@ -4,104 +4,76 @@
 [![Avalonia](https://img.shields.io/badge/UI-Avalonia-8B44AC)](https://avaloniaui.net/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](#license-and-credits)
 
-**Aibell** is a desktop music library and player for Linux and Windows, built with .NET 10 and
-[Avalonia](https://avaloniaui.net/). It aims for a dense, practical library view, strong browsing and local-first
-playback, in the spirit of Songbird and Banshee. On Linux, its default player uses managed decoders with PipeWire audio
-output; ALSA, [miniaudio](https://miniaud.io/) and [LibVLC](https://www.videolan.org/vlc/libvlc.html) are also available.
-Choose the playback engine under **Preferences → Playback**; the choice takes effect after restart.
+**Aibell** is a desktop music player and library for Linux and Windows. It gives you a dense, practical view of your
+collection, fast browsing and search, and local-first playback, in the spirit of Songbird and Banshee, with extras
+like synced lyrics, internet radio, podcasts, a live visualizer and a built-in equalizer.
 
-Beyond ordinary music files, Aibell plays two kinds of game music with no extra software, in pure C#:
-**MIDI** files (.mid, .midi, .rmi) through a built-in synthesizer or a SoundFont 2 bank you supply, and
-**Super Nintendo music**: `.spc` files, and `.rsn` archives of them (RAR files holding a game's soundtrack, one track per SPC),
-played by emulating the console's SPC700 processor and S-DSP sound chip. Audio CDs are read from the drive in C# as well.
+Under the hood, Aibell ships its own audio decoders for the most common formats (MP3, FLAC, Ogg Vorbis, Opus, WAV, AIFF,
+AAC and Apple Lossless), written in C#, so it plays your music without extra codecs or system libraries. You can choose
+between several playback backends: the built-in player (PipeWire or ALSA on Linux, [miniaudio](https://miniaud.io/)
+elsewhere) or [VLC](https://www.videolan.org/vlc/libvlc.html), under **Preferences → Playback**.
 
-![Aibell's main window in the dark theme: sidebar with library sections, playlists and folders; genre, artist and album panes; the track list; the now-playing cover; and the play queue](screenshots/screenshot01.png)
+![Aibell playing a track with synced lyrics and the visualizer behind the progress bar](screenshots/screenshot07.png)
+
+## A look around
+
+| | |
+| --- | --- |
+| ![Internet radio: a searchable catalog of stations with genres and countries](screenshots/screenshot06.png) | ![Podcasts: subscriptions, downloads, resume and playback speed](screenshots/screenshot05.png) |
+| **Internet radio.** Browse a station catalog by genre and country, or save your own. | **Podcasts.** Subscribe, download, and pick up where you left off. |
+
+![The ten-band equalizer over the library, with an MPD server connected](screenshots/screenshot01.png)
 
 ## Features
 
-**Library**
+**Your library**
 
-- Browse by genre, artist and album in a compact three-pane view; search with **Ctrl+F**.
-- Watch one or more music folders; added, changed and removed files are reconciled automatically.
-- Customise track columns: resize, reorder, hide, sort and best-fit.
-- Ratings, play counts and preferences are stored in a local SQLite library.
+- Browse by genre, artist and album in a compact three-pane view; search instantly with **Ctrl+F**.
+- Point Aibell at your music folders; it notices added, changed and removed files on its own.
+- Customize the track list: resize, reorder, hide and sort columns. Rate tracks; play counts are kept for you.
+- Playlists and smart playlists (rules like "rating above 3 and genre is Rock"), with M3U, M3U8 and PLS import and export.
+- Edit tags and cover art right from the app, with a backup you can restore. Album covers can be looked up online.
 
 **Playback**
 
-- Seek, volume, mute, shuffle, repeat, pause and stop; a play queue that survives restarts and accepts dropped files.
-- Playlists (create, rename, delete, sort, reorder, export to UTF-8 M3U8) and smart playlists with All/Any rules.
-- Import M3U, M3U8 and PLS playlists after reviewing them.
-- Internet radio: save HTTP/HTTPS direct-stream stations, import station playlists, reconnect explicitly.
-- Formats include MP3, FLAC, Ogg Vorbis, Opus, WAV, AIFF (.aiff, .aif, .aifc), AAC-LC and Apple Lossless (M4A), MIDI, and SNES music (SPC and RSN).
-  WMA is available through Windows Media Foundation or VLC. Support varies by engine and file encoding.
-- SNES music: `.spc` files and the SPC tracks inside `.rsn` archives appear in the library like any other tracks (title, game as
-  album, artist and length come from the file's own tags) and play with a fade-out at the tagged length. Seeking works; tag editing does not.
-- Audio CD playback with an optional MusicBrainz lookup, read from the drive in C# by the built-in player (no VLC needed; Windows part written without a machine to test on).
-- Podcasts: subscriptions, show notes and covers, a download queue, automatic progress and resume, 1x–2x speed and an
-  hourly new-episode check you can switch off.
-- Audiobooks: a shelf of local files with saved positions and chapter playback.
+- A play queue that survives restarts and accepts dropped files; shuffle, repeat, seek, volume and mute.
+- **Visualizer:** a live spectrum glows behind the progress bar, like the classic players. On by default; turn it off in
+  **Preferences → General**.
+- **Equalizer:** ten bands with presets, plus pitch-preserving speed control for podcasts.
+- **Lyrics:** a tab beside the queue shows the lyrics of the playing track, highlighting the current line when they are
+  time-synced. You can search, edit and save them into the file. (Lyrics lookups are on by default and can be switched
+  off in **Preferences → Online**.)
+- Formats: MP3, FLAC, Ogg Vorbis, Opus, WAV, AIFF, AAC and Apple Lossless (M4A), plus **MIDI** (with the built-in synthesizer or a
+  SoundFont you provide) and **Super Nintendo music** (`.spc` files and `.rsn` archives). WMA and a few rarer
+  encodings work through the VLC backend.
+- **Audio CDs** play straight from the drive, with an optional online lookup for track names.
 
-**Music Player Daemon (MPD)**
+**Radio, podcasts and audiobooks**
 
-- **MPD** in the sidebar's Library list makes the Music view show an MPD server's library (local or on the network): the
-  same genre, artist and album lists, search and track list, with the server's stored playlists in the Playlists section
-  (the **+** button there saves the selected song as a new server playlist; the track menu's **Add to Playlist** lists them
-  too). Songs play through Aibell's own transport bar, play queue and now-playing cover, on the server: queue them, shuffle
-  and repeat as usual. Aibell and MPD never play at the same time: starting one stops the other. Only the song being
-  played is added to the server's queue, behind anything other clients put there, and it is removed afterwards; the server's
-  `single` setting is put back as it was. While MPD is selected (or an MPD song is playing) the volume bar and the mute button
-  show and control the server's volume instead of Aibell's own; the volume Aibell saves for itself is not changed, and the
-  player's habit of re-applying its volume at every track never reaches the server. While MPD is selected, an **MPD** group under the play queue (with tabs for the
-  connection, the database and the outputs) holds Connect and Disconnect, **Connection…**, Update database, the server
-  settings and the audio outputs. Nothing connects until you press **Connect**. The server is found as MPD's own clients do
-  (`MPD_HOST`/`MPD_PORT`, then your `mpd.conf`, then the per-user socket, then `localhost:6600`), or you can enter a host and
-  port under **Connection…**. The password is kept for the session only and never written to disk. MPD closes a client that is
-  silent for a minute, so Aibell pings the server regularly, and if the connection breaks anyway it reconnects a few times
-  (not forever). Problems are explained in plain words in the usual error window, with the technical details (exception,
-  stack trace, server and protocol, MPD's error code) behind its **Details** button and in the error log.
-- **Server settings…** edits the `mpd.conf` of an MPD running on this computer: every setting MPD documents (files, database,
-  network, permissions and passwords, audio, ReplayGain, limits, zeroconf), every block (`audio_output`, `decoder`, `input`,
-  `database`, `resampler`, `filter`, `playlist_plugin`, `archive_plugin`, `neighbors`, `input_cache`, `partition`) with the
-  settings of each plugin, a list of settings it does not know, and the whole file as text. Comments, order and unknown lines
-  are kept as written; each save keeps a timestamped backup beside the file and checks values first. MPD reads its
-  configuration only at start-up; when MPD runs as a systemd user service, **Restart MPD** (only on your click) applies it.
-  Setting names are MPD's own and are shown unchanged.
+- **Internet radio:** a built-in station catalog and your own saved stations.
+- **Podcasts:** subscriptions, show notes, downloads, automatic resume and 1x–2x speed.
+- **Audiobooks:** a shelf with saved positions and chapters.
 
-**Metadata and artwork**
+**Works with MPD**
 
-- **View Metadata…** (context menu or **Alt+Enter**) shows detailed properties and edits tags in the library only, or
-  writes them to the file (FLAC, M4A, MP3, Ogg, Opus and classic PCM WAV) with a verified backup you can restore.
-- **Get Artwork…** looks up an album cover on MusicBrainz and saves it as `cover.jpg` in the album folder. It never
-  replaces an existing cover file.
-- Artwork from the file or the folder is shown in the now-playing panel.
+- Browse and play the library of a [Music Player Daemon](https://www.musicpd.org/) server, local or on your network, from the
+  same interface, including its playlists, volume and outputs. Nothing connects until you press **Connect**.
+- Edit the `mpd.conf` of an MPD running on your computer with a guided editor that keeps your comments and makes a backup on every save.
 
-**Devices and desktop**
+**Desktop**
 
-- **Devices** copies music to a mounted USB drive, memory card or mass-storage player. It shows a preview first, only
-  adds files (nothing on the device is ever deleted) and can write an `Aibell.m3u8` playlist.
-- Linux: MPRIS media controls and optional track-change notifications. Windows: system media transport controls, notifications,
-  taskbar progress and Previous/Play/Next thumbnail buttons.
-- Plugins: **Preferences → Plugins** lists, enables, disables, installs and uninstalls plugins. Changes apply after a
-  restart. A plugin runs inside the application with your permissions, so install only plugins you trust.
-- Online lookups (MusicBrainz) come from a plugin and are **off by default**. Nothing is sent until you press Look up
-  or Get Artwork and have allowed online lookup in **Preferences → Online**.
-- Lyrics: a **Lyrics** tab beside the play queue shows the lyrics of the playing track, with the current line highlighted
-  and followed when the lyrics are time-synced. Lyrics come from the file's own tags, then a local cache, then a lyrics
-  plugin (LRCLIB, shipped in `plugins/`), looked up in the background so playback never waits. Unlike the lookups above,
-  this is **on by default**: the title, artist, album and length of a track are sent to lrclib.net the first time it plays,
-  unless its lyrics are already stored. Switch it off in **Preferences → Online** and the tab and every lookup are gone.
-  **Find…** searches by hand when the automatic match is wrong, **Edit…** lets you type or paste lyrics (LRC timestamps make
-  them synced) and can also save them into the file's tags, with a backup, for FLAC, M4A, MP3, Ogg and Opus.
-- Light, dark or system theme; keyboard-operable transport with accessible names.
-- A main menu (File, Edit, View, Controls, Library, Help) with every action of the buttons and context menus; items
-  enable and disable with the selected library item. **Help → About Aibell** shows the version, what this installation
-  supports (player, VLC, media controls, plugins) and the acknowledgements.
+- Copy music to a USB drive, memory card or portable player, with a preview first. Nothing on the device is ever deleted.
+- Media keys and desktop notifications (MPRIS on Linux; system media controls and taskbar buttons on Windows).
+- Light, dark or system theme, full keyboard control, and a plugin system for online lookups and lyrics.
+- Available in English, Brazilian Portuguese, Spanish, Italian, French, German, Polish, Russian, Japanese, Simplified
+  Chinese, Hebrew and Arabic. The language follows your system; set `AIBELL_LANGUAGE` (for example `AIBELL_LANGUAGE=de`)
+  to override it. The translations have not been reviewed by native speakers.
+- On tiling window managers (niri, sway, Hyprland, i3, ...) the window has no title bar; set `AIBELL_TITLE_BAR=on` or `off`
+  to override the detection.
 
-**Languages:** English, Brazilian Portuguese, Spanish, Italian, French, German, Polish, Russian, Japanese, Simplified
-Chinese, Hebrew and Arabic (right-to-left). The language follows the system; set `AIBELL_LANGUAGE` (for example
-`AIBELL_LANGUAGE=de`) to override it.
-On tiling compositors and bare window managers (niri, sway, Hyprland, i3, ...) the window has no title bar, since those
-sessions draw none; set `AIBELL_TITLE_BAR=on` or `off` to override the detection. The translations have not been reviewed by native speakers.
+**Privacy:** online lookups (covers, track names) are **off by default** and only run when you ask. Lyrics lookups are on by
+default and send a track's title, artist, album and length to lrclib.net; switch them off in Preferences. Your music files are
+never changed unless you explicitly choose to write tags.
 
 ## Install and run
 
@@ -118,12 +90,9 @@ Otherwise, build from source.
   ALSA device and `libasound`.
 - Optional: a native **LibVLC 3** runtime for VLC playback and formats such as HE-AAC that the managed decoder does not support.
 
-The PipeWire and ALSA engines use C# decoders and system audio libraries. On Linux the application prefers PipeWire,
-then falls back to ALSA and miniaudio if the selected output is unavailable. If no built-in engine is available it
-selects VLC. On Windows the default uses miniaudio; Windows Media Foundation supplies support for some formats.
-The managed AAC implementation supports AAC-LC; HE-AAC, encrypted or fragmented MP4, Vorbis floor 0 and certain other
-codec variants are unsupported. Select VLC for formats your chosen player cannot decode. Equalizer and pitch-preserving
-speed controls are available in the built-in players.
+On Linux the built-in player prefers PipeWire, then falls back to ALSA and miniaudio, and finally to VLC if none is
+available. On Windows the default uses miniaudio. The C# decoders do not cover HE-AAC, encrypted or fragmented MP4 and a few
+rare codec variants; select VLC for those. The equalizer and pitch-preserving speed control work in the built-in players.
 
 To use VLC on Ubuntu and compatible distributions:
 
@@ -214,29 +183,12 @@ The results are written to `artifacts/packages`. The AppImage, the Flatpak and t
 | **Ctrl+Q**                                           | Quit after pending work finishes                  |
 | **Tab**, then arrows, **Page Up/Down**, **Home/End** | Adjust the focused seek or volume slider          |
 
-## Project layout
+## For developers
 
-The solution is `Aibell.slnx`; code is split into layers that only depend inward:
-
-| Project                                             | Responsibility                                                                                                                                                   |
-| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Aibell.Domain`                                     | Framework-free media, playlist, podcast and playback rules                                                                                                       |
-| `Aibell.Application`                                | Use cases and the ports the outer layers implement                                                                                                               |
-| `Aibell.Infrastructure`                             | SQLite storage, settings, metadata, artwork, plugins, device sync                                                                                                |
-| `Aibell.Audio.*`                                    | Managed decoders (AAC, WAV, FLAC, Ogg, Vorbis, Opus, MP3, ALAC, MIDI, SNES SPC), audio CD reader and shared audio code                                           |
-| `Aibell.Archive.Rar`                                | Managed RAR 3/4/5 reader (decompress only) behind `.rsn` archives                                                                                                |
-| `Aibell.Playback.Core`                              | Shared decoding pipeline, source selection, equalizer and speed control                                                                                          |
-| `Aibell.Playback.PipeWire` / `Aibell.Playback.Alsa` | Linux output engines using managed decoders and system audio libraries                                                                                           |
-| `Aibell.Playback.LibVLC`                            | LibVLC playback adapter                                                                                                                                          |
-| `Aibell.Playback.Miniaudio`                         | Built-in playback engine over a small native shim (`native/aibell-audio`) around miniaudio                                                                       |
-| `Aibell.Platform.Linux` / `Aibell.Platform.Windows` | Media session, notifications, optical drives and removable volumes                                                                                               |
-| `Aibell.Mpd`                                        | MPD protocol client and a lossless `mpd.conf` reader, editor and setting catalog (no other dependencies)                                                         |
-| `Aibell.Metadata.MusicBrainz`                       | Optional online-lookup plugin, shipped in `plugins/` and loaded at run time                                                                                      |
-| `Aibell.Lyrics.Lrclib`                              | Optional lyrics plugin (lrclib.net, plain and synced), shipped in `plugins/` and loaded at run time                                                              |
-| `Aibell.Desktop`                                    | The Avalonia UI and the composition root                                                                                                                         |
-| `tools/AibellTools`                                 | Developer tool in C#: secret scan, coverage gate, candidate packaging, Linux publish smoke test (run with `dotnet run --project tools/AibellTools -- <command>`) |
-
-Tests live in `tests/Aibell.*.Tests`. The user interface text is in `src/Aibell.Desktop/Resources/Strings*.resx`; to add a
+The solution is `Aibell.slnx`, split into layers that only depend inward: `Aibell.Domain` and `Aibell.Application` (rules and
+ports), `Aibell.Infrastructure` (storage, metadata, plugins), `Aibell.Audio.*` (the managed decoders), `Aibell.Playback.*`
+(the PipeWire, ALSA, miniaudio and LibVLC backends), `Aibell.Mpd`, `Aibell.Platform.*` and `Aibell.Desktop` (the Avalonia UI).
+Tests live in `tests/Aibell.*.Tests`. The interface text is in `src/Aibell.Desktop/Resources/Strings*.resx`; to add a
 language, copy `Strings.pt-BR.resx`, translate it, add the plural forms the language needs, list the culture in
 `Aibell.Desktop.csproj` and in the `LocalizationTests`, and run the tests.
 

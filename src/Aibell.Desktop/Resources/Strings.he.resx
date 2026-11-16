@@ -1199,4 +1199,7 @@
   <data name="Prefs.Lyrics" xml:space="preserve"><value>הצגת מילים וחיפושן ברשת</value></data>
   <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>הצגת מילים וחיפושן ברשת</value></data>
   <data name="Prefs.LyricsNote" xml:space="preserve"><value>כשהאפשרות פעילה, הלשונית מילים מופיעה לצד תור הניגון, והכותרת, האמן, האלבום והאורך של כל רצועה נשלחים לתוספת המילים המותקנת (כברירת מחדל LRCLIB) בפעם הראשונה שהיא מתנגנת, אלא אם המילים כבר שמורות. מילים שנמצאו נשמרות במחשב זה. כבו את האפשרות כדי לעצור את כל חיפושי המילים ולהסתיר את הלשונית.</value></data>
+  <data name="Prefs.Visualizer" xml:space="preserve"><value>הצג את הוויזואליזר של השמע מאחורי סרגל ההתקדמות</value></data>
+  <data name="Prefs.VisualizerAutomation" xml:space="preserve"><value>הצג את הוויזואליזר של השמע מאחורי סרגל ההתקדמות</value></data>
+  <data name="Prefs.VisualizerNote" xml:space="preserve"><value>משרטט ספקטרום חי של הצליל מאחורי סרגל ההתקדמות בזמן ניגון רצועה. אינו זמין כשנגן שרת MPD או עם נגן VLC. כבו כדי לעצור את הניתוח.</value></data>
 </root>

@@ -40,7 +40,8 @@ public sealed record ApplicationPreferences(
     string? Language = null,
     bool RadioCatalogEnabled = false,
     string? SoundFontPath = null,
-    bool LyricsEnabled = true)
+    bool LyricsEnabled = true,
+    bool VisualizerEnabled = true)
 {
     public static ApplicationPreferences Default { get; } = new(
         Volume: 0.8,

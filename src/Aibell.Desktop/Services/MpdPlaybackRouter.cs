@@ -15,7 +15,7 @@ namespace Aibell.Desktop.Services;
 /// is never passed to the server, nor, right after MPD, to the local engine (which keeps the level it had).
 /// </para>
 /// </summary>
-public sealed class MpdPlaybackRouter : IPlaybackEngine, IEqualizerControl, IPlaybackRateControl, IAsyncDisposable
+public sealed class MpdPlaybackRouter : IPlaybackEngine, IEqualizerControl, IPlaybackRateControl, ISpectrumSource, IAsyncDisposable
 {
     private readonly IPlaybackEngine local;
     private readonly MpdPlaybackEngine mpd;
@@ -149,6 +149,21 @@ public sealed class MpdPlaybackRouter : IPlaybackEngine, IEqualizerControl, IPla
 
     public Task SetEqualizerAsync(EqualizerSettings settings, CancellationToken cancellationToken = default) =>
         local is IEqualizerControl control ? control.SetEqualizerAsync(settings, cancellationToken) : Task.CompletedTask;
+
+    // The sound of an MPD server never passes through this program, so there is nothing to analyse while it plays.
+    public bool IsSpectrumAvailable => !mpdActive && local is ISpectrumSource { IsSpectrumAvailable: true };
+
+    public void SetSpectrumEnabled(bool enabled)
+    {
+        if (local is ISpectrumSource source) source.SetSpectrumEnabled(enabled);
+    }
+
+    public bool TryReadSpectrum(Span<float> bands)
+    {
+        if (!mpdActive && local is ISpectrumSource source) return source.TryReadSpectrum(bands);
+        bands.Clear();
+        return false;
+    }
 
     public double Rate => local is IPlaybackRateControl control ? control.Rate : 1.0;
 

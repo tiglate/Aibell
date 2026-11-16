@@ -11,7 +11,7 @@ namespace Aibell.Playback.Alsa;
 /// to the ALSA device instead of miniaudio. It is the fallback for Linux systems without a
 /// PipeWire daemon, and it can be chosen by hand.
 /// </summary>
-public sealed class AlsaPlaybackEngine : IPlaybackEngine, IPlaybackRateControl, IEqualizerControl, IDisposable
+public sealed class AlsaPlaybackEngine : IPlaybackEngine, IPlaybackRateControl, IEqualizerControl, ISpectrumSource, IDisposable
 {
     private static readonly TimeSpan StartTimeout = TimeSpan.FromSeconds(15);
     private readonly object gate = new();
@@ -23,6 +23,7 @@ public sealed class AlsaPlaybackEngine : IPlaybackEngine, IPlaybackRateControl, 
     private double playbackRate = 1.0;
     private EqualizerSettings equalizer = EqualizerSettings.Flat;
     private volatile EqualizerProcessor? equalizerProcessor;
+    private readonly SpectrumAnalyzer spectrum = new();
     private AlsaOutput? output;
     private DecodePipeline? pipeline;
     private volatile DecodePipeline? rendering;
@@ -271,6 +272,12 @@ public sealed class AlsaPlaybackEngine : IPlaybackEngine, IPlaybackRateControl, 
         }
     }
 
+    public bool IsSpectrumAvailable => true;
+
+    public void SetSpectrumEnabled(bool enabled) => spectrum.Enabled = enabled;
+
+    public bool TryReadSpectrum(Span<float> bands) => spectrum.Read(bands);
+
     public Task SetEqualizerAsync(EqualizerSettings settings, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(settings);
@@ -291,6 +298,7 @@ public sealed class AlsaPlaybackEngine : IPlaybackEngine, IPlaybackRateControl, 
         AlsaOutput opened = new(Render, device);
         EqualizerProcessor processor = new(opened.SampleRate);
         processor.Set(equalizer);
+        spectrum.SampleRate = opened.SampleRate;
         equalizerProcessor = processor;
         return output = opened;
     }
@@ -317,6 +325,7 @@ public sealed class AlsaPlaybackEngine : IPlaybackEngine, IPlaybackRateControl, 
         }
         active.Render(buffer);
         equalizerProcessor?.Process(buffer);
+        spectrum.Write(buffer);
         float from = currentGain, to = targetGain;
         if (from == 1f && to == 1f)
         {

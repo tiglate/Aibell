@@ -59,7 +59,15 @@ public sealed class PreferencesDialog : Window
         general.Children.Add(Field(Loc.Get("Prefs.Appearance"), theme));
         general.Children.Add(Field(Loc.Get("Prefs.Language"), languageChoice));
         general.Children.Add(new TextBlock { Text = Loc.Get("Prefs.LanguageRestart"), FontSize = 11, TextWrapping = TextWrapping.Wrap });
-        general.Children.Add(queue); general.Children.Add(notifications);
+        CheckBox visualizer = new()
+        {
+            Name = "PreferencesVisualizer",
+            Content = Loc.Get("Prefs.Visualizer"),
+            IsChecked = initial.Visualizer
+        };
+        AutomationProperties.SetName(visualizer, Loc.Get("Prefs.VisualizerAutomation"));
+        ToolTip.SetTip(visualizer, Loc.Get("Prefs.VisualizerNote"));
+        general.Children.Add(queue); general.Children.Add(notifications); general.Children.Add(visualizer);
         general.Children.Add(new TextBlock { Text = Loc.Get("Prefs.GeneralNote"), TextWrapping = TextWrapping.Wrap });
         StackPanel playback = new() { Spacing = 14, Margin = new Thickness(16) };
         playback.Children.Add(Field(Loc.Get("Prefs.Volume"), volume)); playback.Children.Add(mute); playback.Children.Add(shuffle);
@@ -207,7 +215,7 @@ public sealed class PreferencesDialog : Window
             RequestedPodcastFolder(), autoRefresh.IsChecked == true, onlineLookup.IsChecked == true,
             engine.SelectedIndex >= 0 && engine.SelectedIndex < engineChoices.Length ? engineChoices[engine.SelectedIndex].Kind : engineChoices[0].Kind,
             languageChoice.SelectedIndex <= 0 ? null : AppLanguages.All[languageChoice.SelectedIndex - 1].Code, radioCatalog.IsChecked == true,
-            string.IsNullOrWhiteSpace(soundFont.Text) ? null : soundFont.Text.Trim(), lyrics.IsChecked == true)), close: true);
+            string.IsNullOrWhiteSpace(soundFont.Text) ? null : soundFont.Text.Trim(), lyrics.IsChecked == true, visualizer.IsChecked == true)), close: true);
         string? RequestedPodcastFolder()
         {
             if (!model.CanChoosePodcastFolder) return null;

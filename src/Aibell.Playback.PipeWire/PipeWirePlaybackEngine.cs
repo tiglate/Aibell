@@ -10,7 +10,7 @@ namespace Aibell.Playback.PipeWire;
 /// The built-in player through PipeWire: the managed decoders and the equalizer, with the sound
 /// going to the PipeWire daemon. It needs no native library and is the default on Linux.
 /// </summary>
-public sealed class PipeWirePlaybackEngine : IPlaybackEngine, IPlaybackRateControl, IEqualizerControl, IDisposable
+public sealed class PipeWirePlaybackEngine : IPlaybackEngine, IPlaybackRateControl, IEqualizerControl, ISpectrumSource, IDisposable
 {
     private static readonly TimeSpan StartTimeout = TimeSpan.FromSeconds(15);
     private readonly object gate = new();
@@ -21,6 +21,7 @@ public sealed class PipeWirePlaybackEngine : IPlaybackEngine, IPlaybackRateContr
     private double playbackRate = 1.0;
     private EqualizerSettings equalizer = EqualizerSettings.Flat;
     private volatile EqualizerProcessor? equalizerProcessor;
+    private readonly SpectrumAnalyzer spectrum = new();
     private PipeWireStream? stream;
     private DecodePipeline? pipeline;
     private volatile DecodePipeline? rendering;
@@ -265,6 +266,12 @@ public sealed class PipeWirePlaybackEngine : IPlaybackEngine, IPlaybackRateContr
         }
     }
 
+    public bool IsSpectrumAvailable => true;
+
+    public void SetSpectrumEnabled(bool enabled) => spectrum.Enabled = enabled;
+
+    public bool TryReadSpectrum(Span<float> bands) => spectrum.Read(bands);
+
     public Task SetEqualizerAsync(EqualizerSettings settings, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(settings);
@@ -295,6 +302,7 @@ public sealed class PipeWirePlaybackEngine : IPlaybackEngine, IPlaybackRateContr
             opened.WaitUntilReady(StartTimeout);
             EqualizerProcessor processor = new(opened.SampleRate);
             processor.Set(equalizer);
+            spectrum.SampleRate = opened.SampleRate;
             equalizerProcessor = processor;
             return stream = opened;
         }
@@ -327,6 +335,7 @@ public sealed class PipeWirePlaybackEngine : IPlaybackEngine, IPlaybackRateContr
         }
         active.Render(buffer);
         equalizerProcessor?.Process(buffer);
+        spectrum.Write(buffer);
         float from = currentGain, to = targetGain;
         if (from == 1f && to == 1f)
         {

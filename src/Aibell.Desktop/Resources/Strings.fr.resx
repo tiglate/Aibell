@@ -1177,4 +1177,7 @@ Modification temporaire : {1}</value></data>
   <data name="Prefs.Lyrics" xml:space="preserve"><value>Afficher les paroles et les rechercher en ligne</value></data>
   <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>Afficher les paroles et les rechercher en ligne</value></data>
   <data name="Prefs.LyricsNote" xml:space="preserve"><value>Si cette option est activée, l'onglet Paroles apparaît à côté de la file de lecture, et le titre, l'artiste, l'album et la durée de chaque piste sont envoyés au module de paroles installé (LRCLIB par défaut) à sa première lecture, sauf si les paroles sont déjà enregistrées. Les paroles trouvées sont conservées sur cet ordinateur. Désactivez-la pour arrêter toutes les recherches de paroles et masquer l'onglet.</value></data>
+  <data name="Prefs.Visualizer" xml:space="preserve"><value>Afficher le visualiseur audio derrière la barre de progression</value></data>
+  <data name="Prefs.VisualizerAutomation" xml:space="preserve"><value>Afficher le visualiseur audio derrière la barre de progression</value></data>
+  <data name="Prefs.VisualizerNote" xml:space="preserve"><value>Dessine un spectre en direct du son derrière la barre de progression pendant la lecture. Indisponible lorsqu'un serveur MPD joue ou avec le lecteur VLC. Désactivez-le pour arrêter l'analyse.</value></data>
 </root>

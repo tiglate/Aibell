@@ -245,10 +245,12 @@
           </StackPanel>
           </StackPanel>
 
-          <Border Grid.Column="1" Margin="12,0" Padding="12,6" MaxWidth="820"
+          <Border Grid.Column="1" Margin="12,0" MaxWidth="820" ClipToBounds="True"
                   HorizontalAlignment="Stretch" Background="{DynamicResource DisplayBrush}"
                   BorderBrush="#484C50" BorderThickness="1" CornerRadius="4">
-            <Grid RowDefinitions="Auto,Auto">
+            <Panel>
+            <controls:SpectrumVisualizer x:Name="Visualizer" Source="{Binding SpectrumSource}" IsRunning="{Binding ShowVisualizer}" />
+            <Grid Margin="12,6" RowDefinitions="Auto,Auto">
               <TextBlock HorizontalAlignment="Center" Foreground="#F4F5F6"
                          FontWeight="SemiBold" Text="{Binding NowPlaying}" TextTrimming="CharacterEllipsis" />
               <Grid Grid.Row="1" Margin="0,4,0,0" ColumnDefinitions="42,*,42">
@@ -266,6 +268,7 @@
                            Foreground="#B9BEC2" FontSize="10" Text="{Binding DurationText}" />
               </Grid>
             </Grid>
+            </Panel>
           </Border>
 
           <Grid Grid.Column="2" Width="340" ColumnDefinitions="*,Auto" ColumnSpacing="8" VerticalAlignment="Center">

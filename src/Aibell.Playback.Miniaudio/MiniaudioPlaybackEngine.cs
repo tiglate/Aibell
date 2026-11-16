@@ -10,7 +10,7 @@ namespace Aibell.Playback.Miniaudio;
 /// The built-in player: miniaudio for output and the common formats (MP3, FLAC, Ogg Vorbis, WAV), Media Foundation for AAC and
 /// friends on Windows. It needs no other player installed. The equalizer and the pitch-preserving playback speed are done here, on the decoded audio.
 /// </summary>
-public sealed class MiniaudioPlaybackEngine : IPlaybackEngine, IPlaybackRateControl, IEqualizerControl, IDisposable
+public sealed class MiniaudioPlaybackEngine : IPlaybackEngine, IPlaybackRateControl, IEqualizerControl, ISpectrumSource, IDisposable
 {
     private static readonly TimeSpan StartTimeout = TimeSpan.FromSeconds(15);
     private readonly object gate = new();
@@ -22,6 +22,7 @@ public sealed class MiniaudioPlaybackEngine : IPlaybackEngine, IPlaybackRateCont
     private double playbackRate = 1.0;
     private EqualizerSettings equalizer = EqualizerSettings.Flat;
     private volatile EqualizerProcessor? equalizerProcessor;
+    private readonly SpectrumAnalyzer spectrum = new();
     private AudioOutput? output;
     private DecodePipeline? pipeline;
     private volatile DecodePipeline? rendering;
@@ -262,6 +263,12 @@ public sealed class MiniaudioPlaybackEngine : IPlaybackEngine, IPlaybackRateCont
         }
     }
 
+    public bool IsSpectrumAvailable => true;
+
+    public void SetSpectrumEnabled(bool enabled) => spectrum.Enabled = enabled;
+
+    public bool TryReadSpectrum(Span<float> bands) => spectrum.Read(bands);
+
     public Task SetEqualizerAsync(EqualizerSettings settings, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(settings);
@@ -282,6 +289,7 @@ public sealed class MiniaudioPlaybackEngine : IPlaybackEngine, IPlaybackRateCont
         AudioOutput opened = new(Render, useNullBackend);
         EqualizerProcessor processor = new(opened.SampleRate);
         processor.Set(equalizer);
+        spectrum.SampleRate = opened.SampleRate;
         equalizerProcessor = processor;
         return output = opened;
     }
@@ -307,6 +315,7 @@ public sealed class MiniaudioPlaybackEngine : IPlaybackEngine, IPlaybackRateCont
         }
         active.Render(buffer);
         equalizerProcessor?.Process(buffer);
+        spectrum.Write(buffer);
         float from = currentGain, to = targetGain;
         if (from == 1f && to == 1f)
         {

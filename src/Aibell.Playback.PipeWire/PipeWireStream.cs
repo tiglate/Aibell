@@ -165,6 +165,7 @@ internal sealed unsafe class PipeWireStream : IDisposable
             NativeMethods.PwThreadLoopLock(threadLoop);
             try
             {
+                ResetMasterVolume();
                 _ = NativeMethods.PwStreamSetActive(stream, true);
             }
             finally
@@ -173,6 +174,27 @@ internal sealed unsafe class PipeWireStream : IDisposable
             }
         }
     }
+
+    /// <summary>
+    /// Puts the stream's master volume back to 1.0. Aibell applies its own volume, and WirePlumber restores a saved stream volume
+    /// keyed on media.role before the application name, so every "Music" application shares one entry. A master volume of 0.0
+    /// saved there made Aibell play silence, and no desktop mixer shows that value (they change the per-channel volumes, which
+    /// this leaves alone, as it leaves mute alone). Called with the thread loop locked.
+    /// </summary>
+    private void ResetMasterVolume()
+    {
+        byte[] pod = MasterVolumePod().Write();
+        fixed (byte* podPtr = pod)
+        {
+            _ = NativeMethods.PwStreamSetParam(stream, SpaParams.Props, (nint)podPtr);
+        }
+    }
+
+    internal static SpaPod MasterVolumePod() =>
+        SpaPod.Object(SpaObjectType.Props, SpaParams.Props, new SpaProperty(SpaPropVolume, SpaPropFlags.None, SpaPod.Float(1f)));
+
+    /// <summary>SPA_PROP_volume: SPA_PROP_START_Audio (0x10000) + 3.</summary>
+    internal const uint SpaPropVolume = 0x10003;
 
     /// <summary>Stops filling the shared buffer and pauses the PipeWire stream.</summary>
     public void Stop()
@@ -282,6 +304,15 @@ internal sealed unsafe class PipeWireStream : IDisposable
         {
             self.Ready = true;
             self.readyGate.Set();
+            // The daemon or session manager can pause a stream by itself (for example while another application plays an
+            // alert sound). When playback is meant to run, wake it again instead of staying silent.
+            if (state == NativeMethods.PwStreamStatePaused && self.running && self.stream != 0)
+                _ = NativeMethods.PwStreamSetActive(self.stream, true);
+        }
+        else if (state == NativeMethods.PwStreamStateUnconnected && self.Ready && self.running)
+        {
+            // The daemon dropped the stream; report it so the engine opens a new one on the next play.
+            self.failure = new IOException("The PipeWire stream was disconnected.");
         }
     }
 

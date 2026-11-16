@@ -1721,7 +1721,7 @@ public sealed partial class MainWindowWorkflowTests
     private void Open(IMetadataFileWriter? fileWriter = null, IArtworkProvider? artwork = null, IMetadataEditRecovery? recovery = null, IMediaSession? mediaSession = null, IPlaylistFileStore? playlistStore = null, IDesktopNotifications? notifications = null, bool radio = false, IMediaMetadataReader? metadataReader = null, Func<ILibraryBrowser, ILibraryBrowser>? browserFactory = null, IDesktopFilePicker? filePicker = null, IRadioPlaylistFileStore? radioPlaylistStore = null, Func<IRadioStationRepository, IRadioStationRepository>? radioRepositoryFactory = null, Func<IPodcastPlaybackHandoff, PodcastsViewModel>? podcastViewModelFactory = null,
         Func<Aibell.Application.Audiobooks.IAudiobookPlaybackHandoff, AudiobooksViewModel>? audiobooksViewModelFactory = null,
         Func<Track, ArtworkWindow>? artworkWindowFactory = null, ICuratedStationCatalog? curatedCatalog = null, ICoverImageLoader? radioLogos = null,
-        Func<MpdViewModel>? mpdViewModelFactory = null, Func<IPlaybackEngine, IPlaybackEngine>? engineWrapper = null)
+        Func<MpdViewModel>? mpdViewModelFactory = null, Func<IPlaybackEngine, IPlaybackEngine>? engineWrapper = null, bool lyrics = false)
     {
         repository = new(Path.Combine(directory, "library.db"));
         settings = new(Path.Combine(directory, "settings.json"));
@@ -1734,7 +1734,8 @@ public sealed partial class MainWindowWorkflowTests
             trackFileDetailsReader: new AtlTrackFileDetailsReader(), metadataFileWriter: fileWriter ?? new MetadataFileWriter(new AtlMetadataEditStager()), metadataEditRecovery: recovery ?? new MetadataEditRecovery(),
             playlistFiles: new PlaylistFileService(playlistStore ?? new PlaylistFileStore(), importer, repository, repository), desktopNotifications: notifications, radioRepository: radio ? radioPort : null,
             radioPlaylistFiles: radio ? new RadioPlaylistImportService(radioPlaylistStore ?? new RadioPlaylistFileStore(), radioPort) : null,
-            curatedCatalog: curatedCatalog, radioLogos: radioLogos);
+            curatedCatalog: curatedCatalog, radioLogos: radioLogos,
+            lyricsService: lyrics ? new Aibell.Application.Lyrics.LyricsService(repository, new AtlLyricsFileReader(), [], () => viewModel!.LyricsEnabled) : null);
         window = new(viewModel, mediaSession, filePicker, podcastViewModelFactory, audiobooksViewModelFactory, artworkWindowFactory: artworkWindowFactory, mpdViewModelFactory: mpdViewModelFactory);
         window.Show();
     }

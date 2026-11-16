@@ -1132,4 +1132,49 @@ Modification temporaire : {1}</value></data>
   <data name="Mpd.Error.Command" xml:space="preserve"><value>Le serveur MPD n'a pas pu le faire : {0}</value></data>
   <data name="Mpd.Error.Library" xml:space="preserve"><value>Aibell n'a pas pu lire la bibliothèque musicale du serveur MPD.</value></data>
   <data name="Mpd.PlaylistAlready" xml:space="preserve"><value>La liste « {0} » contient déjà tous ces morceaux : rien n'a été ajouté.</value></data>
+  <data name="Lyrics.Tab" xml:space="preserve"><value>Paroles</value></data>
+  <data name="Lyrics.Search" xml:space="preserve"><value>Rechercher…</value></data>
+  <data name="Lyrics.SearchTip" xml:space="preserve"><value>Rechercher en ligne les bonnes paroles de ce titre</value></data>
+  <data name="Lyrics.Edit" xml:space="preserve"><value>Modifier…</value></data>
+  <data name="Lyrics.EditTip" xml:space="preserve"><value>Saisir ou coller les paroles de ce titre</value></data>
+  <data name="Lyrics.Loading" xml:space="preserve"><value>Recherche des paroles…</value></data>
+  <data name="Lyrics.NotFound" xml:space="preserve"><value>Aucune parole trouvée pour ce titre. Utilisez Rechercher… pour chercher ou Modifier… pour les saisir.</value></data>
+  <data name="Lyrics.Instrumental" xml:space="preserve"><value>Instrumental — pas de paroles.</value></data>
+  <data name="Lyrics.InstrumentalBadge" xml:space="preserve"><value>instrumental</value></data>
+  <data name="Lyrics.NoTrack" xml:space="preserve"><value>Lisez un titre pour voir ses paroles.</value></data>
+  <data name="Lyrics.NoProvider" xml:space="preserve"><value>Aucun module de paroles n'est installé. Ajoutez-en un dans Préférences &gt; Modules ou saisissez les paroles avec Modifier….</value></data>
+  <data name="Lyrics.Unavailable" xml:space="preserve"><value>Les paroles ne sont pas disponibles pour cet élément.</value></data>
+  <data name="Lyrics.Error" xml:space="preserve"><value>Impossible de charger les paroles.</value></data>
+  <data name="Lyrics.FromFile" xml:space="preserve"><value>Du fichier</value></data>
+  <data name="Lyrics.FromYou" xml:space="preserve"><value>Saisies par vous</value></data>
+  <data name="Lyrics.FromSearch" xml:space="preserve"><value>Votre choix</value></data>
+  <data name="Lyrics.FromOnline" xml:space="preserve"><value>En ligne</value></data>
+  <data name="Lyrics.Synced" xml:space="preserve"><value>synchronisées</value></data>
+  <data name="Lyrics.NoFileWrite" xml:space="preserve"><value>Impossible d'écrire dans le fichier de ce titre.</value></data>
+  <data name="Lyrics.StopToWrite" xml:space="preserve"><value>Arrêtez la lecture de ce titre pour écrire les paroles dans son fichier.</value></data>
+  <data name="Lyrics.FormatNoWrite" xml:space="preserve"><value>Les paroles peuvent être écrites dans les fichiers FLAC, M4A, MP3, Ogg et Opus.</value></data>
+  <data name="Lyrics.SavedToFile" xml:space="preserve"><value>Paroles enregistrées dans le fichier. Sauvegarde : {0}</value></data>
+  <data name="Lyrics.SearchTitle" xml:space="preserve"><value>Rechercher des paroles</value></data>
+  <data name="Lyrics.SearchTitleField" xml:space="preserve"><value>Titre</value></data>
+  <data name="Lyrics.SearchArtistField" xml:space="preserve"><value>Artiste</value></data>
+  <data name="Lyrics.SearchRun" xml:space="preserve"><value>Rechercher</value></data>
+  <data name="Lyrics.SearchResults" xml:space="preserve"><value>Paroles trouvées</value></data>
+  <data name="Lyrics.Preview" xml:space="preserve"><value>Aperçu des paroles</value></data>
+  <data name="Lyrics.Use" xml:space="preserve"><value>Utiliser ces paroles</value></data>
+  <data name="Lyrics.SearchNote" xml:space="preserve"><value>Interroge les modules de paroles avec le titre et l'artiste ci-dessous. Les paroles choisies sont mémorisées pour ce titre.</value></data>
+  <data name="Lyrics.Searching" xml:space="preserve"><value>Recherche…</value></data>
+  <data name="Lyrics.SearchNone" xml:space="preserve"><value>Rien trouvé. Essayez un titre plus court ou seulement l'artiste.</value></data>
+  <data name="Lyrics.SearchCount" xml:space="preserve"><value>Résultats : {0}</value></data>
+  <data name="Lyrics.NoText" xml:space="preserve"><value>Cette entrée n'a pas de texte de paroles.</value></data>
+  <data name="Lyrics.EditTitle" xml:space="preserve"><value>Modifier les paroles</value></data>
+  <data name="Lyrics.EditTextAutomation" xml:space="preserve"><value>Texte des paroles</value></data>
+  <data name="Lyrics.SaveToFile" xml:space="preserve"><value>Enregistrer aussi les paroles dans le fichier audio</value></data>
+  <data name="Lyrics.SaveToFileTip" xml:space="preserve"><value>Écrit les paroles dans les balises du fichier après avoir fait une sauvegarde. Aibell les relit à partir de là.</value></data>
+  <data name="Lyrics.Remove" xml:space="preserve"><value>Supprimer mes paroles</value></data>
+  <data name="Lyrics.RemoveTip" xml:space="preserve"><value>Oublier les paroles choisies ou saisies et chercher à nouveau ce titre</value></data>
+  <data name="Lyrics.EditFor" xml:space="preserve"><value>{0} — {1}</value></data>
+  <data name="Lyrics.EditNote" xml:space="preserve"><value>Saisissez des paroles simples ou collez des paroles synchronisées au format LRC avec un temps [mm:ss.xx] avant chaque ligne. Enregistrées vides, les paroles sont effacées.</value></data>
+  <data name="Prefs.Lyrics" xml:space="preserve"><value>Afficher les paroles et les rechercher en ligne</value></data>
+  <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>Afficher les paroles et les rechercher en ligne</value></data>
+  <data name="Prefs.LyricsNote" xml:space="preserve"><value>Si cette option est activée, l'onglet Paroles apparaît à côté de la file de lecture, et le titre, l'artiste, l'album et la durée de chaque piste sont envoyés au module de paroles installé (LRCLIB par défaut) à sa première lecture, sauf si les paroles sont déjà enregistrées. Les paroles trouvées sont conservées sur cet ordinateur. Désactivez-la pour arrêter toutes les recherches de paroles et masquer l'onglet.</value></data>
 </root>

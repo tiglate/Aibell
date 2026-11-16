@@ -1,4 +1,5 @@
 using Aibell.Application.Enrichment;
+using Aibell.Application.Lyrics;
 
 namespace Aibell.Application.Plugins;
 
@@ -13,6 +14,8 @@ public sealed record PluginContributions
     public IReadOnlyList<IReleaseLookupProvider> ReleaseProviders { get; init; } = [];
 
     public IReadOnlyList<IArtistInfoProvider> ArtistProviders { get; init; } = [];
+
+    public IReadOnlyList<ILyricsProvider> LyricsProviders { get; init; } = [];
 }
 
 /// <summary>

@@ -154,6 +154,15 @@ public sealed partial class SqliteTrackRepository
             await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
             await SetSchemaVersionAsync(connection, transaction, 18, cancellationToken).ConfigureAwait(false);
         }
+
+        if (schemaVersion < 19)
+        {
+            await using SqliteCommand command = connection.CreateCommand();
+            command.Transaction = transaction;
+            command.CommandText = LyricsSchemaV19Sql;
+            await command.ExecuteNonQueryAsync(cancellationToken).ConfigureAwait(false);
+            await SetSchemaVersionAsync(connection, transaction, 19, cancellationToken).ConfigureAwait(false);
+        }
     }
 
     private static async Task SetSchemaVersionAsync(

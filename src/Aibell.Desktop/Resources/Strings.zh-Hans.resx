@@ -1110,4 +1110,49 @@
   <data name="Mpd.Error.Command" xml:space="preserve"><value>MPD 服务器无法执行该操作：{0}</value></data>
   <data name="Mpd.Error.Library" xml:space="preserve"><value>Aibell 无法从 MPD 服务器读取音乐库。</value></data>
   <data name="Mpd.PlaylistAlready" xml:space="preserve"><value>播放列表“{0}”已包含所有这些歌曲：未添加任何内容。</value></data>
+  <data name="Lyrics.Tab" xml:space="preserve"><value>歌词</value></data>
+  <data name="Lyrics.Search" xml:space="preserve"><value>查找…</value></data>
+  <data name="Lyrics.SearchTip" xml:space="preserve"><value>在线搜索此曲目的正确歌词</value></data>
+  <data name="Lyrics.Edit" xml:space="preserve"><value>编辑…</value></data>
+  <data name="Lyrics.EditTip" xml:space="preserve"><value>输入或粘贴此曲目的歌词</value></data>
+  <data name="Lyrics.Loading" xml:space="preserve"><value>正在查找歌词…</value></data>
+  <data name="Lyrics.NotFound" xml:space="preserve"><value>未找到此曲目的歌词。使用“查找…”搜索，或使用“编辑…”手动输入。</value></data>
+  <data name="Lyrics.Instrumental" xml:space="preserve"><value>纯音乐 — 没有歌词。</value></data>
+  <data name="Lyrics.InstrumentalBadge" xml:space="preserve"><value>纯音乐</value></data>
+  <data name="Lyrics.NoTrack" xml:space="preserve"><value>播放曲目即可查看歌词。</value></data>
+  <data name="Lyrics.NoProvider" xml:space="preserve"><value>尚未安装歌词插件。请在“首选项 &gt; 插件”中添加，或使用“编辑…”输入歌词。</value></data>
+  <data name="Lyrics.Unavailable" xml:space="preserve"><value>此项目没有可用的歌词。</value></data>
+  <data name="Lyrics.Error" xml:space="preserve"><value>无法加载歌词。</value></data>
+  <data name="Lyrics.FromFile" xml:space="preserve"><value>来自文件</value></data>
+  <data name="Lyrics.FromYou" xml:space="preserve"><value>由你输入</value></data>
+  <data name="Lyrics.FromSearch" xml:space="preserve"><value>你的选择</value></data>
+  <data name="Lyrics.FromOnline" xml:space="preserve"><value>在线</value></data>
+  <data name="Lyrics.Synced" xml:space="preserve"><value>已同步</value></data>
+  <data name="Lyrics.NoFileWrite" xml:space="preserve"><value>无法写入此曲目的文件。</value></data>
+  <data name="Lyrics.StopToWrite" xml:space="preserve"><value>请先停止播放此曲目，再将歌词写入其文件。</value></data>
+  <data name="Lyrics.FormatNoWrite" xml:space="preserve"><value>歌词可写入 FLAC、M4A、MP3、Ogg 和 Opus 文件。</value></data>
+  <data name="Lyrics.SavedToFile" xml:space="preserve"><value>歌词已保存到文件。备份：{0}</value></data>
+  <data name="Lyrics.SearchTitle" xml:space="preserve"><value>查找歌词</value></data>
+  <data name="Lyrics.SearchTitleField" xml:space="preserve"><value>标题</value></data>
+  <data name="Lyrics.SearchArtistField" xml:space="preserve"><value>艺术家</value></data>
+  <data name="Lyrics.SearchRun" xml:space="preserve"><value>搜索</value></data>
+  <data name="Lyrics.SearchResults" xml:space="preserve"><value>找到的歌词</value></data>
+  <data name="Lyrics.Preview" xml:space="preserve"><value>歌词预览</value></data>
+  <data name="Lyrics.Use" xml:space="preserve"><value>使用这些歌词</value></data>
+  <data name="Lyrics.SearchNote" xml:space="preserve"><value>使用下方的标题和艺术家搜索歌词插件。你选择的歌词会为此曲目记住。</value></data>
+  <data name="Lyrics.Searching" xml:space="preserve"><value>正在搜索…</value></data>
+  <data name="Lyrics.SearchNone" xml:space="preserve"><value>未找到任何内容。请尝试更短的标题，或只填艺术家。</value></data>
+  <data name="Lyrics.SearchCount" xml:space="preserve"><value>结果：{0}</value></data>
+  <data name="Lyrics.NoText" xml:space="preserve"><value>该条目没有歌词文本。</value></data>
+  <data name="Lyrics.EditTitle" xml:space="preserve"><value>编辑歌词</value></data>
+  <data name="Lyrics.EditTextAutomation" xml:space="preserve"><value>歌词文本</value></data>
+  <data name="Lyrics.SaveToFile" xml:space="preserve"><value>同时将歌词保存到音频文件中</value></data>
+  <data name="Lyrics.SaveToFileTip" xml:space="preserve"><value>先创建备份，再将歌词写入文件标签。Aibell 会从那里读回歌词。</value></data>
+  <data name="Lyrics.Remove" xml:space="preserve"><value>删除我的歌词</value></data>
+  <data name="Lyrics.RemoveTip" xml:space="preserve"><value>忘记你选择或输入的歌词，并重新查找此曲目</value></data>
+  <data name="Lyrics.EditFor" xml:space="preserve"><value>{0} — {1}</value></data>
+  <data name="Lyrics.EditNote" xml:space="preserve"><value>输入普通歌词，或粘贴 LRC 格式的同步歌词（每行前带有 [mm:ss.xx] 时间）。保存为空时，歌词将被清除。</value></data>
+  <data name="Prefs.Lyrics" xml:space="preserve"><value>显示歌词并在线查找</value></data>
+  <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>显示歌词并在线查找</value></data>
+  <data name="Prefs.LyricsNote" xml:space="preserve"><value>开启后，播放队列旁会出现“歌词”选项卡；在歌词尚未保存的情况下，每首曲目首次播放时，其标题、艺术家、专辑和时长会发送给已安装的歌词插件（默认 LRCLIB）。找到的歌词保存在这台电脑上。关闭后将停止所有歌词查找并隐藏该选项卡。</value></data>
 </root>

@@ -1176,4 +1176,49 @@
   <data name="Mpd.Error.Command" xml:space="preserve"><value>Сервер MPD не смог это выполнить: {0}</value></data>
   <data name="Mpd.Error.Library" xml:space="preserve"><value>Aibell не смог прочитать медиатеку с сервера MPD.</value></data>
   <data name="Mpd.PlaylistAlready" xml:space="preserve"><value>В плейлисте «{0}» уже есть все эти песни: ничего не добавлено.</value></data>
+  <data name="Lyrics.Tab" xml:space="preserve"><value>Тексты</value></data>
+  <data name="Lyrics.Search" xml:space="preserve"><value>Найти…</value></data>
+  <data name="Lyrics.SearchTip" xml:space="preserve"><value>Найти в интернете подходящий текст для этого трека</value></data>
+  <data name="Lyrics.Edit" xml:space="preserve"><value>Изменить…</value></data>
+  <data name="Lyrics.EditTip" xml:space="preserve"><value>Введите или вставьте текст этого трека</value></data>
+  <data name="Lyrics.Loading" xml:space="preserve"><value>Поиск текста…</value></data>
+  <data name="Lyrics.NotFound" xml:space="preserve"><value>Текст этого трека не найден. Нажмите «Найти…», чтобы искать, или «Изменить…», чтобы ввести его.</value></data>
+  <data name="Lyrics.Instrumental" xml:space="preserve"><value>Инструментальная композиция — текста нет.</value></data>
+  <data name="Lyrics.InstrumentalBadge" xml:space="preserve"><value>инструментал</value></data>
+  <data name="Lyrics.NoTrack" xml:space="preserve"><value>Запустите трек, чтобы увидеть его текст.</value></data>
+  <data name="Lyrics.NoProvider" xml:space="preserve"><value>Плагин текстов не установлен. Добавьте его в Настройки &gt; Плагины или введите текст через «Изменить…».</value></data>
+  <data name="Lyrics.Unavailable" xml:space="preserve"><value>Для этого элемента тексты недоступны.</value></data>
+  <data name="Lyrics.Error" xml:space="preserve"><value>Не удалось загрузить текст.</value></data>
+  <data name="Lyrics.FromFile" xml:space="preserve"><value>Из файла</value></data>
+  <data name="Lyrics.FromYou" xml:space="preserve"><value>Введён вами</value></data>
+  <data name="Lyrics.FromSearch" xml:space="preserve"><value>Ваш выбор</value></data>
+  <data name="Lyrics.FromOnline" xml:space="preserve"><value>Интернет</value></data>
+  <data name="Lyrics.Synced" xml:space="preserve"><value>синхронизирован</value></data>
+  <data name="Lyrics.NoFileWrite" xml:space="preserve"><value>В файл этого трека нельзя записать.</value></data>
+  <data name="Lyrics.StopToWrite" xml:space="preserve"><value>Остановите воспроизведение этого трека, чтобы записать текст в его файл.</value></data>
+  <data name="Lyrics.FormatNoWrite" xml:space="preserve"><value>Текст можно записать в файлы FLAC, M4A, MP3, Ogg и Opus.</value></data>
+  <data name="Lyrics.SavedToFile" xml:space="preserve"><value>Текст сохранён в файле. Резервная копия: {0}</value></data>
+  <data name="Lyrics.SearchTitle" xml:space="preserve"><value>Поиск текста</value></data>
+  <data name="Lyrics.SearchTitleField" xml:space="preserve"><value>Название</value></data>
+  <data name="Lyrics.SearchArtistField" xml:space="preserve"><value>Исполнитель</value></data>
+  <data name="Lyrics.SearchRun" xml:space="preserve"><value>Искать</value></data>
+  <data name="Lyrics.SearchResults" xml:space="preserve"><value>Найденные тексты</value></data>
+  <data name="Lyrics.Preview" xml:space="preserve"><value>Предпросмотр текста</value></data>
+  <data name="Lyrics.Use" xml:space="preserve"><value>Использовать этот текст</value></data>
+  <data name="Lyrics.SearchNote" xml:space="preserve"><value>Ищет в плагинах текстов по названию и исполнителю ниже. Выбранный текст запоминается для этого трека.</value></data>
+  <data name="Lyrics.Searching" xml:space="preserve"><value>Поиск…</value></data>
+  <data name="Lyrics.SearchNone" xml:space="preserve"><value>Ничего не найдено. Попробуйте более короткое название или только исполнителя.</value></data>
+  <data name="Lyrics.SearchCount" xml:space="preserve"><value>Результатов: {0}</value></data>
+  <data name="Lyrics.NoText" xml:space="preserve"><value>В этой записи нет текста.</value></data>
+  <data name="Lyrics.EditTitle" xml:space="preserve"><value>Изменить текст</value></data>
+  <data name="Lyrics.EditTextAutomation" xml:space="preserve"><value>Текст песни</value></data>
+  <data name="Lyrics.SaveToFile" xml:space="preserve"><value>Также сохранить текст в аудиофайле</value></data>
+  <data name="Lyrics.SaveToFileTip" xml:space="preserve"><value>Записывает текст в теги файла после создания резервной копии. Aibell считывает его оттуда.</value></data>
+  <data name="Lyrics.Remove" xml:space="preserve"><value>Удалить мой текст</value></data>
+  <data name="Lyrics.RemoveTip" xml:space="preserve"><value>Забыть выбранный или введённый текст и снова найти трек</value></data>
+  <data name="Lyrics.EditFor" xml:space="preserve"><value>{0} — {1}</value></data>
+  <data name="Lyrics.EditNote" xml:space="preserve"><value>Введите обычный текст или вставьте синхронизированный текст в формате LRC с временем [mm:ss.xx] перед каждой строкой. Если сохранить пустой текст, он будет удалён.</value></data>
+  <data name="Prefs.Lyrics" xml:space="preserve"><value>Показывать тексты и искать их в интернете</value></data>
+  <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>Показывать тексты и искать их в интернете</value></data>
+  <data name="Prefs.LyricsNote" xml:space="preserve"><value>Если включено, рядом с очередью воспроизведения появляется вкладка «Тексты», а название, исполнитель, альбом и длительность каждого трека при первом воспроизведении отправляются в установленный плагин текстов (по умолчанию LRCLIB), если текст ещё не сохранён. Найденные тексты хранятся на этом компьютере. Отключите, чтобы остановить все поиски текстов и скрыть вкладку.</value></data>
 </root>

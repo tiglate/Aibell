@@ -122,7 +122,7 @@ public sealed class RadioStationRepositoryTests
         Assert.That(await upgraded.ListStationsAsync(), Is.Empty);
         Assert.That((await upgraded.ListAsync()).Single(item => item.Id == track.Id).Rating, Is.EqualTo(4));
         Assert.That((await upgraded.GetTracksAsync(playlist, "")).Select(item => item.Title), Is.EqualTo(PlaylistTitles));
-        Assert.That(await ExecuteAsync("PRAGMA user_version;"), Is.EqualTo(18L));
+        Assert.That(await ExecuteAsync("PRAGMA user_version;"), Is.EqualTo(19L));
     }
 
     [Test]

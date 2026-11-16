@@ -1176,4 +1176,49 @@ Edycja tymczasowa: {1}</value></data>
   <data name="Mpd.Error.Command" xml:space="preserve"><value>Serwer MPD nie mógł tego zrobić: {0}</value></data>
   <data name="Mpd.Error.Library" xml:space="preserve"><value>Aibell nie mógł odczytać biblioteki muzycznej z serwera MPD.</value></data>
   <data name="Mpd.PlaylistAlready" xml:space="preserve"><value>Playlista „{0}” ma już wszystkie te utwory: nic nie dodano.</value></data>
+  <data name="Lyrics.Tab" xml:space="preserve"><value>Teksty</value></data>
+  <data name="Lyrics.Search" xml:space="preserve"><value>Szukaj…</value></data>
+  <data name="Lyrics.SearchTip" xml:space="preserve"><value>Wyszukaj w sieci właściwy tekst tego utworu</value></data>
+  <data name="Lyrics.Edit" xml:space="preserve"><value>Edytuj…</value></data>
+  <data name="Lyrics.EditTip" xml:space="preserve"><value>Wpisz lub wklej tekst tego utworu</value></data>
+  <data name="Lyrics.Loading" xml:space="preserve"><value>Szukanie tekstu…</value></data>
+  <data name="Lyrics.NotFound" xml:space="preserve"><value>Nie znaleziono tekstu tego utworu. Użyj Szukaj…, aby wyszukać, lub Edytuj…, aby go wpisać.</value></data>
+  <data name="Lyrics.Instrumental" xml:space="preserve"><value>Utwór instrumentalny — brak tekstu.</value></data>
+  <data name="Lyrics.InstrumentalBadge" xml:space="preserve"><value>instrumentalny</value></data>
+  <data name="Lyrics.NoTrack" xml:space="preserve"><value>Odtwórz utwór, aby zobaczyć jego tekst.</value></data>
+  <data name="Lyrics.NoProvider" xml:space="preserve"><value>Nie zainstalowano żadnej wtyczki tekstów. Dodaj ją w Preferencje &gt; Wtyczki lub wpisz tekst przez Edytuj….</value></data>
+  <data name="Lyrics.Unavailable" xml:space="preserve"><value>Teksty nie są dostępne dla tego elementu.</value></data>
+  <data name="Lyrics.Error" xml:space="preserve"><value>Nie udało się wczytać tekstu.</value></data>
+  <data name="Lyrics.FromFile" xml:space="preserve"><value>Z pliku</value></data>
+  <data name="Lyrics.FromYou" xml:space="preserve"><value>Wpisany przez Ciebie</value></data>
+  <data name="Lyrics.FromSearch" xml:space="preserve"><value>Twój wybór</value></data>
+  <data name="Lyrics.FromOnline" xml:space="preserve"><value>Online</value></data>
+  <data name="Lyrics.Synced" xml:space="preserve"><value>zsynchronizowany</value></data>
+  <data name="Lyrics.NoFileWrite" xml:space="preserve"><value>Nie można zapisać w pliku tego utworu.</value></data>
+  <data name="Lyrics.StopToWrite" xml:space="preserve"><value>Zatrzymaj odtwarzanie tego utworu, aby zapisać tekst w jego pliku.</value></data>
+  <data name="Lyrics.FormatNoWrite" xml:space="preserve"><value>Tekst można zapisać w plikach FLAC, M4A, MP3, Ogg i Opus.</value></data>
+  <data name="Lyrics.SavedToFile" xml:space="preserve"><value>Tekst zapisany w pliku. Kopia zapasowa: {0}</value></data>
+  <data name="Lyrics.SearchTitle" xml:space="preserve"><value>Znajdź tekst</value></data>
+  <data name="Lyrics.SearchTitleField" xml:space="preserve"><value>Tytuł</value></data>
+  <data name="Lyrics.SearchArtistField" xml:space="preserve"><value>Wykonawca</value></data>
+  <data name="Lyrics.SearchRun" xml:space="preserve"><value>Szukaj</value></data>
+  <data name="Lyrics.SearchResults" xml:space="preserve"><value>Znalezione teksty</value></data>
+  <data name="Lyrics.Preview" xml:space="preserve"><value>Podgląd tekstu</value></data>
+  <data name="Lyrics.Use" xml:space="preserve"><value>Użyj tego tekstu</value></data>
+  <data name="Lyrics.SearchNote" xml:space="preserve"><value>Przeszukuje wtyczki tekstów według tytułu i wykonawcy poniżej. Wybrany tekst jest zapamiętywany dla tego utworu.</value></data>
+  <data name="Lyrics.Searching" xml:space="preserve"><value>Szukanie…</value></data>
+  <data name="Lyrics.SearchNone" xml:space="preserve"><value>Nic nie znaleziono. Spróbuj krótszego tytułu lub samego wykonawcy.</value></data>
+  <data name="Lyrics.SearchCount" xml:space="preserve"><value>Wyniki: {0}</value></data>
+  <data name="Lyrics.NoText" xml:space="preserve"><value>Ten wpis nie zawiera tekstu.</value></data>
+  <data name="Lyrics.EditTitle" xml:space="preserve"><value>Edytuj tekst</value></data>
+  <data name="Lyrics.EditTextAutomation" xml:space="preserve"><value>Treść tekstu</value></data>
+  <data name="Lyrics.SaveToFile" xml:space="preserve"><value>Zapisz tekst także w pliku audio</value></data>
+  <data name="Lyrics.SaveToFileTip" xml:space="preserve"><value>Zapisuje tekst w znacznikach pliku po utworzeniu kopii zapasowej. Aibell odczytuje go stamtąd z powrotem.</value></data>
+  <data name="Lyrics.Remove" xml:space="preserve"><value>Usuń mój tekst</value></data>
+  <data name="Lyrics.RemoveTip" xml:space="preserve"><value>Zapomnij wybrany lub wpisany tekst i wyszukaj utwór ponownie</value></data>
+  <data name="Lyrics.EditFor" xml:space="preserve"><value>{0} — {1}</value></data>
+  <data name="Lyrics.EditNote" xml:space="preserve"><value>Wpisz zwykły tekst lub wklej zsynchronizowany tekst w formacie LRC z czasem [mm:ss.xx] przed każdym wierszem. Zapisany jako pusty, tekst zostanie usunięty.</value></data>
+  <data name="Prefs.Lyrics" xml:space="preserve"><value>Pokazuj teksty i wyszukuj je w sieci</value></data>
+  <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>Pokazuj teksty i wyszukuj je w sieci</value></data>
+  <data name="Prefs.LyricsNote" xml:space="preserve"><value>Po włączeniu obok kolejki odtwarzania pojawia się karta Teksty, a tytuł, wykonawca, album i długość każdego utworu są wysyłane do zainstalowanej wtyczki tekstów (domyślnie LRCLIB) przy pierwszym odtworzeniu, chyba że tekst jest już zapisany. Znalezione teksty są przechowywane na tym komputerze. Wyłącz, aby zatrzymać wszystkie wyszukiwania tekstów i ukryć kartę.</value></data>
 </root>

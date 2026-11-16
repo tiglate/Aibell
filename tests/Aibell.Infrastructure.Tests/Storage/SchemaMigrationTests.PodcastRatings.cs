@@ -35,7 +35,7 @@ public sealed partial class SchemaMigrationTests
             Assert.That(episode.DownloadedBytes, Is.EqualTo(123));
             Assert.That(episode.SavedProgress, Is.EqualTo(progress));
             Assert.That((await upgraded.ListShelfAsync()).Single().SavedPosition, Is.EqualTo(TimeSpan.FromMinutes(3)));
-            Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(18L));
+            Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(19L));
             Assert.That(await ScalarAsync("PRAGMA foreign_key_check;"), Is.Null);
         }
         byte[] hash = await DatabaseFileSnapshot.HashAsync(databasePath);
@@ -58,7 +58,7 @@ public sealed partial class SchemaMigrationTests
         await ScalarAsync("ALTER TABLE podcast_episodes DROP COLUMN is_new; ALTER TABLE podcast_episodes DROP COLUMN image_url; ALTER TABLE podcast_episodes DROP COLUMN rating;");
         Assert.That(await upgraded.ListSubscriptionsAsync(), Is.Empty);
         Assert.That((await upgraded.ListAsync()).Single().Id, Is.EqualTo(trackId));
-        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(18L));
+        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(19L));
     }
 
     [Test]
@@ -99,6 +99,6 @@ public sealed partial class SchemaMigrationTests
             Assert.That(episode.Rating, Is.EqualTo(3));
             Assert.That(episode.ImageUrl, Is.Null);
         });
-        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(18L));
+        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(19L));
     }
 }

@@ -39,7 +39,8 @@ public sealed record ApplicationPreferences(
     PlaybackEngineKind PlaybackEngine = PlaybackEngineKind.Miniaudio,
     string? Language = null,
     bool RadioCatalogEnabled = false,
-    string? SoundFontPath = null)
+    string? SoundFontPath = null,
+    bool LyricsEnabled = true)
 {
     public static ApplicationPreferences Default { get; } = new(
         Volume: 0.8,

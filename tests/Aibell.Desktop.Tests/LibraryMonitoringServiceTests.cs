@@ -91,7 +91,19 @@ public sealed class LibraryMonitoringServiceTests
         File.Copy(Fixture("fixture.flac"), Path.Combine(music, "added.flac"));
         await UntilAsync(async () => await TrackCount() == 2);
 
-        File.Delete(first);
+        // On Windows the rescan triggered by the new file may still hold the old one open for a moment.
+        for (int attempt = 0; ; attempt++)
+        {
+            try
+            {
+                File.Delete(first);
+                break;
+            }
+            catch (IOException) when (attempt < 50)
+            {
+                await Task.Delay(100);
+            }
+        }
         await UntilAsync(async () => await TrackCount() == 1);
         Assert.That((await repository.ListAsync()).Single().Location.LocalPath, Does.EndWith("added.flac"));
     }

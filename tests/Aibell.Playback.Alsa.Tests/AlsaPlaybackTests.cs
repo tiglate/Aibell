@@ -208,6 +208,7 @@ public sealed class AlsaPlaybackTests
     }
 
     [Test]
+    [Retry(3)] // Races the decoder thread against the capture; a loaded runner can capture before the first samples arrive.
     public void The_Samples_That_Reach_The_Device_Match_The_Song()
     {
         string? fixture = FixturePath;

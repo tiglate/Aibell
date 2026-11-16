@@ -23,6 +23,7 @@
   <Project Path="src/Aibell.Playback.Alsa/Aibell.Playback.Alsa.csproj" />
   <Project Path="src/Aibell.Playback.PipeWire/Aibell.Playback.PipeWire.csproj" />
   <Project Path="src/Aibell.Metadata.MusicBrainz/Aibell.Metadata.MusicBrainz.csproj" />
+  <Project Path="src/Aibell.Lyrics.Lrclib/Aibell.Lyrics.Lrclib.csproj" />
   <Project Path="src/Aibell.Platform.Linux/Aibell.Platform.Linux.csproj" />
   <Project Path="src/Aibell.Platform.Windows/Aibell.Platform.Windows.csproj" />
   <Project Path="src/Aibell.Desktop/Aibell.Desktop.csproj" />
@@ -52,6 +53,7 @@
   <Project Path="tests/AibellTools.Tests/AibellTools.Tests.csproj" />
   <Project Path="tests/Aibell.Platform.Linux.Tests/Aibell.Platform.Linux.Tests.csproj" />
   <Project Path="tests/Aibell.Platform.Windows.Tests/Aibell.Platform.Windows.Tests.csproj" />
+  <Project Path="tests/Aibell.Lyrics.Lrclib.Tests/Aibell.Lyrics.Lrclib.Tests.csproj" />
   <Project Path="tests/Aibell.Infrastructure.Tests/Aibell.Infrastructure.Tests.csproj" />
   <Project Path="tests/Aibell.Metadata.MusicBrainz.Tests/Aibell.Metadata.MusicBrainz.Tests.csproj" />
 </Solution>

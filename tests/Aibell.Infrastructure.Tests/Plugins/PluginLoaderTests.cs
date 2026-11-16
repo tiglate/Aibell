@@ -42,12 +42,24 @@ public sealed class PluginLoaderTests
         PluginLoadReport report = PluginLoader.LoadAll(ShippedPlugins, Context);
 
         Assert.That(report.Failures, Is.Empty);
-        LoadedPlugin plugin = report.Plugins.Single();
-        Assert.That(plugin.Id, Is.EqualTo("musicbrainz"));
+        LoadedPlugin plugin = report.Plugins.Single(item => item.Id == "musicbrainz");
         // These casts only succeed when host and plugin share one copy of the contract assembly.
         Assert.That(plugin.Contributions.ReleaseProviders, Has.Count.EqualTo(1));
         Assert.That(plugin.Contributions.ArtistProviders, Has.Count.EqualTo(1));
         Assert.That(plugin.Contributions.EnrichmentProviders, Has.Count.EqualTo(1));
+    }
+
+    [Test]
+    public void LoadAll_ShippedLrclibPlugin_LoadsAndContributesALyricsProvider()
+    {
+        PluginLoadReport report = PluginLoader.LoadAll(ShippedPlugins, Context);
+
+        Assert.That(report.Failures, Is.Empty);
+        LoadedPlugin plugin = report.Plugins.Single(item => item.Id == "lrclib");
+        // The cast only succeeds when host and plugin share one copy of the contract assembly.
+        Assert.That(plugin.Contributions.LyricsProviders, Has.Count.EqualTo(1));
+        Assert.That(plugin.Contributions.LyricsProviders[0].Descriptor.Id, Is.EqualTo("lrclib"));
+        Assert.That(plugin.Contributions.ReleaseProviders, Is.Empty);
     }
 
     [Test]

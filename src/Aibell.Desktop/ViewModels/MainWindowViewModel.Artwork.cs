@@ -15,7 +15,7 @@ public sealed partial class MainWindowViewModel
 
     public Task WaitForArtworkAsync() => pendingArtworkLoad;
 
-    public void Dispose() { radioLogoCancellation.Cancel(); BeginLibraryShutdown(); BeginPlaybackShutdown(); StopListening(); }
+    public void Dispose() { lyrics?.Dispose(); radioLogoCancellation.Cancel(); BeginLibraryShutdown(); BeginPlaybackShutdown(); StopListening(); }
 
     private void UpdateArtwork(Track? track)
     {

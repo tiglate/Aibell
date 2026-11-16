@@ -1154,4 +1154,49 @@
   <data name="Mpd.Error.Command" xml:space="preserve"><value>שרת MPD לא הצליח לעשות זאת: {0}</value></data>
   <data name="Mpd.Error.Library" xml:space="preserve"><value>Aibell לא הצליח לקרוא את ספריית המוזיקה משרת MPD.</value></data>
   <data name="Mpd.PlaylistAlready" xml:space="preserve"><value>רשימת ההשמעה "{0}" כבר כוללת את כל השירים האלה: לא נוסף דבר.</value></data>
+  <data name="Lyrics.Tab" xml:space="preserve"><value>מילים</value></data>
+  <data name="Lyrics.Search" xml:space="preserve"><value>חיפוש…</value></data>
+  <data name="Lyrics.SearchTip" xml:space="preserve"><value>חפשו ברשת את המילים הנכונות לרצועה זו</value></data>
+  <data name="Lyrics.Edit" xml:space="preserve"><value>עריכה…</value></data>
+  <data name="Lyrics.EditTip" xml:space="preserve"><value>הקלידו או הדביקו את מילות הרצועה</value></data>
+  <data name="Lyrics.Loading" xml:space="preserve"><value>מחפש מילים…</value></data>
+  <data name="Lyrics.NotFound" xml:space="preserve"><value>לא נמצאו מילים לרצועה זו. השתמשו ב"חיפוש…" כדי לחפש או ב"עריכה…" כדי להקליד אותן.</value></data>
+  <data name="Lyrics.Instrumental" xml:space="preserve"><value>אינסטרומנטלי — אין מילים.</value></data>
+  <data name="Lyrics.InstrumentalBadge" xml:space="preserve"><value>אינסטרומנטלי</value></data>
+  <data name="Lyrics.NoTrack" xml:space="preserve"><value>נגנו רצועה כדי לראות את המילים שלה.</value></data>
+  <data name="Lyrics.NoProvider" xml:space="preserve"><value>לא מותקנת תוספת מילים. הוסיפו אחת ב"העדפות &gt; תוספות" או הקלידו את המילים דרך "עריכה…".</value></data>
+  <data name="Lyrics.Unavailable" xml:space="preserve"><value>מילים אינן זמינות עבור פריט זה.</value></data>
+  <data name="Lyrics.Error" xml:space="preserve"><value>לא ניתן היה לטעון את המילים.</value></data>
+  <data name="Lyrics.FromFile" xml:space="preserve"><value>מהקובץ</value></data>
+  <data name="Lyrics.FromYou" xml:space="preserve"><value>הוקלדו על ידכם</value></data>
+  <data name="Lyrics.FromSearch" xml:space="preserve"><value>הבחירה שלכם</value></data>
+  <data name="Lyrics.FromOnline" xml:space="preserve"><value>ברשת</value></data>
+  <data name="Lyrics.Synced" xml:space="preserve"><value>מסונכרנות</value></data>
+  <data name="Lyrics.NoFileWrite" xml:space="preserve"><value>לא ניתן לכתוב לקובץ של רצועה זו.</value></data>
+  <data name="Lyrics.StopToWrite" xml:space="preserve"><value>עצרו את ניגון הרצועה כדי לכתוב את המילים לקובץ שלה.</value></data>
+  <data name="Lyrics.FormatNoWrite" xml:space="preserve"><value>אפשר לכתוב מילים לקובצי FLAC, M4A, MP3, Ogg ו-Opus.</value></data>
+  <data name="Lyrics.SavedToFile" xml:space="preserve"><value>המילים נשמרו בקובץ. גיבוי: {0}</value></data>
+  <data name="Lyrics.SearchTitle" xml:space="preserve"><value>חיפוש מילים</value></data>
+  <data name="Lyrics.SearchTitleField" xml:space="preserve"><value>כותרת</value></data>
+  <data name="Lyrics.SearchArtistField" xml:space="preserve"><value>אמן</value></data>
+  <data name="Lyrics.SearchRun" xml:space="preserve"><value>חיפוש</value></data>
+  <data name="Lyrics.SearchResults" xml:space="preserve"><value>מילים שנמצאו</value></data>
+  <data name="Lyrics.Preview" xml:space="preserve"><value>תצוגה מקדימה של המילים</value></data>
+  <data name="Lyrics.Use" xml:space="preserve"><value>השתמשו במילים אלה</value></data>
+  <data name="Lyrics.SearchNote" xml:space="preserve"><value>מחפש בתוספות המילים לפי הכותרת והאמן שלהלן. המילים שתבחרו יישמרו עבור רצועה זו.</value></data>
+  <data name="Lyrics.Searching" xml:space="preserve"><value>מחפש…</value></data>
+  <data name="Lyrics.SearchNone" xml:space="preserve"><value>לא נמצא דבר. נסו כותרת קצרה יותר או רק את האמן.</value></data>
+  <data name="Lyrics.SearchCount" xml:space="preserve"><value>תוצאות: {0}</value></data>
+  <data name="Lyrics.NoText" xml:space="preserve"><value>לערך זה אין טקסט מילים.</value></data>
+  <data name="Lyrics.EditTitle" xml:space="preserve"><value>עריכת מילים</value></data>
+  <data name="Lyrics.EditTextAutomation" xml:space="preserve"><value>טקסט המילים</value></data>
+  <data name="Lyrics.SaveToFile" xml:space="preserve"><value>שמרו את המילים גם בקובץ השמע</value></data>
+  <data name="Lyrics.SaveToFileTip" xml:space="preserve"><value>כותב את המילים לתגיות הקובץ לאחר יצירת גיבוי. Aibell קורא אותן משם בחזרה.</value></data>
+  <data name="Lyrics.Remove" xml:space="preserve"><value>הסרת המילים שלי</value></data>
+  <data name="Lyrics.RemoveTip" xml:space="preserve"><value>שכחו את המילים שבחרתם או הקלדתם וחפשו את הרצועה שוב</value></data>
+  <data name="Lyrics.EditFor" xml:space="preserve"><value>{0} — {1}</value></data>
+  <data name="Lyrics.EditNote" xml:space="preserve"><value>הקלידו מילים רגילות או הדביקו מילים מסונכרנות בפורמט LRC עם זמן [mm:ss.xx] לפני כל שורה. אם תשמרו ריק, המילים יימחקו.</value></data>
+  <data name="Prefs.Lyrics" xml:space="preserve"><value>הצגת מילים וחיפושן ברשת</value></data>
+  <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>הצגת מילים וחיפושן ברשת</value></data>
+  <data name="Prefs.LyricsNote" xml:space="preserve"><value>כשהאפשרות פעילה, הלשונית מילים מופיעה לצד תור הניגון, והכותרת, האמן, האלבום והאורך של כל רצועה נשלחים לתוספת המילים המותקנת (כברירת מחדל LRCLIB) בפעם הראשונה שהיא מתנגנת, אלא אם המילים כבר שמורות. מילים שנמצאו נשמרות במחשב זה. כבו את האפשרות כדי לעצור את כל חיפושי המילים ולהסתיר את הלשונית.</value></data>
 </root>

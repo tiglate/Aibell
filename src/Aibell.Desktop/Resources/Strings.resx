@@ -1132,4 +1132,49 @@ Temporary edit: {1}</value></data>
   <data name="Mpd.Error.Command" xml:space="preserve"><value>The MPD server could not do that: {0}</value></data>
   <data name="Mpd.Error.Library" xml:space="preserve"><value>Aibell could not read the music library from the MPD server.</value></data>
   <data name="Mpd.PlaylistAlready" xml:space="preserve"><value>“{0}” already has all of these songs: nothing was added.</value></data>
+  <data name="Lyrics.Tab" xml:space="preserve"><value>Lyrics</value></data>
+  <data name="Lyrics.Search" xml:space="preserve"><value>Find…</value></data>
+  <data name="Lyrics.SearchTip" xml:space="preserve"><value>Search online for the right lyrics for this track</value></data>
+  <data name="Lyrics.Edit" xml:space="preserve"><value>Edit…</value></data>
+  <data name="Lyrics.EditTip" xml:space="preserve"><value>Type or paste the lyrics for this track</value></data>
+  <data name="Lyrics.Loading" xml:space="preserve"><value>Looking for lyrics…</value></data>
+  <data name="Lyrics.NotFound" xml:space="preserve"><value>No lyrics found for this track. Use Find… to search, or Edit… to type them.</value></data>
+  <data name="Lyrics.Instrumental" xml:space="preserve"><value>Instrumental — no lyrics.</value></data>
+  <data name="Lyrics.InstrumentalBadge" xml:space="preserve"><value>instrumental</value></data>
+  <data name="Lyrics.NoTrack" xml:space="preserve"><value>Play a track to see its lyrics.</value></data>
+  <data name="Lyrics.NoProvider" xml:space="preserve"><value>No lyrics plugin is installed. Add one in Preferences &gt; Plugins, or type the lyrics with Edit….</value></data>
+  <data name="Lyrics.Unavailable" xml:space="preserve"><value>Lyrics are not available for this item.</value></data>
+  <data name="Lyrics.Error" xml:space="preserve"><value>The lyrics could not be loaded.</value></data>
+  <data name="Lyrics.FromFile" xml:space="preserve"><value>From the file</value></data>
+  <data name="Lyrics.FromYou" xml:space="preserve"><value>Typed by you</value></data>
+  <data name="Lyrics.FromSearch" xml:space="preserve"><value>Your choice</value></data>
+  <data name="Lyrics.FromOnline" xml:space="preserve"><value>Online</value></data>
+  <data name="Lyrics.Synced" xml:space="preserve"><value>synced</value></data>
+  <data name="Lyrics.NoFileWrite" xml:space="preserve"><value>This track's file cannot be written to.</value></data>
+  <data name="Lyrics.StopToWrite" xml:space="preserve"><value>Stop playback of this track to write lyrics into its file.</value></data>
+  <data name="Lyrics.FormatNoWrite" xml:space="preserve"><value>Lyrics can be written into FLAC, M4A, MP3, Ogg and Opus files.</value></data>
+  <data name="Lyrics.SavedToFile" xml:space="preserve"><value>Lyrics saved in the file. Backup: {0}</value></data>
+  <data name="Lyrics.SearchTitle" xml:space="preserve"><value>Find lyrics</value></data>
+  <data name="Lyrics.SearchTitleField" xml:space="preserve"><value>Title</value></data>
+  <data name="Lyrics.SearchArtistField" xml:space="preserve"><value>Artist</value></data>
+  <data name="Lyrics.SearchRun" xml:space="preserve"><value>Search</value></data>
+  <data name="Lyrics.SearchResults" xml:space="preserve"><value>Lyrics found</value></data>
+  <data name="Lyrics.Preview" xml:space="preserve"><value>Lyrics preview</value></data>
+  <data name="Lyrics.Use" xml:space="preserve"><value>Use these lyrics</value></data>
+  <data name="Lyrics.SearchNote" xml:space="preserve"><value>Searches the lyrics plugins with the title and artist below. The lyrics you choose are remembered for this track.</value></data>
+  <data name="Lyrics.Searching" xml:space="preserve"><value>Searching…</value></data>
+  <data name="Lyrics.SearchNone" xml:space="preserve"><value>Nothing found. Try a shorter title or only the artist.</value></data>
+  <data name="Lyrics.SearchCount" xml:space="preserve"><value>Results: {0}</value></data>
+  <data name="Lyrics.NoText" xml:space="preserve"><value>That entry has no lyrics text.</value></data>
+  <data name="Lyrics.EditTitle" xml:space="preserve"><value>Edit lyrics</value></data>
+  <data name="Lyrics.EditTextAutomation" xml:space="preserve"><value>Lyrics text</value></data>
+  <data name="Lyrics.SaveToFile" xml:space="preserve"><value>Also save the lyrics in the audio file</value></data>
+  <data name="Lyrics.SaveToFileTip" xml:space="preserve"><value>Writes the lyrics into the file's tags after making a backup. Aibell reads them back from there.</value></data>
+  <data name="Lyrics.Remove" xml:space="preserve"><value>Remove my lyrics</value></data>
+  <data name="Lyrics.RemoveTip" xml:space="preserve"><value>Forget the lyrics you chose or typed and look the track up again</value></data>
+  <data name="Lyrics.EditFor" xml:space="preserve"><value>{0} — {1}</value></data>
+  <data name="Lyrics.EditNote" xml:space="preserve"><value>Type plain lyrics, or paste synced lyrics in LRC format with a [mm:ss.xx] time before each line. Saved empty, the lyrics are cleared.</value></data>
+  <data name="Prefs.Lyrics" xml:space="preserve"><value>Show lyrics and look them up online</value></data>
+  <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>Show lyrics and look them up online</value></data>
+  <data name="Prefs.LyricsNote" xml:space="preserve"><value>When on, the Lyrics tab appears beside the play queue and each track's title, artist, album and length are sent to the installed lyrics plugin (LRCLIB by default) the first time it plays, unless the lyrics are already stored. Found lyrics are kept on this computer. Turn it off to stop all lyrics lookups and hide the tab.</value></data>
 </root>

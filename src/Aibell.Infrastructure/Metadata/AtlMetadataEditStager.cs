@@ -165,6 +165,7 @@ public sealed class AtlMetadataEditStager : IMetadataEditStager
         if (edit.DiscTotal is not null) track.DiscTotal = edit.DiscTotal;
         if (edit.BeatsPerMinute is not null) track.BPM = edit.BeatsPerMinute;
         if (edit.Description is not null) track.Description = edit.Description;
+        if (edit.Lyrics is not null) WriteLyrics(track, edit.Lyrics);
         if (edit.Keywords is not null) AtlTagFields.WriteText(track.AdditionalFields, edit.Keywords, AtlTagFields.KeywordNames);
         if (edit.LicenseUri is not null) AtlTagFields.WriteText(track.AdditionalFields, edit.LicenseUri, AtlTagFields.LicenseNames);
         if (edit.ShowName is not null)
@@ -227,7 +228,7 @@ public sealed class AtlMetadataEditStager : IMetadataEditStager
         Require(Math.Abs((savedAudio?.Duration.TotalMilliseconds ?? read.DurationMs) - duration) <= 1, "duration");
         Require(read.SampleRate == sampleRate, "sample rate");
         Require(read.ChannelsArrangement.NbChannels == channels, "channels");
-        Require(LyricsText(read) == lyrics, "lyrics");
+        Require(LyricsText(read) == (edit.Lyrics is null ? lyrics : ExpectedLyrics(edit.Lyrics)), "lyrics");
         Require(originalAudio?.HasId3v1 == savedAudio?.HasId3v1, "ID3v1 footer");
         Require(JsonSerializer.Serialize(read.Chapters) == chapters && read.ChaptersTableDescription == chapterDescription, "chapters");
         Require(fields.Where(field => !field.Key.Equals("USLT", StringComparison.OrdinalIgnoreCase) && !(originalWave is not null && RiffWaveInfo.IsEditedKey(field.Key, edit)) &&
@@ -267,13 +268,35 @@ public sealed class AtlMetadataEditStager : IMetadataEditStager
             names.Any(name => name.StartsWith("ID3v2", StringComparison.Ordinal)) && names.Any(name => name.StartsWith("ID3v1", StringComparison.Ordinal));
     }
 
-    // Lyrics as plain text. ATL first exposes an ID3 USLT frame as an additional field and, once it has rewritten the tag, as a
-    // structured lyrics entry; the text is the same, so compare the text rather than the representation.
+    // Lyrics are written as one unsynchronized text (ID3 USLT, MP4 lyrics, the Vorbis LYRICS field). Synced lyrics go in as LRC text,
+    // the convention every container supports and Aibell reads back as synced. Writing replaces every lyrics entry the file had.
+    private static void WriteLyrics(Track track, string text)
+    {
+        track.Lyrics.Clear();
+        foreach (string key in track.AdditionalFields.Keys.Where(key => key.Equals("USLT", StringComparison.OrdinalIgnoreCase)).ToList())
+            track.AdditionalFields.Remove(key);
+        if (NormalizeLyrics(text).Length > 0) track.Lyrics.Add(new ATL.LyricsInfo { UnsynchronizedLyrics = text });
+    }
+
+    // ATL turns LRC text into synchronized phrases when it reads a file back, so lyrics are compared by meaning: one "milliseconds|text"
+    // line per non-empty lyric line (-1 for untimed lines), the same way for the original, the edit and the saved file.
+    private static string ExpectedLyrics(string text) => JsonSerializer.Serialize(CanonicalLines(text) is { Length: > 0 } lines ? new[] { lines } : []);
+
+    private static string CanonicalLines(string? text) => string.Join('\n', Aibell.Domain.Lyrics.LrcParser.Parse(text)
+        .Where(line => line.Text.Length > 0).Select(line => $"{(long)(line.Start?.TotalMilliseconds ?? -1)}|{line.Text}"));
+
+    private static string NormalizeLyrics(string text) => CanonicalLines(text);
+
     private static string LyricsText(Track track)
     {
-        List<string> texts = [.. track.Lyrics.Select(lyrics => lyrics.UnsynchronizedLyrics ?? ""), .. track.Lyrics.SelectMany(lyrics => lyrics.SynchronizedLyrics.Select(phrase => $"{phrase.TimestampStart}|{phrase.Text}"))];
+        List<string> texts = [];
+        foreach (ATL.LyricsInfo info in track.Lyrics)
+        {
+            texts.Add(string.Join('\n', info.SynchronizedLyrics.Where(phrase => !string.IsNullOrWhiteSpace(phrase.Text)).Select(phrase => $"{phrase.TimestampStart}|{phrase.Text.Trim()}")));
+            texts.Add(CanonicalLines(info.UnsynchronizedLyrics));
+        }
         foreach (KeyValuePair<string, string> field in track.AdditionalFields)
-            if (field.Key.Equals("USLT", StringComparison.OrdinalIgnoreCase)) texts.Add(field.Value);
+            if (field.Key.Equals("USLT", StringComparison.OrdinalIgnoreCase)) texts.Add(CanonicalLines(field.Value));
         return JsonSerializer.Serialize(texts.Where(text => text.Length > 0).Distinct(StringComparer.Ordinal).Order(StringComparer.Ordinal));
     }
 

@@ -44,7 +44,7 @@ public sealed partial class SchemaMigrationTests
             Assert.That(tracks.Single().DateAdded, Is.EqualTo(new DateTimeOffset(2025, 1, 2, 3, 4, 5, TimeSpan.Zero)));
             Assert.That(playlistTracks.Select(track => track.Id), Is.EqualTo(new[] { trackId, trackId }));
         });
-        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(18L));
+        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(19L));
         Assert.That(await ScalarAsync("PRAGMA foreign_key_check;"), Is.Null);
     }
 
@@ -60,7 +60,7 @@ public sealed partial class SchemaMigrationTests
         await using SqliteTrackRepository upgraded = new(databasePath);
         Assert.That((await upgraded.ListAsync()).Single().Id, Is.EqualTo(trackId));
         Assert.That(await upgraded.GetTracksAsync(playlistId, ""), Has.Count.EqualTo(2));
-        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(18L));
+        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(19L));
     }
 
     [Test]
@@ -99,7 +99,7 @@ public sealed partial class SchemaMigrationTests
         // on the same repository instead of remembering a failed upgrade as complete.
         await ScalarAsync("DROP TABLE smart_playlist_rules;");
         Assert.That((await repository.ListAsync()).Single().Id, Is.EqualTo(trackId));
-        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(18L));
+        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(19L));
     }
 
     [Test]
@@ -118,7 +118,7 @@ public sealed partial class SchemaMigrationTests
         Assert.That(await upgraded.ListSubscriptionsAsync(), Is.Empty);
         Assert.That((await upgraded.ListAsync()).Single().Id, Is.EqualTo(trackId));
         Assert.That(await upgraded.GetTracksAsync(playlistId, ""), Has.Count.EqualTo(2));
-        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(18L));
+        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(19L));
         Assert.That(await ScalarAsync("PRAGMA foreign_key_check;"), Is.Null);
     }
 

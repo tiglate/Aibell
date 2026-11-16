@@ -77,6 +77,10 @@
       "linePercentMinimum": 95.5,
       "branchPercentMinimum": 83
     },
+    "Aibell.Lyrics.Lrclib": {
+      "linePercentMinimum": 90,
+      "branchPercentMinimum": 70
+    },
     "Aibell.Metadata.MusicBrainz": {
       "linePercentMinimum": 92,
       "branchPercentMinimum": 72

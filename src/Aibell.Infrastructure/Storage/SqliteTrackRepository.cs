@@ -16,7 +16,7 @@ public sealed partial class SqliteTrackRepository :
     Aibell.Application.Podcasts.IPodcastNewEpisodeRepository,
     IAsyncDisposable
 {
-    private const int CurrentSchemaVersion = 18;
+    private const int CurrentSchemaVersion = 19;
     private readonly string connectionString;
     private readonly SemaphoreSlim initializationLock = new(1, 1);
     private bool initialized;

@@ -1132,4 +1132,49 @@ Temporäre Änderung: {1}</value></data>
   <data name="Mpd.Error.Command" xml:space="preserve"><value>Der MPD-Server konnte das nicht ausführen: {0}</value></data>
   <data name="Mpd.Error.Library" xml:space="preserve"><value>Aibell konnte die Musikbibliothek nicht vom MPD-Server lesen.</value></data>
   <data name="Mpd.PlaylistAlready" xml:space="preserve"><value>„{0}“ enthält diese Titel bereits: Es wurde nichts hinzugefügt.</value></data>
+  <data name="Lyrics.Tab" xml:space="preserve"><value>Songtexte</value></data>
+  <data name="Lyrics.Search" xml:space="preserve"><value>Suchen…</value></data>
+  <data name="Lyrics.SearchTip" xml:space="preserve"><value>Online nach dem passenden Songtext für diesen Titel suchen</value></data>
+  <data name="Lyrics.Edit" xml:space="preserve"><value>Bearbeiten…</value></data>
+  <data name="Lyrics.EditTip" xml:space="preserve"><value>Songtext für diesen Titel eingeben oder einfügen</value></data>
+  <data name="Lyrics.Loading" xml:space="preserve"><value>Suche nach dem Songtext…</value></data>
+  <data name="Lyrics.NotFound" xml:space="preserve"><value>Für diesen Titel wurde kein Songtext gefunden. Mit Suchen… suchen oder mit Bearbeiten… eintippen.</value></data>
+  <data name="Lyrics.Instrumental" xml:space="preserve"><value>Instrumental — kein Songtext.</value></data>
+  <data name="Lyrics.InstrumentalBadge" xml:space="preserve"><value>instrumental</value></data>
+  <data name="Lyrics.NoTrack" xml:space="preserve"><value>Spielen Sie einen Titel ab, um den Songtext zu sehen.</value></data>
+  <data name="Lyrics.NoProvider" xml:space="preserve"><value>Es ist kein Songtext-Plugin installiert. Fügen Sie unter Einstellungen &gt; Plugins eines hinzu oder tippen Sie den Text mit Bearbeiten… ein.</value></data>
+  <data name="Lyrics.Unavailable" xml:space="preserve"><value>Für dieses Element sind keine Songtexte verfügbar.</value></data>
+  <data name="Lyrics.Error" xml:space="preserve"><value>Der Songtext konnte nicht geladen werden.</value></data>
+  <data name="Lyrics.FromFile" xml:space="preserve"><value>Aus der Datei</value></data>
+  <data name="Lyrics.FromYou" xml:space="preserve"><value>Von Ihnen eingegeben</value></data>
+  <data name="Lyrics.FromSearch" xml:space="preserve"><value>Ihre Auswahl</value></data>
+  <data name="Lyrics.FromOnline" xml:space="preserve"><value>Online</value></data>
+  <data name="Lyrics.Synced" xml:space="preserve"><value>synchronisiert</value></data>
+  <data name="Lyrics.NoFileWrite" xml:space="preserve"><value>In die Datei dieses Titels kann nicht geschrieben werden.</value></data>
+  <data name="Lyrics.StopToWrite" xml:space="preserve"><value>Beenden Sie die Wiedergabe dieses Titels, um den Songtext in die Datei zu schreiben.</value></data>
+  <data name="Lyrics.FormatNoWrite" xml:space="preserve"><value>Songtexte können in FLAC-, M4A-, MP3-, Ogg- und Opus-Dateien geschrieben werden.</value></data>
+  <data name="Lyrics.SavedToFile" xml:space="preserve"><value>Songtext in der Datei gespeichert. Sicherung: {0}</value></data>
+  <data name="Lyrics.SearchTitle" xml:space="preserve"><value>Songtext suchen</value></data>
+  <data name="Lyrics.SearchTitleField" xml:space="preserve"><value>Titel</value></data>
+  <data name="Lyrics.SearchArtistField" xml:space="preserve"><value>Interpret</value></data>
+  <data name="Lyrics.SearchRun" xml:space="preserve"><value>Suchen</value></data>
+  <data name="Lyrics.SearchResults" xml:space="preserve"><value>Gefundene Songtexte</value></data>
+  <data name="Lyrics.Preview" xml:space="preserve"><value>Vorschau des Songtexts</value></data>
+  <data name="Lyrics.Use" xml:space="preserve"><value>Diesen Songtext verwenden</value></data>
+  <data name="Lyrics.SearchNote" xml:space="preserve"><value>Durchsucht die Songtext-Plugins mit Titel und Interpret unten. Der gewählte Songtext wird für diesen Titel gespeichert.</value></data>
+  <data name="Lyrics.Searching" xml:space="preserve"><value>Suche läuft…</value></data>
+  <data name="Lyrics.SearchNone" xml:space="preserve"><value>Nichts gefunden. Versuchen Sie einen kürzeren Titel oder nur den Interpreten.</value></data>
+  <data name="Lyrics.SearchCount" xml:space="preserve"><value>Ergebnisse: {0}</value></data>
+  <data name="Lyrics.NoText" xml:space="preserve"><value>Dieser Eintrag enthält keinen Songtext.</value></data>
+  <data name="Lyrics.EditTitle" xml:space="preserve"><value>Songtext bearbeiten</value></data>
+  <data name="Lyrics.EditTextAutomation" xml:space="preserve"><value>Songtext</value></data>
+  <data name="Lyrics.SaveToFile" xml:space="preserve"><value>Songtext auch in der Audiodatei speichern</value></data>
+  <data name="Lyrics.SaveToFileTip" xml:space="preserve"><value>Schreibt den Songtext nach einer Sicherung in die Tags der Datei. Aibell liest ihn von dort wieder aus.</value></data>
+  <data name="Lyrics.Remove" xml:space="preserve"><value>Meinen Songtext entfernen</value></data>
+  <data name="Lyrics.RemoveTip" xml:space="preserve"><value>Den gewählten oder eingegebenen Songtext verwerfen und den Titel erneut suchen</value></data>
+  <data name="Lyrics.EditFor" xml:space="preserve"><value>{0} — {1}</value></data>
+  <data name="Lyrics.EditNote" xml:space="preserve"><value>Geben Sie einen einfachen Songtext ein oder fügen Sie einen synchronisierten Songtext im LRC-Format mit einer Zeit [mm:ss.xx] vor jeder Zeile ein. Leer gespeichert wird der Songtext gelöscht.</value></data>
+  <data name="Prefs.Lyrics" xml:space="preserve"><value>Songtexte anzeigen und online suchen</value></data>
+  <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>Songtexte anzeigen und online suchen</value></data>
+  <data name="Prefs.LyricsNote" xml:space="preserve"><value>Wenn aktiviert, erscheint neben der Wiedergabeliste der Reiter Songtexte, und Titel, Interpret, Album und Länge jedes Titels werden beim ersten Abspielen an das installierte Songtext-Plugin (standardmäßig LRCLIB) gesendet, sofern der Songtext nicht schon gespeichert ist. Gefundene Songtexte bleiben auf diesem Computer. Deaktivieren Sie die Option, um alle Songtext-Abfragen zu beenden und den Reiter auszublenden.</value></data>
 </root>

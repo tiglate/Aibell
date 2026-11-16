@@ -6,6 +6,7 @@ using Aibell.Infrastructure.Podcasts;
 using Aibell.Application.Devices;
 using Aibell.Application.Discs;
 using Aibell.Application.Enrichment;
+using Aibell.Application.Lyrics;
 using Aibell.Application.Plugins;
 using Aibell.Application.Library;
 using Aibell.Application.Radio;
@@ -138,7 +139,8 @@ internal static class Program
         builder.Services.AddSingleton<IArtworkProvider>(services => new MpdArtworkProvider(new LocalArtworkCache(Path.Combine(dataDirectory, "artwork")),
             () => services.GetRequiredService<MpdPlaybackEngine>().Transport, Path.Combine(dataDirectory, "artwork", "mpd")));
         // Online metadata comes only from plugins found in the plugins folder next to the application. Without them nothing
-        // here can reach the network, and with them nothing is sent until the user allows lookups and presses Look up.
+        // here can reach the network. Metadata plugins send nothing until the user allows lookups and presses Look up; lyrics
+        // plugins look up the playing track automatically unless lyrics are switched off in Preferences.
         string bundledPlugins = Path.Combine(AppContext.BaseDirectory, "plugins");
         string userPlugins = Path.Combine(dataDirectory, "plugins");
         PluginStateStore pluginState = new(Path.Combine(dataDirectory, "plugin-state.json"));
@@ -151,12 +153,18 @@ internal static class Program
             foreach (IEnrichmentProvider provider in plugin.Contributions.EnrichmentProviders) builder.Services.AddSingleton(provider);
             foreach (IReleaseLookupProvider provider in plugin.Contributions.ReleaseProviders) builder.Services.AddSingleton(provider);
             foreach (IArtistInfoProvider provider in plugin.Contributions.ArtistProviders) builder.Services.AddSingleton(provider);
+            foreach (ILyricsProvider provider in plugin.Contributions.LyricsProviders) builder.Services.AddSingleton(provider);
         }
         builder.Services.AddSingleton(plugins);
         builder.Services.AddSingleton<IEnrichmentCoordinator, EnrichmentCoordinator>();
         builder.Services.AddSingleton<IMetadataLookupService>(services => new MetadataLookupService(
             services.GetServices<IReleaseLookupProvider>(), services.GetServices<IArtistInfoProvider>(),
             () => services.GetRequiredService<MainWindowViewModel>().OnlineLookupAllowed));
+        // Lyrics come only from plugins (LyricsProviders); the service sends nothing when lyrics are switched off in Preferences.
+        builder.Services.AddSingleton<ILyricsFileReader, AtlLyricsFileReader>();
+        builder.Services.AddSingleton<LyricsService>(services => new LyricsService(
+            services.GetRequiredService<SqliteTrackRepository>(), services.GetRequiredService<ILyricsFileReader>(), services.GetServices<ILyricsProvider>(),
+            () => services.GetRequiredService<MainWindowViewModel>().LyricsEnabled));
         builder.Services.AddSingleton<IOpticalDriveService>(_ => OperatingSystem.IsWindows() ? new WindowsOpticalDriveService() : new LinuxOpticalDriveService());
         builder.Services.AddSingleton<Func<IDiscPlaybackHandoff, DiscViewModel>>(services => handoff =>
             new DiscViewModel(services.GetRequiredService<IOpticalDriveService>(), services.GetRequiredService<IMetadataLookupService>(),

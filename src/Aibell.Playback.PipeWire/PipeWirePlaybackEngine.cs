@@ -281,6 +281,13 @@ public sealed class PipeWirePlaybackEngine : IPlaybackEngine, IPlaybackRateContr
 
     private PipeWireStream EnsureStream()
     {
+        // A stream that failed (the daemon dropped it, or a render error) never recovers; reusing it left playback dead until a restart.
+        if (stream is { Failure: not null })
+        {
+            stream.Dispose();
+            stream = null;
+            equalizerProcessor = null;
+        }
         if (stream is not null) return stream;
         PipeWireStream opened = new(Render);
         try

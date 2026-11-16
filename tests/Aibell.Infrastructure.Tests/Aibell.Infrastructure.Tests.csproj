@@ -7,6 +7,7 @@
     <ProjectReference Include="../../src/Aibell.Infrastructure/Aibell.Infrastructure.csproj" />
     <!-- Built, not referenced: the loader tests load the real MusicBrainz plugin from plugins/ exactly as the application does. -->
     <ProjectReference Include="../../src/Aibell.Metadata.MusicBrainz/Aibell.Metadata.MusicBrainz.csproj" ReferenceOutputAssembly="false" OutputItemType="PluginAssembly" />
+    <ProjectReference Include="../../src/Aibell.Lyrics.Lrclib/Aibell.Lyrics.Lrclib.csproj" ReferenceOutputAssembly="false" OutputItemType="PluginAssembly" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.Sqlite" />

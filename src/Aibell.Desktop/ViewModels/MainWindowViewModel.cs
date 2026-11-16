@@ -1,4 +1,5 @@
 using Aibell.Desktop.Localization;
+using Aibell.Application.Lyrics;
 using Aibell.Application.Discs;
 using System.Collections.ObjectModel;
 using System.Globalization;
@@ -34,7 +35,8 @@ public sealed partial class MainWindowViewModel(
     IRadioStationRepository? radioRepository = null,
     RadioPlaylistImportService? radioPlaylistFiles = null,
     ICuratedStationCatalog? curatedCatalog = null,
-    ICoverImageLoader? radioLogos = null) : ObservableObject, IDisposable
+    ICoverImageLoader? radioLogos = null,
+    LyricsService? lyricsService = null) : ObservableObject, IDisposable
 {
     private readonly PlaybackQueueModel playbackQueue = new();
 
@@ -979,6 +981,7 @@ public sealed partial class MainWindowViewModel(
         language = preferences.Language;
         languageAtStart ??= language;
         radioCatalogEnabled = preferences.RadioCatalogEnabled;
+        ApplyLyricsEnabled(preferences.LyricsEnabled);
         soundFontPath = preferences.SoundFontPath;
         soundFontAtStart ??= soundFontPath;
         podcastRate = preferences.PodcastPlaybackRate is 1.0 or 1.25 or 1.5 or 2.0 ? preferences.PodcastPlaybackRate : 1.0;
@@ -1070,7 +1073,8 @@ public sealed partial class MainWindowViewModel(
             playbackEngineKind,
             language,
             radioCatalogEnabled,
-            soundFontPath);
+            soundFontPath,
+            lyricsEnabled);
     }
 
     private Task PersistPreferencesAsync(CancellationToken cancellationToken)
@@ -1672,6 +1676,7 @@ public sealed partial class MainWindowViewModel(
 
     private void ApplyPlaybackSnapshot(PlaybackSnapshot playbackSnapshot)
     {
+        UpdateLyrics(playbackSnapshot);
         UpdateArtwork(playbackSnapshot.Track is { } artTrack && refreshedTracks.TryGetValue(artTrack.Id, out Track? refreshed) ? refreshed : playbackSnapshot.Track);
         (Guid? TrackId, PlaybackStatus Status) indicator =
             playbackSnapshot.Status is PlaybackStatus.Playing or PlaybackStatus.Paused

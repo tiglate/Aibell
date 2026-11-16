@@ -163,6 +163,20 @@ public sealed class PreferencesDialog : Window
             FontSize = 11,
             TextWrapping = TextWrapping.Wrap
         });
+        CheckBox lyrics = new()
+        {
+            Name = "PreferencesLyrics",
+            Content = Loc.Get("Prefs.Lyrics"),
+            IsChecked = initial.Lyrics
+        };
+        AutomationProperties.SetName(lyrics, Loc.Get("Prefs.LyricsAutomation"));
+        onlineTab.Children.Add(lyrics);
+        onlineTab.Children.Add(new TextBlock
+        {
+            Text = Loc.Get("Prefs.LyricsNote"),
+            FontSize = 11,
+            TextWrapping = TextWrapping.Wrap
+        });
         PluginsPanel plugins = new(model.PluginAdministration, pickPluginFolder is null ? null : () => pickPluginFolder(this),
             pickPluginArchive is null ? null : () => pickPluginArchive(this));
         folders.SelectionChanged += (_, _) => { rescan.IsEnabled = remove.IsEnabled = folders.SelectedItem is not null; };
@@ -193,7 +207,7 @@ public sealed class PreferencesDialog : Window
             RequestedPodcastFolder(), autoRefresh.IsChecked == true, onlineLookup.IsChecked == true,
             engine.SelectedIndex >= 0 && engine.SelectedIndex < engineChoices.Length ? engineChoices[engine.SelectedIndex].Kind : engineChoices[0].Kind,
             languageChoice.SelectedIndex <= 0 ? null : AppLanguages.All[languageChoice.SelectedIndex - 1].Code, radioCatalog.IsChecked == true,
-            string.IsNullOrWhiteSpace(soundFont.Text) ? null : soundFont.Text.Trim())), close: true);
+            string.IsNullOrWhiteSpace(soundFont.Text) ? null : soundFont.Text.Trim(), lyrics.IsChecked == true)), close: true);
         string? RequestedPodcastFolder()
         {
             if (!model.CanChoosePodcastFolder) return null;

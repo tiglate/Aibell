@@ -144,6 +144,7 @@ public sealed partial class MainWindow : Window, IDisposable
         DataContext = viewModel;
         InitializePodcasts();
         InitializePlayQueue();
+        InitializeLyrics();
         InitializeArtwork();
         InitializeKeyboard();
         InitializeErrorReporting();

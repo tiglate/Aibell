@@ -28,7 +28,8 @@ public sealed record MetadataEdit(
     string? LicenseUri = null,
     string? ShowName = null,
     int? SeasonNumber = null,
-    int? EpisodeNumber = null)
+    int? EpisodeNumber = null,
+    string? Lyrics = null)
 {
     public void Validate()
     {
@@ -46,7 +47,7 @@ public sealed record MetadataEdit(
         if (TrackTotal is > 0 && TrackNumber > TrackTotal || DiscTotal is > 0 && DiscNumber > DiscTotal)
             throw new ArgumentException("A track or disc number cannot exceed its total.");
         foreach (string? value in new[] { Title, Artist, Album, Genre, Comment, Description, Keywords, LicenseUri, ShowName, AlbumArtist, Composer,
-            Conductor, Grouping, Copyright, SortTitle, SortArtist, SortAlbumArtist, SortAlbum })
+            Conductor, Grouping, Copyright, SortTitle, SortArtist, SortAlbumArtist, SortAlbum, Lyrics })
             if (value?.Contains('\0', StringComparison.Ordinal) == true)
                 throw new ArgumentException("Metadata text cannot contain a null character.");
     }

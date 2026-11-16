@@ -75,6 +75,8 @@ internal static partial class NativeMethods
     {
         public SpaBuffer* Buffer;
         public nint UserData;
+        /// <summary>The sum of the buffers queued in the stream (pw_buffer.size); it sits before <see cref="Requested"/>.</summary>
+        public ulong Size;
         public ulong Requested;
         public ulong Time;
     }
@@ -117,6 +119,9 @@ internal static partial class NativeMethods
 
     [LibraryImport(PipeWire, EntryPoint = "pw_stream_queue_buffer")]
     public static unsafe partial int PwStreamQueueBuffer(nint stream, PwBuffer* buffer);
+
+    [LibraryImport(PipeWire, EntryPoint = "pw_stream_set_param")]
+    public static partial int PwStreamSetParam(nint stream, uint id, nint param);
 
     [LibraryImport(PipeWire, EntryPoint = "pw_stream_set_active")]
     public static partial int PwStreamSetActive(nint stream, [MarshalAs(UnmanagedType.I1)] bool active);

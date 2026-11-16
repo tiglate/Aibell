@@ -85,6 +85,13 @@ played by emulating the console's SPC700 processor and S-DSP sound chip. Audio C
   restart. A plugin runs inside the application with your permissions, so install only plugins you trust.
 - Online lookups (MusicBrainz) come from a plugin and are **off by default**. Nothing is sent until you press Look up
   or Get Artwork and have allowed online lookup in **Preferences → Online**.
+- Lyrics: a **Lyrics** tab beside the play queue shows the lyrics of the playing track, with the current line highlighted
+  and followed when the lyrics are time-synced. Lyrics come from the file's own tags, then a local cache, then a lyrics
+  plugin (LRCLIB, shipped in `plugins/`), looked up in the background so playback never waits. Unlike the lookups above,
+  this is **on by default**: the title, artist, album and length of a track are sent to lrclib.net the first time it plays,
+  unless its lyrics are already stored. Switch it off in **Preferences → Online** and the tab and every lookup are gone.
+  **Find…** searches by hand when the automatic match is wrong, **Edit…** lets you type or paste lyrics (LRC timestamps make
+  them synced) and can also save them into the file's tags, with a backup, for FLAC, M4A, MP3, Ogg and Opus.
 - Light, dark or system theme; keyboard-operable transport with accessible names.
 - A main menu (File, Edit, View, Controls, Library, Help) with every action of the buttons and context menus; items
   enable and disable with the selected library item. **Help → About Aibell** shows the version, what this installation
@@ -225,6 +232,7 @@ The solution is `Aibell.slnx`; code is split into layers that only depend inward
 | `Aibell.Platform.Linux` / `Aibell.Platform.Windows` | Media session, notifications, optical drives and removable volumes                                                                                               |
 | `Aibell.Mpd`                                        | MPD protocol client and a lossless `mpd.conf` reader, editor and setting catalog (no other dependencies)                                                         |
 | `Aibell.Metadata.MusicBrainz`                       | Optional online-lookup plugin, shipped in `plugins/` and loaded at run time                                                                                      |
+| `Aibell.Lyrics.Lrclib`                              | Optional lyrics plugin (lrclib.net, plain and synced), shipped in `plugins/` and loaded at run time                                                              |
 | `Aibell.Desktop`                                    | The Avalonia UI and the composition root                                                                                                                         |
 | `tools/AibellTools`                                 | Developer tool in C#: secret scan, coverage gate, candidate packaging, Linux publish smoke test (run with `dotnet run --project tools/AibellTools -- <command>`) |
 

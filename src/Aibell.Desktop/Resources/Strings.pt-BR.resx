@@ -1132,4 +1132,49 @@ Edição temporária: {1}</value></data>
   <data name="Mpd.Error.Command" xml:space="preserve"><value>O servidor MPD não conseguiu fazer isso: {0}</value></data>
   <data name="Mpd.Error.Library" xml:space="preserve"><value>O Aibell não conseguiu ler a biblioteca de músicas do servidor MPD.</value></data>
   <data name="Mpd.PlaylistAlready" xml:space="preserve"><value>A playlist “{0}” já tem todas essas músicas: nada foi adicionado.</value></data>
+  <data name="Lyrics.Tab" xml:space="preserve"><value>Letras</value></data>
+  <data name="Lyrics.Search" xml:space="preserve"><value>Buscar…</value></data>
+  <data name="Lyrics.SearchTip" xml:space="preserve"><value>Procurar online a letra certa para esta faixa</value></data>
+  <data name="Lyrics.Edit" xml:space="preserve"><value>Editar…</value></data>
+  <data name="Lyrics.EditTip" xml:space="preserve"><value>Digite ou cole a letra desta faixa</value></data>
+  <data name="Lyrics.Loading" xml:space="preserve"><value>Procurando a letra…</value></data>
+  <data name="Lyrics.NotFound" xml:space="preserve"><value>Nenhuma letra encontrada para esta faixa. Use Buscar… para procurar ou Editar… para digitá-la.</value></data>
+  <data name="Lyrics.Instrumental" xml:space="preserve"><value>Instrumental — sem letra.</value></data>
+  <data name="Lyrics.InstrumentalBadge" xml:space="preserve"><value>instrumental</value></data>
+  <data name="Lyrics.NoTrack" xml:space="preserve"><value>Toque uma faixa para ver a letra.</value></data>
+  <data name="Lyrics.NoProvider" xml:space="preserve"><value>Nenhum plugin de letras está instalado. Adicione um em Preferências &gt; Plugins ou digite a letra com Editar….</value></data>
+  <data name="Lyrics.Unavailable" xml:space="preserve"><value>A letra não está disponível para este item.</value></data>
+  <data name="Lyrics.Error" xml:space="preserve"><value>Não foi possível carregar a letra.</value></data>
+  <data name="Lyrics.FromFile" xml:space="preserve"><value>Do arquivo</value></data>
+  <data name="Lyrics.FromYou" xml:space="preserve"><value>Digitada por você</value></data>
+  <data name="Lyrics.FromSearch" xml:space="preserve"><value>Sua escolha</value></data>
+  <data name="Lyrics.FromOnline" xml:space="preserve"><value>Online</value></data>
+  <data name="Lyrics.Synced" xml:space="preserve"><value>sincronizada</value></data>
+  <data name="Lyrics.NoFileWrite" xml:space="preserve"><value>Não é possível gravar no arquivo desta faixa.</value></data>
+  <data name="Lyrics.StopToWrite" xml:space="preserve"><value>Pare a reprodução desta faixa para gravar a letra no arquivo.</value></data>
+  <data name="Lyrics.FormatNoWrite" xml:space="preserve"><value>A letra pode ser gravada em arquivos FLAC, M4A, MP3, Ogg e Opus.</value></data>
+  <data name="Lyrics.SavedToFile" xml:space="preserve"><value>Letra salva no arquivo. Backup: {0}</value></data>
+  <data name="Lyrics.SearchTitle" xml:space="preserve"><value>Buscar letra</value></data>
+  <data name="Lyrics.SearchTitleField" xml:space="preserve"><value>Título</value></data>
+  <data name="Lyrics.SearchArtistField" xml:space="preserve"><value>Artista</value></data>
+  <data name="Lyrics.SearchRun" xml:space="preserve"><value>Buscar</value></data>
+  <data name="Lyrics.SearchResults" xml:space="preserve"><value>Letras encontradas</value></data>
+  <data name="Lyrics.Preview" xml:space="preserve"><value>Prévia da letra</value></data>
+  <data name="Lyrics.Use" xml:space="preserve"><value>Usar esta letra</value></data>
+  <data name="Lyrics.SearchNote" xml:space="preserve"><value>Busca nos plugins de letras com o título e o artista abaixo. A letra escolhida fica guardada para esta faixa.</value></data>
+  <data name="Lyrics.Searching" xml:space="preserve"><value>Buscando…</value></data>
+  <data name="Lyrics.SearchNone" xml:space="preserve"><value>Nada encontrado. Tente um título mais curto ou só o artista.</value></data>
+  <data name="Lyrics.SearchCount" xml:space="preserve"><value>Resultados: {0}</value></data>
+  <data name="Lyrics.NoText" xml:space="preserve"><value>Esse item não tem texto de letra.</value></data>
+  <data name="Lyrics.EditTitle" xml:space="preserve"><value>Editar letra</value></data>
+  <data name="Lyrics.EditTextAutomation" xml:space="preserve"><value>Texto da letra</value></data>
+  <data name="Lyrics.SaveToFile" xml:space="preserve"><value>Salvar também a letra no arquivo de áudio</value></data>
+  <data name="Lyrics.SaveToFileTip" xml:space="preserve"><value>Grava a letra nas tags do arquivo depois de fazer um backup. O Aibell lê a letra de volta de lá.</value></data>
+  <data name="Lyrics.Remove" xml:space="preserve"><value>Remover minha letra</value></data>
+  <data name="Lyrics.RemoveTip" xml:space="preserve"><value>Esquecer a letra que você escolheu ou digitou e buscar a faixa de novo</value></data>
+  <data name="Lyrics.EditFor" xml:space="preserve"><value>{0} — {1}</value></data>
+  <data name="Lyrics.EditNote" xml:space="preserve"><value>Digite a letra simples ou cole uma letra sincronizada no formato LRC, com um tempo [mm:ss.xx] antes de cada linha. Se for salva vazia, a letra é apagada.</value></data>
+  <data name="Prefs.Lyrics" xml:space="preserve"><value>Mostrar letras e buscá-las online</value></data>
+  <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>Mostrar letras e buscá-las online</value></data>
+  <data name="Prefs.LyricsNote" xml:space="preserve"><value>Quando ativado, a aba Letras aparece ao lado da fila de reprodução e o título, o artista, o álbum e a duração de cada faixa são enviados ao plugin de letras instalado (LRCLIB por padrão) na primeira vez em que ela toca, a menos que a letra já esteja guardada. As letras encontradas ficam neste computador. Desative para parar todas as buscas de letras e ocultar a aba.</value></data>
 </root>

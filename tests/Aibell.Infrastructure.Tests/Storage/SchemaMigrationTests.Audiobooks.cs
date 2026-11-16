@@ -23,7 +23,7 @@ public sealed partial class SchemaMigrationTests
             Assert.That(await upgraded.GetTracksAsync(playlistId, ""), Has.Count.EqualTo(2));
             Assert.That((await upgraded.ListStationsAsync()).Single().Name, Is.EqualTo("Keep radio"));
             Assert.That((await upgraded.ListSubscriptionsAsync()).Single().Title, Is.EqualTo("Keep podcast"));
-            Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(18L));
+            Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(19L));
             Assert.That(await ScalarAsync("PRAGMA foreign_key_check;"), Is.Null);
         }
         byte[] hash = await DatabaseFileSnapshot.HashAsync(databasePath);
@@ -45,6 +45,6 @@ public sealed partial class SchemaMigrationTests
         await ScalarAsync("DROP TABLE audiobook_shelf;");
         Assert.That(await upgraded.ListShelfAsync(), Is.Empty);
         Assert.That((await upgraded.ListAsync()).Single().Id, Is.EqualTo(trackId));
-        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(18L));
+        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(19L));
     }
 }

@@ -55,7 +55,7 @@ public sealed class SqliteTrackRepositoryTests
         File.Move(databasePath, databasePath + ".closed");
     }
 
-    [TestCase(19)]
+    [TestCase(20)]
     [TestCase(-1)]
     public async Task InitializeAsync_UnsupportedSchema_RejectsWithoutChangingDatabase(int version)
     {
@@ -110,7 +110,7 @@ public sealed class SqliteTrackRepositoryTests
         await connection.OpenAsync();
         await using SqliteCommand command = connection.CreateCommand();
         command.CommandText = "PRAGMA user_version;";
-        Assert.That(await command.ExecuteScalarAsync(), Is.EqualTo(18L));
+        Assert.That(await command.ExecuteScalarAsync(), Is.EqualTo(19L));
     }
 
     [Test]

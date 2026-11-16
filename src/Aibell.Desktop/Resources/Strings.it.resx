@@ -1132,4 +1132,49 @@ Modifica temporanea: {1}</value></data>
   <data name="Mpd.Error.Command" xml:space="preserve"><value>Il server MPD non è riuscito a farlo: {0}</value></data>
   <data name="Mpd.Error.Library" xml:space="preserve"><value>Aibell non è riuscito a leggere la libreria musicale dal server MPD.</value></data>
   <data name="Mpd.PlaylistAlready" xml:space="preserve"><value>La playlist “{0}” contiene già tutti questi brani: non è stato aggiunto nulla.</value></data>
+  <data name="Lyrics.Tab" xml:space="preserve"><value>Testi</value></data>
+  <data name="Lyrics.Search" xml:space="preserve"><value>Cerca…</value></data>
+  <data name="Lyrics.SearchTip" xml:space="preserve"><value>Cerca online il testo giusto per questa traccia</value></data>
+  <data name="Lyrics.Edit" xml:space="preserve"><value>Modifica…</value></data>
+  <data name="Lyrics.EditTip" xml:space="preserve"><value>Scrivi o incolla il testo di questa traccia</value></data>
+  <data name="Lyrics.Loading" xml:space="preserve"><value>Ricerca del testo…</value></data>
+  <data name="Lyrics.NotFound" xml:space="preserve"><value>Nessun testo trovato per questa traccia. Usa Cerca… per cercarlo o Modifica… per scriverlo.</value></data>
+  <data name="Lyrics.Instrumental" xml:space="preserve"><value>Strumentale — nessun testo.</value></data>
+  <data name="Lyrics.InstrumentalBadge" xml:space="preserve"><value>strumentale</value></data>
+  <data name="Lyrics.NoTrack" xml:space="preserve"><value>Riproduci una traccia per vederne il testo.</value></data>
+  <data name="Lyrics.NoProvider" xml:space="preserve"><value>Nessun plugin per i testi è installato. Aggiungine uno in Preferenze &gt; Plugin o scrivi il testo con Modifica….</value></data>
+  <data name="Lyrics.Unavailable" xml:space="preserve"><value>Il testo non è disponibile per questo elemento.</value></data>
+  <data name="Lyrics.Error" xml:space="preserve"><value>Impossibile caricare il testo.</value></data>
+  <data name="Lyrics.FromFile" xml:space="preserve"><value>Dal file</value></data>
+  <data name="Lyrics.FromYou" xml:space="preserve"><value>Scritto da te</value></data>
+  <data name="Lyrics.FromSearch" xml:space="preserve"><value>La tua scelta</value></data>
+  <data name="Lyrics.FromOnline" xml:space="preserve"><value>Online</value></data>
+  <data name="Lyrics.Synced" xml:space="preserve"><value>sincronizzato</value></data>
+  <data name="Lyrics.NoFileWrite" xml:space="preserve"><value>Non è possibile scrivere nel file di questa traccia.</value></data>
+  <data name="Lyrics.StopToWrite" xml:space="preserve"><value>Ferma la riproduzione di questa traccia per scrivere il testo nel file.</value></data>
+  <data name="Lyrics.FormatNoWrite" xml:space="preserve"><value>Il testo può essere scritto nei file FLAC, M4A, MP3, Ogg e Opus.</value></data>
+  <data name="Lyrics.SavedToFile" xml:space="preserve"><value>Testo salvato nel file. Backup: {0}</value></data>
+  <data name="Lyrics.SearchTitle" xml:space="preserve"><value>Cerca testo</value></data>
+  <data name="Lyrics.SearchTitleField" xml:space="preserve"><value>Titolo</value></data>
+  <data name="Lyrics.SearchArtistField" xml:space="preserve"><value>Artista</value></data>
+  <data name="Lyrics.SearchRun" xml:space="preserve"><value>Cerca</value></data>
+  <data name="Lyrics.SearchResults" xml:space="preserve"><value>Testi trovati</value></data>
+  <data name="Lyrics.Preview" xml:space="preserve"><value>Anteprima del testo</value></data>
+  <data name="Lyrics.Use" xml:space="preserve"><value>Usa questo testo</value></data>
+  <data name="Lyrics.SearchNote" xml:space="preserve"><value>Cerca nei plugin dei testi con il titolo e l'artista qui sotto. Il testo scelto viene ricordato per questa traccia.</value></data>
+  <data name="Lyrics.Searching" xml:space="preserve"><value>Ricerca in corso…</value></data>
+  <data name="Lyrics.SearchNone" xml:space="preserve"><value>Nessun risultato. Prova con un titolo più breve o solo con l'artista.</value></data>
+  <data name="Lyrics.SearchCount" xml:space="preserve"><value>Risultati: {0}</value></data>
+  <data name="Lyrics.NoText" xml:space="preserve"><value>Questa voce non ha testo.</value></data>
+  <data name="Lyrics.EditTitle" xml:space="preserve"><value>Modifica testo</value></data>
+  <data name="Lyrics.EditTextAutomation" xml:space="preserve"><value>Testo</value></data>
+  <data name="Lyrics.SaveToFile" xml:space="preserve"><value>Salva il testo anche nel file audio</value></data>
+  <data name="Lyrics.SaveToFileTip" xml:space="preserve"><value>Scrive il testo nei tag del file dopo aver creato un backup. Aibell lo rilegge da lì.</value></data>
+  <data name="Lyrics.Remove" xml:space="preserve"><value>Rimuovi il mio testo</value></data>
+  <data name="Lyrics.RemoveTip" xml:space="preserve"><value>Dimentica il testo scelto o scritto e cerca di nuovo la traccia</value></data>
+  <data name="Lyrics.EditFor" xml:space="preserve"><value>{0} — {1}</value></data>
+  <data name="Lyrics.EditNote" xml:space="preserve"><value>Scrivi un testo semplice o incolla un testo sincronizzato in formato LRC con un tempo [mm:ss.xx] prima di ogni riga. Se viene salvato vuoto, il testo viene cancellato.</value></data>
+  <data name="Prefs.Lyrics" xml:space="preserve"><value>Mostra i testi e cercali online</value></data>
+  <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>Mostra i testi e cercali online</value></data>
+  <data name="Prefs.LyricsNote" xml:space="preserve"><value>Se attivo, la scheda Testi compare accanto alla coda di riproduzione e titolo, artista, album e durata di ogni traccia vengono inviati al plugin dei testi installato (LRCLIB per impostazione predefinita) alla prima riproduzione, a meno che il testo non sia già salvato. I testi trovati restano su questo computer. Disattiva per interrompere tutte le ricerche dei testi e nascondere la scheda.</value></data>
 </root>

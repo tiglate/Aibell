@@ -39,7 +39,7 @@ public sealed partial class SchemaMigrationTests
                 Assert.That(actual.LogoUri, Is.Null);
                 Assert.That(actual.CatalogId, Is.Null);
             });
-            Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(18L));
+            Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(19L));
             Assert.That(await ScalarAsync("PRAGMA foreign_key_check;"), Is.Null);
         }
         byte[] hash = await DatabaseFileSnapshot.HashAsync(databasePath);
@@ -61,7 +61,7 @@ public sealed partial class SchemaMigrationTests
         Assert.That(await DatabaseFileSnapshot.HashAsync(databasePath), Is.EqualTo(hash));
         await ScalarAsync("ALTER TABLE radio_stations DROP COLUMN country;");
         Assert.That((await upgraded.ListStationsAsync()).Single().Name, Is.EqualTo("Keep"));
-        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(18L));
+        Assert.That(await ScalarAsync("PRAGMA user_version;"), Is.EqualTo(19L));
         Assert.That((await upgraded.ListAsync()).Single().Id, Is.EqualTo(trackId));
     }
 }

@@ -37,6 +37,26 @@ public sealed class JsonApplicationSettingsStoreTests
     }
 
     [Test]
+    public async Task LoadAsync_OlderFileWithoutTheLyricsChoice_HasLyricsOn()
+    {
+        Directory.CreateDirectory(temporaryDirectory);
+        await File.WriteAllTextAsync(settingsPath, "{ \"Volume\": 0.5, \"OnlineLookup\": false }");
+        using JsonApplicationSettingsStore store = new(settingsPath);
+
+        Assert.That((await store.LoadAsync()).LyricsEnabled, Is.True);
+        Assert.That(ApplicationPreferences.Default.LyricsEnabled, Is.True);
+    }
+
+    [Test]
+    public async Task SaveAndLoadAsync_LyricsOff_RoundTrips()
+    {
+        using JsonApplicationSettingsStore store = new(settingsPath);
+        await store.SaveAsync(ApplicationPreferences.Default with { LyricsEnabled = false });
+
+        Assert.That((await store.LoadAsync()).LyricsEnabled, Is.False);
+    }
+
+    [Test]
     public async Task SaveAndLoadAsync_RadioCatalogChoice_RoundTrips()
     {
         using JsonApplicationSettingsStore store = new(settingsPath);

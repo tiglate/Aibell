@@ -1110,4 +1110,49 @@
   <data name="Mpd.Error.Command" xml:space="preserve"><value>MPD サーバーはそれを実行できませんでした：{0}</value></data>
   <data name="Mpd.Error.Library" xml:space="preserve"><value>Aibell は MPD サーバーから音楽ライブラリを読み込めませんでした。</value></data>
   <data name="Mpd.PlaylistAlready" xml:space="preserve"><value>プレイリスト「{0}」にはこれらの曲がすべて入っているため、何も追加されませんでした。</value></data>
+  <data name="Lyrics.Tab" xml:space="preserve"><value>歌詞</value></data>
+  <data name="Lyrics.Search" xml:space="preserve"><value>検索…</value></data>
+  <data name="Lyrics.SearchTip" xml:space="preserve"><value>このトラックの正しい歌詞をオンラインで検索します</value></data>
+  <data name="Lyrics.Edit" xml:space="preserve"><value>編集…</value></data>
+  <data name="Lyrics.EditTip" xml:space="preserve"><value>このトラックの歌詞を入力または貼り付けます</value></data>
+  <data name="Lyrics.Loading" xml:space="preserve"><value>歌詞を検索しています…</value></data>
+  <data name="Lyrics.NotFound" xml:space="preserve"><value>このトラックの歌詞は見つかりませんでした。「検索…」で探すか、「編集…」で入力してください。</value></data>
+  <data name="Lyrics.Instrumental" xml:space="preserve"><value>インストゥルメンタル — 歌詞はありません。</value></data>
+  <data name="Lyrics.InstrumentalBadge" xml:space="preserve"><value>インスト</value></data>
+  <data name="Lyrics.NoTrack" xml:space="preserve"><value>トラックを再生すると歌詞が表示されます。</value></data>
+  <data name="Lyrics.NoProvider" xml:space="preserve"><value>歌詞プラグインがインストールされていません。環境設定 &gt; プラグインで追加するか、「編集…」で歌詞を入力してください。</value></data>
+  <data name="Lyrics.Unavailable" xml:space="preserve"><value>この項目では歌詞を利用できません。</value></data>
+  <data name="Lyrics.Error" xml:space="preserve"><value>歌詞を読み込めませんでした。</value></data>
+  <data name="Lyrics.FromFile" xml:space="preserve"><value>ファイルから</value></data>
+  <data name="Lyrics.FromYou" xml:space="preserve"><value>自分で入力</value></data>
+  <data name="Lyrics.FromSearch" xml:space="preserve"><value>自分で選択</value></data>
+  <data name="Lyrics.FromOnline" xml:space="preserve"><value>オンライン</value></data>
+  <data name="Lyrics.Synced" xml:space="preserve"><value>同期</value></data>
+  <data name="Lyrics.NoFileWrite" xml:space="preserve"><value>このトラックのファイルには書き込めません。</value></data>
+  <data name="Lyrics.StopToWrite" xml:space="preserve"><value>歌詞をファイルに書き込むには、このトラックの再生を停止してください。</value></data>
+  <data name="Lyrics.FormatNoWrite" xml:space="preserve"><value>歌詞は FLAC、M4A、MP3、Ogg、Opus ファイルに書き込めます。</value></data>
+  <data name="Lyrics.SavedToFile" xml:space="preserve"><value>歌詞をファイルに保存しました。バックアップ: {0}</value></data>
+  <data name="Lyrics.SearchTitle" xml:space="preserve"><value>歌詞を検索</value></data>
+  <data name="Lyrics.SearchTitleField" xml:space="preserve"><value>タイトル</value></data>
+  <data name="Lyrics.SearchArtistField" xml:space="preserve"><value>アーティスト</value></data>
+  <data name="Lyrics.SearchRun" xml:space="preserve"><value>検索</value></data>
+  <data name="Lyrics.SearchResults" xml:space="preserve"><value>見つかった歌詞</value></data>
+  <data name="Lyrics.Preview" xml:space="preserve"><value>歌詞のプレビュー</value></data>
+  <data name="Lyrics.Use" xml:space="preserve"><value>この歌詞を使う</value></data>
+  <data name="Lyrics.SearchNote" xml:space="preserve"><value>下のタイトルとアーティストで歌詞プラグインを検索します。選んだ歌詞はこのトラックに記憶されます。</value></data>
+  <data name="Lyrics.Searching" xml:space="preserve"><value>検索中…</value></data>
+  <data name="Lyrics.SearchNone" xml:space="preserve"><value>見つかりませんでした。タイトルを短くするか、アーティストだけで試してください。</value></data>
+  <data name="Lyrics.SearchCount" xml:space="preserve"><value>結果: {0}</value></data>
+  <data name="Lyrics.NoText" xml:space="preserve"><value>この項目には歌詞テキストがありません。</value></data>
+  <data name="Lyrics.EditTitle" xml:space="preserve"><value>歌詞を編集</value></data>
+  <data name="Lyrics.EditTextAutomation" xml:space="preserve"><value>歌詞テキスト</value></data>
+  <data name="Lyrics.SaveToFile" xml:space="preserve"><value>歌詞をオーディオファイルにも保存する</value></data>
+  <data name="Lyrics.SaveToFileTip" xml:space="preserve"><value>バックアップを作成してから、ファイルのタグに歌詞を書き込みます。Aibell はそこから歌詞を読み戻します。</value></data>
+  <data name="Lyrics.Remove" xml:space="preserve"><value>自分の歌詞を削除</value></data>
+  <data name="Lyrics.RemoveTip" xml:space="preserve"><value>選んだ歌詞や入力した歌詞を破棄して、トラックをもう一度検索します</value></data>
+  <data name="Lyrics.EditFor" xml:space="preserve"><value>{0} — {1}</value></data>
+  <data name="Lyrics.EditNote" xml:space="preserve"><value>通常の歌詞を入力するか、各行の前に [mm:ss.xx] の時刻を付けた LRC 形式の同期歌詞を貼り付けます。空のまま保存すると歌詞は消去されます。</value></data>
+  <data name="Prefs.Lyrics" xml:space="preserve"><value>歌詞を表示し、オンラインで検索する</value></data>
+  <data name="Prefs.LyricsAutomation" xml:space="preserve"><value>歌詞を表示し、オンラインで検索する</value></data>
+  <data name="Prefs.LyricsNote" xml:space="preserve"><value>オンにすると、再生キューの横に「歌詞」タブが表示され、歌詞がまだ保存されていない場合は、初めて再生するときに各トラックのタイトル、アーティスト、アルバム、長さがインストール済みの歌詞プラグイン (既定は LRCLIB) に送信されます。見つかった歌詞はこのコンピューターに保存されます。オフにすると、すべての歌詞検索が停止し、タブも非表示になります。</value></data>
 </root>

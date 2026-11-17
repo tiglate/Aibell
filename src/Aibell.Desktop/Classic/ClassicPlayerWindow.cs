@@ -133,11 +133,10 @@ internal sealed class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposa
 
     // ---- Menus -----------------------------------------------------------------------------------------------------
 
-    private static MenuItem Item(string header, Action action, string? gesture = null, bool? isChecked = null, bool enabled = true)
+    private static MenuItem Item(string header, Action action, bool? isChecked = null, bool enabled = true)
     {
         // An underscore marks an access key in menus; names of skins and playlists keep theirs.
         MenuItem item = new() { Header = header.Replace("_", "__", StringComparison.Ordinal), IsEnabled = enabled };
-        if (gesture is not null) item.InputGesture = KeyGesture.Parse(gesture);
         if (isChecked is bool on)
         {
             item.ToggleType = MenuItemToggleType.CheckBox;
@@ -154,19 +153,18 @@ internal sealed class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposa
     {
         List<object> list = [.. items];
         ContextMenu menu = new() { ItemsSource = list, FontSize = 12, FlowDirection = Localization.Loc.IsRightToLeft ? FlowDirection.RightToLeft : FlowDirection.LeftToRight };
-        // Menus are drawn inside the window (see Program: native pop-ups are misplaced under Wayland). A window too small for the
-        // menu grows while it is open, see-through where the compositor allows, and shrinks back afterwards.
-        const double neededWidth = 340;
+        // Menus are drawn inside the window (see Program: native pop-ups are misplaced under Wayland). A window shorter than the
+        // menu (rolled up into a bar) grows while it is open, see-through where the compositor allows, and shrinks back afterwards.
+        // Shortcuts are left out of these menus so they fit the skin's width.
         double menuHeight = list.Sum(item => item is Separator ? 11 : 28) + 24;
-        bool taller = Bounds.Height < menuHeight;
-        if (!taller && Bounds.Width >= neededWidth)
+        // Only X11 draws pop-ups inside the window; elsewhere they are windows of their own and need no room here.
+        if (!OperatingSystem.IsLinux() || Bounds.Height >= menuHeight)
         {
             menu.Open(view);
             return;
         }
         SizeToContent = SizeToContent.Manual;
-        Width = Math.Max(Bounds.Width, neededWidth);
-        if (taller) Height = view.Bounds.Height + menuHeight;
+        Height = view.Bounds.Height + menuHeight;
         if (ActualTransparencyLevel == WindowTransparencyLevel.Transparent)
         {
             Background = Brushes.Transparent;
@@ -174,17 +172,16 @@ internal sealed class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposa
         }
         menu.Closed += (_, _) =>
         {
+            // The explicit height would otherwise keep winning over sizing to the skin.
+            ClearValue(HeightProperty);
             SizeToContent = SizeToContent.WidthAndHeight;
             LayoutChanged();
         };
-        // The overlay is laid out for the window as it is when the menu opens, so wait for the new size to arrive. Below a
-        // short window the menu hangs under the skin; otherwise it opens at the pointer as usual.
-        if (taller)
-        {
-            menu.Placement = PlacementMode.Bottom;
-            menu.PlacementTarget = view;
-        }
-        OpenWhenResized(menu, Width, Height);
+        // The overlay is laid out for the window as it is when the menu opens, so wait for the new size to arrive; the menu
+        // then hangs under the skin.
+        menu.Placement = PlacementMode.Bottom;
+        menu.PlacementTarget = view;
+        OpenWhenResized(menu, Bounds.Width, Height);
     }
 
     private void OpenWhenResized(ContextMenu menu, double width, double height)
@@ -200,11 +197,12 @@ internal sealed class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposa
         void OnResized(object? sender, WindowResizedEventArgs args)
         {
             if (args.ClientSize.Width >= width - 1 && args.ClientSize.Height >= height - 1)
-                Avalonia.Threading.Dispatcher.UIThread.Post(Open, Avalonia.Threading.DispatcherPriority.Background);
+                Avalonia.Threading.Dispatcher.UIThread.Post(Open, Avalonia.Threading.DispatcherPriority.Normal);
         }
         Resized += OnResized;
         // A window manager that ignores the request still gets its menu, clipped or not.
-        Avalonia.Threading.DispatcherTimer.RunOnce(Open, TimeSpan.FromMilliseconds(400));
+        // Normal priority: the skin redraws thirty times a second, which starves background work.
+        Avalonia.Threading.DispatcherTimer.RunOnce(Open, TimeSpan.FromMilliseconds(400), Avalonia.Threading.DispatcherPriority.Normal);
     }
 
     public void ShowOptionsMenu()
@@ -212,22 +210,22 @@ internal sealed class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposa
         Aibell.Application.Settings.ClassicPlayerPreferences preferences = model.Preferences;
         Show(
         [
-            Item(Loc.Get("Classic.StandardMode"), switchToStandard, "Ctrl+Shift+M"),
+            Item(Loc.Get("Classic.StandardMode"), switchToStandard),
             Submenu(Loc.Get("Classic.Skins"), SkinItems()),
             new Separator(),
-            Item(Loc.Get("Classic.OpenFiles"), () => Run(() => OpenFilesAsync(replace: true)), "L"),
-            Item(Loc.Get("Classic.AddFromLibrary"), () => Run(SearchLibraryAsync), "J"),
+            Item(Loc.Get("Classic.OpenFiles"), () => Run(() => OpenFilesAsync(replace: true))),
+            Item(Loc.Get("Classic.AddFromLibrary"), () => Run(SearchLibraryAsync)),
             new Separator(),
-            Item(Loc.Get("Classic.ShowEqualizer"), () => view.ChangeLayout(p => p with { ShowEqualizer = !p.ShowEqualizer }), "Alt+G", preferences.ShowEqualizer),
-            Item(Loc.Get("Classic.ShowPlaylist"), () => view.ChangeLayout(p => p with { ShowPlaylist = !p.ShowPlaylist }), "Alt+E", preferences.ShowPlaylist),
-            Item(Loc.Get("Classic.DoubleSize"), () => view.ChangeLayout(p => p with { DoubleSize = !p.DoubleSize }), "Ctrl+D", preferences.DoubleSize),
-            Item(Loc.Get("Classic.AlwaysOnTop"), () => view.ChangeLayout(p => p with { AlwaysOnTop = !p.AlwaysOnTop }), null, preferences.AlwaysOnTop),
-            Item(Loc.Get("Classic.RemainingTime"), () => Run(() => model.ToggleRemainingTimeAsync()), "Ctrl+T", preferences.ShowRemainingTime),
+            Item(Loc.Get("Classic.ShowEqualizer"), () => view.ChangeLayout(p => p with { ShowEqualizer = !p.ShowEqualizer }), preferences.ShowEqualizer),
+            Item(Loc.Get("Classic.ShowPlaylist"), () => view.ChangeLayout(p => p with { ShowPlaylist = !p.ShowPlaylist }), preferences.ShowPlaylist),
+            Item(Loc.Get("Classic.DoubleSize"), () => view.ChangeLayout(p => p with { DoubleSize = !p.DoubleSize }), preferences.DoubleSize),
+            Item(Loc.Get("Classic.AlwaysOnTop"), () => view.ChangeLayout(p => p with { AlwaysOnTop = !p.AlwaysOnTop }), preferences.AlwaysOnTop),
+            Item(Loc.Get("Classic.RemainingTime"), () => Run(() => model.ToggleRemainingTimeAsync()), preferences.ShowRemainingTime),
             new Separator(),
-            Item(Loc.Get("Classic.Shuffle"), () => Run(() => model.ToggleShuffleAsync()), "S", model.Player.IsShuffleEnabled),
-            Item(Loc.Get("Classic.Repeat"), () => Run(() => model.ToggleRepeatAsync()), "R", model.Player.CurrentRepeatMode != RepeatMode.Off),
+            Item(Loc.Get("Classic.Shuffle"), () => Run(() => model.ToggleShuffleAsync()), model.Player.IsShuffleEnabled),
+            Item(Loc.Get("Classic.Repeat"), () => Run(() => model.ToggleRepeatAsync()), model.Player.CurrentRepeatMode != RepeatMode.Off),
             new Separator(),
-            Item(Loc.Get("Menu.Quit"), exitApplication, "Ctrl+Q"),
+            Item(Loc.Get("Menu.Quit"), exitApplication),
         ]);
     }
 
@@ -296,7 +294,7 @@ internal sealed class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposa
 
     public void ShowMiscMenu() => Show(
     [
-        Item(Loc.Get("Classic.AddFromLibrary"), () => Run(SearchLibraryAsync), "J"),
+        Item(Loc.Get("Classic.AddFromLibrary"), () => Run(SearchLibraryAsync)),
         Submenu(Loc.Get("Classic.LoadLibraryPlaylist"), LibraryPlaylistItems()),
         new Separator(),
         Item(Loc.Get("Classic.RemoveDuplicates"), model.RemoveDuplicates),
@@ -326,18 +324,18 @@ internal sealed class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposa
         bool any = model.SelectedCount > 0;
         Show(
         [
-            Item(Loc.Get("Classic.PlaySelected"), () => Run(() => model.PlayEntryAsync(model.FocusIndex)), "Enter", enabled: model.FocusIndex >= 0),
-            Item(Loc.Get("Classic.RemoveSelected"), model.RemoveSelected, "Delete", enabled: any),
+            Item(Loc.Get("Classic.PlaySelected"), () => Run(() => model.PlayEntryAsync(model.FocusIndex)), enabled: model.FocusIndex >= 0),
+            Item(Loc.Get("Classic.RemoveSelected"), model.RemoveSelected, enabled: any),
             Item(Loc.Get("Classic.Crop"), model.Crop, enabled: any),
             Item(Loc.Get("Classic.FileInfo"), ShowFileInfo, enabled: any),
             new Separator(),
             Item(Loc.Get("Classic.AddFiles"), () => Run(() => OpenFilesAsync(replace: false))),
             Item(Loc.Get("Classic.AddFolder"), () => Run(AddFolderAsync)),
-            Item(Loc.Get("Classic.AddFromLibrary"), () => Run(SearchLibraryAsync), "J"),
+            Item(Loc.Get("Classic.AddFromLibrary"), () => Run(SearchLibraryAsync)),
             Submenu(Loc.Get("Classic.LoadLibraryPlaylist"), LibraryPlaylistItems()),
             new Separator(),
             Submenu(Loc.Get("Classic.Sort"), SortItems()),
-            Item(Loc.Get("Menu.SelectAll"), model.SelectAll, "Ctrl+A"),
+            Item(Loc.Get("Menu.SelectAll"), model.SelectAll),
         ]);
     }
 

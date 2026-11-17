@@ -1224,4 +1224,67 @@
   <data name="Prefs.Visualizer" xml:space="preserve"><value>Показывать визуализацию звука за индикатором прогресса</value></data>
   <data name="Prefs.VisualizerAutomation" xml:space="preserve"><value>Показывать визуализацию звука за индикатором прогресса</value></data>
   <data name="Prefs.VisualizerNote" xml:space="preserve"><value>Во время воспроизведения рисует спектр звука за индикатором прогресса. Недоступно, когда играет сервер MPD, и в проигрывателе VLC. Отключите, чтобы остановить анализ.</value></data>
+  <data name="Classic.Mode" xml:space="preserve"><value>Режим классического плеера</value></data>
+  <data name="Classic.StandardMode" xml:space="preserve"><value>Стандартный режим</value></data>
+  <data name="Classic.Skins" xml:space="preserve"><value>Обложки</value></data>
+  <data name="Classic.SkinsTitle" xml:space="preserve"><value>Обложки</value></data>
+  <data name="Classic.BuiltInSkin" xml:space="preserve"><value>Aibell (встроенная)</value></data>
+  <data name="Classic.ManageSkins" xml:space="preserve"><value>Управление обложками…</value></data>
+  <data name="Classic.InstalledSkins" xml:space="preserve"><value>Установленные</value></data>
+  <data name="Classic.OnlineSkins" xml:space="preserve"><value>Обзор в интернете</value></data>
+  <data name="Classic.UseSkin" xml:space="preserve"><value>Применить</value></data>
+  <data name="Classic.InstallSkin" xml:space="preserve"><value>Установить из файла…</value></data>
+  <data name="Classic.RemoveSkin" xml:space="preserve"><value>Удалить</value></data>
+  <data name="Classic.RemoveSkinConfirm" xml:space="preserve"><value>Удалить обложку «{0}» с этого компьютера?</value></data>
+  <data name="Classic.SkinInUse" xml:space="preserve"><value>Используется</value></data>
+  <data name="Classic.SkinInstalled" xml:space="preserve"><value>«{0}» установлена.</value></data>
+  <data name="Classic.SkinFiles" xml:space="preserve"><value>Файлы обложек</value></data>
+  <data name="Classic.NotASkin" xml:space="preserve"><value>Этот файл не является классической обложкой.</value></data>
+  <data name="Classic.ModernSkin" xml:space="preserve"><value>Современные обложки не поддерживаются, только классические.</value></data>
+  <data name="Classic.SkinTooLarge" xml:space="preserve"><value>Файл обложки слишком большой.</value></data>
+  <data name="Classic.SearchSkins" xml:space="preserve"><value>Найти</value></data>
+  <data name="Classic.MoreSkins" xml:space="preserve"><value>Показать ещё</value></data>
+  <data name="Classic.MuseumNote" xml:space="preserve"><value>Обложки с {0}</value></data>
+  <data name="Classic.MuseumFailed" xml:space="preserve"><value>Не удалось подключиться к музею обложек: {0}</value></data>
+  <data name="Classic.NoSkinsFound" xml:space="preserve"><value>Обложки не найдены.</value></data>
+  <data name="Classic.InstallAndUse" xml:space="preserve"><value>Установить и применить</value></data>
+  <data name="Classic.InstallNamed" xml:space="preserve"><value>Установить {0}</value></data>
+  <data name="Classic.InstallFailed" xml:space="preserve"><value>Не удалось установить</value></data>
+  <data name="Classic.OpenFiles" xml:space="preserve"><value>Воспроизвести файлы…</value></data>
+  <data name="Classic.AddFiles" xml:space="preserve"><value>Добавить файлы…</value></data>
+  <data name="Classic.AddFolder" xml:space="preserve"><value>Добавить папку…</value></data>
+  <data name="Classic.AddFromLibrary" xml:space="preserve"><value>Добавить из медиатеки…</value></data>
+  <data name="Classic.LoadLibraryPlaylist" xml:space="preserve"><value>Загрузить плейлист медиатеки</value></data>
+  <data name="Classic.NoLibraryPlaylists" xml:space="preserve"><value>В медиатеке нет плейлистов</value></data>
+  <data name="Classic.LoadPlaylistFile" xml:space="preserve"><value>Загрузить файл плейлиста…</value></data>
+  <data name="Classic.SavePlaylist" xml:space="preserve"><value>Сохранить плейлист</value></data>
+  <data name="Classic.PlaylistFiles" xml:space="preserve"><value>Файлы плейлистов</value></data>
+  <data name="Classic.ShowEqualizer" xml:space="preserve"><value>Эквалайзер</value></data>
+  <data name="Classic.ShowPlaylist" xml:space="preserve"><value>Плейлист</value></data>
+  <data name="Classic.DoubleSize" xml:space="preserve"><value>Двойной размер</value></data>
+  <data name="Classic.AlwaysOnTop" xml:space="preserve"><value>Поверх всех окон</value></data>
+  <data name="Classic.RemainingTime" xml:space="preserve"><value>Показывать оставшееся время</value></data>
+  <data name="Classic.Shuffle" xml:space="preserve"><value>Перемешать</value></data>
+  <data name="Classic.Repeat" xml:space="preserve"><value>Повтор</value></data>
+  <data name="Classic.Sort" xml:space="preserve"><value>Сортировка</value></data>
+  <data name="Classic.SortTitle" xml:space="preserve"><value>По названию</value></data>
+  <data name="Classic.SortFileName" xml:space="preserve"><value>По имени файла</value></data>
+  <data name="Classic.SortPath" xml:space="preserve"><value>По пути</value></data>
+  <data name="Classic.Reverse" xml:space="preserve"><value>Обратный порядок</value></data>
+  <data name="Classic.Randomize" xml:space="preserve"><value>Перемешать список</value></data>
+  <data name="Classic.RemoveDuplicates" xml:space="preserve"><value>Удалить дубликаты</value></data>
+  <data name="Classic.RemoveSelected" xml:space="preserve"><value>Удалить выбранное</value></data>
+  <data name="Classic.Crop" xml:space="preserve"><value>Обрезать (оставить выбранное)</value></data>
+  <data name="Classic.PlaySelected" xml:space="preserve"><value>Воспроизвести</value></data>
+  <data name="Classic.FileInfo" xml:space="preserve"><value>Сведения о файле</value></data>
+  <data name="Classic.BitRate" xml:space="preserve"><value>Битрейт</value></data>
+  <data name="Classic.SampleRate" xml:space="preserve"><value>Частота дискретизации</value></data>
+  <data name="Classic.Location" xml:space="preserve"><value>Расположение</value></data>
+  <data name="Classic.Close" xml:space="preserve"><value>Закрыть</value></data>
+  <data name="Classic.Add" xml:space="preserve"><value>Добавить</value></data>
+  <data name="Classic.AddAndPlay" xml:space="preserve"><value>Добавить и воспроизвести</value></data>
+  <data name="Classic.LibrarySearchHint" xml:space="preserve"><value>Поиск по названию, исполнителю или альбому</value></data>
+  <data name="Classic.LibraryResults" xml:space="preserve"><value>Треки медиатеки</value></data>
+  <data name="Classic.LibraryCount" xml:space="preserve"><value>Треков: {0}</value></data>
+  <data name="Classic.LibraryTooMany" xml:space="preserve"><value>Показаны первые {0} из {1} треков; введите больше слов, чтобы сузить список.</value></data>
 </root>

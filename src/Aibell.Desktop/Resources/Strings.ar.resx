@@ -1268,4 +1268,67 @@
   <data name="Prefs.Visualizer" xml:space="preserve"><value>إظهار مؤثّر الصوت المرئي خلف شريط التقدّم</value></data>
   <data name="Prefs.VisualizerAutomation" xml:space="preserve"><value>إظهار مؤثّر الصوت المرئي خلف شريط التقدّم</value></data>
   <data name="Prefs.VisualizerNote" xml:space="preserve"><value>يرسم طيف الصوت مباشرةً خلف شريط التقدّم أثناء تشغيل المقطع. غير متاح عند التشغيل من خادم MPD أو مع مشغّل VLC. أوقفه لإيقاف التحليل.</value></data>
+  <data name="Classic.Mode" xml:space="preserve"><value>وضع المشغل الكلاسيكي</value></data>
+  <data name="Classic.StandardMode" xml:space="preserve"><value>الوضع القياسي</value></data>
+  <data name="Classic.Skins" xml:space="preserve"><value>السمات</value></data>
+  <data name="Classic.SkinsTitle" xml:space="preserve"><value>السمات</value></data>
+  <data name="Classic.BuiltInSkin" xml:space="preserve"><value>Aibell (مدمجة)</value></data>
+  <data name="Classic.ManageSkins" xml:space="preserve"><value>إدارة السمات…</value></data>
+  <data name="Classic.InstalledSkins" xml:space="preserve"><value>مثبتة</value></data>
+  <data name="Classic.OnlineSkins" xml:space="preserve"><value>تصفح عبر الإنترنت</value></data>
+  <data name="Classic.UseSkin" xml:space="preserve"><value>استخدام</value></data>
+  <data name="Classic.InstallSkin" xml:space="preserve"><value>تثبيت من ملف…</value></data>
+  <data name="Classic.RemoveSkin" xml:space="preserve"><value>إزالة</value></data>
+  <data name="Classic.RemoveSkinConfirm" xml:space="preserve"><value>هل تريد إزالة السمة “{0}” من هذا الحاسوب؟</value></data>
+  <data name="Classic.SkinInUse" xml:space="preserve"><value>قيد الاستخدام</value></data>
+  <data name="Classic.SkinInstalled" xml:space="preserve"><value>تم تثبيت “{0}”.</value></data>
+  <data name="Classic.SkinFiles" xml:space="preserve"><value>ملفات السمات</value></data>
+  <data name="Classic.NotASkin" xml:space="preserve"><value>هذا الملف ليس سمة كلاسيكية.</value></data>
+  <data name="Classic.ModernSkin" xml:space="preserve"><value>السمات الحديثة غير مدعومة؛ السمات الكلاسيكية فقط.</value></data>
+  <data name="Classic.SkinTooLarge" xml:space="preserve"><value>ملف السمة كبير جدًا.</value></data>
+  <data name="Classic.SearchSkins" xml:space="preserve"><value>بحث</value></data>
+  <data name="Classic.MoreSkins" xml:space="preserve"><value>عرض المزيد</value></data>
+  <data name="Classic.MuseumNote" xml:space="preserve"><value>سمات من {0}</value></data>
+  <data name="Classic.MuseumFailed" xml:space="preserve"><value>تعذر الوصول إلى متحف السمات: {0}</value></data>
+  <data name="Classic.NoSkinsFound" xml:space="preserve"><value>لم يُعثر على سمات.</value></data>
+  <data name="Classic.InstallAndUse" xml:space="preserve"><value>تثبيت واستخدام</value></data>
+  <data name="Classic.InstallNamed" xml:space="preserve"><value>تثبيت {0}</value></data>
+  <data name="Classic.InstallFailed" xml:space="preserve"><value>تعذر التثبيت</value></data>
+  <data name="Classic.OpenFiles" xml:space="preserve"><value>تشغيل ملفات…</value></data>
+  <data name="Classic.AddFiles" xml:space="preserve"><value>إضافة ملفات…</value></data>
+  <data name="Classic.AddFolder" xml:space="preserve"><value>إضافة مجلد…</value></data>
+  <data name="Classic.AddFromLibrary" xml:space="preserve"><value>إضافة من المكتبة…</value></data>
+  <data name="Classic.LoadLibraryPlaylist" xml:space="preserve"><value>تحميل قائمة تشغيل من المكتبة</value></data>
+  <data name="Classic.NoLibraryPlaylists" xml:space="preserve"><value>لا توجد قوائم تشغيل في المكتبة</value></data>
+  <data name="Classic.LoadPlaylistFile" xml:space="preserve"><value>تحميل ملف قائمة تشغيل…</value></data>
+  <data name="Classic.SavePlaylist" xml:space="preserve"><value>حفظ قائمة التشغيل</value></data>
+  <data name="Classic.PlaylistFiles" xml:space="preserve"><value>ملفات قوائم التشغيل</value></data>
+  <data name="Classic.ShowEqualizer" xml:space="preserve"><value>المعادل</value></data>
+  <data name="Classic.ShowPlaylist" xml:space="preserve"><value>قائمة التشغيل</value></data>
+  <data name="Classic.DoubleSize" xml:space="preserve"><value>حجم مضاعف</value></data>
+  <data name="Classic.AlwaysOnTop" xml:space="preserve"><value>دائمًا في المقدمة</value></data>
+  <data name="Classic.RemainingTime" xml:space="preserve"><value>عرض الوقت المتبقي</value></data>
+  <data name="Classic.Shuffle" xml:space="preserve"><value>تشغيل عشوائي</value></data>
+  <data name="Classic.Repeat" xml:space="preserve"><value>تكرار</value></data>
+  <data name="Classic.Sort" xml:space="preserve"><value>ترتيب</value></data>
+  <data name="Classic.SortTitle" xml:space="preserve"><value>ترتيب حسب العنوان</value></data>
+  <data name="Classic.SortFileName" xml:space="preserve"><value>ترتيب حسب اسم الملف</value></data>
+  <data name="Classic.SortPath" xml:space="preserve"><value>ترتيب حسب المسار</value></data>
+  <data name="Classic.Reverse" xml:space="preserve"><value>عكس القائمة</value></data>
+  <data name="Classic.Randomize" xml:space="preserve"><value>ترتيب القائمة عشوائيًا</value></data>
+  <data name="Classic.RemoveDuplicates" xml:space="preserve"><value>إزالة التكرارات</value></data>
+  <data name="Classic.RemoveSelected" xml:space="preserve"><value>إزالة المحدد</value></data>
+  <data name="Classic.Crop" xml:space="preserve"><value>اقتصاص (الإبقاء على المحدد)</value></data>
+  <data name="Classic.PlaySelected" xml:space="preserve"><value>تشغيل</value></data>
+  <data name="Classic.FileInfo" xml:space="preserve"><value>معلومات الملف</value></data>
+  <data name="Classic.BitRate" xml:space="preserve"><value>معدل البت</value></data>
+  <data name="Classic.SampleRate" xml:space="preserve"><value>معدل العينة</value></data>
+  <data name="Classic.Location" xml:space="preserve"><value>الموقع</value></data>
+  <data name="Classic.Close" xml:space="preserve"><value>إغلاق</value></data>
+  <data name="Classic.Add" xml:space="preserve"><value>إضافة</value></data>
+  <data name="Classic.AddAndPlay" xml:space="preserve"><value>إضافة وتشغيل</value></data>
+  <data name="Classic.LibrarySearchHint" xml:space="preserve"><value>ابحث بالعنوان أو الفنان أو الألبوم</value></data>
+  <data name="Classic.LibraryResults" xml:space="preserve"><value>مقاطع المكتبة</value></data>
+  <data name="Classic.LibraryCount" xml:space="preserve"><value>{0} مقطع</value></data>
+  <data name="Classic.LibraryTooMany" xml:space="preserve"><value>عرض أول {0} من {1} مقطع؛ اكتب كلمات أكثر لتضييق القائمة.</value></data>
 </root>

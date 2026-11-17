@@ -118,6 +118,10 @@
       "linePercentMinimum": 80.5,
       "branchPercentMinimum": 77.5,
       "measurementScope": "Everything except the Windows-only Media Foundation source (MediaFoundationSource), which runs only on Windows CI."
+    },
+    "Aibell.Skins.Classic": {
+      "linePercentMinimum": 93,
+      "branchPercentMinimum": 84.5
     }
   }
 }

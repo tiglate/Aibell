@@ -1158,4 +1158,67 @@
   <data name="Prefs.Visualizer" xml:space="preserve"><value>在进度条背景中显示音频可视化效果</value></data>
   <data name="Prefs.VisualizerAutomation" xml:space="preserve"><value>在进度条背景中显示音频可视化效果</value></data>
   <data name="Prefs.VisualizerNote" xml:space="preserve"><value>播放曲目时，在进度条背景中实时绘制声音频谱。MPD 服务器播放时或使用 VLC 播放器时不可用。关闭后将停止分析。</value></data>
+  <data name="Classic.Mode" xml:space="preserve"><value>经典播放器模式</value></data>
+  <data name="Classic.StandardMode" xml:space="preserve"><value>标准模式</value></data>
+  <data name="Classic.Skins" xml:space="preserve"><value>皮肤</value></data>
+  <data name="Classic.SkinsTitle" xml:space="preserve"><value>皮肤</value></data>
+  <data name="Classic.BuiltInSkin" xml:space="preserve"><value>Aibell（内置）</value></data>
+  <data name="Classic.ManageSkins" xml:space="preserve"><value>管理皮肤…</value></data>
+  <data name="Classic.InstalledSkins" xml:space="preserve"><value>已安装</value></data>
+  <data name="Classic.OnlineSkins" xml:space="preserve"><value>在线浏览</value></data>
+  <data name="Classic.UseSkin" xml:space="preserve"><value>使用</value></data>
+  <data name="Classic.InstallSkin" xml:space="preserve"><value>从文件安装…</value></data>
+  <data name="Classic.RemoveSkin" xml:space="preserve"><value>删除</value></data>
+  <data name="Classic.RemoveSkinConfirm" xml:space="preserve"><value>要从这台电脑删除皮肤“{0}”吗？</value></data>
+  <data name="Classic.SkinInUse" xml:space="preserve"><value>使用中</value></data>
+  <data name="Classic.SkinInstalled" xml:space="preserve"><value>已安装“{0}”。</value></data>
+  <data name="Classic.SkinFiles" xml:space="preserve"><value>皮肤文件</value></data>
+  <data name="Classic.NotASkin" xml:space="preserve"><value>此文件不是经典皮肤。</value></data>
+  <data name="Classic.ModernSkin" xml:space="preserve"><value>不支持现代皮肤，仅支持经典皮肤。</value></data>
+  <data name="Classic.SkinTooLarge" xml:space="preserve"><value>皮肤文件太大。</value></data>
+  <data name="Classic.SearchSkins" xml:space="preserve"><value>搜索</value></data>
+  <data name="Classic.MoreSkins" xml:space="preserve"><value>显示更多</value></data>
+  <data name="Classic.MuseumNote" xml:space="preserve"><value>来自 {0} 的皮肤</value></data>
+  <data name="Classic.MuseumFailed" xml:space="preserve"><value>无法连接皮肤博物馆：{0}</value></data>
+  <data name="Classic.NoSkinsFound" xml:space="preserve"><value>未找到皮肤。</value></data>
+  <data name="Classic.InstallAndUse" xml:space="preserve"><value>安装并使用</value></data>
+  <data name="Classic.InstallNamed" xml:space="preserve"><value>安装 {0}</value></data>
+  <data name="Classic.InstallFailed" xml:space="preserve"><value>无法安装</value></data>
+  <data name="Classic.OpenFiles" xml:space="preserve"><value>播放文件…</value></data>
+  <data name="Classic.AddFiles" xml:space="preserve"><value>添加文件…</value></data>
+  <data name="Classic.AddFolder" xml:space="preserve"><value>添加文件夹…</value></data>
+  <data name="Classic.AddFromLibrary" xml:space="preserve"><value>从媒体库添加…</value></data>
+  <data name="Classic.LoadLibraryPlaylist" xml:space="preserve"><value>载入媒体库播放列表</value></data>
+  <data name="Classic.NoLibraryPlaylists" xml:space="preserve"><value>媒体库中没有播放列表</value></data>
+  <data name="Classic.LoadPlaylistFile" xml:space="preserve"><value>载入播放列表文件…</value></data>
+  <data name="Classic.SavePlaylist" xml:space="preserve"><value>保存播放列表</value></data>
+  <data name="Classic.PlaylistFiles" xml:space="preserve"><value>播放列表文件</value></data>
+  <data name="Classic.ShowEqualizer" xml:space="preserve"><value>均衡器</value></data>
+  <data name="Classic.ShowPlaylist" xml:space="preserve"><value>播放列表</value></data>
+  <data name="Classic.DoubleSize" xml:space="preserve"><value>双倍大小</value></data>
+  <data name="Classic.AlwaysOnTop" xml:space="preserve"><value>总在最前</value></data>
+  <data name="Classic.RemainingTime" xml:space="preserve"><value>显示剩余时间</value></data>
+  <data name="Classic.Shuffle" xml:space="preserve"><value>随机播放</value></data>
+  <data name="Classic.Repeat" xml:space="preserve"><value>重复</value></data>
+  <data name="Classic.Sort" xml:space="preserve"><value>排序</value></data>
+  <data name="Classic.SortTitle" xml:space="preserve"><value>按标题排序</value></data>
+  <data name="Classic.SortFileName" xml:space="preserve"><value>按文件名排序</value></data>
+  <data name="Classic.SortPath" xml:space="preserve"><value>按路径排序</value></data>
+  <data name="Classic.Reverse" xml:space="preserve"><value>倒序排列</value></data>
+  <data name="Classic.Randomize" xml:space="preserve"><value>随机排列列表</value></data>
+  <data name="Classic.RemoveDuplicates" xml:space="preserve"><value>删除重复项</value></data>
+  <data name="Classic.RemoveSelected" xml:space="preserve"><value>删除所选</value></data>
+  <data name="Classic.Crop" xml:space="preserve"><value>裁剪（保留所选）</value></data>
+  <data name="Classic.PlaySelected" xml:space="preserve"><value>播放</value></data>
+  <data name="Classic.FileInfo" xml:space="preserve"><value>文件信息</value></data>
+  <data name="Classic.BitRate" xml:space="preserve"><value>比特率</value></data>
+  <data name="Classic.SampleRate" xml:space="preserve"><value>采样率</value></data>
+  <data name="Classic.Location" xml:space="preserve"><value>位置</value></data>
+  <data name="Classic.Close" xml:space="preserve"><value>关闭</value></data>
+  <data name="Classic.Add" xml:space="preserve"><value>添加</value></data>
+  <data name="Classic.AddAndPlay" xml:space="preserve"><value>添加并播放</value></data>
+  <data name="Classic.LibrarySearchHint" xml:space="preserve"><value>搜索标题、艺人或专辑</value></data>
+  <data name="Classic.LibraryResults" xml:space="preserve"><value>媒体库曲目</value></data>
+  <data name="Classic.LibraryCount" xml:space="preserve"><value>{0} 首曲目</value></data>
+  <data name="Classic.LibraryTooMany" xml:space="preserve"><value>显示 {1} 首中的前 {0} 首；输入更多词语以缩小范围。</value></data>
 </root>

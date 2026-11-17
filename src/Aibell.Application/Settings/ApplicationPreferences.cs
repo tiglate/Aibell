@@ -41,7 +41,8 @@ public sealed record ApplicationPreferences(
     bool RadioCatalogEnabled = false,
     string? SoundFontPath = null,
     bool LyricsEnabled = true,
-    bool VisualizerEnabled = true)
+    bool VisualizerEnabled = true,
+    ClassicPlayerPreferences? ClassicPlayer = null)
 {
     public static ApplicationPreferences Default { get; } = new(
         Volume: 0.8,

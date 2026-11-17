@@ -11,6 +11,7 @@
     <ProjectReference Include="../Aibell.Platform.Linux/Aibell.Platform.Linux.csproj" />
     <ProjectReference Include="../Aibell.Platform.Windows/Aibell.Platform.Windows.csproj" />
     <ProjectReference Include="../Aibell.Infrastructure/Aibell.Infrastructure.csproj" />
+    <ProjectReference Include="../Aibell.Skins.Classic/Aibell.Skins.Classic.csproj" />
     <ProjectReference Include="../Aibell.Mpd/Aibell.Mpd.csproj" />
     <ProjectReference Include="../Aibell.Playback.LibVLC/Aibell.Playback.LibVLC.csproj" />
     <ProjectReference Include="../Aibell.Playback.Miniaudio/Aibell.Playback.Miniaudio.csproj" />
@@ -29,6 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <InternalsVisibleTo Include="Aibell.Desktop.Tests" />
+    <InternalsVisibleTo Include="Aibell.Desktop.UiTests" />
     <AvaloniaResource Include="Assets/**" />
   </ItemGroup>
   <Target Name="IncludePluginAssemblies" BeforeTargets="AssignTargetPaths">

@@ -1019,8 +1019,10 @@ public sealed partial class MainWindowViewModel(
                     ? entry with { Track = track }
                     : entry));
         }
+        await RestoreClassicPlayerAsync(preferences.ClassicPlayer, cancellationToken);
         RefreshPlayQueue();
         preferencesLoaded = true;
+        RaisePreferencesLoaded();
     }
 
     public async Task FlushPreferencesAsync()
@@ -1076,7 +1078,8 @@ public sealed partial class MainWindowViewModel(
             radioCatalogEnabled,
             soundFontPath,
             lyricsEnabled,
-            visualizerEnabled);
+            visualizerEnabled,
+            classicPlayer);
     }
 
     private Task PersistPreferencesAsync(CancellationToken cancellationToken)

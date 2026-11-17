@@ -150,6 +150,8 @@ public sealed partial class MainWindow : Window, IDisposable
         InitializeErrorReporting();
         InitializeTaskbar();
         viewModel.StartListening();
+        // Starting in Classic Player Mode: this window stays invisible while it hands over, so it does not flash.
+        if (App.StartInClassicMode) Opacity = 0;
         Opened += OnOpened;
         // Shutdown is coordinated here: drain tracked operations before closing owned dialogs.
         ClosingBehavior = WindowClosingBehavior.OwnerWindowOnly;
@@ -161,10 +163,17 @@ public sealed partial class MainWindow : Window, IDisposable
     {
         // Some window managers ignore the XAML state while the window is first shown.
         if (WindowState == WindowState.Normal) WindowState = WindowState.Maximized;
+        // Aibell was closed in Classic Player Mode: that window comes back instead of this one.
+        if (App.StartInClassicMode)
+        {
+            App.StartInClassicMode = false;
+            EnterClassicMode();
+        }
         await RunUserActionAsync(() => viewModel.LoadAsync(lifetimeCancellation.Token));
         if (CanRunUserAction) mediaSessionStartup = StartMediaSessionAsync();
         startupFilesTaken = true;
-        if (CanRunUserAction && StartupFiles.Count > 0) await RunUserActionAsync(() => viewModel.OpenFilesAsync(StartupFiles, lifetimeCancellation.Token));
+        if (CanRunUserAction && StartupFiles.Count > 0)
+            await RunUserActionAsync(() => IsClassicModeActive ? OpenInClassicModeAsync(StartupFiles) : viewModel.OpenFilesAsync(StartupFiles, lifetimeCancellation.Token));
     }
 
     private bool startupFilesTaken;
@@ -176,8 +185,14 @@ public sealed partial class MainWindow : Window, IDisposable
     internal async void OpenFromAnotherLaunch(IReadOnlyList<Uri> files)
     {
         if (disposed || closeInProgress) return;
+        if (IsClassicModeActive && startupFilesTaken)
+        {
+            await RunUserActionAsync(() => OpenInClassicModeAsync(files));
+            return;
+        }
         if (WindowState == WindowState.Minimized) WindowState = WindowState.Normal;
-        Activate();
+        if (IsClassicModeActive) classicWindow!.Activate();
+        else Activate();
         if (files.Count == 0) return;
         if (!startupFilesTaken) StartupFiles.AddRange(files);
         else await RunUserActionAsync(() => viewModel.OpenFilesAsync(files, lifetimeCancellation.Token));
@@ -1230,6 +1245,7 @@ public sealed partial class MainWindow : Window, IDisposable
 
     private void OnClosed(object? sender, EventArgs eventArgs)
     {
+        CloseClassicWindow();
         Dispose();
     }
 

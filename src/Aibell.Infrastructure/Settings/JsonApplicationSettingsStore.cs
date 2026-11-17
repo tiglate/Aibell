@@ -151,6 +151,7 @@ public sealed class JsonApplicationSettingsStore(string settingsPath) :
             PlaybackEngine = NormalizePlaybackEngine(preferences.PlaybackEngine),
             Language = NormalizeLanguage(preferences.Language),
             SoundFontPath = NormalizeFolder(preferences.SoundFontPath),
+            ClassicPlayer = preferences.ClassicPlayer?.Normalized(),
             Volume = volume,
             RepeatMode = repeatMode,
             PlayQueueWidth = queueWidth,

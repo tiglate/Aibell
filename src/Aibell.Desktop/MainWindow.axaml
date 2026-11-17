@@ -81,6 +81,8 @@
       <Separator />
       <MenuItem x:Name="MenuShowSidebar" Header="{loc:T Menu.Sidebar}" ToggleType="CheckBox" Click="ToggleSidebar" />
       <MenuItem x:Name="MenuShowQueue" Header="{loc:T Main.PlayQueue}" ToggleType="CheckBox" Click="TogglePlayQueue" />
+      <Separator />
+      <MenuItem x:Name="MenuClassicMode" Header="{loc:T Classic.Mode}" HotKey="Ctrl+Shift+M" InputGesture="Ctrl+Shift+M" Click="SwitchToClassicMode" />
     </MenuItem>
     <MenuItem x:Name="ControlsMenu" Header="{loc:T Menu.Controls}" SubmenuOpened="MenuOpened">
       <MenuItem x:Name="MenuPlayPause" Header="{loc:T Main.Play}" InputGesture="Space" Click="TogglePlayback" />

@@ -150,6 +150,68 @@ public sealed class PlaybackQueueModelTests
         });
     }
 
+    [Test]
+    public void ReplaceAtIndex_TracksThePositionEvenForRepeatedTracks()
+    {
+        PlaybackQueueModel queue = new();
+        Track song = CreateTrack("Song");
+        Track other = CreateTrack("Other");
+        long version = queue.Version;
+
+        queue.Replace([song, other, song], 2);
+
+        Assert.Multiple(() =>
+        {
+            Assert.That(queue.Current, Is.EqualTo(song));
+            Assert.That(queue.CurrentSourceIndex, Is.EqualTo(2));
+            Assert.That(queue.Version, Is.GreaterThan(version));
+            Assert.That(queue.CanMoveNext, Is.False);
+            Assert.That(queue.TryMovePrevious(), Is.True);
+            Assert.That(queue.CurrentSourceIndex, Is.EqualTo(1));
+            Assert.That(() => queue.Replace([song], 1), Throws.TypeOf<ArgumentOutOfRangeException>());
+        });
+    }
+
+    [Test]
+    public void ReplaceAtIndex_WithShuffleStartsThereAndPlaysEveryOtherTrackOnce()
+    {
+        PlaybackQueueModel queue = new();
+        Track[] tracks = [CreateTrack("A"), CreateTrack("B"), CreateTrack("C"), CreateTrack("D")];
+        queue.SetShuffle(true, new Random(7));
+
+        queue.Replace(tracks, 2, new Random(7));
+
+        List<int> order = [queue.CurrentSourceIndex];
+        while (queue.TryMoveNext()) order.Add(queue.CurrentSourceIndex);
+        Assert.Multiple(() =>
+        {
+            Assert.That(order[0], Is.EqualTo(2));
+            Assert.That(order, Is.EquivalentTo(Enumerable.Range(0, 4)));
+        });
+
+        queue.SetShuffle(false);
+        Assert.That(queue.CurrentSourceIndex, Is.EqualTo(order[^1]), "turning shuffle off keeps the same entry current");
+    }
+
+    [Test]
+    public void SourceIndex_FollowsEnqueueAndClear()
+    {
+        PlaybackQueueModel queue = new();
+        Assert.That(queue.CurrentSourceIndex, Is.EqualTo(-1));
+        queue.Enqueue(CreateTrack("First"));
+        queue.Enqueue(CreateTrack("Second"));
+        queue.TryMoveNext();
+        queue.TryMoveNext();
+        Assert.That(queue.CurrentSourceIndex, Is.EqualTo(1));
+        long version = queue.Version;
+        queue.Clear();
+        Assert.Multiple(() =>
+        {
+            Assert.That(queue.CurrentSourceIndex, Is.EqualTo(-1));
+            Assert.That(queue.Version, Is.GreaterThan(version));
+        });
+    }
+
     private static Track CreateTrack(string title)
     {
         return new Track(

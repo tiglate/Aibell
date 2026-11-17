@@ -52,7 +52,9 @@ internal static class Program
         if (OperatingSystem.IsWindows()) WindowsAppIdentity.Register("Aibell.Desktop", "Aibell");
         // AIBELL_LANGUAGE wins; otherwise the language chosen in Preferences; otherwise the operating system's.
         string? environmentLanguage = Environment.GetEnvironmentVariable("AIBELL_LANGUAGE");
-        Aibell.Desktop.Localization.Loc.ApplyLanguageOverride(string.IsNullOrWhiteSpace(environmentLanguage) ? ReadSavedLanguage() : environmentLanguage);
+        ApplicationPreferences? saved = ReadSavedPreferences();
+        Aibell.Desktop.Localization.Loc.ApplyLanguageOverride(string.IsNullOrWhiteSpace(environmentLanguage) ? saved?.Language : environmentLanguage);
+        App.StartInClassicMode = saved?.ClassicPlayer?.IsEnabled == true;
         using IHost host = CreateHost(args);
         host.Start();
         App.Services = host.Services;
@@ -98,12 +100,12 @@ internal static class Program
         return ApplicationPaths.ResolveDataDirectory(configured, local);
     }
 
-    private static string? ReadSavedLanguage()
+    private static ApplicationPreferences? ReadSavedPreferences()
     {
         try
         {
             using JsonApplicationSettingsStore settings = new(Path.Combine(ResolveDataDirectory(create: false), "settings.json"));
-            return settings.LoadAsync().GetAwaiter().GetResult().Language;
+            return settings.LoadAsync().GetAwaiter().GetResult();
         }
         catch (Exception exception) when (exception is IOException or ArgumentException or InvalidOperationException or UnauthorizedAccessException or System.Text.Json.JsonException)
         {
@@ -205,6 +207,8 @@ internal static class Program
             MaxAutomaticRedirections = 5
         })
         { Timeout = Timeout.InfiniteTimeSpan });
+        builder.Services.AddSingleton(new Aibell.Skins.Classic.SkinLibrary(Path.Combine(dataDirectory, "skins")));
+        builder.Services.AddSingleton(services => new Aibell.Skins.Classic.SkinGalleryClient(services.GetRequiredService<HttpClient>()));
         builder.Services.AddSingleton<IPodcastFeedReader>(services => new HttpPodcastFeedReader(services.GetRequiredService<HttpClient>()));
         builder.Services.AddSingleton<IPodcastEpisodeDownloader>(services => new HttpPodcastEpisodeDownloader(services.GetRequiredService<HttpClient>()));
         string defaultPodcastRoot = Path.Combine(dataDirectory, "podcasts");

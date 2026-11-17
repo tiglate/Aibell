@@ -60,6 +60,24 @@ elsewhere) or [VLC](https://www.videolan.org/vlc/libvlc.html), under **Preferenc
   same interface, including its playlists, volume and outputs. Nothing connects until you press **Connect**.
 - Edit the `mpd.conf` of an MPD running on your computer with a guided editor that keeps your comments and makes a backup on every save.
 
+**Classic Player Mode**
+
+- Prefer the look of the classic players? **View → Classic Player Mode** (**Ctrl+Shift+M**) turns Aibell into a compact,
+  skinnable player in the style of Winamp 2: main window, equalizer and playlist stacked in one window, each of which you can
+  hide or roll up into a thin bar, at normal or double size. **Standard mode** in its options menu (the top-left button, or
+  right-click anywhere) brings the full window back. Music keeps playing while you switch, and Aibell reopens in the mode you
+  left it in.
+- It plays local music only (no radio, podcasts or MPD). Its playlist is its own: it keeps its tracks after they play and is
+  saved between sessions. Add music with the playlist's **Add** button (files, a folder, or your Aibell library, which **J**
+  also searches), by dropping files on the window, or by loading one of your Aibell playlists or an M3U/PLS file.
+- It draws **classic Winamp skins** (`.wsz` or `.zip`). Aibell comes with a skin of its own; install others from a file, or
+  browse and install skins from the [Winamp Skin Museum](https://skins.webamp.org/) right inside Aibell (**Skins → Manage
+  skins…**). The online browser only appears when online lookups are switched on in **Preferences → Online**, and skins the
+  museum flags as not safe for work are never shown. Modern (`.wal`) skins and Winamp plug-ins are not supported.
+- The classic keys work: **Z X C V B** for previous, play, pause, stop and next, **L** to play files, **S** and **R** for shuffle
+  and repeat, **Ctrl+D** for double size, **Ctrl+T** for remaining time, **Alt+G** / **Alt+E** for the equalizer and
+  playlist, and arrows to seek and pick tracks.
+
 **Desktop**
 
 - Copy music to a USB drive, memory card or portable player, with a preview first. Nothing on the device is ever deleted.
@@ -181,6 +199,7 @@ The results are written to `artifacts/packages`. The AppImage, the Flatpak and t
 | **Alt+Enter**                                        | Track properties                                  |
 | **Ctrl+,**                                           | Preferences                                       |
 | **Ctrl+Q**                                           | Quit after pending work finishes                  |
+| **Ctrl+Shift+M**                                     | Switch to Classic Player Mode and back            |
 | **Tab**, then arrows, **Page Up/Down**, **Home/End** | Adjust the focused seek or volume slider          |
 
 ## For developers
@@ -223,6 +242,12 @@ Aibell is an independent project, written from scratch on .NET and Avalonia. It 
 
 Thank you to the people behind both projects. Aibell is not affiliated with or endorsed by them. Songbird and iTunes are trademarks of
 their respective owners.
+
+Classic Player Mode is a homage to **Winamp** and reads the classic skin format Winamp 2 introduced. Its skin handling follows the
+format as documented by [Webamp](https://github.com/captbaritone/webamp) (MIT License, Copyright (c) 2015 Jordan Eldredge), the
+web re-creation of Winamp whose museum at skins.webamp.org the skin browser uses. Aibell ships no Winamp code or artwork: its own
+skin, pixel font and digits are drawn from scratch. Aibell is not affiliated with or endorsed by Winamp, Webamp or the Winamp Skin
+Museum; Winamp is a trademark of its owner, and each skin belongs to its author.
 
 Third-party libraries keep their own licenses, including LibVLC and LibVLCSharp (LGPL), miniaudio and stb_vorbis (public
 domain / MIT-0), Avalonia (MIT), Microsoft .NET libraries (MIT) and ATL .NET (MIT).

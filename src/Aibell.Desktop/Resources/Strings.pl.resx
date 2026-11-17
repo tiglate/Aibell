@@ -1224,4 +1224,67 @@ Edycja tymczasowa: {1}</value></data>
   <data name="Prefs.Visualizer" xml:space="preserve"><value>Pokaż wizualizację dźwięku za paskiem postępu</value></data>
   <data name="Prefs.VisualizerAutomation" xml:space="preserve"><value>Pokaż wizualizację dźwięku za paskiem postępu</value></data>
   <data name="Prefs.VisualizerNote" xml:space="preserve"><value>Podczas odtwarzania rysuje widmo dźwięku na żywo za paskiem postępu. Niedostępne, gdy gra serwer MPD, ani w odtwarzaczu VLC. Wyłączenie zatrzymuje analizę.</value></data>
+  <data name="Classic.Mode" xml:space="preserve"><value>Tryb klasycznego odtwarzacza</value></data>
+  <data name="Classic.StandardMode" xml:space="preserve"><value>Tryb standardowy</value></data>
+  <data name="Classic.Skins" xml:space="preserve"><value>Skórki</value></data>
+  <data name="Classic.SkinsTitle" xml:space="preserve"><value>Skórki</value></data>
+  <data name="Classic.BuiltInSkin" xml:space="preserve"><value>Aibell (wbudowana)</value></data>
+  <data name="Classic.ManageSkins" xml:space="preserve"><value>Zarządzaj skórkami…</value></data>
+  <data name="Classic.InstalledSkins" xml:space="preserve"><value>Zainstalowane</value></data>
+  <data name="Classic.OnlineSkins" xml:space="preserve"><value>Przeglądaj online</value></data>
+  <data name="Classic.UseSkin" xml:space="preserve"><value>Użyj</value></data>
+  <data name="Classic.InstallSkin" xml:space="preserve"><value>Zainstaluj z pliku…</value></data>
+  <data name="Classic.RemoveSkin" xml:space="preserve"><value>Usuń</value></data>
+  <data name="Classic.RemoveSkinConfirm" xml:space="preserve"><value>Usunąć skórkę „{0}” z tego komputera?</value></data>
+  <data name="Classic.SkinInUse" xml:space="preserve"><value>W użyciu</value></data>
+  <data name="Classic.SkinInstalled" xml:space="preserve"><value>Zainstalowano „{0}”.</value></data>
+  <data name="Classic.SkinFiles" xml:space="preserve"><value>Pliki skórek</value></data>
+  <data name="Classic.NotASkin" xml:space="preserve"><value>Ten plik nie jest klasyczną skórką.</value></data>
+  <data name="Classic.ModernSkin" xml:space="preserve"><value>Nowoczesne skórki nie są obsługiwane, tylko klasyczne.</value></data>
+  <data name="Classic.SkinTooLarge" xml:space="preserve"><value>Plik skórki jest za duży.</value></data>
+  <data name="Classic.SearchSkins" xml:space="preserve"><value>Szukaj</value></data>
+  <data name="Classic.MoreSkins" xml:space="preserve"><value>Pokaż więcej</value></data>
+  <data name="Classic.MuseumNote" xml:space="preserve"><value>Skórki z {0}</value></data>
+  <data name="Classic.MuseumFailed" xml:space="preserve"><value>Nie można połączyć się z muzeum skórek: {0}</value></data>
+  <data name="Classic.NoSkinsFound" xml:space="preserve"><value>Nie znaleziono skórek.</value></data>
+  <data name="Classic.InstallAndUse" xml:space="preserve"><value>Zainstaluj i użyj</value></data>
+  <data name="Classic.InstallNamed" xml:space="preserve"><value>Zainstaluj {0}</value></data>
+  <data name="Classic.InstallFailed" xml:space="preserve"><value>Nie można zainstalować</value></data>
+  <data name="Classic.OpenFiles" xml:space="preserve"><value>Odtwórz pliki…</value></data>
+  <data name="Classic.AddFiles" xml:space="preserve"><value>Dodaj pliki…</value></data>
+  <data name="Classic.AddFolder" xml:space="preserve"><value>Dodaj folder…</value></data>
+  <data name="Classic.AddFromLibrary" xml:space="preserve"><value>Dodaj z biblioteki…</value></data>
+  <data name="Classic.LoadLibraryPlaylist" xml:space="preserve"><value>Wczytaj playlistę z biblioteki</value></data>
+  <data name="Classic.NoLibraryPlaylists" xml:space="preserve"><value>Brak playlist w bibliotece</value></data>
+  <data name="Classic.LoadPlaylistFile" xml:space="preserve"><value>Wczytaj plik playlisty…</value></data>
+  <data name="Classic.SavePlaylist" xml:space="preserve"><value>Zapisz playlistę</value></data>
+  <data name="Classic.PlaylistFiles" xml:space="preserve"><value>Pliki playlist</value></data>
+  <data name="Classic.ShowEqualizer" xml:space="preserve"><value>Korektor</value></data>
+  <data name="Classic.ShowPlaylist" xml:space="preserve"><value>Playlista</value></data>
+  <data name="Classic.DoubleSize" xml:space="preserve"><value>Podwójny rozmiar</value></data>
+  <data name="Classic.AlwaysOnTop" xml:space="preserve"><value>Zawsze na wierzchu</value></data>
+  <data name="Classic.RemainingTime" xml:space="preserve"><value>Pokaż pozostały czas</value></data>
+  <data name="Classic.Shuffle" xml:space="preserve"><value>Losowo</value></data>
+  <data name="Classic.Repeat" xml:space="preserve"><value>Powtarzaj</value></data>
+  <data name="Classic.Sort" xml:space="preserve"><value>Sortuj</value></data>
+  <data name="Classic.SortTitle" xml:space="preserve"><value>Sortuj według tytułu</value></data>
+  <data name="Classic.SortFileName" xml:space="preserve"><value>Sortuj według nazwy pliku</value></data>
+  <data name="Classic.SortPath" xml:space="preserve"><value>Sortuj według ścieżki</value></data>
+  <data name="Classic.Reverse" xml:space="preserve"><value>Odwróć listę</value></data>
+  <data name="Classic.Randomize" xml:space="preserve"><value>Wymieszaj listę</value></data>
+  <data name="Classic.RemoveDuplicates" xml:space="preserve"><value>Usuń duplikaty</value></data>
+  <data name="Classic.RemoveSelected" xml:space="preserve"><value>Usuń zaznaczone</value></data>
+  <data name="Classic.Crop" xml:space="preserve"><value>Przytnij (zachowaj zaznaczone)</value></data>
+  <data name="Classic.PlaySelected" xml:space="preserve"><value>Odtwórz</value></data>
+  <data name="Classic.FileInfo" xml:space="preserve"><value>Informacje o pliku</value></data>
+  <data name="Classic.BitRate" xml:space="preserve"><value>Przepływność</value></data>
+  <data name="Classic.SampleRate" xml:space="preserve"><value>Częstotliwość próbkowania</value></data>
+  <data name="Classic.Location" xml:space="preserve"><value>Lokalizacja</value></data>
+  <data name="Classic.Close" xml:space="preserve"><value>Zamknij</value></data>
+  <data name="Classic.Add" xml:space="preserve"><value>Dodaj</value></data>
+  <data name="Classic.AddAndPlay" xml:space="preserve"><value>Dodaj i odtwórz</value></data>
+  <data name="Classic.LibrarySearchHint" xml:space="preserve"><value>Szukaj tytułu, wykonawcy lub albumu</value></data>
+  <data name="Classic.LibraryResults" xml:space="preserve"><value>Utwory w bibliotece</value></data>
+  <data name="Classic.LibraryCount" xml:space="preserve"><value>Utwory: {0}</value></data>
+  <data name="Classic.LibraryTooMany" xml:space="preserve"><value>Pokazano pierwsze {0} z {1} utworów; wpisz więcej słów, aby zawęzić listę.</value></data>
 </root>

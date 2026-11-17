@@ -1180,4 +1180,67 @@ Temporäre Änderung: {1}</value></data>
   <data name="Prefs.Visualizer" xml:space="preserve"><value>Audio-Visualisierung hinter der Fortschrittsleiste anzeigen</value></data>
   <data name="Prefs.VisualizerAutomation" xml:space="preserve"><value>Audio-Visualisierung hinter der Fortschrittsleiste anzeigen</value></data>
   <data name="Prefs.VisualizerNote" xml:space="preserve"><value>Zeichnet während der Wiedergabe ein Live-Spektrum des Klangs hinter der Fortschrittsleiste. Nicht verfügbar, wenn ein MPD-Server abspielt oder mit dem VLC-Player. Ausschalten beendet die Analyse.</value></data>
+  <data name="Classic.Mode" xml:space="preserve"><value>Klassischer Player-Modus</value></data>
+  <data name="Classic.StandardMode" xml:space="preserve"><value>Standardmodus</value></data>
+  <data name="Classic.Skins" xml:space="preserve"><value>Skins</value></data>
+  <data name="Classic.SkinsTitle" xml:space="preserve"><value>Skins</value></data>
+  <data name="Classic.BuiltInSkin" xml:space="preserve"><value>Aibell (integriert)</value></data>
+  <data name="Classic.ManageSkins" xml:space="preserve"><value>Skins verwalten…</value></data>
+  <data name="Classic.InstalledSkins" xml:space="preserve"><value>Installiert</value></data>
+  <data name="Classic.OnlineSkins" xml:space="preserve"><value>Online durchsuchen</value></data>
+  <data name="Classic.UseSkin" xml:space="preserve"><value>Verwenden</value></data>
+  <data name="Classic.InstallSkin" xml:space="preserve"><value>Aus Datei installieren…</value></data>
+  <data name="Classic.RemoveSkin" xml:space="preserve"><value>Entfernen</value></data>
+  <data name="Classic.RemoveSkinConfirm" xml:space="preserve"><value>Den Skin „{0}“ von diesem Computer entfernen?</value></data>
+  <data name="Classic.SkinInUse" xml:space="preserve"><value>In Verwendung</value></data>
+  <data name="Classic.SkinInstalled" xml:space="preserve"><value>„{0}“ installiert.</value></data>
+  <data name="Classic.SkinFiles" xml:space="preserve"><value>Skin-Dateien</value></data>
+  <data name="Classic.NotASkin" xml:space="preserve"><value>Diese Datei ist kein klassischer Skin.</value></data>
+  <data name="Classic.ModernSkin" xml:space="preserve"><value>Moderne Skins werden nicht unterstützt, nur klassische.</value></data>
+  <data name="Classic.SkinTooLarge" xml:space="preserve"><value>Die Skin-Datei ist zu groß.</value></data>
+  <data name="Classic.SearchSkins" xml:space="preserve"><value>Suchen</value></data>
+  <data name="Classic.MoreSkins" xml:space="preserve"><value>Mehr anzeigen</value></data>
+  <data name="Classic.MuseumNote" xml:space="preserve"><value>Skins von {0}</value></data>
+  <data name="Classic.MuseumFailed" xml:space="preserve"><value>Das Skin-Museum ist nicht erreichbar: {0}</value></data>
+  <data name="Classic.NoSkinsFound" xml:space="preserve"><value>Keine Skins gefunden.</value></data>
+  <data name="Classic.InstallAndUse" xml:space="preserve"><value>Installieren und verwenden</value></data>
+  <data name="Classic.InstallNamed" xml:space="preserve"><value>{0} installieren</value></data>
+  <data name="Classic.InstallFailed" xml:space="preserve"><value>Installation fehlgeschlagen</value></data>
+  <data name="Classic.OpenFiles" xml:space="preserve"><value>Dateien abspielen…</value></data>
+  <data name="Classic.AddFiles" xml:space="preserve"><value>Dateien hinzufügen…</value></data>
+  <data name="Classic.AddFolder" xml:space="preserve"><value>Ordner hinzufügen…</value></data>
+  <data name="Classic.AddFromLibrary" xml:space="preserve"><value>Aus der Bibliothek hinzufügen…</value></data>
+  <data name="Classic.LoadLibraryPlaylist" xml:space="preserve"><value>Bibliotheks-Wiedergabeliste laden</value></data>
+  <data name="Classic.NoLibraryPlaylists" xml:space="preserve"><value>Keine Wiedergabelisten in der Bibliothek</value></data>
+  <data name="Classic.LoadPlaylistFile" xml:space="preserve"><value>Wiedergabelisten-Datei laden…</value></data>
+  <data name="Classic.SavePlaylist" xml:space="preserve"><value>Wiedergabeliste speichern</value></data>
+  <data name="Classic.PlaylistFiles" xml:space="preserve"><value>Wiedergabelisten-Dateien</value></data>
+  <data name="Classic.ShowEqualizer" xml:space="preserve"><value>Equalizer</value></data>
+  <data name="Classic.ShowPlaylist" xml:space="preserve"><value>Wiedergabeliste</value></data>
+  <data name="Classic.DoubleSize" xml:space="preserve"><value>Doppelte Größe</value></data>
+  <data name="Classic.AlwaysOnTop" xml:space="preserve"><value>Immer im Vordergrund</value></data>
+  <data name="Classic.RemainingTime" xml:space="preserve"><value>Restzeit anzeigen</value></data>
+  <data name="Classic.Shuffle" xml:space="preserve"><value>Zufallswiedergabe</value></data>
+  <data name="Classic.Repeat" xml:space="preserve"><value>Wiederholen</value></data>
+  <data name="Classic.Sort" xml:space="preserve"><value>Sortieren</value></data>
+  <data name="Classic.SortTitle" xml:space="preserve"><value>Nach Titel sortieren</value></data>
+  <data name="Classic.SortFileName" xml:space="preserve"><value>Nach Dateiname sortieren</value></data>
+  <data name="Classic.SortPath" xml:space="preserve"><value>Nach Pfad sortieren</value></data>
+  <data name="Classic.Reverse" xml:space="preserve"><value>Liste umkehren</value></data>
+  <data name="Classic.Randomize" xml:space="preserve"><value>Liste mischen</value></data>
+  <data name="Classic.RemoveDuplicates" xml:space="preserve"><value>Duplikate entfernen</value></data>
+  <data name="Classic.RemoveSelected" xml:space="preserve"><value>Auswahl entfernen</value></data>
+  <data name="Classic.Crop" xml:space="preserve"><value>Zuschneiden (Auswahl behalten)</value></data>
+  <data name="Classic.PlaySelected" xml:space="preserve"><value>Abspielen</value></data>
+  <data name="Classic.FileInfo" xml:space="preserve"><value>Dateiinfo</value></data>
+  <data name="Classic.BitRate" xml:space="preserve"><value>Bitrate</value></data>
+  <data name="Classic.SampleRate" xml:space="preserve"><value>Abtastrate</value></data>
+  <data name="Classic.Location" xml:space="preserve"><value>Speicherort</value></data>
+  <data name="Classic.Close" xml:space="preserve"><value>Schließen</value></data>
+  <data name="Classic.Add" xml:space="preserve"><value>Hinzufügen</value></data>
+  <data name="Classic.AddAndPlay" xml:space="preserve"><value>Hinzufügen und abspielen</value></data>
+  <data name="Classic.LibrarySearchHint" xml:space="preserve"><value>Titel, Interpret oder Album suchen</value></data>
+  <data name="Classic.LibraryResults" xml:space="preserve"><value>Titel der Bibliothek</value></data>
+  <data name="Classic.LibraryCount" xml:space="preserve"><value>{0} Titel</value></data>
+  <data name="Classic.LibraryTooMany" xml:space="preserve"><value>Die ersten {0} von {1} Titeln werden angezeigt; weitere Wörter grenzen die Liste ein.</value></data>
 </root>

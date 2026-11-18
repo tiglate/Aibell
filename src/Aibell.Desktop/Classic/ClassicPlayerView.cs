@@ -100,6 +100,7 @@ internal sealed class ClassicPlayerView : Control, IDisposable
     private bool pressedInside;
     private double dragValue;
     private double dragGrab;
+    private double dragGrabX;
     private int dragRow = -1;
     private int openMenu = -1;
     private int menuHover = -1;
@@ -178,7 +179,7 @@ internal sealed class ClassicPlayerView : Control, IDisposable
         : Preferences.PlaylistShaded ? ShadeHeight : PlaylistMinimumHeight + PlaylistStep * Preferences.PlaylistExtraRows;
 
     /// <summary>The surface's size in skin pixels.</summary>
-    public Size SkinSize => new(SkinWidth, PlaylistTop + PlaylistSectionHeight);
+    public Size SkinSize => new(PlaylistSectionHeight > 0 ? Math.Max(SkinWidth, PlaylistWidth) : SkinWidth, PlaylistTop + PlaylistSectionHeight);
 
     public bool IsWindowActive
     {
@@ -219,7 +220,7 @@ internal sealed class ClassicPlayerView : Control, IDisposable
             if (height == 0) return;
             if (polygons.Count == 0)
             {
-                group.Children.Add(new RectangleGeometry(new Rect(0, top * Scale, SkinWidth * Scale, height * Scale)));
+                group.Children.Add(new RectangleGeometry(new Rect(0, top * Scale, (top == PlaylistTop ? PlaylistWidth : SkinWidth) * Scale, height * Scale)));
                 return;
             }
             foreach (IReadOnlyList<(int X, int Y)> polygon in polygons)
@@ -263,7 +264,10 @@ internal sealed class ClassicPlayerView : Control, IDisposable
     {
         model.Synchronize();
         UpdateSpectrum();
-        if (spectrum is { } source && !Preferences.MainShaded)
+        // A playlist window drawing the visualizer needs every frame too; otherwise a few a second are plenty.
+        TimeSpan interval = sections.HasFlag(ClassicSections.Main) || PlaylistShowsVisualizer ? Frame : TimeSpan.FromMilliseconds(100);
+        if (timer.Interval != interval) timer.Interval = interval;
+        if (spectrum is { } source && (!Preferences.MainShaded || !sections.HasFlag(ClassicSections.Main)))
         {
             bool live = Player.PlaybackSnapshot.Status == PlaybackStatus.Playing && source.IsSpectrumAvailable && source.TryReadSpectrum(fresh);
             if (!live) Array.Clear(fresh);
@@ -284,8 +288,8 @@ internal sealed class ClassicPlayerView : Control, IDisposable
 
     private void UpdateSpectrum()
     {
-        ISpectrumSource? wanted = visualizerOn && sections.HasFlag(ClassicSections.Main) && Player.VisualizerEnabled && IsEffectivelyVisible
-            ? Player.SpectrumSource : null;
+        bool shows = sections.HasFlag(ClassicSections.Main) || PlaylistShowsVisualizer;
+        ISpectrumSource? wanted = visualizerOn && shows && Player.VisualizerEnabled && IsEffectivelyVisible ? Player.SpectrumSource : null;
         if (ReferenceEquals(wanted, spectrum)) return;
         spectrum?.SetSpectrumEnabled(false);
         spectrum = wanted;
@@ -429,18 +433,21 @@ internal sealed class ClassicPlayerView : Control, IDisposable
         Draw(context, Sprites.Digit(seconds % 10), 90, 26);
     }
 
-    private void DrawVisualizer(DrawingContext context)
+    private void DrawVisualizer(DrawingContext context) => DrawSpectrum(context, 24, 43, VisualizerBars);
+
+    // The spectrum bars, four pixels apart and sixteen high, coloured by the skin's visualizer colours.
+    private void DrawSpectrum(DrawingContext context, int left, int top, int bars)
     {
         if (spectrum is null) return;
         VisualizerColors colors = Skin.Visualizer;
-        for (int bar = 0; bar < VisualizerBars; bar++)
+        for (int bar = 0; bar < Math.Min(bars, VisualizerBars); bar++)
         {
             int height = (int)Math.Round(Math.Clamp(levels[bar], 0, 1) * 16);
-            int x = 24 + bar * 4;
+            int x = left + bar * 4;
             for (int row = 16 - height; row < 16; row++)
-                context.FillRectangle(Brush(colors.Spectrum(row)), new Rect(x, 43 + row, 3, 1));
+                context.FillRectangle(Brush(colors.Spectrum(row)), new Rect(x, top + row, 3, 1));
             int peak = (int)Math.Round(Math.Clamp(peaks[bar], 0, 1) * 16);
-            if (peak > 0) context.FillRectangle(Brush(colors.Peak), new Rect(x, 43 + 16 - peak, 3, 1));
+            if (peak > 0) context.FillRectangle(Brush(colors.Peak), new Rect(x, top + 16 - peak, 3, 1));
         }
     }
 
@@ -586,7 +593,14 @@ internal sealed class ClassicPlayerView : Control, IDisposable
         }
     }
 
-    private const int PlaylistWidth = SkinWidth;
+    private const int PlaylistColumn = 25;
+
+    private int PlaylistWidth => SkinWidth + PlaylistColumn * Preferences.PlaylistExtraColumns;
+
+    // Winamp's rule: once the playlist is wide enough, its bottom bar shows a small visualizer between the menus and the controls.
+    private const int PlaylistVisualizerWidth = 75;
+
+    internal bool PlaylistShowsVisualizer => PlaylistSectionHeight > 0 && !Preferences.PlaylistShaded && PlaylistWidth - 125 - 150 >= PlaylistVisualizerWidth;
 
     private int VisibleRows => Math.Max(1, (PlaylistSectionHeight - 38 - 23) / RowHeight);
 
@@ -627,6 +641,14 @@ internal sealed class ClassicPlayerView : Control, IDisposable
         Draw(context, Sprites.PlaylistBottomLeft, 0, height - 38);
         for (int x = 125; x < width - 150; x += 25) DrawClipped(context, Sprites.PlaylistBottomTile, x, height - 38, width - 150 - x, 38);
         Draw(context, Sprites.PlaylistBottomRight, width - 150, height - 38);
+        if (PlaylistShowsVisualizer)
+        {
+            int left = width - 150 - PlaylistVisualizerWidth;
+            Draw(context, Sprites.PlaylistVisualizerBackground, left, height - 38);
+            // The panel's own window onto the spectrum: 72 by 16 pixels, as the classic layout puts it.
+            context.FillRectangle(Brush(Skin.Visualizer.Background), new Rect(left + 2, height - 38 + 12, 72, 16));
+            DrawSpectrum(context, left + 2, height - 38 + 12, 18);
+        }
         if (IsPressed(Part.PlaylistShade)) Draw(context, Sprites.PlaylistShadePressed, width - 21, 3);
         if (IsPressed(Part.PlaylistClose)) Draw(context, Sprites.PlaylistClosePressed, width - 11, 3);
 
@@ -689,7 +711,7 @@ internal sealed class ClassicPlayerView : Control, IDisposable
         (44, true, Sprites.ListMenuBar, [Sprites.ListLoad, Sprites.ListSave, Sprites.ListNew]),
     ];
 
-    private static int MenuX(int menu) => Menus[menu].FromRight ? PlaylistWidth - Menus[menu].X : Menus[menu].X;
+    private int MenuX(int menu) => Menus[menu].FromRight ? PlaylistWidth - Menus[menu].X : Menus[menu].X;
 
     private void DrawMenu(DrawingContext context, int height)
     {
@@ -884,6 +906,7 @@ internal sealed class ClassicPlayerView : Control, IDisposable
                 break;
             case Part.PlaylistResize:
                 dragGrab = point.Y - PlaylistTop - PlaylistSectionHeight;
+                dragGrabX = point.X - PlaylistWidth;
                 break;
         }
         e.Pointer.Capture(this);
@@ -933,7 +956,10 @@ internal sealed class ClassicPlayerView : Control, IDisposable
             case Part.PlaylistResize:
                 int rows = (int)Math.Round((point.Y - PlaylistTop - dragGrab - PlaylistMinimumHeight) / PlaylistStep);
                 rows = Math.Clamp(rows, 0, ClassicPlayerPreferences.MaximumExtraRows);
-                if (rows != Preferences.PlaylistExtraRows) ChangeLayout(preferences => preferences with { PlaylistExtraRows = rows });
+                int columns = (int)Math.Round((point.X - dragGrabX - SkinWidth) / PlaylistColumn);
+                columns = Math.Clamp(columns, 0, ClassicPlayerPreferences.MaximumExtraColumns);
+                if (rows != Preferences.PlaylistExtraRows || columns != Preferences.PlaylistExtraColumns)
+                    ChangeLayout(preferences => preferences with { PlaylistExtraRows = rows, PlaylistExtraColumns = columns });
                 break;
             default:
                 (Part part, int argument) = HitTest(point);

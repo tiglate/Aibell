@@ -358,12 +358,14 @@ public sealed class ClassicPlayerViewModelTests
     public void PreferencesAreBroughtBackIntoRange()
     {
         PlayQueueEntry entry = new(Guid.NewGuid(), first);
-        ClassicPlayerPreferences normalized = new ClassicPlayerPreferences(SkinId: "../x.wsz", PlaylistExtraRows: 99, PlaylistCurrent: 5,
+        ClassicPlayerPreferences normalized = new ClassicPlayerPreferences(SkinId: "../x.wsz", PlaylistExtraRows: 99, PlaylistCurrent: 5, PlaylistExtraColumns: -3,
             Playlist: [entry, entry, new PlayQueueEntry(Guid.Empty, first)]).Normalized();
         Assert.Multiple(() =>
         {
             Assert.That(normalized.SkinId, Is.Null);
             Assert.That(normalized.PlaylistExtraRows, Is.EqualTo(ClassicPlayerPreferences.MaximumExtraRows));
+            Assert.That(normalized.PlaylistExtraColumns, Is.Zero);
+            Assert.That(new ClassicPlayerPreferences(PlaylistExtraColumns: 999).Normalized().PlaylistExtraColumns, Is.EqualTo(ClassicPlayerPreferences.MaximumExtraColumns));
             Assert.That(normalized.PlaylistCurrent, Is.EqualTo(-1));
             Assert.That(normalized.Playlist, Is.EqualTo(new[] { entry }));
             Assert.That(new ClassicPlayerPreferences(SkinId: "ok.wsz").Normalized().SkinId, Is.EqualTo("ok.wsz"));

@@ -23,8 +23,12 @@ public sealed record ClassicPlayerPreferences(
     bool SeparateWindows = true,
     ClassicWindowPosition? MainPosition = null,
     ClassicWindowPosition? EqualizerPosition = null,
-    ClassicWindowPosition? PlaylistPosition = null)
+    ClassicWindowPosition? PlaylistPosition = null,
+    int PlaylistExtraColumns = 0)
 {
+    /// <summary>The playlist can widen by this many 25-pixel steps beyond the classic 275 pixels.</summary>
+    public const int MaximumExtraColumns = 40;
+
     /// <summary>The playlist can grow by this many 29-pixel steps below its smallest size.</summary>
     public const int MaximumExtraRows = 24;
 
@@ -44,6 +48,7 @@ public sealed record ClassicPlayerPreferences(
         {
             SkinId = skin,
             PlaylistExtraRows = Math.Clamp(PlaylistExtraRows, 0, MaximumExtraRows),
+            PlaylistExtraColumns = Math.Clamp(PlaylistExtraColumns, 0, MaximumExtraColumns),
             PlaylistCurrent = PlaylistCurrent >= 0 && PlaylistCurrent < playlist.Length ? PlaylistCurrent : -1,
             Playlist = playlist,
         };

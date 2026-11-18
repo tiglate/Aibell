@@ -149,6 +149,7 @@ public static class Sprites
     public static readonly Sprite PlaylistBottomTile = S(SkinSheet.Playlist, 179, 0, 25, 38);
     public static readonly Sprite PlaylistBottomLeft = S(SkinSheet.Playlist, 0, 72, 125, 38);
     public static readonly Sprite PlaylistBottomRight = S(SkinSheet.Playlist, 126, 72, 150, 38);
+    public static readonly Sprite PlaylistVisualizerBackground = S(SkinSheet.Playlist, 205, 0, 75, 38);
     public static readonly Sprite PlaylistScrollHandle = S(SkinSheet.Playlist, 52, 53, 8, 18);
     public static readonly Sprite PlaylistScrollHandlePressed = S(SkinSheet.Playlist, 61, 53, 8, 18);
     public static readonly Sprite PlaylistClosePressed = S(SkinSheet.Playlist, 52, 42, 9, 9);

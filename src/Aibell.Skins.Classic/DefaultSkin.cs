@@ -578,6 +578,12 @@ public static class DefaultSkin
         canvas.VerticalGradient(179, 0, 25, 38, BodyTop, BodyBottom);
         canvas.HorizontalLine(179, 37, 25, Shadow);
         canvas.HorizontalLine(179, 0, 25, Shadow);
+        // The visualizer panel a wide playlist shows in its bottom bar, with a window onto the spectrum at (2, 12).
+        canvas.VerticalGradient(205, 0, 75, 38, BodyTop, BodyBottom);
+        canvas.HorizontalLine(205, 0, 75, Shadow);
+        canvas.HorizontalLine(205, 37, 75, Shadow);
+        canvas.Bevel(206, 11, 74, 18, Shadow, Light);
+        canvas.Fill(207, 12, 72, 16, Lcd);
         canvas.VerticalGradient(0, 72, 125, 38, BodyTop, BodyBottom);
         canvas.VerticalLine(0, 72, 38, Light);
         canvas.HorizontalLine(0, 109, 125, Shadow);

@@ -73,6 +73,20 @@ public sealed partial class MainWindowWorkflowTests
         Assert.That(playlist.Position, Is.EqualTo(classic.Position + new PixelVector(300, 332)));
         Assert.That(viewModel.ClassicPlayer.PlaylistPosition, Is.EqualTo(new ClassicWindowPosition(playlist.Position.X, playlist.Position.Y)));
 
+        // The grip in the playlist's corner widens it in 25-pixel steps; wide enough, its bottom bar gains a visualizer.
+        Assert.That(playlist.Surface.PlaylistShowsVisualizer, Is.False);
+        playlist.MouseDown(new Point(265, 164), MouseButton.Left);
+        playlist.MouseMove(new Point(365, 164));
+        playlist.MouseUp(new Point(365, 164), MouseButton.Left);
+        Dispatcher.UIThread.RunJobs();
+        Assert.Multiple(() =>
+        {
+            Assert.That(viewModel.ClassicPlayer.PlaylistExtraColumns, Is.EqualTo(4));
+            Assert.That(playlist.Surface.SkinSize, Is.EqualTo(new Size(375, 174)));
+            Assert.That(playlist.Surface.PlaylistShowsVisualizer, Is.True);
+            Assert.That(classic.Surface.SkinSize.Width, Is.EqualTo(275), "the main window keeps its width");
+        });
+
         Click(classic, 50, 97);
         await UntilAsync(() => engine.Snapshot is { Status: PlaybackStatus.Playing } && engine.Snapshot.Track?.Id == one.Id);
 
@@ -90,7 +104,7 @@ public sealed partial class MainWindowWorkflowTests
         Dispatcher.UIThread.RunJobs();
         Assert.Multiple(() =>
         {
-            Assert.That(classic.Surface.SkinSize, Is.EqualTo(new Size(275, 116 + 116 + 174)));
+            Assert.That(classic.Surface.SkinSize, Is.EqualTo(new Size(375, 116 + 116 + 174)), "stacked, the window is as wide as the playlist");
             Assert.That(playlist.IsVisible, Is.False);
         });
 

@@ -1229,4 +1229,5 @@
   <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>居中</value></data>
   <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>偏左 {0}%</value></data>
   <data name="Equalizer.BalanceRight" xml:space="preserve"><value>偏右 {0}%</value></data>
+  <data name="Classic.SeparateWindows" xml:space="preserve"><value>分离窗口</value></data>
 </root>

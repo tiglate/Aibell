@@ -1251,4 +1251,5 @@ Temporary edit: {1}</value></data>
   <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>Center</value></data>
   <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>{0}% left</value></data>
   <data name="Equalizer.BalanceRight" xml:space="preserve"><value>{0}% right</value></data>
+  <data name="Classic.SeparateWindows" xml:space="preserve"><value>Separate windows</value></data>
 </root>

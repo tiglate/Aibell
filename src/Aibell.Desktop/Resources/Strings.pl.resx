@@ -1295,4 +1295,5 @@ Edycja tymczasowa: {1}</value></data>
   <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>Środek</value></data>
   <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>{0}% w lewo</value></data>
   <data name="Equalizer.BalanceRight" xml:space="preserve"><value>{0}% w prawo</value></data>
+  <data name="Classic.SeparateWindows" xml:space="preserve"><value>Osobne okna</value></data>
 </root>

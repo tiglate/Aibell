@@ -5,6 +5,7 @@ using Aibell.Desktop.Classic;
 using Aibell.Domain.Media;
 using Aibell.Application.Playback;
 using Aibell.Skins.Classic;
+using Aibell.Application.Settings;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Headless;
@@ -41,20 +42,57 @@ public sealed partial class MainWindowWorkflowTests
         ClassicPlayerWindow classic = window.ClassicWindow!;
         window.ClassicModel!.Add([one, two]);
         Dispatcher.UIThread.RunJobs();
+        ClassicSectionWindow equalizer = classic.EqualizerWindow!, playlist = classic.PlaylistWindow!;
         Assert.Multiple(() =>
         {
             Assert.That(window.IsVisible, Is.False);
             Assert.That(classic.IsVisible, Is.True);
-            Assert.That(classic.Surface.SkinSize, Is.EqualTo(new Size(275, 116 + 116 + 174)));
+            Assert.That(classic.Surface.SkinSize, Is.EqualTo(new Size(275, 116)), "the main window draws only itself");
+            Assert.That(equalizer.IsVisible && playlist.IsVisible, Is.True);
+            Assert.That(equalizer.Position, Is.EqualTo(classic.Position + new PixelVector(0, 116)), "the equalizer starts docked under it");
+            Assert.That(playlist.Position, Is.EqualTo(equalizer.Position + new PixelVector(0, 116)));
         });
+
+        // Dragging the main window by its background carries the docked windows in the same moment.
+        PixelPoint start = classic.Position;
+        classic.MouseDown(new Point(150, 6), MouseButton.Left);
+        classic.MouseMove(new Point(230, 66));
+        classic.MouseUp(new Point(230, 66), MouseButton.Left);
+        Dispatcher.UIThread.RunJobs();
+        Assert.Multiple(() =>
+        {
+            Assert.That(classic.Position, Is.EqualTo(start + new PixelVector(80, 60)));
+            Assert.That(equalizer.Position, Is.EqualTo(classic.Position + new PixelVector(0, 116)));
+            Assert.That(playlist.Position, Is.EqualTo(classic.Position + new PixelVector(0, 232)));
+        });
+        // Dragging the playlist pulls it away on its own.
+        playlist.MouseDown(new Point(150, 5), MouseButton.Left);
+        playlist.MouseMove(new Point(450, 105));
+        playlist.MouseUp(new Point(450, 105), MouseButton.Left);
+        Dispatcher.UIThread.RunJobs();
+        Assert.That(playlist.Position, Is.EqualTo(classic.Position + new PixelVector(300, 332)));
+        Assert.That(viewModel.ClassicPlayer.PlaylistPosition, Is.EqualTo(new ClassicWindowPosition(playlist.Position.X, playlist.Position.Y)));
 
         Click(classic, 50, 97);
         await UntilAsync(() => engine.Snapshot is { Status: PlaybackStatus.Playing } && engine.Snapshot.Track?.Id == one.Id);
 
-        // The EQ button hides the equalizer; the window shrinks to what is left.
+        // The EQ button hides the equalizer window.
         Click(classic, 230, 64);
         await UntilAsync(() => !viewModel.ClassicPlayer.ShowEqualizer);
-        Assert.That(classic.Surface.SkinSize.Height, Is.EqualTo(116 + 174));
+        Assert.That(equalizer.IsVisible, Is.False);
+
+        // Rolling the main window up pulls nothing (the playlist is no longer docked); the stacked layout is still there.
+        classic.KeyPressQwerty(PhysicalKey.D, RawInputModifiers.Control);
+        await UntilAsync(() => viewModel.ClassicPlayer.DoubleSize);
+        classic.KeyPressQwerty(PhysicalKey.D, RawInputModifiers.Control);
+        await UntilAsync(() => !viewModel.ClassicPlayer.DoubleSize);
+        classic.Surface.ChangeLayout(preferences => preferences with { SeparateWindows = false, ShowEqualizer = true });
+        Dispatcher.UIThread.RunJobs();
+        Assert.Multiple(() =>
+        {
+            Assert.That(classic.Surface.SkinSize, Is.EqualTo(new Size(275, 116 + 116 + 174)));
+            Assert.That(playlist.IsVisible, Is.False);
+        });
 
         classic.Surface.Focus();
         classic.KeyPressQwerty(PhysicalKey.B, RawInputModifiers.None);
@@ -92,8 +130,8 @@ public sealed partial class MainWindowWorkflowTests
         window.EnterClassicMode();
         ClassicPlayerWindow classic = window.ClassicWindow!;
         Dispatcher.UIThread.RunJobs();
-        // AUTO sits at (40, 18) in the equalizer, which starts below the 116-pixel main window.
-        Click(classic, 56, 116 + 24);
+        // AUTO sits at (40, 18) in the equalizer window.
+        Click(classic.EqualizerWindow!, 56, 24);
         await UntilAsync(() => viewModel.IsEqualizerAuto);
         // This engine has no balance control, so the slider stays put.
         Click(classic, 177 + 30, 63);

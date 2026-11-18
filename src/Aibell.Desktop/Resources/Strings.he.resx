@@ -1273,4 +1273,5 @@
   <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>מרכז</value></data>
   <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>{0}% שמאלה</value></data>
   <data name="Equalizer.BalanceRight" xml:space="preserve"><value>{0}% ימינה</value></data>
+  <data name="Classic.SeparateWindows" xml:space="preserve"><value>חלונות נפרדים</value></data>
 </root>

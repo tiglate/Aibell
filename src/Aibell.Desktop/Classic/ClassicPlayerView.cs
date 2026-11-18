@@ -14,10 +14,29 @@ using Avalonia.Threading;
 
 namespace Aibell.Desktop.Classic;
 
-/// <summary>What the skinned surface asks of the window around it: moving, menus, dialogs.</summary>
+/// <summary>The parts of the classic player a surface shows: all three stacked, or one per window.</summary>
+[Flags]
+internal enum ClassicSections
+{
+    Main = 1,
+    Equalizer = 2,
+    Playlist = 4,
+    All = Main | Equalizer | Playlist,
+}
+
+/// <summary>What the skinned surfaces ask of the windows around them: moving, menus, dialogs.</summary>
 internal interface IClassicPlayerHost
 {
-    void BeginMove(PointerPressedEventArgs args);
+    /// <summary>A press on a surface's background: true when the host moves the windows itself, following <see cref="DragTo"/>.</summary>
+    bool BeginDrag(ClassicPlayerView source, PointerPressedEventArgs args);
+
+    /// <summary>The pointer, in screen pixels, during a drag the host accepted.</summary>
+    void DragTo(ClassicPlayerView source, PixelPoint pointer);
+
+    void EndDrag(ClassicPlayerView source);
+
+    /// <summary>The surface the user is working with, so menus open over it.</summary>
+    void Activate(ClassicPlayerView source);
 
     void Minimize();
 
@@ -112,6 +131,7 @@ internal sealed class ClassicPlayerView : Control, IDisposable
     private enum Part
     {
         None,
+        WindowDrag,
         MainTitle, Options, Minimize, Shade, Close, ClutterOptions, ClutterTop, ClutterInfo, ClutterDouble, ClutterVisualizer,
         Time, Visualizer, Volume, Balance, EqualizerToggle, PlaylistToggle, Position, Transport, Shuffle, Repeat,
         EqualizerTitle, EqualizerClose, EqualizerShade, EqualizerOn, EqualizerAuto, EqualizerPresets, EqualizerSlider,
@@ -120,21 +140,41 @@ internal sealed class ClassicPlayerView : Control, IDisposable
 
     public ClassicSkin Skin => bitmaps.Skin;
 
+    /// <summary>Which parts this surface draws; all of them in the stacked layout, one in each separate window.</summary>
+    public ClassicSections Sections
+    {
+        get => sections;
+        set
+        {
+            sections = value;
+            timer.Interval = value.HasFlag(ClassicSections.Main) ? Frame : TimeSpan.FromMilliseconds(100);
+            UpdateSpectrum();
+            InvalidateMeasure();
+            InvalidateVisual();
+        }
+    }
+
+    private ClassicSections sections = ClassicSections.All;
+
+    private bool Stacked => sections == ClassicSections.All;
+
     private ClassicPlayerPreferences Preferences => model.Preferences;
 
     private MainWindowViewModel Player => model.Player;
 
     public int Scale => Preferences.DoubleSize ? 2 : 1;
 
-    private int MainSectionHeight => Preferences.MainShaded ? ShadeHeight : MainHeight;
+    private int MainSectionHeight => !sections.HasFlag(ClassicSections.Main) ? 0 : Preferences.MainShaded ? ShadeHeight : MainHeight;
 
     private int EqualizerTop => MainSectionHeight;
 
-    private int EqualizerSectionHeight => !Preferences.ShowEqualizer ? 0 : Preferences.EqualizerShaded ? ShadeHeight : MainHeight;
+    // In a separate window the window itself is hidden instead, so the section is always drawn there.
+    private int EqualizerSectionHeight => !sections.HasFlag(ClassicSections.Equalizer) || (Stacked && !Preferences.ShowEqualizer) ? 0
+        : Preferences.EqualizerShaded ? ShadeHeight : MainHeight;
 
     private int PlaylistTop => EqualizerTop + EqualizerSectionHeight;
 
-    private int PlaylistSectionHeight => !Preferences.ShowPlaylist ? 0
+    private int PlaylistSectionHeight => !sections.HasFlag(ClassicSections.Playlist) || (Stacked && !Preferences.ShowPlaylist) ? 0
         : Preferences.PlaylistShaded ? ShadeHeight : PlaylistMinimumHeight + PlaylistStep * Preferences.PlaylistExtraRows;
 
     /// <summary>The surface's size in skin pixels.</summary>
@@ -244,7 +284,8 @@ internal sealed class ClassicPlayerView : Control, IDisposable
 
     private void UpdateSpectrum()
     {
-        ISpectrumSource? wanted = visualizerOn && Player.VisualizerEnabled && IsEffectivelyVisible ? Player.SpectrumSource : null;
+        ISpectrumSource? wanted = visualizerOn && sections.HasFlag(ClassicSections.Main) && Player.VisualizerEnabled && IsEffectivelyVisible
+            ? Player.SpectrumSource : null;
         if (ReferenceEquals(wanted, spectrum)) return;
         spectrum?.SetSpectrumEnabled(false);
         spectrum = wanted;
@@ -259,7 +300,7 @@ internal sealed class ClassicPlayerView : Control, IDisposable
     {
         using (context.PushTransform(Matrix.CreateScale(Scale, Scale)))
         {
-            DrawMain(context);
+            if (MainSectionHeight > 0) DrawMain(context);
             if (EqualizerSectionHeight > 0)
                 using (context.PushTransform(Matrix.CreateTranslation(0, EqualizerTop)))
                     DrawEqualizer(context);
@@ -768,6 +809,7 @@ internal sealed class ClassicPlayerView : Control, IDisposable
     {
         base.OnPointerPressed(e);
         Focus();
+        host.Activate(this);
         Point point = SkinPoint(e);
         PointerPointProperties properties = e.GetCurrentPoint(this).Properties;
         (Part part, int argument) = HitTest(point);
@@ -798,7 +840,11 @@ internal sealed class ClassicPlayerView : Control, IDisposable
             case Part.MainTitle or Part.EqualizerTitle or Part.PlaylistTitle:
                 pressed = Part.None;
                 if (e.ClickCount == 2) ToggleShadeFor(part);
-                else host.BeginMove(e);
+                else if (host.BeginDrag(this, e))
+                {
+                    pressed = Part.WindowDrag;
+                    e.Pointer.Capture(this);
+                }
                 return;
             case Part.Volume:
                 dragValue = Player.Volume;
@@ -860,6 +906,9 @@ internal sealed class ClassicPlayerView : Control, IDisposable
         }
         switch (pressed)
         {
+            case Part.WindowDrag:
+                host.DragTo(this, this.PointToScreen(e.GetPosition(this)));
+                return;
             case Part.Volume:
                 UpdateVolume(point, pressedArgument);
                 break;
@@ -905,6 +954,9 @@ internal sealed class ClassicPlayerView : Control, IDisposable
         Point point = SkinPoint(e);
         switch (part)
         {
+            case Part.WindowDrag:
+                host.EndDrag(this);
+                return;
             case Part.Volume:
                 double volume = dragValue;
                 host.Run(() => Player.ChangeVolumeAsync(volume));
@@ -1172,6 +1224,7 @@ internal sealed class ClassicPlayerView : Control, IDisposable
     {
         base.OnKeyDown(e);
         if (e.Handled) return;
+        host.Activate(this);
         bool control = e.KeyModifiers.HasFlag(KeyModifiers.Control);
         bool shift = e.KeyModifiers.HasFlag(KeyModifiers.Shift);
         bool alt = e.KeyModifiers.HasFlag(KeyModifiers.Alt);

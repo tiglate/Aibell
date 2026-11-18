@@ -1229,4 +1229,5 @@
   <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>中央</value></data>
   <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>左 {0}%</value></data>
   <data name="Equalizer.BalanceRight" xml:space="preserve"><value>右 {0}%</value></data>
+  <data name="Classic.SeparateWindows" xml:space="preserve"><value>ウィンドウを分ける</value></data>
 </root>

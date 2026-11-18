@@ -1295,4 +1295,5 @@
   <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>Центр</value></data>
   <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>{0}% влево</value></data>
   <data name="Equalizer.BalanceRight" xml:space="preserve"><value>{0}% вправо</value></data>
+  <data name="Classic.SeparateWindows" xml:space="preserve"><value>Отдельные окна</value></data>
 </root>

@@ -19,7 +19,7 @@ namespace Aibell.Desktop.Classic;
 /// Classic Player Mode's window: borderless, sized by the skin, and the owner of everything the skinned surface cannot do
 /// itself (menus, file pickers, dialogs). Closing it closes Aibell, as closing the main window does.
 /// </summary>
-internal sealed class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposable
+internal sealed partial class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposable
 {
     private static readonly string[] MusicPatterns =
         ["*.aac", "*.aif", "*.aifc", "*.aiff", "*.alac", "*.flac", "*.m4a", "*.m4b", "*.mid", "*.midi", "*.mp3", "*.ogg", "*.oga", "*.opus", "*.rmi", "*.rsn", "*.spc", "*.wav", "*.wma"];
@@ -56,16 +56,8 @@ internal sealed class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposa
         view.HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left;
         view.VerticalAlignment = Avalonia.Layout.VerticalAlignment.Top;
         Content = view;
-        Styles.Add(new Style(selector => selector.OfType<MenuItem>())
-        {
-            Setters = { new Setter(MenuItem.PaddingProperty, new Thickness(8, 3)) },
-        });
-        DragDrop.SetAllowDrop(this, true);
-        AddHandler(DragDrop.DragOverEvent, (_, args) => args.DragEffects = args.DataTransfer.Contains(DataFormat.File) ? DragDropEffects.Copy : DragDropEffects.None);
-        AddHandler(DragDrop.DropEvent, Dropped);
-        Activated += (_, _) => view.IsWindowActive = true;
-        Deactivated += (_, _) => view.IsWindowActive = false;
-        KeyDown += WindowKeyDown;
+        activeSurface = view;
+        Prepare(this, view);
         Closing += (_, args) =>
         {
             if (closingForExit) return;
@@ -74,10 +66,17 @@ internal sealed class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposa
         };
         Closed += (_, _) => Dispose();
         model.Player.PreferencesLoaded += (_, _) => ApplyPreferences(reloadSkin: true);
+        this.GetObservable(IsVisibleProperty).Subscribe(new Avalonia.Reactive.AnonymousObserver<bool>(_ => LayoutChanged()));
+        Opened += (_, _) => PlaceWindows();
+        PositionChanged += (_, args) => known[MainIndex] = args.Point;
         ApplyPreferences(reloadSkin: false);
     }
 
-    public void Dispose() => view.Dispose();
+    public void Dispose()
+    {
+        view.Dispose();
+        DisposeSectionWindows();
+    }
 
     internal ClassicPlayerView Surface => view;
 
@@ -85,28 +84,19 @@ internal sealed class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposa
     public void CloseForExit()
     {
         closingForExit = true;
+        // Owned windows close with this one; they must not turn that into a hide, which would cancel the whole close.
+        if (EqualizerWindow is { } equalizer) equalizer.ClosingForExit = true;
+        if (PlaylistWindow is { } playlist) playlist.ClosingForExit = true;
         Close();
     }
 
     private void ApplyPreferences(bool reloadSkin)
     {
-        if (reloadSkin) view.ChangeSkin(skins.Load(model.Preferences.SkinId));
+        if (reloadSkin) ChangeSkin(skins.Load(model.Preferences.SkinId));
         LayoutChanged();
+        // The windows may have opened before the saved preferences arrived; put them where they were left.
+        if (reloadSkin && IsVisible) PlaceWindows();
     }
-
-    public void LayoutChanged()
-    {
-        Topmost = model.Preferences.AlwaysOnTop;
-        view.InvalidateMeasure();
-        // A skin's outline needs a compositor that can show through the window; otherwise the window stays rectangular.
-        Geometry? outline = ActualTransparencyLevel == WindowTransparencyLevel.Transparent ? view.Outline() : null;
-        view.Clip = outline;
-        Background = outline is null ? Brushes.Black : Brushes.Transparent;
-    }
-
-    public void BeginMove(PointerPressedEventArgs args) => BeginMoveDrag(args);
-
-    public void Minimize() => WindowState = WindowState.Minimized;
 
     public void Exit() => exitApplication();
 
@@ -151,6 +141,8 @@ internal sealed class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposa
 
     private void Show(IEnumerable<object> items)
     {
+        ClassicPlayerView surface = activeSurface;
+        Window target = WindowOf(surface);
         List<object> list = [.. items];
         ContextMenu menu = new() { ItemsSource = list, FontSize = 12, FlowDirection = Localization.Loc.IsRightToLeft ? FlowDirection.RightToLeft : FlowDirection.LeftToRight };
         // Menus are drawn inside the window (see Program: native pop-ups are misplaced under Wayland). A window shorter than the
@@ -158,48 +150,50 @@ internal sealed class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposa
         // Shortcuts are left out of these menus so they fit the skin's width.
         double menuHeight = list.Sum(item => item is Separator ? 11 : 28) + 24;
         // Only X11 draws pop-ups inside the window; elsewhere they are windows of their own and need no room here.
-        if (!OperatingSystem.IsLinux() || Bounds.Height >= menuHeight)
+        if (!OperatingSystem.IsLinux() || target.Bounds.Height >= menuHeight)
         {
-            menu.Open(view);
+            menu.Open(surface);
             return;
         }
-        SizeToContent = SizeToContent.Manual;
-        Height = view.Bounds.Height + menuHeight;
-        if (ActualTransparencyLevel == WindowTransparencyLevel.Transparent)
+        growingForMenu = true;
+        target.SizeToContent = SizeToContent.Manual;
+        target.Height = surface.Bounds.Height + menuHeight;
+        if (target.ActualTransparencyLevel == WindowTransparencyLevel.Transparent)
         {
-            Background = Brushes.Transparent;
-            TransparencyBackgroundFallback = Brushes.Black;
+            target.Background = Brushes.Transparent;
+            target.TransparencyBackgroundFallback = Brushes.Black;
         }
         menu.Closed += (_, _) =>
         {
             // The explicit height would otherwise keep winning over sizing to the skin.
-            ClearValue(HeightProperty);
-            SizeToContent = SizeToContent.WidthAndHeight;
+            target.ClearValue(HeightProperty);
+            target.SizeToContent = SizeToContent.WidthAndHeight;
+            growingForMenu = false;
             LayoutChanged();
         };
         // The overlay is laid out for the window as it is when the menu opens, so wait for the new size to arrive; the menu
         // then hangs under the skin.
         menu.Placement = PlacementMode.Bottom;
-        menu.PlacementTarget = view;
-        OpenWhenResized(menu, Bounds.Width, Height);
+        menu.PlacementTarget = surface;
+        OpenWhenResized(menu, target, surface, target.Bounds.Width, target.Height);
     }
 
-    private void OpenWhenResized(ContextMenu menu, double width, double height)
+    private static void OpenWhenResized(ContextMenu menu, Window target, ClassicPlayerView surface, double width, double height)
     {
         bool opened = false;
         void Open()
         {
             if (opened) return;
             opened = true;
-            Resized -= OnResized;
-            menu.Open(view);
+            target.Resized -= OnResized;
+            menu.Open(surface);
         }
         void OnResized(object? sender, WindowResizedEventArgs args)
         {
             if (args.ClientSize.Width >= width - 1 && args.ClientSize.Height >= height - 1)
                 Avalonia.Threading.Dispatcher.UIThread.Post(Open, Avalonia.Threading.DispatcherPriority.Normal);
         }
-        Resized += OnResized;
+        target.Resized += OnResized;
         // A window manager that ignores the request still gets its menu, clipped or not.
         // Normal priority: the skin redraws thirty times a second, which starves background work.
         Avalonia.Threading.DispatcherTimer.RunOnce(Open, TimeSpan.FromMilliseconds(400), Avalonia.Threading.DispatcherPriority.Normal);
@@ -220,6 +214,7 @@ internal sealed class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposa
             Item(Loc.Get("Classic.ShowPlaylist"), () => view.ChangeLayout(p => p with { ShowPlaylist = !p.ShowPlaylist }), preferences.ShowPlaylist),
             Item(Loc.Get("Classic.DoubleSize"), () => view.ChangeLayout(p => p with { DoubleSize = !p.DoubleSize }), preferences.DoubleSize),
             Item(Loc.Get("Classic.AlwaysOnTop"), () => view.ChangeLayout(p => p with { AlwaysOnTop = !p.AlwaysOnTop }), preferences.AlwaysOnTop),
+            Item(Loc.Get("Classic.SeparateWindows"), () => view.ChangeLayout(p => p with { SeparateWindows = !p.SeparateWindows }), preferences.SeparateWindows),
             Item(Loc.Get("Classic.RemainingTime"), () => Run(() => model.ToggleRemainingTimeAsync()), preferences.ShowRemainingTime),
             new Separator(),
             Item(Loc.Get("Classic.Shuffle"), () => Run(() => model.ToggleShuffleAsync()), model.Player.IsShuffleEnabled),
@@ -246,7 +241,7 @@ internal sealed class ClassicPlayerWindow : Window, IClassicPlayerHost, IDisposa
 
     public void UseSkin(InstalledSkin skin)
     {
-        view.ChangeSkin(skins.Load(skin.Id));
+        ChangeSkin(skins.Load(skin.Id));
         string? id = skin.IsBuiltIn ? null : skin.Id;
         Run(() => model.Player.UpdateClassicPlayerAsync(preferences => preferences with { SkinId = id }));
         LayoutChanged();

@@ -65,8 +65,11 @@ elsewhere) or [VLC](https://www.videolan.org/vlc/libvlc.html), under **Preferenc
 **Classic Player Mode**
 
 - Prefer the look of the classic players? **View → Classic Player Mode** (**Ctrl+Shift+M**) turns Aibell into a compact,
-  skinnable player in the style of Winamp 2: main window, equalizer and playlist stacked in one window, each of which you can
-  hide or roll up into a thin bar, at normal or double size. **Standard mode** in its options menu (the top-left button, or
+  skinnable player in the style of Winamp 2: main window, equalizer and playlist as separate windows that snap together, each of
+  which you can hide or roll up into a thin bar, at normal or double size. Dragging the main window carries the windows docked
+  to it; dragging another one pulls it away. Aibell remembers where you left them. **Separate windows** in the options menu
+  switches to a single window with the three stacked instead (useful where a desktop does not let applications place their
+  windows). **Standard mode** in its options menu (the top-left button, or
   right-click anywhere) brings the full window back. Music keeps playing while you switch, and Aibell reopens in the mode you
   left it in.
 - It plays local music only (no radio, podcasts or MPD). Its playlist is its own: it keeps its tracks after they play and is

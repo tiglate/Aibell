@@ -19,7 +19,11 @@ public sealed record ClassicPlayerPreferences(
     int PlaylistExtraRows = 2,
     bool ShowRemainingTime = false,
     int PlaylistCurrent = -1,
-    IReadOnlyList<PlayQueueEntry>? Playlist = null)
+    IReadOnlyList<PlayQueueEntry>? Playlist = null,
+    bool SeparateWindows = true,
+    ClassicWindowPosition? MainPosition = null,
+    ClassicWindowPosition? EqualizerPosition = null,
+    ClassicWindowPosition? PlaylistPosition = null)
 {
     /// <summary>The playlist can grow by this many 29-pixel steps below its smallest size.</summary>
     public const int MaximumExtraRows = 24;
@@ -45,3 +49,6 @@ public sealed record ClassicPlayerPreferences(
         };
     }
 }
+
+/// <summary>Where one of the separate classic windows was left, in screen pixels (its top-left corner).</summary>
+public sealed record ClassicWindowPosition(int X, int Y);

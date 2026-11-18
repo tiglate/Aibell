@@ -1339,4 +1339,5 @@
   <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>في المنتصف</value></data>
   <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>{0}% يسار</value></data>
   <data name="Equalizer.BalanceRight" xml:space="preserve"><value>{0}% يمين</value></data>
+  <data name="Classic.SeparateWindows" xml:space="preserve"><value>نوافذ منفصلة</value></data>
 </root>

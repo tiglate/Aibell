@@ -197,6 +197,8 @@ public class Mp3BehaviourTests
         }
         double share = watch.Elapsed.TotalSeconds / (rounds * seconds);
         TestContext.Out.WriteLine($"{name}: {share * 100:F3} % of real time on one core");
-        Assert.That(share, Is.LessThan(0.08));
+        // About 6 % on a desktop, but shared Windows CI runners reach 9 % on the 320 kbps file; the bound is
+        // there to catch a decoder that became several times slower, not to benchmark the runner.
+        Assert.That(share, Is.LessThan(0.15));
     }
 }

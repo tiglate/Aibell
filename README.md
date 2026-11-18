@@ -6,7 +6,9 @@
 
 **Aibell** is a desktop music player and library for Linux and Windows. It gives you a dense, practical view of your
 collection, fast browsing and search, and local-first playback, in the spirit of Songbird and Banshee, with extras
-like synced lyrics, internet radio, podcasts, a live visualizer and a built-in equalizer.
+like synced lyrics, internet radio, podcasts, a live visualizer and a built-in equalizer. And when you miss the late
+nineties, [**Classic Player Mode**](#classic-player-mode) turns it into a compact, skinnable player in the style of Winamp,
+with thousands of classic skins a click away.
 
 Under the hood, Aibell ships its own audio decoders for the most common formats (MP3, FLAC, Ogg Vorbis, Opus, WAV, AIFF,
 AAC and Apple Lossless), written in C#, so it plays your music without extra codecs or system libraries. You can choose
@@ -14,6 +16,46 @@ between several playback backends: the built-in player (PipeWire or ALSA on Linu
 elsewhere) or [VLC](https://www.videolan.org/vlc/libvlc.html), under **Preferences → Playback**.
 
 ![Aibell playing a track with synced lyrics and the visualizer behind the progress bar](screenshots/screenshot07.png)
+
+## Classic Player Mode
+
+Press **Ctrl+Shift+M** (or **View → Classic Player Mode**) and Aibell becomes a classic desktop player: a main window,
+an equalizer and a playlist that snap together like magnets, drawn by any classic Winamp skin. It plays the same music
+with the same engine, so you can switch back and forth without the song stopping, and Aibell opens in whichever mode you
+left it.
+
+| | |
+| --- | --- |
+| ![Classic Player Mode with Aibell's own skin: the spectrum visualizer, equalizer and playlist](screenshots/screenshot04.png) | ![Classic Player Mode with the original base skin](screenshots/screenshot02.png) |
+| **Aibell's own skin**, drawn from scratch in Aibell's colours. | **The original base skin**, as many remember it. |
+| ![Classic Player Mode with the Winamp5 Classified skin](screenshots/screenshot03.png) | ![Classic Player Mode with the doomed2 skin](screenshots/screenshot08.png) |
+| **Winamp5 Classified**, a later classic. | **doomed2**, one of thousands from the skin museum. |
+
+![Classic Player Mode next to its skin browser, showing skins from skins.webamp.org](screenshots/screenshot09.png)
+
+**Skins from the museum, inside the player.** Browse and search the [Winamp Skin Museum](https://skins.webamp.org/) right
+in Aibell (**Skins → Manage skins…**) and install a skin with one click, or install `.wsz` and `.zip` files you already
+have. The browser appears when online lookups are switched on in **Preferences → Online**; skins the museum flags as not
+safe for work are never shown.
+
+- **Windows that behave like the original.** The three windows snap to each other and to the screen edges. Drag the main
+  window and everything docked to it comes along; drag the equalizer or playlist and it comes away on its own. Roll any of
+  them up into a thin bar, switch to double size, keep them on top, and find them where you left them next time. Prefer one
+  tidy window? **Separate windows** in the options menu stacks all three in one.
+- **A playlist that stays.** Unlike the Play Queue, the classic playlist keeps its tracks after they play, with shuffle,
+  repeat and Previous/Next across the list. Add files or folders, drop them on the window, search your Aibell library
+  (**J**), or load one of your Aibell playlists or an M3U/PLS file. Drag its corner to make it taller or wider; wide
+  enough, its bottom bar gets a visualizer of its own.
+- **The details you remember.** The scrolling title, the big time display (click it for time remaining), the spectrum
+  visualizer, a working balance slider, and an equalizer whose **Auto** button gives each track the curve you set for it,
+  or a preset that suits its genre.
+- **The classic keys.** **Z X C V B** for previous, play, pause, stop and next, **L** to play files, **S** and **R** for
+  shuffle and repeat, **Ctrl+D** for double size, **Ctrl+T** for remaining time, **Alt+G** / **Alt+E** for the equalizer
+  and playlist, and the arrows to seek and pick tracks. Right-click anywhere for the options menu, including **Standard
+  mode** to go back.
+
+Classic Player Mode plays local music; radio, podcasts and MPD stay in the standard window. It draws classic (Winamp 2)
+skins; modern `.wal` skins and Winamp plug-ins are not supported.
 
 ## A look around
 
@@ -39,7 +81,9 @@ elsewhere) or [VLC](https://www.videolan.org/vlc/libvlc.html), under **Preferenc
 - A play queue that survives restarts and accepts dropped files; shuffle, repeat, seek, volume and mute.
 - **Visualizer:** a live spectrum glows behind the progress bar, like the classic players. On by default; turn it off in
   **Preferences → General**.
-- **Equalizer:** ten bands with presets, plus pitch-preserving speed control for podcasts.
+- **Equalizer:** ten bands with presets, plus pitch-preserving speed control for podcasts. **Auto** gives each track the curve
+  you last set while it played, or else the preset that suits its genre. A **balance** control pans between the left and right
+  speakers (with the built-in player; VLC and MPD play centred).
 - **Lyrics:** a tab beside the queue shows the lyrics of the playing track, highlighting the current line when they are
   time-synced. You can search, edit and save them into the file. (Lyrics lookups are on by default and can be switched
   off in **Preferences → Online**.)
@@ -181,6 +225,7 @@ The results are written to `artifacts/packages`. The AppImage, the Flatpak and t
 | **Alt+Enter**                                        | Track properties                                  |
 | **Ctrl+,**                                           | Preferences                                       |
 | **Ctrl+Q**                                           | Quit after pending work finishes                  |
+| **Ctrl+Shift+M**                                     | Switch to Classic Player Mode and back            |
 | **Tab**, then arrows, **Page Up/Down**, **Home/End** | Adjust the focused seek or volume slider          |
 
 ## For developers
@@ -223,6 +268,12 @@ Aibell is an independent project, written from scratch on .NET and Avalonia. It 
 
 Thank you to the people behind both projects. Aibell is not affiliated with or endorsed by them. Songbird and iTunes are trademarks of
 their respective owners.
+
+Classic Player Mode is a homage to **Winamp** and reads the classic skin format Winamp 2 introduced. Its skin handling follows the
+format as documented by [Webamp](https://github.com/captbaritone/webamp) (MIT License, Copyright (c) 2015 Jordan Eldredge), the
+web re-creation of Winamp whose museum at skins.webamp.org the skin browser uses. Aibell ships no Winamp code or artwork: its own
+skin, pixel font and digits are drawn from scratch. Aibell is not affiliated with or endorsed by Winamp, Webamp or the Winamp Skin
+Museum; Winamp is a trademark of its owner, and each skin belongs to its author.
 
 Third-party libraries keep their own licenses, including LibVLC and LibVLCSharp (LGPL), miniaudio and stb_vorbis (public
 domain / MIT-0), Avalonia (MIT), Microsoft .NET libraries (MIT) and ATL .NET (MIT).

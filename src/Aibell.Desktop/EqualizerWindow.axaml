@@ -38,11 +38,13 @@
       <Setter Property="Opacity" Value="0.75" />
     </Style>
   </Window.Styles>
-  <Grid RowDefinitions="Auto,Auto" Margin="0">
+  <Grid RowDefinitions="Auto,Auto,Auto" Margin="0">
     <Border Padding="10" Background="{DynamicResource PanelHeaderBrush}" BorderBrush="{DynamicResource PanelBorderBrush}" BorderThickness="0,0,0,1">
       <WrapPanel Orientation="Horizontal" ItemSpacing="8" LineSpacing="6">
         <ToggleButton Name="EqualizerEnabled" Content="{loc:T Equalizer.On}" IsChecked="{Binding IsEnabled, Mode=TwoWay}"
                       AutomationProperties.Name="{loc:T Equalizer.OnAutomation}" ToolTip.Tip="{loc:T Equalizer.OnTip}" MinWidth="56" HorizontalContentAlignment="Center" />
+        <ToggleButton Name="EqualizerAuto" Content="{loc:T Equalizer.Auto}" IsChecked="{Binding IsAuto, Mode=TwoWay}"
+                      AutomationProperties.Name="{loc:T Equalizer.AutoAutomation}" ToolTip.Tip="{loc:T Equalizer.AutoTip}" MinWidth="56" HorizontalContentAlignment="Center" />
         <ComboBox Name="EqualizerPreset" MinWidth="150" ItemsSource="{Binding Presets}" SelectedItem="{Binding SelectedPreset, Mode=TwoWay}"
                   AutomationProperties.Name="{loc:T Equalizer.PresetAutomation}" />
         <Button Name="EqualizerReset" Content="{loc:T Equalizer.Reset}" Click="Reset" ToolTip.Tip="{loc:T Equalizer.ResetTip}" />
@@ -58,5 +60,13 @@
         </ItemsControl.ItemsPanel>
       </ItemsControl>
     </Grid>
+    <!-- Left is left in every language. -->
+    <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="10" Margin="14,0,14,12" FlowDirection="LeftToRight"
+                IsEnabled="{Binding CanUseBalance}" ToolTip.Tip="{loc:T Equalizer.BalanceTip}">
+      <TextBlock VerticalAlignment="Center" FontWeight="SemiBold" Text="{loc:T Equalizer.Balance}" />
+      <Slider Name="EqualizerBalance" Width="220" Minimum="-1" Maximum="1" SmallChange="0.05" LargeChange="0.25" TickFrequency="0.05"
+              IsSnapToTickEnabled="True" Value="{Binding Balance, Mode=TwoWay}" AutomationProperties.Name="{loc:T Equalizer.Balance}" />
+      <TextBlock Name="EqualizerBalanceText" VerticalAlignment="Center" MinWidth="80" Opacity="0.75" Text="{Binding BalanceText}" />
+    </StackPanel>
   </Grid>
 </Window>

@@ -17,6 +17,9 @@ public sealed partial class App : Avalonia.Application
     /// <summary>Receives the files a later launch passes along; null when single-instance coordination is unavailable.</summary>
     internal static Aibell.Desktop.Services.SingleInstance? Instance { get; set; }
 
+    /// <summary>Whether Aibell was last closed in Classic Player Mode, so it opens that way.</summary>
+    internal static bool StartInClassicMode { get; set; }
+
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);

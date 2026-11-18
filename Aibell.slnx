@@ -16,6 +16,7 @@
   <Project Path="src/Aibell.Audio.Opus/Aibell.Audio.Opus.csproj" />
   <Project Path="src/Aibell.Audio.Midi/Aibell.Audio.Midi.csproj" />
   <Project Path="src/Aibell.Archive.Rar/Aibell.Archive.Rar.csproj" />
+  <Project Path="src/Aibell.Skins.Classic/Aibell.Skins.Classic.csproj" />
   <Project Path="src/Aibell.Audio.Spc/Aibell.Audio.Spc.csproj" />
   <Project Path="src/Aibell.Playback.LibVLC/Aibell.Playback.LibVLC.csproj" />
   <Project Path="src/Aibell.Playback.Core/Aibell.Playback.Core.csproj" />
@@ -46,6 +47,7 @@
   <Project Path="tests/Aibell.Audio.Opus.Tests/Aibell.Audio.Opus.Tests.csproj" />
   <Project Path="tests/Aibell.Audio.Midi.Tests/Aibell.Audio.Midi.Tests.csproj" />
   <Project Path="tests/Aibell.Archive.Rar.Tests/Aibell.Archive.Rar.Tests.csproj" />
+  <Project Path="tests/Aibell.Skins.Classic.Tests/Aibell.Skins.Classic.Tests.csproj" />
   <Project Path="tests/Aibell.Audio.Spc.Tests/Aibell.Audio.Spc.Tests.csproj" />
   <Project Path="tests/Aibell.Playback.Miniaudio.Tests/Aibell.Playback.Miniaudio.Tests.csproj" />
   <Project Path="tests/Aibell.Playback.Alsa.Tests/Aibell.Playback.Alsa.Tests.csproj" />

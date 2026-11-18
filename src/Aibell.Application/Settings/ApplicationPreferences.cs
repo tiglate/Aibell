@@ -41,8 +41,15 @@ public sealed record ApplicationPreferences(
     bool RadioCatalogEnabled = false,
     string? SoundFontPath = null,
     bool LyricsEnabled = true,
-    bool VisualizerEnabled = true)
+    bool VisualizerEnabled = true,
+    ClassicPlayerPreferences? ClassicPlayer = null,
+    double Balance = 0,
+    bool EqualizerAuto = false,
+    IReadOnlyDictionary<string, EqualizerSettings>? EqualizerTrackCurves = null)
 {
+    /// <summary>How many tracks remember their own equalizer curve (see <see cref="EqualizerAuto"/>); the oldest are forgotten first.</summary>
+    public const int MaximumEqualizerTrackCurves = 5000;
+
     public static ApplicationPreferences Default { get; } = new(
         Volume: 0.8,
         IsMuted: false,

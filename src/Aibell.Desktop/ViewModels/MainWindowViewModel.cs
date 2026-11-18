@@ -999,7 +999,7 @@ public sealed partial class MainWindowViewModel(
         IsSidebarVisible = preferences.IsSidebarVisible;
         Volume = localVolume = preferences.Volume;
         preferredMuted = localMuted = preferences.IsMuted;
-        await RestoreEqualizerAsync(preferences.Equalizer, cancellationToken);
+        await RestoreEqualizerAsync(preferences, cancellationToken);
         playbackQueue.SetShuffle(preferences.ShuffleEnabled);
         playbackQueue.SetRepeatMode(preferences.RepeatMode);
         ShuffleButtonText = preferences.ShuffleEnabled ? Loc.Get("Playback.ShuffleOn") : Loc.Get("Playback.ShuffleOff");
@@ -1019,8 +1019,10 @@ public sealed partial class MainWindowViewModel(
                     ? entry with { Track = track }
                     : entry));
         }
+        await RestoreClassicPlayerAsync(preferences.ClassicPlayer, cancellationToken);
         RefreshPlayQueue();
         preferencesLoaded = true;
+        RaisePreferencesLoaded();
     }
 
     public async Task FlushPreferencesAsync()
@@ -1076,7 +1078,11 @@ public sealed partial class MainWindowViewModel(
             radioCatalogEnabled,
             soundFontPath,
             lyricsEnabled,
-            visualizerEnabled);
+            visualizerEnabled,
+            classicPlayer,
+            balance,
+            equalizerAuto,
+            trackCurves.Count == 0 ? null : new Dictionary<string, EqualizerSettings>(trackCurves, StringComparer.Ordinal));
     }
 
     private Task PersistPreferencesAsync(CancellationToken cancellationToken)
@@ -1748,6 +1754,7 @@ public sealed partial class MainWindowViewModel(
             await PreparePodcastInputAsync(track, cancellationToken);
             ThrowIfPlaybackAbandoned(cancellationToken, stopGeneration);
             NoteSessionActivity(track);
+            await ApplyAutoEqualizerAsync(track, cancellationToken);
             await playbackEngine.LoadAsync(track, cancellationToken);
             ThrowIfPlaybackAbandoned(cancellationToken, stopGeneration);
             await playbackEngine.SetVolumeAsync(Volume, cancellationToken);

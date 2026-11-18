@@ -11,7 +11,7 @@ namespace Aibell.Playback.Alsa;
 /// to the ALSA device instead of miniaudio. It is the fallback for Linux systems without a
 /// PipeWire daemon, and it can be chosen by hand.
 /// </summary>
-public sealed class AlsaPlaybackEngine : IPlaybackEngine, IPlaybackRateControl, IEqualizerControl, ISpectrumSource, IDisposable
+public sealed class AlsaPlaybackEngine : IPlaybackEngine, IPlaybackRateControl, IEqualizerControl, IBalanceControl, ISpectrumSource, IDisposable
 {
     private static readonly TimeSpan StartTimeout = TimeSpan.FromSeconds(15);
     private readonly object gate = new();
@@ -23,6 +23,7 @@ public sealed class AlsaPlaybackEngine : IPlaybackEngine, IPlaybackRateControl, 
     private double playbackRate = 1.0;
     private EqualizerSettings equalizer = EqualizerSettings.Flat;
     private volatile EqualizerProcessor? equalizerProcessor;
+    private readonly BalanceProcessor balanceProcessor = new();
     private readonly SpectrumAnalyzer spectrum = new();
     private AlsaOutput? output;
     private DecodePipeline? pipeline;
@@ -278,6 +279,15 @@ public sealed class AlsaPlaybackEngine : IPlaybackEngine, IPlaybackRateControl, 
 
     public bool TryReadSpectrum(Span<float> bands) => spectrum.Read(bands);
 
+    public double Balance => balanceProcessor.Balance;
+
+    public Task SetBalanceAsync(double balance, CancellationToken cancellationToken = default)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        balanceProcessor.Set(balance);
+        return Task.CompletedTask;
+    }
+
     public Task SetEqualizerAsync(EqualizerSettings settings, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(settings);
@@ -326,6 +336,7 @@ public sealed class AlsaPlaybackEngine : IPlaybackEngine, IPlaybackRateControl, 
         active.Render(buffer);
         equalizerProcessor?.Process(buffer);
         spectrum.Write(buffer);
+        balanceProcessor.Process(buffer);
         float from = currentGain, to = targetGain;
         if (from == 1f && to == 1f)
         {

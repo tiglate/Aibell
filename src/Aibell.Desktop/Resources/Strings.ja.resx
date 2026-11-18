@@ -1221,4 +1221,12 @@
   <data name="Classic.LibraryResults" xml:space="preserve"><value>ライブラリのトラック</value></data>
   <data name="Classic.LibraryCount" xml:space="preserve"><value>{0} トラック</value></data>
   <data name="Classic.LibraryTooMany" xml:space="preserve"><value>{1} 件中最初の {0} 件を表示しています。語句を追加して絞り込めます。</value></data>
+  <data name="Equalizer.Auto" xml:space="preserve"><value>自動</value></data>
+  <data name="Equalizer.AutoAutomation" xml:space="preserve"><value>トラックごとの自動イコライザー</value></data>
+  <data name="Equalizer.AutoTip" xml:space="preserve"><value>各トラックには再生中に最後に設定したカーブ、またはジャンルに合ったプリセットが使われます</value></data>
+  <data name="Equalizer.Balance" xml:space="preserve"><value>バランス</value></data>
+  <data name="Equalizer.BalanceTip" xml:space="preserve"><value>左右チャンネルのバランス（内蔵プレーヤーのみ）</value></data>
+  <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>中央</value></data>
+  <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>左 {0}%</value></data>
+  <data name="Equalizer.BalanceRight" xml:space="preserve"><value>右 {0}%</value></data>
 </root>

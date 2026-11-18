@@ -338,7 +338,7 @@ internal sealed class ClassicPlayerView : Control, IDisposable
         double volume = pressed == Part.Volume ? dragValue : Player.Volume;
         Draw(context, Sprites.VolumeFrame((int)Math.Round(volume * 27)), 107, 57);
         Draw(context, IsPressed(Part.Volume) || pressed == Part.Volume ? Sprites.VolumeThumbPressed : Sprites.VolumeThumb, 107 + Math.Round(volume * 51), 58);
-        double balance = pressed == Part.Balance ? dragValue : 0;
+        double balance = pressed == Part.Balance ? dragValue : Player.Balance;
         Draw(context, Sprites.BalanceFrame((int)Math.Round(Math.Abs(balance) * 27)), 177, 57);
         Draw(context, pressed == Part.Balance ? Sprites.BalanceThumbPressed : Sprites.BalanceThumb, 177 + Math.Round((balance + 1) / 2 * 24), 58);
         Draw(context, Sprites.EqualizerToggle(Preferences.ShowEqualizer, IsPressed(Part.EqualizerToggle)), 219, 58);
@@ -430,7 +430,11 @@ internal sealed class ClassicPlayerView : Control, IDisposable
                 $"SEEK TO: {ClassicPlayerViewModel.FormatDuration(target)}/{ClassicPlayerViewModel.FormatDuration(track.Duration)} ({(int)Math.Round(dragValue * 100)}%)");
         }
         if (pressed == Part.Volume) return string.Create(CultureInfo.InvariantCulture, $"VOLUME: {(int)Math.Round(dragValue * 100)}%");
-        if (pressed == Part.Balance) return "BALANCE: CENTER";
+        if (pressed == Part.Balance)
+        {
+            int percent = (int)Math.Round(Math.Abs(dragValue) * 100);
+            return percent == 0 ? "BALANCE: CENTER" : string.Create(CultureInfo.InvariantCulture, $"BALANCE: {percent}% {(dragValue < 0 ? "LEFT" : "RIGHT")}");
+        }
         return null;
     }
 
@@ -490,7 +494,9 @@ internal sealed class ClassicPlayerView : Control, IDisposable
             double volume = pressed == Part.Volume ? dragValue : Player.Volume;
             int part = volume < 1 / 3.0 ? 0 : volume < 2 / 3.0 ? 1 : 2;
             Draw(context, new Sprite(SkinSheet.EqualizerExtra, 1 + part * 3, 30, 3, 7), 61 + Math.Round(volume * 94), 4);
-            Draw(context, new Sprite(SkinSheet.EqualizerExtra, 14, 30, 3, 7), 164 + 20, 4);
+            double balance = pressed == Part.Balance ? dragValue : Player.Balance;
+            int side = balance < -1 / 3.0 ? 0 : balance < 1 / 3.0 ? 1 : 2;
+            Draw(context, new Sprite(SkinSheet.EqualizerExtra, 11 + side * 3, 30, 3, 7), 164 + Math.Round((balance + 1) / 2 * 40), 4);
             return;
         }
         Draw(context, Sprites.EqualizerBackground, 0, 0);
@@ -498,7 +504,7 @@ internal sealed class ClassicPlayerView : Control, IDisposable
         if (IsPressed(Part.EqualizerShade)) Draw(context, Sprites.EqualizerShadeButtonPressed, 254, 3);
         if (IsPressed(Part.EqualizerClose)) Draw(context, Sprites.EqualizerClosePressed, 264, 3);
         Draw(context, Sprites.EqualizerOn(settings.IsEnabled, IsPressed(Part.EqualizerOn)), 14, 18);
-        Draw(context, Sprites.EqualizerAuto(false, IsPressed(Part.EqualizerAuto)), 40, 18);
+        Draw(context, Sprites.EqualizerAuto(Player.IsEqualizerAuto, IsPressed(Part.EqualizerAuto)), 40, 18);
         Draw(context, IsPressed(Part.EqualizerPresets) ? Sprites.EqualizerPresetsPressed : Sprites.EqualizerPresets, 217, 18);
         DrawGraph(context, settings);
         for (int slider = 0; slider <= EqualizerSettings.BandCount; slider++)
@@ -800,7 +806,12 @@ internal sealed class ClassicPlayerView : Control, IDisposable
                 UpdateVolume(point, argument);
                 break;
             case Part.Balance:
-                dragValue = 0;
+                if (!Player.CanUseBalance)
+                {
+                    pressed = Part.None;
+                    return;
+                }
+                UpdateBalance(point, argument);
                 break;
             case Part.Position:
                 if (Player.PlaybackSnapshot is not { Track.Duration.TotalSeconds: > 0, Status: PlaybackStatus.Playing or PlaybackStatus.Paused })
@@ -853,8 +864,7 @@ internal sealed class ClassicPlayerView : Control, IDisposable
                 UpdateVolume(point, pressedArgument);
                 break;
             case Part.Balance:
-                // Aibell has no balance control: the slider moves while held and springs back to the centre.
-                dragValue = pressedArgument == 1 ? Math.Clamp((point.X - 164 - 1.5) / 40 * 2 - 1, -1, 1) : Math.Clamp((point.X - 177 - 7) / 24 * 2 - 1, -1, 1);
+                UpdateBalance(point, pressedArgument);
                 break;
             case Part.Position:
                 UpdatePosition(point, pressedArgument);
@@ -898,6 +908,10 @@ internal sealed class ClassicPlayerView : Control, IDisposable
             case Part.Volume:
                 double volume = dragValue;
                 host.Run(() => Player.ChangeVolumeAsync(volume));
+                break;
+            case Part.Balance:
+                double balance = dragValue;
+                host.Run(() => Player.SetBalanceAsync(balance, persist: true));
                 break;
             case Part.Position:
                 double fraction = dragValue;
@@ -977,6 +991,10 @@ internal sealed class ClassicPlayerView : Control, IDisposable
                 host.Run(() => Equalizer.ApplyAsync(settings with { IsEnabled = !settings.IsEnabled }, persist: true));
                 break;
             case Part.EqualizerPresets: host.ShowPresetsMenu(); break;
+            case Part.EqualizerAuto:
+                bool auto = !Player.IsEqualizerAuto;
+                host.Run(() => Player.SetEqualizerAutoAsync(auto));
+                break;
             case Part.PlaylistClose: ChangeLayout(preferences => preferences with { ShowPlaylist = false }); break;
             case Part.PlaylistShade: ChangeLayout(preferences => preferences with { PlaylistShaded = !preferences.PlaylistShaded }); break;
         }
@@ -1024,6 +1042,20 @@ internal sealed class ClassicPlayerView : Control, IDisposable
             lastVolumeSend = DateTime.UtcNow;
             double volume = dragValue;
             host.Run(() => Player.ChangeVolumeAsync(volume));
+        }
+    }
+
+    // Balance follows the drag like volume does; the centre snaps (see MainWindowViewModel.SetBalanceAsync).
+    private void UpdateBalance(Point point, int argument)
+    {
+        double value = argument == 1 ? (point.X - 164 - 1.5) / 40 * 2 - 1 : (point.X - 177 - 7) / 24 * 2 - 1;
+        value = Math.Clamp(value, -1, 1);
+        dragValue = Math.Abs(value) < 0.05 ? 0 : value;
+        if (DateTime.UtcNow - lastVolumeSend > TimeSpan.FromMilliseconds(60))
+        {
+            lastVolumeSend = DateTime.UtcNow;
+            double balance = dragValue;
+            host.Run(() => Player.SetBalanceAsync(balance, persist: false));
         }
     }
 

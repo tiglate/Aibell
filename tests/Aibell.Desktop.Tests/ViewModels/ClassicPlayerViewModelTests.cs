@@ -35,8 +35,8 @@ public sealed class ClassicPlayerViewModelTests
         directory = Path.Combine(Path.GetTempPath(), $"aibell-classic-{Guid.NewGuid():N}");
         repository = new SqliteTrackRepository(Path.Combine(directory, "library.db"));
         settings = new JsonApplicationSettingsStore(Path.Combine(directory, "settings.json"));
-        first = Make("First", "Alpha", "b.flac") with { BitRate = 1411, SampleRate = 44100, Channels = 2 };
-        second = Make("Second", "Beta", "a.flac");
+        first = Make("First", "Alpha", "b.flac") with { BitRate = 1411, SampleRate = 44100, Channels = 2, Genre = "Rock" };
+        second = Make("Second", "Beta", "a.flac") with { Genre = "Folk" };
         third = Make("Third", "", "c.flac");
         foreach (Track track in new[] { first, second, third }) await repository.UpsertAsync(track, directory);
         LibraryImportService importer = new(new FileSystemMediaDiscovery(), new AtlMediaMetadataReader(), repository);
@@ -172,6 +172,76 @@ public sealed class ClassicPlayerViewModelTests
             Assert.That(classic.CurrentIndex, Is.Zero);
             Assert.That(classic.MarqueeText, Is.EqualTo("Third (3:00)"), "a track from elsewhere has no playlist number");
         });
+    }
+
+    [Test]
+    public async Task BalanceReachesTheEngineSnapsToTheCentreAndIsSaved()
+    {
+        Assert.That(player.CanUseBalance, Is.True);
+        await player.SetBalanceAsync(0.03, persist: false);
+        Assert.That(player.Balance, Is.Zero, "close to the middle snaps to it");
+        await player.SetBalanceAsync(-0.456, persist: true);
+        await player.SetBalanceAsync(double.NaN, persist: false);
+        Assert.That(engine.Balance, Is.Zero);
+        await player.SetBalanceAsync(-0.456, persist: true);
+        await player.FlushPreferencesAsync();
+        Assert.Multiple(() =>
+        {
+            Assert.That(player.Balance, Is.EqualTo(-0.46));
+            Assert.That(engine.Balance, Is.EqualTo(-0.46));
+        });
+        using JsonApplicationSettingsStore reread = new(Path.Combine(directory, "settings.json"));
+        Assert.That((await reread.LoadAsync()).Balance, Is.EqualTo(-0.46));
+
+        LibraryImportService importer = new(new FileSystemMediaDiscovery(), new AtlMediaMetadataReader(), repository);
+        FakeEngine restartedEngine = new();
+        using MainWindowViewModel restarted = new(importer, repository, repository, repository, repository, reread, monitoring, restartedEngine);
+        await restarted.LoadAsync();
+        Assert.That(restartedEngine.Balance, Is.EqualTo(-0.46), "the saved balance reaches the engine at start");
+    }
+
+    [Test]
+    public async Task AutoGivesEachTrackItsOwnCurveOrItsGenresPreset()
+    {
+        IEqualizerHost equalizer = player;
+        EqualizerSettings custom = EqualizerSettings.Flat with { IsEnabled = true, Bands = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] };
+        await equalizer.ApplyAsync(EqualizerSettings.Flat with { IsEnabled = true }, persist: true);
+        int changes = 0;
+        equalizer.EqualizerChanged += (_, _) => changes++;
+        classic.Add([first, second]);
+
+        await classic.PlayEntryAsync(1);
+        Assert.That(equalizer.Current.Bands, Is.All.Zero, "AUTO is off: nothing changes");
+        await player.SetEqualizerAutoAsync(true);
+        Assert.That(player.IsEqualizerAuto, Is.True);
+
+        await classic.PlayEntryAsync(0);
+        double[] rock = EqualizerPresets.All.Single(preset => preset.Id == "Rock").Bands;
+        Assert.That(equalizer.Current.Bands, Is.EqualTo(rock), "a rock track without its own curve gets the rock preset");
+        Assert.That(changes, Is.GreaterThanOrEqualTo(2), "open equalizer views hear about it");
+
+        await equalizer.ApplyAsync(custom, persist: true);
+        await classic.PlayEntryAsync(1);
+        Assert.That(equalizer.Current.Bands, Is.EqualTo(custom.Bands), "a folk track has no preset, so the curve stays");
+        await equalizer.ApplyAsync(EqualizerSettings.Flat with { IsEnabled = false }, persist: true);
+        await classic.PlayEntryAsync(0);
+        Assert.Multiple(() =>
+        {
+            Assert.That(equalizer.Current.Bands, Is.EqualTo(custom.Bands), "the rock track comes back with the curve set while it played");
+            Assert.That(equalizer.Current.IsEnabled, Is.False, "the on/off switch is the user's");
+        });
+
+        await player.FlushPreferencesAsync();
+        using JsonApplicationSettingsStore reread = new(Path.Combine(directory, "settings.json"));
+        ApplicationPreferences saved = await reread.LoadAsync();
+        Assert.Multiple(() =>
+        {
+            Assert.That(saved.EqualizerAuto, Is.True);
+            Assert.That(saved.EqualizerTrackCurves![first.Location.AbsoluteUri].Bands, Is.EqualTo(custom.Bands));
+            Assert.That(saved.EqualizerTrackCurves[second.Location.AbsoluteUri].IsEnabled, Is.False);
+        });
+        Assert.That(player.AutoCurve(null), Is.Null);
+        Assert.That(player.AutoCurve(first with { Location = new Uri("https://radio.example/stream") }), Is.Null, "streams get nothing");
     }
 
     [Test]
@@ -338,8 +408,16 @@ public sealed class ClassicPlayerViewModelTests
         public bool TryReadSpectrum(Span<float> bands) => true;
     }
 
-    private sealed class FakeEngine : IPlaybackEngine
+    private sealed class FakeEngine : IPlaybackEngine, IBalanceControl
     {
+        public double Balance { get; private set; }
+
+        public Task SetBalanceAsync(double balance, CancellationToken cancellationToken = default)
+        {
+            Balance = balance;
+            return Task.CompletedTask;
+        }
+
         public PlaybackSnapshot Snapshot { get; set; } = new(PlaybackStatus.Stopped, null, TimeSpan.Zero, 0.8);
 
         public event EventHandler<PlaybackSnapshot>? StateChanged { add { } remove { } }

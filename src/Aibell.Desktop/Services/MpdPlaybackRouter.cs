@@ -15,7 +15,7 @@ namespace Aibell.Desktop.Services;
 /// is never passed to the server, nor, right after MPD, to the local engine (which keeps the level it had).
 /// </para>
 /// </summary>
-public sealed class MpdPlaybackRouter : IPlaybackEngine, IEqualizerControl, IPlaybackRateControl, ISpectrumSource, IAsyncDisposable
+public sealed class MpdPlaybackRouter : IPlaybackEngine, IEqualizerControl, IBalanceControl, IPlaybackRateControl, ISpectrumSource, IAsyncDisposable
 {
     private readonly IPlaybackEngine local;
     private readonly MpdPlaybackEngine mpd;
@@ -144,6 +144,12 @@ public sealed class MpdPlaybackRouter : IPlaybackEngine, IEqualizerControl, IPla
         }
         await local.SetMutedAsync(isMuted, cancellationToken);
     }
+
+    /// <summary>The local player's balance; MPD has none, so it plays centred whatever this says.</summary>
+    public double Balance => local is IBalanceControl control ? control.Balance : 0;
+
+    public Task SetBalanceAsync(double balance, CancellationToken cancellationToken = default) =>
+        local is IBalanceControl control ? control.SetBalanceAsync(balance, cancellationToken) : Task.CompletedTask;
 
     public EqualizerSettings Equalizer => local is IEqualizerControl control ? control.Equalizer : EqualizerSettings.Flat;
 

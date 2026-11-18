@@ -19,6 +19,20 @@ public sealed class ClassicSkinTests
     }
 
     [Test]
+    public void TheDefaultDigitsLightTheRightSegments()
+    {
+        SkinImage numbers = DefaultSkin.Skin[SkinSheet.Numbers];
+        uint Middle(int digit) => numbers[digit * 9 + 4, 6];
+        Assert.Multiple(() =>
+        {
+            Assert.That(Middle(0), Is.EqualTo(DefaultSkin.Lcd), "a zero has no middle bar");
+            Assert.That(Middle(8), Is.EqualTo(DefaultSkin.LcdText));
+            Assert.That(numbers[0 * 9 + 4, 0], Is.EqualTo(DefaultSkin.LcdText), "but it has a top");
+            Assert.That(numbers[1 * 9 + 4, 0], Is.EqualTo(DefaultSkin.Lcd), "a one has no top");
+        });
+    }
+
+    [Test]
     public void LoadsFromASubfolderAndFillsTheRestFromTheFallback()
     {
         ClassicSkin skin = ClassicSkin.Load(SkinArchive.Read(SkinTestData.MinimalSkin("my skin/")), DefaultSkin.Skin, "Red");

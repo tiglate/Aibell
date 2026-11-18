@@ -1243,4 +1243,12 @@ Edição temporária: {1}</value></data>
   <data name="Classic.LibraryResults" xml:space="preserve"><value>Faixas da biblioteca</value></data>
   <data name="Classic.LibraryCount" xml:space="preserve"><value>{0} faixas</value></data>
   <data name="Classic.LibraryTooMany" xml:space="preserve"><value>Mostrando as primeiras {0} de {1} faixas; digite mais palavras para filtrar a lista.</value></data>
+  <data name="Equalizer.Auto" xml:space="preserve"><value>Auto</value></data>
+  <data name="Equalizer.AutoAutomation" xml:space="preserve"><value>Equalizador automático por faixa</value></data>
+  <data name="Equalizer.AutoTip" xml:space="preserve"><value>Cada faixa recebe a curva que você ajustou da última vez em que ela tocou, ou uma predefinição adequada ao gênero</value></data>
+  <data name="Equalizer.Balance" xml:space="preserve"><value>Balanço</value></data>
+  <data name="Equalizer.BalanceTip" xml:space="preserve"><value>Balanço entre os canais esquerdo e direito (somente o player embutido)</value></data>
+  <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>Centro</value></data>
+  <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>{0}% à esquerda</value></data>
+  <data name="Equalizer.BalanceRight" xml:space="preserve"><value>{0}% à direita</value></data>
 </root>

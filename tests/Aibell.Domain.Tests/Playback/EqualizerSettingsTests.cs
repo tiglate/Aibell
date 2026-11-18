@@ -46,4 +46,23 @@ public sealed class EqualizerSettingsTests
         }
         Assert.That(EqualizerPresets.Match(EqualizerSettings.Flat with { Preamp = 1 }), Is.Null);
     }
+
+    [TestCase("Rock", "Rock")]
+    [TestCase("Pop Rock", "Rock")]
+    [TestCase("Heavy Metal", "Rock")]
+    [TestCase("Jazz Vocal", "Jazz")]
+    [TestCase("Classical", "Classical")]
+    [TestCase("Film Soundtrack", "Classical")]
+    [TestCase("Hip-Hop", "BassBoost")]
+    [TestCase("Electronic", "BassBoost")]
+    [TestCase("K-Pop", "Pop")]
+    [TestCase("Spoken Word", "Vocal")]
+    [TestCase("Folk", null)]
+    [TestCase("  ", null)]
+    [TestCase(null, null)]
+    public void ForGenre_PicksTheSuitingPreset(string? genre, string? preset)
+    {
+        Assert.That(EqualizerPresets.ForGenre(genre), Is.EqualTo(preset));
+        if (preset is not null) Assert.That(EqualizerPresets.All.Select(entry => entry.Id), Does.Contain(preset));
+    }
 }

@@ -1243,4 +1243,12 @@ Edición temporal: {1}</value></data>
   <data name="Classic.LibraryResults" xml:space="preserve"><value>Pistas de la biblioteca</value></data>
   <data name="Classic.LibraryCount" xml:space="preserve"><value>{0} pistas</value></data>
   <data name="Classic.LibraryTooMany" xml:space="preserve"><value>Se muestran las primeras {0} de {1} pistas; escriba más palabras para acotar la lista.</value></data>
+  <data name="Equalizer.Auto" xml:space="preserve"><value>Auto</value></data>
+  <data name="Equalizer.AutoAutomation" xml:space="preserve"><value>Ecualizador automático por pista</value></data>
+  <data name="Equalizer.AutoTip" xml:space="preserve"><value>Cada pista recibe la curva que ajustó por última vez mientras sonaba, o un ajuste predefinido acorde a su género</value></data>
+  <data name="Equalizer.Balance" xml:space="preserve"><value>Balance</value></data>
+  <data name="Equalizer.BalanceTip" xml:space="preserve"><value>Balance entre canal izquierdo y derecho (solo reproductor integrado)</value></data>
+  <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>Centro</value></data>
+  <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>{0} % izquierda</value></data>
+  <data name="Equalizer.BalanceRight" xml:space="preserve"><value>{0} % derecha</value></data>
 </root>

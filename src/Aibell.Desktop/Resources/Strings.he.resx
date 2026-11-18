@@ -1265,4 +1265,12 @@
   <data name="Classic.LibraryResults" xml:space="preserve"><value>רצועות בספרייה</value></data>
   <data name="Classic.LibraryCount" xml:space="preserve"><value>{0} רצועות</value></data>
   <data name="Classic.LibraryTooMany" xml:space="preserve"><value>מוצגות {0} הרצועות הראשונות מתוך {1}; הקלידו מילים נוספות כדי לצמצם.</value></data>
+  <data name="Equalizer.Auto" xml:space="preserve"><value>אוטומטי</value></data>
+  <data name="Equalizer.AutoAutomation" xml:space="preserve"><value>אקולייזר אוטומטי לכל רצועה</value></data>
+  <data name="Equalizer.AutoTip" xml:space="preserve"><value>כל רצועה מקבלת את העקומה שהגדרתם לאחרונה בזמן שהתנגנה, או הגדרה מוכנה שמתאימה לסוגה</value></data>
+  <data name="Equalizer.Balance" xml:space="preserve"><value>איזון</value></data>
+  <data name="Equalizer.BalanceTip" xml:space="preserve"><value>איזון בין הערוץ השמאלי והימני (בנגן המובנה בלבד)</value></data>
+  <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>מרכז</value></data>
+  <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>{0}% שמאלה</value></data>
+  <data name="Equalizer.BalanceRight" xml:space="preserve"><value>{0}% ימינה</value></data>
 </root>

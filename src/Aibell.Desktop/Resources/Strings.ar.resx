@@ -1331,4 +1331,12 @@
   <data name="Classic.LibraryResults" xml:space="preserve"><value>مقاطع المكتبة</value></data>
   <data name="Classic.LibraryCount" xml:space="preserve"><value>{0} مقطع</value></data>
   <data name="Classic.LibraryTooMany" xml:space="preserve"><value>عرض أول {0} من {1} مقطع؛ اكتب كلمات أكثر لتضييق القائمة.</value></data>
+  <data name="Equalizer.Auto" xml:space="preserve"><value>تلقائي</value></data>
+  <data name="Equalizer.AutoAutomation" xml:space="preserve"><value>معادل تلقائي لكل مقطع</value></data>
+  <data name="Equalizer.AutoTip" xml:space="preserve"><value>يحصل كل مقطع على آخر منحنى ضبطته أثناء تشغيله، أو على إعداد مسبق يناسب نوعه</value></data>
+  <data name="Equalizer.Balance" xml:space="preserve"><value>التوازن</value></data>
+  <data name="Equalizer.BalanceTip" xml:space="preserve"><value>توازن القناتين اليسرى واليمنى (المشغل المدمج فقط)</value></data>
+  <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>في المنتصف</value></data>
+  <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>{0}% يسار</value></data>
+  <data name="Equalizer.BalanceRight" xml:space="preserve"><value>{0}% يمين</value></data>
 </root>

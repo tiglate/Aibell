@@ -1287,4 +1287,12 @@ Edycja tymczasowa: {1}</value></data>
   <data name="Classic.LibraryResults" xml:space="preserve"><value>Utwory w bibliotece</value></data>
   <data name="Classic.LibraryCount" xml:space="preserve"><value>Utwory: {0}</value></data>
   <data name="Classic.LibraryTooMany" xml:space="preserve"><value>Pokazano pierwsze {0} z {1} utworów; wpisz więcej słów, aby zawęzić listę.</value></data>
+  <data name="Equalizer.Auto" xml:space="preserve"><value>Auto</value></data>
+  <data name="Equalizer.AutoAutomation" xml:space="preserve"><value>Automatyczny korektor dla każdego utworu</value></data>
+  <data name="Equalizer.AutoTip" xml:space="preserve"><value>Każdy utwór dostaje krzywą ustawioną ostatnio podczas jego odtwarzania albo ustawienie pasujące do gatunku</value></data>
+  <data name="Equalizer.Balance" xml:space="preserve"><value>Balans</value></data>
+  <data name="Equalizer.BalanceTip" xml:space="preserve"><value>Balans kanału lewego i prawego (tylko wbudowany odtwarzacz)</value></data>
+  <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>Środek</value></data>
+  <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>{0}% w lewo</value></data>
+  <data name="Equalizer.BalanceRight" xml:space="preserve"><value>{0}% w prawo</value></data>
 </root>

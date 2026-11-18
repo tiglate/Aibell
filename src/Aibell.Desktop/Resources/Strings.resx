@@ -1243,4 +1243,12 @@ Temporary edit: {1}</value></data>
   <data name="Classic.LibraryResults" xml:space="preserve"><value>Library tracks</value></data>
   <data name="Classic.LibraryCount" xml:space="preserve"><value>{0} tracks</value></data>
   <data name="Classic.LibraryTooMany" xml:space="preserve"><value>Showing the first {0} of {1} tracks; type more words to narrow the list.</value></data>
+  <data name="Equalizer.Auto" xml:space="preserve"><value>Auto</value></data>
+  <data name="Equalizer.AutoAutomation" xml:space="preserve"><value>Automatic equalizer per track</value></data>
+  <data name="Equalizer.AutoTip" xml:space="preserve"><value>Each track gets the curve you last set while it played, or a preset that suits its genre</value></data>
+  <data name="Equalizer.Balance" xml:space="preserve"><value>Balance</value></data>
+  <data name="Equalizer.BalanceTip" xml:space="preserve"><value>Left and right channel balance (built-in player only)</value></data>
+  <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>Center</value></data>
+  <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>{0}% left</value></data>
+  <data name="Equalizer.BalanceRight" xml:space="preserve"><value>{0}% right</value></data>
 </root>

@@ -10,7 +10,7 @@ namespace Aibell.Playback.PipeWire;
 /// The built-in player through PipeWire: the managed decoders and the equalizer, with the sound
 /// going to the PipeWire daemon. It needs no native library and is the default on Linux.
 /// </summary>
-public sealed class PipeWirePlaybackEngine : IPlaybackEngine, IPlaybackRateControl, IEqualizerControl, ISpectrumSource, IDisposable
+public sealed class PipeWirePlaybackEngine : IPlaybackEngine, IPlaybackRateControl, IEqualizerControl, IBalanceControl, ISpectrumSource, IDisposable
 {
     private static readonly TimeSpan StartTimeout = TimeSpan.FromSeconds(15);
     private readonly object gate = new();
@@ -21,6 +21,7 @@ public sealed class PipeWirePlaybackEngine : IPlaybackEngine, IPlaybackRateContr
     private double playbackRate = 1.0;
     private EqualizerSettings equalizer = EqualizerSettings.Flat;
     private volatile EqualizerProcessor? equalizerProcessor;
+    private readonly BalanceProcessor balanceProcessor = new();
     private readonly SpectrumAnalyzer spectrum = new();
     private PipeWireStream? stream;
     private DecodePipeline? pipeline;
@@ -272,6 +273,15 @@ public sealed class PipeWirePlaybackEngine : IPlaybackEngine, IPlaybackRateContr
 
     public bool TryReadSpectrum(Span<float> bands) => spectrum.Read(bands);
 
+    public double Balance => balanceProcessor.Balance;
+
+    public Task SetBalanceAsync(double balance, CancellationToken cancellationToken = default)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        balanceProcessor.Set(balance);
+        return Task.CompletedTask;
+    }
+
     public Task SetEqualizerAsync(EqualizerSettings settings, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(settings);
@@ -336,6 +346,7 @@ public sealed class PipeWirePlaybackEngine : IPlaybackEngine, IPlaybackRateContr
         active.Render(buffer);
         equalizerProcessor?.Process(buffer);
         spectrum.Write(buffer);
+        balanceProcessor.Process(buffer);
         float from = currentGain, to = targetGain;
         if (from == 1f && to == 1f)
         {

@@ -1287,4 +1287,12 @@
   <data name="Classic.LibraryResults" xml:space="preserve"><value>Треки медиатеки</value></data>
   <data name="Classic.LibraryCount" xml:space="preserve"><value>Треков: {0}</value></data>
   <data name="Classic.LibraryTooMany" xml:space="preserve"><value>Показаны первые {0} из {1} треков; введите больше слов, чтобы сузить список.</value></data>
+  <data name="Equalizer.Auto" xml:space="preserve"><value>Авто</value></data>
+  <data name="Equalizer.AutoAutomation" xml:space="preserve"><value>Автоматический эквалайзер для каждого трека</value></data>
+  <data name="Equalizer.AutoTip" xml:space="preserve"><value>Каждый трек получает кривую, заданную при его последнем воспроизведении, или пресет под его жанр</value></data>
+  <data name="Equalizer.Balance" xml:space="preserve"><value>Баланс</value></data>
+  <data name="Equalizer.BalanceTip" xml:space="preserve"><value>Баланс левого и правого каналов (только встроенный плеер)</value></data>
+  <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>Центр</value></data>
+  <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>{0}% влево</value></data>
+  <data name="Equalizer.BalanceRight" xml:space="preserve"><value>{0}% вправо</value></data>
 </root>

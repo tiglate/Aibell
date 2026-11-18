@@ -144,4 +144,31 @@ public sealed class DspTests
 
         Assert.That(loud.Max(Math.Abs), Is.LessThanOrEqualTo(1f));
     }
+
+    [Test]
+    public void Balance_CentreLeavesTheAudioAloneAndASideLowersTheOtherChannel()
+    {
+        BalanceProcessor balance = new();
+        float[] centred = [0.5f, 0.5f, 0.5f, 0.5f];
+        balance.Process(centred);
+        Assert.That(centred, Is.All.EqualTo(0.5f));
+
+        balance.Set(-0.5);
+        Assert.That(balance.Balance, Is.EqualTo(-0.5));
+        float[] ramp = [1f, 1f, 1f, 1f, 1f, 1f, 1f, 1f];
+        balance.Process(ramp);
+        Assert.Multiple(() =>
+        {
+            Assert.That(ramp[6], Is.EqualTo(1f), "the left side stays at full level");
+            Assert.That(ramp[7], Is.EqualTo(0.5f).Within(1e-6), "the right channel reaches half by the end of the buffer");
+            Assert.That(ramp[1], Is.GreaterThan(0.5f), "and glides there, without a click");
+        });
+        float[] steady = [1f, 1f];
+        balance.Process(steady);
+        Assert.That((steady[0], steady[1]), Is.EqualTo((1f, 0.5f)));
+
+        balance.Set(double.NaN);
+        Assert.That(BalanceProcessor.Gains(5), Is.EqualTo((0f, 1f)));
+        Assert.That(BalanceProcessor.Clamp(double.PositiveInfinity), Is.Zero);
+    }
 }

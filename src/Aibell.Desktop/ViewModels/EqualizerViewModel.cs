@@ -12,6 +12,22 @@ public interface IEqualizerHost
 
     /// <summary>Applies the settings to the engine; <paramref name="persist"/> also saves them with the preferences.</summary>
     Task ApplyAsync(EqualizerSettings settings, bool persist, CancellationToken cancellationToken = default);
+
+    /// <summary>The left/right balance, -1 (left) to 1 (right).</summary>
+    double Balance { get; }
+
+    /// <summary>Whether the player can apply a balance at all (the built-in player can; VLC and MPD cannot).</summary>
+    bool CanUseBalance { get; }
+
+    Task SetBalanceAsync(double value, bool persist, CancellationToken cancellationToken = default);
+
+    /// <summary>AUTO: each track gets its own curve, or its genre's preset.</summary>
+    bool IsEqualizerAuto { get; }
+
+    Task SetEqualizerAutoAsync(bool enabled, CancellationToken cancellationToken = default);
+
+    /// <summary>Raised when the player changed the curve or AUTO by itself (a new track with AUTO on), so open views reload.</summary>
+    event EventHandler? EqualizerChanged;
 }
 
 public sealed partial class EqualizerBandViewModel : ObservableObject
@@ -56,6 +72,54 @@ public sealed partial class EqualizerViewModel : ObservableObject, IDisposable
         Preamp.PropertyChanged += (_, _) => Changed();
         foreach (EqualizerBandViewModel band in Bands) band.PropertyChanged += (_, _) => Changed();
         Load(host.Current);
+        LoadAutoAndBalance();
+        host.EqualizerChanged += HostChanged;
+    }
+
+    // The player changed the curve itself (AUTO, a new track): show it, without sending it back.
+    private void HostChanged(object? sender, EventArgs args)
+    {
+        if (disposed) return;
+        pendingPersist?.Cancel();
+        Load(host.Current);
+        LoadAutoAndBalance();
+    }
+
+    private void LoadAutoAndBalance()
+    {
+        updating = true;
+        try
+        {
+            IsAuto = host.IsEqualizerAuto;
+            Balance = host.Balance;
+        }
+        finally { updating = false; }
+    }
+
+    /// <summary>Whether the player can apply a balance (not with VLC or MPD).</summary>
+    public bool CanUseBalance => host.CanUseBalance;
+
+    [ObservableProperty]
+    private bool isAuto;
+
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(BalanceText))]
+    private double balance;
+
+    public string BalanceText => Math.Abs(Balance) < 0.005 ? Loc.Get("Equalizer.BalanceCenter")
+        : Balance < 0 ? Loc.Format("Equalizer.BalanceLeft", (int)Math.Round(-Balance * 100))
+        : Loc.Format("Equalizer.BalanceRight", (int)Math.Round(Balance * 100));
+
+    partial void OnIsAutoChanged(bool value)
+    {
+        if (updating || disposed) return;
+        _ = host.SetEqualizerAutoAsync(value, lifetime.Token);
+    }
+
+    partial void OnBalanceChanged(double value)
+    {
+        if (updating || disposed) return;
+        _ = host.SetBalanceAsync(value, persist: true, lifetime.Token);
     }
 
     // 31.25 and 62.5 Hz read as the usual 31 and 63.
@@ -157,6 +221,7 @@ public sealed partial class EqualizerViewModel : ObservableObject, IDisposable
     {
         if (disposed) return;
         disposed = true;
+        host.EqualizerChanged -= HostChanged;
         lifetime.Cancel();
         lifetime.Dispose();
     }

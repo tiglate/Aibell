@@ -82,6 +82,47 @@ public sealed partial class MainWindowWorkflowTests
     }
 
     [AvaloniaTest]
+    public async Task ClassicMode_AutoButtonAndTheStandardEqualizerShareAutoAndBalance()
+    {
+        directory = Path.Combine(Path.GetTempPath(), $"aibell-ui-classic-auto-{Guid.NewGuid():N}");
+        Directory.CreateDirectory(directory);
+        Open();
+        await UntilAsync(() => !viewModel.IsBusy && viewModel.ArePreferencesLoaded);
+
+        window.EnterClassicMode();
+        ClassicPlayerWindow classic = window.ClassicWindow!;
+        Dispatcher.UIThread.RunJobs();
+        // AUTO sits at (40, 18) in the equalizer, which starts below the 116-pixel main window.
+        Click(classic, 56, 116 + 24);
+        await UntilAsync(() => viewModel.IsEqualizerAuto);
+        // This engine has no balance control, so the slider stays put.
+        Click(classic, 177 + 30, 63);
+        Assert.That(viewModel.Balance, Is.Zero);
+        window.ExitClassicMode();
+        Dispatcher.UIThread.RunJobs();
+
+        Button open = window.FindControl<Button>("OpenEqualizerButton")!;
+        Activate(open);
+        EqualizerWindow eq = window.OwnedWindows.OfType<EqualizerWindow>().Single();
+        Avalonia.Controls.Primitives.ToggleButton auto = eq.FindControl<Avalonia.Controls.Primitives.ToggleButton>("EqualizerAuto")!;
+        Slider balance = eq.FindControl<Slider>("EqualizerBalance")!;
+        Assert.Multiple(() =>
+        {
+            Assert.That(auto.IsChecked, Is.True, "the standard window shows AUTO as the classic one left it");
+            Assert.That(balance.IsEffectivelyEnabled, Is.False, "no balance without an engine that can pan");
+            Assert.That(eq.FindControl<TextBlock>("EqualizerBalanceText")!.Text, Is.EqualTo("Center"));
+        });
+        auto.IsChecked = false;
+        await UntilAsync(() => !viewModel.IsEqualizerAuto);
+        eq.Close();
+        await UntilAsync(() => !eq.IsVisible);
+
+        await CloseAsync();
+        await ReleaseServicesAsync();
+        Directory.Delete(directory, recursive: true);
+    }
+
+    [AvaloniaTest]
     public async Task SkinManager_InstallsFromTheMuseumAndChoosesSkins()
     {
         directory = Path.Combine(Path.GetTempPath(), $"aibell-ui-skins-{Guid.NewGuid():N}");

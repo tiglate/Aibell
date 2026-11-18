@@ -1243,4 +1243,12 @@ Modification temporaire : {1}</value></data>
   <data name="Classic.LibraryResults" xml:space="preserve"><value>Titres de la bibliothèque</value></data>
   <data name="Classic.LibraryCount" xml:space="preserve"><value>{0} titres</value></data>
   <data name="Classic.LibraryTooMany" xml:space="preserve"><value>Affichage des {0} premiers titres sur {1} ; tapez d’autres mots pour affiner.</value></data>
+  <data name="Equalizer.Auto" xml:space="preserve"><value>Auto</value></data>
+  <data name="Equalizer.AutoAutomation" xml:space="preserve"><value>Égaliseur automatique par titre</value></data>
+  <data name="Equalizer.AutoTip" xml:space="preserve"><value>Chaque titre reçoit la dernière courbe réglée pendant sa lecture, ou un préréglage adapté à son genre</value></data>
+  <data name="Equalizer.Balance" xml:space="preserve"><value>Balance</value></data>
+  <data name="Equalizer.BalanceTip" xml:space="preserve"><value>Balance entre les canaux gauche et droit (lecteur intégré uniquement)</value></data>
+  <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>Centre</value></data>
+  <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>{0} % à gauche</value></data>
+  <data name="Equalizer.BalanceRight" xml:space="preserve"><value>{0} % à droite</value></data>
 </root>

@@ -123,6 +123,16 @@ public sealed class JsonApplicationSettingsStore(string settingsPath) :
         }
     }
 
+    // Curves keyed by an absolute track address, each brought into range; past the limit the earliest entries go.
+    private static Dictionary<string, EqualizerSettings>? NormalizeCurves(IReadOnlyDictionary<string, EqualizerSettings>? curves)
+    {
+        if (curves is null) return null;
+        Dictionary<string, EqualizerSettings> normalized = new(StringComparer.Ordinal);
+        foreach ((string key, EqualizerSettings? curve) in curves.Skip(Math.Max(0, curves.Count - ApplicationPreferences.MaximumEqualizerTrackCurves)))
+            if (curve is not null && Uri.TryCreate(key, UriKind.Absolute, out _)) normalized[key] = curve.Normalized();
+        return normalized;
+    }
+
     private static ApplicationPreferences Normalize(ApplicationPreferences preferences)
     {
         double volume = double.IsFinite(preferences.Volume)
@@ -152,6 +162,8 @@ public sealed class JsonApplicationSettingsStore(string settingsPath) :
             Language = NormalizeLanguage(preferences.Language),
             SoundFontPath = NormalizeFolder(preferences.SoundFontPath),
             ClassicPlayer = preferences.ClassicPlayer?.Normalized(),
+            Balance = double.IsFinite(preferences.Balance) ? Math.Clamp(preferences.Balance, -1, 1) : 0,
+            EqualizerTrackCurves = NormalizeCurves(preferences.EqualizerTrackCurves),
             Volume = volume,
             RepeatMode = repeatMode,
             PlayQueueWidth = queueWidth,

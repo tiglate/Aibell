@@ -50,6 +50,28 @@ public static class EqualizerPresets
         ("Vocal", -2, [-2, -3, -2, 1, 4, 4, 3, 1, 0, -1])
     ];
 
+    // Words in a genre name and the preset that suits them, checked in this order (so "pop rock" is Rock, "jazz vocal" Jazz).
+    private static readonly (string Preset, string[] Words)[] GenreWords =
+    [
+        ("Classical", ["classical", "orchestra", "symphon", "opera", "baroque", "chamber", "concerto", "sonata", "soundtrack", "score"]),
+        ("Jazz", ["jazz", "blues", "swing", "bossa", "bebop", "big band"]),
+        ("Rock", ["rock", "metal", "punk", "grunge", "hardcore", "indie", "alternative", "emo"]),
+        ("BassBoost", ["hip hop", "hip-hop", "hiphop", "rap", "trap", "electronic", "electronica", "techno", "house", "edm", "dance",
+                       "dubstep", "drum and bass", "drum & bass", "dnb", "reggae", "dub", "funk", "r&b", "rnb", "disco"]),
+        ("Pop", ["pop", "k-pop", "j-pop", "synthpop"]),
+        ("Vocal", ["vocal", "a cappella", "acapella", "choral", "choir", "spoken", "speech", "podcast", "audiobook", "comedy", "gospel"]),
+    ];
+
+    /// <summary>The built-in preset that suits a genre (rock, jazz, classical...), or null when the genre says nothing useful.</summary>
+    public static string? ForGenre(string? genre)
+    {
+        if (string.IsNullOrWhiteSpace(genre)) return null;
+        string name = genre.Trim().ToLowerInvariant();
+        foreach ((string preset, string[] words) in GenreWords)
+            if (words.Any(word => name.Contains(word, StringComparison.Ordinal))) return preset;
+        return null;
+    }
+
     /// <summary>The preset whose curve matches the given settings, or null for a custom curve.</summary>
     public static string? Match(EqualizerSettings settings)
     {

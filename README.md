@@ -39,7 +39,9 @@ elsewhere) or [VLC](https://www.videolan.org/vlc/libvlc.html), under **Preferenc
 - A play queue that survives restarts and accepts dropped files; shuffle, repeat, seek, volume and mute.
 - **Visualizer:** a live spectrum glows behind the progress bar, like the classic players. On by default; turn it off in
   **Preferences → General**.
-- **Equalizer:** ten bands with presets, plus pitch-preserving speed control for podcasts.
+- **Equalizer:** ten bands with presets, plus pitch-preserving speed control for podcasts. **Auto** gives each track the curve
+  you last set while it played, or else the preset that suits its genre. A **balance** control pans between the left and right
+  speakers (with the built-in player; VLC and MPD play centred).
 - **Lyrics:** a tab beside the queue shows the lyrics of the playing track, highlighting the current line when they are
   time-synced. You can search, edit and save them into the file. (Lyrics lookups are on by default and can be switched
   off in **Preferences → Online**.)

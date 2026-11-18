@@ -302,7 +302,7 @@ public static class DefaultSkin
 
     private static readonly string[] SevenSegment =
     [
-        "abcefg", "bc", "abdeg", "abcdg", "bcfg", "acdfg", "acdefg", "abc", "abcdefg", "abcdfg",
+        "abcdef", "bc", "abdeg", "abcdg", "bcfg", "acdfg", "acdefg", "abc", "abcdefg", "abcdfg",
     ];
 
     private static SkinImage PaintNumbers()

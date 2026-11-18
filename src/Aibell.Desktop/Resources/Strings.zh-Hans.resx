@@ -1221,4 +1221,12 @@
   <data name="Classic.LibraryResults" xml:space="preserve"><value>媒体库曲目</value></data>
   <data name="Classic.LibraryCount" xml:space="preserve"><value>{0} 首曲目</value></data>
   <data name="Classic.LibraryTooMany" xml:space="preserve"><value>显示 {1} 首中的前 {0} 首；输入更多词语以缩小范围。</value></data>
+  <data name="Equalizer.Auto" xml:space="preserve"><value>自动</value></data>
+  <data name="Equalizer.AutoAutomation" xml:space="preserve"><value>按曲目自动均衡</value></data>
+  <data name="Equalizer.AutoTip" xml:space="preserve"><value>每首曲目使用上次播放时设置的曲线，或适合其流派的预设</value></data>
+  <data name="Equalizer.Balance" xml:space="preserve"><value>声道平衡</value></data>
+  <data name="Equalizer.BalanceTip" xml:space="preserve"><value>左右声道平衡（仅限内置播放器）</value></data>
+  <data name="Equalizer.BalanceCenter" xml:space="preserve"><value>居中</value></data>
+  <data name="Equalizer.BalanceLeft" xml:space="preserve"><value>偏左 {0}%</value></data>
+  <data name="Equalizer.BalanceRight" xml:space="preserve"><value>偏右 {0}%</value></data>
 </root>

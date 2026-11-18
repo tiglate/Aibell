@@ -14,7 +14,7 @@ import sys
 
 def main(source, target):
     text = open(source, encoding="latin-1").read()
-    text = re.sub(r"<script.*?</script>", "", text, flags=re.S)
+    text = re.sub(r"<script\b[^>]*>.*?</script\b[^>]*>", "", text, flags=re.S | re.I)
     text = re.sub(r"<[^>]+>", " ", text)
     text = html.unescape(text).replace("\xa0", " ")
     start = text.index("top to bottom")

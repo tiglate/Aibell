@@ -94971,7 +94971,8 @@ static ma_bool32 ma_dr_mp3_init_internal(ma_dr_mp3* pMP3, ma_dr_mp3_read_proc on
         return MA_FALSE;
     }
     if (detectedMP3FrameCount != 0xFFFFFFFF) {
-        pMP3->totalPCMFrameCount = detectedMP3FrameCount * firstFramePCMFrameCount;
+        /* AIBELL: both counts are 32-bit and the frame count comes from the file's Xing/Info header; widen before multiplying. */
+        pMP3->totalPCMFrameCount = (ma_uint64)detectedMP3FrameCount * firstFramePCMFrameCount;
     }
     pMP3->channels   = pMP3->mp3FrameChannels;
     pMP3->sampleRate = pMP3->mp3FrameSampleRate;

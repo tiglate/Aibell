@@ -1,0 +1,12 @@
+--- a/miniaudio.h
++++ b/miniaudio.h
+@@ -94971,7 +94971,8 @@
+         return MA_FALSE;
+     }
+     if (detectedMP3FrameCount != 0xFFFFFFFF) {
+-        pMP3->totalPCMFrameCount = detectedMP3FrameCount * firstFramePCMFrameCount;
++        /* AIBELL: both counts are 32-bit and the frame count comes from the file's Xing/Info header; widen before multiplying. */
++        pMP3->totalPCMFrameCount = (ma_uint64)detectedMP3FrameCount * firstFramePCMFrameCount;
+     }
+     pMP3->channels   = pMP3->mp3FrameChannels;
+     pMP3->sampleRate = pMP3->mp3FrameSampleRate;

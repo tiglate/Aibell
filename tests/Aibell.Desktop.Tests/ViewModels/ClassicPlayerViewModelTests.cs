@@ -245,6 +245,27 @@ public sealed class ClassicPlayerViewModelTests
     }
 
     [Test]
+    public async Task AutoDoesNotPinACurveTheUserNeverChanged()
+    {
+        IEqualizerHost equalizer = player;
+        await equalizer.ApplyAsync(EqualizerSettings.Flat with { IsEnabled = true }, persist: true);
+        classic.Add([first, second]);
+        await classic.PlayEntryAsync(1);
+        await player.SetEqualizerAutoAsync(true);
+        await equalizer.ApplyAsync(equalizer.Current, persist: true); // e.g. the equalizer window closing
+        await classic.PlayEntryAsync(1);
+        Assert.That(player.AutoCurve(second), Is.Null, "an unchanged curve is not remembered");
+
+        await classic.PlayEntryAsync(0);
+        Assert.That(equalizer.Current.Bands, Is.EqualTo(EqualizerPresets.All.Single(preset => preset.Id == "Rock").Bands));
+        await equalizer.ApplyAsync(equalizer.Current, persist: true);
+        Assert.That(player.AutoCurve(first)?.Bands, Is.EqualTo(equalizer.Current.Bands));
+        await classic.PlayEntryAsync(1);
+        await classic.PlayEntryAsync(0);
+        Assert.That(equalizer.Current.Bands, Is.EqualTo(EqualizerPresets.All.Single(preset => preset.Id == "Rock").Bands), "still the genre preset");
+    }
+
+    [Test]
     public void SelectionAndEditing()
     {
         classic.Add([first, second, third, first]);

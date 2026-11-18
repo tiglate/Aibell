@@ -9,6 +9,8 @@ public sealed partial class MainWindowViewModel : IEqualizerHost
     private EqualizerSettings equalizer = EqualizerSettings.Flat;
     private double balance;
     private bool equalizerAuto;
+    // The curve in place when the current track started (after AUTO had its say); a curve only belongs to a track once it differs.
+    private EqualizerSettings autoBaseline = EqualizerSettings.Flat;
     private Dictionary<string, EqualizerSettings> trackCurves = new(StringComparer.Ordinal);
 
     /// <inheritdoc />
@@ -35,7 +37,12 @@ public sealed partial class MainWindowViewModel : IEqualizerHost
         OnPropertyChanged(nameof(IsEqualizerOn));
         if (playbackEngine is IEqualizerControl control) await control.SetEqualizerAsync(normalized, cancellationToken);
         // A curve the user settles on while AUTO is on belongs to the track playing.
-        if (persist && equalizerAuto && AutoKey(playbackEngine.Snapshot.Track) is { } key) Remember(key, normalized);
+        // Saving the curve as it stands (the window closing, the on/off switch) must not pin it to the track.
+        if (persist && equalizerAuto && !SameCurve(normalized, autoBaseline) && AutoKey(playbackEngine.Snapshot.Track) is { } key)
+        {
+            Remember(key, normalized);
+            autoBaseline = normalized;
+        }
         if (persist) await PersistPreferencesAsync(cancellationToken);
     }
 
@@ -53,6 +60,7 @@ public sealed partial class MainWindowViewModel : IEqualizerHost
     public async Task SetEqualizerAutoAsync(bool enabled, CancellationToken cancellationToken = default)
     {
         equalizerAuto = enabled;
+        autoBaseline = equalizer;
         OnPropertyChanged(nameof(IsEqualizerAuto));
         EqualizerChanged?.Invoke(this, EventArgs.Empty);
         if (enabled) await ApplyAutoEqualizerAsync(playbackEngine.Snapshot.Track, cancellationToken);
@@ -72,12 +80,21 @@ public sealed partial class MainWindowViewModel : IEqualizerHost
     // Runs as a track starts: with AUTO on, its curve replaces the current one (the on/off switch stays as the user left it).
     private async Task ApplyAutoEqualizerAsync(Track? track, CancellationToken cancellationToken)
     {
-        if (!equalizerAuto || AutoCurve(track) is not { } curve || curve.Equals(equalizer)) return;
+        if (!equalizerAuto) return;
+        if (AutoCurve(track) is not { } curve || SameCurve(curve, equalizer))
+        {
+            autoBaseline = equalizer;
+            return;
+        }
         equalizer = curve.Normalized();
+        autoBaseline = equalizer;
         OnPropertyChanged(nameof(IsEqualizerOn));
         if (playbackEngine is IEqualizerControl control) await control.SetEqualizerAsync(equalizer, cancellationToken);
         EqualizerChanged?.Invoke(this, EventArgs.Empty);
     }
+
+    private static bool SameCurve(EqualizerSettings left, EqualizerSettings right) =>
+        left.Preamp == right.Preamp && left.Bands.SequenceEqual(right.Bands);
 
     // Local files only: radio streams and MPD songs have no lasting identity worth a curve.
     private static string? AutoKey(Track? track) => track?.Location is { IsAbsoluteUri: true, IsFile: true } location ? location.AbsoluteUri : null;

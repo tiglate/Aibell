@@ -252,3 +252,45 @@ public sealed partial class MainWindowWorkflowTests
         }
     }
 }
+
+public sealed partial class MainWindowWorkflowTests
+{
+    // Under a tiling compositor the classic player starts as one window; choosing separate windows still works and sticks.
+    [AvaloniaTest]
+    public async Task ClassicMode_StartsAsOneWindowWhenTheDesktopTiles()
+    {
+        directory = Path.Combine(Path.GetTempPath(), $"aibell-ui-classic-tiling-{Guid.NewGuid():N}");
+        Directory.CreateDirectory(directory);
+        ClassicPlayerWindow.SeparateWindowsByDefault = false;
+        try
+        {
+            Open();
+            await UntilAsync(() => !viewModel.IsBusy && viewModel.ArePreferencesLoaded);
+            Assert.That(viewModel.ClassicPlayer.SeparateWindows, Is.Null, "no layout has been chosen yet");
+
+            window.EnterClassicMode();
+            ClassicPlayerWindow classic = window.ClassicWindow!;
+            Dispatcher.UIThread.RunJobs();
+            Assert.Multiple(() =>
+            {
+                Assert.That(classic.Separate, Is.False);
+                Assert.That(classic.EqualizerWindow, Is.Null);
+                Assert.That(classic.PlaylistWindow, Is.Null);
+                Assert.That(classic.Surface.SkinSize.Height, Is.GreaterThan(116), "one window draws the equalizer and playlist too");
+            });
+
+            classic.Surface.ChangeLayout(preferences => preferences with { SeparateWindows = !classic.Separate });
+            Dispatcher.UIThread.RunJobs();
+            Assert.Multiple(() =>
+            {
+                Assert.That(classic.Separate, Is.True);
+                Assert.That(viewModel.ClassicPlayer.SeparateWindows, Is.True, "the user's choice is saved explicitly");
+                Assert.That(classic.EqualizerWindow, Is.Not.Null);
+            });
+        }
+        finally
+        {
+            ClassicPlayerWindow.SeparateWindowsByDefault = true;
+        }
+    }
+}

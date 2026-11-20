@@ -94,7 +94,12 @@ public sealed partial class MainWindow : Window, IDisposable
         this.filePicker = filePicker ?? new AvaloniaFilePicker();
         InitializeComponent();
         // Without a title bar from the window manager Avalonia would draw a light one that ignores the dark theme.
-        if (Services.TitleBarPolicy.ShouldHideTitleBar(Environment.GetEnvironmentVariable)) WindowDecorations = WindowDecorations.None;
+        if (Services.TitleBarPolicy.ShouldHideTitleBar(Environment.GetEnvironmentVariable))
+        {
+            WindowDecorations = WindowDecorations.None;
+            // With no title bar left to grab, the empty part of the menu bar moves the window instead.
+            MainMenu.AddHandler(PointerPressedEvent, MenuBarPressed, RoutingStrategies.Bubble, handledEventsToo: true);
+        }
         AudiobooksPane.Picker = this.filePicker;
         RadioStationList.AddHandler(KeyDownEvent, RadioStationKeyDown, RoutingStrategies.Tunnel, handledEventsToo: true);
         viewModel.RadioFilterChanged += RadioFilterChanged;

@@ -10,7 +10,7 @@ using Avalonia.Styling;
 namespace Aibell.Desktop.Classic;
 
 /// <summary>
-/// The window layouts of Classic Player Mode. Stacked: one window draws all three parts. Separate (the default): the main
+/// The window layouts of Classic Player Mode. Stacked: one window draws all three parts (the default under a tiling compositor). Separate (the default elsewhere): the main
 /// window, the equalizer and the playlist are windows of their own that snap together; dragging the main window carries the
 /// windows docked to it, dragging another pulls it away. Aibell moves the windows itself during a drag (rather than leaving
 /// it to the window manager) so docked windows move in the same instant and never trail behind.
@@ -32,7 +32,13 @@ internal sealed partial class ClassicPlayerWindow
 
     private sealed record Drag(int[] Group, PixelPoint Grab, PixelPoint[] Start);
 
-    private bool Separate => model.Preferences.SeparateWindows;
+    /// <summary>
+    /// The layout used until the user picks one. A tiling compositor would tile the separate windows apart and ignores where
+    /// Aibell asks to put them, so there the player starts as one window. Tests pin it so the machine running them does not matter.
+    /// </summary>
+    internal static bool SeparateWindowsByDefault { get; set; } = !Services.TitleBarPolicy.IsTilingSession(Environment.GetEnvironmentVariable);
+
+    internal bool Separate => model.Preferences.SeparateWindows ?? SeparateWindowsByDefault;
 
     /// <summary>The equalizer and playlist windows of the separate layout (null while stacked).</summary>
     internal ClassicSectionWindow? EqualizerWindow => equalizerWindow;

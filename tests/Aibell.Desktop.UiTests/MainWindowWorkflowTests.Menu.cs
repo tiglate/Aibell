@@ -1,6 +1,9 @@
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Headless.NUnit;
+using Avalonia.Input;
 using Avalonia.Interactivity;
+using Avalonia.VisualTree;
 using NUnit.Framework;
 
 namespace Aibell.Desktop.UiTests;
@@ -170,5 +173,24 @@ public sealed partial class MainWindowWorkflowTests
         AboutWindow about = window.OwnedWindows.OfType<AboutWindow>().Single();
         Assert.That(AboutWindowTests.Named<TextBlock>(about, "AboutName").Text, Is.EqualTo("Aibell"));
         about.Close();
+    }
+}
+
+public sealed partial class MainWindowWorkflowTests
+{
+    // Without a title bar (niri and other tiling compositors) the empty end of the menu bar is the window's grab handle,
+    // so a press there must land on the menu bar itself rather than fall through it or hit a menu item.
+    [AvaloniaTest]
+    public async Task Menu_EmptyEndOfTheMenuBarReceivesPresses()
+    {
+        await OpenWithTracksAsync();
+        Avalonia.Controls.Menu menu = window.FindControl<Avalonia.Controls.Menu>("MainMenu")!;
+        Point point = menu.TranslatePoint(new Point(menu.Bounds.Width - 10, menu.Bounds.Height / 2), window)!.Value;
+
+        Visual? hit = window.InputHitTest(point) as Visual;
+
+        Assert.That(hit, Is.Not.Null);
+        Assert.That(hit == menu || menu.IsVisualAncestorOf(hit!), Is.True, $"hit {hit}");
+        Assert.That(hit!.FindAncestorOfType<MenuItem>(includeSelf: true), Is.Null);
     }
 }

@@ -4,7 +4,8 @@ namespace Aibell.Application.Settings;
 
 /// <summary>
 /// Classic Player Mode: whether it is on, the skin and the layout of its window, and its own playlist (which, unlike the
-/// Play Queue, keeps every track after it plays).
+/// Play Queue, keeps every track after it plays). <see cref="SeparateWindows"/> stays null until the user picks a layout, so
+/// the window can follow the platform's default (one window under a tiling compositor, separate windows elsewhere).
 /// </summary>
 public sealed record ClassicPlayerPreferences(
     bool IsEnabled = false,
@@ -20,7 +21,7 @@ public sealed record ClassicPlayerPreferences(
     bool ShowRemainingTime = false,
     int PlaylistCurrent = -1,
     IReadOnlyList<PlayQueueEntry>? Playlist = null,
-    bool SeparateWindows = true,
+    bool? SeparateWindows = null,
     ClassicWindowPosition? MainPosition = null,
     ClassicWindowPosition? EqualizerPosition = null,
     ClassicWindowPosition? PlaylistPosition = null,

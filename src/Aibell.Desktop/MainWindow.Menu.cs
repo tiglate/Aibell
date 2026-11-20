@@ -3,6 +3,7 @@ using Aibell.Desktop.ViewModels;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using Avalonia.VisualTree;
 
 namespace Aibell.Desktop;
 
@@ -16,6 +17,19 @@ namespace Aibell.Desktop;
 public sealed partial class MainWindow
 {
     private void MenuOpened(object? sender, RoutedEventArgs args) => RefreshMenuState();
+
+    /// <summary>
+    /// Moves the window when the empty part of the menu bar is dragged. Only hooked up when the window has no title bar (tiling
+    /// compositors such as niri), where it would otherwise have nothing to grab once it floats. The compositor runs the move, so it
+    /// works under Xwayland and Wayland alike.
+    /// </summary>
+    private void MenuBarPressed(object? sender, PointerPressedEventArgs args)
+    {
+        if (!args.GetCurrentPoint(MainMenu).Properties.IsLeftButtonPressed) return;
+        if (args.Source is Avalonia.Visual source && source.FindAncestorOfType<MenuItem>(includeSelf: true) is not null) return;
+        BeginMoveDrag(args);
+        args.Handled = true;
+    }
 
     internal void RefreshMenuState()
     {

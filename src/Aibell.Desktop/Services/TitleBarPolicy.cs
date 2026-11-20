@@ -28,6 +28,17 @@ public static class TitleBarPolicy
             case "off" or "0" or "false" or "no": return true;
             case "on" or "1" or "true" or "yes": return false;
         }
+        return IsTilingSession(environment);
+    }
+
+    /// <summary>
+    /// Whether the session runs a tiling compositor or bare window manager (niri, sway, Hyprland, i3...), which places windows
+    /// itself and ignores where an application asks to put them.
+    /// </summary>
+    public static bool IsTilingSession(Func<string, string?> environment)
+    {
+        ArgumentNullException.ThrowIfNull(environment);
+        if (!OperatingSystem.IsLinux()) return false;
         if (TilingMarkers.Any(name => !string.IsNullOrEmpty(environment(name)))) return true;
         return DesktopNames
             .SelectMany(name => (environment(name) ?? "").Split(Separators, StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))

@@ -50,3 +50,46 @@ public sealed class TitleBarPolicyTests
         Assert.That(TitleBarPolicy.ShouldHideTitleBar(Env(("XDG_CURRENT_DESKTOP", "GNOME"), ("AIBELL_TITLE_BAR", "off"))), Is.True);
     }
 }
+
+[TestFixture]
+public sealed class TilingSessionTests
+{
+    private static Func<string, string?> Env(params (string Name, string Value)[] values) =>
+        name => values.Where(pair => pair.Name == name).Select(pair => pair.Value).FirstOrDefault();
+
+    [TestCase("niri"), TestCase("sway"), TestCase("Hyprland"), TestCase("river:wlroots")]
+    public void Linux_TilingDesktop_IsATilingSession(string desktop)
+    {
+        Assume.That(OperatingSystem.IsLinux());
+
+        Assert.That(TitleBarPolicy.IsTilingSession(Env(("XDG_CURRENT_DESKTOP", desktop))), Is.True);
+    }
+
+    [TestCase("GNOME"), TestCase("KDE"), TestCase("ubuntu:GNOME")]
+    public void Linux_FullDesktop_IsNotATilingSession(string desktop)
+    {
+        Assume.That(OperatingSystem.IsLinux());
+
+        Assert.That(TitleBarPolicy.IsTilingSession(Env(("XDG_CURRENT_DESKTOP", desktop))), Is.False);
+    }
+
+    [Test]
+    public void TitleBarOverride_DoesNotChangeWhetherTheSessionTiles()
+    {
+        Assume.That(OperatingSystem.IsLinux());
+
+        Assert.Multiple(() =>
+        {
+            Assert.That(TitleBarPolicy.IsTilingSession(Env(("NIRI_SOCKET", "/run/niri.sock"), ("AIBELL_TITLE_BAR", "on"))), Is.True);
+            Assert.That(TitleBarPolicy.IsTilingSession(Env(("XDG_CURRENT_DESKTOP", "GNOME"), ("AIBELL_TITLE_BAR", "off"))), Is.False);
+        });
+    }
+
+    [Test]
+    public void NotLinux_IsNeverATilingSession()
+    {
+        Assume.That(!OperatingSystem.IsLinux());
+
+        Assert.That(TitleBarPolicy.IsTilingSession(Env(("XDG_CURRENT_DESKTOP", "niri"))), Is.False);
+    }
+}
